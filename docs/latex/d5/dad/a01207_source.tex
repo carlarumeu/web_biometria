@@ -1,0 +1,28 @@
+\doxysubsection{node\+\_\+modules/has-\/property-\/descriptors/index.js}
+\hypertarget{a01207_source}{}\label{a01207_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01207}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00001}\mbox{\hyperlink{a01207_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01207_source_l00003}\mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{00003}}\ var\ \mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}}\ =\ require(\textcolor{stringliteral}{'es-\/define-\/property'});}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a01207_source_l00005}\mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{00005}}\ var\ \mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{return}\ !!\mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}};}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00007}00007\ \};}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01207_source_l00009}\mbox{\hyperlink{a01207_a9c8a44086e1ca8bd92dbb6128445646a_a9c8a44086e1ca8bd92dbb6128445646a}{00009}}\ \mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}.hasArrayLengthDefineBug\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01207_a9c8a44086e1ca8bd92dbb6128445646a_a9c8a44086e1ca8bd92dbb6128445646a}{hasArrayLengthDefineBug}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ node\ v0.6\ has\ a\ bug\ where\ array\ lengths\ can\ be\ Set\ but\ not\ Defined}}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}}([],\ \textcolor{stringliteral}{'length'},\ \{\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ 1\ \}).length\ !==\ 1;}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00016}00016\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ In\ Firefox\ 4-\/22,\ defining\ length\ on\ an\ array\ throws\ an\ exception.}}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00020}00020\ \};}
+\DoxyCodeLine{\Hypertarget{a01207_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{a01207_source_l00022}\mbox{\hyperlink{a01207_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00022}}\ module.exports\ =\ \mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}};}
+
+\end{DoxyCode}

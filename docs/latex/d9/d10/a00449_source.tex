@@ -1,0 +1,54 @@
+\doxysubsection{err.\+js}
+\hypertarget{a00449_source}{}\label{a00449_source}\index{err.js@{err.js}}
+\mbox{\hyperlink{a00449}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00001}\mbox{\hyperlink{a00449_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{00001}}\ var\ \mbox{\hyperlink{a00449_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}\ =\ require(\textcolor{stringliteral}{'tape'});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00002}\mbox{\hyperlink{a00449_af3bccf2fea85269bc9d5ff9b3a929121_af3bccf2fea85269bc9d5ff9b3a929121}{00002}}\ var\ \mbox{\hyperlink{a00449_af3bccf2fea85269bc9d5ff9b3a929121_af3bccf2fea85269bc9d5ff9b3a929121}{ErrorWithCause}}\ =\ require(\textcolor{stringliteral}{'error-\/cause/Error'});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{a00449_source_l00004}\mbox{\hyperlink{a00449_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{00004}}\ var\ \mbox{\hyperlink{a00449_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}\ =\ require(\textcolor{stringliteral}{'../'});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00449_source_l00006}00006\ \mbox{\hyperlink{a00449_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(\textcolor{stringliteral}{'type\ error'},\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.plan(1);}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00008}00008\ \ \ \ \ var\ aerr\ =\ \textcolor{keyword}{new}\ TypeError();}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00009}00009\ \ \ \ \ aerr.foo\ =\ 555;}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00010}00010\ \ \ \ \ aerr.bar\ =\ [1,\ 2,\ 3];}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{a00449_source_l00012}00012\ \ \ \ \ var\ berr\ =\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'tuv'});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00013}00013\ \ \ \ \ berr.baz\ =\ 555;}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{a00449_source_l00015}00015\ \ \ \ \ var\ cerr\ =\ \textcolor{keyword}{new}\ SyntaxError();}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00016}00016\ \ \ \ \ cerr.message\ =\ \textcolor{stringliteral}{'whoa'};}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00017}00017\ \ \ \ \ cerr[\textcolor{stringliteral}{'a-\/b'}]\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a00449_source_l00019}00019\ \ \ \ \ var\ withCause\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00449_af3bccf2fea85269bc9d5ff9b3a929121_af3bccf2fea85269bc9d5ff9b3a929121}{ErrorWithCause}}(\textcolor{stringliteral}{'foo'},\ \{\ cause:\ \textcolor{stringliteral}{'bar'}\ \});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00020}00020\ \ \ \ \ var\ withCausePlus\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00449_af3bccf2fea85269bc9d5ff9b3a929121_af3bccf2fea85269bc9d5ff9b3a929121}{ErrorWithCause}}(\textcolor{stringliteral}{'foo'},\ \{\ cause:\ \textcolor{stringliteral}{'bar'}\ \});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00021}00021\ \ \ \ \ withCausePlus.foo\ =\ \textcolor{stringliteral}{'bar'};}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00022}00022\ \ \ \ \ var\ withUndefinedCause\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00449_af3bccf2fea85269bc9d5ff9b3a929121_af3bccf2fea85269bc9d5ff9b3a929121}{ErrorWithCause}}(\textcolor{stringliteral}{'foo'},\ \{\ cause:\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ \});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00023}00023\ \ \ \ \ var\ withEnumerableCause\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'foo'});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00024}00024\ \ \ \ \ withEnumerableCause.cause\ =\ \textcolor{stringliteral}{'bar'};}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a00449_source_l00026}00026\ \ \ \ \ var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ [}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ TypeError(),}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'xxx'}),}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00029}00029\ \ \ \ \ \ \ \ \ aerr,}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00030}00030\ \ \ \ \ \ \ \ \ berr,}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00031}00031\ \ \ \ \ \ \ \ \ cerr,}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00032}00032\ \ \ \ \ \ \ \ \ withCause,}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00033}00033\ \ \ \ \ \ \ \ \ withCausePlus,}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00034}00034\ \ \ \ \ \ \ \ \ withUndefinedCause,}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00035}00035\ \ \ \ \ \ \ \ \ withEnumerableCause}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00036}00036\ \ \ \ \ ];}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(\mbox{\hyperlink{a00449_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),\ \textcolor{stringliteral}{'[\ '}\ +\ [}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'[TypeError]'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'[TypeError:\ xxx]'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [TypeError]\ foo:\ 555,\ bar:\ [\ 1,\ 2,\ 3\ ]\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [TypeError:\ tuv]\ baz:\ 555\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [SyntaxError:\ whoa]\ message:\ \(\backslash\)'whoa\(\backslash\)',\ \(\backslash\)'a-\/b\(\backslash\)':\ 5\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'cause'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00772}{Error}}.prototype\ ?\ \textcolor{stringliteral}{'[Error:\ foo]'}\ :\ \textcolor{stringliteral}{'\{\ [Error:\ foo]\ [cause]:\ \(\backslash\)'bar\(\backslash\)'\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [Error:\ foo]\ '}\ +\ (\textcolor{stringliteral}{'cause'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00772}{Error}}.prototype\ ?\ \textcolor{stringliteral}{''}\ :\ \textcolor{stringliteral}{'[cause]:\ \(\backslash\)'bar\(\backslash\)',\ '})\ +\ \textcolor{stringliteral}{'foo:\ \(\backslash\)'bar\(\backslash\)'\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'cause'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00772}{Error}}.prototype\ ?\ \textcolor{stringliteral}{'[Error:\ foo]'}\ :\ \textcolor{stringliteral}{'\{\ [Error:\ foo]\ [cause]:\ undefined\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [Error:\ foo]\ cause:\ \(\backslash\)'bar\(\backslash\)'\ \}'}}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00047}00047\ \ \ \ \ ].join(\textcolor{stringliteral}{',\ '})\ +\ \textcolor{stringliteral}{'\ ]'});}
+\DoxyCodeLine{\Hypertarget{a00449_source_l00048}00048\ \});}
+
+\end{DoxyCode}

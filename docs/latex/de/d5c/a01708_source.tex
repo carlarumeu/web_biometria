@@ -1,0 +1,55 @@
+\doxysubsection{generate-\/function/test.js}
+\hypertarget{a01708_source}{}\label{a01708_source}\index{test.js@{test.js}}
+\mbox{\hyperlink{a01708}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00001}00001\ var\ tape\ =\ require(\textcolor{stringliteral}{'tape'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00002}00002\ var\ genfun\ =\ require('./')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00004}00004\ tape('generate\ \mbox{\hyperlink{a01237_a5935566873bf60b695fbceca9df883d0_a5935566873bf60b695fbceca9df883d0}{add}}\ function',\ function(\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00005}00005\ \ \ var\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}\ =\ genfun()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00006}00006\ \ \ \ \ (\textcolor{stringliteral}{'function\ add(n)\ \{'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00007}00007\ \ \ \ \ \ \ (\textcolor{stringliteral}{'return\ n\ +\ \%d'},\ 42)}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00008}00008\ \ \ \ \ (\textcolor{charliteral}{'\}'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00010}00010\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.toString(),\ \textcolor{stringliteral}{'function\ add(n)\ \{\(\backslash\)n\ \ return\ n\ +\ 42\(\backslash\)n\}'},\ \textcolor{stringliteral}{'code\ is\ indented'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00011}00011\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.toFunction()(10),\ 52,\ \textcolor{stringliteral}{'function\ works'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00012}00012\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.end()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00013}00013\ \})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00015}00015\ tape(\textcolor{stringliteral}{'generate\ function\ +\ closed\ variables'},\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00016}00016\ \ \ var\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}\ =\ genfun()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00017}00017\ \ \ \ \ (\textcolor{stringliteral}{'function\ add(n)\ \{'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00018}00018\ \ \ \ \ \ \ (\textcolor{stringliteral}{'return\ n\ +\ \%d\ +\ number'},\ 42)}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00019}00019\ \ \ \ \ (\textcolor{charliteral}{'\}'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00021}00021\ \ \ var\ notGood\ =\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.toFunction()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00022}00022\ \ \ var\ good\ =\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.toFunction(\{number:10\})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00024}00024\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00025}00025\ \ \ \ \ notGood(10)}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.ok(\mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}},\ 'function\ \mbox{\hyperlink{a00521_a9538d2c9705b22c2f505c8f047d5de6a_a9538d2c9705b22c2f505c8f047d5de6a}{should}}\ \mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}\ work')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00027}00027\ \ \ \}\ \mbox{\hyperlink{a01195_aceb6b702eb7e32ba8ffc390500b26522_aceb6b702eb7e32ba8ffc390500b26522}{catch}}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(err.message,\ \textcolor{stringliteral}{'number\ is\ not\ defined'},\ \textcolor{stringliteral}{'throws\ reference\ error'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00029}00029\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00031}00031\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(good(11),\ 63,\ \textcolor{stringliteral}{'function\ with\ closed\ var\ works'})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00032}00032\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.end()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00033}00033\ \})}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00035}00035\ tape(\textcolor{stringliteral}{'generate\ property'},\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00036}00036\ \ \ var\ gen\ =\ genfun()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00038}00038\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.property('\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}'),\ '\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00039}00039\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.property('42'),\ '"{}42"{}')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00040}00040\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.property('\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}',\ '\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}'),\ '\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}.\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00041}00041\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.property('\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}',\ '42'),\ '\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}["{}42"{}]')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00042}00042\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.sym(42),\ 'tmp')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00043}00043\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.sym('\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}'),\ '\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00044}00044\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.sym('\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}'),\ 'a1')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00045}00045\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.sym(42),\ 'tmp1')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00046}00046\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.same(gen.sym('\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}}'),\ 'tmp2')}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{a01708_source_l00048}00048\ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.\mbox{\hyperlink{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}{end}}()}
+\DoxyCodeLine{\Hypertarget{a01708_source_l00049}00049\ \})}
+
+\end{DoxyCode}

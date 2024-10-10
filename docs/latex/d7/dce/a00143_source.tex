@@ -1,0 +1,48 @@
+\doxysubsection{shams.\+js}
+\hypertarget{a00143_source}{}\label{a00143_source}\index{shams.js@{shams.js}}
+\mbox{\hyperlink{a00143}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00001}\mbox{\hyperlink{a00143_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00003}00003\ \textcolor{comment}{/*\ eslint\ complexity:\ [2,\ 18],\ max-\/statements:\ [2,\ 33]\ */}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00004}\mbox{\hyperlink{a00143_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00004}}\ module.exports\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Symbol\ !==\ \textcolor{stringliteral}{'function'}\ ||\ typeof\ Object.getOwnPropertySymbols\ !==\ \textcolor{stringliteral}{'function'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Symbol.iterator\ ===\ \textcolor{stringliteral}{'symbol'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00008}00008\ \ \ \ \ var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00009}00009\ \ \ \ \ var\ sym\ =\ Symbol(\textcolor{stringliteral}{'test'});}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00010}00010\ \ \ \ \ var\ symObj\ =\ Object(sym);}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ sym\ ===\ \textcolor{stringliteral}{'string'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (Object.prototype.toString.call(sym)\ !==\ \textcolor{stringliteral}{'[object\ Symbol]'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (Object.prototype.toString.call(symObj)\ !==\ \textcolor{stringliteral}{'[object\ Symbol]'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ temp\ disabled\ per\ https://github.com/ljharb/object.assign/issues/17}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ if\ (sym\ instanceof\ Symbol)\ \{\ return\ false;\ \}}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ temp\ disabled\ per\ https://github.com/WebReflection/get-\/own-\/property-\/symbols/issues/4}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ if\ (!(symObj\ instanceof\ Symbol))\ \{\ return\ false;\ \}}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ if\ (typeof\ Symbol.prototype.toString\ !==\ 'function')\ \{\ return\ false;\ \}}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ if\ (String(sym)\ !==\ Symbol.prototype.toString.call(sym))\ \{\ return\ false;\ \}}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00024}00024\ \ \ \ \ var\ symVal\ =\ 42;}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}[sym]\ =\ symVal;}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{for}\ (sym\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/restricted-\/syntax,\ no-\/unreachable-\/loop}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Object.keys\ ===\ \textcolor{stringliteral}{'function'}\ \&\&\ Object.keys(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}).length\ !==\ 0)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Object.getOwnPropertyNames\ ===\ \textcolor{stringliteral}{'function'}\ \&\&\ Object.getOwnPropertyNames(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}).length\ !==\ 0)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00031}00031\ \ \ \ \ var\ syms\ =\ Object.getOwnPropertySymbols(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}});}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (syms.length\ !==\ 1\ ||\ syms[0]\ !==\ sym)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (!Object.prototype.propertyIsEnumerable.call(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ sym))\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Object.getOwnPropertyDescriptor\ ===\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ descriptor\ =\ Object.getOwnPropertyDescriptor(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ sym);}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (descriptor.value\ !==\ symVal\ ||\ descriptor.enumerable\ !==\ \textcolor{keyword}{true})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a00143_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00143_source_l00042}00042\ \};}
+
+\end{DoxyCode}

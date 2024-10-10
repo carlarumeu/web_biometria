@@ -1,0 +1,158 @@
+\doxysubsection{node\+\_\+modules/on-\/finished/index.js}
+\hypertarget{a01294_source}{}\label{a01294_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01294}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00008}00008\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00015}00015\ module.exports\ =\ \mbox{\hyperlink{a00116_ac9425cf3d20b1276ed59571b25be3cba_ac9425cf3d20b1276ed59571b25be3cba}{onFinished}}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00016}00016\ module.exports.isFinished\ =\ isFinished}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00023}00023\ var\ asyncHooks\ =\ tryRequireAsyncHooks()}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00024}00024\ var\ first\ =\ require('ee-\/first')}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00031}00031\ \textcolor{comment}{/*\ istanbul\ ignore\ next\ */}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00032}00032\ var\ defer\ =\ typeof\ setImmediate\ ===\ 'function'}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00033}00033\ \ \ ?\ setImmediate}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00034}00034\ \ \ :\ function\ (\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}})\ \{\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.nextTick(\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.bind.apply(\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}},\ arguments))\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00046}00046\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_ac9425cf3d20b1276ed59571b25be3cba_ac9425cf3d20b1276ed59571b25be3cba}{onFinished}}\ (msg,\ listener)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00047}00047\ \ \ \textcolor{keywordflow}{if}\ (isFinished(msg)\ !==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00048}00048\ \ \ \ \ defer(listener,\ \textcolor{keyword}{null},\ msg)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ msg}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00050}00050\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00052}00052\ \ \ \textcolor{comment}{//\ attach\ the\ listener\ to\ the\ message}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00053}00053\ \ \ attachListener(msg,\ \mbox{\hyperlink{a01177_a1866ccbf25522c47b5e74afdfd5a90cb_a1866ccbf25522c47b5e74afdfd5a90cb}{wrap}}(listener))}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00055}00055\ \ \ \textcolor{keywordflow}{return}\ msg}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00066}00066\ \textcolor{keyword}{function}\ isFinished\ (msg)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00067}00067\ \ \ var\ socket\ =\ msg.socket}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00069}00069\ \ \ \textcolor{keywordflow}{if}\ (typeof\ msg.finished\ ===\ \textcolor{stringliteral}{'boolean'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ OutgoingMessage}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ Boolean(msg.finished\ ||\ (socket\ \&\&\ !socket.writable))}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00072}00072\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00074}00074\ \ \ \textcolor{keywordflow}{if}\ (typeof\ msg.complete\ ===\ \textcolor{stringliteral}{'boolean'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\ IncomingMessage}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ Boolean(msg.upgrade\ ||\ !socket\ ||\ !socket.readable\ ||\ (msg.complete\ \&\&\ !msg.readable))}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00077}00077\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00079}00079\ \ \ \textcolor{comment}{//\ don't\ know}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00080}00080\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00091}00091\ \textcolor{keyword}{function}\ attachFinishedListener\ (msg,\ callback)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00092}00092\ \ \ var\ eeMsg}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00093}00093\ \ \ var\ eeSocket}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00094}00094\ \ \ var\ finished\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00096}00096\ \ \ \textcolor{keyword}{function}\ onFinish\ (error)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00097}00097\ \ \ \ \ eeMsg.cancel()}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00098}00098\ \ \ \ \ eeSocket.cancel()}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00100}00100\ \ \ \ \ finished\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00101}00101\ \ \ \ \ callback(error)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00102}00102\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00104}00104\ \ \ \textcolor{comment}{//\ finished\ on\ first\ message\ event}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00105}00105\ \ \ eeMsg\ =\ eeSocket\ =\ first([[msg,\ \textcolor{stringliteral}{'end'},\ \textcolor{stringliteral}{'finish'}]],\ onFinish)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00107}00107\ \ \ \textcolor{keyword}{function}\ onSocket\ (socket)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ remove\ listener}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00109}00109\ \ \ \ \ msg.removeListener(\textcolor{stringliteral}{'socket'},\ onSocket)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (finished)\ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (eeMsg\ !==\ eeSocket)\ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//\ finished\ on\ first\ socket\ event}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00115}00115\ \ \ \ \ eeSocket\ =\ first([[socket,\ \textcolor{stringliteral}{'error'},\ \textcolor{stringliteral}{'close'}]],\ onFinish)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00116}00116\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00118}00118\ \ \ \textcolor{keywordflow}{if}\ (msg.socket)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ socket\ already\ assigned}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00120}00120\ \ \ \ \ onSocket(msg.socket)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00121}00121\ \ \ \ \ \mbox{\hyperlink{a01195_a6a8cb5879785c584b473a97b4661bec4_a6a8cb5879785c584b473a97b4661bec4}{return}}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00122}00122\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00124}00124\ \ \ \textcolor{comment}{//\ wait\ for\ socket\ to\ be\ assigned}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00125}00125\ \ \ msg.on('socket',\ onSocket)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00127}00127\ \ \ \mbox{\hyperlink{a01195_a36b902f5bfe184879eb3e29b44502eb3_a36b902f5bfe184879eb3e29b44502eb3}{if}}\ (msg.socket\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00128}00128\ \ \ \ \ \textcolor{comment}{//\ istanbul\ ignore\ next:\ node.js\ 0.8\ patch}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00129}00129\ \ \ \ \ patchAssignSocket(msg,\ onSocket)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00130}00130\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00141}00141\ \textcolor{keyword}{function}\ attachListener\ (msg,\ listener)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00142}00142\ \ \ var\ attached\ =\ msg.\_\_onFinished}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00144}00144\ \ \ \textcolor{comment}{//\ create\ a\ private\ single\ listener\ with\ queue}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00145}00145\ \ \ \textcolor{keywordflow}{if}\ (!attached\ ||\ !attached.queue)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00146}00146\ \ \ \ \ attached\ =\ msg.\_\_onFinished\ =\ createListener(msg)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00147}00147\ \ \ \ \ attachFinishedListener(msg,\ attached)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00148}00148\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00150}00150\ \ \ attached.queue.push(listener)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00151}00151\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00161}00161\ \textcolor{keyword}{function}\ createListener\ (msg)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00162}00162\ \ \ \textcolor{keyword}{function}\ listener\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{if}\ (msg.\_\_onFinished\ ===\ listener)\ msg.\_\_onFinished\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (!listener.queue)\ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00166}00166\ \ \ \ \ var\ queue\ =\ listener.queue}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00167}00167\ \ \ \ \ listener.queue\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ queue.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00170}00170\ \ \ \ \ \ \ queue[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}](err,\ msg)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00172}00172\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00174}00174\ \ \ listener.queue\ =\ []}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00176}00176\ \ \ \textcolor{keywordflow}{return}\ listener}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00177}00177\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00187}00187\ \textcolor{comment}{//\ istanbul\ ignore\ next:\ node.js\ 0.8\ patch}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00188}00188\ \textcolor{keyword}{function}\ patchAssignSocket\ (\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ callback)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00189}00189\ \ \ var\ assignSocket\ =\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.assignSocket}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00191}00191\ \ \ \textcolor{keywordflow}{if}\ (typeof\ assignSocket\ !==\ \textcolor{stringliteral}{'function'})\ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00193}00193\ \ \ \textcolor{comment}{//\ res.on('socket',\ callback)\ is\ broken\ in\ 0.8}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00194}00194\ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.assignSocket\ =\ \textcolor{keyword}{function}\ \_assignSocket\ (socket)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00195}00195\ \ \ \ \ assignSocket.call(\textcolor{keyword}{this},\ socket)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00196}00196\ \ \ \ \ callback(socket)}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00197}00197\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00198}00198\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00205}00205\ \textcolor{keyword}{function}\ tryRequireAsyncHooks\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00206}00206\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'async\_hooks'})}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00208}00208\ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00209}00209\ \ \ \ \ \textcolor{keywordflow}{return}\ \{\}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00210}00210\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00219}00219\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01177_a1866ccbf25522c47b5e74afdfd5a90cb_a1866ccbf25522c47b5e74afdfd5a90cb}{wrap}}\ (\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00220}00220\ \ \ var\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00222}00222\ \ \ \textcolor{comment}{//\ create\ anonymous\ resource}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00223}00223\ \ \ \textcolor{keywordflow}{if}\ (asyncHooks.AsyncResource)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ =\ \textcolor{keyword}{new}\ asyncHooks.AsyncResource(\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.name\ ||\ \textcolor{stringliteral}{'bound-\/anonymous-\/fn'})}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00225}00225\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00227}00227\ \ \ \textcolor{comment}{//\ incompatible\ node.js}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00228}00228\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ ||\ !\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.runInAsyncScope)\ \{}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00230}00230\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{a01294_source_l00232}00232\ \ \ \textcolor{comment}{//\ return\ bound\ function}}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00233}00233\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.runInAsyncScope.bind(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}},\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{a01294_source_l00234}00234\ \}}
+
+\end{DoxyCode}

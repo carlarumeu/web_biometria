@@ -1,0 +1,31 @@
+\doxysubsection{index.\+js}
+\label{a00098_source}\index{index.js@{index.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ express\ from\ \textcolor{stringliteral}{'express'};}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ \{config\}\ from\ \textcolor{stringliteral}{'dotenv'};}
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ medicionRoutes\ from\ \textcolor{stringliteral}{'./routes/medicionRoutes.js'};}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Cargar\ las\ variables\ de\ entorno\ desde\ el\ archivo\ .env}}
+\DoxyCodeLine{00006\ config()}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Crear\ una\ instancia\ de\ la\ aplicación\ Express}}
+\DoxyCodeLine{00009\ const\ app\ =\ express()}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Middleware\ para\ parsear\ el\ cuerpo\ de\ las\ solicitudes\ como\ JSON}}
+\DoxyCodeLine{00012\ app.use(express.json());}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Definir\ las\ rutas\ de\ mediciones}}
+\DoxyCodeLine{00015\ app.use('/mediciones',\ medicionRoutes);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Ruta\ de\ bienvenida}}
+\DoxyCodeLine{00025\ app.get('/',\ (req,\ res)\ =>\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ res.send(\textcolor{stringliteral}{'Bienvenido\ a\ la\ API\ de\ mediciones'});}
+\DoxyCodeLine{00027\ \});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Servidor\ en\ escucha}}
+\DoxyCodeLine{00035\ app.listen(process.env.NODE\_DOCKER\_PORT,\ ()\ =>\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ console.log(\textcolor{stringliteral}{'Servidor\ corriendo\ en\ el\ puerto\ \$\{process.env.NODE\_DOCKER\_PORT\}'});}
+\DoxyCodeLine{00037\ \});}
+
+\end{DoxyCode}

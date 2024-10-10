@@ -1,0 +1,44 @@
+\doxysubsection{medicion\+Controller.\+js}
+\label{a00005_source}\index{medicionController.js@{medicionController.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ \{\ obtenerMediciones,\ enviarMedicion,\ obtenerUltimaMedicion\ \}\ from\ \textcolor{stringliteral}{'../services/medicionService.js'};}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Obtener\ todas\ las\ mediciones\ (con\ filtros\ opcionales)}}
+\DoxyCodeLine{00018\ export\ \textcolor{keyword}{const}\ getMediciones\ =\ async\ (req,\ res)\ =>\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \{\ lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora\ \}\ =\ req.query;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ mediciones\ =\ await\ obtenerMediciones(lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora);}
+\DoxyCodeLine{00022\ \ \ \ \ res.status(200).json(mediciones);}
+\DoxyCodeLine{00023\ \ \ \}\ \textcolor{keywordflow}{catch}\ (error)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ res.status(400).json(\{\ message:\ error.message\ \});}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ Crear\ nueva\ medición}}
+\DoxyCodeLine{00040\ export\ \textcolor{keyword}{const}\ postMedicion\ =\ async\ (req,\ res)\ =>\ \{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ nuevaMedicion\ =\ req.body;}
+\DoxyCodeLine{00043\ \ \ \ \ await\ enviarMedicion(nuevaMedicion);}
+\DoxyCodeLine{00044\ \ \ \ \ res.status(201).json(\{\ message:\ \textcolor{stringliteral}{'Medición\ creada\ correctamente'}\ \});}
+\DoxyCodeLine{00045\ \ \ \}\ \textcolor{keywordflow}{catch}\ (error)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ res.status(400).json(\{\ message:\ error.message\ \});}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ Obtener\ la\ última\ medición}}
+\DoxyCodeLine{00062\ export\ \textcolor{keyword}{const}\ getUltimaMedicion\ =\ async\ (req,\ res)\ =>\ \{}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ ultimaMedicion\ =\ await\ obtenerUltimaMedicion();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ultimaMedicion)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res.status(404).json(\{\ message:\ \textcolor{stringliteral}{'No\ se\ encontró\ ninguna\ medición'}\ \});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ res.status(200).json(ultimaMedicion);}
+\DoxyCodeLine{00069\ \ \ \}\ \textcolor{keywordflow}{catch}\ (error)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ res.status(400).json(\{\ message:\ error.message\ \});}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ \};}
+
+\end{DoxyCode}

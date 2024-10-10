@@ -1,0 +1,408 @@
+\doxysection{README}
+\hypertarget{a00925}{}\label{a00925}\index{README@{README}}
+\doxysubsection*{lru.\+min}
+
+
+
+\href{https://www.npmjs.com/package/lru.min}{\texttt{ }} \href{https://www.npmjs.com/package/lru.min}{\texttt{ }} \href{https://app.codecov.io/gh/wellwelwel/lru.min}{\texttt{ }}~\newline
+ \href{https://github.com/wellwelwel/lru.min/actions/workflows/ci_node.yml?query=branch\%3Amain}{\texttt{ }} \href{https://github.com/wellwelwel/lru.min/actions/workflows/ci_bun.yml?query=branch\%3Amain}{\texttt{ }} \href{https://github.com/wellwelwel/lru.min/actions/workflows/ci_deno.yml?query=branch\%3Amain}{\texttt{ }}
+
+🔥 An extremely fast and efficient {\bfseries{\href{https://en.m.wikipedia.org/wiki/Cache_replacement_policies\#Least_Recently_Used_.28LRU.29}{\texttt{ LRU}} Cache}} for {\bfseries{Java\+Script}} ({\bfseries{Browser}} compatible) — {\bfseries{6.\+8\+KB}}.
+
+\hypertarget{a00925_autotoc_md1392}{}\doxysubsubsection{\texorpdfstring{Why another LRU?}{Why another LRU?}}\label{a00925_autotoc_md1392}
+
+\begin{DoxyItemize}
+\item 🎖️ {\bfseries{lru.\+min}} is fully compatible with both {\bfseries{Node.\+js}} {\itshape (8+)}, {\bfseries{Bun}}, {\bfseries{Deno}} and, browser environments. All of this, while maintaining the same high performance \href{https://github.com/wellwelwel/lru.min?tab=readme-ov-file\#performance}{\texttt{ {\itshape (and a little more)}}} as the most popular {\bfseries{LRU}} packages.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1394}{}\doxysubsubsection{\texorpdfstring{Install}{Install}}\label{a00925_autotoc_md1394}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Node.js}
+\DoxyCodeLine{npm\ i\ lru.min}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Bun}
+\DoxyCodeLine{bun\ add\ lru.min}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Deno}
+\DoxyCodeLine{deno\ add\ npm:lru.min}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1396}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{a00925_autotoc_md1396}
+\hypertarget{a00925_autotoc_md1397}{}\doxysubsubsubsection{\texorpdfstring{Quickstart}{Quickstart}}\label{a00925_autotoc_md1397}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ \{\ \mbox{\hyperlink{a00206_a066103f1e2a7b2f1563ff90ca14b24f5_a066103f1e2a7b2f1563ff90ca14b24f5}{createLRU}}\ \}\ from\ \textcolor{stringliteral}{'lru.min'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}}\ =\ 2;}
+\DoxyCodeLine{\textcolor{keyword}{const}\ onEviction\ =\ (key,\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ =>\ \{}
+\DoxyCodeLine{\ \ console.log(\`{}Key\ \textcolor{stringliteral}{"{}\$\{key\}"{}}\ \mbox{\hyperlink{a01195_ad4e4eee5070c9197f0d44c52208cd074_ad4e4eee5070c9197f0d44c52208cd074}{with}}\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ \textcolor{stringliteral}{"{}\$\{value\}"{}}\ \mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{has}}\ been\ evicted.\`{});}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{const}\ LRU\ =\ \mbox{\hyperlink{a00206_a066103f1e2a7b2f1563ff90ca14b24f5_a066103f1e2a7b2f1563ff90ca14b24f5}{createLRU}}(\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}},}
+\DoxyCodeLine{\ \ onEviction,}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.set(\textcolor{charliteral}{'A'},\ \textcolor{stringliteral}{'My\ Value'});}
+\DoxyCodeLine{LRU.set(\textcolor{charliteral}{'B'},\ \textcolor{stringliteral}{'Other\ Value'});}
+\DoxyCodeLine{LRU.set(\textcolor{charliteral}{'C'},\ \textcolor{stringliteral}{'Another\ Value'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ =>\ Key\ "{}A"{}\ with\ value\ "{}My\ Value"{}\ has\ been\ evicted.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.has(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{LRU.get(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{LRU.delete(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ =>\ Key\ "{}B"{}\ with\ value\ "{}Other\ Value"{}\ has\ been\ evicted.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.peek(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.clear();\ \textcolor{comment}{//\ LRU.evict(max)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ =>\ Key\ "{}C"{}\ with\ value\ "{}Another\ Value"{}\ has\ been\ evicted.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.set(\textcolor{charliteral}{'D'},\ \textcolor{stringliteral}{"{}You're\ amazing\ 💛"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.size;\ \textcolor{comment}{//\ 1}}
+\DoxyCodeLine{LRU.max;\ \textcolor{comment}{//\ 2}}
+\DoxyCodeLine{LRU.available;\ \textcolor{comment}{//\ 1}}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.resize(10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.size;\ \textcolor{comment}{//\ 1}}
+\DoxyCodeLine{LRU.max;\ \textcolor{comment}{//\ 10}}
+\DoxyCodeLine{LRU.available;\ \textcolor{comment}{//\ 9}}
+
+\end{DoxyCode}
+
+
+\begin{quote}
+For {\itshape up-\/to-\/date} documentation, always follow the \href{https://github.com/wellwelwel/lru.min?tab=readme-ov-file\#readme}{\texttt{ {\bfseries{README.\+md}}}} in the {\bfseries{Git\+Hub}} repository. \end{quote}
+\hypertarget{a00925_autotoc_md1398}{}\doxysubsubsubsection{\texorpdfstring{Import}{Import}}\label{a00925_autotoc_md1398}
+\hypertarget{a00925_autotoc_md1399}{}\doxysubsubsubsubsection{\texorpdfstring{ES Modules}{ES Modules}}\label{a00925_autotoc_md1399}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ \{\ \mbox{\hyperlink{a00206_a066103f1e2a7b2f1563ff90ca14b24f5_a066103f1e2a7b2f1563ff90ca14b24f5}{createLRU}}\ \}\ from\ \textcolor{stringliteral}{'lru.min'};}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1400}{}\doxysubsubsubsubsection{\texorpdfstring{Common\+JS}{Common\+JS}}\label{a00925_autotoc_md1400}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \{\ \mbox{\hyperlink{a00206_a066103f1e2a7b2f1563ff90ca14b24f5_a066103f1e2a7b2f1563ff90ca14b24f5}{createLRU}}\ \}\ =\ require(\textcolor{stringliteral}{'lru.min'});}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1401}{}\doxysubsubsubsubsection{\texorpdfstring{Browser}{Browser}}\label{a00925_autotoc_md1401}
+\begin{quote}
+Requires {\bfseries{ES6}}. \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<script\ src="{}https://cdn.jsdelivr.net/npm/lru.min@1.x.x/browser/lru.min.js"{}></script>}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item You can use tools such as \href{https://github.com/babel/babel}{\texttt{ {\bfseries{Babel}}}} to increase the compatibility rate.
+\end{DoxyItemize}\hypertarget{a00925_autotoc_md1402}{}\doxysubsubsubsection{\texorpdfstring{Create a new LRU Cache}{Create a new LRU Cache}}\label{a00925_autotoc_md1402}
+\begin{quote}
+Set maximum size when creating {\bfseries{LRU}}. \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\ LRU\ =\ createLRU(\{\ max:\ 150\_000\ \});}
+
+\end{DoxyCode}
+
+
+Also, you can set a callback for every deletion/eviction\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\ LRU\ =\ createLRU(\{}
+\DoxyCodeLine{\ \ max:\ 150\_000,}
+\DoxyCodeLine{\ \ onEviction:\ (key,\ value)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ //\ do\ something}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1403}{}\doxysubsubsubsection{\texorpdfstring{Set a cache}{Set a cache}}\label{a00925_autotoc_md1403}
+Adds a key-\/value pair to the cache. Updates the value if the key already exists
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.set('key',\ 'value');}
+
+\end{DoxyCode}
+
+
+\begin{quote}
+{\ttfamily undefined} keys will simply be ignored. \end{quote}
+\hypertarget{a00925_autotoc_md1404}{}\doxysubsubsubsection{\texorpdfstring{Get a cache}{Get a cache}}\label{a00925_autotoc_md1404}
+Retrieves the value for a given key and moves the key to the most recent position.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.get('key');}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1405}{}\doxysubsubsubsection{\texorpdfstring{Peek a cache}{Peek a cache}}\label{a00925_autotoc_md1405}
+Retrieves the value for a given key without changing its position.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.peek('key');}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1406}{}\doxysubsubsubsection{\texorpdfstring{Check if a key exists}{Check if a key exists}}\label{a00925_autotoc_md1406}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.has('key');}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1407}{}\doxysubsubsubsection{\texorpdfstring{Delete a cache}{Delete a cache}}\label{a00925_autotoc_md1407}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.delete('key');}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1408}{}\doxysubsubsubsection{\texorpdfstring{Evict from the oldest cache}{Evict from the oldest cache}}\label{a00925_autotoc_md1408}
+Evicts the specified number of the oldest items from the cache.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.evict(1000);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Comentarios}
+~\newline
+
+\begin{DoxyItemize}
+\item Methods that perform eviction(s) when maximum size is reached\+: {\ttfamily set} and {\ttfamily resize}.
+\item Methods that always perform eviction(s)\+: {\ttfamily delete}, {\ttfamily clear}, and {\ttfamily evict} itself.
+\end{DoxyItemize}
+\end{DoxyRemark}
+\hypertarget{a00925_autotoc_md1409}{}\doxysubsubsubsection{\texorpdfstring{Resize the cache}{Resize the cache}}\label{a00925_autotoc_md1409}
+Resizes the cache to a new maximum size, evicting items if necessary.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.resize(50\_000);}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1410}{}\doxysubsubsubsection{\texorpdfstring{Clear the cache}{Clear the cache}}\label{a00925_autotoc_md1410}
+Clears and disposes (if used) all key-\/value pairs from the cache.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.clear();}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1411}{}\doxysubsubsubsection{\texorpdfstring{Debugging}{Debugging}}\label{a00925_autotoc_md1411}
+\hypertarget{a00925_autotoc_md1412}{}\doxysubsubsubsubsection{\texorpdfstring{Get the max size of the cache}{Get the max size of the cache}}\label{a00925_autotoc_md1412}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.max;}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1413}{}\doxysubsubsubsubsection{\texorpdfstring{Get the current size of the cache}{Get the current size of the cache}}\label{a00925_autotoc_md1413}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.size;}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1414}{}\doxysubsubsubsubsection{\texorpdfstring{Get the available slots in the cache}{Get the available slots in the cache}}\label{a00925_autotoc_md1414}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.available;}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1415}{}\doxysubsubsubsection{\texorpdfstring{Iterating the cache}{Iterating the cache}}\label{a00925_autotoc_md1415}
+\hypertarget{a00925_autotoc_md1416}{}\doxysubsubsubsubsection{\texorpdfstring{Get all keys}{Get all keys}}\label{a00925_autotoc_md1416}
+Iterates over all keys in the cache, from most recent to least recent.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\ keys\ =\ [...LRU.keys()];}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1417}{}\doxysubsubsubsubsection{\texorpdfstring{Get all values}{Get all values}}\label{a00925_autotoc_md1417}
+Iterates over all values in the cache, from most recent to least recent.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\ values\ =\ [...LRU.values()];}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1418}{}\doxysubsubsubsubsection{\texorpdfstring{Get all entries}{Get all entries}}\label{a00925_autotoc_md1418}
+Iterates over {\ttfamily \mbox{[}key, value\mbox{]}} pairs in the cache, from most recent to least recent.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\ entries\ =\ [...LRU.entries()];}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1419}{}\doxysubsubsubsubsection{\texorpdfstring{Run a callback for each entry}{Run a callback for each entry}}\label{a00925_autotoc_md1419}
+Iterates over each value-\/key pair in the cache, from most recent to least recent.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRU.forEach((value,\ key)\ =>\ \{}
+\DoxyCodeLine{\ \ //\ do\ something}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{a00925_autotoc_md1420}{}\doxysubsubsubsection{\texorpdfstring{Type\+Script}{Type\+Script}}\label{a00925_autotoc_md1420}
+You can set types for both keys and values. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import\ \{\ createLRU\ \}\ from\ 'lru.min';}
+\DoxyCodeLine{}
+\DoxyCodeLine{type\ Key\ =\ number;}
+\DoxyCodeLine{}
+\DoxyCodeLine{type\ Value\ =\ \{}
+\DoxyCodeLine{\ \ name:\ string;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{const\ LRU\ =\ createLRU<Key,\ Value>(\{\ max:\ 1000\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.set(1,\ \{\ name:\ 'Peter'\ \});}
+\DoxyCodeLine{LRU.set(2,\ \{\ name:\ 'Mary'\ \});}
+
+\end{DoxyCode}
+
+
+Also\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import\ \{\ createLRU,\ type\ CacheOptions\ \}\ from\ 'lru.min';}
+\DoxyCodeLine{}
+\DoxyCodeLine{type\ Key\ =\ number;}
+\DoxyCodeLine{}
+\DoxyCodeLine{type\ Value\ =\ \{}
+\DoxyCodeLine{\ \ name:\ string;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{const\ options:\ CacheOptions<Key,\ Value>\ =\ \{}
+\DoxyCodeLine{\ \ max:\ 10,}
+\DoxyCodeLine{\ \ onEviction(key,\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ console.log(key,\ value);}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ No\ need\ to\ repeat\ the\ type\ params}
+\DoxyCodeLine{const\ LRU\ =\ createLRU(options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRU.set(1,\ \{\ name:\ 'Peter'\ \});}
+\DoxyCodeLine{LRU.set(2,\ \{\ name:\ 'Mary'\ \});}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1422}{}\doxysubsubsubsection{\texorpdfstring{Performance}{Performance}}\label{a00925_autotoc_md1422}
+The benchmark is performed by comparing {\ttfamily 1,000,000} runs through a maximum cache limit of {\ttfamily 100,000}, getting {\ttfamily 333,333} caches and deleting {\ttfamily 200,000} keys 10 consecutive times, clearing the cache every run.
+
+\begin{quote}
+-\/ \href{https://github.com/isaacs/node-lru-cache}{\texttt{ {\bfseries{lru-\/cache}}}} {\ttfamily v11.\+0.\+0}
+\begin{DoxyItemize}
+\item \href{https://github.com/sindresorhus/quick-lru}{\texttt{ {\bfseries{quick-\/lru}}}} {\ttfamily v7.\+0.\+0} 
+\end{DoxyItemize}\end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Time:}
+\DoxyCodeLine{\ \ lru.min:\ \ \ \ 240.45ms}
+\DoxyCodeLine{\ \ lru-\/cache:\ \ 258.32ms}
+\DoxyCodeLine{\ \ quick-\/lru:\ \ 279.89ms}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ CPU:}
+\DoxyCodeLine{\ \ lru.min:\ \ \ \ 275558.30µs}
+\DoxyCodeLine{\ \ lru-\/cache:\ \ 306858.30µs}
+\DoxyCodeLine{\ \ quick-\/lru:\ \ 401318.80µs}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item See detailed results and how the tests are run and compared in the \href{https://github.com/wellwelwel/lru.min/tree/main/benchmark}{\texttt{ {\bfseries{benchmark}}}} directory.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1424}{}\doxysubsubsection{\texorpdfstring{Security Policy}{Security Policy}}\label{a00925_autotoc_md1424}
+\href{https://github.com/wellwelwel/lru.min/actions/workflows/ci_codeql.yml?query=branch\%3Amain}{\texttt{ }}
+
+Please check the \href{https://github.com/wellwelwel/lru.min/blob/main/SECURITY.md}{\texttt{ {\bfseries{SECURITY.\+md}}}}.
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1426}{}\doxysubsubsection{\texorpdfstring{Contributing}{Contributing}}\label{a00925_autotoc_md1426}
+See the \href{https://github.com/wellwelwel/lru.min/blob/main/CONTRIBUTING.md}{\texttt{ {\bfseries{Contributing Guide}}}} and please follow our \href{https://github.com/wellwelwel/lru.min/blob/main/CODE_OF_CONDUCT.md}{\texttt{ {\bfseries{Code of Conduct}}}} 🚀
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1428}{}\doxysubsubsection{\texorpdfstring{Acknowledgements}{Acknowledgements}}\label{a00925_autotoc_md1428}
+{\bfseries{lru.\+min}} is based and inspired on the architecture and code of both \href{https://github.com/isaacs/node-lru-cache}{\texttt{ {\bfseries{lru-\/cache}}}} and \href{https://github.com/sindresorhus/quick-lru}{\texttt{ {\bfseries{quick-\/lru}}}}, simplifying their core concepts for enhanced performance and compatibility.
+
+For more comprehensive features such as {\bfseries{TTL}} support, consider using and supporting them 🤝
+
+
+\begin{DoxyItemize}
+\item The architecture is mostly based on \href{https://github.com/isaacs}{\texttt{ @isaacs}} — \href{https://github.com/isaacs/node-lru-cache/blob/8f51d75351cbb4ac819952eb8e9f95eda00ef800/src/index.ts}{\texttt{ {\bfseries{lru-\/cache}}}}.
+\item Most of the methods names and its functionalities were inspired by \href{https://github.com/sindresorhus}{\texttt{ @sindresorhus}} — \href{https://github.com/sindresorhus/quick-lru/blob/a2262c65e1952539cb4d985a67c46363a780d234/index.js}{\texttt{ {\bfseries{quick-\/lru}}}}.
+\item \href{https://github.com/wellwelwel/lru.min/graphs/contributors}{\texttt{ }}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1430}{}\doxysubsubsubsubsection{\texorpdfstring{What comes from \href{https://github.com/isaacs/node-lru-cache}{\texttt{ {\bfseries{lru-\/cache}}}}?}{What comes from \href{https://github.com/isaacs/node-lru-cache}{\texttt{ {\bfseries{lru-\/cache}}}}?}}\label{a00925_autotoc_md1430}
+Architecture\textquotesingle{}s essence\+:
+
+\begin{quote}
+{\itshape It\textquotesingle{}s not the same code, but majority based on \href{https://github.com/isaacs/node-lru-cache/blob/8f51d75351cbb4ac819952eb8e9f95eda00ef800/src/index.ts\#L1385-L1394}{\texttt{ this}}.} \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{let\ free:\ number[]\ =\ [];}
+\DoxyCodeLine{}
+\DoxyCodeLine{const\ keyMap:\ Map<Key,\ number>\ =\ new\ Map();}
+\DoxyCodeLine{const\ keyList:\ (Key\ |\ undefined)[]\ =\ new\ Array(max).fill(undefined);}
+\DoxyCodeLine{const\ valList:\ (Value\ |\ undefined)[]\ =\ new\ Array(max).fill(undefined);}
+\DoxyCodeLine{const\ next:\ number[]\ =\ new\ Array(max).fill(0);}
+\DoxyCodeLine{const\ prev:\ number[]\ =\ new\ Array(max).fill(0);}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1432}{}\doxysubsubsubsubsection{\texorpdfstring{What comes from \href{https://github.com/sindresorhus/quick-lru}{\texttt{ {\bfseries{quick-\/lru}}}}?}{What comes from \href{https://github.com/sindresorhus/quick-lru}{\texttt{ {\bfseries{quick-\/lru}}}}?}}\label{a00925_autotoc_md1432}
+Name of methods and options {\itshape (including their final functionality ideas)}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily resize}
+\item {\ttfamily peek}
+\item {\ttfamily on\+Eviction}
+\item {\ttfamily for\+Each}
+\item {\ttfamily entries\+Descending} as {\ttfamily entries}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{a00925_autotoc_md1434}{}\doxysubsubsection{\texorpdfstring{License}{License}}\label{a00925_autotoc_md1434}
+{\bfseries{lru.\+min}} is under the \href{https://github.com/wellwelwel/lru.min/blob/main/LICENSE}{\texttt{ {\bfseries{MIT License}}}}.~\newline
+ Copyright © 2024-\/present \href{https://github.com/wellwelwel}{\texttt{ Weslley Araújo}} and {\bfseries{lru.\+min}} \href{https://github.com/wellwelwel/lru.min/graphs/contributors}{\texttt{ contributors}}. 

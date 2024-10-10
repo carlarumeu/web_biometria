@@ -1,0 +1,192 @@
+\doxysection{sqlstring}
+\hypertarget{a00983}{}\label{a00983}\index{sqlstring@{sqlstring}}
+\label{a00983_autotoc_md2410}%
+\Hypertarget{a00983_autotoc_md2410}%
+
+
+\href{https://npmjs.org/package/sqlstring}{\texttt{ }} \href{https://npmjs.org/package/sqlstring}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://github.com/mysqljs/sqlstring/actions/workflows/ci.yml}{\texttt{ }} \href{https://coveralls.io/r/mysqljs/sqlstring?branch=master}{\texttt{ }}
+
+Simple SQL escape and format for My\+SQL\hypertarget{a00983_autotoc_md2411}{}\doxysubsection{\texorpdfstring{Install}{Install}}\label{a00983_autotoc_md2411}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ sqlstring}
+
+\end{DoxyCode}
+\hypertarget{a00983_autotoc_md2412}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00983_autotoc_md2412}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}\ =\ require(\textcolor{stringliteral}{'sqlstring'});}
+
+\end{DoxyCode}
+\hypertarget{a00983_autotoc_md2413}{}\doxysubsubsection{\texorpdfstring{Escaping query values}{Escaping query values}}\label{a00983_autotoc_md2413}
+{\bfseries{Caution}} These methods of escaping values only works when the \href{https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html\#sqlmode_no_backslash_escapes}{\texttt{ NO\+\_\+\+BACKSLASH\+\_\+\+ESCAPES}} SQL mode is disabled (which is the default state for My\+SQL servers).
+
+In order to avoid SQL Injection attacks, you should always escape any user provided data before using it inside a SQL query. You can do so using the {\ttfamily Sql\+String.\+escape()} method\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ userId\ =\ \textcolor{stringliteral}{'some\ user\ provided\ value'};}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ users\ WHERE\ id\ =\ '}\ +\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.escape(userId);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ users\ WHERE\ id\ =\ 'some\ user\ provided\ value'}}
+
+\end{DoxyCode}
+
+
+Alternatively, you can use {\ttfamily ?} characters as placeholders for values you would like to have escaped like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ userId\ =\ 1;}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'SELECT\ *\ FROM\ users\ WHERE\ id\ =\ ?'},\ [userId]);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ users\ WHERE\ id\ =\ 1}}
+
+\end{DoxyCode}
+
+
+Multiple placeholders are mapped to values in the same order as passed. For example, in the following query {\ttfamily foo} equals {\ttfamily a}, {\ttfamily bar} equals {\ttfamily b}, {\ttfamily baz} equals {\ttfamily c}, and {\ttfamily id} will be {\ttfamily user\+Id}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ userId\ =\ 1;}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'UPDATE\ users\ SET\ foo\ =\ ?,\ bar\ =\ ?,\ baz\ =\ ?\ WHERE\ id\ =\ ?'},}
+\DoxyCodeLine{\ \ [\textcolor{charliteral}{'a'},\ \textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'},\ userId]);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ UPDATE\ users\ SET\ foo\ =\ 'a',\ bar\ =\ 'b',\ baz\ =\ 'c'\ WHERE\ id\ =\ 1}}
+
+\end{DoxyCode}
+
+
+This looks similar to prepared statements in My\+SQL, however it really just uses the same {\ttfamily Sql\+String.\+escape()} method internally.
+
+{\bfseries{Caution}} This also differs from prepared statements in that all {\ttfamily ?} are replaced, even those contained in comments and strings.
+
+Different value types are escaped differently, here is how\+:
+
+
+\begin{DoxyItemize}
+\item Numbers are left untouched
+\item Booleans are converted to {\ttfamily true} / {\ttfamily false}
+\item Date objects are converted to `\textquotesingle{}YYYY-\/mm-\/dd HH\+:ii\+:ss'{\ttfamily strings}
+\item {\ttfamily Buffers are converted to hex strings, e.\+g.}X\textquotesingle{}0fa5\textquotesingle{}{\ttfamily }
+\item {\ttfamily Strings are safely escaped}
+\item {\ttfamily Arrays are turned into list, e.\+g.}\mbox{[}\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}\mbox{]}{\ttfamily turns into}\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}{\ttfamily }
+\item {\ttfamily Nested arrays are turned into grouped lists (for bulk inserts), e.\+g.}\mbox{[}\mbox{[}\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}\mbox{]}, \mbox{[}\textquotesingle{}c\textquotesingle{}, \textquotesingle{}d\textquotesingle{}\mbox{]}\mbox{]}{\ttfamily turns into}(\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}), (\textquotesingle{}c\textquotesingle{}, \textquotesingle{}d\textquotesingle{}){\ttfamily }
+\item {\ttfamily Objects that have a}to\+Sql\+String{\ttfamily method will have}.to\+Sql\+String(){\ttfamily called and the returned value is used as the raw SQL.}
+\item {\ttfamily Objects are turned into}key = \textquotesingle{}val\textquotesingle{}{\ttfamily pairs for each enumerable property on the object. If the property\textquotesingle{}s value is a function, it is skipped; if the property\textquotesingle{}s value is an object, \doxylink{a01177_a7c9b2c6889147a97101a5409709b8d91_a7c9b2c6889147a97101a5409709b8d91}{to\+String()} is called on it and the returned value is used. \texorpdfstring{$\ast$}{*}}undefined{\ttfamily /}null{\ttfamily are converted to}NULL{\ttfamily  \texorpdfstring{$\ast$}{*}}NaN{\ttfamily /}Infinity\`{} are left as-\/is. My\+SQL does not support these, and trying to insert them as values will trigger My\+SQL errors until they implement support.
+\end{DoxyItemize}
+
+You may have noticed that this escaping allows you to do neat things like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ post\ \ =\ \{id:\ 1,\ title:\ \textcolor{stringliteral}{'Hello\ MySQL'}\};}
+\DoxyCodeLine{var\ sql\ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'INSERT\ INTO\ posts\ SET\ ?'},\ post);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ INSERT\ INTO\ posts\ SET\ \`{}id`\ =\ 1,\ \`{}title`\ =\ 'Hello\ MySQL'}}
+
+\end{DoxyCode}
+
+
+And the {\ttfamily to\+Sql\+String} method allows you to form complex queries with functions\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ CURRENT\_TIMESTAMP\ =\ \{\ toSqlString:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{'CURRENT\_TIMESTAMP()'};\ \}\ \};}
+\DoxyCodeLine{var\ sql\ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'UPDATE\ posts\ SET\ modified\ =\ ?\ WHERE\ id\ =\ ?'},\ [CURRENT\_TIMESTAMP,\ 42]);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ UPDATE\ posts\ SET\ modified\ =\ CURRENT\_TIMESTAMP()\ WHERE\ id\ =\ 42}}
+
+\end{DoxyCode}
+
+
+To generate objects with a {\ttfamily to\+Sql\+String} method, the {\ttfamily Sql\+String.\+raw()} method can be used. This creates an object that will be left un-\/touched when using in a {\ttfamily ?} placeholder, useful for using functions as dynamic values\+:
+
+{\bfseries{Caution}} The string provided to {\ttfamily Sql\+String.\+raw()} will skip all escaping functions when used, so be careful when passing in unvalidated input.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ CURRENT\_TIMESTAMP\ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.raw(\textcolor{stringliteral}{'CURRENT\_TIMESTAMP()'});}
+\DoxyCodeLine{var\ sql\ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'UPDATE\ posts\ SET\ modified\ =\ ?\ WHERE\ id\ =\ ?'},\ [CURRENT\_TIMESTAMP,\ 42]);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ UPDATE\ posts\ SET\ modified\ =\ CURRENT\_TIMESTAMP()\ WHERE\ id\ =\ 42}}
+
+\end{DoxyCode}
+
+
+If you feel the need to escape queries by yourself, you can also use the escaping function directly\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ sql\ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ posts\ WHERE\ title='}\ +\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.escape(\textcolor{stringliteral}{'Hello\ MySQL'});}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ posts\ WHERE\ title='Hello\ MySQL'}}
+
+\end{DoxyCode}
+\hypertarget{a00983_autotoc_md2414}{}\doxysubsubsection{\texorpdfstring{Escaping query identifiers}{Escaping query identifiers}}\label{a00983_autotoc_md2414}
+If you can\textquotesingle{}t trust an SQL identifier (database / table / column name) because it is provided by a user, you should escape it with {\ttfamily Sql\+String.\+escape\+Id(identifier)} like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ sorter\ =\ \textcolor{stringliteral}{'date'};}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ posts\ ORDER\ BY\ '}\ +\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.escapeId(sorter);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ posts\ ORDER\ BY\ \`{}date`}}
+
+\end{DoxyCode}
+
+
+It also supports adding qualified identifiers. It will escape both parts.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ sorter\ =\ \textcolor{stringliteral}{'date'};}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ posts\ ORDER\ BY\ '}\ +\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.escapeId(\textcolor{stringliteral}{'posts.'}\ +\ sorter);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ posts\ ORDER\ BY\ \`{}posts`.`date`}}
+
+\end{DoxyCode}
+
+
+If you do not want to treat {\ttfamily .} as qualified identifiers, you can set the second argument to {\ttfamily true} in order to keep the string as a literal identifier\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ sorter\ =\ \textcolor{stringliteral}{'date.2'};}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ posts\ ORDER\ BY\ '}\ +\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.escapeId(sorter,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ posts\ ORDER\ BY\ \`{}date.2`}}
+
+\end{DoxyCode}
+
+
+Alternatively, you can use {\ttfamily ??} characters as placeholders for identifiers you would like to have escaped like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ userId\ =\ 1;}
+\DoxyCodeLine{var\ columns\ =\ [\textcolor{stringliteral}{'username'},\ \textcolor{stringliteral}{'email'}];}
+\DoxyCodeLine{var\ sql\ \ \ \ \ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'SELECT\ ??\ FROM\ ??\ WHERE\ id\ =\ ?'},\ [columns,\ \textcolor{stringliteral}{'users'},\ userId]);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ \`{}username`,\ \`{}email`\ FROM\ \`{}users`\ WHERE\ id\ =\ 1}}
+
+\end{DoxyCode}
+ {\bfseries{Please note that this last character sequence is experimental and syntax might change}}
+
+When you pass an Object to {\ttfamily .\doxylink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape()}} or {\ttfamily .\doxylink{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27}{format()}}, {\ttfamily .\doxylink{a01267_a2bc45c52ec0a6a585708d9bea92911da_a2bc45c52ec0a6a585708d9bea92911da}{escape\+Id()}} is used to avoid SQL injection in object keys.\hypertarget{a00983_autotoc_md2415}{}\doxysubsubsection{\texorpdfstring{Formatting queries}{Formatting queries}}\label{a00983_autotoc_md2415}
+You can use {\ttfamily Sql\+String.\+format} to prepare a query with multiple insertion points, utilizing the proper escaping for ids and values. \doxylink{a00844}{A} simple example of this follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ userId\ \ =\ 1;}
+\DoxyCodeLine{var\ inserts\ =\ [\textcolor{stringliteral}{'users'},\ \textcolor{stringliteral}{'id'},\ userId];}
+\DoxyCodeLine{var\ sql\ \ \ \ \ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'SELECT\ *\ FROM\ ??\ WHERE\ ??\ =\ ?'},\ inserts);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ SELECT\ *\ FROM\ \`{}users`\ WHERE\ \`{}id`\ =\ 1}}
+
+\end{DoxyCode}
+
+
+Following this you then have a valid, escaped query that you can then send to the database safely. This is useful if you are looking to prepare the query before actually sending it to the database. You also have the option (but are not required) to pass in {\ttfamily stringify\+Object} and {\ttfamily time\+Zone}, allowing you provide a custom means of turning objects into strings, as well as a location-\/specific/timezone-\/aware {\ttfamily Date}.
+
+This can be further combined with the {\ttfamily Sql\+String.\+raw()} helper to generate SQL that includes My\+SQL functions as dynamic vales\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ userId\ =\ 1;}
+\DoxyCodeLine{var\ data\ \ \ =\ \{\ email:\ \textcolor{stringliteral}{'foobar@example.com'},\ modified:\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.raw(\textcolor{stringliteral}{'NOW()'})\ \};}
+\DoxyCodeLine{var\ sql\ \ \ \ =\ \mbox{\hyperlink{a01267_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{SqlString}}.format(\textcolor{stringliteral}{'UPDATE\ ??\ SET\ ?\ WHERE\ \`{}id`\ =\ ?'},\ [\textcolor{stringliteral}{'users'},\ data,\ userId]);}
+\DoxyCodeLine{console.log(sql);\ \textcolor{comment}{//\ UPDATE\ \`{}users`\ SET\ \`{}email`\ =\ 'foobar@example.com',\ \`{}modified`\ =\ NOW()\ WHERE\ \`{}id`\ =\ 1}}
+
+\end{DoxyCode}
+\hypertarget{a00983_autotoc_md2416}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00983_autotoc_md2416}
+\mbox{[}MIT\mbox{]}(LICENSE) 

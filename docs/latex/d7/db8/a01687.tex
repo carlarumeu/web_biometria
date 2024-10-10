@@ -1,0 +1,369 @@
+\doxysubsection{Referencia del archivo src/node.js}
+\hypertarget{a01687}{}\label{a01687}\index{node.js@{node.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01687_afb6125a2e245e567d6ee4b1b2fcde448_afb6125a2e245e567d6ee4b1b2fcde448}{if}} (1 !==\mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}} \&\&2 !==\mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}})
+\item 
+function \mbox{\hyperlink{a01687_a6db74ad7fec3cc96c546ce04ae2303b1_a6db74ad7fec3cc96c546ce04ae2303b1}{format\+Args}} (args)
+\begin{DoxyCompactList}\small\item\em Adds ANSI color escape codes if enabled. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01687_a613da65a390e3d3a0351b8db1714a96e_a613da65a390e3d3a0351b8db1714a96e}{save}} (namespaces)
+\begin{DoxyCompactList}\small\item\em Save {\ttfamily namespaces}. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01687_a8e077e3f98409ad80f618d527096dba4_a8e077e3f98409ad80f618d527096dba4}{create\+Writable\+Stdio\+Stream}} (\mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}})
+\begin{DoxyCompactList}\small\item\em Copied from {\ttfamily node/src/node.\+js}. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01687_a5ab64ad63a3b56ca48e94e51e644cb85_a5ab64ad63a3b56ca48e94e51e644cb85}{init}} (\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}})
+\begin{DoxyCompactList}\small\item\em Init logic for {\ttfamily debug} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \mbox{\hyperlink{a01687_adaeaa5f0233a333ae99f8bcc3239c681_adaeaa5f0233a333ae99f8bcc3239c681}{tty}} = require(\textquotesingle{}tty\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Module dependencies. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01687_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44}{util}} = require(\textquotesingle{}util\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01687_af2836014938e5fb6078778620cb19081_af2836014938e5fb6078778620cb19081}{exports}} = module.\+exports = require(\textquotesingle{}./\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em This is the Node.\+js implementation of {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_a1dc0aa163de2e7161fbb52b60824b4c6_a1dc0aa163de2e7161fbb52b60824b4c6}{init}} = init
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_a0730b0bbcf8c57682990089cef87aa55_a0730b0bbcf8c57682990089cef87aa55}{log}} () = log
+\begin{DoxyCompactList}\small\item\em Invokes {\ttfamily util.\+format()} with the specified arguments and writes to {\ttfamily stream}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_adbd4614cf46651b02f4967a641d02077_adbd4614cf46651b02f4967a641d02077}{format\+Args}} = format\+Args
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_aac776353556b1329f7a14bd4c07c1450_aac776353556b1329f7a14bd4c07c1450}{save}} = save
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_a6725beab56f633108dca12b60f1d037e_a6725beab56f633108dca12b60f1d037e}{load}} () = load
+\begin{DoxyCompactList}\small\item\em Load {\ttfamily namespaces}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_a9c5933a15df67637738e9292fe0ccc75_a9c5933a15df67637738e9292fe0ccc75}{use\+Colors}} () = use\+Colors
+\begin{DoxyCompactList}\small\item\em Is stdout a TTY? Colored output is enabled when {\ttfamily true}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_a2909afd65038f2771e6b80aeb8ae6f8c_a2909afd65038f2771e6b80aeb8ae6f8c}{colors}} = \mbox{[}6, 2, 3, 4, 5, 1\mbox{]}
+\begin{DoxyCompactList}\small\item\em Colors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1}{inspect\+Opts}}
+\begin{DoxyCompactList}\small\item\em Build up the default {\ttfamily inspect\+Opts} object from the environment variables. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}} = parse\+Int(process.\+env.\+DEBUG\+\_\+\+FD, 10) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 2
+\begin{DoxyCompactList}\small\item\em The file descriptor to write the {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}} calls to. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00062_a8b728f13fab33c62e04926e9947a6545_a8b728f13fab33c62e04926e9947a6545}{formatters}} \mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}}
+\begin{DoxyCompactList}\small\item\em Map o to {\ttfamily util.\+inspect()}, all on a single line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00062_a8b728f13fab33c62e04926e9947a6545_a8b728f13fab33c62e04926e9947a6545}{formatters}} \mbox{\hyperlink{a01687_abec0e0b954c3011c083dbeb17c157fa1_abec0e0b954c3011c083dbeb17c157fa1}{O}}
+\begin{DoxyCompactList}\small\item\em Map o to {\ttfamily util.\+inspect()}, allowing multiple lines if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01687_a8e077e3f98409ad80f618d527096dba4_a8e077e3f98409ad80f618d527096dba4}\index{node.js@{node.js}!createWritableStdioStream@{createWritableStdioStream}}
+\index{createWritableStdioStream@{createWritableStdioStream}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{createWritableStdioStream()}{createWritableStdioStream()}}
+{\footnotesize\ttfamily \label{a01687_a8e077e3f98409ad80f618d527096dba4_a8e077e3f98409ad80f618d527096dba4} 
+function create\+Writable\+Stdio\+Stream (\begin{DoxyParamCaption}\item[{}]{fd}{}\end{DoxyParamCaption})}
+
+
+
+Copied from {\ttfamily node/src/node.\+js}. 
+
+XXX\+: It\textquotesingle{}s lame that node doesn\textquotesingle{}t expose this API out-\/of-\/the-\/box. It also relies on the undocumented {\ttfamily tty\+\_\+wrap.\+guess\+Handle\+Type()} which is also lame. 
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00167}{167}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a6db74ad7fec3cc96c546ce04ae2303b1_a6db74ad7fec3cc96c546ce04ae2303b1}\index{node.js@{node.js}!formatArgs@{formatArgs}}
+\index{formatArgs@{formatArgs}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{formatArgs()}{formatArgs()}}
+{\footnotesize\ttfamily \label{a01687_a6db74ad7fec3cc96c546ce04ae2303b1_a6db74ad7fec3cc96c546ce04ae2303b1} 
+function format\+Args (\begin{DoxyParamCaption}\item[{}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Adds ANSI color escape codes if enabled. 
+
+@api public 
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00108}{108}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_afb6125a2e245e567d6ee4b1b2fcde448_afb6125a2e245e567d6ee4b1b2fcde448}\index{node.js@{node.js}!if@{if}}
+\index{if@{if}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily \label{a01687_afb6125a2e245e567d6ee4b1b2fcde448_afb6125a2e245e567d6ee4b1b2fcde448} 
+if (\begin{DoxyParamCaption}\item[{}]{1 !}{ = {\ttfamily =~\mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}}~\&\&~2~!==~\mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00063}{63}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a5ab64ad63a3b56ca48e94e51e644cb85_a5ab64ad63a3b56ca48e94e51e644cb85}\index{node.js@{node.js}!init@{init}}
+\index{init@{init}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{a01687_a5ab64ad63a3b56ca48e94e51e644cb85_a5ab64ad63a3b56ca48e94e51e644cb85} 
+function init (\begin{DoxyParamCaption}\item[{}]{debug}{}\end{DoxyParamCaption})}
+
+
+
+Init logic for {\ttfamily debug} instances. 
+
+Create a new {\ttfamily inspect\+Opts} object in case {\ttfamily use\+Colors} is set differently for a particular {\ttfamily debug} instance. 
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00235}{235}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a613da65a390e3d3a0351b8db1714a96e_a613da65a390e3d3a0351b8db1714a96e}\index{node.js@{node.js}!save@{save}}
+\index{save@{save}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{a01687_a613da65a390e3d3a0351b8db1714a96e_a613da65a390e3d3a0351b8db1714a96e} 
+function save (\begin{DoxyParamCaption}\item[{}]{namespaces}{}\end{DoxyParamCaption})}
+
+
+
+Save {\ttfamily namespaces}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & namespaces @api private \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00139}{139}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01687_a2909afd65038f2771e6b80aeb8ae6f8c_a2909afd65038f2771e6b80aeb8ae6f8c}\index{node.js@{node.js}!colors@{colors}}
+\index{colors@{colors}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily \label{a01687_a2909afd65038f2771e6b80aeb8ae6f8c_a2909afd65038f2771e6b80aeb8ae6f8c} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} colors = \mbox{[}6, 2, 3, 4, 5, 1\mbox{]}}
+
+
+
+Colors. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00026}{26}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_af2836014938e5fb6078778620cb19081_af2836014938e5fb6078778620cb19081}\index{node.js@{node.js}!exports@{exports}}
+\index{exports@{exports}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01687_af2836014938e5fb6078778620cb19081_af2836014938e5fb6078778620cb19081} 
+exports = module.\+exports = require(\textquotesingle{}./\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\textquotesingle{})}
+
+
+
+This is the Node.\+js implementation of {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}}. 
+
+Expose {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}} as the module. 
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00014}{14}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}\index{node.js@{node.js}!fd@{fd}}
+\index{fd@{fd}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily \label{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18} 
+var fd = parse\+Int(process.\+env.\+DEBUG\+\_\+\+FD, 10) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 2}
+
+
+
+The file descriptor to write the {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}} calls to. 
+
+Set the {\ttfamily DEBUG\+\_\+\+FD} env variable to override with another value. i.\+e.\+:
+
+\$ DEBUG\+\_\+\+FD=3 node script.\+js 3\texorpdfstring{$>$}{>}debug.\+log 
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00061}{61}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_adbd4614cf46651b02f4967a641d02077_adbd4614cf46651b02f4967a641d02077}\index{node.js@{node.js}!formatArgs@{formatArgs}}
+\index{formatArgs@{formatArgs}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{formatArgs}{formatArgs}}
+{\footnotesize\ttfamily \label{a01687_adbd4614cf46651b02f4967a641d02077_adbd4614cf46651b02f4967a641d02077} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} format\+Args = format\+Args}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00017}{17}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a1dc0aa163de2e7161fbb52b60824b4c6_a1dc0aa163de2e7161fbb52b60824b4c6}\index{node.js@{node.js}!init@{init}}
+\index{init@{init}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{init}{init}}
+{\footnotesize\ttfamily \label{a01687_a1dc0aa163de2e7161fbb52b60824b4c6_a1dc0aa163de2e7161fbb52b60824b4c6} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} init = init}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00015}{15}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1}\index{node.js@{node.js}!inspectOpts@{inspectOpts}}
+\index{inspectOpts@{inspectOpts}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{inspectOpts}{inspectOpts}}
+{\footnotesize\ttfamily \label{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} inspect\+Opts}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ Object.keys(\mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.env).filter(\textcolor{keyword}{function}\ (key)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ /\string^debug\_/\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}.test(key);}
+\DoxyCodeLine{\}).reduce(\textcolor{keyword}{function}\ (\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ key)\ \{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ var\ prop\ =\ key}
+\DoxyCodeLine{\ \ \ \ .substring(6)}
+\DoxyCodeLine{\ \ \ \ .toLowerCase()}
+\DoxyCodeLine{\ \ \ \ .replace(/\_([\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}-\/z])/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}},\ \textcolor{keyword}{function}\ (\_,\ k)\ \{\ \textcolor{keywordflow}{return}\ k.toUpperCase()\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ var\ val\ =\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.env[key];}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (/\string^(yes|on|\textcolor{keyword}{true}|\mbox{\hyperlink{a00062_af2904d770a67b3b7593a990075e6541a_af2904d770a67b3b7593a990075e6541a}{enabled}})\$/\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}.test(val))\ val\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (/\string^(no|off|\textcolor{keyword}{false}|\mbox{\hyperlink{a00101_a1c8c0f5dea0786f9f7750c076275f96c_a1c8c0f5dea0786f9f7750c076275f96c}{disabled}})\$/\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}.test(val))\ val\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (val\ ===\ \textcolor{stringliteral}{'null'})\ val\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ val\ =\ Number(val);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}[prop]\ =\ val;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}};}
+\DoxyCodeLine{\},\ \{\})}
+
+\end{DoxyCode}
+
+
+Build up the default {\ttfamily inspect\+Opts} object from the environment variables. 
+
+\$ DEBUG\+\_\+\+COLORS=no DEBUG\+\_\+\+DEPTH=10 DEBUG\+\_\+\+SHOW\+\_\+\+HIDDEN=enabled node script.\+js 
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00034}{34}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a6725beab56f633108dca12b60f1d037e_a6725beab56f633108dca12b60f1d037e}\index{node.js@{node.js}!load@{load}}
+\index{load@{load}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{load}{load}}
+{\footnotesize\ttfamily \label{a01687_a6725beab56f633108dca12b60f1d037e_a6725beab56f633108dca12b60f1d037e} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) = load}
+
+
+
+Load {\ttfamily namespaces}. 
+
+\begin{DoxyReturn}{Devuelve}
+\{String\} returns the previously persisted debug modes @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00019}{19}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a0730b0bbcf8c57682990089cef87aa55_a0730b0bbcf8c57682990089cef87aa55}\index{node.js@{node.js}!log@{log}}
+\index{log@{log}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily \label{a01687_a0730b0bbcf8c57682990089cef87aa55_a0730b0bbcf8c57682990089cef87aa55} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} log = log}
+
+
+
+Invokes {\ttfamily util.\+format()} with the specified arguments and writes to {\ttfamily stream}. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00016}{16}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_abec0e0b954c3011c083dbeb17c157fa1_abec0e0b954c3011c083dbeb17c157fa1}\index{node.js@{node.js}!O@{O}}
+\index{O@{O}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{O}{O}}
+{\footnotesize\ttfamily \label{a01687_abec0e0b954c3011c083dbeb17c157fa1_abec0e0b954c3011c083dbeb17c157fa1} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00062_a8b728f13fab33c62e04926e9947a6545_a8b728f13fab33c62e04926e9947a6545}{formatters}} O}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})\ \{}
+\DoxyCodeLine{\ \ this.\mbox{\hyperlink{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1}{inspectOpts}}.colors\ =\ this.\mbox{\hyperlink{a01687_a9c5933a15df67637738e9292fe0ccc75_a9c5933a15df67637738e9292fe0ccc75}{useColors}};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01687_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44}{util}}.inspect(\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}},\ this.\mbox{\hyperlink{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1}{inspectOpts}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Map o to {\ttfamily util.\+inspect()}, allowing multiple lines if needed. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00097}{97}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}\index{node.js@{node.js}!o@{o}}
+\index{o@{o}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{o}{o}}
+{\footnotesize\ttfamily \label{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83} 
+var o}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})\ \{}
+\DoxyCodeLine{\ \ this.\mbox{\hyperlink{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1}{inspectOpts}}.colors\ =\ this.\mbox{\hyperlink{a01687_a9c5933a15df67637738e9292fe0ccc75_a9c5933a15df67637738e9292fe0ccc75}{useColors}};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01687_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44}{util}}.inspect(\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}},\ this.\mbox{\hyperlink{a01687_a4d6657e7362bdea9b79e3b0a7980efd1_a4d6657e7362bdea9b79e3b0a7980efd1}{inspectOpts}})}
+\DoxyCodeLine{\ \ \ \ .split(\textcolor{charliteral}{'\(\backslash\)n'}).map(\textcolor{keyword}{function}(str)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ str.trim()}
+\DoxyCodeLine{\ \ \ \ \}).\mbox{\hyperlink{a00128_a1b09aaf68c8a94c60f4b0cb28eec4132_a1b09aaf68c8a94c60f4b0cb28eec4132}{join}}(\textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Map o to {\ttfamily util.\+inspect()}, all on a single line. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00085}{85}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_aac776353556b1329f7a14bd4c07c1450_aac776353556b1329f7a14bd4c07c1450}\index{node.js@{node.js}!save@{save}}
+\index{save@{save}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily \label{a01687_aac776353556b1329f7a14bd4c07c1450_aac776353556b1329f7a14bd4c07c1450} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} save = save}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00018}{18}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}\index{node.js@{node.js}!stream@{stream}}
+\index{stream@{stream}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{stream}{stream}}
+{\footnotesize\ttfamily \label{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786} 
+var stream}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ 1\ ===\ \mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}}\ ?\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.stdout\ :}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ ===\ \mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}}\ ?\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.stderr\ :}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01687_a8e077e3f98409ad80f618d527096dba4_a8e077e3f98409ad80f618d527096dba4}{createWritableStdioStream}}(\mbox{\hyperlink{a01687_a5623711d28752ba628520a2c3f7aaa18_a5623711d28752ba628520a2c3f7aaa18}{fd}})}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00067}{67}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_adaeaa5f0233a333ae99f8bcc3239c681_adaeaa5f0233a333ae99f8bcc3239c681}\index{node.js@{node.js}!tty@{tty}}
+\index{tty@{tty}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{tty}{tty}}
+{\footnotesize\ttfamily \label{a01687_adaeaa5f0233a333ae99f8bcc3239c681_adaeaa5f0233a333ae99f8bcc3239c681} 
+var tty = require(\textquotesingle{}tty\textquotesingle{})}
+
+
+
+Module dependencies. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00005}{5}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a9c5933a15df67637738e9292fe0ccc75_a9c5933a15df67637738e9292fe0ccc75}\index{node.js@{node.js}!useColors@{useColors}}
+\index{useColors@{useColors}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{useColors}{useColors}}
+{\footnotesize\ttfamily \label{a01687_a9c5933a15df67637738e9292fe0ccc75_a9c5933a15df67637738e9292fe0ccc75} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} use\+Colors = use\+Colors}
+
+
+
+Is stdout a TTY? Colored output is enabled when {\ttfamily true}. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00020}{20}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+
+\Hypertarget{a01687_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44}\index{node.js@{node.js}!util@{util}}
+\index{util@{util}!node.js@{node.js}}
+\doxyparagraph{\texorpdfstring{util}{util}}
+{\footnotesize\ttfamily \label{a01687_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44} 
+var util = require(\textquotesingle{}util\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01687_source_l00006}{6}} del archivo \mbox{\hyperlink{a01687_source}{src/node.\+js}}.
+

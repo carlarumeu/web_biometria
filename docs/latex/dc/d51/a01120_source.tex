@@ -1,0 +1,155 @@
+\doxysubsection{node\+\_\+modules/content-\/type/index.js}
+\hypertarget{a01120_source}{}\label{a01120_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01120}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00023}\mbox{\hyperlink{a01120_a9a65ed7a1894049c5ef2f69453e459f8_a9a65ed7a1894049c5ef2f69453e459f8}{00023}}\ var\ \mbox{\hyperlink{a01120_a9a65ed7a1894049c5ef2f69453e459f8_a9a65ed7a1894049c5ef2f69453e459f8}{PARAM\_REGEXP}}\ =\ /;\ *([!\#\$\%\&\textcolor{stringliteral}{'*+.\string^\_`|\string~0-\/9A-\/Za-\/z-\/]+)\ *=\ *("{}(?:[\(\backslash\)u000b\(\backslash\)u0020\(\backslash\)u0021\(\backslash\)u0023-\/\(\backslash\)u005b\(\backslash\)u005d-\/\(\backslash\)u007e\(\backslash\)u0080-\/\(\backslash\)u00ff]|\(\backslash\)\(\backslash\)[\(\backslash\)u000b\(\backslash\)u0020-\/\(\backslash\)u00ff])*"{}|[!\#\$\%\&'}*+.\string^\_\`{}|\string~0-\/9\mbox{\hyperlink{a00844}{A}}-\/Za-\/z-\/]+)\ */\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}}\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/control-\/regex}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00024}00024\ var\ TEXT\_REGEXP\ =\ /\string^[\(\backslash\)u000b\(\backslash\)u0020-\/\(\backslash\)u007e\(\backslash\)u0080-\/\(\backslash\)u00ff]+\$/\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/control-\/regex}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00025}00025\ var\ TOKEN\_REGEXP\ =\ /\string^[!\#\$\%\&\textcolor{stringliteral}{'*+.\string^\_`|\string~0-\/9A-\/Za-\/z-\/]+\$/}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00026}00026\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00033}00033\ var\ QESC\_REGEXP\ =\ /\(\backslash\)\(\backslash\)([\(\backslash\)u000b\(\backslash\)u0020-\/\(\backslash\)u00ff])/g\ //\ eslint-\/disable-\/line\ no-\/control-\/regex}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00038}00038\ var\ QUOTE\_REGEXP\ =\ /([\(\backslash\)\(\backslash\)"{}])/g}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00047}00047\ var\ TYPE\_REGEXP\ =\ /\string^[!\#\$\%\&'*+.\string^\_\`{}|\string~0-\/9\mbox{\hyperlink{a00844}{A}}-\/Za-\/z-\/]+\(\backslash\)/[!\#\$\%\&\textcolor{stringliteral}{'*+.\string^\_`|\string~0-\/9A-\/Za-\/z-\/]+\$/}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00048}00048\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00054}00054\ exports.format\ =\ format}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00055}00055\ exports.parse\ =\ parse}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00065}00065\ function\ format\ (obj)\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00066}00066\ \ \ if\ (!obj\ ||\ typeof\ obj\ !==\ '\textcolor{keywordtype}{object}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00067}00067\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}argument\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ required\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00068}00068\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00069}00069\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00070}00070\ \textcolor{stringliteral}{\ \ var\ parameters\ =\ obj.parameters}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00071}00071\ \textcolor{stringliteral}{\ \ var\ type\ =\ obj.type}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00072}00072\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00073}00073\ \textcolor{stringliteral}{\ \ if\ (!type\ ||\ !TYPE\_REGEXP.test(type))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00074}00074\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}invalid\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00075}00075\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00076}00076\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00077}00077\ \textcolor{stringliteral}{\ \ var\ string\ =\ type}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00078}00078\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00079}00079\ \textcolor{stringliteral}{\ \ //\ append\ parameters}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00080}00080\ \textcolor{stringliteral}{\ \ if\ (parameters\ \&\&\ typeof\ parameters\ ===\ '}\textcolor{keywordtype}{object}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00081}00081\ \textcolor{stringliteral}{\ \ \ \ var\ param}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00082}00082\ \textcolor{stringliteral}{\ \ \ \ var\ params\ =\ Object.keys(parameters).sort()}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00083}00083\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00084}00084\ \textcolor{stringliteral}{\ \ \ \ for\ (var\ i\ =\ 0;\ i\ <\ params.length;\ i++)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00085}00085\ \textcolor{stringliteral}{\ \ \ \ \ \ param\ =\ params[i]}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00086}00086\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00087}00087\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (!TOKEN\_REGEXP.test(param))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00088}00088\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ TypeError('}invalid\ parameter\ name\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00089}00089\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00090}00090\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00091}00091\ \textcolor{stringliteral}{\ \ \ \ \ \ string\ +=\ '};\ \textcolor{stringliteral}{'\ +\ param\ +\ '}=\textcolor{stringliteral}{'\ +\ qstring(parameters[param])}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00092}00092\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00093}00093\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00094}00094\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00095}00095\ \textcolor{stringliteral}{\ \ return\ string}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00096}00096\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00097}00097\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00106}00106\ function\ parse\ (string)\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00107}00107\ \ \ if\ (!string)\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00108}00108\ \ \ \ \ throw\ new\ TypeError('argument\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ required\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00109}00109\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00110}00110\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00111}00111\ \textcolor{stringliteral}{\ \ //\ support\ req/res-\/like\ objects\ as\ argument}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00112}00112\ \textcolor{stringliteral}{\ \ var\ header\ =\ typeof\ string\ ===\ '}\textcolor{keywordtype}{object}\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00113}00113\ \textcolor{stringliteral}{\ \ \ \ ?\ getcontenttype(string)}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00114}00114\ \textcolor{stringliteral}{\ \ \ \ :\ string}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00115}00115\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00116}00116\ \textcolor{stringliteral}{\ \ if\ (typeof\ header\ !==\ '}\textcolor{keywordtype}{string}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00117}00117\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}argument\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ required\ to\ be\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ \textcolor{keywordtype}{string}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00118}00118\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00119}00119\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00120}00120\ \textcolor{stringliteral}{\ \ var\ index\ =\ header.indexOf('};\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00121}00121\ \textcolor{stringliteral}{\ \ var\ type\ =\ index\ !==\ -\/1}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00122}00122\ \textcolor{stringliteral}{\ \ \ \ ?\ header.slice(0,\ index).trim()}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00123}00123\ \textcolor{stringliteral}{\ \ \ \ :\ header.trim()}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00124}00124\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00125}00125\ \textcolor{stringliteral}{\ \ if\ (!TYPE\_REGEXP.test(type))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00126}00126\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}invalid\ media\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00127}00127\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00128}00128\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00129}00129\ \textcolor{stringliteral}{\ \ var\ obj\ =\ new\ ContentType(type.toLowerCase())}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00130}00130\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00131}00131\ \textcolor{stringliteral}{\ \ //\ parse\ parameters}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00132}00132\ \textcolor{stringliteral}{\ \ if\ (index\ !==\ -\/1)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00133}00133\ \textcolor{stringliteral}{\ \ \ \ var\ key}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00134}00134\ \textcolor{stringliteral}{\ \ \ \ var\ match}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00135}00135\ \textcolor{stringliteral}{\ \ \ \ var\ value}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00136}00136\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00137}00137\ \textcolor{stringliteral}{\ \ \ \ PARAM\_REGEXP.lastIndex\ =\ index}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00138}00138\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00139}00139\ \textcolor{stringliteral}{\ \ \ \ while\ ((match\ =\ PARAM\_REGEXP.exec(header)))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00140}00140\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (match.index\ !==\ index)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00141}00141\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ TypeError('}invalid\ parameter\ \mbox{\hyperlink{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27}{format}}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00142}00142\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00143}00143\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00144}00144\ \textcolor{stringliteral}{\ \ \ \ \ \ index\ +=\ match[0].length}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00145}00145\ \textcolor{stringliteral}{\ \ \ \ \ \ key\ =\ match[1].toLowerCase()}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00146}00146\ \textcolor{stringliteral}{\ \ \ \ \ \ value\ =\ match[2]}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00147}00147\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00148}00148\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (value.charCodeAt(0)\ ===\ 0x22\ /*\ "{}\ */)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00149}00149\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ //\ remove\ quotes}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00150}00150\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ value\ =\ value.slice(1,\ -\/1)}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00151}00151\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00152}00152\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ //\ remove\ escapes}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00153}00153\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ if\ (value.indexOf('}\(\backslash\)\(\backslash\)\textcolor{stringliteral}{')\ !==\ -\/1)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00154}00154\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ value\ =\ value.replace(QESC\_REGEXP,\ '}\$1\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00155}00155\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00156}00156\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00157}00157\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00158}00158\ \textcolor{stringliteral}{\ \ \ \ \ \ obj.parameters[key]\ =\ value}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00159}00159\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00160}00160\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00161}00161\ \textcolor{stringliteral}{\ \ \ \ if\ (index\ !==\ header.length)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00162}00162\ \textcolor{stringliteral}{\ \ \ \ \ \ throw\ new\ TypeError('}invalid\ parameter\ \mbox{\hyperlink{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27}{format}}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00163}00163\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00164}00164\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00165}00165\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00166}00166\ \textcolor{stringliteral}{\ \ return\ obj}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00167}00167\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00168}00168\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00177}00177\ function\ getcontenttype\ (obj)\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00178}00178\ \ \ var\ header}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00180}00180\ \ \ if\ (typeof\ obj.getHeader\ ===\ '\textcolor{keyword}{function}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00181}00181\ \textcolor{stringliteral}{\ \ \ \ //\ res-\/like}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00182}00182\ \textcolor{stringliteral}{\ \ \ \ header\ =\ obj.getHeader('}content-\/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00183}00183\ \textcolor{stringliteral}{\ \ \}\ else\ if\ (typeof\ obj.headers\ ===\ '}\textcolor{keywordtype}{object}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00184}00184\ \textcolor{stringliteral}{\ \ \ \ //\ req-\/like}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00185}00185\ \textcolor{stringliteral}{\ \ \ \ header\ =\ obj.headers\ \&\&\ obj.headers['}content-\/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textcolor{stringliteral}{']}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00186}00186\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00187}00187\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00188}00188\ \textcolor{stringliteral}{\ \ if\ (typeof\ header\ !==\ '}\textcolor{keywordtype}{string}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00189}00189\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}content-\/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ header\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ missing\ from\ \textcolor{keywordtype}{object}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00190}00190\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00191}00191\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00192}00192\ \textcolor{stringliteral}{\ \ return\ header}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00193}00193\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00194}00194\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00203}00203\ function\ qstring\ (val)\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00204}00204\ \ \ var\ str\ =\ String(val)}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00206}00206\ \ \ //\ no\ need\ to\ quote\ tokens}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00207}00207\ \ \ if\ (TOKEN\_REGEXP.test(str))\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00208}00208\ \ \ \ \ return\ str}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00209}00209\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{a01120_source_l00211}00211\ \ \ if\ (str.length\ >\ 0\ \&\&\ !TEXT\_REGEXP.test(str))\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00212}00212\ \ \ \ \ throw\ new\ TypeError('invalid\ parameter\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00213}00213\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00214}00214\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00215}00215\ \textcolor{stringliteral}{\ \ return\ '}\textcolor{stringliteral}{"{}'\ +\ str.replace(QUOTE\_REGEXP,\ '\(\backslash\)\(\backslash\)\$1')\ +\ '"{}}\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00216}00216\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00217}00217\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00222}00222\ function\ ContentType\ (type)\ \{}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00223}00223\ \ \ this.parameters\ =\ Object.create(null)}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00224}00224\ \ \ this.type\ =\ type}
+\DoxyCodeLine{\Hypertarget{a01120_source_l00225}00225\ \}}
+
+\end{DoxyCode}

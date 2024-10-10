@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente server_handshake.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d3/d5e/a00275_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">server_handshake.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/d5e/a00275.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d3/d5e/a00275_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">    3</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a> = require(<span class="stringliteral">&#39;../constants/commands.js&#39;</span>);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">    4</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">Errors</a> = require(<span class="stringliteral">&#39;../constants/errors.js&#39;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d3/d5e/a00275_a66861095fa9af8c5ced7a5f76ea2d12e.html#a66861095fa9af8c5ced7a5f76ea2d12e">    6</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d3/db4/a00684.html">Command</a> = require(<span class="stringliteral">&#39;./command.js&#39;</span>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d3/d5e/a00275_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">    7</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a> = require(<span class="stringliteral">&#39;../packets/index.js&#39;</span>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d2/d94/a00716.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d94/a00716.html">ServerHandshake</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../d3/db4/a00684.html">Command</a> {</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d2/d94/a00716_af20e5e117055b571e1b9379937f7901c.html#af20e5e117055b571e1b9379937f7901c">   10</a></span>  <a class="code hl_function" href="../../d2/d94/a00716_af20e5e117055b571e1b9379937f7901c.html#af20e5e117055b571e1b9379937f7901c">constructor</a>(args) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a6bb85d4878dcc4e75bf4de82052df6fd.html#a6bb85d4878dcc4e75bf4de82052df6fd">super</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    this.args = args;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">    this.protocolVersion = args.protocolVersion || 10;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">    this.serverVersion   = args.serverVersion;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">    this.connectionId    = args.connectionId,</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    this.statusFlags     = args.statusFlags,</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    this.characterSet    = args.characterSet,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    this.capabilityFlags = args.capabilityFlags || 512;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d2/d94/a00716_a83cd7893979768bba8d909a44e4b4e08.html#a83cd7893979768bba8d909a44e4b4e08">   23</a></span>  <a class="code hl_function" href="../../d2/d94/a00716_a83cd7893979768bba8d909a44e4b4e08.html#a83cd7893979768bba8d909a44e4b4e08">start</a>(packet, connection) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> serverHelloPacket = <span class="keyword">new</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a>.Handshake(this.args);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    this.serverHello = serverHelloPacket;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    serverHelloPacket.setScrambleData(err =&gt; {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="keywordflow">if</span> (err) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        connection.emit(<span class="stringliteral">&#39;error&#39;</span>, <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(<span class="stringliteral">&#39;Error generating random bytes&#39;</span>));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      connection.writePacket(serverHelloPacket.toPacket(0));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    });</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d2/d94/a00716.html">ServerHandshake</a>.prototype.<a class="code hl_function" href="../../d2/d94/a00716_a85b9d3f779a0397b6d5b355a0323cd97.html#a85b9d3f779a0397b6d5b355a0323cd97">readClientReply</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d2/d94/a00716_a85b9d3f779a0397b6d5b355a0323cd97.html#a85b9d3f779a0397b6d5b355a0323cd97">   36</a></span>  <a class="code hl_function" href="../../d2/d94/a00716_a85b9d3f779a0397b6d5b355a0323cd97.html#a85b9d3f779a0397b6d5b355a0323cd97">readClientReply</a>(packet, connection) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// check auth here</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> clientHelloReply = <a class="code hl_variable" href="../../d3/d5e/a00275_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a>.HandshakeResponse.fromPacket(packet);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// TODO check we don&#39;t have something similar already</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    connection.clientHelloReply = clientHelloReply;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (this.args.authCallback) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      this.args.authCallback(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>          user: clientHelloReply.user,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          database: clientHelloReply.database,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          address: connection.stream.remoteAddress,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          authPluginData1: this.serverHello.authPluginData1,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          authPluginData2: this.serverHello.authPluginData2,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          authToken: clientHelloReply.authToken</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        },</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        (err, mysqlError) =&gt; {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <span class="comment">// if (err)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>          <span class="keywordflow">if</span> (!mysqlError) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            connection.writeOk();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="comment">// TODO create constants / errorToCode</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="comment">// 1045 = ER_ACCESS_DENIED_ERROR</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            connection.writeError({</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>              message: mysqlError.message || <span class="stringliteral">&#39;&#39;</span>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>              code: mysqlError.code || 1045</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            });</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            connection.close();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      );</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      connection.writeOk();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d2/d94/a00716.html">ServerHandshake</a>.prototype.<a class="code hl_function" href="../../d2/d94/a00716_a7c1cdab61917369873210fc86b3185e5.html#a7c1cdab61917369873210fc86b3185e5">dispatchCommands</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../d2/d94/a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97.html#a0c60ad2ec7a7f3a09e2f6942eed49d97">   72</a></span>  <a class="code hl_function" href="../../d2/d94/a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97.html#a0c60ad2ec7a7f3a09e2f6942eed49d97">_isStatement</a>(<a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>, name) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> firstWord = <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>.split(<span class="charliteral">&#39; &#39;</span>)[0].toUpperCase();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> firstWord === name;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d2/d94/a00716_a7c1cdab61917369873210fc86b3185e5.html#a7c1cdab61917369873210fc86b3185e5">   77</a></span>  <a class="code hl_function" href="../../d2/d94/a00716_a7c1cdab61917369873210fc86b3185e5.html#a7c1cdab61917369873210fc86b3185e5">dispatchCommands</a>(packet, connection) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// command from client to server</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> knownCommand = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a> = connection.clientHelloReply.encoding;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">const</span> commandCode = packet.readInt8();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">switch</span> (commandCode) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.STMT_PREPARE:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;stmt_prepare&#39;</span>).length) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>          <span class="keyword">const</span> <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> = packet.readString(<a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>          connection.emit(<span class="stringliteral">&#39;stmt_prepare&#39;</span>, <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          connection.writeError({</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            code: <a class="code hl_variable" href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">Errors</a>.HA_ERR_INTERNAL_ERROR,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            message:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>              <span class="stringliteral">&#39;No query handler for prepared statements.&#39;</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>          });</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.STMT_EXECUTE:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;stmt_execute&#39;</span>).length) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>          <span class="keyword">const</span> { stmtId, flags, iterationCount, values } = <a class="code hl_variable" href="../../d3/d5e/a00275_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a>.Execute.fromPacket(packet, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>          connection.emit(<span class="stringliteral">&#39;stmt_execute&#39;</span>, stmtId, flags, iterationCount, values);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>          connection.writeError({</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            code: <a class="code hl_variable" href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">Errors</a>.HA_ERR_INTERNAL_ERROR,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            message:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>              <span class="stringliteral">&#39;No query handler for execute statements.&#39;</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          });</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.QUIT:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;quit&#39;</span>).length) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>          connection.emit(<span class="stringliteral">&#39;quit&#39;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>          connection.stream.end();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.INIT_DB:</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;init_db&#39;</span>).length) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>          <span class="keyword">const</span> schemaName = packet.readString(<a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>          connection.emit(<span class="stringliteral">&#39;init_db&#39;</span>, schemaName);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>          connection.writeOk();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.QUERY:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;query&#39;</span>).length) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>          <span class="keyword">const</span> <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> = packet.readString(<a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>          <span class="keywordflow">if</span> (this.<a class="code hl_function" href="../../d2/d94/a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97.html#a0c60ad2ec7a7f3a09e2f6942eed49d97">_isStatement</a>(<a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>, <span class="stringliteral">&#39;PREPARE&#39;</span>) || this.<a class="code hl_function" href="../../d2/d94/a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97.html#a0c60ad2ec7a7f3a09e2f6942eed49d97">_isStatement</a>(<a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>, <span class="stringliteral">&#39;SET&#39;</span>)) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            connection.emit(<span class="stringliteral">&#39;stmt_prepare&#39;</span>, <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>          }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this.<a class="code hl_function" href="../../d2/d94/a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97.html#a0c60ad2ec7a7f3a09e2f6942eed49d97">_isStatement</a>(<a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>, <span class="stringliteral">&#39;EXECUTE&#39;</span>)) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            connection.emit(<span class="stringliteral">&#39;stmt_execute&#39;</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>          }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>          <span class="keywordflow">else</span> connection.emit(<span class="stringliteral">&#39;query&#39;</span>, <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>          connection.writeError({</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            code: <a class="code hl_variable" href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">Errors</a>.HA_ERR_INTERNAL_ERROR,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            message: <span class="stringliteral">&#39;No query handler&#39;</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          });</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.FIELD_LIST:</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;field_list&#39;</span>).length) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>          <span class="keyword">const</span> table = packet.readNullTerminatedString(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          <span class="keyword">const</span> <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a> = packet.readString(<a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          connection.emit(<span class="stringliteral">&#39;field_list&#39;</span>, table, <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>          connection.writeError({</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            code: <a class="code hl_variable" href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">Errors</a>.ER_WARN_DEPRECATED_SYNTAX,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            message:</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>              <span class="stringliteral">&#39;As of MySQL 5.7.11, COM_FIELD_LIST is deprecated and will be removed in a future version of MySQL.&#39;</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>          });</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a>.PING:</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;ping&#39;</span>).length) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          connection.emit(<span class="stringliteral">&#39;ping&#39;</span>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>          connection.writeOk();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        knownCommand = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">if</span> (connection.listeners(<span class="stringliteral">&#39;packet&#39;</span>).length) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      connection.emit(<span class="stringliteral">&#39;packet&#39;</span>, packet.clone(), knownCommand, commandCode);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!knownCommand) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      <span class="comment">// eslint-disable-next-line no-console</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      console.log(<span class="stringliteral">&#39;Unknown command:&#39;</span>, commandCode);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d2/d94/a00716.html">ServerHandshake</a>.prototype.<a class="code hl_function" href="../../d2/d94/a00716_a7c1cdab61917369873210fc86b3185e5.html#a7c1cdab61917369873210fc86b3185e5">dispatchCommands</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  }</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="../../d3/d5e/a00275_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">  172</a></span>module.exports = <a class="code hl_variable" href="../../de/d85/a01273_adcfab05d6a843f9905ceb69dca591cd3.html#adcfab05d6a843f9905ceb69dca591cd3">ServerHandshake</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">// TODO: implement server-side 4.1 authentication</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">4.1 authentication: (http://bazaar.launchpad.net/~mysql/mysql-server/5.5/view/head:/sql/password.c)</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"></span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">  SERVER:  public_seed=create_random_string()</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">           send(public_seed)</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment"></span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">  CLIENT:  recv(public_seed)</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">           hash_stage1=sha1(&quot;password&quot;)</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">           hash_stage2=sha1(hash_stage1)</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">           reply=xor(hash_stage1, sha1(public_seed,hash_stage2)</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment"></span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">           // this three steps are done in scramble()</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"></span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">           send(reply)</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment"></span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment"></span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">  SERVER:  recv(reply)</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">           hash_stage1=xor(reply, sha1(public_seed,hash_stage2))</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">           candidate_hash2=sha1(hash_stage1)</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">           check(candidate_hash2==hash_stage2)</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment"></span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">server stores sha1(sha1(password)) ( hash_stag2)</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">*/</span></div>
+<div class="ttc" id="aa00101_a3934419f0f9a2068c705a0013b77fab3_html_a3934419f0f9a2068c705a0013b77fab3"><div class="ttname"><a href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a></div><div class="ttdeci">var query</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00020">application.js:20</a></div></div>
+<div class="ttc" id="aa00275_a31cd852e7805f27ac918535769a3818c_html_a31cd852e7805f27ac918535769a3818c"><div class="ttname"><a href="../../d3/d5e/a00275_a31cd852e7805f27ac918535769a3818c.html#a31cd852e7805f27ac918535769a3818c">Errors</a></div><div class="ttdeci">const Errors</div><div class="ttdef"><b>Definition</b> <a href="#l00004">server_handshake.js:4</a></div></div>
+<div class="ttc" id="aa00275_a887343288e6f7e38e88d542c46e3dc66_html_a887343288e6f7e38e88d542c46e3dc66"><div class="ttname"><a href="../../d3/d5e/a00275_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a></div><div class="ttdeci">const Packets</div><div class="ttdef"><b>Definition</b> <a href="#l00007">server_handshake.js:7</a></div></div>
+<div class="ttc" id="aa00275_a984bde8f55585ce81551e9a95052ba14_html_a984bde8f55585ce81551e9a95052ba14"><div class="ttname"><a href="../../d3/d5e/a00275_a984bde8f55585ce81551e9a95052ba14.html#a984bde8f55585ce81551e9a95052ba14">CommandCode</a></div><div class="ttdeci">const CommandCode</div><div class="ttdef"><b>Definition</b> <a href="#l00003">server_handshake.js:3</a></div></div>
+<div class="ttc" id="aa00344_a7dfceba4d8646e1fc3116bc603b378bd_html_a7dfceba4d8646e1fc3116bc603b378bd"><div class="ttname"><a href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a></div><div class="ttdeci">const fields</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d8e/a00344_source.html#l00007">column_definition.js:7</a></div></div>
+<div class="ttc" id="aa00684_html"><div class="ttname"><a href="../../d3/db4/a00684.html">Command</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d39/a00257_source.html#l00006">command.js:6</a></div></div>
+<div class="ttc" id="aa00716_a0c60ad2ec7a7f3a09e2f6942eed49d97_html_a0c60ad2ec7a7f3a09e2f6942eed49d97"><div class="ttname"><a href="../../d2/d94/a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97.html#a0c60ad2ec7a7f3a09e2f6942eed49d97">ServerHandshake::_isStatement</a></div><div class="ttdeci">_isStatement(query, name)</div><div class="ttdef"><b>Definition</b> <a href="#l00072">server_handshake.js:72</a></div></div>
+<div class="ttc" id="aa00716_a7c1cdab61917369873210fc86b3185e5_html_a7c1cdab61917369873210fc86b3185e5"><div class="ttname"><a href="../../d2/d94/a00716_a7c1cdab61917369873210fc86b3185e5.html#a7c1cdab61917369873210fc86b3185e5">ServerHandshake::dispatchCommands</a></div><div class="ttdeci">dispatchCommands(packet, connection)</div><div class="ttdef"><b>Definition</b> <a href="#l00077">server_handshake.js:77</a></div></div>
+<div class="ttc" id="aa00716_a83cd7893979768bba8d909a44e4b4e08_html_a83cd7893979768bba8d909a44e4b4e08"><div class="ttname"><a href="../../d2/d94/a00716_a83cd7893979768bba8d909a44e4b4e08.html#a83cd7893979768bba8d909a44e4b4e08">ServerHandshake::start</a></div><div class="ttdeci">start(packet, connection)</div><div class="ttdef"><b>Definition</b> <a href="#l00023">server_handshake.js:23</a></div></div>
+<div class="ttc" id="aa00716_a85b9d3f779a0397b6d5b355a0323cd97_html_a85b9d3f779a0397b6d5b355a0323cd97"><div class="ttname"><a href="../../d2/d94/a00716_a85b9d3f779a0397b6d5b355a0323cd97.html#a85b9d3f779a0397b6d5b355a0323cd97">ServerHandshake::readClientReply</a></div><div class="ttdeci">readClientReply(packet, connection)</div><div class="ttdef"><b>Definition</b> <a href="#l00036">server_handshake.js:36</a></div></div>
+<div class="ttc" id="aa00716_af20e5e117055b571e1b9379937f7901c_html_af20e5e117055b571e1b9379937f7901c"><div class="ttname"><a href="../../d2/d94/a00716_af20e5e117055b571e1b9379937f7901c.html#af20e5e117055b571e1b9379937f7901c">ServerHandshake::constructor</a></div><div class="ttdeci">constructor(args)</div><div class="ttdef"><b>Definition</b> <a href="#l00010">server_handshake.js:10</a></div></div>
+<div class="ttc" id="aa00716_html"><div class="ttname"><a href="../../d2/d94/a00716.html">ServerHandshake</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">server_handshake.js:9</a></div></div>
+<div class="ttc" id="aa01195_a6bb85d4878dcc4e75bf4de82052df6fd_html_a6bb85d4878dcc4e75bf4de82052df6fd"><div class="ttname"><a href="../../d8/df3/a01195_a6bb85d4878dcc4e75bf4de82052df6fd.html#a6bb85d4878dcc4e75bf4de82052df6fd">super</a></div><div class="ttdeci">var super</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00032">node_modules/generate-function/index.js:32</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+<div class="ttc" id="aa01198_a0b30f2887f0891ea5fed53d76282d2dc_html_a0b30f2887f0891ea5fed53d76282d2dc"><div class="ttname"><a href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a></div><div class="ttdeci">var undefined</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d32/a01198_source.html#l00003">node_modules/get-intrinsic/index.js:3</a></div></div>
+<div class="ttc" id="aa01273_adcfab05d6a843f9905ceb69dca591cd3_html_adcfab05d6a843f9905ceb69dca591cd3"><div class="ttname"><a href="../../de/d85/a01273_adcfab05d6a843f9905ceb69dca591cd3.html#adcfab05d6a843f9905ceb69dca591cd3">ServerHandshake</a></div><div class="ttdeci">const ServerHandshake</div><div class="ttdef"><b>Definition</b> <a href="../../de/d85/a01273_source.html#l00004">node_modules/mysql2/lib/commands/index.js:4</a></div></div>
+<div class="ttc" id="aa01276_ab90d95850f9ba1903a6704f6fa8eccb6_html_ab90d95850f9ba1903a6704f6fa8eccb6"><div class="ttname"><a href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a></div><div class="ttdeci">exports Error</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d37/a01276_source.html#l00152">node_modules/mysql2/lib/packets/index.js:152</a></div></div>
+<div class="ttc" id="aa01288_a9ad8213a7626ee07aef47950752cac18_html_a9ad8213a7626ee07aef47950752cac18"><div class="ttname"><a href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a></div><div class="ttdeci">Negotiator prototype encoding</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00047">node_modules/negotiator/index.js:47</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_23d0479fb3f29d968a6231243124bf05.html">commands</a></li><li class="navelem"><a class="el" href="../../d3/d5e/a00275.html">server_handshake.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

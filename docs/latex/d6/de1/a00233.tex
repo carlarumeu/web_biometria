@@ -1,0 +1,75 @@
+\doxysubsection{Referencia del archivo mysql\+\_\+clear\+\_\+password.\+js}
+\hypertarget{a00233}{}\label{a00233}\index{mysql\_clear\_password.js@{mysql\_clear\_password.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00233_ae71afbeaa83c750e1439403d9fff723a_ae71afbeaa83c750e1439403d9fff723a}{buffer\+From\+Str}} (str)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00233_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00233_a74cafc06d372a37875f24487d896c2b9_a74cafc06d372a37875f24487d896c2b9}{create\+\_\+mysql\+\_\+clear\+\_\+password\+\_\+plugin}}
+\item 
+module \mbox{\hyperlink{a00233_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} = \mbox{\hyperlink{a00233_a74cafc06d372a37875f24487d896c2b9_a74cafc06d372a37875f24487d896c2b9}{create\+\_\+mysql\+\_\+clear\+\_\+password\+\_\+plugin}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00233_ae71afbeaa83c750e1439403d9fff723a_ae71afbeaa83c750e1439403d9fff723a}\index{mysql\_clear\_password.js@{mysql\_clear\_password.js}!bufferFromStr@{bufferFromStr}}
+\index{bufferFromStr@{bufferFromStr}!mysql\_clear\_password.js@{mysql\_clear\_password.js}}
+\doxyparagraph{\texorpdfstring{bufferFromStr()}{bufferFromStr()}}
+{\footnotesize\ttfamily \label{a00233_ae71afbeaa83c750e1439403d9fff723a_ae71afbeaa83c750e1439403d9fff723a} 
+function buffer\+From\+Str (\begin{DoxyParamCaption}\item[{}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00233_source_l00003}{3}} del archivo \mbox{\hyperlink{a00233_source}{mysql\+\_\+clear\+\_\+password.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00233_a74cafc06d372a37875f24487d896c2b9_a74cafc06d372a37875f24487d896c2b9}\index{mysql\_clear\_password.js@{mysql\_clear\_password.js}!create\_mysql\_clear\_password\_plugin@{create\_mysql\_clear\_password\_plugin}}
+\index{create\_mysql\_clear\_password\_plugin@{create\_mysql\_clear\_password\_plugin}!mysql\_clear\_password.js@{mysql\_clear\_password.js}}
+\doxyparagraph{\texorpdfstring{create\_mysql\_clear\_password\_plugin}{create\_mysql\_clear\_password\_plugin}}
+{\footnotesize\ttfamily \label{a00233_a74cafc06d372a37875f24487d896c2b9_a74cafc06d372a37875f24487d896c2b9} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} create\+\_\+mysql\+\_\+clear\+\_\+password\+\_\+plugin}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ pluginOptions\ =>}
+\DoxyCodeLine{\ \ \textcolor{keyword}{function}\ mysql\_clear\_password\_plugin(\{\ connection,\ command\ \})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ password\ =}
+\DoxyCodeLine{\ \ \ \ \ \ command.password\ ||\ pluginOptions.password\ ||\ connection.config.password;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{function}\ ()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00233_ae71afbeaa83c750e1439403d9fff723a_ae71afbeaa83c750e1439403d9fff723a}{bufferFromStr}}(password);}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00233_source_l00007}{7}} del archivo \mbox{\hyperlink{a00233_source}{mysql\+\_\+clear\+\_\+password.\+js}}.
+
+\Hypertarget{a00233_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{mysql\_clear\_password.js@{mysql\_clear\_password.js}!exports@{exports}}
+\index{exports@{exports}!mysql\_clear\_password.js@{mysql\_clear\_password.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00233_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports = \mbox{\hyperlink{a00233_a74cafc06d372a37875f24487d896c2b9_a74cafc06d372a37875f24487d896c2b9}{create\+\_\+mysql\+\_\+clear\+\_\+password\+\_\+plugin}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00233_source_l00017}{17}} del archivo \mbox{\hyperlink{a00233_source}{mysql\+\_\+clear\+\_\+password.\+js}}.
+
+\Hypertarget{a00233_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{mysql\_clear\_password.js@{mysql\_clear\_password.js}!strict@{strict}}
+\index{strict@{strict}!mysql\_clear\_password.js@{mysql\_clear\_password.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00233_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00233_source_l00001}{1}} del archivo \mbox{\hyperlink{a00233_source}{mysql\+\_\+clear\+\_\+password.\+js}}.
+

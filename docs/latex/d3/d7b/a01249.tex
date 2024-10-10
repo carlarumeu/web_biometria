@@ -1,0 +1,47 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/media-\/typer/index.js}
+\hypertarget{a01249}{}\label{a01249}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \mbox{\hyperlink{a01249_a0bd2867eb88fbbf4a792913f60f60a3f_a0bd2867eb88fbbf4a792913f60f60a3f}{param\+Reg\+Exp}} = /
+\begin{DoxyCompactList}\small\item\em media-\/typer Copyright(c) 2014 Douglas Christopher Wilson MIT Licensed \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01249_af729e29247fd52636fe6cec69c8ba8e8_af729e29247fd52636fe6cec69c8ba8e8}{text\+Reg\+Exp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01249_a0bd2867eb88fbbf4a792913f60f60a3f_a0bd2867eb88fbbf4a792913f60f60a3f}\index{index.js@{index.js}!paramRegExp@{paramRegExp}}
+\index{paramRegExp@{paramRegExp}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{paramRegExp}{paramRegExp}}
+{\footnotesize\ttfamily \label{a01249_a0bd2867eb88fbbf4a792913f60f60a3f_a0bd2867eb88fbbf4a792913f60f60a3f} 
+var param\+Reg\+Exp = /}
+
+
+
+media-\/typer Copyright(c) 2014 Douglas Christopher Wilson MIT Licensed 
+
+Reg\+Exp to match \texorpdfstring{$\ast$}{*}( "{};"{} parameter ) in RFC 2616 sec 3.\+7
+
+parameter = token "{}="{} ( token \texorpdfstring{$\vert$}{|} quoted-\/string ) token = 1\texorpdfstring{$\ast$}{*}$<$any CHAR except CTLs or separators$>$ separators = "{}("{} \texorpdfstring{$\vert$}{|} "{})"{} \texorpdfstring{$\vert$}{|} "{}$<$"{} \texorpdfstring{$\vert$}{|} "{}$>$"{} \texorpdfstring{$\vert$}{|} "{}@"{} \texorpdfstring{$\vert$}{|} "{},"{} \texorpdfstring{$\vert$}{|} "{};"{} \texorpdfstring{$\vert$}{|} "{}\+:"{} \texorpdfstring{$\vert$}{|} "{}\textbackslash{}"{} \texorpdfstring{$\vert$}{|} $<$"{}\texorpdfstring{$>$}{>} \texorpdfstring{$\vert$}{|} "{}/"{} \texorpdfstring{$\vert$}{|} "{}\mbox{[}"{} \texorpdfstring{$\vert$}{|} "{}\mbox{]}"{} \texorpdfstring{$\vert$}{|} "{}?"{} \texorpdfstring{$\vert$}{|} "{}="{} \texorpdfstring{$\vert$}{|} "{}\{"{} \texorpdfstring{$\vert$}{|} "{}\}"{} \texorpdfstring{$\vert$}{|} SP \texorpdfstring{$\vert$}{|} HT quoted-\/string = ( \texorpdfstring{$<$}{<}"{}$>$ $<$em$>$(qdtext \texorpdfstring{$\vert$}{|} quoted-\/pair ) $<$"{}\texorpdfstring{$>$}{>} ) qdtext = \texorpdfstring{$<$}{<}any TEXT except \texorpdfstring{$<$}{<}"{}$>$$>$ quoted-\/pair   = "{}"{} CHAR CHAR = \texorpdfstring{$<$}{<}any US-\/\+ASCII character (octets 0 -\/ 127)\texorpdfstring{$>$}{>} TEXT = \texorpdfstring{$<$}{<}any OCTET except CTLs, but including LWS\texorpdfstring{$>$}{>} LWS = \mbox{[}CRLF\mbox{]} 1( SP \texorpdfstring{$\vert$}{|} HT ) CRLF = CR LF CR = \texorpdfstring{$<$}{<}US-\/\+ASCII CR, carriage return (13)\texorpdfstring{$>$}{>} LF = \texorpdfstring{$<$}{<}US-\/\+ASCII LF, linefeed (10)\texorpdfstring{$>$}{>} SP = \texorpdfstring{$<$}{<}US-\/\+ASCII SP, space (32)\texorpdfstring{$>$}{>} SHT = \texorpdfstring{$<$}{<}US-\/\+ASCII HT, horizontal-\/tab (9)\texorpdfstring{$>$}{>} CTL = \texorpdfstring{$<$}{<}any US-\/\+ASCII control character (octets 0 -\/ 31) and DEL (127)\texorpdfstring{$>$}{>} OCTET = \texorpdfstring{$<$}{<}any 8-\/bit sequence of data\texorpdfstring{$>$}{>} 
+
+Definición en la línea \mbox{\hyperlink{a01249_source_l00030}{30}} del archivo \mbox{\hyperlink{a01249_source}{node\+\_\+modules/media-\/typer/index.\+js}}.
+
+\Hypertarget{a01249_af729e29247fd52636fe6cec69c8ba8e8_af729e29247fd52636fe6cec69c8ba8e8}\index{index.js@{index.js}!textRegExp@{textRegExp}}
+\index{textRegExp@{textRegExp}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{textRegExp}{textRegExp}}
+{\footnotesize\ttfamily \label{a01249_af729e29247fd52636fe6cec69c8ba8e8_af729e29247fd52636fe6cec69c8ba8e8} 
+var text\+Reg\+Exp}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ /\string^[\(\backslash\)u0020-\/\(\backslash\)u007e\(\backslash\)u0080-\/\(\backslash\)u00ff]+\$/}
+\DoxyCodeLine{var\ tokenRegExp\ =\ /\string^[!\#\$\%\&\textcolor{stringliteral}{'\(\backslash\)*\(\backslash\)+\(\backslash\)-\/\(\backslash\).0-\/9A-\/Z\(\backslash\)\string^\_`a-\/z\(\backslash\)|\string~]+\$/}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{var\ qescRegExp\ =\ /\(\backslash\)\(\backslash\)([\(\backslash\)u0000-\/\(\backslash\)u007f])/g}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01249_source_l00031}{31}} del archivo \mbox{\hyperlink{a01249_source}{node\+\_\+modules/media-\/typer/index.\+js}}.
+

@@ -1,0 +1,96 @@
+\doxysection{encodeurl}
+\hypertarget{a00969}{}\label{a00969}\index{encodeurl@{encodeurl}}
+\label{a00969_autotoc_md2216}%
+\Hypertarget{a00969_autotoc_md2216}%
+
+
+\href{https://npmjs.org/package/encodeurl}{\texttt{ }} \href{https://npmjs.org/package/encodeurl}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://travis-ci.org/pillarjs/encodeurl}{\texttt{ }} \href{https://coveralls.io/r/pillarjs/encodeurl?branch=master}{\texttt{ }}
+
+Encode a URL to a percent-\/encoded form, excluding already-\/encoded sequences\hypertarget{a00969_autotoc_md2217}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00969_autotoc_md2217}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ encodeurl}
+
+\end{DoxyCode}
+\hypertarget{a00969_autotoc_md2218}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00969_autotoc_md2218}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}\ =\ require(\textcolor{stringliteral}{'encodeurl'})}
+
+\end{DoxyCode}
+\hypertarget{a00969_autotoc_md2219}{}\doxysubsubsection{\texorpdfstring{encode\+Url(url)}{encode\+Url(url)}}\label{a00969_autotoc_md2219}
+Encode a URL to a percent-\/encoded form, excluding already-\/encoded sequences.
+
+This function will take an already-\/encoded URL and encode all the non-\/\+URL code points (as UTF-\/8 byte sequences). This function will not encode the "{}\%"{} character unless it is not part of a valid sequence ({\ttfamily \%20} will be left as-\/is, but {\ttfamily foo} will be encoded as {\ttfamily \%25foo}).
+
+This encode is meant to be "{}safe"{} and does not throw errors. It will try as hard as it can to properly encode the given URL, including replacing any raw, unpaired surrogate pairs with the Unicode replacement character prior to encoding.
+
+This function is {\itshape similar} to the intrinsic function {\ttfamily encode\+URI}, except it will not encode the {\ttfamily \%} character if that is part of a valid sequence, will not encode {\ttfamily \mbox{[}} and {\ttfamily \mbox{]}} (for IPv6 hostnames) and will replace raw, unpaired surrogate pairs with the Unicode replacement character (instead of throwing).\hypertarget{a00969_autotoc_md2220}{}\doxysubsection{\texorpdfstring{Examples}{Examples}}\label{a00969_autotoc_md2220}
+\hypertarget{a00969_autotoc_md2221}{}\doxysubsubsection{\texorpdfstring{Encode a URL containing user-\/controled data}{Encode a URL containing user-\/controled data}}\label{a00969_autotoc_md2221}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}\ =\ require(\textcolor{stringliteral}{'encodeurl'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742}{escapeHtml}}\ =\ require('\mbox{\hyperlink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}}-\/\mbox{\hyperlink{a01168_a8f99bc655183db169e126fc155ceb631_a8f99bc655183db169e126fc155ceb631}{html}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ get\ encoded\ form\ of\ inbound\ url}}
+\DoxyCodeLine{\ \ var\ url\ =\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.url)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ create\ html\ message}}
+\DoxyCodeLine{\ \ var\ body\ =\ '<\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}>Location\ '\ +\ \mbox{\hyperlink{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742}{escapeHtml}}(url)\ +\ '\ \mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}\ found</\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}>'}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ send\ a\ 404}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.statusCode\ =\ 404}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader('Content-\/Type',\ 'text/\mbox{\hyperlink{a01168_a8f99bc655183db169e126fc155ceb631_a8f99bc655183db169e126fc155ceb631}{html}};\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}=UTF-\/8')}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader('Content-\/Length',\ String(Buffer.byteLength(body,\ 'utf-\/8')))}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.\mbox{\hyperlink{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}{end}}(body,\ 'utf-\/8')}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\hypertarget{a00969_autotoc_md2222}{}\doxysubsubsection{\texorpdfstring{Encode a URL for use in a header field}{Encode a URL for use in a header field}}\label{a00969_autotoc_md2222}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}\ =\ require(\textcolor{stringliteral}{'encodeurl'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742}{escapeHtml}}\ =\ require('\mbox{\hyperlink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}}-\/\mbox{\hyperlink{a01168_a8f99bc655183db169e126fc155ceb631_a8f99bc655183db169e126fc155ceb631}{html}}')}
+\DoxyCodeLine{var\ url\ =\ require('url')}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ parse\ inbound\ url}}
+\DoxyCodeLine{\ \ var\ href\ =\ url.parse(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ set\ new\ host\ for\ redirect}}
+\DoxyCodeLine{\ \ href.host\ =\ \textcolor{stringliteral}{'localhost'}}
+\DoxyCodeLine{\ \ href.protocol\ =\ \textcolor{stringliteral}{'https:'}}
+\DoxyCodeLine{\ \ href.slashes\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ create\ location\ header}}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d}{location}}\ =\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}(url.format(href))}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ create\ html\ message}}
+\DoxyCodeLine{\ \ var\ body\ =\ \textcolor{stringliteral}{'<p>Redirecting\ to\ new\ site:\ '}\ +\ \mbox{\hyperlink{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742}{escapeHtml}}(\mbox{\hyperlink{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d}{location}})\ +\ \textcolor{stringliteral}{'</p>'}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ send\ a\ 301}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.statusCode\ =\ 301}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader(\textcolor{stringliteral}{'Content-\/Type'},\ \textcolor{stringliteral}{'text/html;\ charset=UTF-\/8'})}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader(\textcolor{stringliteral}{'Content-\/Length'},\ String(Buffer.byteLength(body,\ \textcolor{stringliteral}{'utf-\/8'})))}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader(\textcolor{stringliteral}{'Location'},\ \mbox{\hyperlink{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d}{location}})}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(body,\ \textcolor{stringliteral}{'utf-\/8'})}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\hypertarget{a00969_autotoc_md2223}{}\doxysubsection{\texorpdfstring{Testing}{Testing}}\label{a00969_autotoc_md2223}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ test}
+\DoxyCodeLine{\$\ npm\ run\ lint}
+
+\end{DoxyCode}
+\hypertarget{a00969_autotoc_md2224}{}\doxysubsection{\texorpdfstring{References}{References}}\label{a00969_autotoc_md2224}
+
+\begin{DoxyItemize}
+\item \href{https://tools.ietf.org/html/rfc3986}{\texttt{ RFC 3986\+: Uniform Resource Identifier (URI)\+: Generic Syntax}}
+\item \href{https://url.spec.whatwg.org/}{\texttt{ WHATWG URL Living Standard}}
+\end{DoxyItemize}\hypertarget{a00969_autotoc_md2225}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00969_autotoc_md2225}
+\mbox{[}MIT\mbox{]}(LICENSE) 

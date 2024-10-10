@@ -1,0 +1,151 @@
+\doxysection{AWS SSL Profiles}
+\hypertarget{a00854}{}\label{a00854}\index{AWS SSL Profiles@{AWS SSL Profiles}}
+\label{a00854_autotoc_md54}%
+\Hypertarget{a00854_autotoc_md54}%
+
+
+\href{https://aws.amazon.com/rds/}{\texttt{ {\bfseries{AWS RDS}}}} {\bfseries{SSL}} Certificates Bundles.
+
+{\bfseries{Table of Contents}}
+
+
+\begin{DoxyItemize}
+\item Installation
+\item Usage
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}mysqljs/mysql\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+My\+SQL2\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}node-\/postgres\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item Custom \`{}ssl\`{} options
+\end{DoxyItemize}
+\item License
+\item Security
+\item Contributing
+\item Acknowledgements
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{a00854_autotoc_md56}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00854_autotoc_md56}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ -\/-\/save\ aws-\/ssl-\/profiles}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{a00854_autotoc_md58}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00854_autotoc_md58}
+\hypertarget{a00854_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{\href{https://github.com/mysqljs/mysql}{\texttt{ mysqljs/mysql}}}{\href{https://github.com/mysqljs/mysql}{\texttt{ mysqljs/mysql}}}}\label{a00854_autotoc_md59}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}\ =\ require(\textcolor{stringliteral}{'mysql'});}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}}\ =\ require(\textcolor{stringliteral}{'aws-\/ssl-\/profiles'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ mysql\ connection}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ connection\ =\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}.createConnection(\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}},}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ mysql\ connection\ pool}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}\ =\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}.createPool(\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}},}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{a00854_autotoc_md60}{}\doxysubsubsection{\texorpdfstring{\href{https://github.com/sidorares/node-mysql2}{\texttt{ My\+SQL2}}}{\href{https://github.com/sidorares/node-mysql2}{\texttt{ My\+SQL2}}}}\label{a00854_autotoc_md60}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}\ =\ require(\textcolor{stringliteral}{'mysql2'});}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}}\ =\ require(\textcolor{stringliteral}{'aws-\/ssl-\/profiles'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ mysql2\ connection}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ connection\ =\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}.createConnection(\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}},}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ mysql2\ connection\ pool}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}\ =\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}.createPool(\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}},}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{a00854_autotoc_md61}{}\doxysubsubsection{\texorpdfstring{\href{https://github.com/brianc/node-postgres}{\texttt{ node-\/postgres}}}{\href{https://github.com/brianc/node-postgres}{\texttt{ node-\/postgres}}}}\label{a00854_autotoc_md61}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ pg\ =\ require(\textcolor{stringliteral}{'pg'});}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}}\ =\ require(\textcolor{stringliteral}{'aws-\/ssl-\/profiles'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ pg\ connection}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ client\ =\ \textcolor{keyword}{new}\ pg.Client(\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}},}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ pg\ connection\ pool}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}\ =\ \textcolor{keyword}{new}\ pg.Pool(\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}},}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{a00854_autotoc_md62}{}\doxysubsubsection{\texorpdfstring{Custom {\ttfamily ssl} options}{Custom {\ttfamily ssl} options}}\label{a00854_autotoc_md62}
+Using {\bfseries{AWS SSL Profiles}} with custom {\ttfamily ssl} options\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ ssl:\ \{}
+\DoxyCodeLine{\ \ \ \ ...awsCaBundle,}
+\DoxyCodeLine{\ \ \ \ rejectUnauthorized:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ ssl:\ \{}
+\DoxyCodeLine{\ \ \ \ ca:\ \mbox{\hyperlink{a00317_a89d69943f4593e49a2e28186a9ae805c_a89d69943f4593e49a2e28186a9ae805c}{awsCaBundle}}.ca,}
+\DoxyCodeLine{\ \ \ \ rejectUnauthorized:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{a00854_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{Custom bundles}{Custom bundles}}\label{a00854_autotoc_md63}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \{\ \mbox{\hyperlink{a01102_ad11171a80eae588e95635d5b9da0548d_ad11171a80eae588e95635d5b9da0548d}{proxyBundle}}\ \}\ =\ require(\textcolor{stringliteral}{'aws-\/ssl-\/profiles'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ ssl:\ \mbox{\hyperlink{a01102_ad11171a80eae588e95635d5b9da0548d_ad11171a80eae588e95635d5b9da0548d}{proxyBundle}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{a00854_autotoc_md65}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00854_autotoc_md65}
+{\bfseries{AWS SSL Profiles}} is under the \href{./LICENSE}{\texttt{ {\bfseries{MIT License}}}}.
+
+\DoxyHorRuler{0}
+\hypertarget{a00854_autotoc_md67}{}\doxysubsection{\texorpdfstring{Security}{Security}}\label{a00854_autotoc_md67}
+Please check the \doxylink{a01618}{{\bfseries{SECURITY.md}}}.
+
+\DoxyHorRuler{0}
+\hypertarget{a00854_autotoc_md69}{}\doxysubsection{\texorpdfstring{Contributing}{Contributing}}\label{a00854_autotoc_md69}
+Please check the {\bfseries{CONTRIBUTING.md}} for instructions.
+
+\DoxyHorRuler{0}
+\hypertarget{a00854_autotoc_md71}{}\doxysubsection{\texorpdfstring{Acknowledgements}{Acknowledgements}}\label{a00854_autotoc_md71}
+\href{https://github.com/mysqljs/aws-ssl-profiles/graphs/contributors}{\texttt{ {\bfseries{Contributors}}}}. 

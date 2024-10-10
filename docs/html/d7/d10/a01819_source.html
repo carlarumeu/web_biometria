@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente register_slave.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d7/d10/a01819_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">packets/register_slave.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d10/a01819.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d7/d10/a01819_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// http://dev.mysql.com/doc/internals/en/com-register-slave.html</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// note that documentation is incorrect, for example command code is actually 0x15 but documented as 0x14</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d7/d10/a01819_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">    6</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a> = require(<span class="stringliteral">&#39;../packets/packet&#39;</span>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d7/d10/a01819_a4036b39ca2065aa41a2d7251b6fe0e05.html#a4036b39ca2065aa41a2d7251b6fe0e05">    7</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d7/d10/a01819_a4036b39ca2065aa41a2d7251b6fe0e05.html#a4036b39ca2065aa41a2d7251b6fe0e05">CommandCodes</a> = require(<span class="stringliteral">&#39;../constants/commands&#39;</span>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="../../d3/dda/a00712.html">RegisterSlave</a> {</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d3/dda/a00712_a233a39af2002b5a9f526e0307c0776af.html#a233a39af2002b5a9f526e0307c0776af">   10</a></span>  <a class="code hl_function" href="../../d3/dda/a00712_a233a39af2002b5a9f526e0307c0776af.html#a233a39af2002b5a9f526e0307c0776af">constructor</a>(opts) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    this.serverId = opts.serverId || 0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    this.slaveHostname = opts.slaveHostname || <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    this.slaveUser = opts.slaveUser || <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    this.slavePassword = opts.slavePassword || <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    this.slavePort = opts.slavePort || 0;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    this.replicationRank = opts.replicationRank || 0;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    this.masterId = opts.masterId || 0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d3/dda/a00712_a18ca713a32536489cacd887d21a57c3e.html#a18ca713a32536489cacd887d21a57c3e">   20</a></span>  <a class="code hl_function" href="../../d3/dda/a00712_a18ca713a32536489cacd887d21a57c3e.html#a18ca713a32536489cacd887d21a57c3e">toPacket</a>() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> length =</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      15 + <span class="comment">// TODO: should be ascii?</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      Buffer.byteLength(this.slaveHostname, <span class="stringliteral">&#39;utf8&#39;</span>) +</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      Buffer.byteLength(this.slaveUser, <span class="stringliteral">&#39;utf8&#39;</span>) +</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      Buffer.byteLength(this.slavePassword, <span class="stringliteral">&#39;utf8&#39;</span>) +</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      3 +</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      4;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> buffer = Buffer.allocUnsafe(length);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> packet = <span class="keyword">new</span> <a class="code hl_variable" href="../../d7/d10/a01819_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(0, buffer, 0, length);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    packet.offset = 4;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    packet.writeInt8(<a class="code hl_variable" href="../../d7/d10/a01819_a4036b39ca2065aa41a2d7251b6fe0e05.html#a4036b39ca2065aa41a2d7251b6fe0e05">CommandCodes</a>.REGISTER_SLAVE);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    packet.writeInt32(this.serverId);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    packet.writeInt8(Buffer.byteLength(<span class="keyword">this</span>.slaveHostname, <span class="stringliteral">&#39;utf8&#39;</span>));</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    packet.writeString(this.slaveHostname);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    packet.writeInt8(Buffer.byteLength(<span class="keyword">this</span>.slaveUser, <span class="stringliteral">&#39;utf8&#39;</span>));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    packet.writeString(this.slaveUser);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    packet.writeInt8(Buffer.byteLength(<span class="keyword">this</span>.slavePassword, <span class="stringliteral">&#39;utf8&#39;</span>));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    packet.writeString(this.slavePassword);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    packet.writeInt16(this.slavePort);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    packet.writeInt32(this.replicationRank);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    packet.writeInt32(this.masterId);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> packet;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d7/d10/a01819_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">   46</a></span>module.exports = <a class="code hl_variable" href="../../de/d85/a01273_abdc5ee2a214041f0d60df998d804a973.html#abdc5ee2a214041f0d60df998d804a973">RegisterSlave</a>;</div>
+<div class="ttc" id="aa00712_a18ca713a32536489cacd887d21a57c3e_html_a18ca713a32536489cacd887d21a57c3e"><div class="ttname"><a href="../../d3/dda/a00712_a18ca713a32536489cacd887d21a57c3e.html#a18ca713a32536489cacd887d21a57c3e">RegisterSlave::toPacket</a></div><div class="ttdeci">toPacket()</div><div class="ttdef"><b>Definition</b> <a href="#l00020">packets/register_slave.js:20</a></div></div>
+<div class="ttc" id="aa00712_a233a39af2002b5a9f526e0307c0776af_html_a233a39af2002b5a9f526e0307c0776af"><div class="ttname"><a href="../../d3/dda/a00712_a233a39af2002b5a9f526e0307c0776af.html#a233a39af2002b5a9f526e0307c0776af">RegisterSlave::constructor</a></div><div class="ttdeci">constructor(opts)</div><div class="ttdef"><b>Definition</b> <a href="#l00010">packets/register_slave.js:10</a></div></div>
+<div class="ttc" id="aa00712_html"><div class="ttname"><a href="../../d3/dda/a00712.html">RegisterSlave</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/dc4/a01816_source.html#l00006">commands/register_slave.js:6</a></div></div>
+<div class="ttc" id="aa00776_html"><div class="ttname"><a href="../../d9/dd4/a00776.html">Packet</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00047">packet.js:47</a></div></div>
+<div class="ttc" id="aa01273_abdc5ee2a214041f0d60df998d804a973_html_abdc5ee2a214041f0d60df998d804a973"><div class="ttname"><a href="../../de/d85/a01273_abdc5ee2a214041f0d60df998d804a973.html#abdc5ee2a214041f0d60df998d804a973">RegisterSlave</a></div><div class="ttdeci">const RegisterSlave</div><div class="ttdef"><b>Definition</b> <a href="../../de/d85/a01273_source.html#l00010">node_modules/mysql2/lib/commands/index.js:10</a></div></div>
+<div class="ttc" id="aa01819_a4036b39ca2065aa41a2d7251b6fe0e05_html_a4036b39ca2065aa41a2d7251b6fe0e05"><div class="ttname"><a href="../../d7/d10/a01819_a4036b39ca2065aa41a2d7251b6fe0e05.html#a4036b39ca2065aa41a2d7251b6fe0e05">CommandCodes</a></div><div class="ttdeci">const CommandCodes</div><div class="ttdef"><b>Definition</b> <a href="#l00007">packets/register_slave.js:7</a></div></div>
+<div class="ttc" id="aa01819_adbc81c45b48c6cdfffe9fc4752007493_html_adbc81c45b48c6cdfffe9fc4752007493"><div class="ttname"><a href="../../d7/d10/a01819_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a></div><div class="ttdeci">const Packet</div><div class="ttdef"><b>Definition</b> <a href="#l00006">packets/register_slave.js:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_2c8deb8286166270ba576b9e0cb83490.html">packets</a></li><li class="navelem"><a class="el" href="../../d7/d10/a01819.html">register_slave.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

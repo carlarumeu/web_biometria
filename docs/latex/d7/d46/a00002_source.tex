@@ -1,0 +1,35 @@
+\doxysubsection{db.\+js}
+\label{a00002_source}\index{db.js@{db.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ src/config/db.js}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ \{\ createPool\ \}\ from\ \textcolor{stringliteral}{'mysql2/promise'};}
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ dotenv\ from\ \textcolor{stringliteral}{'dotenv'};}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Cargar\ las\ variables\ de\ entorno\ desde\ el\ archivo\ .env}}
+\DoxyCodeLine{00006\ dotenv.config();}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{const}\ pool\ =\ createPool(\{}
+\DoxyCodeLine{00024\ \ \ \ \ host:\ process.env.MYSQLDB\_HOST,}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ user:\ \textcolor{stringliteral}{'root'},}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ password:\ process.env.MYSQLDB\_ROOT\_PASSWORD,}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ port:\ process.env.MYSQLDB\_DOCKER\_PORT,}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ database:\ \textcolor{stringliteral}{'biometria\_bbdd'},}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ waitForConnections:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ connectionLimit:\ 10,}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ queueLimit:\ 0}
+\DoxyCodeLine{00065\ \});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ Exportar\ el\ pool\ de\ conexiones\ para\ su\ uso\ en\ otros\ módulos}}
+\DoxyCodeLine{00068\ export\ \textcolor{keywordflow}{default}\ pool;}
+
+\end{DoxyCode}

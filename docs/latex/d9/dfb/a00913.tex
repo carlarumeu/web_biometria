@@ -1,0 +1,28 @@
+\doxysection{has-\/symbols \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/has-\/symbols"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/inspect-\/js/has-\/symbols.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00913}{}\label{a00913}\index{has-\/symbols $<$sup$>$$<$a href="{}https://npmjs.org/package/has-\/symbols"{} $>$$<$img src="{}https://versionbadg.es/inspect-\/js/has-\/symbols.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{has-\/symbols $<$sup$>$$<$a href=""https://npmjs.org/package/has-\/symbols"" $>$$<$img src=""https://versionbadg.es/inspect-\/js/has-\/symbols.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00913_autotoc_md1220}%
+\Hypertarget{a00913_autotoc_md1220}%
+
+
+\href{https://github.com/inspect-js/has-symbols/actions}{\texttt{ }} \href{https://app.codecov.io/gh/inspect-js/has-symbols/}{\texttt{ }} \href{https://david-dm.org/inspect-js/has-symbols}{\texttt{ }} \href{https://david-dm.org/inspect-js/has-symbols\#info=devDependencies}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=has-symbols}{\texttt{ }}
+
+\href{https://npmjs.org/package/has-symbols}{\texttt{ }}
+
+Determine if the JS environment has Symbol support. Supports spec, or shams.\hypertarget{a00913_autotoc_md1221}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{a00913_autotoc_md1221}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ =\ require(\textcolor{stringliteral}{'has-\/symbols'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}()\ ===\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ if\ the\ environment\ has\ native\ Symbol\ support.\ Not\ polyfillable,\ not\ forgeable.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ hasSymbolsKinda\ =\ require(\textcolor{stringliteral}{'has-\/symbols/shams'});}
+\DoxyCodeLine{hasSymbolsKinda()\ ===\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ if\ the\ environment\ has\ a\ Symbol\ sham\ that\ mostly\ follows\ the\ spec.}}
+
+\end{DoxyCode}
+\hypertarget{a00913_autotoc_md1222}{}\doxysubsection{\texorpdfstring{Supported Symbol shams}{Supported Symbol shams}}\label{a00913_autotoc_md1222}
+
+\begin{DoxyItemize}
+\item get-\/own-\/property-\/symbols \href{https://www.npmjs.com/package/get-own-property-symbols}{\texttt{ npm}} \texorpdfstring{$\vert$}{|} \href{https://github.com/WebReflection/get-own-property-symbols}{\texttt{ github}}
+\item core-\/js \href{https://www.npmjs.com/package/core-js}{\texttt{ npm}} \texorpdfstring{$\vert$}{|} \href{https://github.com/zloirock/core-js}{\texttt{ github}}
+\end{DoxyItemize}\hypertarget{a00913_autotoc_md1223}{}\doxysubsection{\texorpdfstring{Tests}{Tests}}\label{a00913_autotoc_md1223}
+Simply clone the repo, {\ttfamily npm install}, and run {\ttfamily npm test} 

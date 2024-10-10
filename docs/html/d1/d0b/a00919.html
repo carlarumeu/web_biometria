@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Pure JS character encoding conversion &lt;a href=&quot;https://travis-ci.org/ashtuchkin/iconv-lite&quot; &gt;&lt;img src=&quot;https://travis-ci.org/ashtuchkin/iconv-lite.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/d0b/a00919.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Pure JS character encoding conversion &lt;a href="https://travis-ci.org/ashtuchkin/iconv-lite" &gt;&lt;img src="https://travis-ci.org/ashtuchkin/iconv-lite.svg?branch=master" alt="Build Status"/&gt;&lt;/a&gt;</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md1299"></a></p>
+<ul>
+<li>Doesn't need native code compilation. Works on Windows and in sandboxed environments like <a href="http://c9.io">Cloud9</a>.</li>
+<li>Used in popular projects like <a href="https://github.com/expressjs/body-parser">Express.js (body_parser)</a>, <a href="http://gruntjs.com/">Grunt</a>, <a href="http://www.nodemailer.com/">Nodemailer</a>, <a href="http://yeoman.io/">Yeoman</a> and others.</li>
+<li>Faster than <a href="https://github.com/bnoordhuis/node-iconv">node-iconv</a> (see below for performance comparison).</li>
+<li>Intuitive encode/decode API</li>
+<li>Streaming support for Node v0.10+</li>
+<li>[Deprecated] Can extend Node.js primitives (buffers, streams) to support all iconv-lite encodings.</li>
+<li>In-browser usage via <a href="https://github.com/substack/node-browserify">Browserify</a> (~180k gzip compressed with Buffer shim included).</li>
+<li>Typescript <a href="https://github.com/ashtuchkin/iconv-lite/blob/master/lib/index.d.ts">type definition file</a> included.</li>
+<li>React Native is supported (need to explicitly <code>npm install</code> two more modules: <code>buffer</code> and <code>stream</code>).</li>
+<li>License: MIT.</li>
+</ul>
+<p><a href="https://npmjs.org/packages/iconv-lite/"><img src="https://nodei.co/npm/iconv-lite.png?downloads=true&amp;downloadRank=true" alt="NPM Stats" class="inline"/></a></p>
+<h1><a class="anchor" id="autotoc_md1300"></a>
+Usage</h1>
+<h2><a class="anchor" id="autotoc_md1301"></a>
+Basic API</h2>
+<div class="fragment"><div class="line">var <a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a> = require(<span class="stringliteral">&#39;iconv-lite&#39;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Convert from an encoded buffer to js string.</span></div>
+<div class="line">str = <a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.decode(Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f]), <span class="stringliteral">&#39;win1251&#39;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Convert from js string to an encoded buffer.</span></div>
+<div class="line">buf = <a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.encode(<span class="stringliteral">&quot;Sample input string&quot;</span>, <span class="stringliteral">&#39;win1251&#39;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Check if encoding is supported</span></div>
+<div class="line"><a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.encodingExists(<span class="stringliteral">&quot;us-ascii&quot;</span>)</div>
+<div class="ttc" id="aa01234_a5c062989a80f49a2caf367fe212f6b52_html_a5c062989a80f49a2caf367fe212f6b52"><div class="ttname"><a href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a></div><div class="ttdeci">var iconv</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d1e/a01234_source.html#l00008">node_modules/iconv-lite/lib/index.js:8</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1302"></a>
+Streaming API (Node v0.10+)</h2>
+<div class="fragment"><div class="line"><span class="comment">// Decode stream (from binary stream to js strings)</span></div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>.createServer(<span class="keyword">function</span>(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>) {</div>
+<div class="line">    var converterStream = <a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.decodeStream(<span class="stringliteral">&#39;win1251&#39;</span>);</div>
+<div class="line">    <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.pipe(converterStream);</div>
+<div class="line"> </div>
+<div class="line">    converterStream.on(<span class="stringliteral">&#39;data&#39;</span>, <span class="keyword">function</span>(str) {</div>
+<div class="line">        console.log(str); <span class="comment">// Do something with decoded strings, chunk-by-chunk.</span></div>
+<div class="line">    });</div>
+<div class="line">});</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Convert encoding streaming example</span></div>
+<div class="line"><a class="code hl_variable" href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a>.createReadStream(<span class="stringliteral">&#39;file-in-win1251.txt&#39;</span>)</div>
+<div class="line">    .pipe(<a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.decodeStream(<span class="stringliteral">&#39;win1251&#39;</span>))</div>
+<div class="line">    .pipe(<a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.encodeStream(<span class="stringliteral">&#39;ucs2&#39;</span>))</div>
+<div class="line">    .pipe(<a class="code hl_variable" href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a>.createWriteStream(<span class="stringliteral">&#39;file-in-ucs2.txt&#39;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Sugar: all encode/decode streams have .collect(cb) method to accumulate data.</span></div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>.createServer(<span class="keyword">function</span>(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>) {</div>
+<div class="line">    <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.pipe(<a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.decodeStream(<span class="stringliteral">&#39;win1251&#39;</span>)).collect(<span class="keyword">function</span>(err, body) {</div>
+<div class="line">        <a class="code hl_variable" href="../../d8/df7/a01711_a5e95655c9188700b16a5488897cecb90.html#a5e95655c9188700b16a5488897cecb90">assert</a>(typeof body == <span class="stringliteral">&#39;string&#39;</span>);</div>
+<div class="line">        console.log(body); <span class="comment">// full request body string</span></div>
+<div class="line">    });</div>
+<div class="line">});</div>
+<div class="ttc" id="aa00101_a55f22d498ca401fddca364855629d1d3_html_a55f22d498ca401fddca364855629d1d3"><div class="ttname"><a href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a></div><div class="ttdeci">var http</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00023">application.js:23</a></div></div>
+<div class="ttc" id="aa00104_a42c43c76081a7df8ae2954f16ee9338b_html_a42c43c76081a7df8ae2954f16ee9338b"><div class="ttname"><a href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a></div><div class="ttdeci">var req</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00021">express.js:21</a></div></div>
+<div class="ttc" id="aa00104_abde3c35e3bb7e5225dd7f234c685329c_html_abde3c35e3bb7e5225dd7f234c685329c"><div class="ttname"><a href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a></div><div class="ttdeci">var res</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00022">express.js:22</a></div></div>
+<div class="ttc" id="aa00128_aebcdd70130f7e0b00b39cc981ab0bab0_html_aebcdd70130f7e0b00b39cc981ab0bab0"><div class="ttname"><a href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a></div><div class="ttdeci">var fs</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d88/a00128_source.html#l00018">view.js:18</a></div></div>
+<div class="ttc" id="aa01711_a5e95655c9188700b16a5488897cecb90_html_a5e95655c9188700b16a5488897cecb90"><div class="ttname"><a href="../../d8/df7/a01711_a5e95655c9188700b16a5488897cecb90.html#a5e95655c9188700b16a5488897cecb90">assert</a></div><div class="ttdeci">var assert</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df7/a01711_source.html#l00006">mime/src/test.js:6</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1303"></a>
+[Deprecated] Extend Node.js own encodings</h2>
+<blockquote class="doxtable">
+<p>&zwj;NOTE: This doesn't work on latest Node versions. See <a href="https://github.com/ashtuchkin/iconv-lite/wiki/Node-v4-compatibility">details</a>. </p>
+</blockquote>
+<div class="fragment"><div class="line"><span class="comment">// After this call all Node basic primitives will understand iconv-lite encodings.</span></div>
+<div class="line"><a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.extendNodeEncodings();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Examples:</span></div>
+<div class="line">buf = <span class="keyword">new</span> Buffer(str, <span class="stringliteral">&#39;win1251&#39;</span>);</div>
+<div class="line">buf.write(str, <span class="stringliteral">&#39;gbk&#39;</span>);</div>
+<div class="line">str = buf.toString(<span class="stringliteral">&#39;latin1&#39;</span>);</div>
+<div class="line"><a class="code hl_variable" href="../../d8/df7/a01711_a5e95655c9188700b16a5488897cecb90.html#a5e95655c9188700b16a5488897cecb90">assert</a>(Buffer.isEncoding(<span class="stringliteral">&#39;iso-8859-15&#39;</span>));</div>
+<div class="line">Buffer.byteLength(str, <span class="stringliteral">&#39;us-ascii&#39;</span>);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>.createServer(<span class="keyword">function</span>(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>) {</div>
+<div class="line">    <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.setEncoding(<span class="stringliteral">&#39;big5&#39;</span>);</div>
+<div class="line">    <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.collect(<span class="keyword">function</span>(err, body) {</div>
+<div class="line">        console.log(body);</div>
+<div class="line">    });</div>
+<div class="line">});</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_variable" href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a>.createReadStream(<span class="stringliteral">&quot;file.txt&quot;</span>, <span class="stringliteral">&quot;shift_jis&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// External modules are also supported (if they use Node primitives, which they probably do).</span></div>
+<div class="line"><a class="code hl_variable" href="../../d0/dc2/a00104_a8f93470e5b37ab44b3a4bf3e325f105c.html#a8f93470e5b37ab44b3a4bf3e325f105c">request</a> = require(<span class="stringliteral">&#39;request&#39;</span>);</div>
+<div class="line"><a class="code hl_variable" href="../../d0/dc2/a00104_a8f93470e5b37ab44b3a4bf3e325f105c.html#a8f93470e5b37ab44b3a4bf3e325f105c">request</a>({</div>
+<div class="line">    url: <span class="stringliteral">&quot;http://github.com/&quot;</span>, </div>
+<div class="line">    <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>: <span class="stringliteral">&quot;cp932&quot;</span></div>
+<div class="line">});</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// To remove extensions</span></div>
+<div class="line"><a class="code hl_variable" href="../../d6/d1e/a01234_a5c062989a80f49a2caf367fe212f6b52.html#a5c062989a80f49a2caf367fe212f6b52">iconv</a>.undoExtendNodeEncodings();</div>
+<div class="ttc" id="aa00104_a8f93470e5b37ab44b3a4bf3e325f105c_html_a8f93470e5b37ab44b3a4bf3e325f105c"><div class="ttname"><a href="../../d0/dc2/a00104_a8f93470e5b37ab44b3a4bf3e325f105c.html#a8f93470e5b37ab44b3a4bf3e325f105c">request</a></div><div class="ttdeci">exports request</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00064">express.js:64</a></div></div>
+<div class="ttc" id="aa01288_a9ad8213a7626ee07aef47950752cac18_html_a9ad8213a7626ee07aef47950752cac18"><div class="ttname"><a href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a></div><div class="ttdeci">Negotiator prototype encoding</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00047">node_modules/negotiator/index.js:47</a></div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1304"></a>
+Supported encodings</h1>
+<ul>
+<li>All node.js native encodings: utf8, ucs2 / utf16-le, ascii, binary, base64, hex.</li>
+<li>Additional unicode encodings: utf16, utf16-be, utf-7, utf-7-imap.</li>
+<li>All widespread singlebyte encodings: Windows 125x family, ISO-8859 family, IBM/DOS codepages, Macintosh family, KOI8 family, all others supported by iconv library. Aliases like 'latin1', 'us-ascii' also supported.</li>
+<li>All widespread multibyte encodings: CP932, CP936, CP949, CP950, GB2312, GBK, GB18030, Big5, Shift_JIS, EUC-JP.</li>
+</ul>
+<p>See <a href="https://github.com/ashtuchkin/iconv-lite/wiki/Supported-Encodings">all supported encodings on wiki</a>.</p>
+<p>Most singlebyte encodings are generated automatically from <a href="https://github.com/bnoordhuis/node-iconv">node-iconv</a>. Thank you Ben Noordhuis and libiconv authors!</p>
+<p>Multibyte encodings are generated from <a href="http://www.unicode.org/Public/MAPPINGS/">Unicode.org mappings</a> and <a href="http://encoding.spec.whatwg.org/">WHATWG Encoding Standard mappings</a>. Thank you, respective authors!</p>
+<h1><a class="anchor" id="autotoc_md1305"></a>
+Encoding/decoding speed</h1>
+<p>Comparison with node-iconv module (1000x256kb, on MacBook Pro, Core i5/2.6 GHz, Node v0.12.0). Note: your results may vary, so please always check on your hardware. </p><pre class="fragment">operation             iconv@2.1.4   iconv-lite@0.4.7
+----------------------------------------------------------
+encode('win1251')     ~96 Mb/s      ~320 Mb/s
+decode('win1251')     ~95 Mb/s      ~246 Mb/s
+</pre><h1><a class="anchor" id="autotoc_md1306"></a>
+BOM handling</h1>
+<ul>
+<li>Decoding: BOM is stripped by default, unless overridden by passing <code>stripBOM: false</code> in options (f.ex. <code>iconv.decode(buf, enc, {stripBOM: false})</code>). <a class="el" href="../../d3/d69/a00844.html" title="Constructs a 64 bit two&#39;s-complement integer, given its low and high 32 bit values as signed integers...">A</a> callback might also be given as a <code>stripBOM</code> parameter - it'll be called if BOM character was actually found.</li>
+<li>If you want to detect UTF-8 BOM when decoding other encodings, use <a href="https://github.com/danielgindi/node-autodetect-decoder-stream">node-autodetect-decoder-stream</a> module.</li>
+<li>Encoding: No BOM added, unless overridden by <code>addBOM: true</code> option.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1307"></a>
+UTF-16 Encodings</h1>
+<p>This library supports UTF-16LE, UTF-16BE and UTF-16 encodings. First two are straightforward, but UTF-16 is trying to be smart about endianness in the following ways:</p><ul>
+<li>Decoding: uses BOM and 'spaces heuristic' to determine input endianness. Default is UTF-16LE, but can be overridden with &lsquo;defaultEncoding: 'utf-16be&rsquo;<code>option. Strips BOM unless</code>stripBOM: false<code>.</code></li>
+<li><code>Encoding: uses UTF-16LE and writes BOM by default. Use</code>addBOM: false` to override.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1308"></a>
+Other notes</h1>
+<p>When decoding, be sure to supply a Buffer to <a class="el" href="../../d8/ddd/a00380_a9c63166a4293639c8d0ea4adf3ced281.html#a9c63166a4293639c8d0ea4adf3ced281">decode()</a> method, otherwise <a href="https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding">bad things usually happen</a>. <br  />
+ Untranslatable characters are set to � or ?. No transliteration is currently supported. <br  />
+ Node versions 0.10.31 and 0.11.13 are buggy, don't use them (see #65, #77). <br  />
+</p>
+<h1><a class="anchor" id="autotoc_md1309"></a>
+Testing</h1>
+<div class="fragment"><div class="line">$ git clone git@github.com:ashtuchkin/iconv-lite.git</div>
+<div class="line">$ cd iconv-lite</div>
+<div class="line">$ npm install</div>
+<div class="line">$ npm test</div>
+<div class="line">    </div>
+<div class="line">$ # To view performance:</div>
+<div class="line">$ node test/performance.js</div>
+<div class="line"> </div>
+<div class="line">$ # To view test coverage:</div>
+<div class="line">$ npm run coverage</div>
+<div class="line">$ open coverage/lcov-report/index.html</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

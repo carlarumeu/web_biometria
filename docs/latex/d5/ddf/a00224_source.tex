@@ -1,0 +1,101 @@
+\doxysubsection{auth\+\_\+41.\+js}
+\hypertarget{a00224_source}{}\label{a00224_source}\index{auth\_41.js@{auth\_41.js}}
+\mbox{\hyperlink{a00224}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00001}\mbox{\hyperlink{a00224_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00003}00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00004}00004\ \textcolor{comment}{4.1\ authentication:\ (http://bazaar.launchpad.net/\string~mysql/mysql-\/server/5.5/view/head:/sql/password.c)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00005}00005\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00006}00006\ \textcolor{comment}{\ \ SERVER:\ \ public\_seed=create\_random\_string()}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00007}00007\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ send(public\_seed)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00008}00008\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00009}00009\ \textcolor{comment}{\ \ CLIENT:\ \ recv(public\_seed)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00010}00010\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ hash\_stage1=sha1("{}password"{})}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00011}00011\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ hash\_stage2=sha1(hash\_stage1)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00012}00012\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ reply=xor(hash\_stage1,\ sha1(public\_seed,hash\_stage2)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00013}00013\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00014}00014\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ //\ this\ three\ steps\ are\ done\ in\ scramble()}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00015}00015\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00016}00016\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ send(reply)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00017}00017\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00018}00018\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00019}00019\ \textcolor{comment}{\ \ SERVER:\ \ recv(reply)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ hash\_stage1=xor(reply,\ sha1(public\_seed,hash\_stage2))}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ candidate\_hash2=sha1(hash\_stage1)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ check(candidate\_hash2==hash\_stage2)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00023}00023\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00024}00024\ \textcolor{comment}{server\ stores\ sha1(sha1(password))\ (\ hash\_stag2)}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00025}00025\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00027}\mbox{\hyperlink{a00224_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}{00027}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00224_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}{crypto}}\ =\ require(\textcolor{stringliteral}{'crypto'});}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00029}\mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{00029}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(msg,\ msg1,\ msg2)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00030}00030\ \ \ \textcolor{keyword}{const}\ hash\ =\ \mbox{\hyperlink{a00224_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}{crypto}}.createHash(\textcolor{stringliteral}{'sha1'});}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00031}00031\ \ \ hash.update(msg);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00032}00032\ \ \ \textcolor{keywordflow}{if}\ (msg1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00033}00033\ \ \ \ \ hash.update(msg1);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00034}00034\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00036}00036\ \ \ \textcolor{keywordflow}{if}\ (msg2)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00037}00037\ \ \ \ \ hash.update(msg2);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00038}00038\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00040}00040\ \ \ \textcolor{keywordflow}{return}\ hash.digest();}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00043}\mbox{\hyperlink{a00224_ab4c9e74aa938223b8bd98d9062da0894_ab4c9e74aa938223b8bd98d9062da0894}{00043}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}}(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00044}00044\ \ \ \textcolor{keyword}{const}\ result\ =\ Buffer.allocUnsafe(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.length);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00045}00045\ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00046}00046\ \ \ \ \ result[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]\ =\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]\ \string^\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}];}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00047}00047\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00048}00048\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00051}\mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{00051}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.xor\ =\ \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}};}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00053}\mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{00053}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}}(password,\ scramble1,\ scramble2)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}\ (!password)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ Buffer.alloc(0);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00056}00056\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00057}00057\ \ \ \textcolor{keyword}{const}\ stage1\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(password);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00058}00058\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.calculateTokenFromPasswordSha(stage1,\ scramble1,\ scramble2);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00061}\mbox{\hyperlink{a00224_a91dfee70a485f8a35ca640dddbf57be3_a91dfee70a485f8a35ca640dddbf57be3}{00061}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.calculateTokenFromPasswordSha\ =\ \textcolor{keyword}{function}(}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00062}00062\ \ \ passwordSha,}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00063}00063\ \ \ scramble1,}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00064}00064\ \ \ scramble2}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00065}00065\ )\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00066}00066\ \ \ \textcolor{comment}{//\ we\ use\ AUTH\ 41\ here,\ and\ we\ need\ only\ the\ bytes\ we\ just\ need.}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00067}00067\ \ \ \textcolor{keyword}{const}\ authPluginData1\ =\ scramble1.slice(0,\ 8);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00068}00068\ \ \ \textcolor{keyword}{const}\ authPluginData2\ =\ scramble2.slice(0,\ 12);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00069}00069\ \ \ \textcolor{keyword}{const}\ stage2\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(passwordSha);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00070}00070\ \ \ \textcolor{keyword}{const}\ stage3\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(authPluginData1,\ authPluginData2,\ stage2);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00071}00071\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}}(stage3,\ passwordSha);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00072}00072\ \};}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00074}\mbox{\hyperlink{a00224_ac38323bf6e41a5c5392155777f060a99_ac38323bf6e41a5c5392155777f060a99}{00074}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.calculateToken\ =\ \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}};}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00076}\mbox{\hyperlink{a00224_a4c6ef892a32b4a57a78bb5d85de49a27_a4c6ef892a32b4a57a78bb5d85de49a27}{00076}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.verifyToken\ =\ \textcolor{keyword}{function}(publicSeed1,\ publicSeed2,\ \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}},\ doubleSha)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00077}00077\ \ \ \textcolor{keyword}{const}\ hashStage1\ =\ \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}}(\mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}},\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(publicSeed1,\ publicSeed2,\ doubleSha));}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00078}00078\ \ \ \textcolor{keyword}{const}\ candidateHash2\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(hashStage1);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00079}00079\ \ \ \textcolor{keywordflow}{return}\ candidateHash2.compare(doubleSha)\ ===\ 0;}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00080}00080\ \};}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00082}\mbox{\hyperlink{a00224_ac4f0821c77281ffbf4aeafae8c4f6e6d_ac4f0821c77281ffbf4aeafae8c4f6e6d}{00082}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.doubleSha1\ =\ \textcolor{keyword}{function}(password)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00083}00083\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(\mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(password));}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00084}00084\ \};}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00086}\mbox{\hyperlink{a00224_aaca10214b2da004f26c366e55bcea3e3_aaca10214b2da004f26c366e55bcea3e3}{00086}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xorRotating}}(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}},\ seed)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00087}00087\ \ \ \textcolor{keyword}{const}\ result\ =\ Buffer.allocUnsafe(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.length);}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00088}00088\ \ \ \textcolor{keyword}{const}\ seedLen\ =\ seed.length;}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{a00224_source_l00090}00090\ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00091}00091\ \ \ \ \ result[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]\ =\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]\ \string^\ seed[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ \%\ seedLen];}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00092}00092\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00093}00093\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{a00224_source_l00095}\mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{00095}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.xorRotating\ =\ \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xorRotating}};}
+
+\end{DoxyCode}

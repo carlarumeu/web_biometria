@@ -1,0 +1,164 @@
+\doxysubsection{Referencia del archivo medicion\+Service.\+js}
+\label{a00110}\index{medicionService.js@{medicionService.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ import} \textbf{ pool} from config db \textbf{ js}
+\item 
+export const \textbf{ obtener\+Mediciones}
+\begin{DoxyCompactList}\small\item\em @function obtener\+Mediciones @async \end{DoxyCompactList}\item 
+export const \textbf{ enviar\+Medicion}
+\begin{DoxyCompactList}\small\item\em @function enviar\+Medicion @async \end{DoxyCompactList}\item 
+export const \textbf{ obtener\+Ultima\+Medicion}
+\begin{DoxyCompactList}\small\item\em @function obtener\+Ultima\+Medicion @async \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\index{medicionService.js@{medicionService.js}!enviarMedicion@{enviarMedicion}}
+\index{enviarMedicion@{enviarMedicion}!medicionService.js@{medicionService.js}}
+\doxyparagraph{enviarMedicion}
+{\footnotesize\ttfamily \label{a00110_af1e046d467b6f02e2699fc8e3ba539aa_af1e046d467b6f02e2699fc8e3ba539aa} 
+export const enviar\+Medicion}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ async\ (medicion)\ =>\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ query\ =\ \textcolor{stringliteral}{'INSERT\ INTO\ mediciones\ (medida,\ lugar,\ tipo\_gas,\ hora)\ VALUES\ (?,\ ?,\ ?,\ ?)'};}
+\DoxyCodeLine{\ \ await\ pool.query(query,\ [medida,\ lugar,\ tipo\_gas,\ hora]);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@function enviar\+Medicion @async 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Object\}} & medicion -\/ Objeto que contiene los datos de la medición a insertar. \\
+\hline
+{\em \{number\}} & medicion.\+medida -\/ Valor de la medición. \\
+\hline
+{\em \{string\}} & medicion.\+lugar -\/ Lugar de la medición. \\
+\hline
+{\em \{string\}} & medicion.\+tipo\+\_\+gas -\/ Tipo de gas de la medición. \\
+\hline
+{\em \{string\}} & medicion.\+hora -\/ Hora en la que se realizó la medición. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Promise$<$void$>$\} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Error\}} & Si ocurre un error durante la inserción en la base de datos. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \textbf{ 61} del archivo \textbf{ medicion\+Service.\+js}.
+
+\index{medicionService.js@{medicionService.js}!js@{js}}
+\index{js@{js}!medicionService.js@{medicionService.js}}
+\doxyparagraph{js}
+{\footnotesize\ttfamily \label{a00110_aa10fb6863dca783341cf3ea63763a6fa_aa10fb6863dca783341cf3ea63763a6fa} 
+\textbf{ import} \textbf{ pool} from config db js}
+
+
+
+Definición en la línea \textbf{ 1} del archivo \textbf{ medicion\+Service.\+js}.
+
+\index{medicionService.js@{medicionService.js}!obtenerMediciones@{obtenerMediciones}}
+\index{obtenerMediciones@{obtenerMediciones}!medicionService.js@{medicionService.js}}
+\doxyparagraph{obtenerMediciones}
+{\footnotesize\ttfamily \label{a00110_a5584509a73694d908bebf97464c0c255_a5584509a73694d908bebf97464c0c255} 
+export const obtener\+Mediciones}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ async\ (lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora)\ =>\ \{}
+\DoxyCodeLine{\ \ let\ query\ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ WHERE\ 1=1'};}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ params\ =\ [];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (lugar)\ \{}
+\DoxyCodeLine{\ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ lugar\ =\ ?'};}
+\DoxyCodeLine{\ \ \ \ params.push(lugar);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (tipo\_gas)\ \{}
+\DoxyCodeLine{\ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ tipo\_gas\ =\ ?'};}
+\DoxyCodeLine{\ \ \ \ params.push(tipo\_gas);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (desde\_hora)\ \{}
+\DoxyCodeLine{\ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ >=\ ?'};}
+\DoxyCodeLine{\ \ \ \ params.push(desde\_hora);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (hasta\_hora)\ \{}
+\DoxyCodeLine{\ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ <=\ ?'};}
+\DoxyCodeLine{\ \ \ \ params.push(hasta\_hora);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ [rows]\ =\ await\ pool.query(query,\ params);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ rows;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@function obtener\+Mediciones @async 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & [lugar] -\/ Lugar de la medición. \\
+\hline
+{\em \{string\}} & [tipo\+\_\+gas] -\/ Tipo de gas de la medición. \\
+\hline
+{\em \{string\}} & [desde\+\_\+hora] -\/ Hora de inicio para el filtro de mediciones. \\
+\hline
+{\em \{string\}} & [hasta\+\_\+hora] -\/ Hora de fin para el filtro de mediciones. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Promise$<$\+Array$<$\+Object$>$$>$\} Lista de mediciones que cumplen con los filtros especificados. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Error\}} & Si ocurre un error durante la consulta a la base de datos. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \textbf{ 19} del archivo \textbf{ medicion\+Service.\+js}.
+
+\index{medicionService.js@{medicionService.js}!obtenerUltimaMedicion@{obtenerUltimaMedicion}}
+\index{obtenerUltimaMedicion@{obtenerUltimaMedicion}!medicionService.js@{medicionService.js}}
+\doxyparagraph{obtenerUltimaMedicion}
+{\footnotesize\ttfamily \label{a00110_a9e697b665d6ba0ad8418337fe2a2d91a_a9e697b665d6ba0ad8418337fe2a2d91a} 
+export const obtener\+Ultima\+Medicion}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ async\ ()\ =>\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ [rows]\ =\ await\ pool.query(\textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ ORDER\ BY\ hora\ DESC\ LIMIT\ 1'});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ rows[0];}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@function obtener\+Ultima\+Medicion @async 
+
+\begin{DoxyReturn}{Devuelve}
+\{Promise$<$Object$\vert$null$>$\} La última medición registrada, o null si no hay mediciones. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Error\}} & Si ocurre un error durante la consulta a la base de datos. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \textbf{ 75} del archivo \textbf{ medicion\+Service.\+js}.
+

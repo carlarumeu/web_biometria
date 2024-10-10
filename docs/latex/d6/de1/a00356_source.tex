@@ -1,0 +1,22 @@
+\doxysubsection{prepared\+\_\+statement\+\_\+header.\+js}
+\hypertarget{a00356_source}{}\label{a00356_source}\index{prepared\_statement\_header.js@{prepared\_statement\_header.js}}
+\mbox{\hyperlink{a00356}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00001}\mbox{\hyperlink{a00356_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00356_source_l00003}\mbox{\hyperlink{a00784}{00003}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00784}{PreparedStatementHeader}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00004}\mbox{\hyperlink{a00784_a2a2cc961fb8c39d66bc3ed2e83bd8af1_a2a2cc961fb8c39d66bc3ed2e83bd8af1}{00004}}\ \ \ \mbox{\hyperlink{a00784_a2a2cc961fb8c39d66bc3ed2e83bd8af1_a2a2cc961fb8c39d66bc3ed2e83bd8af1}{constructor}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00005}00005\ \ \ \ \ packet.skip(1);\ \textcolor{comment}{//\ should\ be\ 0}}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00006}00006\ \ \ \ \ this.\textcolor{keywordtype}{id}\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00007}00007\ \ \ \ \ this.fieldCount\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00008}00008\ \ \ \ \ this.parameterCount\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00009}00009\ \ \ \ \ packet.skip(1);\ \textcolor{comment}{//\ should\ be\ 0}}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00010}00010\ \ \ \ \ this.warningCount\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00011}00011\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{a00356_source_l00014}00014\ \textcolor{comment}{//\ TODO:\ toPacket}}
+\DoxyCodeLine{\Hypertarget{a00356_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a00356_source_l00016}\mbox{\hyperlink{a00356_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00016}}\ module.exports\ =\ \mbox{\hyperlink{a01276_a2f48af2eff1e2d13b17d55c349eb08be_a2f48af2eff1e2d13b17d55c349eb08be}{PreparedStatementHeader}};}
+
+\end{DoxyCode}

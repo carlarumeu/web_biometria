@@ -1,0 +1,51 @@
+\doxysubsection{medicion\+Service.\+js}
+\hypertarget{a00638_source}{}\label{a00638_source}\index{medicionService.js@{medicionService.js}}
+\mbox{\hyperlink{a00638}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00001}\mbox{\hyperlink{a00638_aa10fb6863dca783341cf3ea63763a6fa_aa10fb6863dca783341cf3ea63763a6fa}{00001}}\ \textcolor{keyword}{import}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}\ from\ \textcolor{stringliteral}{'../config/db.js'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00018}00018\ \textcolor{comment}{//\ Obtener\ mediciones\ con\ filtros\ opcionales}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00019}\mbox{\hyperlink{a00638_a5584509a73694d908bebf97464c0c255_a5584509a73694d908bebf97464c0c255}{00019}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00638_a5584509a73694d908bebf97464c0c255_a5584509a73694d908bebf97464c0c255}{obtenerMediciones}}\ =\ async\ (lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00020}00020\ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ WHERE\ 1=1'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00021}00021\ \ \ \textcolor{keyword}{const}\ params\ =\ [];}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00023}00023\ \ \ \textcolor{keywordflow}{if}\ (lugar)\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ lugar\ =\ ?'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00025}00025\ \ \ \ \ params.push(lugar);}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00026}00026\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00028}00028\ \ \ \textcolor{keywordflow}{if}\ (tipo\_gas)\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ tipo\_gas\ =\ ?'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00030}00030\ \ \ \ \ params.push(tipo\_gas);}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00031}00031\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00033}00033\ \ \ \textcolor{keywordflow}{if}\ (desde\_hora)\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ >=\ ?'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00035}00035\ \ \ \ \ params.push(desde\_hora);}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00036}00036\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00038}00038\ \ \ \textcolor{keywordflow}{if}\ (hasta\_hora)\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ <=\ ?'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00040}00040\ \ \ \ \ params.push(hasta\_hora);}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00041}00041\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00043}00043\ \ \ \textcolor{keyword}{const}\ [rows]\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}.query(\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}},\ params);}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00044}00044\ \ \ \textcolor{keywordflow}{return}\ rows;}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00060}00060\ \textcolor{comment}{//\ Crear\ nueva\ medición}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00061}\mbox{\hyperlink{a00638_af1e046d467b6f02e2699fc8e3ba539aa_af1e046d467b6f02e2699fc8e3ba539aa}{00061}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00638_af1e046d467b6f02e2699fc8e3ba539aa_af1e046d467b6f02e2699fc8e3ba539aa}{enviarMedicion}}\ =\ async\ (medicion)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00062}00062\ \ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00063}00063\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ \textcolor{stringliteral}{'INSERT\ INTO\ mediciones\ (medida,\ lugar,\ tipo\_gas,\ hora)\ VALUES\ (?,\ ?,\ ?,\ ?)'};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00064}00064\ \ \ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}.query(\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}},\ [medida,\ lugar,\ tipo\_gas,\ hora]);}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00065}00065\ \};}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a00638_source_l00074}00074\ \textcolor{comment}{//\ Obtener\ la\ última\ medición}}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00075}\mbox{\hyperlink{a00638_a9e697b665d6ba0ad8418337fe2a2d91a_a9e697b665d6ba0ad8418337fe2a2d91a}{00075}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00638_a9e697b665d6ba0ad8418337fe2a2d91a_a9e697b665d6ba0ad8418337fe2a2d91a}{obtenerUltimaMedicion}}\ =\ async\ ()\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00076}00076\ \ \ \textcolor{keyword}{const}\ [rows]\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}.query(\textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ ORDER\ BY\ hora\ DESC\ LIMIT\ 1'});}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00077}00077\ \ \ \textcolor{keywordflow}{return}\ rows[0];}
+\DoxyCodeLine{\Hypertarget{a00638_source_l00078}00078\ \};}
+
+\end{DoxyCode}

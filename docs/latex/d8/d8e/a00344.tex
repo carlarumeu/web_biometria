@@ -1,0 +1,124 @@
+\doxysubsection{Referencia del archivo column\+\_\+definition.\+js}
+\hypertarget{a00344}{}\label{a00344}\index{column\_definition.js@{column\_definition.js}}
+\doxysubsubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a00752}{Column\+Definition}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00344_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00344_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{Packet}} = require(\textquotesingle{}../packets/packet\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00344_a02b2449d0572f8f88045e482fdb246c5_a02b2449d0572f8f88045e482fdb246c5}{String\+Parser}} = require(\textquotesingle{}../parsers/string\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00344_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{Charset\+To\+Encoding}} = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{charset\+\_\+encodings.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00344_a7dfceba4d8646e1fc3116bc603b378bd_a7dfceba4d8646e1fc3116bc603b378bd}{fields}} = \mbox{[}\textquotesingle{}catalog\textquotesingle{}, \textquotesingle{}schema\textquotesingle{}, \textquotesingle{}table\textquotesingle{}, \textquotesingle{}org\+Table\textquotesingle{}, \textquotesingle{}name\textquotesingle{}, \textquotesingle{}org\+Name\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00344_adc81dd0a9700b73c24cb240876d48545_adc81dd0a9700b73c24cb240876d48545}{add\+String}}
+\item 
+module \mbox{\hyperlink{a00344_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} = \mbox{\hyperlink{a00752}{Column\+Definition}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00344_adc81dd0a9700b73c24cb240876d48545_adc81dd0a9700b73c24cb240876d48545}\index{column\_definition.js@{column\_definition.js}!addString@{addString}}
+\index{addString@{addString}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{addString}{addString}}
+{\footnotesize\ttfamily \label{a00344_adc81dd0a9700b73c24cb240876d48545_adc81dd0a9700b73c24cb240876d48545} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} add\+String}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(name)\ \{}
+\DoxyCodeLine{\ \ Object.defineProperty(\mbox{\hyperlink{a00752}{ColumnDefinition}}.prototype,\ name,\ \{}
+\DoxyCodeLine{\ \ \ \ get:\ function()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ const\ start\ =\ this[\`{}\_\$\{name\}Start\`{}];}
+\DoxyCodeLine{\ \ \ \ \ \ const\ end\ =\ start\ +\ this[\`{}\_\$\{name\}Length\`{}];}
+\DoxyCodeLine{\ \ \ \ \ \ const\ val\ =\ StringParser.decode(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.\_buf,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.encoding\ ===\ \textcolor{stringliteral}{'binary'}\ ?\ this.\_clientEncoding\ :\ this.encoding,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ end}
+\DoxyCodeLine{\ \ \ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ Object.defineProperty(this,\ name,\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ value:\ val,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ writable:\ false,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ configurable:\ false,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ enumerable:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ return\ val;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00260}{260}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00344_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}\index{column\_definition.js@{column\_definition.js}!CharsetToEncoding@{CharsetToEncoding}}
+\index{CharsetToEncoding@{CharsetToEncoding}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{CharsetToEncoding}{CharsetToEncoding}}
+{\footnotesize\ttfamily \label{a00344_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Charset\+To\+Encoding = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{charset\+\_\+encodings.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00005}{5}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00344_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{column\_definition.js@{column\_definition.js}!exports@{exports}}
+\index{exports@{exports}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00344_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports = \mbox{\hyperlink{a00752}{Column\+Definition}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00290}{290}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00344_a7dfceba4d8646e1fc3116bc603b378bd_a7dfceba4d8646e1fc3116bc603b378bd}\index{column\_definition.js@{column\_definition.js}!fields@{fields}}
+\index{fields@{fields}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{fields}{fields}}
+{\footnotesize\ttfamily \label{a00344_a7dfceba4d8646e1fc3116bc603b378bd_a7dfceba4d8646e1fc3116bc603b378bd} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} fields = \mbox{[}\textquotesingle{}catalog\textquotesingle{}, \textquotesingle{}schema\textquotesingle{}, \textquotesingle{}table\textquotesingle{}, \textquotesingle{}org\+Table\textquotesingle{}, \textquotesingle{}name\textquotesingle{}, \textquotesingle{}org\+Name\textquotesingle{}\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00007}{7}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00344_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}\index{column\_definition.js@{column\_definition.js}!Packet@{Packet}}
+\index{Packet@{Packet}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{Packet}{Packet}}
+{\footnotesize\ttfamily \label{a00344_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Packet = require(\textquotesingle{}../packets/packet\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00003}{3}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00344_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{column\_definition.js@{column\_definition.js}!strict@{strict}}
+\index{strict@{strict}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00344_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00001}{1}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00344_a02b2449d0572f8f88045e482fdb246c5_a02b2449d0572f8f88045e482fdb246c5}\index{column\_definition.js@{column\_definition.js}!StringParser@{StringParser}}
+\index{StringParser@{StringParser}!column\_definition.js@{column\_definition.js}}
+\doxyparagraph{\texorpdfstring{StringParser}{StringParser}}
+{\footnotesize\ttfamily \label{a00344_a02b2449d0572f8f88045e482fdb246c5_a02b2449d0572f8f88045e482fdb246c5} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} String\+Parser = require(\textquotesingle{}../parsers/string\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00004}{4}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+

@@ -1,0 +1,150 @@
+\doxysection{Pure JS character encoding conversion \texorpdfstring{$<$}{<}a href="{}https\+://travis-\/ci.\+org/ashtuchkin/iconv-\/lite"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://travis-\/ci.\+org/ashtuchkin/iconv-\/lite.\+svg?branch=master"{} alt="{}\+Build Status"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}}
+\hypertarget{a00919}{}\label{a00919}\index{Pure JS character encoding conversion $<$a href="{}https://travis-\/ci.org/ashtuchkin/iconv-\/lite"{} $>$$<$img src="{}https://travis-\/ci.org/ashtuchkin/iconv-\/lite.svg?branch=master"{} alt="{}Build Status"{}/$>$$<$/a$>$@{Pure JS character encoding conversion $<$a href=""https://travis-\/ci.org/ashtuchkin/iconv-\/lite"" $>$$<$img src=""https://travis-\/ci.org/ashtuchkin/iconv-\/lite.svg?branch=master"" alt=""Build Status""/$>$$<$/a$>$}}
+\label{a00919_autotoc_md1299}%
+\Hypertarget{a00919_autotoc_md1299}%
+
+
+
+\begin{DoxyItemize}
+\item Doesn\textquotesingle{}t need native code compilation. Works on Windows and in sandboxed environments like \href{http://c9.io}{\texttt{ Cloud9}}.
+\item Used in popular projects like \href{https://github.com/expressjs/body-parser}{\texttt{ Express.\+js (body\+\_\+parser)}}, \href{http://gruntjs.com/}{\texttt{ Grunt}}, \href{http://www.nodemailer.com/}{\texttt{ Nodemailer}}, \href{http://yeoman.io/}{\texttt{ Yeoman}} and others.
+\item Faster than \href{https://github.com/bnoordhuis/node-iconv}{\texttt{ node-\/iconv}} (see below for performance comparison).
+\item Intuitive encode/decode API
+\item Streaming support for Node v0.\+10+
+\item \mbox{[}Deprecated\mbox{]} Can extend Node.\+js primitives (buffers, streams) to support all iconv-\/lite encodings.
+\item In-\/browser usage via \href{https://github.com/substack/node-browserify}{\texttt{ Browserify}} (\texorpdfstring{$\sim$}{\string~}180k gzip compressed with Buffer shim included).
+\item Typescript \href{https://github.com/ashtuchkin/iconv-lite/blob/master/lib/index.d.ts}{\texttt{ type definition file}} included.
+\item React Native is supported (need to explicitly {\ttfamily npm install} two more modules\+: {\ttfamily buffer} and {\ttfamily stream}).
+\item License\+: MIT.
+\end{DoxyItemize}
+
+\href{https://npmjs.org/packages/iconv-lite/}{\texttt{ }}\hypertarget{a00919_autotoc_md1300}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00919_autotoc_md1300}
+\hypertarget{a00919_autotoc_md1301}{}\doxysubsubsection{\texorpdfstring{Basic API}{Basic API}}\label{a00919_autotoc_md1301}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}\ =\ require(\textcolor{stringliteral}{'iconv-\/lite'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Convert\ from\ an\ encoded\ buffer\ to\ js\ string.}}
+\DoxyCodeLine{str\ =\ \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decode(Buffer.from([0x68,\ 0x65,\ 0x6c,\ 0x6c,\ 0x6f]),\ \textcolor{stringliteral}{'win1251'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Convert\ from\ js\ string\ to\ an\ encoded\ buffer.}}
+\DoxyCodeLine{buf\ =\ \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encode(\textcolor{stringliteral}{"{}Sample\ input\ string"{}},\ \textcolor{stringliteral}{'win1251'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Check\ if\ encoding\ is\ supported}}
+\DoxyCodeLine{\mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodingExists(\textcolor{stringliteral}{"{}us-\/ascii"{}})}
+
+\end{DoxyCode}
+\hypertarget{a00919_autotoc_md1302}{}\doxysubsubsection{\texorpdfstring{Streaming API (Node v0.\+10+)}{Streaming API (Node v0.\+10+)}}\label{a00919_autotoc_md1302}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Decode\ stream\ (from\ binary\ stream\ to\ js\ strings)}}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.createServer(\textcolor{keyword}{function}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \ \ var\ converterStream\ =\ \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decodeStream(\textcolor{stringliteral}{'win1251'});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.pipe(converterStream);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ converterStream.on(\textcolor{stringliteral}{'data'},\ \textcolor{keyword}{function}(str)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ console.log(str);\ \textcolor{comment}{//\ Do\ something\ with\ decoded\ strings,\ chunk-\/by-\/chunk.}}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Convert\ encoding\ streaming\ example}}
+\DoxyCodeLine{\mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}.createReadStream(\textcolor{stringliteral}{'file-\/in-\/win1251.txt'})}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decodeStream(\textcolor{stringliteral}{'win1251'}))}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodeStream(\textcolor{stringliteral}{'ucs2'}))}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}.createWriteStream(\textcolor{stringliteral}{'file-\/in-\/ucs2.txt'}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Sugar:\ all\ encode/decode\ streams\ have\ .collect(cb)\ method\ to\ accumulate\ data.}}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.createServer(\textcolor{keyword}{function}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.pipe(\mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decodeStream(\textcolor{stringliteral}{'win1251'})).collect(\textcolor{keyword}{function}(err,\ body)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}(typeof\ body\ ==\ \textcolor{stringliteral}{'string'});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ console.log(body);\ \textcolor{comment}{//\ full\ request\ body\ string}}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+\hypertarget{a00919_autotoc_md1303}{}\doxysubsubsection{\texorpdfstring{\mbox{[}Deprecated\mbox{]} Extend Node.\+js own encodings}{\mbox{[}Deprecated\mbox{]} Extend Node.\+js own encodings}}\label{a00919_autotoc_md1303}
+\begin{quote}
+NOTE\+: This doesn\textquotesingle{}t work on latest Node versions. See \href{https://github.com/ashtuchkin/iconv-lite/wiki/Node-v4-compatibility}{\texttt{ details}}. \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ After\ this\ call\ all\ Node\ basic\ primitives\ will\ understand\ iconv-\/lite\ encodings.}}
+\DoxyCodeLine{\mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.extendNodeEncodings();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Examples:}}
+\DoxyCodeLine{buf\ =\ \textcolor{keyword}{new}\ Buffer(str,\ \textcolor{stringliteral}{'win1251'});}
+\DoxyCodeLine{buf.write(str,\ \textcolor{stringliteral}{'gbk'});}
+\DoxyCodeLine{str\ =\ buf.toString(\textcolor{stringliteral}{'latin1'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}(Buffer.isEncoding(\textcolor{stringliteral}{'iso-\/8859-\/15'}));}
+\DoxyCodeLine{Buffer.byteLength(str,\ \textcolor{stringliteral}{'us-\/ascii'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.createServer(\textcolor{keyword}{function}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.setEncoding(\textcolor{stringliteral}{'big5'});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.collect(\textcolor{keyword}{function}(err,\ body)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ console.log(body);}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}.createReadStream(\textcolor{stringliteral}{"{}file.txt"{}},\ \textcolor{stringliteral}{"{}shift\_jis"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ External\ modules\ are\ also\ supported\ (if\ they\ use\ Node\ primitives,\ which\ they\ probably\ do).}}
+\DoxyCodeLine{\mbox{\hyperlink{a00104_a8f93470e5b37ab44b3a4bf3e325f105c_a8f93470e5b37ab44b3a4bf3e325f105c}{request}}\ =\ require(\textcolor{stringliteral}{'request'});}
+\DoxyCodeLine{\mbox{\hyperlink{a00104_a8f93470e5b37ab44b3a4bf3e325f105c_a8f93470e5b37ab44b3a4bf3e325f105c}{request}}(\{}
+\DoxyCodeLine{\ \ \ \ url:\ \textcolor{stringliteral}{"{}http://github.com/"{}},\ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}:\ \textcolor{stringliteral}{"{}cp932"{}}}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ To\ remove\ extensions}}
+\DoxyCodeLine{\mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.undoExtendNodeEncodings();}
+
+\end{DoxyCode}
+\hypertarget{a00919_autotoc_md1304}{}\doxysubsection{\texorpdfstring{Supported encodings}{Supported encodings}}\label{a00919_autotoc_md1304}
+
+\begin{DoxyItemize}
+\item All node.\+js native encodings\+: utf8, ucs2 / utf16-\/le, ascii, binary, base64, hex.
+\item Additional unicode encodings\+: utf16, utf16-\/be, utf-\/7, utf-\/7-\/imap.
+\item All widespread singlebyte encodings\+: Windows 125x family, ISO-\/8859 family, IBM/\+DOS codepages, Macintosh family, KOI8 family, all others supported by iconv library. Aliases like \textquotesingle{}latin1\textquotesingle{}, \textquotesingle{}us-\/ascii\textquotesingle{} also supported.
+\item All widespread multibyte encodings\+: CP932, CP936, CP949, CP950, GB2312, GBK, GB18030, Big5, Shift\+\_\+\+JIS, EUC-\/\+JP.
+\end{DoxyItemize}
+
+See \href{https://github.com/ashtuchkin/iconv-lite/wiki/Supported-Encodings}{\texttt{ all supported encodings on wiki}}.
+
+Most singlebyte encodings are generated automatically from \href{https://github.com/bnoordhuis/node-iconv}{\texttt{ node-\/iconv}}. Thank you Ben Noordhuis and libiconv authors!
+
+Multibyte encodings are generated from \href{http://www.unicode.org/Public/MAPPINGS/}{\texttt{ Unicode.\+org mappings}} and \href{http://encoding.spec.whatwg.org/}{\texttt{ WHATWG Encoding Standard mappings}}. Thank you, respective authors!\hypertarget{a00919_autotoc_md1305}{}\doxysubsection{\texorpdfstring{Encoding/decoding speed}{Encoding/decoding speed}}\label{a00919_autotoc_md1305}
+Comparison with node-\/iconv module (1000x256kb, on Mac\+Book Pro, Core i5/2.\+6 GHz, Node v0.\+12.\+0). Note\+: your results may vary, so please always check on your hardware. \begin{DoxyVerb}operation             iconv@2.1.4   iconv-lite@0.4.7
+----------------------------------------------------------
+encode('win1251')     ~96 Mb/s      ~320 Mb/s
+decode('win1251')     ~95 Mb/s      ~246 Mb/s
+\end{DoxyVerb}
+\hypertarget{a00919_autotoc_md1306}{}\doxysubsection{\texorpdfstring{BOM handling}{BOM handling}}\label{a00919_autotoc_md1306}
+
+\begin{DoxyItemize}
+\item Decoding\+: BOM is stripped by default, unless overridden by passing {\ttfamily strip\+BOM\+: false} in options (f.\+ex. {\ttfamily iconv.\+decode(buf, enc, \{strip\+BOM\+: false\})}). \doxylink{a00844}{A} callback might also be given as a {\ttfamily strip\+BOM} parameter -\/ it\textquotesingle{}ll be called if BOM character was actually found.
+\item If you want to detect UTF-\/8 BOM when decoding other encodings, use \href{https://github.com/danielgindi/node-autodetect-decoder-stream}{\texttt{ node-\/autodetect-\/decoder-\/stream}} module.
+\item Encoding\+: No BOM added, unless overridden by {\ttfamily add\+BOM\+: true} option.
+\end{DoxyItemize}\hypertarget{a00919_autotoc_md1307}{}\doxysubsection{\texorpdfstring{UTF-\/16 Encodings}{UTF-\/16 Encodings}}\label{a00919_autotoc_md1307}
+This library supports UTF-\/16\+LE, UTF-\/16\+BE and UTF-\/16 encodings. First two are straightforward, but UTF-\/16 is trying to be smart about endianness in the following ways\+:
+\begin{DoxyItemize}
+\item Decoding\+: uses BOM and \textquotesingle{}spaces heuristic\textquotesingle{} to determine input endianness. Default is UTF-\/16\+LE, but can be overridden with `default\+Encoding\+: \textquotesingle{}utf-\/16be'{\ttfamily option. Strips BOM unless}strip\+BOM\+: false{\ttfamily .}
+\item {\ttfamily Encoding\+: uses UTF-\/16\+LE and writes BOM by default. Use}add\+BOM\+: false\`{} to override.
+\end{DoxyItemize}\hypertarget{a00919_autotoc_md1308}{}\doxysubsection{\texorpdfstring{Other notes}{Other notes}}\label{a00919_autotoc_md1308}
+When decoding, be sure to supply a Buffer to \doxylink{a00380_a9c63166a4293639c8d0ea4adf3ced281_a9c63166a4293639c8d0ea4adf3ced281}{decode()} method, otherwise \href{https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding}{\texttt{ bad things usually happen}}. ~\newline
+ Untranslatable characters are set to {\ucr} or ?. No transliteration is currently supported. ~\newline
+ Node versions 0.\+10.\+31 and 0.\+11.\+13 are buggy, don\textquotesingle{}t use them (see \#65, \#77). ~\newline
+\hypertarget{a00919_autotoc_md1309}{}\doxysubsection{\texorpdfstring{Testing}{Testing}}\label{a00919_autotoc_md1309}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ clone\ git@github.com:ashtuchkin/iconv-\/lite.git}
+\DoxyCodeLine{\$\ cd\ iconv-\/lite}
+\DoxyCodeLine{\$\ npm\ install}
+\DoxyCodeLine{\$\ npm\ test}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\$\ \#\ To\ view\ performance:}
+\DoxyCodeLine{\$\ node\ test/performance.js}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$\ \#\ To\ view\ test\ coverage:}
+\DoxyCodeLine{\$\ npm\ run\ coverage}
+\DoxyCodeLine{\$\ open\ coverage/lcov-\/report/index.html}
+
+\end{DoxyCode}
+ 

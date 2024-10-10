@@ -1,0 +1,168 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/cookie/index.js}
+\hypertarget{a01126}{}\label{a01126}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a01126_ae779ddf60efd4722b06bb94820ffc8c1_ae779ddf60efd4722b06bb94820ffc8c1}{parse}} (str, options)
+\begin{DoxyCompactList}\small\item\em Parse a cookie header. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01126_ab7ad679d82280f5c3699588c452d0375_ab7ad679d82280f5c3699588c452d0375}{serialize}} (name, val, options)
+\begin{DoxyCompactList}\small\item\em Serialize data into a cookie header. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01126_a008079d2255f2a95df4d17453e41529c_a008079d2255f2a95df4d17453e41529c}{decode}} (str)
+\begin{DoxyCompactList}\small\item\em URL-\/decode string value. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01126_a1d9a4a8f50d075dad7ae49dddd23c093_a1d9a4a8f50d075dad7ae49dddd23c093}{encode}} (val)
+\begin{DoxyCompactList}\small\item\em URL-\/encode value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01126_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\begin{DoxyCompactList}\small\item\em cookie Copyright(c) 2012-\/2014 Roman Shtylman Copyright(c) 2015 Douglas Christopher Wilson MIT Licensed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01126_a848e938c7291ecd44cc36955b9cbe951_a848e938c7291ecd44cc36955b9cbe951}{parse}} = parse
+\begin{DoxyCompactList}\small\item\em Module exports. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01126_a72453e6e469378a513d2fd26e1f55365_a72453e6e469378a513d2fd26e1f55365}{serialize}} = serialize
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01126_a008079d2255f2a95df4d17453e41529c_a008079d2255f2a95df4d17453e41529c}\index{index.js@{index.js}!decode@{decode}}
+\index{decode@{decode}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily \label{a01126_a008079d2255f2a95df4d17453e41529c_a008079d2255f2a95df4d17453e41529c} 
+function decode (\begin{DoxyParamCaption}\item[{}]{str}{}\end{DoxyParamCaption})}
+
+
+
+URL-\/decode string value. 
+
+Optimized to skip native call when no \%.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & str \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{string\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00231}{231}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+
+\Hypertarget{a01126_a1d9a4a8f50d075dad7ae49dddd23c093_a1d9a4a8f50d075dad7ae49dddd23c093}\index{index.js@{index.js}!encode@{encode}}
+\index{encode@{encode}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily \label{a01126_a1d9a4a8f50d075dad7ae49dddd23c093_a1d9a4a8f50d075dad7ae49dddd23c093} 
+function encode (\begin{DoxyParamCaption}\item[{}]{val}{}\end{DoxyParamCaption})}
+
+
+
+URL-\/encode value. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & val \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{string\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00244}{244}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+
+\Hypertarget{a01126_ae779ddf60efd4722b06bb94820ffc8c1_ae779ddf60efd4722b06bb94820ffc8c1}\index{index.js@{index.js}!parse@{parse}}
+\index{parse@{parse}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{a01126_ae779ddf60efd4722b06bb94820ffc8c1_ae779ddf60efd4722b06bb94820ffc8c1} 
+function parse (\begin{DoxyParamCaption}\item[{}]{str}{, }\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Parse a cookie header. 
+
+Parse the given cookie header string into an object The object has the various cookies as \doxylink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys(names)} =\texorpdfstring{$>$}{>} values
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & str \\
+\hline
+{\em \{object\}} & \mbox{[}options\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{object\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00047}{47}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+
+\Hypertarget{a01126_ab7ad679d82280f5c3699588c452d0375_ab7ad679d82280f5c3699588c452d0375}\index{index.js@{index.js}!serialize@{serialize}}
+\index{serialize@{serialize}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{a01126_ab7ad679d82280f5c3699588c452d0375_ab7ad679d82280f5c3699588c452d0375} 
+function serialize (\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{val}{, }\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Serialize data into a cookie header. 
+
+Serialize the a name value pair into a cookie string suitable for http headers. An optional options object specified cookie parameters.
+
+serialize(\textquotesingle{}foo\textquotesingle{}, \textquotesingle{}bar\textquotesingle{}, \{ http\+Only\+: true \}) =\texorpdfstring{$>$}{>} "{}foo=bar; http\+Only"{}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & name \\
+\hline
+{\em \{string\}} & val \\
+\hline
+{\em \{object\}} & \mbox{[}options\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{string\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00111}{111}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01126_a848e938c7291ecd44cc36955b9cbe951_a848e938c7291ecd44cc36955b9cbe951}\index{index.js@{index.js}!parse@{parse}}
+\index{parse@{parse}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{parse}{parse}}
+{\footnotesize\ttfamily \label{a01126_a848e938c7291ecd44cc36955b9cbe951_a848e938c7291ecd44cc36955b9cbe951} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} parse = parse}
+
+
+
+Module exports. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00015}{15}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+
+\Hypertarget{a01126_a72453e6e469378a513d2fd26e1f55365_a72453e6e469378a513d2fd26e1f55365}\index{index.js@{index.js}!serialize@{serialize}}
+\index{serialize@{serialize}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{serialize}{serialize}}
+{\footnotesize\ttfamily \label{a01126_a72453e6e469378a513d2fd26e1f55365_a72453e6e469378a513d2fd26e1f55365} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} serialize = serialize}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00016}{16}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+
+\Hypertarget{a01126_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{index.js@{index.js}!strict@{strict}}
+\index{strict@{strict}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01126_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+cookie Copyright(c) 2012-\/2014 Roman Shtylman Copyright(c) 2015 Douglas Christopher Wilson MIT Licensed 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01126_source_l00008}{8}} del archivo \mbox{\hyperlink{a01126_source}{node\+\_\+modules/cookie/index.\+js}}.
+

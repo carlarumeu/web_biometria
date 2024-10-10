@@ -1,0 +1,31 @@
+\doxysubsection{node\+\_\+modules/cookie-\/signature/index.js}
+\hypertarget{a01123_source}{}\label{a01123_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01123}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01123_source_l00005}\mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{00005}}\ var\ \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}}\ =\ require(\textcolor{stringliteral}{'crypto'});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a01123_source_l00016}\mbox{\hyperlink{a01123_a2ae74b621986bd2d222135508d36cd2c_a2ae74b621986bd2d222135508d36cd2c}{00016}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.sign\ =\ \textcolor{keyword}{function}(val,\ secret)\{}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00017}00017\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ val)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Cookie\ value\ must\ be\ provided\ as\ a\ string."{}});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00018}00018\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ secret)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Secret\ string\ must\ be\ provided."{}});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00019}00019\ \ \ \textcolor{keywordflow}{return}\ val\ +\ \textcolor{charliteral}{'.'}\ +\ \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}}}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00020}00020\ \ \ \ \ .createHmac(\textcolor{stringliteral}{'sha256'},\ secret)}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00021}00021\ \ \ \ \ .update(val)}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00022}00022\ \ \ \ \ .digest(\textcolor{stringliteral}{'base64'})}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00023}00023\ \ \ \ \ .replace(/\(\backslash\)=+\$/,\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00024}00024\ \};}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a01123_source_l00036}\mbox{\hyperlink{a01123_aee17cec6e9bceed014212c9893094d11_aee17cec6e9bceed014212c9893094d11}{00036}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.unsign\ =\ \textcolor{keyword}{function}(val,\ secret)\{}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00037}00037\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ val)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Signed\ cookie\ string\ must\ be\ provided."{}});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00038}00038\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ secret)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Secret\ string\ must\ be\ provided."{}});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00039}00039\ \ \ var\ str\ =\ val.slice(0,\ val.lastIndexOf(\textcolor{charliteral}{'.'}))}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00040}00040\ \ \ \ \ ,\ mac\ =\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.sign(str,\ secret);}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00041}00041\ \ \ }
+\DoxyCodeLine{\Hypertarget{a01123_source_l00042}00042\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{sha1}}(mac)\ ==\ \mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{sha1}}(val)\ ?\ str\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00043}00043\ \};}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a01123_source_l00049}\mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{00049}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{sha1}}(str)\{}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00050}00050\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}}.createHash(\textcolor{stringliteral}{'sha1'}).update(str).digest(\textcolor{stringliteral}{'hex'});}
+\DoxyCodeLine{\Hypertarget{a01123_source_l00051}00051\ \}}
+
+\end{DoxyCode}

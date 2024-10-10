@@ -1,0 +1,313 @@
+\doxysubsection{Referencia del archivo promise.\+js}
+\hypertarget{a00407}{}\label{a00407}\index{promise.js@{promise.js}}
+\doxysubsubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a00824}{Promise\+Prepared\+Statement\+Info}}
+\item 
+class \mbox{\hyperlink{a00828}{Promise\+Connection}}
+\item 
+class \mbox{\hyperlink{a00832}{Promise\+Pool\+Connection}}
+\item 
+class \mbox{\hyperlink{a00836}{Promise\+Pool}}
+\item 
+class \mbox{\hyperlink{a00840}{Promise\+Pool\+Cluster}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00407_a3d3c38c1f3fc853af89fbf827a43228c_a3d3c38c1f3fc853af89fbf827a43228c}{make\+Done\+Cb}} (\mbox{\hyperlink{a00101_a2001ea102ec496ebdabe15e68493427a_a2001ea102ec496ebdabe15e68493427a}{resolve}}, reject, local\+Err)
+\item 
+function \mbox{\hyperlink{a00407_a2d870c35957328629b63deaa2f647e5c_a2d870c35957328629b63deaa2f647e5c}{inherit\+Events}} (source, target, events)
+\item 
+function \mbox{\hyperlink{a00407_a54368b30c876444d53c251d4e3531ed2_a54368b30c876444d53c251d4e3531ed2}{create\+Connection}} (opts)
+\item 
+function \mbox{\hyperlink{a00407_a4ee8ae76769800c7226cffdebb3e1512_a4ee8ae76769800c7226cffdebb3e1512}{create\+Pool}} (opts)
+\item 
+function \mbox{\hyperlink{a00407_a2f078754e8e5853242218f440e73f93f_a2f078754e8e5853242218f440e73f93f}{create\+Pool\+Cluster}} (opts)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00407_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00407_ab17c2141d98ff28d51d1d48adb3d278b_ab17c2141d98ff28d51d1d48adb3d278b}{core}} = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{index.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00407_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e}{Event\+Emitter}} = require(\textquotesingle{}events\textquotesingle{}).Event\+Emitter
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00407_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2}{parser\+Cache}} = require(\textquotesingle{}./lib/parsers/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{parser\+\_\+cache.\+js}}\textquotesingle{})
+\item 
+function \mbox{\hyperlink{a00407_a0fc2918d6fc96bad758f613feec549f4_a0fc2918d6fc96bad758f613feec549f4}{functions\+To\+Wrap}}
+\begin{DoxyCompactList}\small\item\em proxy pool\+Cluster synchronous functions \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a43459cd49ce84cce6cf15a560e5d1e2c_a43459cd49ce84cce6cf15a560e5d1e2c}{create\+Connection}} = create\+Connection
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_aeab3853c80fad52654c5ec9c3c49940e_aeab3853c80fad52654c5ec9c3c49940e}{create\+Pool}} = create\+Pool
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a5b38faf6568f074526ddbbd8efc947bf_a5b38faf6568f074526ddbbd8efc947bf}{create\+Pool\+Cluster}} = create\+Pool\+Cluster
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}} = core.\+escape
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a2bc45c52ec0a6a585708d9bea92911da_a2bc45c52ec0a6a585708d9bea92911da}{escape\+Id}} = core.\+escape\+Id
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a72ba037462d6dd8555cf700b0337e7ef_a72ba037462d6dd8555cf700b0337e7ef}{format}} = core.\+format
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a6fddf0a674d03300188e5ba3195c9a00_a6fddf0a674d03300188e5ba3195c9a00}{raw}} = core.\+raw
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a04436e27879b1e18acd3233f79f44278_a04436e27879b1e18acd3233f79f44278}{Promise\+Pool}} = Promise\+Pool
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a68b4c3aead0c5acae17d3f30e1dad465_a68b4c3aead0c5acae17d3f30e1dad465}{Promise\+Connection}} = Promise\+Connection
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a0f5e39cde839f30d2d750910a9025a96_a0f5e39cde839f30d2d750910a9025a96}{Promise\+Pool\+Connection}} = Promise\+Pool\+Connection
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a716496feca2fcf4495e29fa6fa08783e_a716496feca2fcf4495e29fa6fa08783e}{set\+Max\+Parser\+Cache}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00407_a2bfe37889feafaf45bf4445bc1fe8e09_a2bfe37889feafaf45bf4445bc1fe8e09}{clear\+Parser\+Cache}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00407_a54368b30c876444d53c251d4e3531ed2_a54368b30c876444d53c251d4e3531ed2}\index{promise.js@{promise.js}!createConnection@{createConnection}}
+\index{createConnection@{createConnection}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{createConnection()}{createConnection()}}
+{\footnotesize\ttfamily \label{a00407_a54368b30c876444d53c251d4e3531ed2_a54368b30c876444d53c251d4e3531ed2} 
+function create\+Connection (\begin{DoxyParamCaption}\item[{}]{opts}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00251}{251}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a4ee8ae76769800c7226cffdebb3e1512_a4ee8ae76769800c7226cffdebb3e1512}\index{promise.js@{promise.js}!createPool@{createPool}}
+\index{createPool@{createPool}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{createPool()}{createPool()}}
+{\footnotesize\ttfamily \label{a00407_a4ee8ae76769800c7226cffdebb3e1512_a4ee8ae76769800c7226cffdebb3e1512} 
+function create\+Pool (\begin{DoxyParamCaption}\item[{}]{opts}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00410}{410}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a2f078754e8e5853242218f440e73f93f_a2f078754e8e5853242218f440e73f93f}\index{promise.js@{promise.js}!createPoolCluster@{createPoolCluster}}
+\index{createPoolCluster@{createPoolCluster}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{createPoolCluster()}{createPoolCluster()}}
+{\footnotesize\ttfamily \label{a00407_a2f078754e8e5853242218f440e73f93f_a2f078754e8e5853242218f440e73f93f} 
+function create\+Pool\+Cluster (\begin{DoxyParamCaption}\item[{}]{opts}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00544}{544}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a2d870c35957328629b63deaa2f647e5c_a2d870c35957328629b63deaa2f647e5c}\index{promise.js@{promise.js}!inheritEvents@{inheritEvents}}
+\index{inheritEvents@{inheritEvents}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{inheritEvents()}{inheritEvents()}}
+{\footnotesize\ttfamily \label{a00407_a2d870c35957328629b63deaa2f647e5c_a2d870c35957328629b63deaa2f647e5c} 
+function inherit\+Events (\begin{DoxyParamCaption}\item[{}]{source}{, }\item[{}]{target}{, }\item[{}]{events}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00023}{23}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 0
+\Hypertarget{a00407_a3d3c38c1f3fc853af89fbf827a43228c_a3d3c38c1f3fc853af89fbf827a43228c}\index{promise.js@{promise.js}!makeDoneCb@{makeDoneCb}}
+\index{makeDoneCb@{makeDoneCb}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{makeDoneCb()}{makeDoneCb()}}
+{\footnotesize\ttfamily \label{a00407_a3d3c38c1f3fc853af89fbf827a43228c_a3d3c38c1f3fc853af89fbf827a43228c} 
+function make\+Done\+Cb (\begin{DoxyParamCaption}\item[{}]{resolve}{, }\item[{}]{reject}{, }\item[{}]{local\+Err}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00007}{7}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00407_a2bfe37889feafaf45bf4445bc1fe8e09_a2bfe37889feafaf45bf4445bc1fe8e09}\index{promise.js@{promise.js}!clearParserCache@{clearParserCache}}
+\index{clearParserCache@{clearParserCache}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{clearParserCache}{clearParserCache}}
+{\footnotesize\ttfamily \label{a00407_a2bfe37889feafaf45bf4445bc1fe8e09_a2bfe37889feafaf45bf4445bc1fe8e09} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} clear\+Parser\+Cache}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00407_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2}{parserCache}}.clearCache();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00582}{582}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_ab17c2141d98ff28d51d1d48adb3d278b_ab17c2141d98ff28d51d1d48adb3d278b}\index{promise.js@{promise.js}!core@{core}}
+\index{core@{core}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{core}{core}}
+{\footnotesize\ttfamily \label{a00407_ab17c2141d98ff28d51d1d48adb3d278b_ab17c2141d98ff28d51d1d48adb3d278b} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} core = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{index.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00003}{3}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a43459cd49ce84cce6cf15a560e5d1e2c_a43459cd49ce84cce6cf15a560e5d1e2c}\index{promise.js@{promise.js}!createConnection@{createConnection}}
+\index{createConnection@{createConnection}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{createConnection}{createConnection}}
+{\footnotesize\ttfamily \label{a00407_a43459cd49ce84cce6cf15a560e5d1e2c_a43459cd49ce84cce6cf15a560e5d1e2c} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} create\+Connection = create\+Connection}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00557}{557}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_aeab3853c80fad52654c5ec9c3c49940e_aeab3853c80fad52654c5ec9c3c49940e}\index{promise.js@{promise.js}!createPool@{createPool}}
+\index{createPool@{createPool}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{createPool}{createPool}}
+{\footnotesize\ttfamily \label{a00407_aeab3853c80fad52654c5ec9c3c49940e_aeab3853c80fad52654c5ec9c3c49940e} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} create\+Pool = create\+Pool}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00558}{558}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a5b38faf6568f074526ddbbd8efc947bf_a5b38faf6568f074526ddbbd8efc947bf}\index{promise.js@{promise.js}!createPoolCluster@{createPoolCluster}}
+\index{createPoolCluster@{createPoolCluster}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{createPoolCluster}{createPoolCluster}}
+{\footnotesize\ttfamily \label{a00407_a5b38faf6568f074526ddbbd8efc947bf_a5b38faf6568f074526ddbbd8efc947bf} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} create\+Pool\+Cluster = create\+Pool\+Cluster}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00559}{559}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}\index{promise.js@{promise.js}!escape@{escape}}
+\index{escape@{escape}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{escape}{escape}}
+{\footnotesize\ttfamily \label{a00407_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} escape = core.\+escape}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00560}{560}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a2bc45c52ec0a6a585708d9bea92911da_a2bc45c52ec0a6a585708d9bea92911da}\index{promise.js@{promise.js}!escapeId@{escapeId}}
+\index{escapeId@{escapeId}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{escapeId}{escapeId}}
+{\footnotesize\ttfamily \label{a00407_a2bc45c52ec0a6a585708d9bea92911da_a2bc45c52ec0a6a585708d9bea92911da} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} escape\+Id = core.\+escape\+Id}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00561}{561}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e}\index{promise.js@{promise.js}!EventEmitter@{EventEmitter}}
+\index{EventEmitter@{EventEmitter}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{EventEmitter}{EventEmitter}}
+{\footnotesize\ttfamily \label{a00407_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Event\+Emitter = require(\textquotesingle{}events\textquotesingle{}).Event\+Emitter}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00004}{4}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a72ba037462d6dd8555cf700b0337e7ef_a72ba037462d6dd8555cf700b0337e7ef}\index{promise.js@{promise.js}!format@{format}}
+\index{format@{format}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \label{a00407_a72ba037462d6dd8555cf700b0337e7ef_a72ba037462d6dd8555cf700b0337e7ef} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} format = core.\+format}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00562}{562}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a0fc2918d6fc96bad758f613feec549f4_a0fc2918d6fc96bad758f613feec549f4}\index{promise.js@{promise.js}!functionsToWrap@{functionsToWrap}}
+\index{functionsToWrap@{functionsToWrap}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{functionsToWrap}{functionsToWrap}}
+{\footnotesize\ttfamily \label{a00407_a0fc2918d6fc96bad758f613feec549f4_a0fc2918d6fc96bad758f613feec549f4} 
+function functions\+To\+Wrap}
+
+
+
+proxy pool\+Cluster synchronous functions 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00284}{284}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2}\index{promise.js@{promise.js}!parserCache@{parserCache}}
+\index{parserCache@{parserCache}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{parserCache}{parserCache}}
+{\footnotesize\ttfamily \label{a00407_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} parser\+Cache = require(\textquotesingle{}./lib/parsers/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{parser\+\_\+cache.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00005}{5}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a68b4c3aead0c5acae17d3f30e1dad465_a68b4c3aead0c5acae17d3f30e1dad465}\index{promise.js@{promise.js}!PromiseConnection@{PromiseConnection}}
+\index{PromiseConnection@{PromiseConnection}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{PromiseConnection}{PromiseConnection}}
+{\footnotesize\ttfamily \label{a00407_a68b4c3aead0c5acae17d3f30e1dad465_a68b4c3aead0c5acae17d3f30e1dad465} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} Promise\+Connection = Promise\+Connection}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00565}{565}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a04436e27879b1e18acd3233f79f44278_a04436e27879b1e18acd3233f79f44278}\index{promise.js@{promise.js}!PromisePool@{PromisePool}}
+\index{PromisePool@{PromisePool}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{PromisePool}{PromisePool}}
+{\footnotesize\ttfamily \label{a00407_a04436e27879b1e18acd3233f79f44278_a04436e27879b1e18acd3233f79f44278} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} Promise\+Pool = Promise\+Pool}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00564}{564}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a0f5e39cde839f30d2d750910a9025a96_a0f5e39cde839f30d2d750910a9025a96}\index{promise.js@{promise.js}!PromisePoolConnection@{PromisePoolConnection}}
+\index{PromisePoolConnection@{PromisePoolConnection}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{PromisePoolConnection}{PromisePoolConnection}}
+{\footnotesize\ttfamily \label{a00407_a0f5e39cde839f30d2d750910a9025a96_a0f5e39cde839f30d2d750910a9025a96} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} Promise\+Pool\+Connection = Promise\+Pool\+Connection}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00566}{566}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a6fddf0a674d03300188e5ba3195c9a00_a6fddf0a674d03300188e5ba3195c9a00}\index{promise.js@{promise.js}!raw@{raw}}
+\index{raw@{raw}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{raw}{raw}}
+{\footnotesize\ttfamily \label{a00407_a6fddf0a674d03300188e5ba3195c9a00_a6fddf0a674d03300188e5ba3195c9a00} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} raw = core.\+raw}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00563}{563}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_a716496feca2fcf4495e29fa6fa08783e_a716496feca2fcf4495e29fa6fa08783e}\index{promise.js@{promise.js}!setMaxParserCache@{setMaxParserCache}}
+\index{setMaxParserCache@{setMaxParserCache}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{setMaxParserCache}{setMaxParserCache}}
+{\footnotesize\ttfamily \label{a00407_a716496feca2fcf4495e29fa6fa08783e_a716496feca2fcf4495e29fa6fa08783e} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} set\+Max\+Parser\+Cache}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00407_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2}{parserCache}}.setMaxCache(\mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00578}{578}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+
+\Hypertarget{a00407_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{promise.js@{promise.js}!strict@{strict}}
+\index{strict@{strict}!promise.js@{promise.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00407_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00407_source_l00001}{1}} del archivo \mbox{\hyperlink{a00407_source}{promise.\+js}}.
+

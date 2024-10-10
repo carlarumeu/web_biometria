@@ -1,0 +1,28 @@
+\doxysubsection{Referencia del archivo error\+Handler.\+js}
+\hypertarget{a00629}{}\label{a00629}\index{errorHandler.js@{errorHandler.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00629_ab3eb192b8b9ba491d1c0fe849810e1a5_ab3eb192b8b9ba491d1c0fe849810e1a5}{error\+Handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00629_ab3eb192b8b9ba491d1c0fe849810e1a5_ab3eb192b8b9ba491d1c0fe849810e1a5}\index{errorHandler.js@{errorHandler.js}!errorHandler@{errorHandler}}
+\index{errorHandler@{errorHandler}!errorHandler.js@{errorHandler.js}}
+\doxyparagraph{\texorpdfstring{errorHandler}{errorHandler}}
+{\footnotesize\ttfamily \label{a00629_ab3eb192b8b9ba491d1c0fe849810e1a5_ab3eb192b8b9ba491d1c0fe849810e1a5} 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} error\+Handler}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ (err,\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ next)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ console.error(err.stack);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(500).json(\{\ message:\ \textcolor{stringliteral}{'Internal\ Server\ Error'}\ \});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00629_source_l00002}{2}} del archivo \mbox{\hyperlink{a00629_source}{error\+Handler.\+js}}.
+

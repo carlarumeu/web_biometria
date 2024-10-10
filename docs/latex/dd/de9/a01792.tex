@@ -1,0 +1,83 @@
+\doxysubsection{Referencia del archivo commands/binlog\+\_\+dump.js}
+\hypertarget{a01792}{}\label{a01792}\index{binlog\_dump.js@{binlog\_dump.js}}
+\doxysubsubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a00648}{Binlog\+Event\+Header}}
+\item 
+class \mbox{\hyperlink{a00652}{Binlog\+Dump}}
+\item 
+class \mbox{\hyperlink{a00656}{Rotate\+Event}}
+\item 
+class \mbox{\hyperlink{a00660}{Format\+Description\+Event}}
+\item 
+class \mbox{\hyperlink{a00664}{Query\+Event}}
+\item 
+class \mbox{\hyperlink{a00668}{Xid\+Event}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01792_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a01792_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{Command}} = require(\textquotesingle{}./command\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a01792_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}} = require(\textquotesingle{}../packets\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{event\+Parsers}} = \mbox{[}$\,$\mbox{]}
+\item 
+module \mbox{\hyperlink{a01792_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} = \mbox{\hyperlink{a00652}{Binlog\+Dump}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01792_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}\index{binlog\_dump.js@{binlog\_dump.js}!Command@{Command}}
+\index{Command@{Command}!binlog\_dump.js@{binlog\_dump.js}}
+\doxyparagraph{\texorpdfstring{Command}{Command}}
+{\footnotesize\ttfamily \label{a01792_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Command = require(\textquotesingle{}./command\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01792_source_l00003}{3}} del archivo \mbox{\hyperlink{a01792_source}{commands/binlog\+\_\+dump.\+js}}.
+
+\Hypertarget{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}\index{binlog\_dump.js@{binlog\_dump.js}!eventParsers@{eventParsers}}
+\index{eventParsers@{eventParsers}!binlog\_dump.js@{binlog\_dump.js}}
+\doxyparagraph{\texorpdfstring{eventParsers}{eventParsers}}
+{\footnotesize\ttfamily \label{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34} 
+event\+Parsers\mbox{[}16\mbox{]} = \mbox{[}$\,$\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01792_source_l00006}{6}} del archivo \mbox{\hyperlink{a01792_source}{commands/binlog\+\_\+dump.\+js}}.
+
+\Hypertarget{a01792_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{binlog\_dump.js@{binlog\_dump.js}!exports@{exports}}
+\index{exports@{exports}!binlog\_dump.js@{binlog\_dump.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01792_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports = \mbox{\hyperlink{a00652}{Binlog\+Dump}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01792_source_l00109}{109}} del archivo \mbox{\hyperlink{a01792_source}{commands/binlog\+\_\+dump.\+js}}.
+
+\Hypertarget{a01792_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}\index{binlog\_dump.js@{binlog\_dump.js}!Packets@{Packets}}
+\index{Packets@{Packets}!binlog\_dump.js@{binlog\_dump.js}}
+\doxyparagraph{\texorpdfstring{Packets}{Packets}}
+{\footnotesize\ttfamily \label{a01792_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Packets = require(\textquotesingle{}../packets\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01792_source_l00004}{4}} del archivo \mbox{\hyperlink{a01792_source}{commands/binlog\+\_\+dump.\+js}}.
+
+\Hypertarget{a01792_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{binlog\_dump.js@{binlog\_dump.js}!strict@{strict}}
+\index{strict@{strict}!binlog\_dump.js@{binlog\_dump.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01792_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01792_source_l00001}{1}} del archivo \mbox{\hyperlink{a01792_source}{commands/binlog\+\_\+dump.\+js}}.
+

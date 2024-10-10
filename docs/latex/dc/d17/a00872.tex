@@ -1,0 +1,229 @@
+\doxysection{debug}
+\hypertarget{a00872}{}\label{a00872}\index{debug@{debug}}
+\label{a00872_autotoc_md378}%
+\Hypertarget{a00872_autotoc_md378}%
+
+
+\href{https://travis-ci.org/visionmedia/debug}{\texttt{ }} \href{https://coveralls.io/github/visionmedia/debug?branch=master}{\texttt{ }} \href{https://visionmedia-community-slackin.now.sh/}{\texttt{ }} !\mbox{[}Open\+Collective\mbox{]}(https\+://opencollective.com/debug/backers/badge.svg) !\mbox{[}Open\+Collective\mbox{]}(https\+://opencollective.com/debug/sponsors/badge.svg)
+
+\doxylink{a00844}{A} tiny node.\+js debugging utility modelled after node core\textquotesingle{}s debugging technique.
+
+{\bfseries{Discussion around the V3 API is under way \href{https://github.com/visionmedia/debug/issues/370}{\texttt{ here}}}}\hypertarget{a00872_autotoc_md379}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00872_autotoc_md379}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ debug}
+
+\end{DoxyCode}
+\hypertarget{a00872_autotoc_md380}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00872_autotoc_md380}
+{\ttfamily debug} exposes a function; simply pass this function the name of your module, and it will return a decorated version of {\ttfamily console.\+error} for you to pass debug statements to. This will allow you to toggle the debug output for different parts of your module as well as the module as a whole.
+
+Example {\itshape app.\+js}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\ =\ require(\textcolor{stringliteral}{'debug'})(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{\ \ ,\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{\ \ ,\ name\ =\ \textcolor{stringliteral}{'My\ App'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ fake\ app}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'booting\ \%s'},\ name);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.createServer(\textcolor{keyword}{function}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.method\ +\ \textcolor{charliteral}{'\ '}\ +\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.url);}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(\textcolor{stringliteral}{'hello\(\backslash\)n'});}
+\DoxyCodeLine{\}).\mbox{\hyperlink{a00101_a57e630eaf5f2d94b72288e1cef6edc49_a57e630eaf5f2d94b72288e1cef6edc49}{listen}}(3000,\ \textcolor{keyword}{function}()\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'listening'});}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ fake\ worker\ of\ some\ kind}}
+\DoxyCodeLine{}
+\DoxyCodeLine{require(\textcolor{stringliteral}{'./worker'});}
+
+\end{DoxyCode}
+
+
+Example {\itshape worker.\+js}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\ =\ require(\textcolor{stringliteral}{'debug'})(\textcolor{stringliteral}{'worker'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{setInterval(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'doing\ some\ work'});}
+\DoxyCodeLine{\},\ 1000);}
+
+\end{DoxyCode}
+
+
+The {\bfseries{DEBUG}} environment variable is then used to enable these based on space or comma-\/delimited names. Here are some examples\+:
+
+
+
+\hypertarget{a00872_autotoc_md381}{}\doxysubsubsubsection{\texorpdfstring{Windows note}{Windows note}}\label{a00872_autotoc_md381}
+On Windows the environment variable is set using the {\ttfamily set} command.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{set\ DEBUG=*,-\/not\_this}
+
+\end{DoxyCode}
+
+
+Note that Power\+Shell uses different syntax to set environment variables.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$env:DEBUG\ =\ "{}*,-\/not\_this"{}}
+
+\end{DoxyCode}
+
+
+Then, run the program to be debugged as usual.\hypertarget{a00872_autotoc_md382}{}\doxysubsection{\texorpdfstring{Millisecond diff}{Millisecond diff}}\label{a00872_autotoc_md382}
+When actively developing an application it can be useful to see when the time spent between one {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}} call and the next. Suppose for example you invoke {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}} before requesting a resource, and after as well, the "{}+\+NNNms"{} will show you how much time was spent between calls.
+
+
+
+When stdout is not a TTY, {\ttfamily Date\#to\+UTCString()} is used, making it more useful for logging the debug information as shown below\+:
+
+\hypertarget{a00872_autotoc_md383}{}\doxysubsection{\texorpdfstring{Conventions}{Conventions}}\label{a00872_autotoc_md383}
+If you\textquotesingle{}re using this in one or more of your libraries, you {\itshape should} use the name of your library so that developers may toggle debugging as desired without guessing names. If you have more than one debuggers you {\itshape should} prefix them with your library name and use "{}\+:"{} to separate features. For example "{}body\+Parser"{} from Connect would then be "{}connect\+:body\+Parser"{}.\hypertarget{a00872_autotoc_md384}{}\doxysubsection{\texorpdfstring{Wildcards}{Wildcards}}\label{a00872_autotoc_md384}
+The {\ttfamily \texorpdfstring{$\ast$}{*}} character may be used as a wildcard. Suppose for example your library has debuggers named "{}connect\+:body\+Parser"{}, "{}connect\+:compress"{}, "{}connect\+:session"{}, instead of listing all three with {\ttfamily DEBUG=connect\+:body\+Parser,connect\+:compress,connect\+:session}, you may simply do {\ttfamily DEBUG=connect\+:\texorpdfstring{$\ast$}{*}}, or to run everything using this module simply use {\ttfamily DEBUG=\texorpdfstring{$\ast$}{*}}.
+
+You can also exclude specific debuggers by prefixing them with a "{}-\/"{} character. For example, {\ttfamily DEBUG=\texorpdfstring{$\ast$}{*},-\/connect\+:\texorpdfstring{$\ast$}{*}} would include all debuggers except those starting with "{}connect\+:"{}.\hypertarget{a00872_autotoc_md385}{}\doxysubsection{\texorpdfstring{Environment Variables}{Environment Variables}}\label{a00872_autotoc_md385}
+When running through Node.\+js, you can set a few environment variables that will change the behavior of the debug logging\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Purpose    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Purpose    }\\\cline{1-2}
+\endhead
+{\ttfamily DEBUG}   &Enables/disables specific debugging namespaces.    \\\cline{1-2}
+{\ttfamily DEBUG\+\_\+\+COLORS}   &Whether or not to use colors in the debug output.    \\\cline{1-2}
+{\ttfamily DEBUG\+\_\+\+DEPTH}   &Object inspection depth.    \\\cline{1-2}
+{\ttfamily DEBUG\+\_\+\+SHOW\+\_\+\+HIDDEN}   &Shows hidden properties on inspected objects.   \\\cline{1-2}
+\end{longtabu}
+
+
+{\bfseries{Note\+:}} The environment variables beginning with {\ttfamily DEBUG\+\_\+} end up being converted into an Options object that gets used with {\ttfamily o}/{\ttfamily O} formatters. See the Node.\+js documentation for \href{https://nodejs.org/api/util.html\#util_util_inspect_object_options}{\texttt{ {\ttfamily util.\+inspect()}}} for the complete list.\hypertarget{a00872_autotoc_md386}{}\doxysubsection{\texorpdfstring{Formatters}{Formatters}}\label{a00872_autotoc_md386}
+Debug uses \href{https://wikipedia.org/wiki/Printf_format_string}{\texttt{ printf-\/style}} formatting. Below are the officially supported formatters\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Formatter   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Representation    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Formatter   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Representation    }\\\cline{1-2}
+\endhead
+{\ttfamily O}   &Pretty-\/print an Object on multiple lines.    \\\cline{1-2}
+{\ttfamily o}   &Pretty-\/print an Object all on a single line.    \\\cline{1-2}
+{\ttfamily s}   &String.    \\\cline{1-2}
+{\ttfamily d}   &Number (both integer and float).    \\\cline{1-2}
+{\ttfamily j}   &JSON. Replaced with the string \textquotesingle{}\mbox{[}Circular\mbox{]}\textquotesingle{} if the argument contains circular references.    \\\cline{1-2}
+{\ttfamily \%\%}   &Single percent sign (\textquotesingle{}\textquotesingle{}). This does not consume an argument.   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{a00872_autotoc_md387}{}\doxysubsubsection{\texorpdfstring{Custom formatters}{Custom formatters}}\label{a00872_autotoc_md387}
+You can add custom formatters by extending the {\ttfamily debug.\+formatters} object. For example, if you wanted to add support for rendering a Buffer as hex with {\ttfamily h}, you could do something like\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00062_a09a3f614b4bd6474a64bf881359575f8_a09a3f614b4bd6474a64bf881359575f8}{createDebug}}\ =\ require(\textcolor{stringliteral}{'debug'})}
+\DoxyCodeLine{\mbox{\hyperlink{a00062_a09a3f614b4bd6474a64bf881359575f8_a09a3f614b4bd6474a64bf881359575f8}{createDebug}}.\mbox{\hyperlink{a00062_a8b728f13fab33c62e04926e9947a6545_a8b728f13fab33c62e04926e9947a6545}{formatters}}.\mbox{\hyperlink{a01264_a79fe0eb780a2a4b5543b4dddf8b6188a_a79fe0eb780a2a4b5543b4dddf8b6188a}{h}}\ =\ (\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})\ =>\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}.toString(\textcolor{stringliteral}{'hex'})}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ …elsewhere}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\ =\ \mbox{\hyperlink{a00062_a09a3f614b4bd6474a64bf881359575f8_a09a3f614b4bd6474a64bf881359575f8}{createDebug}}(\textcolor{stringliteral}{'foo'})}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}('\mbox{\hyperlink{a01195_a5a2c462c0f07b0d5f91d9d42bbd4ea4d_a5a2c462c0f07b0d5f91d9d42bbd4ea4d}{this}}\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ hex:\ \%\mbox{\hyperlink{a01264_a79fe0eb780a2a4b5543b4dddf8b6188a_a79fe0eb780a2a4b5543b4dddf8b6188a}{h}}',\ \mbox{\hyperlink{a01195_a7af34e8e129dfe2752fd55ac3e2e467a_a7af34e8e129dfe2752fd55ac3e2e467a}{new}}\ Buffer('hello\ world'))}
+\DoxyCodeLine{\textcolor{comment}{//\ \ \ foo\ this\ is\ hex:\ 68656c6c6f20776f726c6421\ +0ms}}
+
+\end{DoxyCode}
+\hypertarget{a00872_autotoc_md388}{}\doxysubsection{\texorpdfstring{Browser support}{Browser support}}\label{a00872_autotoc_md388}
+You can build a browser-\/ready script using \href{https://github.com/substack/node-browserify}{\texttt{ browserify}}, or just use the \href{https://wzrd.in/}{\texttt{ browserify-\/as-\/a-\/service}} \href{https://wzrd.in/standalone/debug@latest}{\texttt{ build}}, if you don\textquotesingle{}t want to build it yourself.
+
+Debug\textquotesingle{}s enable state is currently persisted by {\ttfamily local\+Storage}. Consider the situation shown below where you have {\ttfamily worker\+:a} and {\ttfamily worker\+:b}, and wish to debug both. You can enable this using {\ttfamily local\+Storage.\+debug}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{localStorage.debug\ =\ \textcolor{stringliteral}{'worker:*'}}
+
+\end{DoxyCode}
+
+
+And then refresh the page.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ =\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'worker:a'});}
+\DoxyCodeLine{\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}\ =\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'worker:b'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{setInterval(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}(\textcolor{stringliteral}{'doing\ some\ work'});}
+\DoxyCodeLine{\},\ 1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{setInterval(\textcolor{keyword}{function}()\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}(\textcolor{stringliteral}{'doing\ some\ work'});}
+\DoxyCodeLine{\},\ 1200);}
+
+\end{DoxyCode}
+\hypertarget{a00872_autotoc_md389}{}\doxysubsubsubsection{\texorpdfstring{Web Inspector Colors}{Web Inspector Colors}}\label{a00872_autotoc_md389}
+Colors are also enabled on "{}\+Web Inspectors"{} that understand the {\ttfamily c} formatting option. These are Web\+Kit web inspectors, Firefox (\href{https://hacks.mozilla.org/2014/05/editable-box-model-multiple-selection-sublime-text-keys-much-more-firefox-developer-tools-episode-31/}{\texttt{ since version 31}}) and the Firebug plugin for Firefox (any version).
+
+Colored output looks something like\+:
+
+\hypertarget{a00872_autotoc_md390}{}\doxysubsection{\texorpdfstring{Output streams}{Output streams}}\label{a00872_autotoc_md390}
+By default {\ttfamily debug} will log to stderr, however this can be configured per-\/namespace by overriding the {\ttfamily log} method\+:
+
+Example {\itshape stdout.\+js}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\ =\ require(\textcolor{stringliteral}{'debug'});}
+\DoxyCodeLine{var\ error\ =\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'app:error'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ by\ default\ stderr\ is\ used}}
+\DoxyCodeLine{error(\textcolor{stringliteral}{'goes\ to\ stderr!'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00059_ae828aca6609f4ab584dc979e308ebb5b_ae828aca6609f4ab584dc979e308ebb5b}{log}}\ =\ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}(\textcolor{stringliteral}{'app:log'});}
+\DoxyCodeLine{\textcolor{comment}{//\ set\ this\ namespace\ to\ log\ via\ console.log}}
+\DoxyCodeLine{\mbox{\hyperlink{a00059_ae828aca6609f4ab584dc979e308ebb5b_ae828aca6609f4ab584dc979e308ebb5b}{log}}.log\ =\ console.log.bind(console);\ \textcolor{comment}{//\ don't\ forget\ to\ bind\ to\ console!}}
+\DoxyCodeLine{\mbox{\hyperlink{a00059_ae828aca6609f4ab584dc979e308ebb5b_ae828aca6609f4ab584dc979e308ebb5b}{log}}(\textcolor{stringliteral}{'goes\ to\ stdout'});}
+\DoxyCodeLine{error(\textcolor{stringliteral}{'still\ goes\ to\ stderr!'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ set\ all\ output\ to\ go\ via\ console.info}}
+\DoxyCodeLine{\textcolor{comment}{//\ overrides\ all\ per-\/namespace\ log\ settings}}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}.log\ =\ console.info.bind(console);}
+\DoxyCodeLine{error(\textcolor{stringliteral}{'now\ goes\ to\ stdout\ via\ console.info'});}
+\DoxyCodeLine{\mbox{\hyperlink{a00059_ae828aca6609f4ab584dc979e308ebb5b_ae828aca6609f4ab584dc979e308ebb5b}{log}}(\textcolor{stringliteral}{'still\ goes\ to\ stdout,\ but\ via\ console.info\ now'});}
+
+\end{DoxyCode}
+\hypertarget{a00872_autotoc_md391}{}\doxysubsection{\texorpdfstring{Authors}{Authors}}\label{a00872_autotoc_md391}
+
+\begin{DoxyItemize}
+\item TJ Holowaychuk
+\item Nathan Rajlich
+\item Andrew Rhyne
+\end{DoxyItemize}\hypertarget{a00872_autotoc_md392}{}\doxysubsection{\texorpdfstring{Backers}{Backers}}\label{a00872_autotoc_md392}
+Support us with a monthly donation and help us continue our activities. \mbox{[}\href{https://opencollective.com/debug\#backer}{\texttt{ Become a backer}}\mbox{]}
+
+\href{https://opencollective.com/debug/backer/0/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/1/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/2/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/3/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/4/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/5/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/6/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/7/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/8/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/9/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/10/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/11/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/12/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/13/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/14/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/15/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/16/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/17/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/18/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/19/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/20/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/21/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/22/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/23/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/24/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/25/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/26/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/27/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/28/website}{\texttt{ }} \href{https://opencollective.com/debug/backer/29/website}{\texttt{ }}\hypertarget{a00872_autotoc_md393}{}\doxysubsection{\texorpdfstring{Sponsors}{Sponsors}}\label{a00872_autotoc_md393}
+Become a sponsor and get your logo on our README on Github with a link to your site. \mbox{[}\href{https://opencollective.com/debug\#sponsor}{\texttt{ Become a sponsor}}\mbox{]}
+
+\href{https://opencollective.com/debug/sponsor/0/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/1/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/2/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/3/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/4/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/5/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/6/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/7/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/8/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/9/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/10/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/11/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/12/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/13/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/14/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/15/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/16/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/17/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/18/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/19/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/20/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/21/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/22/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/23/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/24/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/25/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/26/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/27/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/28/website}{\texttt{ }} \href{https://opencollective.com/debug/sponsor/29/website}{\texttt{ }}\hypertarget{a00872_autotoc_md394}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00872_autotoc_md394}
+(The MIT License)
+
+Copyright (c) 2014-\/2016 TJ Holowaychuk \texorpdfstring{$<$}{<}\href{mailto:tj@vision-media.ca}{\texttt{ tj@vision-\/media.\+ca}}\texorpdfstring{$>$}{>}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \textquotesingle{}Software\textquotesingle{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \textquotesingle{}AS IS\textquotesingle{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR \doxylink{a00844}{A} PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

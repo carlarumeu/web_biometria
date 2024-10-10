@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente column_definition.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d8/d8e/a00344_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">column_definition.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d8e/a00344.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">    3</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a> = require(<span class="stringliteral">&#39;../packets/packet&#39;</span>);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_a02b2449d0572f8f88045e482fdb246c5.html#a02b2449d0572f8f88045e482fdb246c5">    4</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d8/d8e/a00344_a02b2449d0572f8f88045e482fdb246c5.html#a02b2449d0572f8f88045e482fdb246c5">StringParser</a> = require(<span class="stringliteral">&#39;../parsers/string&#39;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">    5</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d8/d8e/a00344_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a> = require(<span class="stringliteral">&#39;../constants/charset_encodings.js&#39;</span>);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">    7</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a> = [<span class="stringliteral">&#39;catalog&#39;</span>, <span class="stringliteral">&#39;schema&#39;</span>, <span class="stringliteral">&#39;table&#39;</span>, <span class="stringliteral">&#39;orgTable&#39;</span>, <span class="stringliteral">&#39;name&#39;</span>, <span class="stringliteral">&#39;orgName&#39;</span>];</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// creating JS string is relatively expensive (compared to</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// reading few bytes from buffer) because all string properties</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// except for name are unlikely to be used we postpone</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// string conversion until property access</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// TODO: watch for integration benchmarks (one with real network buffer)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// there could be bad side effect as keeping reference to a buffer makes it</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// sit in the memory longer (usually until final .query() callback)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Latest v8 perform much better in regard to bufferer -&gt; string conversion,</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// at some point of time this optimisation might become unnecessary</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// see https://github.com/sidorares/node-mysql2/pull/137</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d5c/a00752.html">ColumnDefinition</a> {</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a5862cd0518b048ef5f9a070def52e616.html#a5862cd0518b048ef5f9a070def52e616">   22</a></span>  <a class="code hl_function" href="../../dd/d5c/a00752_a5862cd0518b048ef5f9a070def52e616.html#a5862cd0518b048ef5f9a070def52e616">constructor</a>(packet, clientEncoding) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    this._buf = packet.buffer;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    this._clientEncoding = clientEncoding;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    this._catalogLength = packet.readLengthCodedNumber();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    this._catalogStart = packet.offset;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    packet.offset += this._catalogLength;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    this._schemaLength = packet.readLengthCodedNumber();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    this._schemaStart = packet.offset;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    packet.offset += this._schemaLength;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    this._tableLength = packet.readLengthCodedNumber();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    this._tableStart = packet.offset;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    packet.offset += this._tableLength;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    this._orgTableLength = packet.readLengthCodedNumber();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    this._orgTableStart = packet.offset;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    packet.offset += this._orgTableLength;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// name is always used, don&#39;t make it lazy</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> _nameLength = packet.readLengthCodedNumber();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> _nameStart = packet.offset;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    packet.offset += _nameLength;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    this._orgNameLength = packet.readLengthCodedNumber();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    this._orgNameStart = packet.offset;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    packet.offset += this._orgNameLength;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    packet.skip(1); <span class="comment">//  length of the following fields (always 0x0c)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    this.characterSet = packet.readInt16();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    this.<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a> = <a class="code hl_variable" href="../../d8/d8e/a00344_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a>[this.characterSet];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    this.name = <a class="code hl_variable" href="../../d8/d8e/a00344_a02b2449d0572f8f88045e482fdb246c5.html#a02b2449d0572f8f88045e482fdb246c5">StringParser</a>.decode(</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      this._buf,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      this.<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a> === <span class="stringliteral">&#39;binary&#39;</span> ? this._clientEncoding : this.<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      _nameStart,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      _nameStart + _nameLength</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    );</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    this.columnLength = packet.readInt32();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    this.columnType = packet.readInt8();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    this.<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a> = this.columnType;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    this.flags = packet.readInt16();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    this.decimals = packet.readInt8();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_afe3bc1f8a3f2974fa8710c110719b522.html#afe3bc1f8a3f2974fa8710c110719b522">   60</a></span>  <a class="code hl_function" href="../../dd/d5c/a00752_afe3bc1f8a3f2974fa8710c110719b522.html#afe3bc1f8a3f2974fa8710c110719b522">inspect</a>() {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      catalog: this.catalog,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      schema: this.schema,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      name: this.name,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      orgName: this.orgName,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      table: this.table,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      orgTable: this.orgTable,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      characterSet: this.characterSet,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>: this.<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      columnLength: this.columnLength,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>: this.columnType,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      flags: this.flags,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      decimals: this.decimals</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    };</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_ae838ecc05978cc470c595461ab4f0dac.html#ae838ecc05978cc470c595461ab4f0dac">   77</a></span>  [Symbol.for(<span class="stringliteral">&#39;nodejs.util.inspect.custom&#39;</span>)](<a class="code hl_variable" href="../../dd/d5c/a00752_ae838ecc05978cc470c595461ab4f0dac.html#ae838ecc05978cc470c595461ab4f0dac">depth</a>, <a class="code hl_variable" href="../../dd/d5c/a00752_a58749ea905226805736462190164d401.html#a58749ea905226805736462190164d401">inspectOptions</a>, <a class="code hl_variable" href="../../dd/d5c/a00752_a97792dec801afb00a2c972252edc44ed.html#a97792dec801afb00a2c972252edc44ed">inspect</a>) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a> = require(<span class="stringliteral">&#39;../constants/types.js&#39;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">   79</a></span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">typeNames</a> = [];</div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_aa524686b8d847fb13c743cc7ef264b12.html#aa524686b8d847fb13c743cc7ef264b12">   80</a></span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_variable" href="../../de/db1/a00197_a23c5666e83bbbceee94adcd0851f50c4.html#a23c5666e83bbbceee94adcd0851f50c4">t</a> <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> <a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a>) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <a class="code hl_variable" href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">typeNames</a>[<a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a>[<a class="code hl_variable" href="../../de/db1/a00197_a23c5666e83bbbceee94adcd0851f50c4.html#a23c5666e83bbbceee94adcd0851f50c4">t</a>]] = <a class="code hl_variable" href="../../de/db1/a00197_a23c5666e83bbbceee94adcd0851f50c4.html#a23c5666e83bbbceee94adcd0851f50c4">t</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a9b44e7dd21124c353963f4d23cf82ffd.html#a9b44e7dd21124c353963f4d23cf82ffd">   83</a></span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/d5c/a00752_a9b44e7dd21124c353963f4d23cf82ffd.html#a9b44e7dd21124c353963f4d23cf82ffd">fiedFlags</a> = require(<span class="stringliteral">&#39;../constants/field_flags.js&#39;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">   84</a></span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">flagNames</a> = [];</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// TODO: respect inspectOptions.showHidden</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">//const inspectFlags = inspectOptions.showHidden ? this.flags : this.flags &amp; ~fiedFlags.PRI_KEY;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a4215536434e63447c797e3d65e1a470e.html#a4215536434e63447c797e3d65e1a470e">   87</a></span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/d5c/a00752_a4215536434e63447c797e3d65e1a470e.html#a4215536434e63447c797e3d65e1a470e">inspectFlags</a> = this.flags;</div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_afd917ec3542902412762314429e136d6.html#afd917ec3542902412762314429e136d6">   88</a></span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> <a class="code hl_variable" href="../../dd/d5c/a00752_a9b44e7dd21124c353963f4d23cf82ffd.html#a9b44e7dd21124c353963f4d23cf82ffd">fiedFlags</a>) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_a4215536434e63447c797e3d65e1a470e.html#a4215536434e63447c797e3d65e1a470e">inspectFlags</a> &amp; <a class="code hl_variable" href="../../dd/d5c/a00752_a9b44e7dd21124c353963f4d23cf82ffd.html#a9b44e7dd21124c353963f4d23cf82ffd">fiedFlags</a>[<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a>]) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;PRI_KEY&#39;</span>) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>          <a class="code hl_variable" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">flagNames</a>.push(<span class="stringliteral">&#39;PRIMARY KEY&#39;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;NOT_NULL&#39;</span>) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          <a class="code hl_variable" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">flagNames</a>.push(<span class="stringliteral">&#39;NOT NULL&#39;</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;BINARY&#39;</span>) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>          <span class="comment">// ignore flag for now</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;MULTIPLE_KEY&#39;</span>) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>          <span class="comment">// not sure if that should be part of inspection.</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>          <span class="comment">// in the schema usually this is part of index definition</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          <span class="comment">// example: UNIQUE KEY `my_uniq_id` (`id_box_elements`,`id_router`)</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>          <span class="comment">// note that only first column has MULTIPLE_KEY flag set in this case</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          <span class="comment">// so there is no good way of knowing that this is part of index just</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>          <span class="comment">// by looking at indifidual field flags</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;NO_DEFAULT_VALUE&#39;</span>) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          <span class="comment">// almost the same as NOT_NULL?</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;BLOB&#39;</span>) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>          <span class="comment">// included in the type</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;UNSIGNED&#39;</span>) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>          <span class="comment">// this should be first after type</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;TIMESTAMP&#39;</span>) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>          <span class="comment">// timestamp flag is redundant for inspection - already included in type</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a> === <span class="stringliteral">&#39;ON_UPDATE_NOW&#39;</span>) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>          <a class="code hl_variable" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">flagNames</a>.push(<span class="stringliteral">&#39;ON UPDATE CURRENT_TIMESTAMP&#39;</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>          <a class="code hl_variable" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">flagNames</a>.push(<a class="code hl_variable" href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_aa864d8c3945eb5c3a62b880d01dc50f8.html#aa864d8c3945eb5c3a62b880d01dc50f8">  119</a></span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_ae838ecc05978cc470c595461ab4f0dac.html#ae838ecc05978cc470c595461ab4f0dac">depth</a> &gt; 1) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d5c/a00752_a97792dec801afb00a2c972252edc44ed.html#a97792dec801afb00a2c972252edc44ed">inspect</a>({</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        ...this.inspect(),</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a>: <a class="code hl_variable" href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">typeNames</a>[this.columnType],</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        flags: <a class="code hl_variable" href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">flagNames</a>,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      });</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">  127</a></span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> = this.flags &amp; <a class="code hl_variable" href="../../dd/d5c/a00752_a9b44e7dd21124c353963f4d23cf82ffd.html#a9b44e7dd21124c353963f4d23cf82ffd">fiedFlags</a>.UNSIGNED;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">  129</a></span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <a class="code hl_variable" href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">typeNames</a>[this.columnType];</div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a8e73458c3b7bf532261badea791a029a.html#a8e73458c3b7bf532261badea791a029a">  130</a></span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;BLOB&#39;</span>) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="comment">// TODO: check for non-utf8mb4 encoding</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      <span class="keywordflow">if</span> (this.columnLength === 4294967295) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;LONGTEXT&#39;</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this.columnLength === 67108860) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;MEDIUMTEXT&#39;</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this.columnLength === 262140) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;TEXT&#39;</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this.columnLength === 1020) { <span class="comment">// 255*4</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;TINYTEXT&#39;</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../d5/d0f/a00308_aaf4b4acb6d563789c6eff32ec6ef0fe4.html#aaf4b4acb6d563789c6eff32ec6ef0fe4">BLOB</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a2e94670a0a53bc8b0aae84f26c048d56.html#a2e94670a0a53bc8b0aae84f26c048d56">  143</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;VAR_STRING&#39;</span>) {</div>
+</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      <span class="comment">// TODO: check for non-utf8mb4 encoding</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/de2/a00320_a711acdcf4bf22d832b85fc48ed681f80.html#a711acdcf4bf22d832b85fc48ed681f80">VARCHAR</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{Math.ceil(this.columnLength/4)})`;</div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a86b29212fee324842c9ff7ede69add4b.html#a86b29212fee324842c9ff7ede69add4b">  146</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;TINY&#39;</span>) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      <span class="keywordflow">if</span> (</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        (this.columnLength === 3 &amp;&amp; <a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a>) ||</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        (this.columnLength === 4 &amp;&amp; !<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a>) ) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;TINYINT&#39;</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `TINYINT(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a274bdf6a71098811975d14ed6c1a39ea.html#a274bdf6a71098811975d14ed6c1a39ea">  154</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;LONGLONG&#39;</span>) {</div>
+</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keywordflow">if</span> (this.columnLength === 20) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;BIGINT&#39;</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `BIGINT(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      }</div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a9eceb09b69ee5fff7626f9f6f5f05888.html#a9eceb09b69ee5fff7626f9f6f5f05888">  160</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;SHORT&#39;</span>) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> &amp;&amp; this.columnLength === 5) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;SMALLINT&#39;</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> &amp;&amp; this.columnLength === 6) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;SMALLINT&#39;</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `SMALLINT(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a63347eec7614e10bb7e1d6a7c8fe1114.html#a63347eec7614e10bb7e1d6a7c8fe1114">  169</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;LONG&#39;</span>) {</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> &amp;&amp;  this.columnLength === 10) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;INT&#39;</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> &amp;&amp; this.columnLength === 11) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;INT&#39;</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `INT(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      }</div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a2fe308aca65794c0615aa07a83ff6271.html#a2fe308aca65794c0615aa07a83ff6271">  177</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;INT24&#39;</span>) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> &amp;&amp; this.columnLength === 8) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;MEDIUMINT&#39;</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a> &amp;&amp; this.columnLength === 9) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;MEDIUMINT&#39;</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `MEDIUMINT(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a2c0a6f43d8dae184eae6597e5c040af5.html#a2c0a6f43d8dae184eae6597e5c040af5">  185</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;DOUBLE&#39;</span>) {</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      <span class="comment">// DOUBLE without modifiers is reported as DOUBLE(22, 31)</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <span class="keywordflow">if</span> (this.columnLength === 22 &amp;&amp; this.decimals === 31) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;DOUBLE&#39;</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/de2/a00320_a7c9a11ef7a73447342a832fb0e73dac2.html#a7c9a11ef7a73447342a832fb0e73dac2">DOUBLE</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength},<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.decimals})`;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      }</div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_ab932e739f0eeb726466073bd7ed44805.html#ab932e739f0eeb726466073bd7ed44805">  192</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;FLOAT&#39;</span>) {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      <span class="comment">// FLOAT without modifiers is reported as FLOAT(12, 31)</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      <span class="keywordflow">if</span> (this.columnLength === 12 &amp;&amp; this.decimals === 31) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;FLOAT&#39;</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/de2/a00320_a7264a20bc6937ba950887a468b015a83.html#a7264a20bc6937ba950887a468b015a83">FLOAT</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength},<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.decimals})`;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_ac7f63fb3df56bfbe19e8991880541aeb.html#ac7f63fb3df56bfbe19e8991880541aeb">  199</a></span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> === <span class="stringliteral">&#39;NEWDECIMAL&#39;</span>) {</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordflow">if</span> (this.columnLength === 11 &amp;&amp; this.decimals === 0) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = <span class="stringliteral">&#39;DECIMAL&#39;</span>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this.decimals === 0) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="comment">// not sure why, but DECIMAL(13) is reported as DECIMAL(14, 0)</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="comment">// and DECIMAL(13, 9) is reported as NEWDECIMAL(15, 9)</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a>) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>          <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/de2/a00320_a9f27e4aa8e3d74c80619c14ef09da890.html#a9f27e4aa8e3d74c80619c14ef09da890">DECIMAL</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>          <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/de2/a00320_a9f27e4aa8e3d74c80619c14ef09da890.html#a9f27e4aa8e3d74c80619c14ef09da890">DECIMAL</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength - 1})`;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/de2/a00320_a9f27e4aa8e3d74c80619c14ef09da890.html#a9f27e4aa8e3d74c80619c14ef09da890">DECIMAL</a>(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength - 2},<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.decimals})`;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      }</div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="};">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_aef72edc7385cf36105f1eed835cac44f.html#aef72edc7385cf36105f1eed835cac44f">  213</a></span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> = `<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{<a class="code hl_variable" href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">typeNames</a>[this.columnType]}(<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.columnLength})`;</div>
+</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_af9817a05a32c1b556f020f6f5205e314.html#af9817a05a32c1b556f020f6f5205e314">  217</a></span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">isUnsigned</a>) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>      <a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a> += <span class="stringliteral">&#39; UNSIGNED&#39;</span>;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
+</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="comment">// TODO respect colors option</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">  222</a></span>    <span class="keywordflow">return</span> `\`<a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{this.name}\` <a class="code hl_variable" href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">$</a>{[<a class="code hl_variable" href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">typeName</a>, ...flagNames].join(<span class="charliteral">&#39; &#39;</span>)}`;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="foldopen" id="foldopen00225" data-start="{" data-end="}">
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_ad8474bf544b70a159660efac1106359c.html#ad8474bf544b70a159660efac1106359c">  225</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="../../dd/d5c/a00752_ad8474bf544b70a159660efac1106359c.html#ad8474bf544b70a159660efac1106359c">toPacket</a>(column, sequenceId) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> length = 17; <span class="comment">// = 4 padding + 1 + 12 for the rest</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>.forEach(field =&gt; {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      length += <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.<a class="code hl_function" href="../../d9/dd4/a00776_aae109ac647b65b215bb1afb86aef1cbd.html#aae109ac647b65b215bb1afb86aef1cbd">lengthCodedStringLength</a>(</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        column[field],</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <a class="code hl_variable" href="../../d8/d8e/a00344_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a>[column.characterSet]</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      );</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    });</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keyword">const</span> buffer = Buffer.allocUnsafe(length);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">const</span> packet = <span class="keyword">new</span> <a class="code hl_variable" href="../../d8/d8e/a00344_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(sequenceId, buffer, 0, length);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">function</span> writeField(name) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      packet.writeLengthCodedString(</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        column[name],</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <a class="code hl_variable" href="../../d8/d8e/a00344_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a>[column.characterSet]</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      );</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    packet.offset = 4;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>.forEach(writeField);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    packet.writeInt8(0x0c);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    packet.writeInt16(column.characterSet);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    packet.writeInt32(column.columnLength);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    packet.writeInt8(column.columnType);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    packet.writeInt16(column.flags);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    packet.writeInt8(column.decimals);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    packet.writeInt16(0); <span class="comment">// filler</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordflow">return</span> packet;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  }</div>
+</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="comment">// node-mysql compatibility: alias &quot;db&quot; to &quot;schema&quot;</span></div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="../../dd/d5c/a00752_a3167b49fe72cfa1bf2322d467cc97448.html#a3167b49fe72cfa1bf2322d467cc97448">  255</a></span>  <span class="keyword">get</span> <a class="code hl_function" href="../../dd/d5c/a00752_a3167b49fe72cfa1bf2322d467cc97448.html#a3167b49fe72cfa1bf2322d467cc97448">db</a>() {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">return</span> this.schema;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  }</div>
+</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="foldopen" id="foldopen00260" data-start="{" data-end="};">
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">  260</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a> = <span class="keyword">function</span>(name) {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  Object.defineProperty(<a class="code hl_class" href="../../dd/d5c/a00752.html">ColumnDefinition</a>.prototype, name, {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    get: function() {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>      const start = this[`_${name}Start`];</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      const end = start + this[`_${name}Length`];</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      const val = StringParser.decode(</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        this._buf,</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        this.encoding === <span class="stringliteral">&#39;binary&#39;</span> ? this._clientEncoding : this.encoding,</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        start,</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        end</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      );</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      Object.defineProperty(this, name, {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        value: val,</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        writable: false,</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        configurable: false,</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        enumerable: false</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      });</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      return val;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  });</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>};</div>
+</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><a class="code hl_variable" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a>(<span class="stringliteral">&#39;catalog&#39;</span>);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><a class="code hl_variable" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a>(<span class="stringliteral">&#39;schema&#39;</span>);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><a class="code hl_variable" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a>(<span class="stringliteral">&#39;table&#39;</span>);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><a class="code hl_variable" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a>(<span class="stringliteral">&#39;orgTable&#39;</span>);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><a class="code hl_variable" href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a>(<span class="stringliteral">&#39;orgName&#39;</span>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="../../d8/d8e/a00344_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">  290</a></span>module.exports = <a class="code hl_variable" href="../../d5/d37/a01276_aa315657e2d95ef76ad4e70e550bdff4c.html#aa315657e2d95ef76ad4e70e550bdff4c">ColumnDefinition</a>;</div>
+<div class="ttc" id="aa00197_a23c5666e83bbbceee94adcd0851f50c4_html_a23c5666e83bbbceee94adcd0851f50c4"><div class="ttname"><a href="../../de/db1/a00197_a23c5666e83bbbceee94adcd0851f50c4.html#a23c5666e83bbbceee94adcd0851f50c4">t</a></div><div class="ttdeci">function t</div><div class="ttdoc">SmartMenus jQuery Plugin - v1.1.0 - September 17, 2017 http://www.smartmenus.org/ Copyright Vasil Din...</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00209_affea7e61106a6a9da029c8af702aaf20_html_affea7e61106a6a9da029c8af702aaf20"><div class="ttname"><a href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a></div><div class="ttdeci">var type</div><div class="ttdef"><b>Definition</b> <a href="../../d3/de5/a00209_source.html#l00005">cli.js:5</a></div></div>
+<div class="ttc" id="aa00308_aaf4b4acb6d563789c6eff32ec6ef0fe4_html_aaf4b4acb6d563789c6eff32ec6ef0fe4"><div class="ttname"><a href="../../d5/d0f/a00308_aaf4b4acb6d563789c6eff32ec6ef0fe4.html#aaf4b4acb6d563789c6eff32ec6ef0fe4">BLOB</a></div><div class="ttdeci">exports BLOB</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0f/a00308_source.html#l00008">field_flags.js:8</a></div></div>
+<div class="ttc" id="aa00320_a711acdcf4bf22d832b85fc48ed681f80_html_a711acdcf4bf22d832b85fc48ed681f80"><div class="ttname"><a href="../../dd/de2/a00320_a711acdcf4bf22d832b85fc48ed681f80.html#a711acdcf4bf22d832b85fc48ed681f80">VARCHAR</a></div><div class="ttdeci">module exports VARCHAR</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de2/a00320_source.html#l00052">types.js:52</a></div></div>
+<div class="ttc" id="aa00320_a7264a20bc6937ba950887a468b015a83_html_a7264a20bc6937ba950887a468b015a83"><div class="ttname"><a href="../../dd/de2/a00320_a7264a20bc6937ba950887a468b015a83.html#a7264a20bc6937ba950887a468b015a83">FLOAT</a></div><div class="ttdeci">module exports FLOAT</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de2/a00320_source.html#l00041">types.js:41</a></div></div>
+<div class="ttc" id="aa00320_a7c9a11ef7a73447342a832fb0e73dac2_html_a7c9a11ef7a73447342a832fb0e73dac2"><div class="ttname"><a href="../../dd/de2/a00320_a7c9a11ef7a73447342a832fb0e73dac2.html#a7c9a11ef7a73447342a832fb0e73dac2">DOUBLE</a></div><div class="ttdeci">module exports DOUBLE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de2/a00320_source.html#l00042">types.js:42</a></div></div>
+<div class="ttc" id="aa00320_a9f27e4aa8e3d74c80619c14ef09da890_html_a9f27e4aa8e3d74c80619c14ef09da890"><div class="ttname"><a href="../../dd/de2/a00320_a9f27e4aa8e3d74c80619c14ef09da890.html#a9f27e4aa8e3d74c80619c14ef09da890">DECIMAL</a></div><div class="ttdeci">module exports DECIMAL</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de2/a00320_source.html#l00037">types.js:37</a></div></div>
+<div class="ttc" id="aa00338_acb7e0e89b59629f5d62ba2f3ecd63029_html_acb7e0e89b59629f5d62ba2f3ecd63029"><div class="ttname"><a href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a></div><div class="ttdeci">const Types</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d84/a00338_source.html#l00003">binary_row.js:3</a></div></div>
+<div class="ttc" id="aa00344_a02b2449d0572f8f88045e482fdb246c5_html_a02b2449d0572f8f88045e482fdb246c5"><div class="ttname"><a href="../../d8/d8e/a00344_a02b2449d0572f8f88045e482fdb246c5.html#a02b2449d0572f8f88045e482fdb246c5">StringParser</a></div><div class="ttdeci">const StringParser</div><div class="ttdef"><b>Definition</b> <a href="#l00004">column_definition.js:4</a></div></div>
+<div class="ttc" id="aa00344_a1408b5a0d26ac3180269cd6bb8bc00e8_html_a1408b5a0d26ac3180269cd6bb8bc00e8"><div class="ttname"><a href="../../d8/d8e/a00344_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a></div><div class="ttdeci">const CharsetToEncoding</div><div class="ttdef"><b>Definition</b> <a href="#l00005">column_definition.js:5</a></div></div>
+<div class="ttc" id="aa00344_a7dfceba4d8646e1fc3116bc603b378bd_html_a7dfceba4d8646e1fc3116bc603b378bd"><div class="ttname"><a href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a></div><div class="ttdeci">const fields</div><div class="ttdef"><b>Definition</b> <a href="#l00007">column_definition.js:7</a></div></div>
+<div class="ttc" id="aa00344_adbc81c45b48c6cdfffe9fc4752007493_html_adbc81c45b48c6cdfffe9fc4752007493"><div class="ttname"><a href="../../d8/d8e/a00344_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a></div><div class="ttdeci">const Packet</div><div class="ttdef"><b>Definition</b> <a href="#l00003">column_definition.js:3</a></div></div>
+<div class="ttc" id="aa00344_adc81dd0a9700b73c24cb240876d48545_html_adc81dd0a9700b73c24cb240876d48545"><div class="ttname"><a href="../../d8/d8e/a00344_adc81dd0a9700b73c24cb240876d48545.html#adc81dd0a9700b73c24cb240876d48545">addString</a></div><div class="ttdeci">const addString</div><div class="ttdef"><b>Definition</b> <a href="#l00260">column_definition.js:260</a></div></div>
+<div class="ttc" id="aa00491_ad5a69a22a09c1158b06b6f2c53bf04f1_html_ad5a69a22a09c1158b06b6f2c53bf04f1"><div class="ttname"><a href="../../d6/d60/a00491_ad5a69a22a09c1158b06b6f2c53bf04f1.html#ad5a69a22a09c1158b06b6f2c53bf04f1">f</a></div><div class="ttdeci">function f</div><div class="ttdoc">Copyright (c) 2007 Ariel Flesler - aflesler ○ gmail • com | https://github.com/flesler Licensed under...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d60/a00491_source.html#l00001">qs.js:1</a></div></div>
+<div class="ttc" id="aa00752_a3167b49fe72cfa1bf2322d467cc97448_html_a3167b49fe72cfa1bf2322d467cc97448"><div class="ttname"><a href="../../dd/d5c/a00752_a3167b49fe72cfa1bf2322d467cc97448.html#a3167b49fe72cfa1bf2322d467cc97448">ColumnDefinition::db</a></div><div class="ttdeci">get db()</div><div class="ttdef"><b>Definition</b> <a href="#l00255">column_definition.js:255</a></div></div>
+<div class="ttc" id="aa00752_a4215536434e63447c797e3d65e1a470e_html_a4215536434e63447c797e3d65e1a470e"><div class="ttname"><a href="../../dd/d5c/a00752_a4215536434e63447c797e3d65e1a470e.html#a4215536434e63447c797e3d65e1a470e">ColumnDefinition::inspectFlags</a></div><div class="ttdeci">const inspectFlags</div><div class="ttdef"><b>Definition</b> <a href="#l00087">column_definition.js:87</a></div></div>
+<div class="ttc" id="aa00752_a45cdc6f52b31252986b660599a2e4261_html_a45cdc6f52b31252986b660599a2e4261"><div class="ttname"><a href="../../dd/d5c/a00752_a45cdc6f52b31252986b660599a2e4261.html#a45cdc6f52b31252986b660599a2e4261">ColumnDefinition::$</a></div><div class="ttdeci">return $</div><div class="ttdef"><b>Definition</b> <a href="#l00222">column_definition.js:222</a></div></div>
+<div class="ttc" id="aa00752_a5862cd0518b048ef5f9a070def52e616_html_a5862cd0518b048ef5f9a070def52e616"><div class="ttname"><a href="../../dd/d5c/a00752_a5862cd0518b048ef5f9a070def52e616.html#a5862cd0518b048ef5f9a070def52e616">ColumnDefinition::constructor</a></div><div class="ttdeci">constructor(packet, clientEncoding)</div><div class="ttdef"><b>Definition</b> <a href="#l00022">column_definition.js:22</a></div></div>
+<div class="ttc" id="aa00752_a58749ea905226805736462190164d401_html_a58749ea905226805736462190164d401"><div class="ttname"><a href="../../dd/d5c/a00752_a58749ea905226805736462190164d401.html#a58749ea905226805736462190164d401">ColumnDefinition::inspectOptions</a></div><div class="ttdeci">inspectOptions</div><div class="ttdef"><b>Definition</b> <a href="#l00077">column_definition.js:77</a></div></div>
+<div class="ttc" id="aa00752_a69d799327a5c91d9b460137cec0dd92d_html_a69d799327a5c91d9b460137cec0dd92d"><div class="ttname"><a href="../../dd/d5c/a00752_a69d799327a5c91d9b460137cec0dd92d.html#a69d799327a5c91d9b460137cec0dd92d">ColumnDefinition::flagNames</a></div><div class="ttdeci">const flagNames</div><div class="ttdef"><b>Definition</b> <a href="#l00084">column_definition.js:84</a></div></div>
+<div class="ttc" id="aa00752_a97792dec801afb00a2c972252edc44ed_html_a97792dec801afb00a2c972252edc44ed"><div class="ttname"><a href="../../dd/d5c/a00752_a97792dec801afb00a2c972252edc44ed.html#a97792dec801afb00a2c972252edc44ed">ColumnDefinition::inspect</a></div><div class="ttdeci">inspect</div><div class="ttdef"><b>Definition</b> <a href="#l00077">column_definition.js:77</a></div></div>
+<div class="ttc" id="aa00752_a9b44e7dd21124c353963f4d23cf82ffd_html_a9b44e7dd21124c353963f4d23cf82ffd"><div class="ttname"><a href="../../dd/d5c/a00752_a9b44e7dd21124c353963f4d23cf82ffd.html#a9b44e7dd21124c353963f4d23cf82ffd">ColumnDefinition::fiedFlags</a></div><div class="ttdeci">const fiedFlags</div><div class="ttdef"><b>Definition</b> <a href="#l00083">column_definition.js:83</a></div></div>
+<div class="ttc" id="aa00752_aadad143420eba23bc717a2b3e80a6feb_html_aadad143420eba23bc717a2b3e80a6feb"><div class="ttname"><a href="../../dd/d5c/a00752_aadad143420eba23bc717a2b3e80a6feb.html#aadad143420eba23bc717a2b3e80a6feb">ColumnDefinition::isUnsigned</a></div><div class="ttdeci">const isUnsigned</div><div class="ttdef"><b>Definition</b> <a href="#l00127">column_definition.js:127</a></div></div>
+<div class="ttc" id="aa00752_ab8dc9e0377dc76d12491a8364bd52e83_html_ab8dc9e0377dc76d12491a8364bd52e83"><div class="ttname"><a href="../../dd/d5c/a00752_ab8dc9e0377dc76d12491a8364bd52e83.html#ab8dc9e0377dc76d12491a8364bd52e83">ColumnDefinition::typeNames</a></div><div class="ttdeci">const typeNames</div><div class="ttdef"><b>Definition</b> <a href="#l00079">column_definition.js:79</a></div></div>
+<div class="ttc" id="aa00752_ad8474bf544b70a159660efac1106359c_html_ad8474bf544b70a159660efac1106359c"><div class="ttname"><a href="../../dd/d5c/a00752_ad8474bf544b70a159660efac1106359c.html#ad8474bf544b70a159660efac1106359c">ColumnDefinition::toPacket</a></div><div class="ttdeci">static toPacket(column, sequenceId)</div><div class="ttdef"><b>Definition</b> <a href="#l00225">column_definition.js:225</a></div></div>
+<div class="ttc" id="aa00752_ae838ecc05978cc470c595461ab4f0dac_html_ae838ecc05978cc470c595461ab4f0dac"><div class="ttname"><a href="../../dd/d5c/a00752_ae838ecc05978cc470c595461ab4f0dac.html#ae838ecc05978cc470c595461ab4f0dac">ColumnDefinition::depth</a></div><div class="ttdeci">depth</div><div class="ttdef"><b>Definition</b> <a href="#l00077">column_definition.js:77</a></div></div>
+<div class="ttc" id="aa00752_af90627b96683871575a3c3c33d0e19c9_html_af90627b96683871575a3c3c33d0e19c9"><div class="ttname"><a href="../../dd/d5c/a00752_af90627b96683871575a3c3c33d0e19c9.html#af90627b96683871575a3c3c33d0e19c9">ColumnDefinition::typeName</a></div><div class="ttdeci">let typeName</div><div class="ttdef"><b>Definition</b> <a href="#l00129">column_definition.js:129</a></div></div>
+<div class="ttc" id="aa00752_afe3bc1f8a3f2974fa8710c110719b522_html_afe3bc1f8a3f2974fa8710c110719b522"><div class="ttname"><a href="../../dd/d5c/a00752_afe3bc1f8a3f2974fa8710c110719b522.html#afe3bc1f8a3f2974fa8710c110719b522">ColumnDefinition::inspect</a></div><div class="ttdeci">inspect()</div><div class="ttdef"><b>Definition</b> <a href="#l00060">column_definition.js:60</a></div></div>
+<div class="ttc" id="aa00752_html"><div class="ttname"><a href="../../dd/d5c/a00752.html">ColumnDefinition</a></div><div class="ttdef"><b>Definition</b> <a href="#l00021">column_definition.js:21</a></div></div>
+<div class="ttc" id="aa00776_aae109ac647b65b215bb1afb86aef1cbd_html_aae109ac647b65b215bb1afb86aef1cbd"><div class="ttname"><a href="../../d9/dd4/a00776_aae109ac647b65b215bb1afb86aef1cbd.html#aae109ac647b65b215bb1afb86aef1cbd">Packet::lengthCodedStringLength</a></div><div class="ttdeci">static lengthCodedStringLength(str, encoding)</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00911">packet.js:911</a></div></div>
+<div class="ttc" id="aa00776_html"><div class="ttname"><a href="../../d9/dd4/a00776.html">Packet</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00047">packet.js:47</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+<div class="ttc" id="aa01195_aaf64ea1eb68af5440a0249f7788f1af5_html_aaf64ea1eb68af5440a0249f7788f1af5"><div class="ttname"><a href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a></div><div class="ttdeci">var in</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00011">node_modules/generate-function/index.js:11</a></div></div>
+<div class="ttc" id="aa01276_aa315657e2d95ef76ad4e70e550bdff4c_html_aa315657e2d95ef76ad4e70e550bdff4c"><div class="ttname"><a href="../../d5/d37/a01276_aa315657e2d95ef76ad4e70e550bdff4c.html#aa315657e2d95ef76ad4e70e550bdff4c">ColumnDefinition</a></div><div class="ttdeci">const ColumnDefinition</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d37/a01276_source.html#l00022">node_modules/mysql2/lib/packets/index.js:22</a></div></div>
+<div class="ttc" id="aa01288_a9ad8213a7626ee07aef47950752cac18_html_a9ad8213a7626ee07aef47950752cac18"><div class="ttname"><a href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a></div><div class="ttdeci">Negotiator prototype encoding</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00047">node_modules/negotiator/index.js:47</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_2c8deb8286166270ba576b9e0cb83490.html">packets</a></li><li class="navelem"><a class="el" href="../../d8/d8e/a00344.html">column_definition.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/side-\/channel/index.js}
+\hypertarget{a01342}{}\label{a01342}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01342_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a01342_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{Get\+Intrinsic}} = require(\textquotesingle{}\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get}}-\/intrinsic\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01342_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}} = require(\textquotesingle{}\mbox{\hyperlink{a01225_af41b23e59e21fbbca9175e1dbd07b54e_af41b23e59e21fbbca9175e1dbd07b54e}{call}}-\/\mbox{\hyperlink{a01111_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}/call\+Bound\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01342_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}} = require(\textquotesingle{}object-\/inspect\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01342_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066}{\$\+Type\+Error}} = require(\textquotesingle{}es-\/errors/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01342_a1f1e22a18053c0d0a43468aaa4a0123e_a1f1e22a18053c0d0a43468aaa4a0123e}{\$\+Weak\+Map}} = \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{Get\+Intrinsic}}(\textquotesingle{}\%Weak\+Map\%\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_a46a18512ca91cbdd392a956827585456_a46a18512ca91cbdd392a956827585456}{\$\+Map}} = \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{Get\+Intrinsic}}(\textquotesingle{}\%Map\%\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_ad14ed308adaea2b639436cd6d638395f_ad14ed308adaea2b639436cd6d638395f}{\$weak\+Map\+Get}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{Weak\+Map.\+prototype.\+get}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_ad4db9cf1c45595a59372b6015c3cdff5_ad4db9cf1c45595a59372b6015c3cdff5}{\$weak\+Map\+Set}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{Weak\+Map.\+prototype.\+set}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_a6da666f6a634c94787d9df0c837d28e4_a6da666f6a634c94787d9df0c837d28e4}{\$weak\+Map\+Has}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{Weak\+Map.\+prototype.\+has}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_a2b8f6f8dff6e2abcb3cf6cbea44ba4d5_a2b8f6f8dff6e2abcb3cf6cbea44ba4d5}{\$map\+Get}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{Map.\+prototype.\+get}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_a978e2805ea2804d2da84367fbd1589e5_a978e2805ea2804d2da84367fbd1589e5}{\$map\+Set}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{Map.\+prototype.\+set}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_ae2e5e2c88922e1a0543bd4e027ddd70c_ae2e5e2c88922e1a0543bd4e027ddd70c}{\$map\+Has}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{Map.\+prototype.\+has}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\item 
+var \mbox{\hyperlink{a01342_aecee9fefb2a3f8536861970c973b6d94_aecee9fefb2a3f8536861970c973b6d94}{list\+Get\+Node}}
+\begin{DoxyCompactList}\small\item\em @type \{import(\textquotesingle{}. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01342_a708f957bb788feae2ea156cf549e3504_a708f957bb788feae2ea156cf549e3504}{list\+Get}}
+\begin{DoxyCompactList}\small\item\em @type \{import(\textquotesingle{}. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01342_aa7808cd520bbf3dc404bafe3f60ea554_aa7808cd520bbf3dc404bafe3f60ea554}{list\+Set}}
+\begin{DoxyCompactList}\small\item\em @type \{import(\textquotesingle{}. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01342_a8369a1387c5f4b2d8e5fe75ddc11c3c6_a8369a1387c5f4b2d8e5fe75ddc11c3c6}{list\+Has}}
+\begin{DoxyCompactList}\small\item\em @type \{import(\textquotesingle{}. \end{DoxyCompactList}\item 
+module \mbox{\hyperlink{a01342_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\begin{DoxyCompactList}\small\item\em @type \{import(\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01342_a46a18512ca91cbdd392a956827585456_a46a18512ca91cbdd392a956827585456}\index{index.js@{index.js}!\$Map@{\$Map}}
+\index{\$Map@{\$Map}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$Map}{\$Map}}
+{\footnotesize\ttfamily \label{a01342_a46a18512ca91cbdd392a956827585456_a46a18512ca91cbdd392a956827585456} 
+var \$Map = \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{Get\+Intrinsic}}(\textquotesingle{}\%Map\%\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00009}{9}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_a2b8f6f8dff6e2abcb3cf6cbea44ba4d5_a2b8f6f8dff6e2abcb3cf6cbea44ba4d5}\index{index.js@{index.js}!\$mapGet@{\$mapGet}}
+\index{\$mapGet@{\$mapGet}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$mapGet}{\$mapGet}}
+{\footnotesize\ttfamily \label{a01342_a2b8f6f8dff6e2abcb3cf6cbea44ba4d5_a2b8f6f8dff6e2abcb3cf6cbea44ba4d5} 
+var \$map\+Get = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{Map.\+prototype.\+get}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00014}{14}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_ae2e5e2c88922e1a0543bd4e027ddd70c_ae2e5e2c88922e1a0543bd4e027ddd70c}\index{index.js@{index.js}!\$mapHas@{\$mapHas}}
+\index{\$mapHas@{\$mapHas}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$mapHas}{\$mapHas}}
+{\footnotesize\ttfamily \label{a01342_ae2e5e2c88922e1a0543bd4e027ddd70c_ae2e5e2c88922e1a0543bd4e027ddd70c} 
+var \$map\+Has = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{Map.\+prototype.\+has}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00016}{16}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_a978e2805ea2804d2da84367fbd1589e5_a978e2805ea2804d2da84367fbd1589e5}\index{index.js@{index.js}!\$mapSet@{\$mapSet}}
+\index{\$mapSet@{\$mapSet}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$mapSet}{\$mapSet}}
+{\footnotesize\ttfamily \label{a01342_a978e2805ea2804d2da84367fbd1589e5_a978e2805ea2804d2da84367fbd1589e5} 
+var \$map\+Set = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{Map.\+prototype.\+set}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00015}{15}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066}\index{index.js@{index.js}!\$TypeError@{\$TypeError}}
+\index{\$TypeError@{\$TypeError}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$TypeError}{\$TypeError}}
+{\footnotesize\ttfamily \label{a01342_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066} 
+var \$Type\+Error = require(\textquotesingle{}es-\/errors/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00007}{7}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_a1f1e22a18053c0d0a43468aaa4a0123e_a1f1e22a18053c0d0a43468aaa4a0123e}\index{index.js@{index.js}!\$WeakMap@{\$WeakMap}}
+\index{\$WeakMap@{\$WeakMap}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$WeakMap}{\$WeakMap}}
+{\footnotesize\ttfamily \label{a01342_a1f1e22a18053c0d0a43468aaa4a0123e_a1f1e22a18053c0d0a43468aaa4a0123e} 
+var \$Weak\+Map = \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{Get\+Intrinsic}}(\textquotesingle{}\%Weak\+Map\%\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00008}{8}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_ad14ed308adaea2b639436cd6d638395f_ad14ed308adaea2b639436cd6d638395f}\index{index.js@{index.js}!\$weakMapGet@{\$weakMapGet}}
+\index{\$weakMapGet@{\$weakMapGet}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$weakMapGet}{\$weakMapGet}}
+{\footnotesize\ttfamily \label{a01342_ad14ed308adaea2b639436cd6d638395f_ad14ed308adaea2b639436cd6d638395f} 
+var \$weak\+Map\+Get = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{Weak\+Map.\+prototype.\+get}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00011}{11}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_a6da666f6a634c94787d9df0c837d28e4_a6da666f6a634c94787d9df0c837d28e4}\index{index.js@{index.js}!\$weakMapHas@{\$weakMapHas}}
+\index{\$weakMapHas@{\$weakMapHas}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$weakMapHas}{\$weakMapHas}}
+{\footnotesize\ttfamily \label{a01342_a6da666f6a634c94787d9df0c837d28e4_a6da666f6a634c94787d9df0c837d28e4} 
+var \$\mbox{\hyperlink{a01291_a8cd5d85be1734625e2c44c7b7431ff53_a8cd5d85be1734625e2c44c7b7431ff53}{weak\+Map\+Has}} = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{Weak\+Map.\+prototype.\+has}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00013}{13}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_ad4db9cf1c45595a59372b6015c3cdff5_ad4db9cf1c45595a59372b6015c3cdff5}\index{index.js@{index.js}!\$weakMapSet@{\$weakMapSet}}
+\index{\$weakMapSet@{\$weakMapSet}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$weakMapSet}{\$weakMapSet}}
+{\footnotesize\ttfamily \label{a01342_ad4db9cf1c45595a59372b6015c3cdff5_ad4db9cf1c45595a59372b6015c3cdff5} 
+var \$weak\+Map\+Set = \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{call\+Bound}}(\textquotesingle{}\mbox{\hyperlink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{Weak\+Map.\+prototype.\+set}}\textquotesingle{}, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00012}{12}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}\index{index.js@{index.js}!callBound@{callBound}}
+\index{callBound@{callBound}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{callBound}{callBound}}
+{\footnotesize\ttfamily \label{a01342_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8} 
+var call\+Bound = require(\textquotesingle{}\mbox{\hyperlink{a01225_af41b23e59e21fbbca9175e1dbd07b54e_af41b23e59e21fbbca9175e1dbd07b54e}{call}}-\/\mbox{\hyperlink{a01111_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}/call\+Bound\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00004}{4}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{index.js@{index.js}!exports@{exports}}
+\index{exports@{exports}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01342_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+
+
+@type \{import(\textquotesingle{}. 
+
+\textquotesingle{})\} 
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00065}{65}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}\index{index.js@{index.js}!GetIntrinsic@{GetIntrinsic}}
+\index{GetIntrinsic@{GetIntrinsic}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{GetIntrinsic}{GetIntrinsic}}
+{\footnotesize\ttfamily \label{a01342_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543} 
+var Get\+Intrinsic = require(\textquotesingle{}\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get}}-\/intrinsic\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00003}{3}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}\index{index.js@{index.js}!inspect@{inspect}}
+\index{inspect@{inspect}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{inspect}{inspect}}
+{\footnotesize\ttfamily \label{a01342_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe} 
+var inspect = require(\textquotesingle{}object-\/inspect\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00005}{5}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_a708f957bb788feae2ea156cf549e3504_a708f957bb788feae2ea156cf549e3504}\index{index.js@{index.js}!listGet@{listGet}}
+\index{listGet@{listGet}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{listGet}{listGet}}
+{\footnotesize\ttfamily \label{a01342_a708f957bb788feae2ea156cf549e3504_a708f957bb788feae2ea156cf549e3504} 
+var list\+Get}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (objects,\ key)\ \{}
+\DoxyCodeLine{\ \ \ \ var\ node\ =\ \mbox{\hyperlink{a01342_aecee9fefb2a3f8536861970c973b6d94_aecee9fefb2a3f8536861970c973b6d94}{listGetNode}}(objects,\ key);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ node\ \&\&\ node.value;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@type \{import(\textquotesingle{}. 
+
+\textquotesingle{}).list\+Get\} 
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00041}{41}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_aecee9fefb2a3f8536861970c973b6d94_aecee9fefb2a3f8536861970c973b6d94}\index{index.js@{index.js}!listGetNode@{listGetNode}}
+\index{listGetNode@{listGetNode}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{listGetNode}{listGetNode}}
+{\footnotesize\ttfamily \label{a01342_aecee9fefb2a3f8536861970c973b6d94_aecee9fefb2a3f8536861970c973b6d94} 
+var list\+Get\+Node}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (list,\ key)\ \{\ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ var\ prev\ =\ list;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ var\ curr;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (;\ (curr\ =\ prev.next)\ !==\ \textcolor{keyword}{null};\ prev\ =\ curr)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr.key\ ===\ key)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ prev.next\ =\ curr.next;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ curr.next\ =\ \ (list.next);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ list.next\ =\ curr;\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@type \{import(\textquotesingle{}. 
+
+\textquotesingle{}).list\+Get\+Node\} 
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00024}{24}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_a8369a1387c5f4b2d8e5fe75ddc11c3c6_a8369a1387c5f4b2d8e5fe75ddc11c3c6}\index{index.js@{index.js}!listHas@{listHas}}
+\index{listHas@{listHas}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{listHas}{listHas}}
+{\footnotesize\ttfamily \label{a01342_a8369a1387c5f4b2d8e5fe75ddc11c3c6_a8369a1387c5f4b2d8e5fe75ddc11c3c6} 
+var list\+Has}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (objects,\ key)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ !!\mbox{\hyperlink{a01342_aecee9fefb2a3f8536861970c973b6d94_aecee9fefb2a3f8536861970c973b6d94}{listGetNode}}(objects,\ key);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@type \{import(\textquotesingle{}. 
+
+\textquotesingle{}).list\+Has\} 
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00060}{60}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_aa7808cd520bbf3dc404bafe3f60ea554_aa7808cd520bbf3dc404bafe3f60ea554}\index{index.js@{index.js}!listSet@{listSet}}
+\index{listSet@{listSet}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{listSet}{listSet}}
+{\footnotesize\ttfamily \label{a01342_aa7808cd520bbf3dc404bafe3f60ea554_aa7808cd520bbf3dc404bafe3f60ea554} 
+var list\+Set}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (objects,\ key,\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ \{}
+\DoxyCodeLine{\ \ \ \ var\ node\ =\ \mbox{\hyperlink{a01342_aecee9fefb2a3f8536861970c973b6d94_aecee9fefb2a3f8536861970c973b6d94}{listGetNode}}(objects,\ key);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (node)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ node.value\ =\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}};}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ objects.next\ =\ \ (\{\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ key:\ key,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ next:\ objects.next,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@type \{import(\textquotesingle{}. 
+
+\textquotesingle{}).list\+Set\} 
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00046}{46}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+
+\Hypertarget{a01342_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{index.js@{index.js}!strict@{strict}}
+\index{strict@{strict}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01342_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01342_source_l00001}{1}} del archivo \mbox{\hyperlink{a01342_source}{node\+\_\+modules/side-\/channel/index.\+js}}.
+

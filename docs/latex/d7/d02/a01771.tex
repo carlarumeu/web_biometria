@@ -1,0 +1,89 @@
+\doxysubsection{Referencia del archivo iconv-\/lite/lib/bom-\/handling.js}
+\hypertarget{a01771}{}\label{a01771}\index{bom-\/handling.js@{bom-\/handling.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a01771_aa79346a0d2038acb162505b02078fc22_aa79346a0d2038acb162505b02078fc22}{Strip\+BOMWrapper}} (\mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}, options)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01771_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a01771_a260b6dcf74b290fa0d77e3b425367591_a260b6dcf74b290fa0d77e3b425367591}{BOMChar}} = \textquotesingle{}\textbackslash{}u\+FEFF\textquotesingle{}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01771_afda1556f5986dc9fc1236312e484a6af_afda1556f5986dc9fc1236312e484a6af}{Prepend\+BOM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01771_aa79346a0d2038acb162505b02078fc22_aa79346a0d2038acb162505b02078fc22}\index{bom-\/handling.js@{bom-\/handling.js}!StripBOMWrapper@{StripBOMWrapper}}
+\index{StripBOMWrapper@{StripBOMWrapper}!bom-\/handling.js@{bom-\/handling.js}}
+\doxyparagraph{\texorpdfstring{StripBOMWrapper()}{StripBOMWrapper()}}
+{\footnotesize\ttfamily \label{a01771_aa79346a0d2038acb162505b02078fc22_aa79346a0d2038acb162505b02078fc22} 
+function Strip\+BOMWrapper (\begin{DoxyParamCaption}\item[{}]{decoder}{, }\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01771_source_l00028}{28}} del archivo \mbox{\hyperlink{a01771_source}{iconv-\/lite/lib/bom-\/handling.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01771_a260b6dcf74b290fa0d77e3b425367591_a260b6dcf74b290fa0d77e3b425367591}\index{bom-\/handling.js@{bom-\/handling.js}!BOMChar@{BOMChar}}
+\index{BOMChar@{BOMChar}!bom-\/handling.js@{bom-\/handling.js}}
+\doxyparagraph{\texorpdfstring{BOMChar}{BOMChar}}
+{\footnotesize\ttfamily \label{a01771_a260b6dcf74b290fa0d77e3b425367591_a260b6dcf74b290fa0d77e3b425367591} 
+var BOMChar = \textquotesingle{}\textbackslash{}u\+FEFF\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01771_source_l00003}{3}} del archivo \mbox{\hyperlink{a01771_source}{iconv-\/lite/lib/bom-\/handling.\+js}}.
+
+\Hypertarget{a01771_afda1556f5986dc9fc1236312e484a6af_afda1556f5986dc9fc1236312e484a6af}\index{bom-\/handling.js@{bom-\/handling.js}!PrependBOM@{PrependBOM}}
+\index{PrependBOM@{PrependBOM}!bom-\/handling.js@{bom-\/handling.js}}
+\doxyparagraph{\texorpdfstring{PrependBOM}{PrependBOM}}
+{\footnotesize\ttfamily \label{a01771_afda1556f5986dc9fc1236312e484a6af_afda1556f5986dc9fc1236312e484a6af} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} Prepend\+BOM}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ PrependBOMWrapper}
+\DoxyCodeLine{\textcolor{keyword}{function}\ PrependBOMWrapper(\mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}},\ options)\ \{}
+\DoxyCodeLine{\ \ \ \ this.\mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}\ =\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}};}
+\DoxyCodeLine{\ \ \ \ this.addBOM\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{PrependBOMWrapper.prototype.write\ =\ \textcolor{keyword}{function}(str)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (this.addBOM)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ str\ =\ \mbox{\hyperlink{a01771_a260b6dcf74b290fa0d77e3b425367591_a260b6dcf74b290fa0d77e3b425367591}{BOMChar}}\ +\ str;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.addBOM\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}.write(str);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{PrependBOMWrapper.prototype.end\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}.end();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.StripBOM\ =\ \mbox{\hyperlink{a01771_aa79346a0d2038acb162505b02078fc22_aa79346a0d2038acb162505b02078fc22}{StripBOMWrapper}}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01771_source_l00005}{5}} del archivo \mbox{\hyperlink{a01771_source}{iconv-\/lite/lib/bom-\/handling.\+js}}.
+
+\Hypertarget{a01771_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{bom-\/handling.js@{bom-\/handling.js}!strict@{strict}}
+\index{strict@{strict}!bom-\/handling.js@{bom-\/handling.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01771_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01771_source_l00001}{1}} del archivo \mbox{\hyperlink{a01771_source}{iconv-\/lite/lib/bom-\/handling.\+js}}.
+

@@ -1,0 +1,86 @@
+\doxysection{generate-\/function}
+\hypertarget{a00903}{}\label{a00903}\index{generate-\/function@{generate-\/function}}
+\label{a00903_autotoc_md1143}%
+\Hypertarget{a00903_autotoc_md1143}%
+
+
+Module that helps you write generated functions in Node
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ generate-\/function}
+
+\end{DoxyCode}
+
+
+\href{http://travis-ci.org/mafintosh/generate-function}{\texttt{ }}\hypertarget{a00903_autotoc_md1144}{}\doxysubsection{\texorpdfstring{Disclamer}{Disclamer}}\label{a00903_autotoc_md1144}
+Writing code that generates code is hard. You should only use this if you really, really, really need this for performance reasons (like schema validators / parsers etc).\hypertarget{a00903_autotoc_md1145}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00903_autotoc_md1145}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ js}
+\DoxyCodeLine{const\ genfun\ =\ require('generate-\/function')}
+\DoxyCodeLine{const\ \{\ d\ \}\ =\ genfun.formats}
+\DoxyCodeLine{}
+\DoxyCodeLine{function\ addNumber\ (val)\ \{}
+\DoxyCodeLine{\ \ const\ gen\ =\ genfun()}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ gen(`}
+\DoxyCodeLine{\ \ \ \ function\ add\ (n)\ \{')}
+\DoxyCodeLine{\ \ \ \ \ \ return\ n\ +\ \$\{d(val)\})\ //\ supports\ format\ strings\ to\ insert\ values}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \`{})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ return\ gen.toFunction()\ //\ will\ compile\ the\ function}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{const\ add2\ =\ addNumber(2)}
+\DoxyCodeLine{}
+\DoxyCodeLine{console.log('1\ +\ 2\ =',\ add2(1))}
+\DoxyCodeLine{console.log(add2.toString())\ //\ prints\ the\ generated\ function}
+
+\end{DoxyCode}
+
+
+If you need to close over variables in your generated function pass them to {\ttfamily to\+Function(scope)}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ js}
+\DoxyCodeLine{function\ multiply\ (a,\ b)\ \{}
+\DoxyCodeLine{\ \ return\ a\ *\ b}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{function\ addAndMultiplyNumber\ (val)\ \{}
+\DoxyCodeLine{\ \ const\ gen\ =\ genfun()}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ gen(`}
+\DoxyCodeLine{\ \ \ \ function\ (n)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ if\ (typeof\ n\ !==\ 'number')\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ throw\ new\ Error('argument\ should\ be\ a\ number')}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ const\ result\ =\ multiply(\$\{d(val)\},\ n\ +\ \$\{d(val)\})}
+\DoxyCodeLine{\ \ \ \ \ \ return\ result}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \`{})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ //\ use\ gen.toString()\ if\ you\ want\ to\ see\ the\ generated\ source}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ return\ gen.toFunction(\{multiply\})}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{const\ addAndMultiply2\ =\ addAndMultiplyNumber(2)}
+\DoxyCodeLine{}
+\DoxyCodeLine{console.log(addAndMultiply2.toString())}
+\DoxyCodeLine{console.log('(3\ +\ 2)\ *\ 2\ =',\ addAndMultiply2(3))}
+
+\end{DoxyCode}
+
+
+You can call {\ttfamily gen(src)} as many times as you want to append more source code to the function.\hypertarget{a00903_autotoc_md1146}{}\doxysubsection{\texorpdfstring{Variables}{Variables}}\label{a00903_autotoc_md1146}
+If you need a unique safe identifier for the scope of the generated function call `str = gen.\+sym(\textquotesingle{}friendly\+Name')\`{}. These are safe to use for variable names etc.\hypertarget{a00903_autotoc_md1147}{}\doxysubsection{\texorpdfstring{Object properties}{Object properties}}\label{a00903_autotoc_md1147}
+If you need to access an object property use the `str = gen.\+property(\textquotesingle{}object\+Name', \textquotesingle{}property\+Name\textquotesingle{})\`{}.
+
+This returns `\textquotesingle{}object\+Name.\+property\+Name'{\ttfamily if}property\+Name{\ttfamily is safe to use as a variable. Otherwise it returns}object\+Name\mbox{[}property\+Name\+As\+String\mbox{]}\`{}.
+
+If you only pass `gen.\+property(\textquotesingle{}property\+Name'){\ttfamily it will only return the}property\+Name\`{} part safely\hypertarget{a00903_autotoc_md1148}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00903_autotoc_md1148}
+MIT 

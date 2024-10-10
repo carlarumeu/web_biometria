@@ -1,0 +1,168 @@
+\doxysubsection{Referencia del archivo mediacion\+Model.\+js}
+\hypertarget{a00632}{}\label{a00632}\index{mediacionModel.js@{mediacionModel.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01195_a855a20a52f797d443a00308230dc8f43_a855a20a52f797d443a00308230dc8f43}{import}} \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}} from config \mbox{\hyperlink{a00215_af670582b5c8da7efc1bd7486225bcec7_af670582b5c8da7efc1bd7486225bcec7}{db}} \mbox{\hyperlink{a00632_aa10fb6863dca783341cf3ea63763a6fa_aa10fb6863dca783341cf3ea63763a6fa}{js}}
+\item 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00632_a39f96dc7b51d953e4e65a08564e73d5a_a39f96dc7b51d953e4e65a08564e73d5a}{get\+Mediciones}}
+\begin{DoxyCompactList}\small\item\em @function get\+Mediciones @async \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00632_a6fe4e602e4a604876ec3d59fd73dd8c5_a6fe4e602e4a604876ec3d59fd73dd8c5}{insert\+Medicion}}
+\begin{DoxyCompactList}\small\item\em @function insert\+Medicion @async \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00632_a506c19b39343a5688cf622b036cdddd7_a506c19b39343a5688cf622b036cdddd7}{get\+Ultima\+Medicion}}
+\begin{DoxyCompactList}\small\item\em @function get\+Ultima\+Medicion @async \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00632_a39f96dc7b51d953e4e65a08564e73d5a_a39f96dc7b51d953e4e65a08564e73d5a}\index{mediacionModel.js@{mediacionModel.js}!getMediciones@{getMediciones}}
+\index{getMediciones@{getMediciones}!mediacionModel.js@{mediacionModel.js}}
+\doxyparagraph{\texorpdfstring{getMediciones}{getMediciones}}
+{\footnotesize\ttfamily \label{a00632_a39f96dc7b51d953e4e65a08564e73d5a_a39f96dc7b51d953e4e65a08564e73d5a} 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} get\+Mediciones}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ async\ (filters)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ WHERE\ 1=1'};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ params\ =\ [];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (filters.lugar)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ lugar\ =\ ?'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ params.push(filters.lugar);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (filters.tipo\_gas)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ tipo\_gas\ =\ ?'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ params.push(filters.tipo\_gas);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (filters.desde\_hora)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ >=\ ?'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ params.push(filters.desde\_hora);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (filters.hasta\_hora)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ <=\ ?'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ params.push(filters.hasta\_hora);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ [rows]\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}.query(\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}},\ params);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ rows;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@function get\+Mediciones @async 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Object\}} & filters -\/ Filtros para las mediciones. \\
+\hline
+{\em \{string\}} & \mbox{[}filters.\+lugar\mbox{]} -\/ Lugar de la medición. \\
+\hline
+{\em \{string\}} & \mbox{[}filters.\+tipo\+\_\+gas\mbox{]} -\/ Tipo de gas de la medición. \\
+\hline
+{\em \{string\}} & \mbox{[}filters.\+desde\+\_\+hora\mbox{]} -\/ Hora de inicio para el filtro de mediciones. \\
+\hline
+{\em \{string\}} & \mbox{[}filters.\+hasta\+\_\+hora\mbox{]} -\/ Hora de fin para el filtro de mediciones. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Promise$<$\+Array$<$\+Object$>$$>$\} Lista de mediciones que cumplen con los filtros especificados. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Error\}} & Si ocurre un error durante la consulta a la base de datos. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \mbox{\hyperlink{a00632_source_l00021}{21}} del archivo \mbox{\hyperlink{a00632_source}{mediacion\+Model.\+js}}.
+
+\Hypertarget{a00632_a506c19b39343a5688cf622b036cdddd7_a506c19b39343a5688cf622b036cdddd7}\index{mediacionModel.js@{mediacionModel.js}!getUltimaMedicion@{getUltimaMedicion}}
+\index{getUltimaMedicion@{getUltimaMedicion}!mediacionModel.js@{mediacionModel.js}}
+\doxyparagraph{\texorpdfstring{getUltimaMedicion}{getUltimaMedicion}}
+{\footnotesize\ttfamily \label{a00632_a506c19b39343a5688cf622b036cdddd7_a506c19b39343a5688cf622b036cdddd7} 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} get\+Ultima\+Medicion}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ async\ ()\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ ORDER\ BY\ hora\ DESC\ LIMIT\ 1'};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ [rows]\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}.query(\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ rows[0];}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@function get\+Ultima\+Medicion @async 
+
+\begin{DoxyReturn}{Devuelve}
+\{Promise\texorpdfstring{$<$}{<}Object\texorpdfstring{$\vert$}{|}null\texorpdfstring{$>$}{>}\} La última medición registrada, o null si no hay mediciones. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Error\}} & Si ocurre un error durante la consulta a la base de datos. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \mbox{\hyperlink{a00632_source_l00077}{77}} del archivo \mbox{\hyperlink{a00632_source}{mediacion\+Model.\+js}}.
+
+\Hypertarget{a00632_a6fe4e602e4a604876ec3d59fd73dd8c5_a6fe4e602e4a604876ec3d59fd73dd8c5}\index{mediacionModel.js@{mediacionModel.js}!insertMedicion@{insertMedicion}}
+\index{insertMedicion@{insertMedicion}!mediacionModel.js@{mediacionModel.js}}
+\doxyparagraph{\texorpdfstring{insertMedicion}{insertMedicion}}
+{\footnotesize\ttfamily \label{a00632_a6fe4e602e4a604876ec3d59fd73dd8c5_a6fe4e602e4a604876ec3d59fd73dd8c5} 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} insert\+Medicion}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ async\ (medicion)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ \textcolor{stringliteral}{'INSERT\ INTO\ mediciones\ (medida,\ lugar,\ tipo\_gas,\ hora)\ VALUES\ (?,\ ?,\ ?,\ ?)'};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ [result]\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}.execute(\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}},\ [medida,\ lugar,\ tipo\_gas,\ hora]);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ result.insertId;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+@function insert\+Medicion @async 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Object\}} & medicion -\/ Objeto que contiene los datos de la medición a insertar. \\
+\hline
+{\em \{number\}} & medicion.\+medida -\/ Valor de la medición. \\
+\hline
+{\em \{string\}} & medicion.\+lugar -\/ Lugar de la medición. \\
+\hline
+{\em \{string\}} & medicion.\+tipo\+\_\+gas -\/ Tipo de gas de la medición. \\
+\hline
+{\em \{string\}} & medicion.\+hora -\/ Hora en la que se realizó la medición. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Promise$<$number$>$\} ID de la medición insertada. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Error\}} & Si ocurre un error durante la inserción en la base de datos. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \mbox{\hyperlink{a00632_source_l00062}{62}} del archivo \mbox{\hyperlink{a00632_source}{mediacion\+Model.\+js}}.
+
+\Hypertarget{a00632_aa10fb6863dca783341cf3ea63763a6fa_aa10fb6863dca783341cf3ea63763a6fa}\index{mediacionModel.js@{mediacionModel.js}!js@{js}}
+\index{js@{js}!mediacionModel.js@{mediacionModel.js}}
+\doxyparagraph{\texorpdfstring{js}{js}}
+{\footnotesize\ttfamily \label{a00632_aa10fb6863dca783341cf3ea63763a6fa_aa10fb6863dca783341cf3ea63763a6fa} 
+\mbox{\hyperlink{a01195_a855a20a52f797d443a00308230dc8f43_a855a20a52f797d443a00308230dc8f43}{import}} \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}} from config \mbox{\hyperlink{a00215_af670582b5c8da7efc1bd7486225bcec7_af670582b5c8da7efc1bd7486225bcec7}{db}} js}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00632_source_l00002}{2}} del archivo \mbox{\hyperlink{a00632_source}{mediacion\+Model.\+js}}.
+

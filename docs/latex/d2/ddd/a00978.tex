@@ -1,0 +1,43 @@
+\doxysection{set-\/function-\/length \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/set-\/function-\/length"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/ljharb/set-\/function-\/length.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00978}{}\label{a00978}\index{set-\/function-\/length $<$sup$>$$<$a href="{}https://npmjs.org/package/set-\/function-\/length"{} $>$$<$img src="{}https://versionbadg.es/ljharb/set-\/function-\/length.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{set-\/function-\/length $<$sup$>$$<$a href=""https://npmjs.org/package/set-\/function-\/length"" $>$$<$img src=""https://versionbadg.es/ljharb/set-\/function-\/length.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00978_autotoc_md2381}%
+\Hypertarget{a00978_autotoc_md2381}%
+
+
+\href{https://github.com/ljharb/set-function-length/actions}{\texttt{ }} \href{https://app.codecov.io/gh/ljharb/set-function-length/}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=set-function-length}{\texttt{ }}
+
+\href{https://npmjs.org/package/set-function-length}{\texttt{ }}
+
+Set a function’s length.
+
+Arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily fn}\+: the function
+\item {\ttfamily length}\+: the new length. Must be an integer between 0 and 2\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}32.
+\item {\ttfamily loose}\+: Optional. If true, and the length fails to be set, do not throw. Default false.
+\end{DoxyItemize}
+
+Returns {\ttfamily fn}.\hypertarget{a00978_autotoc_md2382}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00978_autotoc_md2382}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01111_a3534cc2550d6bd4e495fca1a5517071d_a3534cc2550d6bd4e495fca1a5517071d}{setFunctionLength}}\ =\ require(\textcolor{stringliteral}{'set-\/function-\/length'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{function}\ zero()\ \{\}}
+\DoxyCodeLine{\textcolor{keyword}{function}\ one(\_)\ \{\}}
+\DoxyCodeLine{\textcolor{keyword}{function}\ two(\_,\ \_\_)\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(zero.length,\ 0);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(one.length,\ 1);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(two.length,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01111_a3534cc2550d6bd4e495fca1a5517071d_a3534cc2550d6bd4e495fca1a5517071d}{setFunctionLength}}(zero,\ 10),\ zero);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01111_a3534cc2550d6bd4e495fca1a5517071d_a3534cc2550d6bd4e495fca1a5517071d}{setFunctionLength}}(one,\ 11),\ one);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01111_a3534cc2550d6bd4e495fca1a5517071d_a3534cc2550d6bd4e495fca1a5517071d}{setFunctionLength}}(two,\ 12),\ two);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(zero.length,\ 10);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(one.length,\ 11);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(two.length,\ 12);}
+
+\end{DoxyCode}
+ 

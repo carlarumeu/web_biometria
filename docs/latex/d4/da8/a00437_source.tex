@@ -1,0 +1,64 @@
+\doxysubsection{bigint.\+js}
+\hypertarget{a00437_source}{}\label{a00437_source}\index{bigint.js@{bigint.js}}
+\mbox{\hyperlink{a00437}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00001}\mbox{\hyperlink{a00437_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00003}\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{00003}}\ var\ \mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}\ =\ require(\textcolor{stringliteral}{'../'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00004}\mbox{\hyperlink{a00437_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{00004}}\ var\ \mbox{\hyperlink{a00437_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}\ =\ require(\textcolor{stringliteral}{'tape'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00005}\mbox{\hyperlink{a00437_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{00005}}\ var\ \mbox{\hyperlink{a00437_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{hasToStringTag}}\ =\ require(\textcolor{stringliteral}{'has-\/tostringtag/shams'})();}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00007}00007\ \mbox{\hyperlink{a00437_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(\textcolor{stringliteral}{'bigint'},\ \{\ skip:\ typeof\ BigInt\ ===\ \textcolor{stringliteral}{'undefined'}\ \},\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'primitives'},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00009}00009\ \ \ \ \ \ \ \ \ st.plan(3);}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00011}00011\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(-\/256)),\ \textcolor{stringliteral}{'-\/256n'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00012}00012\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(0)),\ \textcolor{stringliteral}{'0n'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00013}00013\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(256)),\ \textcolor{stringliteral}{'256n'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00014}00014\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'objects'},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00017}00017\ \ \ \ \ \ \ \ \ st.plan(3);}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00019}00019\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(Object(BigInt(-\/256))),\ \textcolor{stringliteral}{'Object(-\/256n)'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00020}00020\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(Object(BigInt(0))),\ \textcolor{stringliteral}{'Object(0n)'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00021}00021\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(Object(BigInt(256))),\ \textcolor{stringliteral}{'Object(256n)'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00022}00022\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'syntactic\ primitives'},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00025}00025\ \ \ \ \ \ \ \ \ st.plan(3);}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ eslint-\/disable\ no-\/new-\/func\ */}}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00028}00028\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(Function(\textcolor{stringliteral}{'return\ -\/256n'})()),\ \textcolor{stringliteral}{'-\/256n'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00029}00029\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(Function(\textcolor{stringliteral}{'return\ 0n'})()),\ \textcolor{stringliteral}{'0n'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00030}00030\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(Function(\textcolor{stringliteral}{'return\ 256n'})()),\ \textcolor{stringliteral}{'256n'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00031}00031\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'toStringTag'},\ \{\ skip:\ !\mbox{\hyperlink{a00437_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{hasToStringTag}}\ \},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00034}00034\ \ \ \ \ \ \ \ \ st.plan(1);}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00036}00036\ \ \ \ \ \ \ \ \ var\ faker\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00037}00037\ \ \ \ \ \ \ \ \ faker[Symbol.toStringTag]\ =\ \textcolor{stringliteral}{'BigInt'};}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00038}00038\ \ \ \ \ \ \ \ \ st.equal(}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(faker),}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [Symbol(Symbol.toStringTag)]:\ \(\backslash\)'BigInt\(\backslash\)'\ \}'},}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'object\ lying\ about\ being\ a\ BigInt\ inspects\ as\ an\ object'}}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00042}00042\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00043}00043\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'numericSeparator'},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00046}00046\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(0),\ \{\ numericSeparator:\ \textcolor{keyword}{false}\ \}),\ \textcolor{stringliteral}{'0n'},\ \textcolor{stringliteral}{'0n,\ numericSeparator\ false'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00047}00047\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(0),\ \{\ numericSeparator:\ \textcolor{keyword}{true}\ \}),\ \textcolor{stringliteral}{'0n'},\ \textcolor{stringliteral}{'0n,\ numericSeparator\ true'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00049}00049\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(1234),\ \{\ numericSeparator:\ \textcolor{keyword}{false}\ \}),\ \textcolor{stringliteral}{'1234n'},\ \textcolor{stringliteral}{'1234n,\ numericSeparator\ false'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00050}00050\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(1234),\ \{\ numericSeparator:\ \textcolor{keyword}{true}\ \}),\ \textcolor{stringliteral}{'1\_234n'},\ \textcolor{stringliteral}{'1234n,\ numericSeparator\ true'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00051}00051\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(-\/1234),\ \{\ numericSeparator:\ \textcolor{keyword}{false}\ \}),\ \textcolor{stringliteral}{'-\/1234n'},\ \textcolor{stringliteral}{'1234n,\ numericSeparator\ false'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00052}00052\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00437_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(BigInt(-\/1234),\ \{\ numericSeparator:\ \textcolor{keyword}{true}\ \}),\ \textcolor{stringliteral}{'-\/1\_234n'},\ \textcolor{stringliteral}{'1234n,\ numericSeparator\ true'});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00054}00054\ \ \ \ \ \ \ \ \ st.end();}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00055}00055\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{a00437_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.end();}
+\DoxyCodeLine{\Hypertarget{a00437_source_l00058}00058\ \});}
+
+\end{DoxyCode}

@@ -1,0 +1,109 @@
+\doxysubsection{Referencia de la clase Server\+Handshake}
+\hypertarget{a00716}{}\label{a00716}\index{ServerHandshake@{ServerHandshake}}
+
+
+Diagrama de herencia de Server\+Handshake
+% FIG 0
+
+
+Diagrama de colaboración de Server\+Handshake\+:
+% FIG 1
+\doxysubsubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00716_af20e5e117055b571e1b9379937f7901c_af20e5e117055b571e1b9379937f7901c}{constructor}} (args)
+\item 
+\mbox{\hyperlink{a00716_a83cd7893979768bba8d909a44e4b4e08_a83cd7893979768bba8d909a44e4b4e08}{start}} (packet, connection)
+\item 
+\mbox{\hyperlink{a00716_a85b9d3f779a0397b6d5b355a0323cd97_a85b9d3f779a0397b6d5b355a0323cd97}{read\+Client\+Reply}} (packet, connection)
+\item 
+\mbox{\hyperlink{a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97_a0c60ad2ec7a7f3a09e2f6942eed49d97}{\+\_\+is\+Statement}} (\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}, name)
+\item 
+\mbox{\hyperlink{a00716_a7c1cdab61917369873210fc86b3185e5_a7c1cdab61917369873210fc86b3185e5}{dispatch\+Commands}} (packet, connection)
+\end{DoxyCompactItemize}
+\doxyparagraph*{Métodos públicos heredados de \mbox{\hyperlink{a00684}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00684_abe4bf2e39056a28c4ea510cdd0520cef_abe4bf2e39056a28c4ea510cdd0520cef}{constructor}} ()
+\item 
+\mbox{\hyperlink{a00684_a2b04c7a7cf565f0faa758435f30c0669_a2b04c7a7cf565f0faa758435f30c0669}{state\+Name}} ()
+\item 
+\mbox{\hyperlink{a00684_aee684a8d804245990df341f52906abc2_aee684a8d804245990df341f52906abc2}{execute}} (packet, connection)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{a00275_source_l00009}{9}} del archivo \mbox{\hyperlink{a00275_source}{server\+\_\+handshake.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de funciones miembro}
+\Hypertarget{a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97_a0c60ad2ec7a7f3a09e2f6942eed49d97}\index{ServerHandshake@{ServerHandshake}!\_isStatement@{\_isStatement}}
+\index{\_isStatement@{\_isStatement}!ServerHandshake@{ServerHandshake}}
+\doxyparagraph{\texorpdfstring{\_isStatement()}{\_isStatement()}}
+{\footnotesize\ttfamily \label{a00716_a0c60ad2ec7a7f3a09e2f6942eed49d97_a0c60ad2ec7a7f3a09e2f6942eed49d97} 
+Server\+Handshake\+::\+\_\+is\+Statement (\begin{DoxyParamCaption}\item[{}]{query}{, }\item[{}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00275_source_l00072}{72}} del archivo \mbox{\hyperlink{a00275_source}{server\+\_\+handshake.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{a00716_af20e5e117055b571e1b9379937f7901c_af20e5e117055b571e1b9379937f7901c}\index{ServerHandshake@{ServerHandshake}!constructor@{constructor}}
+\index{constructor@{constructor}!ServerHandshake@{ServerHandshake}}
+\doxyparagraph{\texorpdfstring{constructor()}{constructor()}}
+{\footnotesize\ttfamily \label{a00716_af20e5e117055b571e1b9379937f7901c_af20e5e117055b571e1b9379937f7901c} 
+Server\+Handshake\+::constructor (\begin{DoxyParamCaption}\item[{}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00275_source_l00010}{10}} del archivo \mbox{\hyperlink{a00275_source}{server\+\_\+handshake.\+js}}.
+
+\Hypertarget{a00716_a7c1cdab61917369873210fc86b3185e5_a7c1cdab61917369873210fc86b3185e5}\index{ServerHandshake@{ServerHandshake}!dispatchCommands@{dispatchCommands}}
+\index{dispatchCommands@{dispatchCommands}!ServerHandshake@{ServerHandshake}}
+\doxyparagraph{\texorpdfstring{dispatchCommands()}{dispatchCommands()}}
+{\footnotesize\ttfamily \label{a00716_a7c1cdab61917369873210fc86b3185e5_a7c1cdab61917369873210fc86b3185e5} 
+Server\+Handshake\+::dispatch\+Commands (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00275_source_l00077}{77}} del archivo \mbox{\hyperlink{a00275_source}{server\+\_\+handshake.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+Gráfico de llamadas a esta función\+:
+% FIG 4
+\Hypertarget{a00716_a85b9d3f779a0397b6d5b355a0323cd97_a85b9d3f779a0397b6d5b355a0323cd97}\index{ServerHandshake@{ServerHandshake}!readClientReply@{readClientReply}}
+\index{readClientReply@{readClientReply}!ServerHandshake@{ServerHandshake}}
+\doxyparagraph{\texorpdfstring{readClientReply()}{readClientReply()}}
+{\footnotesize\ttfamily \label{a00716_a85b9d3f779a0397b6d5b355a0323cd97_a85b9d3f779a0397b6d5b355a0323cd97} 
+Server\+Handshake\+::read\+Client\+Reply (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00275_source_l00036}{36}} del archivo \mbox{\hyperlink{a00275_source}{server\+\_\+handshake.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 5
+Gráfico de llamadas a esta función\+:
+% FIG 6
+\Hypertarget{a00716_a83cd7893979768bba8d909a44e4b4e08_a83cd7893979768bba8d909a44e4b4e08}\index{ServerHandshake@{ServerHandshake}!start@{start}}
+\index{start@{start}!ServerHandshake@{ServerHandshake}}
+\doxyparagraph{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{a00716_a83cd7893979768bba8d909a44e4b4e08_a83cd7893979768bba8d909a44e4b4e08} 
+Server\+Handshake\+::start (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00275_source_l00023}{23}} del archivo \mbox{\hyperlink{a00275_source}{server\+\_\+handshake.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 7
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00275}{server\+\_\+handshake.\+js}}\end{DoxyCompactItemize}

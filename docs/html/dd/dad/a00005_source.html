@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente medicionController.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dd/dad/a00005_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">medicionController.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dad/a00005.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005_a59be084da8908b7d77ff34b25cd84488.html#a59be084da8908b7d77ff34b25cd84488">    1</a></span><span class="keyword">import</span> { <a class="code hl_variable" href="../../d4/d81/a00110_a5584509a73694d908bebf97464c0c255.html#a5584509a73694d908bebf97464c0c255">obtenerMediciones</a>, <a class="code hl_variable" href="../../d4/d81/a00110_af1e046d467b6f02e2699fc8e3ba539aa.html#af1e046d467b6f02e2699fc8e3ba539aa">enviarMedicion</a>, <a class="code hl_variable" href="../../d4/d81/a00110_a9e697b665d6ba0ad8418337fe2a2d91a.html#a9e697b665d6ba0ad8418337fe2a2d91a">obtenerUltimaMedicion</a> } from <span class="stringliteral">&#39;../services/medicionService.js&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Obtener todas las mediciones (con filtros opcionales)</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005_a39f96dc7b51d953e4e65a08564e73d5a.html#a39f96dc7b51d953e4e65a08564e73d5a">   18</a></span>export <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/dad/a00005_a39f96dc7b51d953e4e65a08564e73d5a.html#a39f96dc7b51d953e4e65a08564e73d5a">getMediciones</a> = async (req, res) =&gt; {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">const</span> { lugar, tipo_gas, desde_hora, hasta_hora } = req.query;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> mediciones = await <a class="code hl_variable" href="../../d4/d81/a00110_a5584509a73694d908bebf97464c0c255.html#a5584509a73694d908bebf97464c0c255">obtenerMediciones</a>(lugar, tipo_gas, desde_hora, hasta_hora);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    res.status(200).json(mediciones);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  } <span class="keywordflow">catch</span> (error) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    res.status(400).json({ message: error.message });</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Crear nueva medición</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005_ade4b47fa63ce1524d54b4855698c2aee.html#ade4b47fa63ce1524d54b4855698c2aee">   40</a></span>export <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/dad/a00005_ade4b47fa63ce1524d54b4855698c2aee.html#ade4b47fa63ce1524d54b4855698c2aee">postMedicion</a> = async (req, res) =&gt; {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> nuevaMedicion = req.body;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    await <a class="code hl_variable" href="../../d4/d81/a00110_af1e046d467b6f02e2699fc8e3ba539aa.html#af1e046d467b6f02e2699fc8e3ba539aa">enviarMedicion</a>(nuevaMedicion);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    res.status(201).json({ message: <span class="stringliteral">&#39;Medición creada correctamente&#39;</span> });</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  } <span class="keywordflow">catch</span> (error) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    res.status(400).json({ message: error.message });</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// Obtener la última medición</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005_a506c19b39343a5688cf622b036cdddd7.html#a506c19b39343a5688cf622b036cdddd7">   62</a></span>export <span class="keyword">const</span> <a class="code hl_variable" href="../../dd/dad/a00005_a506c19b39343a5688cf622b036cdddd7.html#a506c19b39343a5688cf622b036cdddd7">getUltimaMedicion</a> = async (req, res) =&gt; {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> ultimaMedicion = await <a class="code hl_variable" href="../../d4/d81/a00110_a9e697b665d6ba0ad8418337fe2a2d91a.html#a9e697b665d6ba0ad8418337fe2a2d91a">obtenerUltimaMedicion</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (!ultimaMedicion) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keywordflow">return</span> res.status(404).json({ message: <span class="stringliteral">&#39;No se encontró ninguna medición&#39;</span> });</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    res.status(200).json(ultimaMedicion);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  } <span class="keywordflow">catch</span> (error) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    res.status(400).json({ message: error.message });</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+</div>
+<div class="ttc" id="aa00005_a39f96dc7b51d953e4e65a08564e73d5a_html_a39f96dc7b51d953e4e65a08564e73d5a"><div class="ttname"><a href="../../dd/dad/a00005_a39f96dc7b51d953e4e65a08564e73d5a.html#a39f96dc7b51d953e4e65a08564e73d5a">getMediciones</a></div><div class="ttdeci">export const getMediciones</div><div class="ttdoc">@function getMediciones @async</div><div class="ttdef"><b>Definition</b> <a href="#l00018">medicionController.js:18</a></div></div>
+<div class="ttc" id="aa00005_a506c19b39343a5688cf622b036cdddd7_html_a506c19b39343a5688cf622b036cdddd7"><div class="ttname"><a href="../../dd/dad/a00005_a506c19b39343a5688cf622b036cdddd7.html#a506c19b39343a5688cf622b036cdddd7">getUltimaMedicion</a></div><div class="ttdeci">export const getUltimaMedicion</div><div class="ttdoc">@function getUltimaMedicion @async</div><div class="ttdef"><b>Definition</b> <a href="#l00062">medicionController.js:62</a></div></div>
+<div class="ttc" id="aa00005_ade4b47fa63ce1524d54b4855698c2aee_html_ade4b47fa63ce1524d54b4855698c2aee"><div class="ttname"><a href="../../dd/dad/a00005_ade4b47fa63ce1524d54b4855698c2aee.html#ade4b47fa63ce1524d54b4855698c2aee">postMedicion</a></div><div class="ttdeci">export const postMedicion</div><div class="ttdoc">@function postMedicion @async</div><div class="ttdef"><b>Definition</b> <a href="#l00040">medicionController.js:40</a></div></div>
+<div class="ttc" id="aa00110_a5584509a73694d908bebf97464c0c255_html_a5584509a73694d908bebf97464c0c255"><div class="ttname"><a href="../../d4/d81/a00110_a5584509a73694d908bebf97464c0c255.html#a5584509a73694d908bebf97464c0c255">obtenerMediciones</a></div><div class="ttdeci">export const obtenerMediciones</div><div class="ttdoc">@function obtenerMediciones @async</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d81/a00110_source.html#l00019">medicionService.js:19</a></div></div>
+<div class="ttc" id="aa00110_a9e697b665d6ba0ad8418337fe2a2d91a_html_a9e697b665d6ba0ad8418337fe2a2d91a"><div class="ttname"><a href="../../d4/d81/a00110_a9e697b665d6ba0ad8418337fe2a2d91a.html#a9e697b665d6ba0ad8418337fe2a2d91a">obtenerUltimaMedicion</a></div><div class="ttdeci">export const obtenerUltimaMedicion</div><div class="ttdoc">@function obtenerUltimaMedicion @async</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d81/a00110_source.html#l00075">medicionService.js:75</a></div></div>
+<div class="ttc" id="aa00110_af1e046d467b6f02e2699fc8e3ba539aa_html_af1e046d467b6f02e2699fc8e3ba539aa"><div class="ttname"><a href="../../d4/d81/a00110_af1e046d467b6f02e2699fc8e3ba539aa.html#af1e046d467b6f02e2699fc8e3ba539aa">enviarMedicion</a></div><div class="ttdeci">export const enviarMedicion</div><div class="ttdoc">@function enviarMedicion @async</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d81/a00110_source.html#l00061">medicionService.js:61</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_4461b9bc08d28c5b8611b93481ad6b82.html">src</a></li><li class="navelem"><a class="el" href="../../dir_50a246dbd73b18931a1c486339f6cd1a.html">controllers</a></li><li class="navelem"><a class="el" href="../../dd/dad/a00005.html">medicionController.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

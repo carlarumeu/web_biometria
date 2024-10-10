@@ -1,0 +1,32 @@
+\doxysection{README}
+\hypertarget{a00995}{}\label{a00995}\index{README@{README}}
+\doxylink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y} Sometimes you just want to see the content of an object and not be to ugly and verbose about it. This is a simple node module to help with that. \hypertarget{a00995_autotoc_md2518}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{a00995_autotoc_md2518}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require('y')(somethingToInpect)}
+
+\end{DoxyCode}
+
+
+You can inspect multiple objects. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require(\textcolor{charliteral}{'y'})(obj1,\ obj2);}
+
+\end{DoxyCode}
+
+
+The default recursion depth of an inspected object is 2. This can be change by calling the {\ttfamily \doxylink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{set()}} function with a new settings object. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require(\textcolor{charliteral}{'y'}).set(\{depth:\ 4\});}
+\DoxyCodeLine{require(\textcolor{charliteral}{'y'})(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}});}
+
+\end{DoxyCode}
+
+
+To make it recurse indefinitely set {\ttfamily depth} to {\ttfamily null}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}}\ =\ require(\textcolor{charliteral}{'y'}).set(\{depth:\ \textcolor{keyword}{null}\});}
+\DoxyCodeLine{\mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}});}
+
+\end{DoxyCode}
+ 

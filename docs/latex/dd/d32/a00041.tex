@@ -1,0 +1,1276 @@
+\doxysubsection{Referencia del archivo jquery.\+js}
+\label{a00041}\index{jquery.js@{jquery.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ !function} (\textbf{ e}, \textbf{ t})
+\begin{DoxyCompactList}\small\item\em j\+Query v3.\+6.\+0 $\vert$ (c) Open\+JS Foundation and other contributors $\vert$ jquery.\+org/license \end{DoxyCompactList}\item 
+function \textbf{ b} (\textbf{ e}, \textbf{ t}, \textbf{ n})
+\item 
+function \textbf{ w} (\textbf{ e})
+\item 
+function \textbf{ p} (\textbf{ e})
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ extend} (\{expando\+:"{}j\+Query"{}+(\textbf{ f}+Math.\+random()).replace(/\textbackslash{}\textbf{ D}/\textbf{ g},"{}"{}), is\+Ready\+:!0, error\+:function(\textbf{ e})\{throw new Error(\textbf{ e})\}, noop\+:function()\{\}, is\+Plain\+Object\+:function(\textbf{ e})\{var \textbf{ t}, \textbf{ n};return!(!\textbf{ e}$\vert$$\vert$"{}[object Object]"{}!==o.\+call(\textbf{ e}))\&\&(!(\textbf{ t}=\textbf{ r}(\textbf{ e}))$\vert$$\vert$"{}function"{}==typeof(\textbf{ n}=v.\+call(\textbf{ t},"{}constructor"{})\&\&t.\+constructor)\&\&a.\+call(\textbf{ n})===\textbf{ l})\}, is\+Empty\+Object\+:function(\textbf{ e})\{var \textbf{ t};for(\textbf{ t} in \textbf{ e}) return!1;return!0\}, global\+Eval\+:function(\textbf{ e}, \textbf{ t}, \textbf{ n})\{\textbf{ b}(\textbf{ e},\{nonce\+:t \&\&t.\+nonce\}, \textbf{ n})\}, each\+:function(\textbf{ e}, \textbf{ t})\{var \textbf{ n}, \textbf{ r}=0;if(\textbf{ p}(\textbf{ e}))\{for(\textbf{ n}=e.\+length;\textbf{ r}$<$ \textbf{ n};\textbf{ r}++) if(!1===t.\+call(\textbf{ e}[\textbf{ r}], \textbf{ r}, \textbf{ e}[\textbf{ r}])) break\}else for(\textbf{ r} in \textbf{ e}) if(!1===t.\+call(\textbf{ e}[\textbf{ r}], \textbf{ r}, \textbf{ e}[\textbf{ r}])) break;return \textbf{ e}\}, make\+Array\+:function(\textbf{ e}, \textbf{ t})\{var \textbf{ n}=\textbf{ t}$\vert$$\vert$[$\,$];return null!=\textbf{ e} \&\&(\textbf{ p}(Object(\textbf{ e}))?S.\+merge(\textbf{ n},"{}string"{}==typeof \textbf{ e}?[\textbf{ e}]\+:\textbf{ e})\+:u.\+call(\textbf{ n}, \textbf{ e})), \textbf{ n}\}, in\+Array\+:function(\textbf{ e}, \textbf{ t}, \textbf{ n})\{return null==\textbf{ t}?-\/1\+:i.\+call(\textbf{ t}, \textbf{ e}, \textbf{ n})\}, merge\+:function(\textbf{ e}, \textbf{ t})\{for(var \textbf{ n}=+t.\+length, \textbf{ r}=0, \textbf{ i}=e.\+length;\textbf{ r}$<$ \textbf{ n};\textbf{ r}++) \textbf{ e}[\textbf{ i}++]=\textbf{ t}[\textbf{ r}];return e.\+length=\textbf{ i}, \textbf{ e}\}, grep\+:function(\textbf{ e}, \textbf{ t}, \textbf{ n})\{for(var \textbf{ r}=[$\,$], \textbf{ i}=0, \textbf{ o}=e.\+length, \textbf{ a}=!\textbf{ n};\textbf{ i}$<$ \textbf{ o};\textbf{ i}++)!\textbf{ t}(\textbf{ e}[\textbf{ i}], \textbf{ i})!==\textbf{ a} \&\&r.\+push(\textbf{ e}[\textbf{ i}]);return \textbf{ r}\}, map\+:function(\textbf{ e}, \textbf{ t}, \textbf{ n})\{var \textbf{ r}, \textbf{ i}, \textbf{ o}=0, \textbf{ a}=[$\,$];if(\textbf{ p}(\textbf{ e})) for(\textbf{ r}=e.\+length;\textbf{ o}$<$ \textbf{ r};\textbf{ o}++) null!=(\textbf{ i}=\textbf{ t}(\textbf{ e}[\textbf{ o}], \textbf{ o}, \textbf{ n}))\&\&a.\+push(\textbf{ i});else for(\textbf{ o} in \textbf{ e}) null!=(\textbf{ i}=\textbf{ t}(\textbf{ e}[\textbf{ o}], \textbf{ o}, \textbf{ n}))\&\&a.\+push(\textbf{ i});return \textbf{ g}(\textbf{ a})\}, guid\+:1, support\+:y\})
+\item 
+function \textbf{ S} \textbf{ each} ("{}Boolean Number String Function Array Date Reg\+Exp Object Error Symbol"{}.\+split("{} "{}), function(\textbf{ e}, \textbf{ t})\{\textbf{ n}["{}[object "{}+t+"{}]"{}]=t.\+to\+Lower\+Case()\})
+\item 
+\textbf{ y} \textbf{ y} \textbf{ S} \textbf{ ajax\+Transport} (function(\textbf{ i})\{var \textbf{ o}, \textbf{ a};if(\textbf{ y.\+cors}$\vert$$\vert$\$\textbf{ t} \&\&!i.\+cross\+Domain) return\{send\+:function(\textbf{ e}, \textbf{ t})\{var \textbf{ n}, \textbf{ r}=i.\+xhr();if(r.\+open(\textbf{ i.\+type}, i.\+url, i.\+async, i.\+username, i.\+password), i.\+xhr\+Fields) for(\textbf{ n} in i.\+xhr\+Fields) \textbf{ r}[\textbf{ n}]=i.\+xhr\+Fields[\textbf{ n}];for(\textbf{ n} in i.\+mime\+Type \&\&r.\+override\+Mime\+Type \&\&r.\+override\+Mime\+Type(i.\+mime\+Type), i.\+cross\+Domain$\vert$$\vert$\textbf{ e}["{}X-\/Requested-\/With"{}]$\vert$$\vert$(\textbf{ e}["{}X-\/Requested-\/With"{}]="{}XMLHttp\+Request"{}), \textbf{ e}) r.\+set\+Request\+Header(\textbf{ n}, \textbf{ e}[\textbf{ n}]);\textbf{ o}=function(\textbf{ e})\{ return function()\{\textbf{ o} \&\&(\textbf{ o}=\textbf{ a}=r.\+onload=r.\+onerror=r.\+onabort=r.\+ontimeout=r.\+onreadystatechange=null,"{}abort"{}===\textbf{ e}?r.\+abort()\+:"{}error"{}===\textbf{ e}?"{}number"{}!=typeof r.\+status?\textbf{ t}(0,"{}error"{})\+:\textbf{ t}(r.\+status, r.\+status\+Text)\+:\textbf{ t}(\textbf{ Bt}[r.\+status]$\vert$$\vert$r.\+status, r.\+status\+Text,"{}text"{}!==(r.\+response\+Type$\vert$$\vert$"{}text"{})$\vert$$\vert$"{}string"{}!=typeof r.\+response\+Text?\{binary\+:r.\+response\}\+:\{text\+:r.\+response\+Text\}, r.\+get\+All\+Response\+Headers()))\}\}, r.\+onload=\textbf{ o}(), \textbf{ a}=r.\+onerror=r.\+ontimeout=\textbf{ o}("{}error"{}), void 0!==r.\+onabort?r.\+onabort=a\+:r.\+onreadystatechange=function()\{4===r.\+ready\+State \&\&C.\+set\+Timeout(function()\{\textbf{ o} \&\&\textbf{ a}()\})\}, \textbf{ o}=\textbf{ o}("{}abort"{});try\{r.\+send(i.\+has\+Content \&\&i.\+data$\vert$$\vert$null)\}catch(\textbf{ e})\{if(\textbf{ o}) throw \textbf{ e}\}\}, abort\+:function()\{\textbf{ o} \&\&\textbf{ o}()\}\}\})
+\item 
+\textbf{ y} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ ajax\+Prefilter} (function(\textbf{ e})\{e.\+cross\+Domain \&\&(e.\+contents.\+script=!1)\})
+\item 
+\textbf{ y} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ ajax\+Setup} (\{accepts\+:\{script\+:"{}text/javascript, application/javascript, application/ecmascript, application/\textbf{ x}-\/ecmascript"{}\}, contents\+:\{script\+:/\textbackslash{}\textbf{ b}(?\+:java$\vert$ecma) \textbf{ script\textbackslash{}b}/\}, converters\+:\{"{}text script"{}\+:function(\textbf{ e})\{return S.\+global\+Eval(\textbf{ e}), \textbf{ e}\}\}\})
+\item 
+\textbf{ y} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ ajax\+Prefilter} ("{}script"{}, function(\textbf{ e})\{void 0===e.\+cache \&\&(e.\+cache=!1), e.\+cross\+Domain \&\&(\textbf{ e.\+type}="{}GET"{})\})
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} \textbf{ each} (\{scroll\+Left\+:"{}page\+XOffset"{}, scroll\+Top\+:"{}page\+YOffset"{}\}, function(\textbf{ t}, \textbf{ i})\{var \textbf{ o}="{}page\+YOffset"{}===\textbf{ i};\textbf{ S.\+fn}[\textbf{ t}]=function(\textbf{ e})\{return \$(this, function(\textbf{ e}, \textbf{ t}, \textbf{ n})\{var \textbf{ r};if(\textbf{ x}(\textbf{ e})?\textbf{ r}=e\+:9===e.\+node\+Type \&\&(\textbf{ r}=e.\+default\+View), void 0===\textbf{ n}) return \textbf{ r}?\textbf{ r}[\textbf{ i}]\+:\textbf{ e}[\textbf{ t}];\textbf{ r}?r.\+scroll\+To(\textbf{ o}?r.\+page\+XOffset\+:n, \textbf{ o}?n\+:r.\+page\+YOffset)\+:\textbf{ e}[\textbf{ t}]=\textbf{ n}\}, \textbf{ t}, \textbf{ e}, arguments.\+length)\}\})
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} \textbf{ S} \textbf{ each} (["{}top"{},"{}left"{}], function(\textbf{ e}, \textbf{ n})\{S.\+css\+Hooks[\textbf{ n}]=Fe(y.\+pixel\+Position, function(\textbf{ e}, \textbf{ t})\{if(\textbf{ t}) return \textbf{ t}=We(\textbf{ e}, \textbf{ n}), Pe.\+test(\textbf{ t})?\textbf{ S}(\textbf{ e}).\textbf{ position}()[\textbf{ n}]+"{}px"{}\+:t\})\})
+\item 
+\textbf{ !function} (\textbf{ t})
+\begin{DoxyCompactList}\small\item\em j\+Query UI -\/ v1.\+13.\+2 -\/ 2022-\/08-\/01 {\texttt{ http\+://jqueryui.\+com}} Includes\+: widget.\+js, position.\+js, data.\+js, disable-\/selection.\+js, focusable.\+js, form-\/reset-\/mixin.\+js, jquery-\/patch.\+js, keycode.\+js, labels.\+js, scroll-\/parent.\+js, tabbable.\+js, unique-\/id.\+js, widgets/resizable.\+js, widgets/mouse.\+js Copyright j\+Query Foundation and other contributors; Licensed MIT \end{DoxyCompactList}\item 
+function \textbf{ E} (\textbf{ t}, \textbf{ e}, \textbf{ i})
+\item 
+function \textbf{ H} (\textbf{ t}, \textbf{ e})
+\item 
+function \textbf{ S} (\textbf{ t})
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ extend} (\textbf{ y.\+expr.\+pseudos},\{data\+:y.\+expr.\+create\+Pseudo?y.\+expr.\+create\+Pseudo(function(\textbf{ e})\{return function(\textbf{ t})\{return!!y.\+data(\textbf{ t}, \textbf{ e})\}\})\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{return!!y.\+data(\textbf{ t}, \textbf{ i}[3])\}\})
+\item 
+\textbf{ y} expr \textbf{ pseudos} (y.\+expr.\+pseudos=y.\+expr["{}\+:"{}])
+\item 
+\textbf{ y} expr \textbf{ y} \textbf{ unique\+Sort} (y.\+unique\+Sort=y.\+unique)
+\item 
+\textbf{ y} expr \textbf{ y} \textbf{ y} \textbf{ escape\+Selector} (\textbf{ e}=/([\textbackslash{}0-\/\textbackslash{}x1f\textbackslash{}x7f]$\vert$$^\wedge$-\/?\textbackslash{}\textbf{ d})$\vert$$^\wedge$-\/\$$\vert$[$^\wedge$\textbackslash{}x80-\/\textbackslash{}\textbf{ u\+FFFF\textbackslash{}w}-\/]/\textbf{ g}, \textbf{ d}=function(\textbf{ t}, \textbf{ e})\{return \textbf{ e}?"{}\textbackslash{}0"{}===\textbf{ t}?"{}{\ucr}"{}\+:t.\+slice(0,-\/1)+"{}\textbackslash{}\textbackslash{}"{}+t.\+char\+Code\+At(t.\+length-\/1).to\+String(16)+"{} "{}\+:"{}\textbackslash{}\textbackslash{}"{}+\textbf{ t}\}, y.\+escape\+Selector=function(\textbf{ t})\{return(\textbf{ t}+"{}"{}).replace(\textbf{ e}, \textbf{ d})\})
+\item 
+\textbf{ y} (document).on("{}mouseup"{}
+\item 
+function \textbf{ y} \textbf{ widget} ("{}ui.\+mouse"{},\{version\+:"{}1.\+13.\+2"{}, options\+:\{cancel\+:"{}input, textarea, button, select, option"{}, distance\+:1, delay\+:0\}, \+\_\+mouse\+Init\+:function()\{var \textbf{ e}=this;this.\+element.\+on("{}mousedown."{}+this.\+widget\+Name, function(\textbf{ t})\{return e.\+\_\+mouse\+Down(\textbf{ t})\}).on("{}click."{}+this.\+widget\+Name, function(\textbf{ t})\{if(!0===y.\+data(t.\+target, e.\+widget\+Name+"{}.prevent\+Click\+Event"{})) return y.\+remove\+Data(t.\+target, e.\+widget\+Name+"{}.prevent\+Click\+Event"{}), t.\+stop\+Immediate\+Propagation(),!1\}), this.\+started=!1\}, \+\_\+mouse\+Destroy\+:function()\{this.\+element.\+off("{}."{}+this.\+widget\+Name), this.\+\_\+mouse\+Move\+Delegate \&\&this.\+document.\+off("{}mousemove."{}+this.\+widget\+Name, this.\+\_\+mouse\+Move\+Delegate).off("{}mouseup."{}+this.\+widget\+Name, this.\+\_\+mouse\+Up\+Delegate)\}, \+\_\+mouse\+Down\+:function(\textbf{ t})\{if(!\textbf{ f})\{this.\+\_\+mouse\+Moved=!1, this.\+\_\+mouse\+Started \&\&this.\+\_\+mouse\+Up(\textbf{ t}), this.\+\_\+mouse\+Down\+Event=\textbf{ t};var \textbf{ e}=this, \textbf{ i}=1===t.\+which, \textbf{ s}=!("{}string"{}!=typeof this.\+options.\+cancel$\vert$$\vert$!\textbf{ t.\+target.\+node\+Name})\&\&\textbf{ y}(t.\+target).closest(this.\+options.\+cancel).length;return \textbf{ i} \&\&!\textbf{ s} \&\&this.\+\_\+mouse\+Capture(\textbf{ t})?(this.\+mouse\+Delay\+Met=!this.\+options.\+delay, this.\+mouse\+Delay\+Met$\vert$$\vert$(this.\+\_\+mouse\+Delay\+Timer=set\+Timeout(function()\{e.\+mouse\+Delay\+Met=!0\}, this.\+options.\+delay)), this.\+\_\+mouse\+Distance\+Met(\textbf{ t})\&\&this.\+\_\+mouse\+Delay\+Met(\textbf{ t})\&\&(this.\+\_\+mouse\+Started=!1!==this.\+\_\+mouse\+Start(\textbf{ t}),!this.\+\_\+mouse\+Started)?(t.\+prevent\+Default(),!0)\+:(!0===y.\+data(t.\+target, this.\+widget\+Name+"{}.prevent\+Click\+Event"{})\&\&y.\+remove\+Data(t.\+target, this.\+widget\+Name+"{}.prevent\+Click\+Event"{}), this.\+\_\+mouse\+Move\+Delegate=function(\textbf{ t})\{return e.\+\_\+mouse\+Move(\textbf{ t})\}, this.\+\_\+mouse\+Up\+Delegate=function(\textbf{ t})\{return e.\+\_\+mouse\+Up(\textbf{ t})\}, this.\+document.\+on("{}mousemove."{}+this.\+widget\+Name, this.\+\_\+mouse\+Move\+Delegate).on("{}mouseup."{}+this.\+widget\+Name, this.\+\_\+mouse\+Up\+Delegate), t.\+prevent\+Default(), \textbf{ f}=!0))\+:!0\}\}, \+\_\+mouse\+Move\+:function(\textbf{ t})\{if(this.\+\_\+mouse\+Moved)\{if(\textbf{ y.\+ui.\+ie} \&\&(!document.\+document\+Mode$\vert$$\vert$document.\+document\+Mode$<$ 9)\&\&!t.\+button) return this.\+\_\+mouse\+Up(\textbf{ t});if(!t.\+which) if(t.\+original\+Event.\+alt\+Key$\vert$$\vert$t.\+original\+Event.\+ctrl\+Key$\vert$$\vert$t.\+original\+Event.\+meta\+Key$\vert$$\vert$t.\+original\+Event.\+shift\+Key) this.\+ignore\+Missing\+Which=!0;else if(!this.\+ignore\+Missing\+Which) return this.\+\_\+mouse\+Up(\textbf{ t})\}return(t.\+which$\vert$$\vert$t.\+button)\&\&(this.\+\_\+mouse\+Moved=!0), this.\+\_\+mouse\+Started?(this.\+\_\+mouse\+Drag(\textbf{ t}), t.\+prevent\+Default())\+:(this.\+\_\+mouse\+Distance\+Met(\textbf{ t})\&\&this.\+\_\+mouse\+Delay\+Met(\textbf{ t})\&\&(this.\+\_\+mouse\+Started=!1!==this.\+\_\+mouse\+Start(this.\+\_\+mouse\+Down\+Event, \textbf{ t}), this.\+\_\+mouse\+Started?this.\+\_\+mouse\+Drag(\textbf{ t})\+:this.\+\_\+mouse\+Up(\textbf{ t})),!this.\+\_\+mouse\+Started)\}, \+\_\+mouse\+Up\+:function(\textbf{ t})\{this.\+document.\+off("{}mousemove."{}+this.\+widget\+Name, this.\+\_\+mouse\+Move\+Delegate).off("{}mouseup."{}+this.\+widget\+Name, this.\+\_\+mouse\+Up\+Delegate), this.\+\_\+mouse\+Started \&\&(this.\+\_\+mouse\+Started=!1, t.\+target===this.\+\_\+mouse\+Down\+Event.\+target \&\&y.\+data(t.\+target, this.\+widget\+Name+"{}.prevent\+Click\+Event"{},!0), this.\+\_\+mouse\+Stop(\textbf{ t})), this.\+\_\+mouse\+Delay\+Timer \&\&(clear\+Timeout(this.\+\_\+mouse\+Delay\+Timer), delete this.\+\_\+mouse\+Delay\+Timer), this.\+ignore\+Missing\+Which=!1, \textbf{ f}=!1, t.\+prevent\+Default()\}, \+\_\+mouse\+Distance\+Met\+:function(\textbf{ t})\{return Math.\+max(Math.\+abs(this.\+\_\+mouse\+Down\+Event.\+pageX-\/t.\+pageX), Math.\+abs(this.\+\_\+mouse\+Down\+Event.\+pageY-\/t.\+pageY))$>$=this.\+options.\+distance\}, \+\_\+mouse\+Delay\+Met\+:function()\{return this.\+mouse\+Delay\+Met\}, \+\_\+mouse\+Start\+:function()\{\}, \+\_\+mouse\+Drag\+:function()\{\}, \+\_\+mouse\+Stop\+:function()\{\}, \+\_\+mouse\+Capture\+:function()\{return!0\}\})
+\item 
+\textbf{ y} \textbf{ widget} ("{}ui.\+resizable"{}, y.\+ui.\+mouse,\{version\+:"{}1.\+13.\+2"{}, widget\+Event\+Prefix\+:"{}resize"{}, options\+:\{also\+Resize\+:!1, animate\+:!1, animate\+Duration\+:"{}slow"{}, animate\+Easing\+:"{}swing"{}, aspect\+Ratio\+:!1, auto\+Hide\+:!1, classes\+:\{"{}ui-\/\textbf{ resizable}-\/se"{}\+:"{}ui-\/icon \textbf{ ui}-\/icon-\/gripsmall-\/diagonal-\/se"{}\}, containment\+:!1, ghost\+:!1, grid\+:!1, handles\+:"{}e,\textbf{ s},se"{}, helper\+:!1, max\+Height\+:null, max\+Width\+:null, min\+Height\+:10, min\+Width\+:10, z\+Index\+:90, resize\+:null, start\+:null, stop\+:null\}, \+\_\+num\+:function(\textbf{ t})\{return parse\+Float(\textbf{ t})$\vert$$\vert$0\}, \+\_\+is\+Number\+:function(\textbf{ t})\{return!is\+NaN(parse\+Float(\textbf{ t}))\}, \+\_\+has\+Scroll\+:function(\textbf{ t}, \textbf{ e})\{if("{}hidden"{}===\textbf{ y}(\textbf{ t}).css("{}overflow"{})) return!1;var \textbf{ i}=\textbf{ e} \&\&"{}left"{}===\textbf{ e}?"{}scroll\+Left"{}\+:"{}scroll\+Top"{}, \textbf{ e}=!1;if(0$<$ \textbf{ t}[\textbf{ i}]) return!0;try\{\textbf{ t}[\textbf{ i}]=1, \textbf{ e}=0$<$ \textbf{ t}[\textbf{ i}], \textbf{ t}[\textbf{ i}]=0\}catch(\textbf{ t})\{\}return \textbf{ e}\}, \+\_\+create\+:function()\{var \textbf{ t}, \textbf{ e}=this.\+options, \textbf{ i}=this;this.\+\_\+add\+Class("{}ui-\/resizable"{}), \textbf{ y.\+extend}(this,\{\+\_\+aspect\+Ratio\+:!!e.\+aspect\+Ratio, aspect\+Ratio\+:e.\+aspect\+Ratio, original\+Element\+:this.\+element, \+\_\+proportionally\+Resize\+Elements\+:[$\,$], \+\_\+helper\+:e.\+helper$\vert$$\vert$e.\+ghost$\vert$$\vert$e.\+animate?e.\+helper$\vert$$\vert$"{}ui-\/\textbf{ resizable}-\/helper"{}\+:null\}), this.\+element[0].node\+Name.\+match(/$^\wedge$(canvas$\vert$textarea$\vert$input$\vert$select$\vert$button$\vert$img) \$/\textbf{ i})\&\&(this.\+element.\+wrap(\textbf{ y}("{}$<$div class=\textquotesingle{}\textbf{ ui}-\/wrapper\textquotesingle{}$>$$<$/div$>$"{}).css(\{overflow\+:"{}hidden"{}, position\+:this.\+element.\+css("{}position"{}), width\+:this.\+element.\+outer\+Width(), height\+:this.\+element.\+outer\+Height(), top\+:this.\+element.\+css("{}top"{}), left\+:this.\+element.\+css("{}left"{})\})), this.\+element=this.\+element.\+parent().data("{}ui-\/resizable"{}, \textbf{ this.\+element.\+resizable}("{}instance"{})), this.\+element\+Is\+Wrapper=!0, \textbf{ t}=\{margin\+Top\+:this.\+original\+Element.\+css("{}margin\+Top"{}), margin\+Right\+:this.\+original\+Element.\+css("{}margin\+Right"{}), margin\+Bottom\+:this.\+original\+Element.\+css("{}margin\+Bottom"{}), margin\+Left\+:this.\+original\+Element.\+css("{}margin\+Left"{})\}, this.\+element.\+css(\textbf{ t}), this.\+original\+Element.\+css("{}margin"{}, 0), this.\+original\+Resize\+Style=this.\+original\+Element.\+css("{}resize"{}), this.\+original\+Element.\+css("{}resize"{},"{}none"{}), this.\+\_\+proportionally\+Resize\+Elements.\+push(this.\+original\+Element.\+css(\{position\+:"{}static"{}, zoom\+:1, display\+:"{}block"{}\})), this.\+original\+Element.\+css(\textbf{ t}), this.\+\_\+proportionally\+Resize()), this.\+\_\+setup\+Handles(), e.\+auto\+Hide \&\&\textbf{ y}(this.\+element).on("{}mouseenter"{}, function()\{e.\+disabled$\vert$$\vert$(i.\+\_\+remove\+Class("{}ui-\/\textbf{ resizable}-\/autohide"{}), i.\+\_\+handles.\+show())\}).on("{}mouseleave"{}, function()\{e.\+disabled$\vert$$\vert$i.\+resizing$\vert$$\vert$(i.\+\_\+add\+Class("{}ui-\/\textbf{ resizable}-\/autohide"{}), i.\+\_\+handles.\+hide())\}), this.\+\_\+mouse\+Init()\}, \+\_\+destroy\+:function()\{this.\+\_\+mouse\+Destroy(), this.\+\_\+added\+Handles.\+remove();function \textbf{ t}(\textbf{ t})\{\textbf{ y}(\textbf{ t}).remove\+Data("{}resizable"{}).remove\+Data("{}ui-\/resizable"{}).off("{}.resizable"{})\}var \textbf{ e};return this.\+element\+Is\+Wrapper \&\&(\textbf{ t}(this.\+element), \textbf{ e}=this.\+element, this.\+original\+Element.\+css(\{position\+:e.\+css("{}position"{}), width\+:e.\+outer\+Width(), height\+:e.\+outer\+Height(), top\+:e.\+css("{}top"{}), left\+:e.\+css("{}left"{})\}).insert\+After(\textbf{ e}), e.\+remove()), this.\+original\+Element.\+css("{}resize"{}, this.\+original\+Resize\+Style), \textbf{ t}(this.\+original\+Element), this\}, \+\_\+set\+Option\+:function(\textbf{ t}, \textbf{ e})\{switch(this.\+\_\+super(\textbf{ t}, \textbf{ e}), \textbf{ t})\{case"{}handles"{}\+:this.\+\_\+remove\+Handles(), this.\+\_\+setup\+Handles();break;case"{}aspect\+Ratio"{}\+:this.\+\_\+aspect\+Ratio=!!\textbf{ e}\}\}, \+\_\+setup\+Handles\+:function()\{var \textbf{ t}, \textbf{ e}, \textbf{ i}, \textbf{ s}, \textbf{ n}, \textbf{ o}=this.\+options, \textbf{ h}=this;if(this.\+handles=o.\+handles$\vert$$\vert$(\textbf{ y}("{}.ui-\/\textbf{ resizable}-\/handle"{}, this.\+element).length?\{\textbf{ n\+:"{}.\+ui}-\/\textbf{ resizable}-\/n"{}, \textbf{ e\+:"{}.\+ui}-\/\textbf{ resizable}-\/e"{}, \textbf{ s\+:"{}.\+ui}-\/\textbf{ resizable}-\/s"{}, \textbf{ w\+:"{}.\+ui}-\/\textbf{ resizable}-\/w"{}, \textbf{ se\+:"{}.\+ui}-\/\textbf{ resizable}-\/se"{}, \textbf{ sw\+:"{}.\+ui}-\/\textbf{ resizable}-\/sw"{}, \textbf{ ne\+:"{}.\+ui}-\/\textbf{ resizable}-\/ne"{}, \textbf{ nw\+:"{}.\+ui}-\/\textbf{ resizable}-\/nw"{}\}\+:"{}e,\textbf{ s},se"{}), this.\+\_\+handles=\textbf{ y}(), this.\+\_\+added\+Handles=\textbf{ y}(), this.\+handles.\+constructor===String) for("{}all"{}===this.\+handles \&\&(this.\+handles="{}n,\textbf{ e},\textbf{ s},\textbf{ w},se,sw,ne,nw"{}), \textbf{ i}=this.\+handles.\+split("{},"{}), this.\+handles=\{\}, \textbf{ e}=0;\textbf{ e}$<$ i.\+length;\textbf{ e}++) \textbf{ s}="{}ui-\/\textbf{ resizable}-\/"{}+(t=String.\+prototype.\+trim.\+call(\textbf{ i}[\textbf{ e}])), \textbf{ n}=\textbf{ y}("{}$<$div$>$"{}), this.\+\_\+add\+Class(\textbf{ n},"{}ui-\/\textbf{ resizable}-\/handle "{}+s), n.\+css(\{z\+Index\+:o.\+z\+Index\}), this.\+handles[\textbf{ t}]="{}.ui-\/\textbf{ resizable}-\/"{}+t, this.\+element.\+children(this.\+handles[\textbf{ t}]).length$\vert$$\vert$(this.\+element.\+append(\textbf{ n}), this.\+\_\+added\+Handles=\textbf{ this.\+\_\+added\+Handles.\+add}(\textbf{ n}));this.\+\_\+render\+Axis=function(\textbf{ t})\{var \textbf{ e}, \textbf{ i}, \textbf{ s};for(\textbf{ e} in \textbf{ t}=\textbf{ t}$\vert$$\vert$this.\+element, this.\+handles) this.\+handles[\textbf{ e}].constructor===String?this.\+handles[\textbf{ e}]=this.\+element.\+children(this.\+handles[\textbf{ e}]).first().show()\+:(this.\+handles[\textbf{ e}].jquery$\vert$$\vert$this.\+handles[\textbf{ e}].node\+Type)\&\&(this.\+handles[\textbf{ e}]=\textbf{ y}(this.\+handles[\textbf{ e}]), this.\+\_\+on(this.\+handles[\textbf{ e}],\{mousedown\+:h.\+\_\+mouse\+Down\})), this.\+element\+Is\+Wrapper \&\&this.\+original\+Element[0].node\+Name.\+match(/$^\wedge$(textarea$\vert$input$\vert$select$\vert$button) \$/\textbf{ i})\&\&(\textbf{ i}=\textbf{ y}(this.\+handles[\textbf{ e}], this.\+element), \textbf{ s}=/sw$\vert$ne$\vert$nw$\vert$se$\vert$\textbf{ n}$\vert$\textbf{ s}/.test(\textbf{ e})?i.\+outer\+Height()\+:i.\+outer\+Width(), \textbf{ i}=["{}padding"{},/ne$\vert$nw$\vert$\textbf{ n}/.test(\textbf{ e})?"{}Top"{}\+:/se$\vert$sw$\vert$\textbf{ s}/.test(\textbf{ e})?"{}Bottom"{}\+:/$^\wedge$e\$/.test(\textbf{ e})?"{}Right"{}\+:"{}\+Left"{}].join("{}"{}), t.\+css(\textbf{ i}, \textbf{ s}), this.\+\_\+proportionally\+Resize()), this.\+\_\+handles=\textbf{ this.\+\_\+handles.\+add}(this.\+handles[\textbf{ e}])\}, this.\+\_\+render\+Axis(this.\+element), this.\+\_\+handles=\textbf{ this.\+\_\+handles.\+add}(this.\+element.\+find("{}.ui-\/\textbf{ resizable}-\/handle"{})), this.\+\_\+handles.\+disable\+Selection(), this.\+\_\+handles.\+on("{}mouseover"{}, function()\{h.\+resizing$\vert$$\vert$(this.\+class\+Name \&\&(\textbf{ n}=this.\+class\+Name.\+match(/\textbf{ ui}-\/\textbf{ resizable}-\/(se$\vert$sw$\vert$ne$\vert$nw$\vert$\textbf{ n}$\vert$\textbf{ e}$\vert$\textbf{ s}$\vert$\textbf{ w})/\textbf{ i})), h.\+axis=\textbf{ n} \&\&\textbf{ n}[1]?\textbf{ n}[1]\+:"{}se"{})\}), o.\+auto\+Hide \&\&(this.\+\_\+handles.\+hide(), this.\+\_\+add\+Class("{}ui-\/\textbf{ resizable}-\/autohide"{}))\}, \+\_\+remove\+Handles\+:function()\{this.\+\_\+added\+Handles.\+remove()\}, \+\_\+mouse\+Capture\+:function(\textbf{ t})\{var \textbf{ e}, \textbf{ i}, \textbf{ s}=!1;for(\textbf{ e} in this.\+handles)(\textbf{ i}=\textbf{ y}(this.\+handles[\textbf{ e}])[0])!==t.\+target \&\&!y.\+contains(\textbf{ i}, t.\+target)$\vert$$\vert$(\textbf{ s}=!0);return!this.\+options.\+disabled \&\&\textbf{ s}\}, \+\_\+mouse\+Start\+:function(\textbf{ t})\{var \textbf{ e}, \textbf{ i}, \textbf{ s}=this.\+options, \textbf{ n}=this.\+element;return this.\+resizing=!0, this.\+\_\+render\+Proxy(), \textbf{ e}=this.\+\_\+num(this.\+helper.\+css("{}left"{})), \textbf{ i}=this.\+\_\+num(this.\+helper.\+css("{}top"{})), s.\+containment \&\&(\textbf{ e}+=\textbf{ y}(s.\+containment).scroll\+Left()$\vert$$\vert$0, \textbf{ i}+=\textbf{ y}(s.\+containment).scroll\+Top()$\vert$$\vert$0), \textbf{ this.\+offset}=\textbf{ this.\+helper.\+offset}(), \textbf{ this.\+position}=\{left\+:e, top\+:i\}, this.\+size=this.\+\_\+helper?\{width\+:this.\+helper.\+width(), height\+:this.\+helper.\+height()\}\+:\{ width\+:n.\+width(), height\+:n.\+height()\}, this.\+original\+Size=this.\+\_\+helper?\{width\+:n.\+outer\+Width(), height\+:n.\+outer\+Height()\}\+:\{width\+:n.\+width(), height\+:n.\+height()\}, this.\+size\+Diff=\{width\+:n.\+outer\+Width() -\/n.\+width(), height\+:n.\+outer\+Height() -\/n.\+height()\}, this.\+original\+Position=\{left\+:e, top\+:i\}, this.\+original\+Mouse\+Position=\{left\+:t.\+pageX, top\+:t.\+pageY\}, this.\+aspect\+Ratio="{}number"{}==typeof s.\+aspect\+Ratio?s.\+aspect\+Ratio\+:this.\+original\+Size.\+width/this.\+original\+Size.\+height$\vert$$\vert$1, \textbf{ s}=\textbf{ y}("{}.ui-\/\textbf{ resizable}-\/"{}+this.\+axis).css("{}cursor"{}), \textbf{ y}("{}body"{}).css("{}cursor"{},"{}auto"{}===\textbf{ s}?this.\+axis+"{}-\/resize"{}\+:s), this.\+\_\+add\+Class("{}ui-\/\textbf{ resizable}-\/resizing"{}), this.\+\_\+propagate("{}start"{}, \textbf{ t}),!0\}, \+\_\+mouse\+Drag\+:function(\textbf{ t})\{var \textbf{ e}=this.\+original\+Mouse\+Position, \textbf{ i}=this.\+axis, \textbf{ s}=t.\+pageX-\/e.\+left$\vert$$\vert$0, \textbf{ e}=t.\+pageY-\/e.\+top$\vert$$\vert$0, \textbf{ i}=this.\+\_\+change[\textbf{ i}];return this.\+\_\+update\+Prev\+Properties(), \textbf{ i} \&\&(\textbf{ e}=i.\+apply(this,[\textbf{ t}, \textbf{ s}, \textbf{ e}]), this.\+\_\+update\+Virtual\+Boundaries(t.\+shift\+Key),(this.\+\_\+aspect\+Ratio$\vert$$\vert$t.\+shift\+Key)\&\&(\textbf{ e}=this.\+\_\+update\+Ratio(\textbf{ e}, \textbf{ t})), \textbf{ e}=this.\+\_\+respect\+Size(\textbf{ e}, \textbf{ t}), this.\+\_\+update\+Cache(\textbf{ e}), this.\+\_\+propagate("{}resize"{}, \textbf{ t}), \textbf{ e}=this.\+\_\+apply\+Changes(), !this.\+\_\+helper \&\&this.\+\_\+proportionally\+Resize\+Elements.\+length \&\&this.\+\_\+proportionally\+Resize(), y.\+is\+Empty\+Object(\textbf{ e})$\vert$$\vert$(this.\+\_\+update\+Prev\+Properties(), this.\+\_\+trigger("{}resize"{}, \textbf{ t}, \textbf{ this.\+ui}()), this.\+\_\+apply\+Changes())),!1\}, \+\_\+mouse\+Stop\+:function(\textbf{ t})\{this.\+resizing=!1;var \textbf{ e}, \textbf{ i}, \textbf{ s}, \textbf{ n}=this.\+options, \textbf{ o}=this;return this.\+\_\+helper \&\&(\textbf{ s}=(\textbf{ e}=(\textbf{ i}=this.\+\_\+proportionally\+Resize\+Elements).length \&\&/textarea/i.\+test(\textbf{ i}[0].\textbf{ node\+Name}))\&\&this.\+\_\+has\+Scroll(\textbf{ i}[0],"{}left"{})?0\+:o.\+size\+Diff.\+height, \textbf{ i}=\textbf{ e}?0\+:o.\+size\+Diff.\+width, \textbf{ e}=\{width\+:o.\+helper.\+width() -\/\textbf{ i}, height\+:o.\+helper.\+height() -\/\textbf{ s}\}, \textbf{ i}=parse\+Float(o.\+element.\+css("{}left"{}))+(o.\+position.\+left-\/o.\+original\+Position.\+left)$\vert$$\vert$null, \textbf{ s}=parse\+Float(o.\+element.\+css("{}top"{}))+(o.\+position.\+top-\/o.\+original\+Position.\+top)$\vert$$\vert$null, n.\+animate$\vert$$\vert$this.\+element.\+css(\textbf{ y.\+extend}(\textbf{ e},\{top\+:s, left\+:i\})), o.\+helper.\+height(o.\+size.\+height), o.\+helper.\+width(o.\+size.\+width), this.\+\_\+helper \&\&!n.\+animate \&\&this.\+\_\+proportionally\+Resize()), \textbf{ y}("{}body"{}).css("{}cursor"{},"{}auto"{}), this.\+\_\+remove\+Class("{}ui-\/\textbf{ resizable}-\/resizing"{}), this.\+\_\+propagate("{}stop"{}, \textbf{ t}), this.\+\_\+helper \&\&this.\+helper.\+remove(),!1\}, \+\_\+update\+Prev\+Properties\+:function()\{ this.\+prev\+Position=\{top\+:this.\+position.\+top, left\+:this.\+position.\+left\}, this.\+prev\+Size=\{width\+:this.\+size.\+width, height\+:this.\+size.\+height\}\}, \+\_\+apply\+Changes\+:function()\{var \textbf{ t}=\{\};return this.\+position.\+top!==this.\+prev\+Position.\+top \&\&(t.\+top=this.\+position.\+top+"{}px"{}), this.\+position.\+left!==this.\+prev\+Position.\+left \&\&(t.\+left=this.\+position.\+left+"{}px"{}), this.\+size.\+width!==this.\+prev\+Size.\+width \&\&(t.\+width=this.\+size.\+width+"{}px"{}), this.\+size.\+height!==this.\+prev\+Size.\+height \&\&(t.\+height=this.\+size.\+height+"{}px"{}), this.\+helper.\+css(\textbf{ t}), \textbf{ t}\}, \+\_\+update\+Virtual\+Boundaries\+:function(\textbf{ t})\{var \textbf{ e}, \textbf{ i}, \textbf{ s}=this.\+options, \textbf{ n}=\{min\+Width\+:this.\+\_\+is\+Number(s.\+min\+Width)?s.\+min\+Width\+:0, max\+Width\+:this.\+\_\+is\+Number(s.\+max\+Width)?s.\+max\+Width\+:1/0, min\+Height\+:this.\+\_\+is\+Number(s.\+min\+Height)?s.\+min\+Height\+:0, max\+Height\+:this.\+\_\+is\+Number(s.\+max\+Height)?s.\+max\+Height\+:1/0\};(this.\+\_\+aspect\+Ratio$\vert$$\vert$\textbf{ t})\&\&(\textbf{ e}=n.\+min\+Height $\ast$this.\+aspect\+Ratio, \textbf{ i}=n.\+min\+Width/this.\+aspect\+Ratio, \textbf{ s}=n.\+max\+Height $\ast$this.\+aspect\+Ratio, \textbf{ t}=n.\+max\+Width/this.\+aspect\+Ratio, \textbf{ e} $>$n.\+min\+Width \&\&(n.\+min\+Width=\textbf{ e}), \textbf{ i} $>$n.\+min\+Height \&\&(n.\+min\+Height=\textbf{ i}), \textbf{ s}$<$ n.\+max\+Width \&\&(n.\+max\+Width=\textbf{ s}), \textbf{ t}$<$ n.\+max\+Height \&\&(n.\+max\+Height=\textbf{ t})), this.\+\_\+v\+Boundaries=\textbf{ n}\}, \+\_\+update\+Cache\+:function(\textbf{ t})\{\textbf{ this.\+offset}=\textbf{ this.\+helper.\+offset}(), this.\+\_\+is\+Number(t.\+left)\&\&(this.\+position.\+left=t.\+left), this.\+\_\+is\+Number(t.\+top)\&\&(this.\+position.\+top=t.\+top), this.\+\_\+is\+Number(t.\+height)\&\&(this.\+size.\+height=t.\+height), this.\+\_\+is\+Number(t.\+width)\&\&(this.\+size.\+width=t.\+width)\}, \+\_\+update\+Ratio\+:function(\textbf{ t})\{var \textbf{ e}=\textbf{ this.\+position}, \textbf{ i}=this.\+size, \textbf{ s}=this.\+axis;return this.\+\_\+is\+Number(t.\+height)?t.\+width=t.\+height $\ast$this.\+aspect\+Ratio\+:this.\+\_\+is\+Number(t.\+width)\&\&(t.\+height=t.\+width/this.\+aspect\+Ratio),"{}sw"{}===\textbf{ s} \&\&(t.\+left=e.\+left+(i.\+width-\/t.\+width), t.\+top=null),"{}nw"{}===\textbf{ s} \&\&(t.\+top=e.\+top+(i.\+height-\/t.\+height), t.\+left=e.\+left+(i.\+width-\/t.\+width)), \textbf{ t}\}, \+\_\+respect\+Size\+:function(\textbf{ t})\{var \textbf{ e}=this.\+\_\+v\+Boundaries, \textbf{ i}=this.\+axis, \textbf{ s}=this.\+\_\+is\+Number(t.\+width)\&\&e.\+max\+Width \&\&e.\+max\+Width$<$ t.\+width, \textbf{ n}=this.\+\_\+is\+Number(t.\+height)\&\&e.\+max\+Height \&\&e.\+max\+Height$<$ t.\+height, \textbf{ o}=this.\+\_\+is\+Number(t.\+width)\&\&e.\+min\+Width \&\&e.\+min\+Width $>$t.\+width, \textbf{ h}=this.\+\_\+is\+Number(t.\+height)\&\&e.\+min\+Height \&\&e.\+min\+Height $>$t.\+height, \textbf{ a}=this.\+original\+Position.\+left+this.\+original\+Size.\+width, \textbf{ r}=this.\+original\+Position.\+top+this.\+original\+Size.\+height, \textbf{ l}=/sw$\vert$nw$\vert$\textbf{ w}/.test(\textbf{ i}), \textbf{ i}=/nw$\vert$ne$\vert$\textbf{ n}/.test(\textbf{ i});return \textbf{ o} \&\&(t.\+width=e.\+min\+Width), \textbf{ h} \&\&(t.\+height=e.\+min\+Height), \textbf{ s} \&\&(t.\+width=e.\+max\+Width), \textbf{ n} \&\&(t.\+height=e.\+max\+Height), \textbf{ o} \&\&\textbf{ l} \&\&(t.\+left=\textbf{ a}-\/e.\+min\+Width), \textbf{ s} \&\&\textbf{ l} \&\&(t.\+left=\textbf{ a}-\/e.\+max\+Width), \textbf{ h} \&\&\textbf{ i} \&\&(t.\+top=\textbf{ r}-\/e.\+min\+Height), \textbf{ n} \&\&\textbf{ i} \&\&(t.\+top=\textbf{ r}-\/e.\+max\+Height), t.\+width$\vert$$\vert$t.\+height$\vert$$\vert$t.\+left$\vert$$\vert$!t.\+top?t.\+width$\vert$$\vert$t.\+height$\vert$$\vert$t.\+top$\vert$$\vert$!t.\+left$\vert$$\vert$(t.\+left=null)\+:t.\+top=null, \textbf{ t}\}, \+\_\+get\+Padding\+Plus\+Border\+Dimensions\+:function(\textbf{ t})\{for(var \textbf{ e}=0, \textbf{ i}=[$\,$], \textbf{ s}=[t.\+css("{}border\+Top\+Width"{}), t.\+css("{}border\+Right\+Width"{}), t.\+css("{}border\+Bottom\+Width"{}), t.\+css("{}border\+Left\+Width"{})], \textbf{ n}=[t.\+css("{}padding\+Top"{}), t.\+css("{}padding\+Right"{}), t.\+css("{}padding\+Bottom"{}), t.\+css("{}padding\+Left"{})];\textbf{ e}$<$ 4;\textbf{ e}++) \textbf{ i}[\textbf{ e}]=parse\+Float(\textbf{ s}[\textbf{ e}])$\vert$$\vert$0, \textbf{ i}[\textbf{ e}]+=parse\+Float(\textbf{ n}[\textbf{ e}])$\vert$$\vert$0;return\{height\+:i[0]+\textbf{ i}[2], width\+:i[1]+\textbf{ i}[3]\}\}, \+\_\+proportionally\+Resize\+:function()\{if(this.\+\_\+proportionally\+Resize\+Elements.\+length) for(var \textbf{ t}, \textbf{ e}=0, \textbf{ i}=this.\+helper$\vert$$\vert$this.\+element;\textbf{ e}$<$ this.\+\_\+proportionally\+Resize\+Elements.\+length;\textbf{ e}++) \textbf{ t}=this.\+\_\+proportionally\+Resize\+Elements[\textbf{ e}], this.\+outer\+Dimensions$\vert$$\vert$(this.\+outer\+Dimensions=this.\+\_\+get\+Padding\+Plus\+Border\+Dimensions(\textbf{ t})), t.\+css(\{ height\+:i.\+height() -\/this.\+outer\+Dimensions.\+height$\vert$$\vert$0, width\+:i.\+width() -\/this.\+outer\+Dimensions.\+width$\vert$$\vert$0\})\}, \+\_\+render\+Proxy\+:function()\{var \textbf{ t}=this.\+element, \textbf{ e}=this.\+options;this.\+element\+Offset=\textbf{ t.\+offset}(), this.\+\_\+helper?(this.\+helper=this.\+helper$\vert$$\vert$\textbf{ y}("{}$<$div$>$$<$/div$>$"{}).css(\{overflow\+:"{}hidden"{}\}), this.\+\_\+add\+Class(this.\+helper, this.\+\_\+helper), this.\+helper.\+css(\{width\+:this.\+element.\+outer\+Width(), height\+:this.\+element.\+outer\+Height(), position\+:"{}absolute"{}, left\+:this.\+element\+Offset.\+left+"{}px"{}, top\+:this.\+element\+Offset.\+top+"{}px"{}, z\+Index\+:++e.\+z\+Index\}), this.\+helper.\+append\+To("{}body"{}).disable\+Selection())\+:this.\+helper=this.\+element\}, \+\_\+change\+:\{e\+:function(\textbf{ t}, \textbf{ e})\{return\{width\+:this.\+original\+Size.\+width+\textbf{ e}\}\}, w\+:function(\textbf{ t}, \textbf{ e})\{var \textbf{ i}=this.\+original\+Size;return\{left\+:this.\+original\+Position.\+left+\textbf{ e}, width\+:i.\+width-\/\textbf{ e}\}\}, n\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{var \textbf{ s}=this.\+original\+Size;return\{top\+:this.\+original\+Position.\+top+\textbf{ i}, height\+:s.\+height-\/\textbf{ i}\}\}, s\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{return\{height\+:this.\+original\+Size.\+height+\textbf{ i}\}\}, se\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{return \textbf{ y.\+extend}(this.\+\_\+change.\+s.\+apply(this, arguments), this.\+\_\+change.\+e.\+apply(this,[\textbf{ t}, \textbf{ e}, \textbf{ i}]))\}, sw\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{return \textbf{ y.\+extend}(this.\+\_\+change.\+s.\+apply(this, arguments), this.\+\_\+change.\+w.\+apply(this,[\textbf{ t}, \textbf{ e}, \textbf{ i}]))\}, ne\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{return \textbf{ y.\+extend}(this.\+\_\+change.\+n.\+apply(this, arguments), this.\+\_\+change.\+e.\+apply(this,[\textbf{ t}, \textbf{ e}, \textbf{ i}]))\}, nw\+:function(\textbf{ t}, \textbf{ e}, \textbf{ i})\{return \textbf{ y.\+extend}(this.\+\_\+change.\+n.\+apply(this, arguments), this.\+\_\+change.\+w.\+apply(this,[\textbf{ t}, \textbf{ e}, \textbf{ i}]))\}\}, \+\_\+propagate\+:function(\textbf{ t}, \textbf{ e})\{y.\+ui.\+plugin.\+call(this, \textbf{ t},[\textbf{ e}, \textbf{ this.\+ui}()]),"{}resize"{}!==\textbf{ t} \&\&this.\+\_\+trigger(\textbf{ t}, \textbf{ e}, \textbf{ this.\+ui}())\}, plugins\+:\{\}, ui\+:function()\{return\{original\+Element\+:this.\+original\+Element, element\+:this.\+element, helper\+:this.\+helper, \textbf{ position\+:this.\+position}, size\+:this.\+size, original\+Size\+:this.\+original\+Size, original\+Position\+:this.\+original\+Position\}\}\})
+\item 
+\textbf{ y} \textbf{ y} \textbf{ ui} \textbf{ plugin} \textbf{ add} ("{}resizable"{},"{}animate"{},\{stop\+:function(\textbf{ e})\{var \textbf{ i}=\textbf{ y}(this).\textbf{ resizable}("{}instance"{}), \textbf{ t}=i.\+options, \textbf{ s}=i.\+\_\+proportionally\+Resize\+Elements, \textbf{ n}=s.\+length \&\&/textarea/i.\+test(\textbf{ s}[0].\textbf{ node\+Name}), \textbf{ o}=\textbf{ n} \&\&i.\+\_\+has\+Scroll(\textbf{ s}[0],"{}left"{})?0\+:i.\+size\+Diff.\+height, \textbf{ h}=\textbf{ n}?0\+:i.\+size\+Diff.\+width, \textbf{ n}=\{width\+:i.\+size.\+width-\/\textbf{ h}, height\+:i.\+size.\+height-\/\textbf{ o}\}, \textbf{ h}=parse\+Float(i.\+element.\+css("{}left"{}))+(i.\+position.\+left-\/i.\+original\+Position.\+left)$\vert$$\vert$null, \textbf{ o}=parse\+Float(i.\+element.\+css("{}top"{}))+(i.\+position.\+top-\/i.\+original\+Position.\+top)$\vert$$\vert$null;i.\+element.\+animate(\textbf{ y.\+extend}(\textbf{ n}, \textbf{ o} \&\&\textbf{ h}?\{top\+:o, left\+:h\}\+:\{\}),\{duration\+:t.\+animate\+Duration, easing\+:t.\+animate\+Easing, step\+:function()\{var \textbf{ t}=\{width\+:parse\+Float(i.\+element.\+css("{}width"{})), height\+:parse\+Float(i.\+element.\+css("{}height"{})), top\+:parse\+Float(i.\+element.\+css("{}top"{})), left\+:parse\+Float(i.\+element.\+css("{}left"{}))\};\textbf{ s} \&\&s.\+length \&\&\textbf{ y}(\textbf{ s}[0]).css(\{width\+:t.\+width, height\+:t.\+height\}), i.\+\_\+update\+Cache(\textbf{ t}), i.\+\_\+propagate("{}resize"{}, \textbf{ e})\}\})\}\})
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ undefined} =typeof window?window\+:this
+\item 
+function \textbf{ C}
+\item 
+function \textbf{ e} \{"{}use strict"{}
+\item 
+var \textbf{ t} =[$\,$]
+\begin{DoxyCompactList}\small\item\em Smart\+Menus j\+Query Plugin -\/ v1.\+1.\+0 -\/ September 17, 2017 {\texttt{ http\+://www.\+smartmenus.\+org/}} Copyright Vasil Dinkov, Vadikom Web Ltd. \end{DoxyCompactList}\item 
+var \textbf{ r} =Object.\+get\+Prototype\+Of
+\item 
+var \textbf{ s} =t.\+slice
+\item 
+var \textbf{ g} =t.\+flat?function(\textbf{ e})\{return t.\+flat.\+call(\textbf{ e})\}\+:function(\textbf{ e})\{return t.\+concat.\+apply([$\,$],\textbf{ e})\}
+\item 
+var \textbf{ u} =t.\+push
+\item 
+var \textbf{ i} =t.\+index\+Of
+\item 
+var \textbf{ n} =\{\}
+\item 
+var \textbf{ o} =n.\+to\+String
+\item 
+var \textbf{ v} =n.\+has\+Own\+Property
+\item 
+var \textbf{ a} =v.\+to\+String
+\item 
+var \textbf{ l} =a.\+call(Object)
+\item 
+var \textbf{ y} =\{\}
+\item 
+var \textbf{ m} =function(\textbf{ e})\{return"{}function"{}==typeof \textbf{ e}\&\&"{}number"{}!=typeof e.\+node\+Type\&\&"{}function"{}!=typeof e.\+item\}
+\item 
+var \textbf{ x} =function(\textbf{ e})\{return null!=\textbf{ e}\&\&\textbf{ e}===e.\+window\}
+\item 
+var \textbf{ E} =C.\+document
+\item 
+var \textbf{ c} =\{type\+:!0,src\+:!0,nonce\+:!0,no\+Module\+:!0\}
+\item 
+var \textbf{ f} ="{}3.\+6.\+0"{}
+\begin{DoxyCompactList}\small\item\em Copyright (c) 2007 Ariel Flesler -\/ aflesler ○ gmail • com $\vert$ {\texttt{ https\+://github.\+com/flesler}} Licensed under MIT. \end{DoxyCompactList}\item 
+var \textbf{ S} =function(\textbf{ e},\textbf{ t})\{return new S.\+fn.\+init(\textbf{ e},\textbf{ t})\}
+\item 
+\textbf{ S} \textbf{ fn}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ extend} =S.\+fn.\+extend=function()\{var \textbf{ e},\textbf{ t},\textbf{ n},\textbf{ r},\textbf{ i},\textbf{ o},\textbf{ a}=arguments[0]$\vert$$\vert$\{\},\textbf{ s}=1,\textbf{ u}=arguments.\+length,\textbf{ l}=!1;for("{}boolean"{}==typeof \textbf{ a}\&\&(\textbf{ l}=\textbf{ a},\textbf{ a}=arguments[\textbf{ s}]$\vert$$\vert$\{\},\textbf{ s}++),"{}object"{}==typeof \textbf{ a}$\vert$$\vert$\textbf{ m}(\textbf{ a})$\vert$$\vert$(\textbf{ a}=\{\}),\textbf{ s}===\textbf{ u}\&\&(\textbf{ a}=this,\textbf{ s}-\/-\/);\textbf{ s}$<$\textbf{ u};\textbf{ s}++)if(null!=(\textbf{ e}=arguments[\textbf{ s}]))for(\textbf{ t} in \textbf{ e})\textbf{ r}=\textbf{ e}[\textbf{ t}],"{}\+\_\+\+\_\+proto\+\_\+\+\_\+"{}!==\textbf{ t}\&\&a!==\textbf{ r}\&\&(\textbf{ l}\&\&\textbf{ r}\&\&(S.\+is\+Plain\+Object(\textbf{ r})$\vert$$\vert$(\textbf{ i}=\textbf{ Array.\+is\+Array}(\textbf{ r})))?(\textbf{ n}=\textbf{ a}[\textbf{ t}],\textbf{ o}=\textbf{ i}\&\&!\textbf{ Array.\+is\+Array}(\textbf{ n})?[$\,$]\+:\textbf{ i}$\vert$$\vert$S.\+is\+Plain\+Object(\textbf{ n})?n\+:\{\},\textbf{ i}=!1,\textbf{ a}[\textbf{ t}]=S.\+extend(\textbf{ l},\textbf{ o},\textbf{ r}))\+:void 0!==\textbf{ r}\&\&(\textbf{ a}[\textbf{ t}]=\textbf{ r}));return \textbf{ a}\}
+\item 
+var \textbf{ d}
+\item 
+var \textbf{ Bt} =\{0\+:200,1223\+:204\}
+\item 
+var \textbf{ \$t} =S.\+ajax\+Settings.\+xhr()
+\item 
+\textbf{ y} \textbf{ cors} =!!\$\textbf{ t}\&\&"{}with\+Credentials"{}in \$\textbf{ t}
+\item 
+\textbf{ y} \textbf{ y} \textbf{ ajax} =\$\textbf{ t}=!!\$\textbf{ t}
+\item 
+var \textbf{ \+\_\+t}
+\item 
+var \textbf{ zt} =[$\,$]
+\item 
+var \textbf{ Ut} =/(=)\textbackslash{}?(?=\&$\vert$\$)$\vert$\textbackslash{}?\textbackslash{}?/
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ create\+HTMLDocument} =((\textbf{ \+\_\+t}=E.\+implementation.\+create\+HTMLDocument("{}"{}).body).inner\+HTML="{}$<$form$>$$<$/form$>$$<$form$>$$<$/form$>$"{},2===\+\_\+t.\+child\+Nodes.\+length)
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ parse\+HTML} =function(\textbf{ e},\textbf{ t},\textbf{ n})\{return"{}string"{}!=typeof \textbf{ e}?[$\,$]\+:("{}boolean"{}==typeof \textbf{ t}\&\&(\textbf{ n}=\textbf{ t},\textbf{ t}=!1),\textbf{ t}$\vert$$\vert$(\textbf{ y.\+create\+HTMLDocument}?((\textbf{ r}=(\textbf{ t}=\textbf{ E.\+implementation.\+create\+HTMLDocument}("{}"{})).create\+Element("{}base"{})).href=E.\+location.\+href,t.\+head.\+append\+Child(\textbf{ r}))\+:\textbf{ t}=\textbf{ E}),\textbf{ o}=!\textbf{ n}\&\&[$\,$],(\textbf{ i}=N.\+exec(\textbf{ e}))?[t.\+create\+Element(\textbf{ i}[1])]\+:(\textbf{ i}=xe([\textbf{ e}],\textbf{ t},\textbf{ o}),\textbf{ o}\&\&o.\+length\&\&\textbf{ S}(\textbf{ o}).remove(),S.\+merge([$\,$],i.\+child\+Nodes)));var \textbf{ r},\textbf{ i},\textbf{ o}\}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ load}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ animated} =function(\textbf{ t})\{return S.\+grep(S.\+timers,function(\textbf{ e})\{return \textbf{ t}===e.\+elem\}).length\}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ S} \textbf{ offset} =\{set\+Offset\+:function(\textbf{ e},\textbf{ t},\textbf{ n})\{var \textbf{ r},\textbf{ i},\textbf{ o},\textbf{ a},\textbf{ s},\textbf{ u},\textbf{ l}=S.\+css(\textbf{ e},"{}position"{}),\textbf{ c}=\textbf{ S}(\textbf{ e}),\textbf{ f}=\{\};"{}static"{}===\textbf{ l}\&\&(\textbf{ e.\+style.\+position}="{}relative"{}),\textbf{ s}=c.\+offset(),\textbf{ o}=S.\+css(\textbf{ e},"{}top"{}),\textbf{ u}=S.\+css(\textbf{ e},"{}left"{}),("{}absolute"{}===\textbf{ l}$\vert$$\vert$"{}fixed"{}===\textbf{ l})\&\&-\/1$<$(\textbf{ o}+\textbf{ u}).index\+Of("{}auto"{})?(\textbf{ a}=(\textbf{ r}=\textbf{ c.\+position}()).top,\textbf{ i}=r.\+left)\+:(\textbf{ a}=parse\+Float(\textbf{ o})$\vert$$\vert$0,\textbf{ i}=parse\+Float(\textbf{ u})$\vert$$\vert$0),\textbf{ m}(\textbf{ t})\&\&(\textbf{ t}=t.\+call(\textbf{ e},\textbf{ n},\textbf{ S.\+extend}(\{\},\textbf{ s}))),null!=t.\+top\&\&(f.\+top=t.\+top-\/s.\+top+\textbf{ a}),null!=t.\+left\&\&(f.\+left=t.\+left-\/s.\+left+\textbf{ i}),"{}using"{}in \textbf{ t}?t.\+using.\+call(\textbf{ e},\textbf{ f})\+:c.\+css(\textbf{ f})\}\}
+\item 
+var \textbf{ Xt} =/$^\wedge$[\textbackslash{}s\textbackslash{}u\+FEFF\textbackslash{}x\+A0]+$\vert$[\textbackslash{}s\textbackslash{}u\+FEFF\textbackslash{}x\+A0]+\$/\textbf{ g}
+\item 
+\textbf{ S} \textbf{ proxy} =function(\textbf{ e},\textbf{ t})\{var \textbf{ n},\textbf{ r},\textbf{ i};if("{}string"{}==typeof \textbf{ t}\&\&(\textbf{ n}=\textbf{ e}[\textbf{ t}],\textbf{ t}=\textbf{ e},\textbf{ e}=\textbf{ n}),\textbf{ m}(\textbf{ e}))return \textbf{ r}=s.\+call(arguments,2),(\textbf{ i}=function()\{return e.\+apply(\textbf{ t}$\vert$$\vert$this,r.\+concat(s.\+call(arguments)))\}).guid=e.\+guid=e.\+guid$\vert$$\vert$S.\+guid++,\textbf{ i}\}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ hold\+Ready} =function(\textbf{ e})\{\textbf{ e}?S.\+ready\+Wait++\+:S.\+ready(!0)\}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ is\+Array} =Array.\+is\+Array
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ parse\+JSON} =JSON.\+parse
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ node\+Name} =A
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ is\+Function} =\textbf{ m}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ is\+Window} =\textbf{ x}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ camel\+Case} =X
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ type} =\textbf{ w}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ now} =Date.\+now
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ is\+Numeric} =function(\textbf{ e})\{var \textbf{ t}=\textbf{ S.\+type}(\textbf{ e});return("{}number"{}===\textbf{ t}$\vert$$\vert$"{}string"{}===\textbf{ t})\&\&!is\+NaN(\textbf{ e}-\/parse\+Float(\textbf{ e}))\}
+\item 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ trim} =function(\textbf{ e})\{return null==\textbf{ e}?"{}"{}\+:(\textbf{ e}+"{}"{}).replace(\textbf{ Xt},"{}"{})\}
+\item 
+var \textbf{ Vt} =\textbf{ C.\+j\+Query}
+\item 
+var \textbf{ Gt} =C.\$
+\item 
+return \textbf{ S} \textbf{ no\+Conflict}
+\item 
+\textbf{ y} \textbf{ ui} =y.\+ui$\vert$$\vert$\{\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ version} ="{}1.\+13.\+2"{}
+\item 
+var \textbf{ h} =Array.\+prototype.\+has\+Own\+Property
+\item 
+\textbf{ y} \textbf{ clean\+Data} =(\textbf{ n}=y.\+clean\+Data,function(\textbf{ t})\{for(var \textbf{ e},\textbf{ i},\textbf{ s}=0;null!=(\textbf{ i}=\textbf{ t}[\textbf{ s}]);\textbf{ s}++)(\textbf{ e}=y.\+\_\+data(\textbf{ i},"{}events"{}))\&\&e.\+remove\&\&\textbf{ y}(\textbf{ i}).trigger\+Handler("{}remove"{});\textbf{ n}(\textbf{ t})\})
+\item 
+\textbf{ y} \textbf{ y} \textbf{ widget}
+\item 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ bridge}
+\item 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ Widget} =function()\{\}
+\item 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ y} \textbf{ Widget} \textbf{ \+\_\+child\+Constructors} =[$\,$]
+\item 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ y} \textbf{ Widget} \textbf{ y} \textbf{ Widget} \textbf{ prototype}
+\item 
+var \textbf{ D} =Math.\+abs
+\item 
+var \textbf{ p} =/\%\$/
+\item 
+var \textbf{ W} =\textbf{ y.\+fn.\+position}
+\item 
+\textbf{ y} \textbf{ position}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ focusable} =function(\textbf{ t},\textbf{ e})\{var \textbf{ i},\textbf{ s},\textbf{ n},\textbf{ o},\textbf{ h}=t.\+node\+Name.\+to\+Lower\+Case();return"{}area"{}===\textbf{ h}?(\textbf{ s}=(\textbf{ i}=t.\+parent\+Node).name,!(!t.\+href$\vert$$\vert$!\textbf{ s}$\vert$$\vert$"{}map"{}!==i.\+node\+Name.\+to\+Lower\+Case())\&\&(0$<$(\textbf{ s}=\textbf{ y}("{}img[usemap=\textquotesingle{}\#"{}+s+"{}\textquotesingle{}]"{})).length\&\&s.\+is("{}\+:visible"{})))\+:(/$^\wedge$(input$\vert$select$\vert$textarea$\vert$button$\vert$object)\$/.test(\textbf{ h})?(\textbf{ n}=!t.\+disabled)\&\&(\textbf{ o}=\textbf{ y}(\textbf{ t}).closest("{}fieldset"{})[0])\&\&(\textbf{ n}=!o.\+disabled)\+:\textbf{ n}="{}a"{}===\textbf{ h}\&\&t.\+href$\vert$$\vert$\textbf{ e},\textbf{ n}\&\&\textbf{ y}(\textbf{ t}).is("{}\+:visible"{})\&\&function(\textbf{ t})\{var \textbf{ e}=t.\+css("{}visibility"{});for(;"{}inherit"{}===\textbf{ e};)\textbf{ t}=t.\+parent(),\textbf{ e}=t.\+css("{}visibility"{});return"{}visible"{}===\textbf{ e}\}(\textbf{ y}(\textbf{ t})))\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ \+\_\+form} =function()\{return"{}string"{}==typeof this[0].form?this.\+closest("{}form"{})\+:\textbf{ y}(this[0].form)\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ ui} \textbf{ form\+Reset\+Mixin}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ key\+Code} =\{BACKSPACE\+:8,COMMA\+:188,DELETE\+:46,DOWN\+:40,END\+:35,ENTER\+:13,ESCAPE\+:27,HOME\+:36,LEFT\+:37,PAGE\+\_\+\+DOWN\+:34,PAGE\+\_\+\+UP\+:33,PERIOD\+:190,RIGHT\+:39,SPACE\+:32,TAB\+:9,UP\+:38\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ labels} =function()\{var \textbf{ t},\textbf{ e},\textbf{ i};return this.\+length?this[0].labels\&\&this[0].labels.\+length?this.\+push\+Stack(this[0].labels)\+:(\textbf{ e}=this.\+eq(0).parents("{}label"{}),(\textbf{ t}=this.\+attr("{}id"{}))\&\&(\textbf{ i}=(\textbf{ i}=this.\+eq(0).parents().last()).\textbf{ add}((i.\+length?i\+:this).siblings()),\textbf{ t}="{}label[for=\textquotesingle{}"{}+y.\+escape\+Selector(\textbf{ t})+"{}\textquotesingle{}]"{},\textbf{ e}=\textbf{ e.\+add}(i.\+find(\textbf{ t}).add\+Back(\textbf{ t}))),this.\+push\+Stack(\textbf{ e}))\+:this.\+push\+Stack([$\,$])\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ fn} \textbf{ scroll\+Parent} =function(\textbf{ t})\{var \textbf{ e}=this.\+css("{}position"{}),\textbf{ i}="{}absolute"{}===\textbf{ e},\textbf{ s}=\textbf{ t}?/(auto$\vert$scroll$\vert$hidden)/\+:/(auto$\vert$scroll)/,\textbf{ t}=this.\+parents().filter(function()\{var \textbf{ t}=\textbf{ y}(this);return(!\textbf{ i}$\vert$$\vert$"{}static"{}!==t.\+css("{}position"{}))\&\&s.\+test(t.\+css("{}overflow"{})+t.\+css("{}overflow-\/y"{})+t.\+css("{}overflow-\/x"{}))\}).eq(0);return"{}fixed"{}!==\textbf{ e}\&\&t.\+length?t\+:y(this[0].owner\+Document$\vert$$\vert$document)\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ ui} \textbf{ ie} =!!/msie [\textbackslash{}w.]+/.exec(navigator.\+user\+Agent.\+to\+Lower\+Case())
+\item 
+function \textbf{ y} \textbf{ y} \textbf{ ui} \textbf{ plugin} =\{add\+:function(\textbf{ t},\textbf{ e},\textbf{ i})\{var \textbf{ s},\textbf{ n}=\textbf{ y.\+ui}[\textbf{ t}].\textbf{ prototype};for(\textbf{ s} in \textbf{ i})n.\+plugins[\textbf{ s}]=n.\+plugins[\textbf{ s}]$\vert$$\vert$[$\,$],n.\+plugins[\textbf{ s}].push([\textbf{ e},\textbf{ i}[\textbf{ s}]])\},call\+:function(\textbf{ t},\textbf{ e},\textbf{ i},\textbf{ s})\{var \textbf{ n},\textbf{ o}=t.\+plugins[\textbf{ e}];if(\textbf{ o}\&\&(\textbf{ s}$\vert$$\vert$t.\+element[0].parent\+Node\&\&11!==t.\+element[0].parent\+Node.\+node\+Type))for(\textbf{ n}=0;\textbf{ n}$<$o.\+length;\textbf{ n}++)t.\+options[\textbf{ o}[\textbf{ n}][0]]\&\&\textbf{ o}[\textbf{ n}][1].apply(t.\+element,\textbf{ i})\}\}
+\item 
+\textbf{ y} \textbf{ ui} \textbf{ resizable}
+\item 
+function \textbf{ root}
+\begin{DoxyCompactList}\small\item\em Power\+Tip v1.\+3.\+1 (2018-\/04-\/15) {\texttt{ https\+://stevenbenner.\+github.\+io/jquery-\/powertip/}} Copyright (c) 2018 Steven Benner ({\texttt{ http\+://stevenbenner.\+com/}}). \end{DoxyCompactList}\item 
+function \textbf{ factory}
+\item 
+\textbf{ j\+Query}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\index{jquery.js@{jquery.js}!"!function@{"!function}}
+\index{"!function@{"!function}!jquery.js@{jquery.js}}
+\doxyparagraph{"!function()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{a00041_afcc778a3e07eb56672fb93c2a8eef157_afcc778a3e07eb56672fb93c2a8eef157} 
+!function (\begin{DoxyParamCaption}\item[{}]{e}{, }\item[{}]{t}{}\end{DoxyParamCaption})}
+
+
+
+j\+Query v3.\+6.\+0 $\vert$ (c) Open\+JS Foundation and other contributors $\vert$ jquery.\+org/license 
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!"!function@{"!function}}
+\index{"!function@{"!function}!jquery.js@{jquery.js}}
+\doxyparagraph{"!function()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{a00041_a6e2c9a4472a75ae2ec32ee54ff87c001_a6e2c9a4472a75ae2ec32ee54ff87c001} 
+!function (\begin{DoxyParamCaption}\item[{\textbf{ a}}]{}{}\end{DoxyParamCaption})}
+
+
+
+j\+Query UI -\/ v1.\+13.\+2 -\/ 2022-\/08-\/01 {\texttt{ http\+://jqueryui.\+com}} Includes\+: widget.\+js, position.\+js, data.\+js, disable-\/selection.\+js, focusable.\+js, form-\/reset-\/mixin.\+js, jquery-\/patch.\+js, keycode.\+js, labels.\+js, scroll-\/parent.\+js, tabbable.\+js, unique-\/id.\+js, widgets/resizable.\+js, widgets/mouse.\+js Copyright j\+Query Foundation and other contributors; Licensed MIT 
+
+j\+Query UI Touch Punch 0.\+2.\+3
+
+Copyright 2011–2014, Dave Furfero Dual licensed under the MIT or GPL Version 2 licenses.
+
+Depends\+: jquery.\+ui.\+widget.\+js jquery.\+ui.\+mouse.\+js 
+
+Definición en la línea \textbf{ 94} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!add@{add}}
+\index{add@{add}!jquery.js@{jquery.js}}
+\doxyparagraph{add()}
+{\footnotesize\ttfamily \label{a00041_ae0a6d962798274fe74c6ba6b6ad9c085_ae0a6d962798274fe74c6ba6b6ad9c085} 
+\textbf{ y} \textbf{ y} \textbf{ ui} \textbf{ plugin} \textbf{ y} \textbf{ ui} \textbf{ plugin} \textbf{ y} \textbf{ ui} \textbf{ plugin} \textbf{ y} \textbf{ ui} \textbf{ plugin} add (\begin{DoxyParamCaption}\item[{}]{"{}resizable"{}}{, }\item[{}]{"{}animate"{}}{, }\item[{}]{\{stop\+:function(e)\{var i=y(this).\+resizable("{}instance"{}), t=i.\+options, s=i.\+\_\+proportionally\+Resize\+Elements, n=s.\+length \&\&/textarea/i.\+test(s[0].\+node\+Name), o=n \&\&i.\+\_\+has\+Scroll(s[0],"{}left"{})?0\+:i.\+size\+Diff.\+height, h=n?0\+:i.\+size\+Diff.\+width, n=\{width\+:i.\+size.\+width-\/h, height\+:i.\+size.\+height-\/o\}, h=parse\+Float(i.\+element.\+css("{}left"{}))+(i.\+position.\+left-\/i.\+original\+Position.\+left)$\vert$$\vert$null, o=parse\+Float(i.\+element.\+css("{}top"{}))+(i.\+position.\+top-\/i.\+original\+Position.\+top)$\vert$$\vert$null;i.\+element.\+animate(y.\+extend(n, o \&\&h?\{top\+:o, left\+:h\}\+:\{\}),\{duration\+:t.\+animate\+Duration, easing\+:t.\+animate\+Easing, step\+:function()\{var t=\{width\+:parse\+Float(i.\+element.\+css("{}width"{})), height\+:parse\+Float(i.\+element.\+css("{}height"{})), top\+:parse\+Float(i.\+element.\+css("{}top"{})), left\+:parse\+Float(i.\+element.\+css("{}left"{}))\};s \&\&s.\+length \&\&y(s[0]).\+css(\{width\+:t.\+width, height\+:t.\+height\}), i.\+\_\+update\+Cache(t), i.\+\_\+propagate("{}resize"{}, e)\}\})\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!ajaxPrefilter@{ajaxPrefilter}}
+\index{ajaxPrefilter@{ajaxPrefilter}!jquery.js@{jquery.js}}
+\doxyparagraph{ajaxPrefilter()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{a00041_a17e8a3f11987fabf46e0642f24515e24_a17e8a3f11987fabf46e0642f24515e24} 
+\textbf{ S} \textbf{ S} ajax\+Prefilter (\begin{DoxyParamCaption}\item[{}]{"{}script"{}}{, }\item[{}]{function(e)\{void 0===e.\+cache \&\&(e.\+cache=!1), e.\+cross\+Domain \&\&(e.\+type="{}\+GET"{})\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!ajaxPrefilter@{ajaxPrefilter}}
+\index{ajaxPrefilter@{ajaxPrefilter}!jquery.js@{jquery.js}}
+\doxyparagraph{ajaxPrefilter()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{a00041_a719fcccae8ef89f3d779ade3ae960811_a719fcccae8ef89f3d779ade3ae960811} 
+\textbf{ y} \textbf{ y} \textbf{ S} \textbf{ S} ajax\+Prefilter (\begin{DoxyParamCaption}\item[{}]{function(e)\{e.\+cross\+Domain \&\&(e.\+contents.\+script=!1)\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!ajaxSetup@{ajaxSetup}}
+\index{ajaxSetup@{ajaxSetup}!jquery.js@{jquery.js}}
+\doxyparagraph{ajaxSetup()}
+{\footnotesize\ttfamily \label{a00041_a9acc8f0316c0d342768407953cdc5fe4_a9acc8f0316c0d342768407953cdc5fe4} 
+\textbf{ S} ajax\+Setup (\begin{DoxyParamCaption}\item[{}]{\{accepts\+:\{script\+:"{}text/javascript, application/javascript, application/ecmascript, application/x-\/ecmascript"{}\}, contents\+:\{script\+:/\textbackslash{}b(?\+:java$\vert$ecma) script\textbackslash{}b/\}, converters\+:\{"{}text script"{}\+:function(e)\{return S.\+global\+Eval(e), e\}\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!ajaxTransport@{ajaxTransport}}
+\index{ajaxTransport@{ajaxTransport}!jquery.js@{jquery.js}}
+\doxyparagraph{ajaxTransport()}
+{\footnotesize\ttfamily \label{a00041_a6e13d221189d9888965b462dac8ab988_a6e13d221189d9888965b462dac8ab988} 
+\textbf{ y} \textbf{ y} \textbf{ S} ajax\+Transport (\begin{DoxyParamCaption}\item[{}]{function(i)\{var o, a;if(y.\+cors$\vert$$\vert$\$t \&\&!i.\+cross\+Domain) return\{send\+:function(e, t)\{var n, r=i.\+xhr();if(r.\+open(i.\+type, i.\+url, i.\+async, i.\+username, i.\+password), i.\+xhr\+Fields) for(n in i.\+xhr\+Fields) r[n]=i.\+xhr\+Fields[n];for(n in i.\+mime\+Type \&\&r.\+override\+Mime\+Type \&\&r.\+override\+Mime\+Type(i.\+mime\+Type), i.\+cross\+Domain$\vert$$\vert$e["{}\+X-\/\+Requested-\/\+With"{}]$\vert$$\vert$(e["{}\+X-\/\+Requested-\/\+With"{}]="{}\+XMLHttp\+Request"{}), e) r.\+set\+Request\+Header(n, e[n]);o=function(e)\{ return function()\{o \&\&(o=a=r.\+onload=r.\+onerror=r.\+onabort=r.\+ontimeout=r.\+onreadystatechange=null,"{}abort"{}===e?r.\+abort()\+:"{}error"{}===e?"{}number"{}!=typeof r.\+status?t(0,"{}error"{})\+:t(r.\+status, r.\+status\+Text)\+:t(\+Bt[r.\+status]$\vert$$\vert$r.\+status, r.\+status\+Text,"{}text"{}!==(r.\+response\+Type$\vert$$\vert$"{}text"{})$\vert$$\vert$"{}string"{}!=typeof r.\+response\+Text?\{binary\+:r.\+response\}\+:\{text\+:r.\+response\+Text\}, r.\+get\+All\+Response\+Headers()))\}\}, r.\+onload=o(), a=r.\+onerror=r.\+ontimeout=o("{}error"{}), void 0!==r.\+onabort?r.\+onabort=a\+:r.\+onreadystatechange=function()\{4===r.\+ready\+State \&\&\+C.\+set\+Timeout(function()\{o \&\&a()\})\}, o=o("{}abort"{});try\{r.\+send(i.\+has\+Content \&\&i.\+data$\vert$$\vert$null)\}catch(e)\{if(o) throw e\}\}, abort\+:function()\{o \&\&o()\}\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!b@{b}}
+\index{b@{b}!jquery.js@{jquery.js}}
+\doxyparagraph{b()}
+{\footnotesize\ttfamily \label{a00041_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda} 
+function b (\begin{DoxyParamCaption}\item[{}]{e}{, }\item[{}]{t}{, }\item[{}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!E@{E}}
+\index{E@{E}!jquery.js@{jquery.js}}
+\doxyparagraph{E()}
+{\footnotesize\ttfamily \label{a00041_a23734cc2d4aa79ae4ca3cc8e052b4bdd_a23734cc2d4aa79ae4ca3cc8e052b4bdd} 
+function E (\begin{DoxyParamCaption}\item[{}]{t}{, }\item[{}]{e}{, }\item[{}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!each@{each}}
+\index{each@{each}!jquery.js@{jquery.js}}
+\doxyparagraph{each()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{a00041_ad74a18060e305a0c95528905768e6d12_ad74a18060e305a0c95528905768e6d12} 
+function \textbf{ S} each (\begin{DoxyParamCaption}\item[{"{}Boolean Number String Function Array Date Reg\+Exp Object Error Symbol"{}.}]{split}{"{} "{}, }\item[{function(\textbf{ e}, \textbf{ t})\{\textbf{ n}["{}[object "{}+t+"{}]"{}]=t.\+to\+Lower\+Case()\}}]{}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!each@{each}}
+\index{each@{each}!jquery.js@{jquery.js}}
+\doxyparagraph{each()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{a00041_acf3bb1fd57344762fa531b5565d3460c_acf3bb1fd57344762fa531b5565d3460c} 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} each (\begin{DoxyParamCaption}\item[{}]{function(e, n)\{\+S.\+css\+Hooks[n]=\+Fe(y.\+pixel\+Position, function(e, t)\{if(t) return t=\+We(e, n), Pe.\+test(t)?\+S(e).\+position()[n]+"{}px"{}\+:t\})\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!each@{each}}
+\index{each@{each}!jquery.js@{jquery.js}}
+\doxyparagraph{each()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{a00041_ab22484fc3c935e9f1da430c960d717a2_ab22484fc3c935e9f1da430c960d717a2} 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} \textbf{ S} \textbf{ S} each (\begin{DoxyParamCaption}\item[{}]{\{scroll\+Left\+:"{}page\+XOffset"{}, scroll\+Top\+:"{}page\+YOffset"{}\}}{, }\item[{}]{function(t, i)\{var o="{}page\+YOffset"{}===i;\+S.\+fn[t]=function(e)\{return \$(this, function(e, t, n)\{var r;if(x(e)?r=e\+:9===e.\+node\+Type \&\&(r=e.\+default\+View), void 0===n) return r?r[i]\+:e[t];r?r.\+scroll\+To(o?r.\+page\+XOffset\+:n, o?n\+:r.\+page\+YOffset)\+:e[t]=n\}, t, e, arguments.\+length)\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!escapeSelector@{escapeSelector}}
+\index{escapeSelector@{escapeSelector}!jquery.js@{jquery.js}}
+\doxyparagraph{escapeSelector()}
+{\footnotesize\ttfamily \label{a00041_a09f60201a80d91034c76285e5e250163_a09f60201a80d91034c76285e5e250163} 
+\textbf{ y} expr \textbf{ y} \textbf{ y} escape\+Selector (\begin{DoxyParamCaption}\item[{}]{e}{ = {\ttfamily /([\textbackslash{}0-\/\textbackslash{}x1f\textbackslash{}x7f]$\vert$$^\wedge$-\/?\textbackslash{}\textbf{ d})$\vert$$^\wedge$-\/\$$\vert$[$^\wedge$\textbackslash{}x80-\/\textbackslash{}\textbf{ u\+FFFF\textbackslash{}w}-\/]/\textbf{ g}}, }\item[{}]{d}{ = {\ttfamily function(\textbf{ t},\textbf{ e})\{return~\textbf{ e}?"{}\textbackslash{}0"{}===\textbf{ t}?"{}�"{}\+:t.slice(0,-\/1)+"{}\textbackslash{}\textbackslash{}"{}+t.charCodeAt(t.length-\/1).toString(16)+"{}~"{}\+:"{}\textbackslash{}\textbackslash{}"{}+\textbf{ t}\}}, }\item[{y.}]{escape\+Selector}{ = {\ttfamily function(\textbf{ t})\{return(\textbf{ t}+"{}"{}).replace(\textbf{ e},\textbf{ d})\}}}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!extend@{extend}}
+\index{extend@{extend}!jquery.js@{jquery.js}}
+\doxyparagraph{extend()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{a00041_aa3c17eab05495d317dcfda61c715384f_aa3c17eab05495d317dcfda61c715384f} 
+\textbf{ y} \textbf{ ui} \textbf{ y} extend (\begin{DoxyParamCaption}\item[{y.\+expr.}]{pseudos}{, }\item[{}]{\{data\+:y.\+expr.\+create\+Pseudo?y.\+expr.\+create\+Pseudo(function(e)\{return function(t)\{return!!y.\+data(t, e)\}\})\+:function(t, e, i)\{return!!y.\+data(t, i[3])\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!extend@{extend}}
+\index{extend@{extend}!jquery.js@{jquery.js}}
+\doxyparagraph{extend()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{a00041_ae158ef90c50216c093fd8d56b084bbe7_ae158ef90c50216c093fd8d56b084bbe7} 
+\textbf{ S} \textbf{ S} \textbf{ S} extend (\begin{DoxyParamCaption}\item[{}]{\{expando\+:"{}j\+Query"{}+(f+\+Math.\+random()).\+replace(/\textbackslash{}\+D/g,"{}"{}), is\+Ready\+:!0, error\+:function(e)\{throw new Error(e)\}, noop\+:function()\{\}, is\+Plain\+Object\+:function(e)\{var t, n;return!(!e$\vert$$\vert$"{}[object Object]"{}!==o.\+call(e))\&\&(!(t=r(e))$\vert$$\vert$"{}function"{}==typeof(n=v.\+call(t,"{}constructor"{})\&\&t.\+constructor)\&\&a.\+call(n)===l)\}, is\+Empty\+Object\+:function(e)\{var t;for(t in e) return!1;return!0\}, global\+Eval\+:function(e, t, n)\{b(e,\{nonce\+:t \&\&t.\+nonce\}, n)\}, each\+:function(e, t)\{var n, r=0;if(p(e))\{for(n=e.\+length;r$<$ n;r++) if(!1===t.\+call(e[r], r, e[r])) break\}else for(r in e) if(!1===t.\+call(e[r], r, e[r])) break;return e\}, make\+Array\+:function(e, t)\{var n=t$\vert$$\vert$[$\,$];return null!=e \&\&(p(\+Object(e))?\+S.\+merge(n,"{}string"{}==typeof e?[e]\+:e)\+:u.\+call(n, e)), n\}, in\+Array\+:function(e, t, n)\{return null==t?-\/1\+:i.\+call(t, e, n)\}, merge\+:function(e, t)\{for(var n=+t.\+length, r=0, i=e.\+length;r$<$ n;r++) e[i++]=t[r];return e.\+length=i, e\}, grep\+:function(e, t, n)\{for(var r=[$\,$], i=0, o=e.\+length, a=!n;i$<$ o;i++)!t(e[i], i)!==a \&\&r.\+push(e[i]);return r\}, map\+:function(e, t, n)\{var r, i, o=0, a=[$\,$];if(p(e)) for(r=e.\+length;o$<$ r;o++) null!=(i=t(e[o], o, n))\&\&a.\+push(i);else for(o in e) null!=(i=t(e[o], o, n))\&\&a.\+push(i);return g(a)\}, guid\+:1, support\+:y\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!H@{H}}
+\index{H@{H}!jquery.js@{jquery.js}}
+\doxyparagraph{H()}
+{\footnotesize\ttfamily \label{a00041_a8939048fb8bdbac217b2521b14712c10_a8939048fb8bdbac217b2521b14712c10} 
+function H (\begin{DoxyParamCaption}\item[{}]{t}{, }\item[{}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!p@{p}}
+\index{p@{p}!jquery.js@{jquery.js}}
+\doxyparagraph{p()}
+{\footnotesize\ttfamily \label{a00041_a8c4bb014db8f5c540317a3b78d237be3_a8c4bb014db8f5c540317a3b78d237be3} 
+function p (\begin{DoxyParamCaption}\item[{}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 3} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!pseudos@{pseudos}}
+\index{pseudos@{pseudos}!jquery.js@{jquery.js}}
+\doxyparagraph{pseudos()}
+{\footnotesize\ttfamily \label{a00041_a56ad255f5ce5eed1be53effee29a149f_a56ad255f5ce5eed1be53effee29a149f} 
+\textbf{ y} expr pseudos (\begin{DoxyParamCaption}\item[{y.\+expr.}]{pseudos}{ = {\ttfamily y.expr["{}\+:"{}]}}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!S@{S}}
+\index{S@{S}!jquery.js@{jquery.js}}
+\doxyparagraph{S()}
+{\footnotesize\ttfamily \label{a00041_a6e1a9fb2cec7cf5ead06e8f32950a342_a6e1a9fb2cec7cf5ead06e8f32950a342} 
+function S (\begin{DoxyParamCaption}\item[{}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!uniqueSort@{uniqueSort}}
+\index{uniqueSort@{uniqueSort}!jquery.js@{jquery.js}}
+\doxyparagraph{uniqueSort()}
+{\footnotesize\ttfamily \label{a00041_a0a1827f5c3dddfe30969294656942412_a0a1827f5c3dddfe30969294656942412} 
+\textbf{ y} expr \textbf{ y} unique\+Sort (\begin{DoxyParamCaption}\item[{y.}]{unique\+Sort}{ = {\ttfamily y.unique}}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!w@{w}}
+\index{w@{w}!jquery.js@{jquery.js}}
+\doxyparagraph{w()}
+{\footnotesize\ttfamily \label{a00041_a37d3078cde95571b2844144f79fa46d4_a37d3078cde95571b2844144f79fa46d4} 
+function w (\begin{DoxyParamCaption}\item[{}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 0
+\index{jquery.js@{jquery.js}!widget@{widget}}
+\index{widget@{widget}!jquery.js@{jquery.js}}
+\doxyparagraph{widget()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{a00041_a5376651a717c6b24335cf498fa5f8dfa_a5376651a717c6b24335cf498fa5f8dfa} 
+function \textbf{ y} widget (\begin{DoxyParamCaption}\item[{}]{"{}ui.\+mouse"{}}{, }\item[{}]{\{version\+:"{}1.\+13.\+2"{}, options\+:\{cancel\+:"{}input, textarea, button, select, option"{}, distance\+:1, delay\+:0\}, \+\_\+mouse\+Init\+:function()\{var e=this;this.\+element.\+on("{}mousedown."{}+this.\+widget\+Name, function(t)\{return e.\+\_\+mouse\+Down(t)\}).\+on("{}click."{}+this.\+widget\+Name, function(t)\{if(!0===y.\+data(t.\+target, e.\+widget\+Name+"{}.\+prevent\+Click\+Event"{})) return y.\+remove\+Data(t.\+target, e.\+widget\+Name+"{}.\+prevent\+Click\+Event"{}), t.\+stop\+Immediate\+Propagation(),!1\}), this.\+started=!1\}, \+\_\+mouse\+Destroy\+:function()\{this.\+element.\+off("{}."{}+this.\+widget\+Name), this.\+\_\+mouse\+Move\+Delegate \&\&this.\+document.\+off("{}mousemove."{}+this.\+widget\+Name, this.\+\_\+mouse\+Move\+Delegate).\+off("{}mouseup."{}+this.\+widget\+Name, this.\+\_\+mouse\+Up\+Delegate)\}, \+\_\+mouse\+Down\+:function(t)\{if(!f)\{this.\+\_\+mouse\+Moved=!1, this.\+\_\+mouse\+Started \&\&this.\+\_\+mouse\+Up(t), this.\+\_\+mouse\+Down\+Event=t;var e=this, i=1===t.\+which, s=!("{}string"{}!=typeof this.\+options.\+cancel$\vert$$\vert$!t.\+target.\+node\+Name)\&\&y(t.\+target).\+closest(this.\+options.\+cancel).\+length;return i \&\&!s \&\&this.\+\_\+mouse\+Capture(t)?(this.\+mouse\+Delay\+Met=!this.\+options.\+delay, this.\+mouse\+Delay\+Met$\vert$$\vert$(this.\+\_\+mouse\+Delay\+Timer=set\+Timeout(function()\{e.\+mouse\+Delay\+Met=!0\}, this.\+options.\+delay)), this.\+\_\+mouse\+Distance\+Met(t)\&\&this.\+\_\+mouse\+Delay\+Met(t)\&\&(this.\+\_\+mouse\+Started=!1!==this.\+\_\+mouse\+Start(t),!this.\+\_\+mouse\+Started)?(t.\+prevent\+Default(),!0)\+:(!0===y.\+data(t.\+target, this.\+widget\+Name+"{}.\+prevent\+Click\+Event"{})\&\&y.\+remove\+Data(t.\+target, this.\+widget\+Name+"{}.\+prevent\+Click\+Event"{}), this.\+\_\+mouse\+Move\+Delegate=function(t)\{return e.\+\_\+mouse\+Move(t)\}, this.\+\_\+mouse\+Up\+Delegate=function(t)\{return e.\+\_\+mouse\+Up(t)\}, this.\+document.\+on("{}mousemove."{}+this.\+widget\+Name, this.\+\_\+mouse\+Move\+Delegate).\+on("{}mouseup."{}+this.\+widget\+Name, this.\+\_\+mouse\+Up\+Delegate), t.\+prevent\+Default(), f=!0))\+:!0\}\}, \+\_\+mouse\+Move\+:function(t)\{if(this.\+\_\+mouse\+Moved)\{if(y.\+ui.\+ie \&\&(!document.\+document\+Mode$\vert$$\vert$document.\+document\+Mode$<$ 9)\&\&!t.\+button) return this.\+\_\+mouse\+Up(t);if(!t.\+which) if(t.\+original\+Event.\+alt\+Key$\vert$$\vert$t.\+original\+Event.\+ctrl\+Key$\vert$$\vert$t.\+original\+Event.\+meta\+Key$\vert$$\vert$t.\+original\+Event.\+shift\+Key) this.\+ignore\+Missing\+Which=!0;else if(!this.\+ignore\+Missing\+Which) return this.\+\_\+mouse\+Up(t)\}return(t.\+which$\vert$$\vert$t.\+button)\&\&(this.\+\_\+mouse\+Moved=!0), this.\+\_\+mouse\+Started?(this.\+\_\+mouse\+Drag(t), t.\+prevent\+Default())\+:(this.\+\_\+mouse\+Distance\+Met(t)\&\&this.\+\_\+mouse\+Delay\+Met(t)\&\&(this.\+\_\+mouse\+Started=!1!==this.\+\_\+mouse\+Start(this.\+\_\+mouse\+Down\+Event, t), this.\+\_\+mouse\+Started?this.\+\_\+mouse\+Drag(t)\+:this.\+\_\+mouse\+Up(t)),!this.\+\_\+mouse\+Started)\}, \+\_\+mouse\+Up\+:function(t)\{this.\+document.\+off("{}mousemove."{}+this.\+widget\+Name, this.\+\_\+mouse\+Move\+Delegate).\+off("{}mouseup."{}+this.\+widget\+Name, this.\+\_\+mouse\+Up\+Delegate), this.\+\_\+mouse\+Started \&\&(this.\+\_\+mouse\+Started=!1, t.\+target===this.\+\_\+mouse\+Down\+Event.\+target \&\&y.\+data(t.\+target, this.\+widget\+Name+"{}.\+prevent\+Click\+Event"{},!0), this.\+\_\+mouse\+Stop(t)), this.\+\_\+mouse\+Delay\+Timer \&\&(clear\+Timeout(this.\+\_\+mouse\+Delay\+Timer), delete this.\+\_\+mouse\+Delay\+Timer), this.\+ignore\+Missing\+Which=!1, f=!1, t.\+prevent\+Default()\}, \+\_\+mouse\+Distance\+Met\+:function(t)\{return Math.\+max(\+Math.\+abs(this.\+\_\+mouse\+Down\+Event.\+page\+X-\/t.\+page\+X), Math.\+abs(this.\+\_\+mouse\+Down\+Event.\+page\+Y-\/t.\+page\+Y))$>$=this.\+options.\+distance\}, \+\_\+mouse\+Delay\+Met\+:function()\{return this.\+mouse\+Delay\+Met\}, \+\_\+mouse\+Start\+:function()\{\}, \+\_\+mouse\+Drag\+:function()\{\}, \+\_\+mouse\+Stop\+:function()\{\}, \+\_\+mouse\+Capture\+:function()\{return!0\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!widget@{widget}}
+\index{widget@{widget}!jquery.js@{jquery.js}}
+\doxyparagraph{widget()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{a00041_adcf02793062410052a0f4f4898a7ebc7_adcf02793062410052a0f4f4898a7ebc7} 
+\textbf{ y} widget (\begin{DoxyParamCaption}\item[{}]{"{}ui.\+resizable"{}}{, }\item[{y.\+ui.}]{mouse}{, }\item[{}]{\{version\+:"{}1.\+13.\+2"{}, widget\+Event\+Prefix\+:"{}resize"{}, options\+:\{also\+Resize\+:!1, animate\+:!1, animate\+Duration\+:"{}slow"{}, animate\+Easing\+:"{}swing"{}, aspect\+Ratio\+:!1, auto\+Hide\+:!1, classes\+:\{"{}ui-\/resizable-\/se"{}\+:"{}ui-\/icon ui-\/icon-\/gripsmall-\/diagonal-\/se"{}\}, containment\+:!1, ghost\+:!1, grid\+:!1, handles\+:"{}e,s,se"{}, helper\+:!1, max\+Height\+:null, max\+Width\+:null, min\+Height\+:10, min\+Width\+:10, z\+Index\+:90, resize\+:null, start\+:null, stop\+:null\}, \+\_\+num\+:function(t)\{return parse\+Float(t)$\vert$$\vert$0\}, \+\_\+is\+Number\+:function(t)\{return!is\+Na\+N(parse\+Float(t))\}, \+\_\+has\+Scroll\+:function(t, e)\{if("{}hidden"{}===y(t).\+css("{}overflow"{})) return!1;var i=e \&\&"{}left"{}===e?"{}scroll\+Left"{}\+:"{}scroll\+Top"{}, e=!1;if(0$<$ t[i]) return!0;try\{t[i]=1, e=0$<$ t[i], t[i]=0\}catch(t)\{\}return e\}, \+\_\+create\+:function()\{var t, e=this.\+options, i=this;this.\+\_\+add\+Class("{}ui-\/resizable"{}), y.\+extend(this,\{\+\_\+aspect\+Ratio\+:!!e.\+aspect\+Ratio, aspect\+Ratio\+:e.\+aspect\+Ratio, original\+Element\+:this.\+element, \+\_\+proportionally\+Resize\+Elements\+:[$\,$], \+\_\+helper\+:e.\+helper$\vert$$\vert$e.\+ghost$\vert$$\vert$e.\+animate?e.\+helper$\vert$$\vert$"{}ui-\/resizable-\/helper"{}\+:null\}), this.\+element[0].\+node\+Name.\+match(/$^\wedge$(canvas$\vert$textarea$\vert$input$\vert$select$\vert$button$\vert$img) \$/i)\&\&(this.\+element.\+wrap(y("{}$<$div class=\textquotesingle{}ui-\/wrapper\textquotesingle{}$>$$<$/div$>$"{}).\+css(\{overflow\+:"{}hidden"{}, position\+:this.\+element.\+css("{}position"{}), width\+:this.\+element.\+outer\+Width(), height\+:this.\+element.\+outer\+Height(), top\+:this.\+element.\+css("{}top"{}), left\+:this.\+element.\+css("{}left"{})\})), this.\+element=this.\+element.\+parent().\+data("{}ui-\/resizable"{}, this.\+element.\+resizable("{}instance"{})), this.\+element\+Is\+Wrapper=!0, t=\{margin\+Top\+:this.\+original\+Element.\+css("{}margin\+Top"{}), margin\+Right\+:this.\+original\+Element.\+css("{}margin\+Right"{}), margin\+Bottom\+:this.\+original\+Element.\+css("{}margin\+Bottom"{}), margin\+Left\+:this.\+original\+Element.\+css("{}margin\+Left"{})\}, this.\+element.\+css(t), this.\+original\+Element.\+css("{}margin"{}, 0), this.\+original\+Resize\+Style=this.\+original\+Element.\+css("{}resize"{}), this.\+original\+Element.\+css("{}resize"{},"{}none"{}), this.\+\_\+proportionally\+Resize\+Elements.\+push(this.\+original\+Element.\+css(\{position\+:"{}static"{}, zoom\+:1, display\+:"{}block"{}\})), this.\+original\+Element.\+css(t), this.\+\_\+proportionally\+Resize()), this.\+\_\+setup\+Handles(), e.\+auto\+Hide \&\&y(this.\+element).\+on("{}mouseenter"{}, function()\{e.\+disabled$\vert$$\vert$(i.\+\_\+remove\+Class("{}ui-\/resizable-\/autohide"{}), i.\+\_\+handles.\+show())\}).\+on("{}mouseleave"{}, function()\{e.\+disabled$\vert$$\vert$i.\+resizing$\vert$$\vert$(i.\+\_\+add\+Class("{}ui-\/resizable-\/autohide"{}), i.\+\_\+handles.\+hide())\}), this.\+\_\+mouse\+Init()\}, \+\_\+destroy\+:function()\{this.\+\_\+mouse\+Destroy(), this.\+\_\+added\+Handles.\+remove();function t(t)\{y(t).\+remove\+Data("{}resizable"{}).\+remove\+Data("{}ui-\/resizable"{}).\+off("{}.\+resizable"{})\}var e;return this.\+element\+Is\+Wrapper \&\&(t(this.\+element), e=this.\+element, this.\+original\+Element.\+css(\{position\+:e.\+css("{}position"{}), width\+:e.\+outer\+Width(), height\+:e.\+outer\+Height(), top\+:e.\+css("{}top"{}), left\+:e.\+css("{}left"{})\}).\+insert\+After(e), e.\+remove()), this.\+original\+Element.\+css("{}resize"{}, this.\+original\+Resize\+Style), t(this.\+original\+Element), this\}, \+\_\+set\+Option\+:function(t, e)\{switch(this.\+\_\+super(t, e), t)\{case"{}handles"{}\+:this.\+\_\+remove\+Handles(), this.\+\_\+setup\+Handles();break;case"{}aspect\+Ratio"{}\+:this.\+\_\+aspect\+Ratio=!!e\}\}, \+\_\+setup\+Handles\+:function()\{var t, e, i, s, n, o=this.\+options, h=this;if(this.\+handles=o.\+handles$\vert$$\vert$(y("{}.\+ui-\/resizable-\/handle"{}, this.\+element).\+length?\{n\+:"{}.\+ui-\/resizable-\/n"{}, e\+:"{}.\+ui-\/resizable-\/e"{}, s\+:"{}.\+ui-\/resizable-\/s"{}, w\+:"{}.\+ui-\/resizable-\/w"{}, se\+:"{}.\+ui-\/resizable-\/se"{}, sw\+:"{}.\+ui-\/resizable-\/sw"{}, ne\+:"{}.\+ui-\/resizable-\/ne"{}, nw\+:"{}.\+ui-\/resizable-\/nw"{}\}\+:"{}e,s,se"{}), this.\+\_\+handles=y(), this.\+\_\+added\+Handles=y(), this.\+handles.\+constructor===\+String) for("{}all"{}===this.\+handles \&\&(this.\+handles="{}n,e,s,w,se,sw,ne,nw"{}), i=this.\+handles.\+split("{},"{}), this.\+handles=\{\}, e=0;e$<$ i.\+length;e++) s="{}ui-\/resizable-\/"{}+(t=\+String.\+prototype.\+trim.\+call(i[e])), n=y("{}$<$div$>$"{}), this.\+\_\+add\+Class(n,"{}ui-\/resizable-\/handle "{}+s), n.\+css(\{z\+Index\+:o.\+z\+Index\}), this.\+handles[t]="{}.\+ui-\/resizable-\/"{}+t, this.\+element.\+children(this.\+handles[t]).\+length$\vert$$\vert$(this.\+element.\+append(n), this.\+\_\+added\+Handles=this.\+\_\+added\+Handles.\+add(n));this.\+\_\+render\+Axis=function(t)\{var e, i, s;for(e in t=t$\vert$$\vert$this.\+element, this.\+handles) this.\+handles[e].\+constructor===\+String?this.\+handles[e]=this.\+element.\+children(this.\+handles[e]).\+first().\+show()\+:(this.\+handles[e].\+jquery$\vert$$\vert$this.\+handles[e].\+node\+Type)\&\&(this.\+handles[e]=y(this.\+handles[e]), this.\+\_\+on(this.\+handles[e],\{mousedown\+:h.\+\_\+mouse\+Down\})), this.\+element\+Is\+Wrapper \&\&this.\+original\+Element[0].\+node\+Name.\+match(/$^\wedge$(textarea$\vert$input$\vert$select$\vert$button) \$/i)\&\&(i=y(this.\+handles[e], this.\+element), s=/sw$\vert$ne$\vert$nw$\vert$se$\vert$n$\vert$s/.\+test(e)?i.\+outer\+Height()\+:i.\+outer\+Width(), i=["{}padding"{},/ne$\vert$nw$\vert$n/.\+test(e)?"{}\+Top"{}\+:/se$\vert$sw$\vert$s/.\+test(e)?"{}\+Bottom"{}\+:/$^\wedge$e\$/.\+test(e)?"{}\+Right"{}\+:"{}\+Left"{}].\+join("{}"{}), t.\+css(i, s), this.\+\_\+proportionally\+Resize()), this.\+\_\+handles=this.\+\_\+handles.\+add(this.\+handles[e])\}, this.\+\_\+render\+Axis(this.\+element), this.\+\_\+handles=this.\+\_\+handles.\+add(this.\+element.\+find("{}.\+ui-\/resizable-\/handle"{})), this.\+\_\+handles.\+disable\+Selection(), this.\+\_\+handles.\+on("{}mouseover"{}, function()\{h.\+resizing$\vert$$\vert$(this.\+class\+Name \&\&(n=this.\+class\+Name.\+match(/ui-\/resizable-\/(se$\vert$sw$\vert$ne$\vert$nw$\vert$n$\vert$e$\vert$s$\vert$w)/i)), h.\+axis=n \&\&n[1]?n[1]\+:"{}se"{})\}), o.\+auto\+Hide \&\&(this.\+\_\+handles.\+hide(), this.\+\_\+add\+Class("{}ui-\/resizable-\/autohide"{}))\}, \+\_\+remove\+Handles\+:function()\{this.\+\_\+added\+Handles.\+remove()\}, \+\_\+mouse\+Capture\+:function(t)\{var e, i, s=!1;for(e in this.\+handles)(i=y(this.\+handles[e])[0])!==t.\+target \&\&!y.\+contains(i, t.\+target)$\vert$$\vert$(s=!0);return!this.\+options.\+disabled \&\&s\}, \+\_\+mouse\+Start\+:function(t)\{var e, i, s=this.\+options, n=this.\+element;return this.\+resizing=!0, this.\+\_\+render\+Proxy(), e=this.\+\_\+num(this.\+helper.\+css("{}left"{})), i=this.\+\_\+num(this.\+helper.\+css("{}top"{})), s.\+containment \&\&(e+=y(s.\+containment).\+scroll\+Left()$\vert$$\vert$0, i+=y(s.\+containment).\+scroll\+Top()$\vert$$\vert$0), this.\+offset=this.\+helper.\+offset(), this.\+position=\{left\+:e, top\+:i\}, this.\+size=this.\+\_\+helper?\{width\+:this.\+helper.\+width(), height\+:this.\+helper.\+height()\}\+:\{ width\+:n.\+width(), height\+:n.\+height()\}, this.\+original\+Size=this.\+\_\+helper?\{width\+:n.\+outer\+Width(), height\+:n.\+outer\+Height()\}\+:\{width\+:n.\+width(), height\+:n.\+height()\}, this.\+size\+Diff=\{width\+:n.\+outer\+Width() -\/n.\+width(), height\+:n.\+outer\+Height() -\/n.\+height()\}, this.\+original\+Position=\{left\+:e, top\+:i\}, this.\+original\+Mouse\+Position=\{left\+:t.\+page\+X, top\+:t.\+page\+Y\}, this.\+aspect\+Ratio="{}number"{}==typeof s.\+aspect\+Ratio?s.\+aspect\+Ratio\+:this.\+original\+Size.\+width/this.\+original\+Size.\+height$\vert$$\vert$1, s=y("{}.\+ui-\/resizable-\/"{}+this.\+axis).\+css("{}cursor"{}), y("{}body"{}).\+css("{}cursor"{},"{}auto"{}===s?this.\+axis+"{}-\/resize"{}\+:s), this.\+\_\+add\+Class("{}ui-\/resizable-\/resizing"{}), this.\+\_\+propagate("{}start"{}, t),!0\}, \+\_\+mouse\+Drag\+:function(t)\{var e=this.\+original\+Mouse\+Position, i=this.\+axis, s=t.\+page\+X-\/e.\+left$\vert$$\vert$0, e=t.\+page\+Y-\/e.\+top$\vert$$\vert$0, i=this.\+\_\+change[i];return this.\+\_\+update\+Prev\+Properties(), i \&\&(e=i.\+apply(this,[t, s, e]), this.\+\_\+update\+Virtual\+Boundaries(t.\+shift\+Key),(this.\+\_\+aspect\+Ratio$\vert$$\vert$t.\+shift\+Key)\&\&(e=this.\+\_\+update\+Ratio(e, t)), e=this.\+\_\+respect\+Size(e, t), this.\+\_\+update\+Cache(e), this.\+\_\+propagate("{}resize"{}, t), e=this.\+\_\+apply\+Changes(),!this.\+\_\+helper \&\&this.\+\_\+proportionally\+Resize\+Elements.\+length \&\&this.\+\_\+proportionally\+Resize(), y.\+is\+Empty\+Object(e)$\vert$$\vert$(this.\+\_\+update\+Prev\+Properties(), this.\+\_\+trigger("{}resize"{}, t, this.\+ui()), this.\+\_\+apply\+Changes())),!1\}, \+\_\+mouse\+Stop\+:function(t)\{this.\+resizing=!1;var e, i, s, n=this.\+options, o=this;return this.\+\_\+helper \&\&(s=(e=(i=this.\+\_\+proportionally\+Resize\+Elements).\+length \&\&/textarea/i.\+test(i[0].\+node\+Name))\&\&this.\+\_\+has\+Scroll(i[0],"{}left"{})?0\+:o.\+size\+Diff.\+height, i=e?0\+:o.\+size\+Diff.\+width, e=\{width\+:o.\+helper.\+width() -\/i, height\+:o.\+helper.\+height() -\/s\}, i=parse\+Float(o.\+element.\+css("{}left"{}))+(o.\+position.\+left-\/o.\+original\+Position.\+left)$\vert$$\vert$null, s=parse\+Float(o.\+element.\+css("{}top"{}))+(o.\+position.\+top-\/o.\+original\+Position.\+top)$\vert$$\vert$null, n.\+animate$\vert$$\vert$this.\+element.\+css(y.\+extend(e,\{top\+:s, left\+:i\})), o.\+helper.\+height(o.\+size.\+height), o.\+helper.\+width(o.\+size.\+width), this.\+\_\+helper \&\&!n.\+animate \&\&this.\+\_\+proportionally\+Resize()), y("{}body"{}).\+css("{}cursor"{},"{}auto"{}), this.\+\_\+remove\+Class("{}ui-\/resizable-\/resizing"{}), this.\+\_\+propagate("{}stop"{}, t), this.\+\_\+helper \&\&this.\+helper.\+remove(),!1\}, \+\_\+update\+Prev\+Properties\+:function()\{ this.\+prev\+Position=\{top\+:this.\+position.\+top, left\+:this.\+position.\+left\}, this.\+prev\+Size=\{width\+:this.\+size.\+width, height\+:this.\+size.\+height\}\}, \+\_\+apply\+Changes\+:function()\{var t=\{\};return this.\+position.\+top!==this.\+prev\+Position.\+top \&\&(t.\+top=this.\+position.\+top+"{}px"{}), this.\+position.\+left!==this.\+prev\+Position.\+left \&\&(t.\+left=this.\+position.\+left+"{}px"{}), this.\+size.\+width!==this.\+prev\+Size.\+width \&\&(t.\+width=this.\+size.\+width+"{}px"{}), this.\+size.\+height!==this.\+prev\+Size.\+height \&\&(t.\+height=this.\+size.\+height+"{}px"{}), this.\+helper.\+css(t), t\}, \+\_\+update\+Virtual\+Boundaries\+:function(t)\{var e, i, s=this.\+options, n=\{min\+Width\+:this.\+\_\+is\+Number(s.\+min\+Width)?s.\+min\+Width\+:0, max\+Width\+:this.\+\_\+is\+Number(s.\+max\+Width)?s.\+max\+Width\+:1/0, min\+Height\+:this.\+\_\+is\+Number(s.\+min\+Height)?s.\+min\+Height\+:0, max\+Height\+:this.\+\_\+is\+Number(s.\+max\+Height)?s.\+max\+Height\+:1/0\};(this.\+\_\+aspect\+Ratio$\vert$$\vert$t)\&\&(e=n.\+min\+Height $\ast$this.\+aspect\+Ratio, i=n.\+min\+Width/this.\+aspect\+Ratio, s=n.\+max\+Height $\ast$this.\+aspect\+Ratio, t=n.\+max\+Width/this.\+aspect\+Ratio, e $>$n.\+min\+Width \&\&(n.\+min\+Width=e), i $>$n.\+min\+Height \&\&(n.\+min\+Height=i), s$<$ n.\+max\+Width \&\&(n.\+max\+Width=s), t$<$ n.\+max\+Height \&\&(n.\+max\+Height=t)), this.\+\_\+v\+Boundaries=n\}, \+\_\+update\+Cache\+:function(t)\{this.\+offset=this.\+helper.\+offset(), this.\+\_\+is\+Number(t.\+left)\&\&(this.\+position.\+left=t.\+left), this.\+\_\+is\+Number(t.\+top)\&\&(this.\+position.\+top=t.\+top), this.\+\_\+is\+Number(t.\+height)\&\&(this.\+size.\+height=t.\+height), this.\+\_\+is\+Number(t.\+width)\&\&(this.\+size.\+width=t.\+width)\}, \+\_\+update\+Ratio\+:function(t)\{var e=this.\+position, i=this.\+size, s=this.\+axis;return this.\+\_\+is\+Number(t.\+height)?t.\+width=t.\+height $\ast$this.\+aspect\+Ratio\+:this.\+\_\+is\+Number(t.\+width)\&\&(t.\+height=t.\+width/this.\+aspect\+Ratio),"{}sw"{}===s \&\&(t.\+left=e.\+left+(i.\+width-\/t.\+width), t.\+top=null),"{}nw"{}===s \&\&(t.\+top=e.\+top+(i.\+height-\/t.\+height), t.\+left=e.\+left+(i.\+width-\/t.\+width)), t\}, \+\_\+respect\+Size\+:function(t)\{var e=this.\+\_\+v\+Boundaries, i=this.\+axis, s=this.\+\_\+is\+Number(t.\+width)\&\&e.\+max\+Width \&\&e.\+max\+Width$<$ t.\+width, n=this.\+\_\+is\+Number(t.\+height)\&\&e.\+max\+Height \&\&e.\+max\+Height$<$ t.\+height, o=this.\+\_\+is\+Number(t.\+width)\&\&e.\+min\+Width \&\&e.\+min\+Width $>$t.\+width, h=this.\+\_\+is\+Number(t.\+height)\&\&e.\+min\+Height \&\&e.\+min\+Height $>$t.\+height, a=this.\+original\+Position.\+left+this.\+original\+Size.\+width, r=this.\+original\+Position.\+top+this.\+original\+Size.\+height, l=/sw$\vert$nw$\vert$w/.\+test(i), i=/nw$\vert$ne$\vert$n/.\+test(i);return o \&\&(t.\+width=e.\+min\+Width), h \&\&(t.\+height=e.\+min\+Height), s \&\&(t.\+width=e.\+max\+Width), n \&\&(t.\+height=e.\+max\+Height), o \&\&l \&\&(t.\+left=a-\/e.\+min\+Width), s \&\&l \&\&(t.\+left=a-\/e.\+max\+Width), h \&\&i \&\&(t.\+top=r-\/e.\+min\+Height), n \&\&i \&\&(t.\+top=r-\/e.\+max\+Height), t.\+width$\vert$$\vert$t.\+height$\vert$$\vert$t.\+left$\vert$$\vert$!t.\+top?t.\+width$\vert$$\vert$t.\+height$\vert$$\vert$t.\+top$\vert$$\vert$!t.\+left$\vert$$\vert$(t.\+left=null)\+:t.\+top=null, t\}, \+\_\+get\+Padding\+Plus\+Border\+Dimensions\+:function(t)\{for(var e=0, i=[$\,$], s=[t.\+css("{}border\+Top\+Width"{}), t.\+css("{}border\+Right\+Width"{}), t.\+css("{}border\+Bottom\+Width"{}), t.\+css("{}border\+Left\+Width"{})], n=[t.\+css("{}padding\+Top"{}), t.\+css("{}padding\+Right"{}), t.\+css("{}padding\+Bottom"{}), t.\+css("{}padding\+Left"{})];e$<$ 4;e++) i[e]=parse\+Float(s[e])$\vert$$\vert$0, i[e]+=parse\+Float(n[e])$\vert$$\vert$0;return\{height\+:i[0]+i[2], width\+:i[1]+i[3]\}\}, \+\_\+proportionally\+Resize\+:function()\{if(this.\+\_\+proportionally\+Resize\+Elements.\+length) for(var t, e=0, i=this.\+helper$\vert$$\vert$this.\+element;e$<$ this.\+\_\+proportionally\+Resize\+Elements.\+length;e++) t=this.\+\_\+proportionally\+Resize\+Elements[e], this.\+outer\+Dimensions$\vert$$\vert$(this.\+outer\+Dimensions=this.\+\_\+get\+Padding\+Plus\+Border\+Dimensions(t)), t.\+css(\{height\+:i.\+height() -\/this.\+outer\+Dimensions.\+height$\vert$$\vert$0, width\+:i.\+width() -\/this.\+outer\+Dimensions.\+width$\vert$$\vert$0\})\}, \+\_\+render\+Proxy\+:function()\{var t=this.\+element, e=this.\+options;this.\+element\+Offset=t.\+offset(), this.\+\_\+helper?(this.\+helper=this.\+helper$\vert$$\vert$y("{}$<$div$>$$<$/div$>$"{}).\+css(\{overflow\+:"{}hidden"{}\}), this.\+\_\+add\+Class(this.\+helper, this.\+\_\+helper), this.\+helper.\+css(\{width\+:this.\+element.\+outer\+Width(), height\+:this.\+element.\+outer\+Height(), position\+:"{}absolute"{}, left\+:this.\+element\+Offset.\+left+"{}px"{}, top\+:this.\+element\+Offset.\+top+"{}px"{}, z\+Index\+:++e.\+z\+Index\}), this.\+helper.\+append\+To("{}body"{}).\+disable\+Selection())\+:this.\+helper=this.\+element\}, \+\_\+change\+:\{e\+:function(t, e)\{return\{width\+:this.\+original\+Size.\+width+e\}\}, w\+:function(t, e)\{var i=this.\+original\+Size;return\{left\+:this.\+original\+Position.\+left+e, width\+:i.\+width-\/e\}\}, n\+:function(t, e, i)\{var s=this.\+original\+Size;return\{top\+:this.\+original\+Position.\+top+i, height\+:s.\+height-\/i\}\}, s\+:function(t, e, i)\{return\{height\+:this.\+original\+Size.\+height+i\}\}, se\+:function(t, e, i)\{return y.\+extend(this.\+\_\+change.\+s.\+apply(this, arguments), this.\+\_\+change.\+e.\+apply(this,[t, e, i]))\}, sw\+:function(t, e, i)\{return y.\+extend(this.\+\_\+change.\+s.\+apply(this, arguments), this.\+\_\+change.\+w.\+apply(this,[t, e, i]))\}, ne\+:function(t, e, i)\{return y.\+extend(this.\+\_\+change.\+n.\+apply(this, arguments), this.\+\_\+change.\+e.\+apply(this,[t, e, i]))\}, nw\+:function(t, e, i)\{return y.\+extend(this.\+\_\+change.\+n.\+apply(this, arguments), this.\+\_\+change.\+w.\+apply(this,[t, e, i]))\}\}, \+\_\+propagate\+:function(t, e)\{y.\+ui.\+plugin.\+call(this, t,[e, this.\+ui()]),"{}resize"{}!==t \&\&this.\+\_\+trigger(t, e, this.\+ui())\}, plugins\+:\{\}, ui\+:function()\{return\{original\+Element\+:this.\+original\+Element, element\+:this.\+element, helper\+:this.\+helper, position\+:this.\+position, size\+:this.\+size, original\+Size\+:this.\+original\+Size, original\+Position\+:this.\+original\+Position\}\}\}}{}\end{DoxyParamCaption})}
+
+\index{jquery.js@{jquery.js}!y@{y}}
+\index{y@{y}!jquery.js@{jquery.js}}
+\doxyparagraph{y()}
+{\footnotesize\ttfamily \label{a00041_a2038a98da27d66f167e809b216149c6e_a2038a98da27d66f167e809b216149c6e} 
+y (\begin{DoxyParamCaption}\item[{}]{document}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsubsection{Documentación de variables}
+\index{jquery.js@{jquery.js}!\$t@{\$t}}
+\index{\$t@{\$t}!jquery.js@{jquery.js}}
+\doxyparagraph{\$t}
+{\footnotesize\ttfamily \label{a00041_a5a188274831b027a2be077bb2a5826e9_a5a188274831b027a2be077bb2a5826e9} 
+var \$\textbf{ t} =S.\+ajax\+Settings.\+xhr()}
+
+
+
+Definición en la línea \textbf{ 82} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!\_childConstructors@{\_childConstructors}}
+\index{\_childConstructors@{\_childConstructors}!jquery.js@{jquery.js}}
+\doxyparagraph{\_childConstructors}
+{\footnotesize\ttfamily \label{a00041_a86f3a58346760c13f3efe4dce142af8a_a86f3a58346760c13f3efe4dce142af8a} 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ y} \textbf{ Widget} \+\_\+child\+Constructors =[$\,$]}
+
+
+
+Definición en la línea \textbf{ 96} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!\_form@{\_form}}
+\index{\_form@{\_form}!jquery.js@{jquery.js}}
+\doxyparagraph{\_form}
+{\footnotesize\ttfamily \label{a00041_ad85fb46c9bd78f7a3f2098284d9957f3_ad85fb46c9bd78f7a3f2098284d9957f3} 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \+\_\+form =function()\{return"{}string"{}==typeof this[0].form?this.\+closest("{}form"{})\+:\textbf{ y}(this[0].form)\}}
+
+
+
+Definición en la línea \textbf{ 108} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!\_t@{\_t}}
+\index{\_t@{\_t}!jquery.js@{jquery.js}}
+\doxyparagraph{\_t}
+{\footnotesize\ttfamily \label{a00041_a850a11edcddfc9344a50f8f6437ff3f1_a850a11edcddfc9344a50f8f6437ff3f1} 
+var \+\_\+t}
+
+
+
+Definición en la línea \textbf{ 84} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!a@{a}}
+\index{a@{a}!jquery.js@{jquery.js}}
+\doxyparagraph{a}
+{\footnotesize\ttfamily \label{a00041_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb} 
+var a =v.\+to\+String}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!ajax@{ajax}}
+\index{ajax@{ajax}!jquery.js@{jquery.js}}
+\doxyparagraph{ajax}
+{\footnotesize\ttfamily \label{a00041_a0166e1122ca2128277742f4e495d095b_a0166e1122ca2128277742f4e495d095b} 
+\textbf{ y} \textbf{ y} ajax =\$\textbf{ t}=!!\$\textbf{ t}}
+
+
+
+Definición en la línea \textbf{ 82} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!animated@{animated}}
+\index{animated@{animated}!jquery.js@{jquery.js}}
+\doxyparagraph{animated}
+{\footnotesize\ttfamily \label{a00041_ad06630927b757d8e8244247cf6f8284b_ad06630927b757d8e8244247cf6f8284b} 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} animated =function(\textbf{ t})\{return S.\+grep(S.\+timers,function(\textbf{ e})\{return \textbf{ t}===e.\+elem\}).length\}}
+
+
+
+Definición en la línea \textbf{ 86} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!bridge@{bridge}}
+\index{bridge@{bridge}!jquery.js@{jquery.js}}
+\doxyparagraph{bridge}
+{\footnotesize\ttfamily \label{a00041_adc1d31511b0c501afc759170c06866bd_adc1d31511b0c501afc759170c06866bd} 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} bridge}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\textcolor{keyword}{function}(o,e)\{var\ h=e.prototype.widgetFullName||o;y.fn[o]=\textcolor{keyword}{function}(i)\{var\ t=\textcolor{stringliteral}{"{}string"{}}==typeof\ i,s=a.call(arguments,1),n=\textcolor{keyword}{this};\textcolor{keywordflow}{return}\ t?this.length||\textcolor{stringliteral}{"{}instance"{}}!==i?this.each(\textcolor{keyword}{function}()\{var\ t,}
+\DoxyCodeLine{e=y.data(\textcolor{keyword}{this},h);\textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}instance"{}}===i?(n=e,!1):e?\textcolor{stringliteral}{"{}function"{}}!=typeof\ e[i]||\textcolor{stringliteral}{"{}\_"{}}===i.charAt(0)?y.error(\textcolor{stringliteral}{"{}no\ such\ method\ '"{}}+i+\textcolor{stringliteral}{"{}'\ for\ "{}}+o+\textcolor{stringliteral}{"{}\ widget\ instance"{}}):(t=e[i].apply(e,s))!==e\&\&void\ 0!==t?(n=t\&\&t.jquery?n.pushStack(t.get()):t,!1):void\ 0:y.error(\textcolor{stringliteral}{"{}cannot\ call\ methods\ on\ "{}}+o+\textcolor{stringliteral}{"{}\ prior\ to\ initialization;\ attempted\ to\ call\ method\ '"{}}+i+\textcolor{stringliteral}{"{}'"{}})\}):n=void\ 0:(s.length\&\&(i=y.widget.extend.apply(null,[i].concat(s))),this.each(function()\{var\ t=y.data(\textcolor{keyword}{this},h);t?(t.option(i||\{\}),t.\_init\&\&t.\_init()):y.data(\textcolor{keyword}{this},h,\textcolor{keyword}{new}\ e(i,\textcolor{keyword}{this}))\})),n\}\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 95} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!Bt@{Bt}}
+\index{Bt@{Bt}!jquery.js@{jquery.js}}
+\doxyparagraph{Bt}
+{\footnotesize\ttfamily \label{a00041_adc738c336e8c93b72f8724db6774eca8_adc738c336e8c93b72f8724db6774eca8} 
+var Bt =\{0\+:200,1223\+:204\}}
+
+
+
+Definición en la línea \textbf{ 82} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!C@{C}}
+\index{C@{C}!jquery.js@{jquery.js}}
+\doxyparagraph{C}
+{\footnotesize\ttfamily \label{a00041_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57} 
+function C}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!c@{c}}
+\index{c@{c}!jquery.js@{jquery.js}}
+\doxyparagraph{c}
+{\footnotesize\ttfamily \label{a00041_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d} 
+var c =\{type\+:!0,src\+:!0,nonce\+:!0,no\+Module\+:!0\}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!camelCase@{camelCase}}
+\index{camelCase@{camelCase}!jquery.js@{jquery.js}}
+\doxyparagraph{camelCase}
+{\footnotesize\ttfamily \label{a00041_a935987e53fffd24d5f3514003c17a70a_a935987e53fffd24d5f3514003c17a70a} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} camel\+Case =X}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!cleanData@{cleanData}}
+\index{cleanData@{cleanData}!jquery.js@{jquery.js}}
+\doxyparagraph{cleanData}
+{\footnotesize\ttfamily \label{a00041_a4b22199b01a15b6bad5988c7ada0664a_a4b22199b01a15b6bad5988c7ada0664a} 
+\textbf{ y} clean\+Data =(\textbf{ n}=y.\+clean\+Data,function(\textbf{ t})\{for(var \textbf{ e},\textbf{ i},\textbf{ s}=0;null!=(\textbf{ i}=\textbf{ t}[\textbf{ s}]);\textbf{ s}++)(\textbf{ e}=y.\+\_\+data(\textbf{ i},"{}events"{}))\&\&e.\+remove\&\&\textbf{ y}(\textbf{ i}).trigger\+Handler("{}remove"{});\textbf{ n}(\textbf{ t})\})}
+
+
+
+Definición en la línea \textbf{ 94} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!cors@{cors}}
+\index{cors@{cors}!jquery.js@{jquery.js}}
+\doxyparagraph{cors}
+{\footnotesize\ttfamily \label{a00041_ae0e41531e68c21a610b1388badab43de_ae0e41531e68c21a610b1388badab43de} 
+\textbf{ y} cors =!!\$\textbf{ t}\&\&"{}with\+Credentials"{}in \$\textbf{ t}}
+
+
+
+Definición en la línea \textbf{ 82} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!createHTMLDocument@{createHTMLDocument}}
+\index{createHTMLDocument@{createHTMLDocument}!jquery.js@{jquery.js}}
+\doxyparagraph{createHTMLDocument}
+{\footnotesize\ttfamily \label{a00041_a7ef42c637f6dd5cc4499c652575e6042_a7ef42c637f6dd5cc4499c652575e6042} 
+\textbf{ S} \textbf{ S} \textbf{ y} create\+HTMLDocument =((\textbf{ \+\_\+t}=E.\+implementation.\+create\+HTMLDocument("{}"{}).body).inner\+HTML="{}$<$form$>$$<$/form$>$$<$form$>$$<$/form$>$"{},2===\+\_\+t.\+child\+Nodes.\+length)}
+
+
+
+Definición en la línea \textbf{ 85} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!D@{D}}
+\index{D@{D}!jquery.js@{jquery.js}}
+\doxyparagraph{D}
+{\footnotesize\ttfamily \label{a00041_a350bfcb1e3cfb28ddff48ce525d4f139_a350bfcb1e3cfb28ddff48ce525d4f139} 
+D =Math.\+abs}
+
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!d@{d}}
+\index{d@{d}!jquery.js@{jquery.js}}
+\doxyparagraph{d}
+{\footnotesize\ttfamily \label{a00041_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9} 
+var d}
+
+
+
+Definición en la línea \textbf{ 5} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!E@{E}}
+\index{E@{E}!jquery.js@{jquery.js}}
+\doxyparagraph{E}
+{\footnotesize\ttfamily \label{a00041_ae406f8d6be3dab2e4d9b41c963380c36_ae406f8d6be3dab2e4d9b41c963380c36} 
+var E =C.\+document}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!e@{e}}
+\index{e@{e}!jquery.js@{jquery.js}}
+\doxyparagraph{e}
+{\footnotesize\ttfamily \label{a00041_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120} 
+var e \{"{}use strict"{}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!extend@{extend}}
+\index{extend@{extend}!jquery.js@{jquery.js}}
+\doxyparagraph{extend}
+{\footnotesize\ttfamily \label{a00041_a3bb1ffec6b4b81488840135b1eacaf09_a3bb1ffec6b4b81488840135b1eacaf09} 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ y} \textbf{ fn} extend =S.\+fn.\+extend=function()\{var \textbf{ e},\textbf{ t},\textbf{ n},\textbf{ r},\textbf{ i},\textbf{ o},\textbf{ a}=arguments[0]$\vert$$\vert$\{\},\textbf{ s}=1,\textbf{ u}=arguments.\+length,\textbf{ l}=!1;for("{}boolean"{}==typeof \textbf{ a}\&\&(\textbf{ l}=\textbf{ a},\textbf{ a}=arguments[\textbf{ s}]$\vert$$\vert$\{\},\textbf{ s}++),"{}object"{}==typeof \textbf{ a}$\vert$$\vert$\textbf{ m}(\textbf{ a})$\vert$$\vert$(\textbf{ a}=\{\}),\textbf{ s}===\textbf{ u}\&\&(\textbf{ a}=this,\textbf{ s}-\/-\/);\textbf{ s}$<$\textbf{ u};\textbf{ s}++)if(null!=(\textbf{ e}=arguments[\textbf{ s}]))for(\textbf{ t} in \textbf{ e})\textbf{ r}=\textbf{ e}[\textbf{ t}],"{}\+\_\+\+\_\+proto\+\_\+\+\_\+"{}!==\textbf{ t}\&\&a!==\textbf{ r}\&\&(\textbf{ l}\&\&\textbf{ r}\&\&(S.\+is\+Plain\+Object(\textbf{ r})$\vert$$\vert$(\textbf{ i}=\textbf{ Array.\+is\+Array}(\textbf{ r})))?(\textbf{ n}=\textbf{ a}[\textbf{ t}],\textbf{ o}=\textbf{ i}\&\&!\textbf{ Array.\+is\+Array}(\textbf{ n})?[$\,$]\+:\textbf{ i}$\vert$$\vert$S.\+is\+Plain\+Object(\textbf{ n})?n\+:\{\},\textbf{ i}=!1,\textbf{ a}[\textbf{ t}]=S.\+extend(\textbf{ l},\textbf{ o},\textbf{ r}))\+:void 0!==\textbf{ r}\&\&(\textbf{ a}[\textbf{ t}]=\textbf{ r}));return \textbf{ a}\}}
+
+
+
+Definición en la línea \textbf{ 4} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!f@{f}}
+\index{f@{f}!jquery.js@{jquery.js}}
+\doxyparagraph{f}
+{\footnotesize\ttfamily \label{a00041_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1} 
+function f ="{}3.\+6.\+0"{}}
+
+
+
+Copyright (c) 2007 Ariel Flesler -\/ aflesler ○ gmail • com $\vert$ {\texttt{ https\+://github.\+com/flesler}} Licensed under MIT. 
+
+\begin{DoxyAuthor}{Autor}
+Ariel Flesler 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+1.\+2 
+\end{DoxyVersion}
+
+
+Definición en la línea \textbf{ 3} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!factory@{factory}}
+\index{factory@{factory}!jquery.js@{jquery.js}}
+\doxyparagraph{factory}
+{\footnotesize\ttfamily \label{a00041_abf075bdbe59fd2c3336ed052c9c72b31_abf075bdbe59fd2c3336ed052c9c72b31} 
+function factory}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\textcolor{keywordflow}{if}(typeof\ define===\textcolor{stringliteral}{"{}function"{}}\&\&define.amd)\{define([\textcolor{stringliteral}{"{}jquery"{}}],factory)\}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(typeof\ module===\textcolor{stringliteral}{"{}object"{}}\&\&module.exports)\{module.exports=factory(require(\textcolor{stringliteral}{"{}jquery"{}}))\}\textcolor{keywordflow}{else}\{factory(root.jQuery)\}\})(\textcolor{keyword}{this},\textcolor{keyword}{function}(\$)\{var\ \$document=\$(document),\$window=\$(window),\$body=\$(\textcolor{stringliteral}{"{}body"{}});var\ DATA\_DISPLAYCONTROLLER=\textcolor{stringliteral}{"{}displayController"{}},DATA\_HASACTIVEHOVER=\textcolor{stringliteral}{"{}hasActiveHover"{}},DATA\_FORCEDOPEN=\textcolor{stringliteral}{"{}forcedOpen"{}},DATA\_HASMOUSEMOVE=\textcolor{stringliteral}{"{}hasMouseMove"{}},DATA\_MOUSEONTOTIP=\textcolor{stringliteral}{"{}mouseOnToPopup"{}},DATA\_ORIGINALTITLE=\textcolor{stringliteral}{"{}originalTitle"{}},DATA\_POWERTIP=\textcolor{stringliteral}{"{}powertip"{}},DATA\_POWERTIPJQ=\textcolor{stringliteral}{"{}powertipjq"{}},DATA\_POWERTIPTARGET=\textcolor{stringliteral}{"{}powertiptarget"{}},EVENT\_NAMESPACE=\textcolor{stringliteral}{"{}.powertip"{}},RAD2DEG=180/Math.PI,MOUSE\_EVENTS=[\textcolor{stringliteral}{"{}click"{}},\textcolor{stringliteral}{"{}dblclick"{}},\textcolor{stringliteral}{"{}mousedown"{}},\textcolor{stringliteral}{"{}mouseup"{}},\textcolor{stringliteral}{"{}mousemove"{}},\textcolor{stringliteral}{"{}mouseover"{}},\textcolor{stringliteral}{"{}mouseout"{}},\textcolor{stringliteral}{"{}mouseenter"{}},\textcolor{stringliteral}{"{}mouseleave"{}},\textcolor{stringliteral}{"{}contextmenu"{}}];var\ session=\{tooltips:\textcolor{keyword}{null},isTipOpen:\textcolor{keyword}{false},isFixedTipOpen:\textcolor{keyword}{false},isClosing:\textcolor{keyword}{false},tipOpenImminent:\textcolor{keyword}{false},activeHover:\textcolor{keyword}{null},currentX:0,currentY:0,previousX:0,previousY:0,desyncTimeout:\textcolor{keyword}{null},closeDelayTimeout:\textcolor{keyword}{null},mouseTrackingActive:\textcolor{keyword}{false},}
+\DoxyCodeLine{delayInProgress:\textcolor{keyword}{false},windowWidth:0,windowHeight:0,scrollTop:0,scrollLeft:0\};var\ Collision=\{none:0,top:1,bottom:2,left:4,right:8\};\$.fn.powerTip=\textcolor{keyword}{function}(opts,arg)\{var\ targetElements=\textcolor{keyword}{this},options,tipController;\textcolor{keywordflow}{if}(!targetElements.length)\{\textcolor{keywordflow}{return}\ targetElements\}\textcolor{keywordflow}{if}(\$.type(opts)===\textcolor{stringliteral}{"{}string"{}}\&\&\$.powerTip[opts])\{\textcolor{keywordflow}{return}\ \$.powerTip[opts].call(targetElements,targetElements,arg)\}options=\$.extend(\{\},\$.fn.powerTip.defaults,opts);tipController=\textcolor{keyword}{new}\ TooltipController(options);initTracking();targetElements.each(\textcolor{keyword}{function}\ elementSetup()\{var\ \$this=\$(\textcolor{keyword}{this}),dataPowertip=\$this.data(DATA\_POWERTIP),dataElem=\$this.data(DATA\_POWERTIPJQ),dataTarget=\$this.data(DATA\_POWERTIPTARGET),title=\$this.attr(\textcolor{stringliteral}{"{}title"{}});\textcolor{keywordflow}{if}(!dataPowertip\&\&!dataTarget\&\&!dataElem\&\&title)\{\$this.data(DATA\_POWERTIP,title);\$this.data(DATA\_ORIGINALTITLE,title);\$this.removeAttr(\textcolor{stringliteral}{"{}title"{}})\}\$this.data(DATA\_DISPLAYCONTROLLER,\textcolor{keyword}{new}\ DisplayController(\$this,options,tipController))\});\textcolor{keywordflow}{if}(!options.manual)\{\$.each(options.openEvents,\textcolor{keyword}{function}(idx,evt)\{if(\$.inArray(evt,options.closeEvents)>-\/1)\{}
+\DoxyCodeLine{targetElements.on(evt+EVENT\_NAMESPACE,function\ elementToggle(event)\{\$.powerTip.toggle(this,event)\})\}\textcolor{keywordflow}{else}\{targetElements.on(evt+EVENT\_NAMESPACE,function\ elementOpen(event)\{\$.powerTip.show(this,event)\})\}\});\$.each(options.closeEvents,\textcolor{keyword}{function}(idx,evt)\{\textcolor{keywordflow}{if}(\$.inArray(evt,options.openEvents)<0)\{targetElements.on(evt+EVENT\_NAMESPACE,\textcolor{keyword}{function}\ elementClose(event)\{\$.powerTip.hide(\textcolor{keyword}{this},!isMouseEvent(event))\})\}\});targetElements.on(\textcolor{stringliteral}{"{}keydown"{}}+EVENT\_NAMESPACE,\textcolor{keyword}{function}\ elementKeyDown(event)\{\textcolor{keywordflow}{if}(event.keyCode===27)\{\$.powerTip.hide(\textcolor{keyword}{this},\textcolor{keyword}{true})\}\})\}\textcolor{keywordflow}{return}\ targetElements\};\$.fn.powerTip.defaults=\{fadeInTime:200,fadeOutTime:100,followMouse:\textcolor{keyword}{false},popupId:\textcolor{stringliteral}{"{}powerTip"{}},popupClass:\textcolor{keyword}{null},intentSensitivity:7,intentPollInterval:100,closeDelay:100,placement:\textcolor{stringliteral}{"{}n"{}},smartPlacement:\textcolor{keyword}{false},offset:10,mouseOnToPopup:\textcolor{keyword}{false},manual:\textcolor{keyword}{false},openEvents:[\textcolor{stringliteral}{"{}mouseenter"{}},\textcolor{stringliteral}{"{}focus"{}}],closeEvents:[\textcolor{stringliteral}{"{}mouseleave"{}},\textcolor{stringliteral}{"{}blur"{}}]\};\$.fn.powerTip.smartPlacementLists=\{n:[\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}s"{}}],e:[\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}se"{}},\textcolor{stringliteral}{"{}w"{}},\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}e"{}}],s:[\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}se"{}},\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}n"{}}],w:[\textcolor{stringliteral}{"{}w"{}},\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}se"{}},}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}w"{}}],nw:[\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}w"{}},\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}se"{}},\textcolor{stringliteral}{"{}nw"{}}],ne:[\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}se"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}ne"{}}],sw:[\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}w"{}},\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}sw"{}}],se:[\textcolor{stringliteral}{"{}se"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}se"{}}],\textcolor{stringliteral}{"{}nw-\/alt"{}}:[\textcolor{stringliteral}{"{}nw-\/alt"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}ne-\/alt"{}},\textcolor{stringliteral}{"{}sw-\/alt"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}se-\/alt"{}},\textcolor{stringliteral}{"{}w"{}},\textcolor{stringliteral}{"{}e"{}}],\textcolor{stringliteral}{"{}ne-\/alt"{}}:[\textcolor{stringliteral}{"{}ne-\/alt"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}nw-\/alt"{}},\textcolor{stringliteral}{"{}se-\/alt"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}sw-\/alt"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}w"{}}],\textcolor{stringliteral}{"{}sw-\/alt"{}}:[\textcolor{stringliteral}{"{}sw-\/alt"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}se-\/alt"{}},\textcolor{stringliteral}{"{}nw-\/alt"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}ne-\/alt"{}},\textcolor{stringliteral}{"{}w"{}},\textcolor{stringliteral}{"{}e"{}}],\textcolor{stringliteral}{"{}se-\/alt"{}}:[\textcolor{stringliteral}{"{}se-\/alt"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}sw-\/alt"{}},\textcolor{stringliteral}{"{}ne-\/alt"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}nw-\/alt"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}w"{}}]\};\$.powerTip=\{show:\textcolor{keyword}{function}\ apiShowTip(element,event)\{\textcolor{keywordflow}{if}(isMouseEvent(event))\{trackMouse(event);session.previousX=\textcolor{keyword}{event}.pageX;session.previousY=\textcolor{keyword}{event}.pageY;\$(element).data(DATA\_DISPLAYCONTROLLER).show()\}\textcolor{keywordflow}{else}\{\$(element).first().data(DATA\_DISPLAYCONTROLLER).show(\textcolor{keyword}{true},\textcolor{keyword}{true})\}\textcolor{keywordflow}{return}\ element\},reposition:\textcolor{keyword}{function}\ apiResetPosition(element)\{\$(element).first().data(DATA\_DISPLAYCONTROLLER).resetPosition();\textcolor{keywordflow}{return}\ element\},hide:\textcolor{keyword}{function}\ apiCloseTip(element,immediate)\{var\ displayController;immediate=element?immediate:\textcolor{keyword}{true};\textcolor{keywordflow}{if}(element)\{displayController=\$(element).first().data(DATA\_DISPLAYCONTROLLER)\}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{session.activeHover)\{displayController=session.activeHover.data(DATA\_DISPLAYCONTROLLER)\}\textcolor{keywordflow}{if}(displayController)\{displayController.hide(immediate)\}\textcolor{keywordflow}{return}\ element\},toggle:\textcolor{keyword}{function}\ apiToggle(element,event)\{\textcolor{keywordflow}{if}(session.activeHover\&\&session.activeHover.is(element))\{\$.powerTip.hide(element,!isMouseEvent(event))\}\textcolor{keywordflow}{else}\{\$.powerTip.show(element,event)\}\textcolor{keywordflow}{return}\ element\}\};\$.powerTip.showTip=\$.powerTip.show;\$.powerTip.closeTip=\$.powerTip.hide;\textcolor{keyword}{function}\ CSSCoordinates()\{var\ me=\textcolor{keyword}{this};me.top=\textcolor{stringliteral}{"{}auto"{}};me.left=\textcolor{stringliteral}{"{}auto"{}};me.right=\textcolor{stringliteral}{"{}auto"{}};me.bottom=\textcolor{stringliteral}{"{}auto"{}};me.set=\textcolor{keyword}{function}(property,value)\{\textcolor{keywordflow}{if}(\$.isNumeric(value))\{me[property]=Math.round(value)\}\}\}\textcolor{keyword}{function}\ DisplayController(element,options,tipController)\{var\ hoverTimer=\textcolor{keyword}{null},myCloseDelay=\textcolor{keyword}{null};\textcolor{keyword}{function}\ openTooltip(immediate,forceOpen)\{cancelTimer();\textcolor{keywordflow}{if}(!element.data(DATA\_HASACTIVEHOVER))\{\textcolor{keywordflow}{if}(!immediate)\{session.tipOpenImminent=\textcolor{keyword}{true};hoverTimer=setTimeout(\textcolor{keyword}{function}\ intentDelay()\{hoverTimer=\textcolor{keyword}{null};checkForIntent()\},options.intentPollInterval)\}\textcolor{keywordflow}{else}\{\textcolor{keywordflow}{if}(forceOpen)\{element.data(DATA\_FORCEDOPEN,\textcolor{keyword}{true})\}}
+\DoxyCodeLine{closeAnyDelayed();tipController.showTip(element)\}\}\textcolor{keywordflow}{else}\{cancelClose()\}\}\textcolor{keyword}{function}\ closeTooltip(disableDelay)\{\textcolor{keywordflow}{if}(myCloseDelay)\{myCloseDelay=session.closeDelayTimeout=clearTimeout(myCloseDelay);session.delayInProgress=\textcolor{keyword}{false}\}cancelTimer();session.tipOpenImminent=\textcolor{keyword}{false};\textcolor{keywordflow}{if}(element.data(DATA\_HASACTIVEHOVER))\{element.data(DATA\_FORCEDOPEN,\textcolor{keyword}{false});\textcolor{keywordflow}{if}(!disableDelay)\{session.delayInProgress=\textcolor{keyword}{true};session.closeDelayTimeout=setTimeout(\textcolor{keyword}{function}\ closeDelay()\{session.closeDelayTimeout=\textcolor{keyword}{null};tipController.hideTip(element);session.delayInProgress=\textcolor{keyword}{false};myCloseDelay=\textcolor{keyword}{null}\},options.closeDelay);myCloseDelay=session.closeDelayTimeout\}\textcolor{keywordflow}{else}\{tipController.hideTip(element)\}\}\}\textcolor{keyword}{function}\ checkForIntent()\{var\ xDifference=Math.abs(session.previousX-\/session.currentX),yDifference=Math.abs(session.previousY-\/session.currentY),totalDifference=xDifference+yDifference;\textcolor{keywordflow}{if}(totalDifference<options.intentSensitivity)\{cancelClose();closeAnyDelayed();tipController.showTip(element)\}\textcolor{keywordflow}{else}\{session.previousX=session.currentX;session.previousY=session.currentY;}
+\DoxyCodeLine{openTooltip()\}\}\textcolor{keyword}{function}\ cancelTimer(stopClose)\{hoverTimer=clearTimeout(hoverTimer);\textcolor{keywordflow}{if}(session.closeDelayTimeout\&\&myCloseDelay===session.closeDelayTimeout||stopClose)\{cancelClose()\}\}\textcolor{keyword}{function}\ cancelClose()\{session.closeDelayTimeout=clearTimeout(session.closeDelayTimeout);session.delayInProgress=\textcolor{keyword}{false}\}\textcolor{keyword}{function}\ closeAnyDelayed()\{\textcolor{keywordflow}{if}(session.delayInProgress\&\&session.activeHover\&\&!session.activeHover.is(element))\{session.activeHover.data(DATA\_DISPLAYCONTROLLER).hide(\textcolor{keyword}{true})\}\}\textcolor{keyword}{function}\ repositionTooltip()\{tipController.resetPosition(element)\}this.show=openTooltip;this.hide=closeTooltip;this.cancel=cancelTimer;this.resetPosition=repositionTooltip\}\textcolor{keyword}{function}\ PlacementCalculator()\{\textcolor{keyword}{function}\ computePlacementCoords(element,placement,tipWidth,tipHeight,offset)\{var\ placementBase=placement.split(\textcolor{stringliteral}{"{}-\/"{}})[0],coords=\textcolor{keyword}{new}\ CSSCoordinates,position;\textcolor{keywordflow}{if}(isSvgElement(element))\{position=getSvgPlacement(element,placementBase)\}\textcolor{keywordflow}{else}\{position=getHtmlPlacement(element,placementBase)\}\textcolor{keywordflow}{switch}(placement)\{\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}n"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},position.left-\/tipWidth/2}
+\DoxyCodeLine{);coords.set(\textcolor{stringliteral}{"{}bottom"{}},session.windowHeight-\/position.top+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}e"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},position.left+offset);coords.set(\textcolor{stringliteral}{"{}top"{}},position.top-\/tipHeight/2);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}s"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},position.left-\/tipWidth/2);coords.set(\textcolor{stringliteral}{"{}top"{}},position.top+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}w"{}}:coords.set(\textcolor{stringliteral}{"{}top"{}},position.top-\/tipHeight/2);coords.set(\textcolor{stringliteral}{"{}right"{}},session.windowWidth-\/position.left+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}nw"{}}:coords.set(\textcolor{stringliteral}{"{}bottom"{}},session.windowHeight-\/position.top+offset);coords.set(\textcolor{stringliteral}{"{}right"{}},session.windowWidth-\/position.left-\/20);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}nw-\/alt"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},position.left);coords.set(\textcolor{stringliteral}{"{}bottom"{}},session.windowHeight-\/position.top+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}ne"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},position.left-\/20);coords.set(\textcolor{stringliteral}{"{}bottom"{}},session.windowHeight-\/position.top+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}ne-\/alt"{}}:coords.set(\textcolor{stringliteral}{"{}bottom"{}},session.windowHeight-\/position.top+offset);coords.set(\textcolor{stringliteral}{"{}right"{}},session.windowWidth-\/position.left);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}sw"{}}:coords.set(\textcolor{stringliteral}{"{}top"{}},position.top+offset);coords.set(\textcolor{stringliteral}{"{}right"{}},session.windowWidth-\/position.left-\/20);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}sw-\/alt"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},}
+\DoxyCodeLine{position.left);coords.set(\textcolor{stringliteral}{"{}top"{}},position.top+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}se"{}}:coords.set(\textcolor{stringliteral}{"{}left"{}},position.left-\/20);coords.set(\textcolor{stringliteral}{"{}top"{}},position.top+offset);\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}se-\/alt"{}}:coords.set(\textcolor{stringliteral}{"{}top"{}},position.top+offset);coords.set(\textcolor{stringliteral}{"{}right"{}},session.windowWidth-\/position.left);\textcolor{keywordflow}{break}\}\textcolor{keywordflow}{return}\ coords\}\textcolor{keyword}{function}\ getHtmlPlacement(element,placement)\{var\ objectOffset=element.offset(),objectWidth=element.outerWidth(),objectHeight=element.outerHeight(),left,top;\textcolor{keywordflow}{switch}(placement)\{\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}n"{}}:left=objectOffset.left+objectWidth/2;top=objectOffset.top;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}e"{}}:left=objectOffset.left+objectWidth;top=objectOffset.top+objectHeight/2;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}s"{}}:left=objectOffset.left+objectWidth/2;top=objectOffset.top+objectHeight;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}w"{}}:left=objectOffset.left;top=objectOffset.top+objectHeight/2;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}nw"{}}:left=objectOffset.left;top=objectOffset.top;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}ne"{}}:left=objectOffset.left+objectWidth;top=objectOffset.top;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}sw"{}}:left=objectOffset.left;top=objectOffset.top+objectHeight;\textcolor{keywordflow}{break};\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}se"{}}:left=objectOffset.left+objectWidth;}
+\DoxyCodeLine{top=objectOffset.top+objectHeight;\textcolor{keywordflow}{break}\}\textcolor{keywordflow}{return}\{top:top,left:left\}\}\textcolor{keyword}{function}\ getSvgPlacement(element,placement)\{var\ svgElement=element.closest(\textcolor{stringliteral}{"{}svg"{}})[0],domElement=element[0],point=svgElement.createSVGPoint(),boundingBox=domElement.getBBox(),matrix=domElement.getScreenCTM(),halfWidth=boundingBox.width/2,halfHeight=boundingBox.height/2,placements=[],placementKeys=[\textcolor{stringliteral}{"{}nw"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}ne"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}se"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}sw"{}},\textcolor{stringliteral}{"{}w"{}}],coords,rotation,steps,x;\textcolor{keyword}{function}\ pushPlacement()\{placements.push(point.matrixTransform(matrix))\}point.x=boundingBox.x;point.y=boundingBox.y;pushPlacement();point.x+=halfWidth;pushPlacement();point.x+=halfWidth;pushPlacement();point.y+=halfHeight;pushPlacement();point.y+=halfHeight;pushPlacement();point.x-\/=halfWidth;pushPlacement();point.x-\/=halfWidth;pushPlacement();point.y-\/=halfHeight;pushPlacement();\textcolor{keywordflow}{if}(placements[0].y!==placements[1].y||placements[0].x!==placements[7].x)\{rotation=Math.atan2(matrix.b,matrix.a)*RAD2DEG;steps=Math.ceil((rotation\%360-\/22.5)/45);\textcolor{keywordflow}{if}(steps<1)\{steps+=8\}\textcolor{keywordflow}{while}(steps-\/-\/)\{placementKeys.push(}
+\DoxyCodeLine{placementKeys.shift())\}\}\textcolor{keywordflow}{for}(x=0;x<placements.length;x++)\{\textcolor{keywordflow}{if}(placementKeys[x]===placement)\{coords=placements[x];\textcolor{keywordflow}{break}\}\}\textcolor{keywordflow}{return}\{top:coords.y+session.scrollTop,left:coords.x+session.scrollLeft\}\}this.compute=computePlacementCoords\}\textcolor{keyword}{function}\ TooltipController(options)\{var\ placementCalculator=\textcolor{keyword}{new}\ PlacementCalculator,tipElement=\$(\textcolor{stringliteral}{"{}\#"{}}+options.popupId);\textcolor{keywordflow}{if}(tipElement.length===0)\{tipElement=\$(\textcolor{stringliteral}{"{}<div/>"{}},\{id:options.popupId\});\textcolor{keywordflow}{if}(\$body.length===0)\{\$body=\$(\textcolor{stringliteral}{"{}body"{}})\}\$body.append(tipElement);session.tooltips=session.tooltips?session.tooltips.add(tipElement):tipElement\}\textcolor{keywordflow}{if}(options.followMouse)\{\textcolor{keywordflow}{if}(!tipElement.data(DATA\_HASMOUSEMOVE))\{\$document.on(\textcolor{stringliteral}{"{}mousemove"{}}+EVENT\_NAMESPACE,positionTipOnCursor);\$window.on(\textcolor{stringliteral}{"{}scroll"{}}+EVENT\_NAMESPACE,positionTipOnCursor);tipElement.data(DATA\_HASMOUSEMOVE,\textcolor{keyword}{true})\}\}\textcolor{keyword}{function}\ beginShowTip(element)\{element.data(DATA\_HASACTIVEHOVER,\textcolor{keyword}{true});tipElement.queue(\textcolor{keyword}{function}\ queueTipInit(next)\{showTip(element);next()\})\}\textcolor{keyword}{function}\ showTip(element)\{var\ tipContent;\textcolor{keywordflow}{if}(!element.data(DATA\_HASACTIVEHOVER))\{\textcolor{keywordflow}{return}\}\textcolor{keywordflow}{if}(}
+\DoxyCodeLine{session.isTipOpen)\{\textcolor{keywordflow}{if}(!session.isClosing)\{hideTip(session.activeHover)\}tipElement.delay(100).queue(\textcolor{keyword}{function}\ queueTipAgain(next)\{showTip(element);next()\});\textcolor{keywordflow}{return}\}element.trigger(\textcolor{stringliteral}{"{}powerTipPreRender"{}});tipContent=getTooltipContent(element);\textcolor{keywordflow}{if}(tipContent)\{tipElement.empty().append(tipContent)\}\textcolor{keywordflow}{else}\{\textcolor{keywordflow}{return}\}element.trigger(\textcolor{stringliteral}{"{}powerTipRender"{}});session.activeHover=element;session.isTipOpen=\textcolor{keyword}{true};tipElement.data(DATA\_MOUSEONTOTIP,options.mouseOnToPopup);tipElement.addClass(options.popupClass);\textcolor{keywordflow}{if}(!options.followMouse||element.data(DATA\_FORCEDOPEN))\{positionTipOnElement(element);session.isFixedTipOpen=\textcolor{keyword}{true}\}\textcolor{keywordflow}{else}\{positionTipOnCursor()\}\textcolor{keywordflow}{if}(!element.data(DATA\_FORCEDOPEN)\&\&!options.followMouse)\{\$document.on(\textcolor{stringliteral}{"{}click"{}}+EVENT\_NAMESPACE,\textcolor{keyword}{function}\ documentClick(event)\{var\ target=\textcolor{keyword}{event}.target;\textcolor{keywordflow}{if}(target!==element[0])\{\textcolor{keywordflow}{if}(options.mouseOnToPopup)\{\textcolor{keywordflow}{if}(target!==tipElement[0]\&\&!\$.contains(tipElement[0],target))\{\$.powerTip.hide()\}\}\textcolor{keywordflow}{else}\{\$.powerTip.hide()\}\}\})\}\textcolor{keywordflow}{if}(options.mouseOnToPopup\&\&!options.manual)\{tipElement.on(\textcolor{stringliteral}{"{}mouseenter"{}}+EVENT\_NAMESPACE,}
+\DoxyCodeLine{\textcolor{keyword}{function}\ tipMouseEnter()\{\textcolor{keywordflow}{if}(session.activeHover)\{session.activeHover.data(DATA\_DISPLAYCONTROLLER).cancel()\}\});tipElement.on(\textcolor{stringliteral}{"{}mouseleave"{}}+EVENT\_NAMESPACE,\textcolor{keyword}{function}\ tipMouseLeave()\{\textcolor{keywordflow}{if}(session.activeHover)\{session.activeHover.data(DATA\_DISPLAYCONTROLLER).hide()\}\})\}tipElement.fadeIn(options.fadeInTime,\textcolor{keyword}{function}\ fadeInCallback()\{\textcolor{keywordflow}{if}(!session.desyncTimeout)\{session.desyncTimeout=setInterval(closeDesyncedTip,500)\}element.trigger(\textcolor{stringliteral}{"{}powerTipOpen"{}})\})\}\textcolor{keyword}{function}\ hideTip(element)\{session.isClosing=\textcolor{keyword}{true};session.isTipOpen=\textcolor{keyword}{false};session.desyncTimeout=clearInterval(session.desyncTimeout);element.data(DATA\_HASACTIVEHOVER,\textcolor{keyword}{false});element.data(DATA\_FORCEDOPEN,\textcolor{keyword}{false});\$document.off(\textcolor{stringliteral}{"{}click"{}}+EVENT\_NAMESPACE);tipElement.off(EVENT\_NAMESPACE);tipElement.fadeOut(options.fadeOutTime,\textcolor{keyword}{function}\ fadeOutCallback()\{var\ coords=\textcolor{keyword}{new}\ CSSCoordinates;session.activeHover=\textcolor{keyword}{null};session.isClosing=\textcolor{keyword}{false};session.isFixedTipOpen=\textcolor{keyword}{false};tipElement.removeClass();coords.set(\textcolor{stringliteral}{"{}top"{}},session.currentY+options.offset);coords.set(\textcolor{stringliteral}{"{}left"{}},session.currentX+options.offset);}
+\DoxyCodeLine{tipElement.css(coords);element.trigger(\textcolor{stringliteral}{"{}powerTipClose"{}})\})\}\textcolor{keyword}{function}\ positionTipOnCursor()\{var\ tipWidth,tipHeight,coords,collisions,collisionCount;\textcolor{keywordflow}{if}(!session.isFixedTipOpen\&\&(session.isTipOpen||session.tipOpenImminent\&\&tipElement.data(DATA\_HASMOUSEMOVE)))\{tipWidth=tipElement.outerWidth();tipHeight=tipElement.outerHeight();coords=\textcolor{keyword}{new}\ CSSCoordinates;coords.set(\textcolor{stringliteral}{"{}top"{}},session.currentY+options.offset);coords.set(\textcolor{stringliteral}{"{}left"{}},session.currentX+options.offset);collisions=getViewportCollisions(coords,tipWidth,tipHeight);\textcolor{keywordflow}{if}(collisions!==Collision.none)\{collisionCount=countFlags(collisions);\textcolor{keywordflow}{if}(collisionCount===1)\{\textcolor{keywordflow}{if}(collisions===Collision.right)\{coords.set(\textcolor{stringliteral}{"{}left"{}},session.scrollLeft+session.windowWidth-\/tipWidth)\}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(collisions===Collision.bottom)\{coords.set(\textcolor{stringliteral}{"{}top"{}},session.scrollTop+session.windowHeight-\/tipHeight)\}\}\textcolor{keywordflow}{else}\{coords.set(\textcolor{stringliteral}{"{}left"{}},session.currentX-\/tipWidth-\/options.offset);coords.set(\textcolor{stringliteral}{"{}top"{}},session.currentY-\/tipHeight-\/options.offset)\}\}tipElement.css(coords)\}\}\textcolor{keyword}{function}\ positionTipOnElement(element)\{var\ priorityList,}
+\DoxyCodeLine{finalPlacement;\textcolor{keywordflow}{if}(options.smartPlacement||options.followMouse\&\&element.data(DATA\_FORCEDOPEN))\{priorityList=\$.fn.powerTip.smartPlacementLists[options.placement];\$.each(priorityList,\textcolor{keyword}{function}(idx,pos)\{var\ collisions=getViewportCollisions(placeTooltip(element,pos),tipElement.outerWidth(),tipElement.outerHeight());finalPlacement=pos;\textcolor{keywordflow}{return}\ collisions!==Collision.none\})\}\textcolor{keywordflow}{else}\{placeTooltip(element,options.placement);finalPlacement=options.placement\}tipElement.removeClass(\textcolor{stringliteral}{"{}w\ nw\ sw\ e\ ne\ se\ n\ s\ w\ se-\/alt\ sw-\/alt\ ne-\/alt\ nw-\/alt"{}});tipElement.addClass(finalPlacement)\}\textcolor{keyword}{function}\ placeTooltip(element,placement)\{var\ iterationCount=0,tipWidth,tipHeight,coords=\textcolor{keyword}{new}\ CSSCoordinates;coords.set(\textcolor{stringliteral}{"{}top"{}},0);coords.set(\textcolor{stringliteral}{"{}left"{}},0);tipElement.css(coords);\textcolor{keywordflow}{do}\{tipWidth=tipElement.outerWidth();tipHeight=tipElement.outerHeight();coords=placementCalculator.compute(element,placement,tipWidth,tipHeight,options.offset);tipElement.css(coords)\}\textcolor{keywordflow}{while}(++iterationCount<=5\&\&(tipWidth!==tipElement.outerWidth()||tipHeight!==tipElement.outerHeight()));}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ coords\}\textcolor{keyword}{function}\ closeDesyncedTip()\{var\ isDesynced=\textcolor{keyword}{false},hasDesyncableCloseEvent=\$.grep([\textcolor{stringliteral}{"{}mouseleave"{}},\textcolor{stringliteral}{"{}mouseout"{}},\textcolor{stringliteral}{"{}blur"{}},\textcolor{stringliteral}{"{}focusout"{}}],\textcolor{keyword}{function}(eventType)\{\textcolor{keywordflow}{return}\ \$.inArray(eventType,options.closeEvents)!==-\/1\}).length>0;\textcolor{keywordflow}{if}(session.isTipOpen\&\&!session.isClosing\&\&!session.delayInProgress\&\&hasDesyncableCloseEvent)\{\textcolor{keywordflow}{if}(session.activeHover.data(DATA\_HASACTIVEHOVER)===\textcolor{keyword}{false}||session.activeHover.is(\textcolor{stringliteral}{"{}:disabled"{}}))\{isDesynced=\textcolor{keyword}{true}\}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!isMouseOver(session.activeHover)\&\&!session.activeHover.is(\textcolor{stringliteral}{"{}:focus"{}})\&\&!session.activeHover.data(DATA\_FORCEDOPEN))\{\textcolor{keywordflow}{if}(tipElement.data(DATA\_MOUSEONTOTIP))\{\textcolor{keywordflow}{if}(!isMouseOver(tipElement))\{isDesynced=\textcolor{keyword}{true}\}\}\textcolor{keywordflow}{else}\{isDesynced=\textcolor{keyword}{true}\}\}\textcolor{keywordflow}{if}(isDesynced)\{hideTip(session.activeHover)\}\}\}this.showTip=beginShowTip;this.hideTip=hideTip;this.resetPosition=positionTipOnElement\}\textcolor{keyword}{function}\ isSvgElement(element)\{\textcolor{keywordflow}{return}\ Boolean(window.SVGElement\&\&element[0]instanceof\ SVGElement)\}\textcolor{keyword}{function}\ isMouseEvent(event)\{\textcolor{keywordflow}{return}\ Boolean(event\&\&\$.inArray(event.type,MOUSE\_EVENTS)>-\/1\&\&typeof\ event.pageX===\textcolor{stringliteral}{"{}number"{}})\}}
+\DoxyCodeLine{\textcolor{keyword}{function}\ initTracking()\{\textcolor{keywordflow}{if}(!session.mouseTrackingActive)\{session.mouseTrackingActive=\textcolor{keyword}{true};getViewportDimensions();\$(getViewportDimensions);\$document.on(\textcolor{stringliteral}{"{}mousemove"{}}+EVENT\_NAMESPACE,trackMouse);\$window.on(\textcolor{stringliteral}{"{}resize"{}}+EVENT\_NAMESPACE,trackResize);\$window.on(\textcolor{stringliteral}{"{}scroll"{}}+EVENT\_NAMESPACE,trackScroll)\}\}\textcolor{keyword}{function}\ getViewportDimensions()\{session.scrollLeft=\$window.scrollLeft();session.scrollTop=\$window.scrollTop();session.windowWidth=\$window.width();session.windowHeight=\$window.height()\}\textcolor{keyword}{function}\ trackResize()\{session.windowWidth=\$window.width();session.windowHeight=\$window.height()\}\textcolor{keyword}{function}\ trackScroll()\{var\ x=\$window.scrollLeft(),y=\$window.scrollTop();\textcolor{keywordflow}{if}(x!==session.scrollLeft)\{session.currentX+=x-\/session.scrollLeft;session.scrollLeft=x\}\textcolor{keywordflow}{if}(y!==session.scrollTop)\{session.currentY+=y-\/session.scrollTop;session.scrollTop=y\}\}\textcolor{keyword}{function}\ trackMouse(event)\{session.currentX=\textcolor{keyword}{event}.pageX;session.currentY=\textcolor{keyword}{event}.pageY\}\textcolor{keyword}{function}\ isMouseOver(element)\{var\ elementPosition=element.offset(),elementBox=element[0].getBoundingClientRect(),}
+\DoxyCodeLine{elementWidth=elementBox.right-\/elementBox.left,elementHeight=elementBox.bottom-\/elementBox.top;\textcolor{keywordflow}{return}\ session.currentX>=elementPosition.left\&\&session.currentX<=elementPosition.left+elementWidth\&\&session.currentY>=elementPosition.top\&\&session.currentY<=elementPosition.top+elementHeight\}\textcolor{keyword}{function}\ getTooltipContent(element)\{var\ tipText=element.data(DATA\_POWERTIP),tipObject=element.data(DATA\_POWERTIPJQ),tipTarget=element.data(DATA\_POWERTIPTARGET),targetElement,content;\textcolor{keywordflow}{if}(tipText)\{\textcolor{keywordflow}{if}(\$.isFunction(tipText))\{tipText=tipText.call(element[0])\}content=tipText\}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(tipObject)\{\textcolor{keywordflow}{if}(\$.isFunction(tipObject))\{tipObject=tipObject.call(element[0])\}\textcolor{keywordflow}{if}(tipObject.length>0)\{content=tipObject.clone(\textcolor{keyword}{true},\textcolor{keyword}{true})\}\}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(tipTarget)\{targetElement=\$(\textcolor{stringliteral}{"{}\#"{}}+tipTarget);\textcolor{keywordflow}{if}(targetElement.length>0)\{content=targetElement.html()\}\}\textcolor{keywordflow}{return}\ content\}\textcolor{keyword}{function}\ getViewportCollisions(coords,elementWidth,elementHeight)\{var\ viewportTop=session.scrollTop,viewportLeft=session.scrollLeft,viewportBottom=viewportTop+session.windowHeight,}
+\DoxyCodeLine{viewportRight=viewportLeft+session.windowWidth,collisions=Collision.none;\textcolor{keywordflow}{if}(coords.top<viewportTop||Math.abs(coords.bottom-\/session.windowHeight)-\/elementHeight<viewportTop)\{collisions|=Collision.top\}\textcolor{keywordflow}{if}(coords.top+elementHeight>viewportBottom||Math.abs(coords.bottom-\/session.windowHeight)>viewportBottom)\{collisions|=Collision.bottom\}\textcolor{keywordflow}{if}(coords.left<viewportLeft||coords.right+elementWidth>viewportRight)\{collisions|=Collision.left\}\textcolor{keywordflow}{if}(coords.left+elementWidth>viewportRight||coords.right<viewportLeft)\{collisions|=Collision.right\}\textcolor{keywordflow}{return}\ collisions\}\textcolor{keyword}{function}\ countFlags(value)\{var\ count=0;\textcolor{keywordflow}{while}(value)\{value\&=value-\/1;count++\}\textcolor{keywordflow}{return}\ count\}\textcolor{keywordflow}{return}\ \$.powerTip\})}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 148} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!fn@{fn}}
+\index{fn@{fn}!jquery.js@{jquery.js}}
+\doxyparagraph{fn}
+{\footnotesize\ttfamily \label{a00041_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66} 
+\textbf{ S} fn}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=S.prototype=\{jquery:f,constructor:S,length:0,toArray:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ s.call(\textcolor{keyword}{this})\},\textcolor{keyword}{get}:\textcolor{keyword}{function}(e)\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{null}==e?s.call(\textcolor{keyword}{this}):e<0?\textcolor{keyword}{this}[e+this.length]:\textcolor{keyword}{this}[e]\},pushStack:\textcolor{keyword}{function}(e)\{var\ t=S.merge(this.constructor(),e);\textcolor{keywordflow}{return}\ t.prevObject=\textcolor{keyword}{this},t\},each:\textcolor{keyword}{function}(e)\{\textcolor{keywordflow}{return}\ S.each(\textcolor{keyword}{this},e)\},map:\textcolor{keyword}{function}(n)\{\textcolor{keywordflow}{return}\ this.pushStack(S.map(\textcolor{keyword}{this},\textcolor{keyword}{function}(e,t)\{return\ n.call(e,t,e)\}))\},slice:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.pushStack(s.apply(\textcolor{keyword}{this},arguments))\},first:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.eq(0)\},last:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.eq(-\/1)\},even:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.pushStack(S.grep(\textcolor{keyword}{this},\textcolor{keyword}{function}(e,t)\{return(t+1)\%2\}))\},odd:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.pushStack(S.grep(\textcolor{keyword}{this},\textcolor{keyword}{function}(e,t)\{return\ t\%2\}))\},eq:\textcolor{keyword}{function}(e)\{var\ t=this.length,n=+e+(e<0?t:0);\textcolor{keywordflow}{return}\ this.pushStack(0<=n\&\&n<t?[\textcolor{keyword}{this}[n]]:[])\},end:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.prevObject||this.constructor()\},}
+\DoxyCodeLine{push:u,sort:t.sort,splice:t.splice\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 3} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!focusable@{focusable}}
+\index{focusable@{focusable}!jquery.js@{jquery.js}}
+\doxyparagraph{focusable}
+{\footnotesize\ttfamily \label{a00041_ab751570451895914c5a45c58419ed690_ab751570451895914c5a45c58419ed690} 
+\textbf{ y} \textbf{ ui} focusable =function(\textbf{ t},\textbf{ e})\{var \textbf{ i},\textbf{ s},\textbf{ n},\textbf{ o},\textbf{ h}=t.\+node\+Name.\+to\+Lower\+Case();return"{}area"{}===\textbf{ h}?(\textbf{ s}=(\textbf{ i}=t.\+parent\+Node).name,!(!t.\+href$\vert$$\vert$!\textbf{ s}$\vert$$\vert$"{}map"{}!==i.\+node\+Name.\+to\+Lower\+Case())\&\&(0$<$(\textbf{ s}=\textbf{ y}("{}img[usemap=\textquotesingle{}\#"{}+s+"{}\textquotesingle{}]"{})).length\&\&s.\+is("{}\+:visible"{})))\+:(/$^\wedge$(input$\vert$select$\vert$textarea$\vert$button$\vert$object)\$/.test(\textbf{ h})?(\textbf{ n}=!t.\+disabled)\&\&(\textbf{ o}=\textbf{ y}(\textbf{ t}).closest("{}fieldset"{})[0])\&\&(\textbf{ n}=!o.\+disabled)\+:\textbf{ n}="{}a"{}===\textbf{ h}\&\&t.\+href$\vert$$\vert$\textbf{ e},\textbf{ n}\&\&\textbf{ y}(\textbf{ t}).is("{}\+:visible"{})\&\&function(\textbf{ t})\{var \textbf{ e}=t.\+css("{}visibility"{});for(;"{}inherit"{}===\textbf{ e};)\textbf{ t}=t.\+parent(),\textbf{ e}=t.\+css("{}visibility"{});return"{}visible"{}===\textbf{ e}\}(\textbf{ y}(\textbf{ t})))\}}
+
+
+
+Definición en la línea \textbf{ 108} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!formResetMixin@{formResetMixin}}
+\index{formResetMixin@{formResetMixin}!jquery.js@{jquery.js}}
+\doxyparagraph{formResetMixin}
+{\footnotesize\ttfamily \label{a00041_a7e4a07ea85284b13b39e04b7a1ed7bd8_a7e4a07ea85284b13b39e04b7a1ed7bd8} 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ ui} form\+Reset\+Mixin}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{\_formResetHandler:\textcolor{keyword}{function}(}
+\DoxyCodeLine{)\{var\ e=y(\textcolor{keyword}{this});setTimeout(\textcolor{keyword}{function}()\{var\ t=e.data(\textcolor{stringliteral}{"{}ui-\/form-\/reset-\/instances"{}});y.each(t,\textcolor{keyword}{function}()\{this.refresh()\})\})\},\_bindFormResetHandler:\textcolor{keyword}{function}()\{var\ t;this.form=this.element.\_form(),this.form.length\&\&((t=this.form.data(\textcolor{stringliteral}{"{}ui-\/form-\/reset-\/instances"{}})||[]).length||this.form.on(\textcolor{stringliteral}{"{}reset.ui-\/form-\/reset"{}},\textcolor{keyword}{this}.\_formResetHandler),t.push(\textcolor{keyword}{this}),\textcolor{keyword}{this}.form.data(\textcolor{stringliteral}{"{}ui-\/form-\/reset-\/instances"{}},t))\},\_unbindFormResetHandler:\textcolor{keyword}{function}()\{var\ t;this.form.length\&\&((t=this.form.data(\textcolor{stringliteral}{"{}ui-\/form-\/reset-\/instances"{}})).splice(y.inArray(\textcolor{keyword}{this},t),1),t.length?\textcolor{keyword}{this}.form.data(\textcolor{stringliteral}{"{}ui-\/form-\/reset-\/instances"{}},t):\textcolor{keyword}{this}.form.removeData(\textcolor{stringliteral}{"{}ui-\/form-\/reset-\/instances"{}}).off(\textcolor{stringliteral}{"{}reset.ui-\/form-\/reset"{}}))\}\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 108} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!g@{g}}
+\index{g@{g}!jquery.js@{jquery.js}}
+\doxyparagraph{g}
+{\footnotesize\ttfamily \label{a00041_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06} 
+var g =t.\+flat?function(\textbf{ e})\{return t.\+flat.\+call(\textbf{ e})\}\+:function(\textbf{ e})\{return t.\+concat.\+apply([$\,$],\textbf{ e})\}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!Gt@{Gt}}
+\index{Gt@{Gt}!jquery.js@{jquery.js}}
+\doxyparagraph{Gt}
+{\footnotesize\ttfamily \label{a00041_a097c468174cead361b6b3747af8a1584_a097c468174cead361b6b3747af8a1584} 
+var Gt =C.\$}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!h@{h}}
+\index{h@{h}!jquery.js@{jquery.js}}
+\doxyparagraph{h}
+{\footnotesize\ttfamily \label{a00041_a79fe0eb780a2a4b5543b4dddf8b6188a_a79fe0eb780a2a4b5543b4dddf8b6188a} 
+var h =Array.\+prototype.\+has\+Own\+Property}
+
+
+
+Definición en la línea \textbf{ 94} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!holdReady@{holdReady}}
+\index{holdReady@{holdReady}!jquery.js@{jquery.js}}
+\doxyparagraph{holdReady}
+{\footnotesize\ttfamily \label{a00041_a8ae1276901e8237e04e57693b65ed9a9_a8ae1276901e8237e04e57693b65ed9a9} 
+\textbf{ S} \textbf{ S} hold\+Ready =function(\textbf{ e})\{\textbf{ e}?S.\+ready\+Wait++\+:S.\+ready(!0)\}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!i@{i}}
+\index{i@{i}!jquery.js@{jquery.js}}
+\doxyparagraph{i}
+{\footnotesize\ttfamily \label{a00041_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180} 
+var i =t.\+index\+Of}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!ie@{ie}}
+\index{ie@{ie}!jquery.js@{jquery.js}}
+\doxyparagraph{ie}
+{\footnotesize\ttfamily \label{a00041_ac6c9a1ad26192baf0fdf4e0a573766c1_ac6c9a1ad26192baf0fdf4e0a573766c1} 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ ui} ie =!!/msie [\textbackslash{}w.]+/.exec(navigator.\+user\+Agent.\+to\+Lower\+Case())}
+
+
+
+Definición en la línea \textbf{ 111} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!isArray@{isArray}}
+\index{isArray@{isArray}!jquery.js@{jquery.js}}
+\doxyparagraph{isArray}
+{\footnotesize\ttfamily \label{a00041_ab51557230378cd8a9b93079cbc1f8471_ab51557230378cd8a9b93079cbc1f8471} 
+\textbf{ S} \textbf{ S} \textbf{ S} is\+Array =Array.\+is\+Array}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!isFunction@{isFunction}}
+\index{isFunction@{isFunction}!jquery.js@{jquery.js}}
+\doxyparagraph{isFunction}
+{\footnotesize\ttfamily \label{a00041_a20f34455e0a16b0a70df2ea6792667cf_a20f34455e0a16b0a70df2ea6792667cf} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} is\+Function =\textbf{ m}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!isNumeric@{isNumeric}}
+\index{isNumeric@{isNumeric}!jquery.js@{jquery.js}}
+\doxyparagraph{isNumeric}
+{\footnotesize\ttfamily \label{a00041_ad7ceaf765cddf812267737483a12eaa7_ad7ceaf765cddf812267737483a12eaa7} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} is\+Numeric =function(\textbf{ e})\{var \textbf{ t}=\textbf{ S.\+type}(\textbf{ e});return("{}number"{}===\textbf{ t}$\vert$$\vert$"{}string"{}===\textbf{ t})\&\&!is\+NaN(\textbf{ e}-\/parse\+Float(\textbf{ e}))\}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!isWindow@{isWindow}}
+\index{isWindow@{isWindow}!jquery.js@{jquery.js}}
+\doxyparagraph{isWindow}
+{\footnotesize\ttfamily \label{a00041_a1009a36c9e03ba1bae6120ed9130e165_a1009a36c9e03ba1bae6120ed9130e165} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} is\+Window =\textbf{ x}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!jQuery@{jQuery}}
+\index{jQuery@{jQuery}!jquery.js@{jquery.js}}
+\doxyparagraph{jQuery}
+{\footnotesize\ttfamily \label{a00041_a2b1d6f9c448e3ce72f4e1865d6e38d2c_a2b1d6f9c448e3ce72f4e1865d6e38d2c} 
+j\+Query}
+
+
+
+Definición en la línea \textbf{ 177} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!keyCode@{keyCode}}
+\index{keyCode@{keyCode}!jquery.js@{jquery.js}}
+\doxyparagraph{keyCode}
+{\footnotesize\ttfamily \label{a00041_a0aef0f5fd4334344d3cb8ee3cba8883f_a0aef0f5fd4334344d3cb8ee3cba8883f} 
+\textbf{ y} \textbf{ ui} key\+Code =\{BACKSPACE\+:8,COMMA\+:188,DELETE\+:46,DOWN\+:40,END\+:35,ENTER\+:13,ESCAPE\+:27,HOME\+:36,LEFT\+:37,PAGE\+\_\+\+DOWN\+:34,PAGE\+\_\+\+UP\+:33,PERIOD\+:190,RIGHT\+:39,SPACE\+:32,TAB\+:9,UP\+:38\}}
+
+
+
+Definición en la línea \textbf{ 110} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!l@{l}}
+\index{l@{l}!jquery.js@{jquery.js}}
+\doxyparagraph{l}
+{\footnotesize\ttfamily \label{a00041_ae5e71a2600e8891c54854be157cc6626_ae5e71a2600e8891c54854be157cc6626} 
+var l =a.\+call(Object)}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!labels@{labels}}
+\index{labels@{labels}!jquery.js@{jquery.js}}
+\doxyparagraph{labels}
+{\footnotesize\ttfamily \label{a00041_a4a8f52c2c25acadf0f068f2b933a5120_a4a8f52c2c25acadf0f068f2b933a5120} 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} labels =function()\{var \textbf{ t},\textbf{ e},\textbf{ i};return this.\+length?this[0].labels\&\&this[0].labels.\+length?this.\+push\+Stack(this[0].labels)\+:(\textbf{ e}=this.\+eq(0).parents("{}label"{}),(\textbf{ t}=this.\+attr("{}id"{}))\&\&(\textbf{ i}=(\textbf{ i}=this.\+eq(0).parents().last()).\textbf{ add}((i.\+length?i\+:this).siblings()),\textbf{ t}="{}label[for=\textquotesingle{}"{}+y.\+escape\+Selector(\textbf{ t})+"{}\textquotesingle{}]"{},\textbf{ e}=\textbf{ e.\+add}(i.\+find(\textbf{ t}).add\+Back(\textbf{ t}))),this.\+push\+Stack(\textbf{ e}))\+:this.\+push\+Stack([$\,$])\}}
+
+
+
+Definición en la línea \textbf{ 110} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!load@{load}}
+\index{load@{load}!jquery.js@{jquery.js}}
+\doxyparagraph{load}
+{\footnotesize\ttfamily \label{a00041_a08d2efed96cbbf0c8a656a5d36ab0c44_a08d2efed96cbbf0c8a656a5d36ab0c44} 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} load}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\textcolor{keyword}{function}(e,t,n)\{var\ r,i,o,a=\textcolor{keyword}{this},s=e.indexOf(\textcolor{stringliteral}{"{}\ "{}});\textcolor{keywordflow}{return}-\/1<s\&\&(r=ht(e.slice(s)),e=e.slice(0,s)),m(t)?(n=t,t=\textcolor{keywordtype}{void}\ 0):t\&\&\textcolor{stringliteral}{"{}object"{}}==typeof\ t\&\&(i=\textcolor{stringliteral}{"{}POST"{}}),0<a.length\&\&S.ajax(\{url:e,type:i||\textcolor{stringliteral}{"{}GET"{}},dataType:\textcolor{stringliteral}{"{}html"{}},data:t\}).done(\textcolor{keyword}{function}(e)\{o=arguments,a.html(r?S(\textcolor{stringliteral}{"{}<div>"{}}).append(S.parseHTML(e)).find(r):e)\}).always(n\&\&\textcolor{keyword}{function}(e,t)\{a.each(}
+\DoxyCodeLine{\textcolor{keyword}{function}()\{n.apply(\textcolor{keyword}{this},o||[e.responseText,t,e])\})\}),\textcolor{keyword}{this}\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 85} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!m@{m}}
+\index{m@{m}!jquery.js@{jquery.js}}
+\doxyparagraph{m}
+{\footnotesize\ttfamily \label{a00041_a9e77e016b2928d7dcb493b89a0c9dc32_a9e77e016b2928d7dcb493b89a0c9dc32} 
+var m =function(\textbf{ e})\{return"{}function"{}==typeof \textbf{ e}\&\&"{}number"{}!=typeof e.\+node\+Type\&\&"{}function"{}!=typeof e.\+item\}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!n@{n}}
+\index{n@{n}!jquery.js@{jquery.js}}
+\doxyparagraph{n}
+{\footnotesize\ttfamily \label{a00041_a3c7365c007156a2a63223e3c9909fbf8_a3c7365c007156a2a63223e3c9909fbf8} 
+var n =\{\}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!noConflict@{noConflict}}
+\index{noConflict@{noConflict}!jquery.js@{jquery.js}}
+\doxyparagraph{noConflict}
+{\footnotesize\ttfamily \label{a00041_a036c478d84cf4b383b6944490ea918dd_a036c478d84cf4b383b6944490ea918dd} 
+return \textbf{ S} no\+Conflict}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\textcolor{keyword}{function}(e)\{}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ C.\$===S\&\&(C.\$=Gt),e\&\&C.jQuery===S\&\&(C.jQuery=Vt),S\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!nodeName@{nodeName}}
+\index{nodeName@{nodeName}!jquery.js@{jquery.js}}
+\doxyparagraph{nodeName}
+{\footnotesize\ttfamily \label{a00041_a2a84cf5e7fbf55db86c06678b75f1032_a2a84cf5e7fbf55db86c06678b75f1032} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} node\+Name =A}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!now@{now}}
+\index{now@{now}!jquery.js@{jquery.js}}
+\doxyparagraph{now}
+{\footnotesize\ttfamily \label{a00041_a131aa2a7139a8f07a469112ee252b4e9_a131aa2a7139a8f07a469112ee252b4e9} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} now =Date.\+now}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!o@{o}}
+\index{o@{o}!jquery.js@{jquery.js}}
+\doxyparagraph{o}
+{\footnotesize\ttfamily \label{a00041_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83} 
+var o =n.\+to\+String}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!offset@{offset}}
+\index{offset@{offset}!jquery.js@{jquery.js}}
+\doxyparagraph{offset}
+{\footnotesize\ttfamily \label{a00041_aff241db241bb474dade51b204204fcfd_aff241db241bb474dade51b204204fcfd} 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} \textbf{ S} \textbf{ fn} \textbf{ S} expr \textbf{ pseudos} \textbf{ S} offset =\{set\+Offset\+:function(\textbf{ e},\textbf{ t},\textbf{ n})\{var \textbf{ r},\textbf{ i},\textbf{ o},\textbf{ a},\textbf{ s},\textbf{ u},\textbf{ l}=S.\+css(\textbf{ e},"{}position"{}),\textbf{ c}=\textbf{ S}(\textbf{ e}),\textbf{ f}=\{\};"{}static"{}===\textbf{ l}\&\&(\textbf{ e.\+style.\+position}="{}relative"{}),\textbf{ s}=c.\+offset(),\textbf{ o}=S.\+css(\textbf{ e},"{}top"{}),\textbf{ u}=S.\+css(\textbf{ e},"{}left"{}),("{}absolute"{}===\textbf{ l}$\vert$$\vert$"{}fixed"{}===\textbf{ l})\&\&-\/1$<$(\textbf{ o}+\textbf{ u}).index\+Of("{}auto"{})?(\textbf{ a}=(\textbf{ r}=\textbf{ c.\+position}()).top,\textbf{ i}=r.\+left)\+:(\textbf{ a}=parse\+Float(\textbf{ o})$\vert$$\vert$0,\textbf{ i}=parse\+Float(\textbf{ u})$\vert$$\vert$0),\textbf{ m}(\textbf{ t})\&\&(\textbf{ t}=t.\+call(\textbf{ e},\textbf{ n},\textbf{ S.\+extend}(\{\},\textbf{ s}))),null!=t.\+top\&\&(f.\+top=t.\+top-\/s.\+top+\textbf{ a}),null!=t.\+left\&\&(f.\+left=t.\+left-\/s.\+left+\textbf{ i}),"{}using"{}in \textbf{ t}?t.\+using.\+call(\textbf{ e},\textbf{ f})\+:c.\+css(\textbf{ f})\}\}}
+
+
+
+Definición en la línea \textbf{ 86} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!p@{p}}
+\index{p@{p}!jquery.js@{jquery.js}}
+\doxyparagraph{p}
+{\footnotesize\ttfamily \label{a00041_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c} 
+p =/\%\$/}
+
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!parseHTML@{parseHTML}}
+\index{parseHTML@{parseHTML}!jquery.js@{jquery.js}}
+\doxyparagraph{parseHTML}
+{\footnotesize\ttfamily \label{a00041_a3ec10dd2198445747e3cf338a84a8f08_a3ec10dd2198445747e3cf338a84a8f08} 
+\textbf{ S} \textbf{ S} \textbf{ y} \textbf{ S} parse\+HTML =function(\textbf{ e},\textbf{ t},\textbf{ n})\{return"{}string"{}!=typeof \textbf{ e}?[$\,$]\+:("{}boolean"{}==typeof \textbf{ t}\&\&(\textbf{ n}=\textbf{ t},\textbf{ t}=!1),\textbf{ t}$\vert$$\vert$(\textbf{ y.\+create\+HTMLDocument}?((\textbf{ r}=(\textbf{ t}=\textbf{ E.\+implementation.\+create\+HTMLDocument}("{}"{})).create\+Element("{}base"{})).href=E.\+location.\+href,t.\+head.\+append\+Child(\textbf{ r}))\+:\textbf{ t}=\textbf{ E}),\textbf{ o}=!\textbf{ n}\&\&[$\,$],(\textbf{ i}=N.\+exec(\textbf{ e}))?[t.\+create\+Element(\textbf{ i}[1])]\+:(\textbf{ i}=xe([\textbf{ e}],\textbf{ t},\textbf{ o}),\textbf{ o}\&\&o.\+length\&\&\textbf{ S}(\textbf{ o}).remove(),S.\+merge([$\,$],i.\+child\+Nodes)));var \textbf{ r},\textbf{ i},\textbf{ o}\}}
+
+
+
+Definición en la línea \textbf{ 85} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!parseJSON@{parseJSON}}
+\index{parseJSON@{parseJSON}!jquery.js@{jquery.js}}
+\doxyparagraph{parseJSON}
+{\footnotesize\ttfamily \label{a00041_a20614f8aff365f344a02bd76e31057af_a20614f8aff365f344a02bd76e31057af} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} parse\+JSON =JSON.\+parse}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!plugin@{plugin}}
+\index{plugin@{plugin}!jquery.js@{jquery.js}}
+\doxyparagraph{plugin}
+{\footnotesize\ttfamily \label{a00041_a2e8a79061fcc588ba355a7772b9d8eb5_a2e8a79061fcc588ba355a7772b9d8eb5} 
+function \textbf{ y} \textbf{ y} \textbf{ ui} plugin =\{add\+:function(\textbf{ t},\textbf{ e},\textbf{ i})\{var \textbf{ s},\textbf{ n}=\textbf{ y.\+ui}[\textbf{ t}].\textbf{ prototype};for(\textbf{ s} in \textbf{ i})n.\+plugins[\textbf{ s}]=n.\+plugins[\textbf{ s}]$\vert$$\vert$[$\,$],n.\+plugins[\textbf{ s}].push([\textbf{ e},\textbf{ i}[\textbf{ s}]])\},call\+:function(\textbf{ t},\textbf{ e},\textbf{ i},\textbf{ s})\{var \textbf{ n},\textbf{ o}=t.\+plugins[\textbf{ e}];if(\textbf{ o}\&\&(\textbf{ s}$\vert$$\vert$t.\+element[0].parent\+Node\&\&11!==t.\+element[0].parent\+Node.\+node\+Type))for(\textbf{ n}=0;\textbf{ n}$<$o.\+length;\textbf{ n}++)t.\+options[\textbf{ o}[\textbf{ n}][0]]\&\&\textbf{ o}[\textbf{ n}][1].apply(t.\+element,\textbf{ i})\}\}}
+
+
+
+Definición en la línea \textbf{ 114} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!position@{position}}
+\index{position@{position}!jquery.js@{jquery.js}}
+\doxyparagraph{position}
+{\footnotesize\ttfamily \label{a00041_a53218a6ef890f64c7f8b0be9a158802f_a53218a6ef890f64c7f8b0be9a158802f} 
+\textbf{ y} \textbf{ ui} position}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{scrollbarWidth:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{if}(\textcolor{keywordtype}{void}\ 0!==s)\textcolor{keywordflow}{return}\ s;var\ t,e=y(\textcolor{stringliteral}{"{}<div\ style='display:block;position:absolute;width:200px;height:200px;overflow:hidden;'><div\ style='height:300px;width:auto;'></div></div>"{}}),i=e.children()[0];\textcolor{keywordflow}{return}\ y(\textcolor{stringliteral}{"{}body"{}}).append(e),t=i.offsetWidth,e.css(\textcolor{stringliteral}{"{}overflow"{}},\textcolor{stringliteral}{"{}scroll"{}}),t===(i=i.offsetWidth)\&\&(i=e[0].clientWidth),e.remove(),s=t-\/i\},}
+\DoxyCodeLine{getScrollInfo:\textcolor{keyword}{function}(t)\{var\ e=t.isWindow||t.isDocument?\textcolor{stringliteral}{"{}"{}}:t.element.css(\textcolor{stringliteral}{"{}overflow-\/x"{}}),i=t.isWindow||t.isDocument?\textcolor{stringliteral}{"{}"{}}:t.element.css(\textcolor{stringliteral}{"{}overflow-\/y"{}}),e=\textcolor{stringliteral}{"{}scroll"{}}===e||\textcolor{stringliteral}{"{}auto"{}}===e\&\&t.width<t.element[0].scrollWidth;\textcolor{keywordflow}{return}\{width:\textcolor{stringliteral}{"{}scroll"{}}===i||\textcolor{stringliteral}{"{}auto"{}}===i\&\&t.height<t.element[0].scrollHeight?y.position.scrollbarWidth():0,height:e?y.position.scrollbarWidth():0\}\},getWithinInfo:\textcolor{keyword}{function}(t)\{var\ e=y(t||window),i=S(e[0]),s=!!e[0]\&\&9===e[0].nodeType;\textcolor{keywordflow}{return}\{element:e,isWindow:i,isDocument:s,offset:!i\&\&!s?y(t).offset():\{left:0,top:0\},scrollLeft:e.scrollLeft(),scrollTop:e.scrollTop(),width:e.outerWidth(),height:e.outerHeight()\}\}\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!prototype@{prototype}}
+\index{prototype@{prototype}!jquery.js@{jquery.js}}
+\doxyparagraph{prototype}
+{\footnotesize\ttfamily \label{a00041_ad6f223a06b6a72df43a879b7c2851f53_ad6f223a06b6a72df43a879b7c2851f53} 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ y} \textbf{ Widget} \textbf{ y} \textbf{ Widget} prototype}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{widgetName:\textcolor{stringliteral}{"{}widget"{}},widgetEventPrefix:\textcolor{stringliteral}{"{}"{}},defaultElement:\textcolor{stringliteral}{"{}<div>"{}},options:\{classes:\{\},disabled:!1,create:\textcolor{keyword}{null}\},\_createWidget:\textcolor{keyword}{function}(t,e)\{e=y(e||this.defaultElement||\textcolor{keyword}{this})[0],this.element=y(e),this.uuid=i++,this.eventNamespace=\textcolor{stringliteral}{"{}."{}}+this.widgetName+this.uuid,this.bindings=y(),this.hoverable=y(),this.focusable=y(),this.classesElementLookup=\{\},e!==\textcolor{keyword}{this}\&\&(y.data(e,this.widgetFullName,\textcolor{keyword}{this}),this.\_on(!0,this.element,\{\textcolor{keyword}{remove}:\textcolor{keyword}{function}(t}
+\DoxyCodeLine{)\{t.target===e\&\&this.destroy()\}\}),this.document=y(e.style?e.ownerDocument:e.document||e),this.window=y(this.document[0].defaultView||this.document[0].parentWindow)),this.options=y.widget.extend(\{\},\textcolor{keyword}{this}.options,\textcolor{keyword}{this}.\_getCreateOptions(),t),this.\_create(),this.options.disabled\&\&this.\_setOptionDisabled(this.options.disabled),this.\_trigger(\textcolor{stringliteral}{"{}create"{}},\textcolor{keyword}{null},this.\_getCreateEventData()),this.\_init()\},\_getCreateOptions:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\{\}\},\_getCreateEventData:y.noop,\_create:y.noop,\_init:y.noop,destroy:\textcolor{keyword}{function}()\{var\ i=\textcolor{keyword}{this};this.\_destroy(),y.each(this.classesElementLookup,\textcolor{keyword}{function}(t,e)\{i.\_removeClass(e,t)\}),this.element.off(\textcolor{keyword}{this}.eventNamespace).removeData(this.widgetFullName),this.widget().off(this.eventNamespace).removeAttr(\textcolor{stringliteral}{"{}aria-\/disabled"{}}),this.bindings.off(this.eventNamespace)\},\_destroy:y.noop,widget:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.element\},option:\textcolor{keyword}{function}(t,e)\{var\ i,s,n,o=t;\textcolor{keywordflow}{if}(0===arguments.length)\textcolor{keywordflow}{return}\ y.widget.extend(\{\},this.options);\textcolor{keywordflow}{if}(\textcolor{stringliteral}{"{}string"{}}==typeof\ t)\textcolor{keywordflow}{if}(o=\{\},t=(i=t.split(\textcolor{stringliteral}{"{}."{}})).shift(),i.length)\{\textcolor{keywordflow}{for}(s=o[t}
+\DoxyCodeLine{]=y.widget.extend(\{\},\textcolor{keyword}{this}.options[t]),n=0;n<i.length-\/1;n++)s[i[n]]=s[i[n]]||\{\},s=s[i[n]];\textcolor{keywordflow}{if}(t=i.pop(),1===arguments.length)\textcolor{keywordflow}{return}\ \textcolor{keywordtype}{void}\ 0===s[t]?\textcolor{keyword}{null}:s[t];s[t]=e\}\textcolor{keywordflow}{else}\{\textcolor{keywordflow}{if}(1===arguments.length)\textcolor{keywordflow}{return}\ \textcolor{keywordtype}{void}\ 0===this.options[t]?\textcolor{keyword}{null}:this.options[t];o[t]=e\}\textcolor{keywordflow}{return}\ this.\_setOptions(o),\textcolor{keyword}{this}\},\_setOptions:\textcolor{keyword}{function}(t)\{\textcolor{keywordflow}{for}(var\ e\ in\ t)this.\_setOption(e,t[e]);\textcolor{keywordflow}{return}\ \textcolor{keyword}{this}\},\_setOption:\textcolor{keyword}{function}(t,e)\{\textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}classes"{}}===t\&\&this.\_setOptionClasses(e),this.options[t]=e,\textcolor{stringliteral}{"{}disabled"{}}===t\&\&this.\_setOptionDisabled(e),\textcolor{keyword}{this}\},\_setOptionClasses:\textcolor{keyword}{function}(t)\{var\ e,i,s;\textcolor{keywordflow}{for}(e\ in\ t)s=this.classesElementLookup[e],t[e]!==this.options.classes[e]\&\&s\&\&s.length\&\&(i=y(s.get()),this.\_removeClass(s,e),i.addClass(this.\_classes(\{element:i,keys:e,classes:t,add:!0\})))\},\_setOptionDisabled:\textcolor{keyword}{function}(t)\{this.\_toggleClass(this.widget(),this.widgetFullName+\textcolor{stringliteral}{"{}-\/disabled"{}},\textcolor{keyword}{null},!!t),t\&\&(this.\_removeClass(this.hoverable,\textcolor{keyword}{null},\textcolor{stringliteral}{"{}ui-\/state-\/hover"{}}),this.\_removeClass(this.focusable,\textcolor{keyword}{null},\textcolor{stringliteral}{"{}ui-\/state-\/focus"{}}))\},enable:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.\_setOptions(\{disabled:!1\})\},}
+\DoxyCodeLine{disable:\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}\ this.\_setOptions(\{disabled:!0\})\},\_classes:\textcolor{keyword}{function}(n)\{var\ o=[],h=\textcolor{keyword}{this};\textcolor{keyword}{function}\ t(t,e)\{\textcolor{keywordflow}{for}(var\ i,s=0;s<t.length;s++)i=h.classesElementLookup[t[s]]||y(),i=n.add?(\textcolor{keyword}{function}()\{var\ i=[];n.element.each(\textcolor{keyword}{function}(t,e)\{y.map(h.classesElementLookup,\textcolor{keyword}{function}(t)\{return\ t\}).some(\textcolor{keyword}{function}(t)\{\textcolor{keywordflow}{return}\ t.is(e)\})||i.push(e)\}),h.\_on(y(i),\{\textcolor{keyword}{remove}:\textcolor{stringliteral}{"{}\_untrackClassesElement"{}}\})\}(),y(y.uniqueSort(i.get().concat(n.element.get())))):y(i.not(n.element).get()),h.classesElementLookup[t[s]]=i,o.push(t[s]),e\&\&n.classes[t[s]]\&\&o.push(n.classes[t[s]])\}return(n=y.extend(\{element:this.element,classes:this.options.classes||\{\}\},n)).keys\&\&t(n.keys.match(/\(\backslash\)S+/g)||[],!0),n.extra\&\&t(n.extra.match(/\(\backslash\)S+/g)||[]),o.join(\textcolor{stringliteral}{"{}\ "{}})\},\_untrackClassesElement:\textcolor{keyword}{function}(i)\{var\ s=\textcolor{keyword}{this};y.each(s.classesElementLookup,\textcolor{keyword}{function}(t,e)\{-\/1!==y.inArray(i.target,e)\&\&(s.classesElementLookup[t]=y(e.not(i.target).get()))\}),this.\_off(y(i.target))\},\_removeClass:\textcolor{keyword}{function}(t,e,i)\{\textcolor{keywordflow}{return}\ this.\_toggleClass(t,e,i,!1)\},\_addClass:\textcolor{keyword}{function}(t,e,i)\{}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ this.\_toggleClass(t,e,i,!0)\},\_toggleClass:\textcolor{keyword}{function}(t,e,i,s)\{var\ n=\textcolor{stringliteral}{"{}string"{}}==typeof\ t||\textcolor{keyword}{null}===t,i=\{extra:n?e:i,keys:n?t:e,element:n?this.element:t,add:s=\textcolor{stringliteral}{"{}boolean"{}}==typeof\ s?s:i\};\textcolor{keywordflow}{return}\ i.element.toggleClass(this.\_classes(i),s),\textcolor{keyword}{this}\},\_on:\textcolor{keyword}{function}(n,o,t)\{var\ h,a=\textcolor{keyword}{this};\textcolor{stringliteral}{"{}boolean"{}}!=typeof\ n\&\&(t=o,o=n,n=!1),t?(o=h=y(o),this.bindings=this.bindings.add(o)):(t=o,o=this.element,h=this.widget()),y.each(t,function(t,e)\{\textcolor{keyword}{function}\ i()\{\textcolor{keywordflow}{if}(n||!0!==a.options.disabled\&\&!y(\textcolor{keyword}{this}).hasClass(\textcolor{stringliteral}{"{}ui-\/state-\/disabled"{}}))\textcolor{keywordflow}{return}(\textcolor{stringliteral}{"{}string"{}}==typeof\ e?a[e]:e).apply(a,arguments)\}\textcolor{stringliteral}{"{}string"{}}!=typeof\ e\&\&(i.guid=e.guid=e.guid||i.guid||y.guid++);var\ s=t.match(/\string^([\(\backslash\)w:-\/]*)\(\backslash\)s*(.*)\$/),t=s[1]+a.eventNamespace,s=s[2];s?h.on(t,s,i):o.on(t,i)\})\},\_off:\textcolor{keyword}{function}(t,e)\{e=(e||\textcolor{stringliteral}{"{}"{}}).split(\textcolor{stringliteral}{"{}\ "{}}).join(this.eventNamespace+\textcolor{stringliteral}{"{}\ "{}})+this.eventNamespace,t.off(e),this.bindings=y(this.bindings.not(t).get()),this.focusable=y(this.focusable.not(t).get()),this.hoverable=y(this.hoverable.not(t).get())\},\_delay:\textcolor{keyword}{function}(t,e)\{var\ i=\textcolor{keyword}{this};\textcolor{keywordflow}{return}\ setTimeout(\textcolor{keyword}{function}()\{\textcolor{keywordflow}{return}(}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}string"{}}==typeof\ t?i[t]:t).apply(i,arguments)\},e||0)\},\_hoverable:\textcolor{keyword}{function}(t)\{this.hoverable=this.hoverable.add(t),this.\_on(t,\{mouseenter:\textcolor{keyword}{function}(t)\{this.\_addClass(y(t.currentTarget),\textcolor{keyword}{null},\textcolor{stringliteral}{"{}ui-\/state-\/hover"{}})\},mouseleave:\textcolor{keyword}{function}(t)\{this.\_removeClass(y(t.currentTarget),\textcolor{keyword}{null},\textcolor{stringliteral}{"{}ui-\/state-\/hover"{}})\}\})\},\_focusable:\textcolor{keyword}{function}(t)\{this.focusable=this.focusable.add(t),this.\_on(t,\{focusin:\textcolor{keyword}{function}(t)\{this.\_addClass(y(t.currentTarget),\textcolor{keyword}{null},\textcolor{stringliteral}{"{}ui-\/state-\/focus"{}})\},focusout:\textcolor{keyword}{function}(t)\{this.\_removeClass(y(t.currentTarget),\textcolor{keyword}{null},\textcolor{stringliteral}{"{}ui-\/state-\/focus"{}})\}\})\},\_trigger:\textcolor{keyword}{function}(t,e,i)\{var\ s,n,o=this.options[t];\textcolor{keywordflow}{if}(i=i||\{\},(e=y.Event(e)).type=(t===this.widgetEventPrefix?t:this.widgetEventPrefix+t).toLowerCase(),e.target=\textcolor{keyword}{this}.element[0],n=e.originalEvent)\textcolor{keywordflow}{for}(s\ in\ n)s\ in\ e||(e[s]=n[s]);\textcolor{keywordflow}{return}\ this.element.trigger(e,i),!(\textcolor{stringliteral}{"{}function"{}}==typeof\ o\&\&!1===o.apply(this.element[0],[e].concat(i))||e.isDefaultPrevented())\}\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 96} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!proxy@{proxy}}
+\index{proxy@{proxy}!jquery.js@{jquery.js}}
+\doxyparagraph{proxy}
+{\footnotesize\ttfamily \label{a00041_a8bf6a1661b948405c3e30f40584760ff_a8bf6a1661b948405c3e30f40584760ff} 
+\textbf{ S} proxy =function(\textbf{ e},\textbf{ t})\{var \textbf{ n},\textbf{ r},\textbf{ i};if("{}string"{}==typeof \textbf{ t}\&\&(\textbf{ n}=\textbf{ e}[\textbf{ t}],\textbf{ t}=\textbf{ e},\textbf{ e}=\textbf{ n}),\textbf{ m}(\textbf{ e}))return \textbf{ r}=s.\+call(arguments,2),(\textbf{ i}=function()\{return e.\+apply(\textbf{ t}$\vert$$\vert$this,r.\+concat(s.\+call(arguments)))\}).guid=e.\+guid=e.\+guid$\vert$$\vert$S.\+guid++,\textbf{ i}\}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!r@{r}}
+\index{r@{r}!jquery.js@{jquery.js}}
+\doxyparagraph{r}
+{\footnotesize\ttfamily \label{a00041_a07c0e0a63b5b484807c0331c78558c9e_a07c0e0a63b5b484807c0331c78558c9e} 
+var r =Object.\+get\+Prototype\+Of}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!resizable@{resizable}}
+\index{resizable@{resizable}!jquery.js@{jquery.js}}
+\doxyparagraph{resizable}
+{\footnotesize\ttfamily \label{a00041_a130e8e640fb5b5d4b53d12b89ef569c5_a130e8e640fb5b5d4b53d12b89ef569c5} 
+\textbf{ y} \textbf{ ui} resizable}
+
+
+
+Definición en la línea \textbf{ 132} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!root@{root}}
+\index{root@{root}!jquery.js@{jquery.js}}
+\doxyparagraph{root}
+{\footnotesize\ttfamily \label{a00041_a11a10a6834f3c54a5380f4ff04d002a9_a11a10a6834f3c54a5380f4ff04d002a9} 
+function root}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{===typeof\ define\&\&define.amd?define([\textcolor{stringliteral}{"{}jquery"{}}],f):\textcolor{stringliteral}{"{}undefined"{}}!==typeof\ module\&\&module.exports?module.exports=f(require(\textcolor{stringliteral}{"{}jquery"{}})):f(jQuery)\})(function(\$)\{\textcolor{stringliteral}{"{}use\ strict"{}};\textcolor{keyword}{function}\ n(a)\{\textcolor{keywordflow}{return}!a.nodeName||-\/1!==\$.inArray(a.nodeName.toLowerCase(),[\textcolor{stringliteral}{"{}iframe"{}},\textcolor{stringliteral}{"{}\#document"{}},\textcolor{stringliteral}{"{}html"{}},\textcolor{stringliteral}{"{}body"{}}])\}\textcolor{keyword}{function}\ h(a)\{\textcolor{keywordflow}{return}\ \$.isFunction(a)||\$.isPlainObject(a)?a:\{top:a,left:a\}\}var\ p=\$.scrollTo=\textcolor{keyword}{function}(a,d,b)\{\textcolor{keywordflow}{return}\ \$(window).scrollTo(a,d,b)\};p.defaults=\{axis:\textcolor{stringliteral}{"{}xy"{}},duration:0,limit:!0\};\$.fn.scrollTo=\textcolor{keyword}{function}(a,d,b)\{\textcolor{stringliteral}{"{}object"{}}===typeof\ d\&\&(b=d,d=0);\textcolor{stringliteral}{"{}function"{}}===typeof\ b\&\&(b=\{onAfter:b\});\textcolor{stringliteral}{"{}max"{}}===a\&\&(a=9e9);b=\$.extend(\{\},p.defaults,b);d=d||b.duration;var\ u=b.queue\&\&1<b.axis.length;u\&\&(d/=2);b.offset=h(b.offset);b.over=h(b.over);\textcolor{keywordflow}{return}\ this.each(\textcolor{keyword}{function}()\{\textcolor{keyword}{function}\ k(a)\{var\ k=\$.extend(\{\},b,\{queue:!0,duration:d,complete:a\&\&\textcolor{keyword}{function}()\{a.call(q,e,b)\}\});r.animate(f,k)\}\textcolor{keywordflow}{if}(\textcolor{keyword}{null}!==a)\{var\ l=n(\textcolor{keyword}{this}),q=l?this.contentWindow||window:\textcolor{keyword}{this},r=\$(q),e=a,f=\{\},t;\textcolor{keywordflow}{switch}(typeof\ e)\{\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}number"{}}:\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}string"{}}:\textcolor{keywordflow}{if}(}
+\DoxyCodeLine{/\string^([+-\/]=?)?\(\backslash\)d+(\(\backslash\).\(\backslash\)d+)?(px|\%)?\$/.test(e))\{e=h(e);\textcolor{keywordflow}{break}\}e=l?\$(e):\$(e,q);\textcolor{keywordflow}{case}\textcolor{stringliteral}{"{}object"{}}:\textcolor{keywordflow}{if}(e.length===0)\textcolor{keywordflow}{return};\textcolor{keywordflow}{if}(e.is||e.style)t=(e=\$(e)).offset()\}var\ v=\$.isFunction(b.offset)\&\&b.offset(q,e)||b.offset;\$.each(b.axis.split(\textcolor{stringliteral}{"{}"{}}),\textcolor{keyword}{function}(a,c)\{var\ d=\textcolor{stringliteral}{"{}x"{}}===c?\textcolor{stringliteral}{"{}Left"{}}:\textcolor{stringliteral}{"{}Top"{}},m=d.toLowerCase(),g=\textcolor{stringliteral}{"{}scroll"{}}+d,h=r[g](),n=p.max(q,c);t?(f[g]=t[m]+(l?0:h-\/r.offset()[m]),b.margin\&\&(f[g]-\/=parseInt(e.css(\textcolor{stringliteral}{"{}margin"{}}+d),10)||0,f[g]-\/=parseInt(e.css(\textcolor{stringliteral}{"{}border"{}}+d+\textcolor{stringliteral}{"{}Width"{}}),10)||0),f[g]+=v[m]||0,b.over[m]\&\&(f[g]+=e[\textcolor{stringliteral}{"{}x"{}}===c?\textcolor{stringliteral}{"{}width"{}}:\textcolor{stringliteral}{"{}height"{}}]()*b.over[m])):(d=e[m],f[g]=d.slice\&\&\textcolor{stringliteral}{"{}\%"{}}===d.slice(-\/1)?parseFloat(d)/100*n:d);b.limit\&\&/\string^\(\backslash\)d+\$/.test(f[g])\&\&(f[g]=0>=f[g]?0:Math.min(f[g],n));!a\&\&1<b.axis.length\&\&(h===f[g]?f=\{\}:u\&\&(k(b.onAfterFirst),f=\{\}))\});k(b.onAfter)\}\})\};p.max=\textcolor{keyword}{function}(a,d)\{var\ b=\textcolor{stringliteral}{"{}x"{}}===d?\textcolor{stringliteral}{"{}Width"{}}:\textcolor{stringliteral}{"{}Height"{}},h=\textcolor{stringliteral}{"{}scroll"{}}+b;\textcolor{keywordflow}{if}(!n(a))\textcolor{keywordflow}{return}\ a[h]-\/\$(a)[b.toLowerCase()]();var\ b=\textcolor{stringliteral}{"{}client"{}}+b,k=a.ownerDocument||a.document,l=k.documentElement,k=k.body;\textcolor{keywordflow}{return}\ Math.max(l[h],k[h])-\/Math.min(l[b],k[b])\};}
+\DoxyCodeLine{\$.Tween.propHooks.scrollLeft=\$.Tween.propHooks.scrollTop=\{\textcolor{keyword}{get}:\textcolor{keyword}{function}(a)\{\textcolor{keywordflow}{return}\ \$(a.elem)[a.prop]()\},\textcolor{keyword}{set}:\textcolor{keyword}{function}(a)\{var\ d=this.\textcolor{keyword}{get}(a);\textcolor{keywordflow}{if}(a.options.interrupt\&\&a.\_last\&\&a.\_last!==d)\textcolor{keywordflow}{return}\ \$(a.elem).stop();var\ b=Math.round(a.now);d!==b\&\&(\$(a.elem)[a.prop](b),a.\_last=\textcolor{keyword}{this}.get(a))\}\};\textcolor{keywordflow}{return}\ p\})}
+
+\end{DoxyCode}
+
+
+Power\+Tip v1.\+3.\+1 (2018-\/04-\/15) {\texttt{ https\+://stevenbenner.\+github.\+io/jquery-\/powertip/}} Copyright (c) 2018 Steven Benner ({\texttt{ http\+://stevenbenner.\+com/}}). 
+
+Released under MIT license. {\texttt{ https\+://raw.\+github.\+com/stevenbenner/jquery-\/powertip/master/\+LICENSE.\+txt}} 
+
+Definición en la línea \textbf{ 148} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!S@{S}}
+\index{S@{S}!jquery.js@{jquery.js}}
+\doxyparagraph{S}
+{\footnotesize\ttfamily \label{a00041_acf7e8060267f344e9b67e687338395f3_acf7e8060267f344e9b67e687338395f3} 
+return S S =function(\textbf{ e},\textbf{ t})\{return new S.\+fn.\+init(\textbf{ e},\textbf{ t})\}}
+
+
+
+Definición en la línea \textbf{ 3} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!s@{s}}
+\index{s@{s}!jquery.js@{jquery.js}}
+\doxyparagraph{s}
+{\footnotesize\ttfamily \label{a00041_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621} 
+var s =t.\+slice}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!scrollParent@{scrollParent}}
+\index{scrollParent@{scrollParent}!jquery.js@{jquery.js}}
+\doxyparagraph{scrollParent}
+{\footnotesize\ttfamily \label{a00041_a762bb35c4e13ca5bfc1ed249efc8ca30_a762bb35c4e13ca5bfc1ed249efc8ca30} 
+\textbf{ y} \textbf{ ui} \textbf{ y} \textbf{ fn} \textbf{ y} \textbf{ fn} scroll\+Parent =function(\textbf{ t})\{var \textbf{ e}=this.\+css("{}position"{}),\textbf{ i}="{}absolute"{}===\textbf{ e},\textbf{ s}=\textbf{ t}?/(auto$\vert$scroll$\vert$hidden)/\+:/(auto$\vert$scroll)/,\textbf{ t}=this.\+parents().filter(function()\{var \textbf{ t}=\textbf{ y}(this);return(!\textbf{ i}$\vert$$\vert$"{}static"{}!==t.\+css("{}position"{}))\&\&s.\+test(t.\+css("{}overflow"{})+t.\+css("{}overflow-\/y"{})+t.\+css("{}overflow-\/x"{}))\}).eq(0);return"{}fixed"{}!==\textbf{ e}\&\&t.\+length?t\+:y(this[0].owner\+Document$\vert$$\vert$document)\}}
+
+
+
+Definición en la línea \textbf{ 110} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!t@{t}}
+\index{t@{t}!jquery.js@{jquery.js}}
+\doxyparagraph{t}
+{\footnotesize\ttfamily \label{a00041_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4} 
+function t =[$\,$]}
+
+
+
+Smart\+Menus j\+Query Plugin -\/ v1.\+1.\+0 -\/ September 17, 2017 {\texttt{ http\+://www.\+smartmenus.\+org/}} Copyright Vasil Dinkov, Vadikom Web Ltd. 
+
+{\texttt{ http\+://vadikom.\+com;}} Licensed MIT 
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!trim@{trim}}
+\index{trim@{trim}!jquery.js@{jquery.js}}
+\doxyparagraph{trim}
+{\footnotesize\ttfamily \label{a00041_aac10a47c7891260e376a1a98d7dd7c28_aac10a47c7891260e376a1a98d7dd7c28} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} trim =function(\textbf{ e})\{return null==\textbf{ e}?"{}"{}\+:(\textbf{ e}+"{}"{}).replace(\textbf{ Xt},"{}"{})\}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!type@{type}}
+\index{type@{type}!jquery.js@{jquery.js}}
+\doxyparagraph{type}
+{\footnotesize\ttfamily \label{a00041_ae5ad21ad547d5148f4d3fa9197ace08a_ae5ad21ad547d5148f4d3fa9197ace08a} 
+\textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} \textbf{ S} type =\textbf{ w}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!u@{u}}
+\index{u@{u}!jquery.js@{jquery.js}}
+\doxyparagraph{u}
+{\footnotesize\ttfamily \label{a00041_accb4ce8dd4113ac0f510653e31809106_accb4ce8dd4113ac0f510653e31809106} 
+var u =t.\+push}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!ui@{ui}}
+\index{ui@{ui}!jquery.js@{jquery.js}}
+\doxyparagraph{ui}
+{\footnotesize\ttfamily \label{a00041_a651e1f77bdcb2a41caf54678099ac151_a651e1f77bdcb2a41caf54678099ac151} 
+\textbf{ y} ui =y.\+ui$\vert$$\vert$\{\}}
+
+
+
+Definición en la línea \textbf{ 94} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!undefined@{undefined}}
+\index{undefined@{undefined}!jquery.js@{jquery.js}}
+\doxyparagraph{undefined}
+{\footnotesize\ttfamily \label{a00041_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc} 
+return \textbf{ S} undefined =typeof window?window\+:this}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!Ut@{Ut}}
+\index{Ut@{Ut}!jquery.js@{jquery.js}}
+\doxyparagraph{Ut}
+{\footnotesize\ttfamily \label{a00041_a16fa269fdb5cd7b001595c6dc9e583b5_a16fa269fdb5cd7b001595c6dc9e583b5} 
+var Ut =/(=)\textbackslash{}?(?=\&$\vert$\$)$\vert$\textbackslash{}?\textbackslash{}?/}
+
+
+
+Definición en la línea \textbf{ 84} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!v@{v}}
+\index{v@{v}!jquery.js@{jquery.js}}
+\doxyparagraph{v}
+{\footnotesize\ttfamily \label{a00041_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96} 
+var v =n.\+has\+Own\+Property}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!version@{version}}
+\index{version@{version}!jquery.js@{jquery.js}}
+\doxyparagraph{version}
+{\footnotesize\ttfamily \label{a00041_a6641ae2f10ab157da5542f91413f064e_a6641ae2f10ab157da5542f91413f064e} 
+\textbf{ y} \textbf{ ui} version ="{}1.\+13.\+2"{}}
+
+
+
+Definición en la línea \textbf{ 94} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!Vt@{Vt}}
+\index{Vt@{Vt}!jquery.js@{jquery.js}}
+\doxyparagraph{Vt}
+{\footnotesize\ttfamily \label{a00041_a0499ebb7b16841ec6df8c1f7d76a24a9_a0499ebb7b16841ec6df8c1f7d76a24a9} 
+var Vt =\textbf{ C.\+j\+Query}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!W@{W}}
+\index{W@{W}!jquery.js@{jquery.js}}
+\doxyparagraph{W}
+{\footnotesize\ttfamily \label{a00041_a0a9b52fb6605edc74fd7d5359f34477e_a0a9b52fb6605edc74fd7d5359f34477e} 
+W =\textbf{ y.\+fn.\+position}}
+
+
+
+Definición en la línea \textbf{ 102} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!Widget@{Widget}}
+\index{Widget@{Widget}!jquery.js@{jquery.js}}
+\doxyparagraph{Widget}
+{\footnotesize\ttfamily \label{a00041_af8f50be312a6e337f08d55d26c4465a0_af8f50be312a6e337f08d55d26c4465a0} 
+\textbf{ y} \textbf{ y} \textbf{ y} \textbf{ widget} \textbf{ y} \textbf{ widget} \textbf{ y} Widget =function()\{\}}
+
+
+
+Definición en la línea \textbf{ 96} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!widget@{widget}}
+\index{widget@{widget}!jquery.js@{jquery.js}}
+\doxyparagraph{widget}
+{\footnotesize\ttfamily \label{a00041_a8c9ebf08e1a39e8b19d3fdb153a953d1_a8c9ebf08e1a39e8b19d3fdb153a953d1} 
+\textbf{ y} widget}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\textcolor{keyword}{function}(t,i,e)\{var\ s,n,o,h=\{\},a=t.split(\textcolor{stringliteral}{"{}."{}})[0],r=a+\textcolor{stringliteral}{"{}-\/"{}}+(t=t.split(\textcolor{stringliteral}{"{}."{}})[1]);\textcolor{keywordflow}{return}\ e||(e=i,i=y.Widget),Array.isArray(e)\&\&(e=y.extend.apply(\textcolor{keyword}{null},[\{\}].concat(e))),y.expr.pseudos[r.toLowerCase()]=\textcolor{keyword}{function}(t)\{\textcolor{keywordflow}{return}!!y.data(t,r)\},y[a]=y[a]||\{\},s=y[a][t],n=y[a][t]=\textcolor{keyword}{function}(t,e)\{\textcolor{keywordflow}{if}(!\textcolor{keyword}{this}||!this.\_createWidget)\textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ n(t,e);arguments.length\&\&this.\_createWidget(t,e)\},y.extend(n,s,\{version:e.version,\_proto:y.extend(\{\},e),\_childConstructors:[]\}),(o=new\ i).options=y.widget.extend(\{\},o.options),y.each(e,\textcolor{keyword}{function}(e,s)\{function\ n()\{return\ i.prototype[e].apply(this,arguments)\}}
+\DoxyCodeLine{\textcolor{keyword}{function}\ o(t)\{\textcolor{keywordflow}{return}\ i.prototype[e].apply(\textcolor{keyword}{this},t)\}h[e]=\textcolor{stringliteral}{"{}function"{}}==typeof\ s?\textcolor{keyword}{function}()\{var\ t,e=this.\_super,i=this.\_superApply;\textcolor{keywordflow}{return}\ this.\_super=n,this.\_superApply=o,t=s.apply(\textcolor{keyword}{this},arguments),this.\_super=e,this.\_superApply=i,t\}:s\}),n.prototype=y.widget.extend(o,\{widgetEventPrefix:s\&\&o.widgetEventPrefix||t\},h,\{constructor:n,\textcolor{keyword}{namespace}:a,widgetName:t,widgetFullName:r\}),s?(y.each(s.\_childConstructors,\textcolor{keyword}{function}(t,e)\{var\ i=e.prototype;y.widget(i.namespace+\textcolor{stringliteral}{"{}."{}}+i.widgetName,n,e.\_proto)\}),\textcolor{keyword}{delete}\ s.\_childConstructors):i.\_childConstructors.push(n),y.widget.bridge(t,n),n\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \textbf{ 94} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!x@{x}}
+\index{x@{x}!jquery.js@{jquery.js}}
+\doxyparagraph{x}
+{\footnotesize\ttfamily \label{a00041_a81e910173af87b1161e719a504d52407_a81e910173af87b1161e719a504d52407} 
+var x =function(\textbf{ e})\{return null!=\textbf{ e}\&\&\textbf{ e}===e.\+window\}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!Xt@{Xt}}
+\index{Xt@{Xt}!jquery.js@{jquery.js}}
+\doxyparagraph{Xt}
+{\footnotesize\ttfamily \label{a00041_a2cfdb12b771102714ac3bce73ee91ab4_a2cfdb12b771102714ac3bce73ee91ab4} 
+var Xt =/$^\wedge$[\textbackslash{}s\textbackslash{}u\+FEFF\textbackslash{}x\+A0]+$\vert$[\textbackslash{}s\textbackslash{}u\+FEFF\textbackslash{}x\+A0]+\$/\textbf{ g}}
+
+
+
+Definición en la línea \textbf{ 89} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!y@{y}}
+\index{y@{y}!jquery.js@{jquery.js}}
+\doxyparagraph{y}
+{\footnotesize\ttfamily \label{a00041_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f} 
+function y =\{\}}
+
+
+
+Definición en la línea \textbf{ 2} del archivo \textbf{ jquery.\+js}.
+
+\index{jquery.js@{jquery.js}!zt@{zt}}
+\index{zt@{zt}!jquery.js@{jquery.js}}
+\doxyparagraph{zt}
+{\footnotesize\ttfamily \label{a00041_aa317a06941fb406d331c8252365d3c28_aa317a06941fb406d331c8252365d3c28} 
+var zt =[$\,$]}
+
+
+
+Definición en la línea \textbf{ 84} del archivo \textbf{ jquery.\+js}.
+

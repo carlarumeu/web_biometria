@@ -1,0 +1,49 @@
+\doxysection{get-\/intrinsic \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/get-\/intrinsic"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/ljharb/get-\/intrinsic.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00905}{}\label{a00905}\index{get-\/intrinsic $<$sup$>$$<$a href="{}https://npmjs.org/package/get-\/intrinsic"{} $>$$<$img src="{}https://versionbadg.es/ljharb/get-\/intrinsic.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{get-\/intrinsic $<$sup$>$$<$a href=""https://npmjs.org/package/get-\/intrinsic"" $>$$<$img src=""https://versionbadg.es/ljharb/get-\/intrinsic.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00905_autotoc_md1177}%
+\Hypertarget{a00905_autotoc_md1177}%
+
+
+\href{https://github.com/ljharb/get-intrinsic/actions}{\texttt{ }} \href{https://app.codecov.io/gh/ljharb/get-intrinsic/}{\texttt{ }} \href{https://david-dm.org/ljharb/get-intrinsic}{\texttt{ }} \href{https://david-dm.org/ljharb/get-intrinsic\#info=devDependencies}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=get-intrinsic}{\texttt{ }}
+
+\href{https://npmjs.org/package/get-intrinsic}{\texttt{ }}
+
+Get and robustly cache all JS language-\/level intrinsics at first require time.
+
+See the syntax described \href{https://tc39.es/ecma262/\#sec-well-known-intrinsic-objects}{\texttt{ in the JS spec}} for reference.\hypertarget{a00905_autotoc_md1178}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{a00905_autotoc_md1178}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}\ =\ require(\textcolor{stringliteral}{'get-\/intrinsic'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ static\ methods}}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%Math.pow\%'}),\ Math.pow);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(Math.pow(2,\ 3),\ 8);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%Math.pow\%'})(2,\ 3),\ 8);}
+\DoxyCodeLine{\textcolor{keyword}{delete}\ Math.pow;}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%Math.pow\%'})(2,\ 3),\ 8);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ instance\ methods}}
+\DoxyCodeLine{var\ arr\ =\ [1];}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%Array.prototype.push\%'}),\ Array.prototype.push);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(arr,\ [1]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{arr.push(2);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(arr,\ [1,\ 2]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%Array.prototype.push\%'}).call(arr,\ 3);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(arr,\ [1,\ 2,\ 3]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{delete}\ Array.prototype.push;}
+\DoxyCodeLine{\mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%Array.prototype.push\%'}).call(arr,\ 4);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(arr,\ [1,\ 2,\ 3,\ 4]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ missing\ features}}
+\DoxyCodeLine{\textcolor{keyword}{delete}\ \mbox{\hyperlink{a00320_a5c2083d67680a698a2c2d545b649a6f5_a5c2083d67680a698a2c2d545b649a6f5}{JSON}}.parse;\ \textcolor{comment}{//\ to\ simulate\ a\ real\ intrinsic\ that\ is\ missing\ in\ the\ environment}}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.throws(()\ =>\ \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%JSON.parse\%'}));}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},\ \mbox{\hyperlink{a00047_aaa90a78a6d626b36faf215bce4387543_aaa90a78a6d626b36faf215bce4387543}{GetIntrinsic}}(\textcolor{stringliteral}{'\%JSON.parse\%'},\ \textcolor{keyword}{true}));}
+
+\end{DoxyCode}
+\hypertarget{a00905_autotoc_md1179}{}\doxysubsection{\texorpdfstring{Tests}{Tests}}\label{a00905_autotoc_md1179}
+Simply clone the repo, {\ttfamily npm install}, and run {\ttfamily npm test}\hypertarget{a00905_autotoc_md1180}{}\doxysubsection{\texorpdfstring{Security}{Security}}\label{a00905_autotoc_md1180}
+Please email \href{https://github.com/ljharb}{\texttt{ @ljharb}} or see \href{https://tidelift.com/security}{\texttt{ https\+://tidelift.\+com/security}} if you have a potential security vulnerability to report. 

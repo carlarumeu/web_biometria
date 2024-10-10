@@ -1,0 +1,91 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/has-\/property-\/descriptors/index.js}
+\hypertarget{a01207}{}\label{a01207}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01207_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$define\+Property}} = require(\textquotesingle{}es-\/\mbox{\hyperlink{a00212_a14947f326ebc4da17b5d55921c25e9fb_a14947f326ebc4da17b5d55921c25e9fb}{define}}-\/property\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{has\+Property\+Descriptors}}
+\item 
+\mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{has\+Property\+Descriptors}} \mbox{\hyperlink{a01207_a9c8a44086e1ca8bd92dbb6128445646a_a9c8a44086e1ca8bd92dbb6128445646a}{has\+Array\+Length\+Define\+Bug}}
+\item 
+module \mbox{\hyperlink{a01207_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} = \mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{has\+Property\+Descriptors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}\index{index.js@{index.js}!\$defineProperty@{\$defineProperty}}
+\index{\$defineProperty@{\$defineProperty}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{\$defineProperty}{\$defineProperty}}
+{\footnotesize\ttfamily \label{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a} 
+var \$define\+Property = require(\textquotesingle{}es-\/\mbox{\hyperlink{a00212_a14947f326ebc4da17b5d55921c25e9fb_a14947f326ebc4da17b5d55921c25e9fb}{define}}-\/property\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01207_source_l00003}{3}} del archivo \mbox{\hyperlink{a01207_source}{node\+\_\+modules/has-\/property-\/descriptors/index.\+js}}.
+
+\Hypertarget{a01207_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{index.js@{index.js}!exports@{exports}}
+\index{exports@{exports}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01207_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports = \mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{has\+Property\+Descriptors}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01207_source_l00022}{22}} del archivo \mbox{\hyperlink{a01207_source}{node\+\_\+modules/has-\/property-\/descriptors/index.\+js}}.
+
+\Hypertarget{a01207_a9c8a44086e1ca8bd92dbb6128445646a_a9c8a44086e1ca8bd92dbb6128445646a}\index{index.js@{index.js}!hasArrayLengthDefineBug@{hasArrayLengthDefineBug}}
+\index{hasArrayLengthDefineBug@{hasArrayLengthDefineBug}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{hasArrayLengthDefineBug}{hasArrayLengthDefineBug}}
+{\footnotesize\ttfamily \label{a01207_a9c8a44086e1ca8bd92dbb6128445646a_a9c8a44086e1ca8bd92dbb6128445646a} 
+\mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{has\+Property\+Descriptors}} has\+Array\+Length\+Define\+Bug}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01207_a9c8a44086e1ca8bd92dbb6128445646a_a9c8a44086e1ca8bd92dbb6128445646a}{hasArrayLengthDefineBug}}()\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}}([],\ \textcolor{stringliteral}{'length'},\ \{\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ 1\ \}).length\ !==\ 1;}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01207_source_l00009}{9}} del archivo \mbox{\hyperlink{a01207_source}{node\+\_\+modules/has-\/property-\/descriptors/index.\+js}}.
+
+\Hypertarget{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}\index{index.js@{index.js}!hasPropertyDescriptors@{hasPropertyDescriptors}}
+\index{hasPropertyDescriptors@{hasPropertyDescriptors}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{hasPropertyDescriptors}{hasPropertyDescriptors}}
+{\footnotesize\ttfamily \label{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a} 
+var has\+Property\+Descriptors}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01207_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ !!\mbox{\hyperlink{a01207_aa1c8e87c148849ff42d712942c5a503a_aa1c8e87c148849ff42d712942c5a503a}{\$defineProperty}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01207_source_l00005}{5}} del archivo \mbox{\hyperlink{a01207_source}{node\+\_\+modules/has-\/property-\/descriptors/index.\+js}}.
+
+\Hypertarget{a01207_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{index.js@{index.js}!strict@{strict}}
+\index{strict@{strict}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01207_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01207_source_l00001}{1}} del archivo \mbox{\hyperlink{a01207_source}{node\+\_\+modules/has-\/property-\/descriptors/index.\+js}}.
+

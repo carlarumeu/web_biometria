@@ -1,0 +1,11 @@
+\doxysubsection{error\+Handler.\+js}
+\hypertarget{a00629_source}{}\label{a00629_source}\index{errorHandler.js@{errorHandler.js}}
+\mbox{\hyperlink{a00629}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00629_source_l00001}00001\ \textcolor{comment}{//\ src/middlewares/errorHandler.js}}
+\DoxyCodeLine{\Hypertarget{a00629_source_l00002}\mbox{\hyperlink{a00629_ab3eb192b8b9ba491d1c0fe849810e1a5_ab3eb192b8b9ba491d1c0fe849810e1a5}{00002}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00629_ab3eb192b8b9ba491d1c0fe849810e1a5_ab3eb192b8b9ba491d1c0fe849810e1a5}{errorHandler}}\ =\ (err,\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ next)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00629_source_l00003}00003\ \ \ \ \ console.error(err.stack);}
+\DoxyCodeLine{\Hypertarget{a00629_source_l00004}00004\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(500).json(\{\ message:\ \textcolor{stringliteral}{'Internal\ Server\ Error'}\ \});}
+\DoxyCodeLine{\Hypertarget{a00629_source_l00005}00005\ \};}
+
+\end{DoxyCode}

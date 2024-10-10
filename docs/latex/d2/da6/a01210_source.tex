@@ -1,0 +1,63 @@
+\doxysubsection{node\+\_\+modules/has-\/property-\/descriptors/test/index.js}
+\hypertarget{a01210_source}{}\label{a01210_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01210}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00001}\mbox{\hyperlink{a01210_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00003}\mbox{\hyperlink{a01210_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{00003}}\ var\ \mbox{\hyperlink{a01210_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}\ =\ require(\textcolor{stringliteral}{'tape'});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00005}\mbox{\hyperlink{a01210_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{00005}}\ var\ \mbox{\hyperlink{a01210_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}\ =\ require(\textcolor{stringliteral}{'../'});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00007}\mbox{\hyperlink{a01210_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}{00007}}\ var\ \mbox{\hyperlink{a01210_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}{sentinel}}\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00009}00009\ \mbox{\hyperlink{a01210_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(\textcolor{stringliteral}{'hasPropertyDescriptors'},\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(typeof\ \mbox{\hyperlink{a01210_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}},\ \textcolor{stringliteral}{'function'},\ \textcolor{stringliteral}{'is\ a\ function'});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(typeof\ \mbox{\hyperlink{a01210_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}.hasArrayLengthDefineBug,\ \textcolor{stringliteral}{'function'},\ \textcolor{stringliteral}{'\`{}hasArrayLengthDefineBug`\ property\ is\ a\ function'});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00013}00013\ \ \ \ \ var\ yes\ =\ \mbox{\hyperlink{a01210_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}();}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'property\ descriptors'},\ \{\ skip:\ !yes\ \},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00015}00015\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}}\ =\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \mbox{\hyperlink{a01210_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}{sentinel}}\ \};}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00017}00017\ \ \ \ \ \ \ \ \ st.deepEqual(}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ Object.getOwnPropertyDescriptor(\mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}},\ \textcolor{charliteral}{'a'}),}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ configurable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enumerable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ sentinel,}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ writable:\ true}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'has\ expected\ property\ descriptor'}}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00026}00026\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00028}00028\ \ \ \ \ \ \ \ \ Object.defineProperty(\mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}},\ \textcolor{charliteral}{'a'},\ \{\ enumerable:\ \textcolor{keyword}{false},\ writable:\ \textcolor{keyword}{false}\ \});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00030}00030\ \ \ \ \ \ \ \ \ st.deepEqual(}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ Object.getOwnPropertyDescriptor(\mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}},\ \textcolor{charliteral}{'a'}),}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ configurable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enumerable:\ false,}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ sentinel,}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ writable:\ false}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'has\ expected\ property\ descriptor\ after\ [[Define]]'}}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00039}00039\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00041}00041\ \ \ \ \ \ \ \ \ st.end();}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00042}00042\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00044}00044\ \ \ \ \ var\ arrayBug\ =\ \mbox{\hyperlink{a01210_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}.hasArrayLengthDefineBug();}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'defining\ array\ lengths'},\ \{\ skip:\ !yes\ ||\ arrayBug\ \},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00046}00046\ \ \ \ \ \ \ \ \ var\ arr\ =\ [1,\ ,\ 3];\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/sparse-\/arrays}}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00047}00047\ \ \ \ \ \ \ \ \ st.equal(arr.length,\ 3,\ \textcolor{stringliteral}{'array\ starts\ with\ length\ 3'});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00049}00049\ \ \ \ \ \ \ \ \ Object.defineProperty(arr,\ \textcolor{stringliteral}{'length'},\ \{\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ 5\ \});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00051}00051\ \ \ \ \ \ \ \ \ st.equal(arr.length,\ 5,\ \textcolor{stringliteral}{'array\ ends\ with\ length\ 5'});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00053}00053\ \ \ \ \ \ \ \ \ st.end();}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00054}00054\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{a01210_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.end();}
+\DoxyCodeLine{\Hypertarget{a01210_source_l00057}00057\ \});}
+
+\end{DoxyCode}

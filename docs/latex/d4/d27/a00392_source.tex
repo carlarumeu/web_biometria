@@ -1,0 +1,36 @@
+\doxysubsection{pool\+\_\+config.\+js}
+\hypertarget{a00392_source}{}\label{a00392_source}\index{pool\_config.js@{pool\_config.js}}
+\mbox{\hyperlink{a00392}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00001}\mbox{\hyperlink{a00392_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00392_source_l00003}\mbox{\hyperlink{a00392_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00724}{ConnectionConfig}}\ =\ require(\textcolor{stringliteral}{'./connection\_config.js'});}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a00392_source_l00005}\mbox{\hyperlink{a00812}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00812}{PoolConfig}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00006}\mbox{\hyperlink{a00812_a1ba4643001f6cbe0a40f5b01e56c5ade_a1ba4643001f6cbe0a40f5b01e56c5ade}{00006}}\ \ \ \mbox{\hyperlink{a00812_a1ba4643001f6cbe0a40f5b01e56c5ade_a1ba4643001f6cbe0a40f5b01e56c5ade}{constructor}}(options)\ \{}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ options\ ===\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00008}00008\ \ \ \ \ \ \ options\ =\ \mbox{\hyperlink{a00724}{ConnectionConfig}}.\mbox{\hyperlink{a00724_a1bf1807e1e92900d48de50ad48625ca2_a1bf1807e1e92900d48de50ad48625ca2}{parseUrl}}(options);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00009}00009\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00010}00010\ \ \ \ \ this.connectionConfig\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00392_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863}{ConnectionConfig}}(options);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00011}00011\ \ \ \ \ this.waitForConnections\ =}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00012}00012\ \ \ \ \ \ \ options.waitForConnections\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00013}00013\ \ \ \ \ \ \ \ \ ?\ \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}}}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00014}00014\ \ \ \ \ \ \ \ \ :\ Boolean(options.waitForConnections);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00015}00015\ \ \ \ \ this.connectionLimit\ =\ isNaN(options.connectionLimit)}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00016}00016\ \ \ \ \ \ \ ?\ 10}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00017}00017\ \ \ \ \ \ \ :\ Number(options.connectionLimit);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00018}00018\ \ \ \ \ this.maxIdle\ =\ isNaN(options.maxIdle)}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00019}00019\ \ \ \ \ \ \ ?\ this.connectionLimit}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00020}00020\ \ \ \ \ \ \ :\ Number(options.maxIdle);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00021}00021\ \ \ \ \ this.idleTimeout\ =\ isNaN(options.idleTimeout)}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00022}00022\ \ \ \ \ \ \ ?\ 60000}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00023}00023\ \ \ \ \ \ \ :\ Number(options.idleTimeout);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00024}00024\ \ \ \ \ this.queueLimit\ =\ isNaN(options.queueLimit)}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00025}00025\ \ \ \ \ \ \ ?\ 0}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00026}00026\ \ \ \ \ \ \ :\ Number(options.queueLimit);}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00027}00027\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{a00392_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a00392_source_l00030}\mbox{\hyperlink{a00392_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00030}}\ module.exports\ =\ \mbox{\hyperlink{a00389_a12a88c3f6c13ab5fdb8c77900e18daa9_a12a88c3f6c13ab5fdb8c77900e18daa9}{PoolConfig}};}
+
+\end{DoxyCode}

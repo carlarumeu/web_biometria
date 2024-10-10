@@ -1,0 +1,158 @@
+\doxysubsection{node\+\_\+modules/mysql2/lib/packets/index.js}
+\hypertarget{a01276_source}{}\label{a01276_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01276}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00001}00001\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ June\ 1,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00002}00002\ \textcolor{comment}{//\ A\ utility\ method\ was\ introduced\ to\ generate\ an\ Error\ instance\ from\ a}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00003}00003\ \textcolor{comment}{//\ binary\ server\ packet.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00004}00004\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00006}00006\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ September\ 21,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00007}00007\ \textcolor{comment}{//\ The\ new\ AuthNextFactor\ packet\ is\ now\ available.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00008}00008\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00010}\mbox{\hyperlink{a01276_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00010}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00012}\mbox{\hyperlink{a01276_af9f9bc02ac180e11593483139f527ec7_af9f9bc02ac180e11593483139f527ec7}{00012}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01276_af9f9bc02ac180e11593483139f527ec7_af9f9bc02ac180e11593483139f527ec7}{process}}\ =\ require(\textcolor{stringliteral}{'process'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00014}\mbox{\hyperlink{a01276_a88fff387d13c527bd7eba3861ab0acdd_a88fff387d13c527bd7eba3861ab0acdd}{00014}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00732}{AuthNextFactor}}\ =\ require(\textcolor{stringliteral}{'./auth\_next\_factor'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00015}\mbox{\hyperlink{a01276_a456129e7b0b539b611d9a40c0ffff0d3_a456129e7b0b539b611d9a40c0ffff0d3}{00015}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00736}{AuthSwitchRequest}}\ =\ require(\textcolor{stringliteral}{'./auth\_switch\_request'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00016}\mbox{\hyperlink{a01276_ac6aed52ea6a0912d39d86f4f6c6277ae_ac6aed52ea6a0912d39d86f4f6c6277ae}{00016}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00740}{AuthSwitchRequestMoreData}}\ =\ require(\textcolor{stringliteral}{'./auth\_switch\_request\_more\_data'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00017}\mbox{\hyperlink{a01276_a1f721a11f8ffb5776d92973e79b87105_a1f721a11f8ffb5776d92973e79b87105}{00017}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00744}{AuthSwitchResponse}}\ =\ require(\textcolor{stringliteral}{'./auth\_switch\_response'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00018}\mbox{\hyperlink{a01276_a5665299f1eb72b759bd4ec9cd1708c63_a5665299f1eb72b759bd4ec9cd1708c63}{00018}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00748}{BinaryRow}}\ =\ require(\textcolor{stringliteral}{'./binary\_row'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00019}\mbox{\hyperlink{a01276_aa8522091a3c683b9b2ac071a408c8715_aa8522091a3c683b9b2ac071a408c8715}{00019}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00652}{BinlogDump}}\ =\ require(\textcolor{stringliteral}{'./binlog\_dump'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00020}\mbox{\hyperlink{a01276_ac6efea14c55e0d33e1b8a7b181d40066_ac6efea14c55e0d33e1b8a7b181d40066}{00020}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00672}{ChangeUser}}\ =\ require(\textcolor{stringliteral}{'./change\_user'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00021}\mbox{\hyperlink{a01276_a8ac31d3a428c713e6cebb5f8809373cc_a8ac31d3a428c713e6cebb5f8809373cc}{00021}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00680}{CloseStatement}}\ =\ require(\textcolor{stringliteral}{'./close\_statement'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00022}\mbox{\hyperlink{a01276_aa315657e2d95ef76ad4e70e550bdff4c_aa315657e2d95ef76ad4e70e550bdff4c}{00022}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00752}{ColumnDefinition}}\ =\ require(\textcolor{stringliteral}{'./column\_definition'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00023}\mbox{\hyperlink{a01276_a69baf80a34a091bdf0d47ce1bdbe6328_a69baf80a34a091bdf0d47ce1bdbe6328}{00023}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00688}{Execute}}\ =\ require(\textcolor{stringliteral}{'./execute'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00024}\mbox{\hyperlink{a01276_adac65be1733074b8db3275d5b0c11807_adac65be1733074b8db3275d5b0c11807}{00024}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00756}{Handshake}}\ =\ require(\textcolor{stringliteral}{'./handshake'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00025}\mbox{\hyperlink{a01276_ade1dfbba0fcfdda0b556aaa59ba64781_ade1dfbba0fcfdda0b556aaa59ba64781}{00025}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00760}{HandshakeResponse}}\ =\ require(\textcolor{stringliteral}{'./handshake\_response'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00026}\mbox{\hyperlink{a01276_a5ca7c890fbb897f01987adf32a5104d7_a5ca7c890fbb897f01987adf32a5104d7}{00026}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00780}{PrepareStatement}}\ =\ require(\textcolor{stringliteral}{'./prepare\_statement'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00027}\mbox{\hyperlink{a01276_a2f48af2eff1e2d13b17d55c349eb08be_a2f48af2eff1e2d13b17d55c349eb08be}{00027}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00784}{PreparedStatementHeader}}\ =\ require(\textcolor{stringliteral}{'./prepared\_statement\_header'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00028}\mbox{\hyperlink{a01276_a058cc08e14b08861f54f1a1d05624c7c_a058cc08e14b08861f54f1a1d05624c7c}{00028}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00704}{Query}}\ =\ require(\textcolor{stringliteral}{'./query'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00029}\mbox{\hyperlink{a01276_abdc5ee2a214041f0d60df998d804a973_abdc5ee2a214041f0d60df998d804a973}{00029}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00712}{RegisterSlave}}\ =\ require(\textcolor{stringliteral}{'./register\_slave'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00030}\mbox{\hyperlink{a01276_acbc92673caac114e13565fdd9adbe69c_acbc92673caac114e13565fdd9adbe69c}{00030}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00788}{ResultSetHeader}}\ =\ require(\textcolor{stringliteral}{'./resultset\_header'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00031}\mbox{\hyperlink{a01276_a220e35e13f61684195a0815408171331_a220e35e13f61684195a0815408171331}{00031}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00792}{SSLRequest}}\ =\ require(\textcolor{stringliteral}{'./ssl\_request'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00032}\mbox{\hyperlink{a01276_a5a77f5af838a396904b3379d5500ae0f_a5a77f5af838a396904b3379d5500ae0f}{00032}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00796}{TextRow}}\ =\ require(\textcolor{stringliteral}{'./text\_row'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00034}\mbox{\hyperlink{a01276_a1ae3bc66b033d427f78d11973d595a36_a1ae3bc66b033d427f78d11973d595a36}{00034}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01276_a1ae3bc66b033d427f78d11973d595a36_a1ae3bc66b033d427f78d11973d595a36}{ctorMap}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00035}00035\ \ \ \mbox{\hyperlink{a01276_a88fff387d13c527bd7eba3861ab0acdd_a88fff387d13c527bd7eba3861ab0acdd}{AuthNextFactor}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00036}00036\ \ \ \mbox{\hyperlink{a01276_a456129e7b0b539b611d9a40c0ffff0d3_a456129e7b0b539b611d9a40c0ffff0d3}{AuthSwitchRequest}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00037}00037\ \ \ \mbox{\hyperlink{a01276_ac6aed52ea6a0912d39d86f4f6c6277ae_ac6aed52ea6a0912d39d86f4f6c6277ae}{AuthSwitchRequestMoreData}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00038}00038\ \ \ \mbox{\hyperlink{a01276_a1f721a11f8ffb5776d92973e79b87105_a1f721a11f8ffb5776d92973e79b87105}{AuthSwitchResponse}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00039}00039\ \ \ \mbox{\hyperlink{a01276_a5665299f1eb72b759bd4ec9cd1708c63_a5665299f1eb72b759bd4ec9cd1708c63}{BinaryRow}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00040}00040\ \ \ \mbox{\hyperlink{a01276_aa8522091a3c683b9b2ac071a408c8715_aa8522091a3c683b9b2ac071a408c8715}{BinlogDump}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00041}00041\ \ \ \mbox{\hyperlink{a01276_ac6efea14c55e0d33e1b8a7b181d40066_ac6efea14c55e0d33e1b8a7b181d40066}{ChangeUser}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00042}00042\ \ \ \mbox{\hyperlink{a01276_a8ac31d3a428c713e6cebb5f8809373cc_a8ac31d3a428c713e6cebb5f8809373cc}{CloseStatement}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00043}00043\ \ \ \mbox{\hyperlink{a01276_aa315657e2d95ef76ad4e70e550bdff4c_aa315657e2d95ef76ad4e70e550bdff4c}{ColumnDefinition}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00044}00044\ \ \ \mbox{\hyperlink{a01276_a69baf80a34a091bdf0d47ce1bdbe6328_a69baf80a34a091bdf0d47ce1bdbe6328}{Execute}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00045}00045\ \ \ \mbox{\hyperlink{a01276_adac65be1733074b8db3275d5b0c11807_adac65be1733074b8db3275d5b0c11807}{Handshake}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00046}00046\ \ \ \mbox{\hyperlink{a01276_ade1dfbba0fcfdda0b556aaa59ba64781_ade1dfbba0fcfdda0b556aaa59ba64781}{HandshakeResponse}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00047}00047\ \ \ \mbox{\hyperlink{a01276_a5ca7c890fbb897f01987adf32a5104d7_a5ca7c890fbb897f01987adf32a5104d7}{PrepareStatement}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00048}00048\ \ \ \mbox{\hyperlink{a01276_a2f48af2eff1e2d13b17d55c349eb08be_a2f48af2eff1e2d13b17d55c349eb08be}{PreparedStatementHeader}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00049}00049\ \ \ \mbox{\hyperlink{a01276_a058cc08e14b08861f54f1a1d05624c7c_a058cc08e14b08861f54f1a1d05624c7c}{Query}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00050}00050\ \ \ \mbox{\hyperlink{a01276_abdc5ee2a214041f0d60df998d804a973_abdc5ee2a214041f0d60df998d804a973}{RegisterSlave}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00051}00051\ \ \ \mbox{\hyperlink{a01276_acbc92673caac114e13565fdd9adbe69c_acbc92673caac114e13565fdd9adbe69c}{ResultSetHeader}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00052}00052\ \ \ \mbox{\hyperlink{a01276_a220e35e13f61684195a0815408171331_a220e35e13f61684195a0815408171331}{SSLRequest}},}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00053}00053\ \ \ \mbox{\hyperlink{a00796}{TextRow}}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00054}00054\ \};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00055}\mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{00055}}\ Object.entries(\mbox{\hyperlink{a01276_a1ae3bc66b033d427f78d11973d595a36_a1ae3bc66b033d427f78d11973d595a36}{ctorMap}}).forEach(([name,\ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}])\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00056}00056\ \ \ module.exports[name]\ =\ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00057}00057\ \ \ \textcolor{comment}{//\ monkey-\/patch\ it\ to\ include\ name\ if\ debug\ is\ on}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00058}00058\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01276_af9f9bc02ac180e11593483139f527ec7_af9f9bc02ac180e11593483139f527ec7}{process}}.env.NODE\_DEBUG)\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.prototype.toPacket)\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ old\ =\ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.prototype.toPacket;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00061}00061\ \ \ \ \ \ \ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.prototype.toPacket\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ =\ old.call(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}.\_name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00065}00065\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00067}00067\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00068}00068\ \});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00070}00070\ \textcolor{comment}{//\ simple\ packets:}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00071}\mbox{\hyperlink{a01276_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{00071}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00776}{Packet}}\ =\ require(\textcolor{stringliteral}{'./packet'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00072}00072\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.Packet\ =\ \mbox{\hyperlink{a01276_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{Packet}};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00074}\mbox{\hyperlink{a00764}{00074}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00764}{OK}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00075}\mbox{\hyperlink{a00764_a7dc543eb67d8003baf29292a8dfc29cf_a7dc543eb67d8003baf29292a8dfc29cf}{00075}}\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a00764_a7dc543eb67d8003baf29292a8dfc29cf_a7dc543eb67d8003baf29292a8dfc29cf}{toPacket}}(args,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00076}00076\ \ \ \ \ args\ =\ args\ ||\ \{\};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{const}\ affectedRows\ =\ args.affectedRows\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{const}\ insertId\ =\ args.insertId\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{const}\ serverStatus\ =\ args.serverStatus\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{const}\ warningCount\ =\ args.warningCount\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{const}\ message\ =\ args.message\ ||\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ length\ =\ 9\ +\ \mbox{\hyperlink{a00776}{Packet}}.\mbox{\hyperlink{a00776_a56ec0e9de7157a43cbd3ddd5a407f0d7_a56ec0e9de7157a43cbd3ddd5a407f0d7}{lengthCodedNumberLength}}(affectedRows);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00084}00084\ \ \ \ \ length\ +=\ \mbox{\hyperlink{a00776}{Packet}}.\mbox{\hyperlink{a00776_a56ec0e9de7157a43cbd3ddd5a407f0d7_a56ec0e9de7157a43cbd3ddd5a407f0d7}{lengthCodedNumberLength}}(insertId);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{const}\ buffer\ =\ Buffer.allocUnsafe(length);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{const}\ packet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{Packet}}(0,\ buffer,\ 0,\ length);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00088}00088\ \ \ \ \ packet.offset\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00089}00089\ \ \ \ \ packet.writeInt8(0);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00090}00090\ \ \ \ \ packet.writeLengthCodedNumber(affectedRows);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00091}00091\ \ \ \ \ packet.writeLengthCodedNumber(insertId);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00092}00092\ \ \ \ \ packet.writeInt16(serverStatus);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00093}00093\ \ \ \ \ packet.writeInt16(warningCount);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00094}00094\ \ \ \ \ packet.writeString(message,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00095}00095\ \ \ \ \ packet.\_name\ =\ \textcolor{stringliteral}{'OK'};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{return}\ packet;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00097}00097\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00100}\mbox{\hyperlink{a01276_a23b340ffc7f8fd6eafa57820f4bb65aa_a23b340ffc7f8fd6eafa57820f4bb65aa}{00100}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.OK\ =\ \mbox{\hyperlink{a01276_a23b340ffc7f8fd6eafa57820f4bb65aa_a23b340ffc7f8fd6eafa57820f4bb65aa}{OK}};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00102}00102\ \textcolor{comment}{//\ warnings,\ statusFlags}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00103}\mbox{\hyperlink{a00768}{00103}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00768}{EOF}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00104}\mbox{\hyperlink{a00768_a4e365f57861d5822a6f588b81f2d8a79_a4e365f57861d5822a6f588b81f2d8a79}{00104}}\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a00768_a4e365f57861d5822a6f588b81f2d8a79_a4e365f57861d5822a6f588b81f2d8a79}{toPacket}}(warnings,\ statusFlags)\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ warnings\ ===\ \textcolor{stringliteral}{'undefined'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00106}00106\ \ \ \ \ \ \ warnings\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ statusFlags\ ===\ \textcolor{stringliteral}{'undefined'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00109}00109\ \ \ \ \ \ \ statusFlags\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{const}\ packet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{Packet}}(0,\ Buffer.allocUnsafe(9),\ 0,\ 9);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00112}00112\ \ \ \ \ packet.offset\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00113}00113\ \ \ \ \ packet.writeInt8(0xfe);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00114}00114\ \ \ \ \ packet.writeInt16(warnings);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00115}00115\ \ \ \ \ packet.writeInt16(statusFlags);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00116}00116\ \ \ \ \ packet.\_name\ =\ \textcolor{stringliteral}{'EOF'};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ packet;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00118}00118\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00121}\mbox{\hyperlink{a01276_a885dea70838250ab23ea77b74967b5a3_a885dea70838250ab23ea77b74967b5a3}{00121}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.EOF\ =\ \mbox{\hyperlink{a01276_a885dea70838250ab23ea77b74967b5a3_a885dea70838250ab23ea77b74967b5a3}{EOF}};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00123}\mbox{\hyperlink{a00772}{00123}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00772}{Error}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00124}\mbox{\hyperlink{a00772_aa42a3d824bcb56444e4ad2fb80f19738_aa42a3d824bcb56444e4ad2fb80f19738}{00124}}\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a00772_aa42a3d824bcb56444e4ad2fb80f19738_aa42a3d824bcb56444e4ad2fb80f19738}{toPacket}}(args,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{const}\ length\ =\ 13\ +\ Buffer.byteLength(args.message,\ \textcolor{stringliteral}{'utf8'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{const}\ packet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{Packet}}(0,\ Buffer.allocUnsafe(length),\ 0,\ length);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00127}00127\ \ \ \ \ packet.offset\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00128}00128\ \ \ \ \ packet.writeInt8(0xff);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00129}00129\ \ \ \ \ packet.writeInt16(args.code);}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00130}00130\ \ \ \ \ \textcolor{comment}{//\ TODO:\ sql\ state\ parameter}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00131}00131\ \ \ \ \ packet.writeString(\textcolor{stringliteral}{'\#\_\_\_\_\_'},\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00132}00132\ \ \ \ \ packet.writeString(args.message,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00133}00133\ \ \ \ \ packet.\_name\ =\ \textcolor{stringliteral}{'Error'};}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{return}\ packet;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00135}00135\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00137}\mbox{\hyperlink{a00772_ad5fc6caf33e0832eedc988a0f36fcc40_ad5fc6caf33e0832eedc988a0f36fcc40}{00137}}\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a00772_ad5fc6caf33e0832eedc988a0f36fcc40_ad5fc6caf33e0832eedc988a0f36fcc40}{fromPacket}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00138}00138\ \ \ \ \ packet.readInt8();\ \textcolor{comment}{//\ marker}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{const}\ code\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00140}00140\ \ \ \ \ packet.readString(1,\ \textcolor{stringliteral}{'ascii'});\ \textcolor{comment}{//\ sql\ state\ marker}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//\ The\ SQL\ state\ of\ the\ ERR\_Packet\ which\ is\ always\ 5\ bytes\ long.}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00142}00142\ \ \ \ \ \textcolor{comment}{//\ https://dev.mysql.com/doc/dev/mysql-\/server/8.0.11/page\_protocol\_basic\_dt\_strings.html\#sect\_protocol\_basic\_dt\_string\_fix}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00143}00143\ \ \ \ \ packet.readString(5,\ \textcolor{stringliteral}{'ascii'});\ \textcolor{comment}{//\ sql\ state\ (ignore\ for\ now)}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00144}00144\ \ \ \ \ \textcolor{keyword}{const}\ message\ =\ packet.readNullTerminatedString(\textcolor{stringliteral}{'utf8'});}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00145}00145\ \ \ \ \ \textcolor{keyword}{const}\ error\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}();}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00146}00146\ \ \ \ \ error.message\ =\ message;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00147}00147\ \ \ \ \ error.code\ =\ code;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{return}\ error;}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00149}00149\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{a01276_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{a01276_source_l00152}\mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{00152}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.Error\ =\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}};}
+
+\end{DoxyCode}

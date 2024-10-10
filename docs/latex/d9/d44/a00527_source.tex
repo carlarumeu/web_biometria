@@ -1,0 +1,243 @@
+\doxysubsection{Sql\+String.\+js}
+\hypertarget{a00527_source}{}\label{a00527_source}\index{SqlString.js@{SqlString.js}}
+\mbox{\hyperlink{a00527}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00001}\mbox{\hyperlink{a00527_ad576fe21a1c24d33fc6ce2676c217957_ad576fe21a1c24d33fc6ce2676c217957}{00001}}\ var\ \mbox{\hyperlink{a00527_ad576fe21a1c24d33fc6ce2676c217957_ad576fe21a1c24d33fc6ce2676c217957}{SqlString}}\ \ =\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}};}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00527_source_l00003}\mbox{\hyperlink{a00527_aaa82ad9f7f27ee6e15fc6efa53edc5e4_aaa82ad9f7f27ee6e15fc6efa53edc5e4}{00003}}\ var\ \mbox{\hyperlink{a00527_aaa82ad9f7f27ee6e15fc6efa53edc5e4_aaa82ad9f7f27ee6e15fc6efa53edc5e4}{ID\_GLOBAL\_REGEXP}}\ \ \ \ =\ /\`{}/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}};}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00004}\mbox{\hyperlink{a00527_a86f6bb38bc3cc5952f59cd525df9ab7a_a86f6bb38bc3cc5952f59cd525df9ab7a}{00004}}\ var\ \mbox{\hyperlink{a00527_a86f6bb38bc3cc5952f59cd525df9ab7a_a86f6bb38bc3cc5952f59cd525df9ab7a}{QUAL\_GLOBAL\_REGEXP}}\ \ =\ /\(\backslash\)./\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}};}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00005}00005\ var\ CHARS\_GLOBAL\_REGEXP\ =\ /[\(\backslash\)0\(\backslash\)b\(\backslash\)t\(\backslash\)n\(\backslash\)r\(\backslash\)x1a\(\backslash\)\textcolor{stringliteral}{"{}\(\backslash\)'\(\backslash\)\(\backslash\)]/g;\ //\ eslint-\/disable-\/line\ no-\/control-\/regex}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00006}00006\ \textcolor{stringliteral}{var\ CHARS\_ESCAPE\_MAP\ \ \ \ =\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00007}00007\ \textcolor{stringliteral}{\ \ '\(\backslash\)0'\ \ \ :\ '\(\backslash\)\(\backslash\)0',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00008}00008\ \textcolor{stringliteral}{\ \ '\(\backslash\)b'\ \ \ :\ '\(\backslash\)\(\backslash\)b',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00009}00009\ \textcolor{stringliteral}{\ \ '\(\backslash\)t'\ \ \ :\ '\(\backslash\)\(\backslash\)t',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00010}00010\ \textcolor{stringliteral}{\ \ '\(\backslash\)n'\ \ \ :\ '\(\backslash\)\(\backslash\)n',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00011}00011\ \textcolor{stringliteral}{\ \ '\(\backslash\)r'\ \ \ :\ '\(\backslash\)\(\backslash\)r',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00012}00012\ \textcolor{stringliteral}{\ \ '\(\backslash\)x1a'\ :\ '\(\backslash\)\(\backslash\)Z',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00013}00013\ \textcolor{stringliteral}{\ \ '"{}}\textcolor{stringliteral}{'\ \ \ \ :\ '}\(\backslash\)\(\backslash\)\textcolor{stringliteral}{"{}',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00014}00014\ \textcolor{stringliteral}{\ \ '\(\backslash\)''\ \ \ :\ '\(\backslash\)\(\backslash\)\(\backslash\)'',}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00015}00015\ \textcolor{stringliteral}{\ \ '\(\backslash\)\(\backslash\)'\ \ \ :\ '\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)'}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00016}00016\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00017}00017\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00018}00018\ \textcolor{stringliteral}{SqlString.escapeId\ =\ function\ escapeId(val,\ forbidQualified)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00019}00019\ \textcolor{stringliteral}{\ \ if\ (Array.isArray(val))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00020}00020\ \textcolor{stringliteral}{\ \ \ \ var\ sql\ =\ '';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00021}00021\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00022}00022\ \textcolor{stringliteral}{\ \ \ \ for\ (var\ i\ =\ 0;\ i\ <\ val.length;\ i++)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00023}00023\ \textcolor{stringliteral}{\ \ \ \ \ \ sql\ +=\ (i\ ===\ 0\ ?\ ''\ :\ ',\ ')\ +\ SqlString.escapeId(val[i],\ forbidQualified);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00024}00024\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00025}00025\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00026}00026\ \textcolor{stringliteral}{\ \ \ \ return\ sql;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00027}00027\ \textcolor{stringliteral}{\ \ \}\ else\ if\ (forbidQualified)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00028}00028\ \textcolor{stringliteral}{\ \ \ \ return\ '`'\ +\ String(val).replace(ID\_GLOBAL\_REGEXP,\ '``')\ +\ '`';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00029}00029\ \textcolor{stringliteral}{\ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00030}00030\ \textcolor{stringliteral}{\ \ \ \ return\ '`'\ +\ String(val).replace(ID\_GLOBAL\_REGEXP,\ '``').replace(QUAL\_GLOBAL\_REGEXP,\ '`.`')\ +\ '`';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00031}00031\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00032}00032\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00033}00033\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00034}00034\ \textcolor{stringliteral}{SqlString.escape\ =\ function\ escape(val,\ stringifyObjects,\ timeZone)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00035}00035\ \textcolor{stringliteral}{\ \ if\ (val\ ===\ undefined\ ||\ val\ ===\ null)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00036}00036\ \textcolor{stringliteral}{\ \ \ \ return\ 'NULL';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00037}00037\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00038}00038\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00039}00039\ \textcolor{stringliteral}{\ \ switch\ (typeof\ val)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00040}00040\ \textcolor{stringliteral}{\ \ \ \ case\ 'boolean':\ return\ (val)\ ?\ 'true'\ :\ 'false';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00041}00041\ \textcolor{stringliteral}{\ \ \ \ case\ 'number':\ return\ val\ +\ '';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00042}00042\ \textcolor{stringliteral}{\ \ \ \ case\ 'object':}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00043}00043\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (Object.prototype.toString.call(val)\ ===\ '[object\ Date]')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00044}00044\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ SqlString.dateToString(val,\ timeZone\ ||\ 'local');}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00045}00045\ \textcolor{stringliteral}{\ \ \ \ \ \ \}\ else\ if\ (Array.isArray(val))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00046}00046\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ SqlString.arrayToList(val,\ timeZone);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00047}00047\ \textcolor{stringliteral}{\ \ \ \ \ \ \}\ else\ if\ (Buffer.isBuffer(val))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00048}00048\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ SqlString.bufferToString(val);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00049}00049\ \textcolor{stringliteral}{\ \ \ \ \ \ \}\ else\ if\ (typeof\ val.toSqlString\ ===\ 'function')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00050}00050\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ String(val.toSqlString());}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00051}00051\ \textcolor{stringliteral}{\ \ \ \ \ \ \}\ else\ if\ (stringifyObjects)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00052}00052\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ escapeString(val.toString());}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00053}00053\ \textcolor{stringliteral}{\ \ \ \ \ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00054}00054\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ SqlString.objectToValues(val,\ timeZone);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00055}00055\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00056}00056\ \textcolor{stringliteral}{\ \ \ \ default:\ return\ escapeString(val);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00057}00057\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00058}00058\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00059}00059\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00060}00060\ \textcolor{stringliteral}{SqlString.arrayToList\ =\ function\ arrayToList(array,\ timeZone)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00061}00061\ \textcolor{stringliteral}{\ \ var\ sql\ =\ '';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00062}00062\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00063}00063\ \textcolor{stringliteral}{\ \ for\ (var\ i\ =\ 0;\ i\ <\ array.length;\ i++)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00064}00064\ \textcolor{stringliteral}{\ \ \ \ var\ val\ =\ array[i];}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00065}00065\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00066}00066\ \textcolor{stringliteral}{\ \ \ \ if\ (Array.isArray(val))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00067}00067\ \textcolor{stringliteral}{\ \ \ \ \ \ sql\ +=\ (i\ ===\ 0\ ?\ ''\ :\ ',\ ')\ +\ '('\ +\ SqlString.arrayToList(val,\ timeZone)\ +\ ')';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00068}00068\ \textcolor{stringliteral}{\ \ \ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00069}00069\ \textcolor{stringliteral}{\ \ \ \ \ \ sql\ +=\ (i\ ===\ 0\ ?\ ''\ :\ ',\ ')\ +\ SqlString.escape(val,\ true,\ timeZone);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00070}00070\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00071}00071\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00072}00072\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00073}00073\ \textcolor{stringliteral}{\ \ return\ sql;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00074}00074\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00075}00075\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00076}00076\ \textcolor{stringliteral}{SqlString.format\ =\ function\ format(sql,\ values,\ stringifyObjects,\ timeZone)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00077}00077\ \textcolor{stringliteral}{\ \ if\ (values\ ==\ null)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00078}00078\ \textcolor{stringliteral}{\ \ \ \ return\ sql;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00079}00079\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00080}00080\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00081}00081\ \textcolor{stringliteral}{\ \ if\ (!Array.isArray(values))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00082}00082\ \textcolor{stringliteral}{\ \ \ \ values\ =\ [values];}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00083}00083\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00084}00084\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00085}00085\ \textcolor{stringliteral}{\ \ var\ chunkIndex\ \ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00086}00086\ \textcolor{stringliteral}{\ \ var\ placeholdersRegex\ =\ /\(\backslash\)?+/g;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00087}00087\ \textcolor{stringliteral}{\ \ var\ result\ \ \ \ \ \ \ \ \ \ \ \ =\ '';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00088}00088\ \textcolor{stringliteral}{\ \ var\ valuesIndex\ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00089}00089\ \textcolor{stringliteral}{\ \ var\ match;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00090}00090\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00091}00091\ \textcolor{stringliteral}{\ \ while\ (valuesIndex\ <\ values.length\ \&\&\ (match\ =\ placeholdersRegex.exec(sql)))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00092}00092\ \textcolor{stringliteral}{\ \ \ \ var\ len\ =\ match[0].length;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00093}00093\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00094}00094\ \textcolor{stringliteral}{\ \ \ \ if\ (len\ >\ 2)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00095}00095\ \textcolor{stringliteral}{\ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00096}00096\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00097}00097\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00098}00098\ \textcolor{stringliteral}{\ \ \ \ var\ value\ =\ len\ ===\ 2}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00099}00099\ \textcolor{stringliteral}{\ \ \ \ \ \ ?\ SqlString.escapeId(values[valuesIndex])}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00100}00100\ \textcolor{stringliteral}{\ \ \ \ \ \ :\ SqlString.escape(values[valuesIndex],\ stringifyObjects,\ timeZone);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00101}00101\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00102}00102\ \textcolor{stringliteral}{\ \ \ \ result\ +=\ sql.slice(chunkIndex,\ match.index)\ +\ value;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00103}00103\ \textcolor{stringliteral}{\ \ \ \ chunkIndex\ =\ placeholdersRegex.lastIndex;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00104}00104\ \textcolor{stringliteral}{\ \ \ \ valuesIndex++;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00105}00105\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00106}00106\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00107}00107\ \textcolor{stringliteral}{\ \ if\ (chunkIndex\ ===\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00108}00108\ \textcolor{stringliteral}{\ \ \ \ //\ Nothing\ was\ replaced}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00109}00109\ \textcolor{stringliteral}{\ \ \ \ return\ sql;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00110}00110\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00111}00111\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00112}00112\ \textcolor{stringliteral}{\ \ if\ (chunkIndex\ <\ sql.length)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00113}00113\ \textcolor{stringliteral}{\ \ \ \ return\ result\ +\ sql.slice(chunkIndex);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00114}00114\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00115}00115\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00116}00116\ \textcolor{stringliteral}{\ \ return\ result;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00117}00117\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00118}00118\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00119}00119\ \textcolor{stringliteral}{SqlString.dateToString\ =\ function\ dateToString(date,\ timeZone)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00120}00120\ \textcolor{stringliteral}{\ \ var\ dt\ =\ new\ Date(date);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00121}00121\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00122}00122\ \textcolor{stringliteral}{\ \ if\ (isNaN(dt.getTime()))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00123}00123\ \textcolor{stringliteral}{\ \ \ \ return\ 'NULL';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00124}00124\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00125}00125\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00126}00126\ \textcolor{stringliteral}{\ \ var\ year;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00127}00127\ \textcolor{stringliteral}{\ \ var\ month;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00128}00128\ \textcolor{stringliteral}{\ \ var\ day;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00129}00129\ \textcolor{stringliteral}{\ \ var\ hour;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00130}00130\ \textcolor{stringliteral}{\ \ var\ minute;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00131}00131\ \textcolor{stringliteral}{\ \ var\ second;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00132}00132\ \textcolor{stringliteral}{\ \ var\ millisecond;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00133}00133\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00134}00134\ \textcolor{stringliteral}{\ \ if\ (timeZone\ ===\ 'local')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00135}00135\ \textcolor{stringliteral}{\ \ \ \ year\ \ \ \ \ \ \ \ =\ dt.getFullYear();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00136}00136\ \textcolor{stringliteral}{\ \ \ \ month\ \ \ \ \ \ \ =\ dt.getMonth()\ +\ 1;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00137}00137\ \textcolor{stringliteral}{\ \ \ \ day\ \ \ \ \ \ \ \ \ =\ dt.getDate();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00138}00138\ \textcolor{stringliteral}{\ \ \ \ hour\ \ \ \ \ \ \ \ =\ dt.getHours();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00139}00139\ \textcolor{stringliteral}{\ \ \ \ minute\ \ \ \ \ \ =\ dt.getMinutes();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00140}00140\ \textcolor{stringliteral}{\ \ \ \ second\ \ \ \ \ \ =\ dt.getSeconds();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00141}00141\ \textcolor{stringliteral}{\ \ \ \ millisecond\ =\ dt.getMilliseconds();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00142}00142\ \textcolor{stringliteral}{\ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00143}00143\ \textcolor{stringliteral}{\ \ \ \ var\ tz\ =\ convertTimezone(timeZone);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00144}00144\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00145}00145\ \textcolor{stringliteral}{\ \ \ \ if\ (tz\ !==\ false\ \&\&\ tz\ !==\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00146}00146\ \textcolor{stringliteral}{\ \ \ \ \ \ dt.setTime(dt.getTime()\ +\ (tz\ *\ 60000));}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00147}00147\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00148}00148\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00149}00149\ \textcolor{stringliteral}{\ \ \ \ year\ \ \ \ \ \ \ =\ dt.getUTCFullYear();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00150}00150\ \textcolor{stringliteral}{\ \ \ \ month\ \ \ \ \ \ \ =\ dt.getUTCMonth()\ +\ 1;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00151}00151\ \textcolor{stringliteral}{\ \ \ \ day\ \ \ \ \ \ \ \ \ =\ dt.getUTCDate();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00152}00152\ \textcolor{stringliteral}{\ \ \ \ hour\ \ \ \ \ \ \ \ =\ dt.getUTCHours();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00153}00153\ \textcolor{stringliteral}{\ \ \ \ minute\ \ \ \ \ \ =\ dt.getUTCMinutes();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00154}00154\ \textcolor{stringliteral}{\ \ \ \ second\ \ \ \ \ \ =\ dt.getUTCSeconds();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00155}00155\ \textcolor{stringliteral}{\ \ \ \ millisecond\ =\ dt.getUTCMilliseconds();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00156}00156\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00157}00157\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00158}00158\ \textcolor{stringliteral}{\ \ //\ YYYY-\/MM-\/DD\ HH:mm:ss.mmm}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00159}00159\ \textcolor{stringliteral}{\ \ var\ str\ =\ zeroPad(year,\ 4)\ +\ '-\/'\ +\ zeroPad(month,\ 2)\ +\ '-\/'\ +\ zeroPad(day,\ 2)\ +\ '\ '\ +}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00160}00160\ \textcolor{stringliteral}{\ \ \ \ zeroPad(hour,\ 2)\ +\ ':'\ +\ zeroPad(minute,\ 2)\ +\ ':'\ +\ zeroPad(second,\ 2)\ +\ '.'\ +}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00161}00161\ \textcolor{stringliteral}{\ \ \ \ zeroPad(millisecond,\ 3);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00162}00162\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00163}00163\ \textcolor{stringliteral}{\ \ return\ escapeString(str);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00164}00164\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00165}00165\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00166}00166\ \textcolor{stringliteral}{SqlString.bufferToString\ =\ function\ bufferToString(buffer)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00167}00167\ \textcolor{stringliteral}{\ \ return\ 'X'\ +\ escapeString(buffer.toString('hex'));}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00168}00168\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00169}00169\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00170}00170\ \textcolor{stringliteral}{SqlString.objectToValues\ =\ function\ objectToValues(object,\ timeZone)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00171}00171\ \textcolor{stringliteral}{\ \ var\ sql\ =\ '';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00172}00172\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00173}00173\ \textcolor{stringliteral}{\ \ for\ (var\ key\ in\ object)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00174}00174\ \textcolor{stringliteral}{\ \ \ \ var\ val\ =\ object[key];}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00175}00175\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00176}00176\ \textcolor{stringliteral}{\ \ \ \ if\ (typeof\ val\ ===\ 'function')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00177}00177\ \textcolor{stringliteral}{\ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00178}00178\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00179}00179\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00180}00180\ \textcolor{stringliteral}{\ \ \ \ sql\ +=\ (sql.length\ ===\ 0\ ?\ ''\ :\ ',\ ')\ +\ SqlString.escapeId(key)\ +\ '\ =\ '\ +\ SqlString.escape(val,\ true,\ timeZone);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00181}00181\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00182}00182\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00183}00183\ \textcolor{stringliteral}{\ \ return\ sql;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00184}00184\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00185}00185\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00186}00186\ \textcolor{stringliteral}{SqlString.raw\ =\ function\ raw(sql)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00187}00187\ \textcolor{stringliteral}{\ \ if\ (typeof\ sql\ !==\ 'string')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00188}00188\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('argument\ sql\ must\ be\ a\ string');}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00189}00189\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00190}00190\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00191}00191\ \textcolor{stringliteral}{\ \ return\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00192}00192\ \textcolor{stringliteral}{\ \ \ \ toSqlString:\ function\ toSqlString()\ \{\ return\ sql;\ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00193}00193\ \textcolor{stringliteral}{\ \ \};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00194}00194\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00195}00195\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00196}00196\ \textcolor{stringliteral}{function\ escapeString(val)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00197}00197\ \textcolor{stringliteral}{\ \ var\ chunkIndex\ =\ CHARS\_GLOBAL\_REGEXP.lastIndex\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00198}00198\ \textcolor{stringliteral}{\ \ var\ escapedVal\ =\ '';}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00199}00199\ \textcolor{stringliteral}{\ \ var\ match;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00200}00200\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00201}00201\ \textcolor{stringliteral}{\ \ while\ ((match\ =\ CHARS\_GLOBAL\_REGEXP.exec(val)))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00202}00202\ \textcolor{stringliteral}{\ \ \ \ escapedVal\ +=\ val.slice(chunkIndex,\ match.index)\ +\ CHARS\_ESCAPE\_MAP[match[0]];}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00203}00203\ \textcolor{stringliteral}{\ \ \ \ chunkIndex\ =\ CHARS\_GLOBAL\_REGEXP.lastIndex;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00204}00204\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00205}00205\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00206}00206\ \textcolor{stringliteral}{\ \ if\ (chunkIndex\ ===\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00207}00207\ \textcolor{stringliteral}{\ \ \ \ //\ Nothing\ was\ escaped}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00208}00208\ \textcolor{stringliteral}{\ \ \ \ return\ "{}}\textcolor{stringliteral}{'"{}\ +\ val\ +\ "{}'}\textcolor{stringliteral}{"{};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00209}00209\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00210}00210\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00211}00211\ \textcolor{stringliteral}{\ \ if\ (chunkIndex\ <\ val.length)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00212}00212\ \textcolor{stringliteral}{\ \ \ \ return\ "{}}\textcolor{stringliteral}{'"{}\ +\ escapedVal\ +\ val.slice(chunkIndex)\ +\ "{}'}\textcolor{stringliteral}{"{};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00213}00213\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00214}00214\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00215}00215\ \textcolor{stringliteral}{\ \ return\ "{}}\textcolor{stringliteral}{'"{}\ +\ escapedVal\ +\ "{}'}\textcolor{stringliteral}{"{};}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00216}00216\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00217}00217\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00218}00218\ \textcolor{stringliteral}{function\ zeroPad(number,\ length)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00219}00219\ \textcolor{stringliteral}{\ \ number\ =\ number.toString();}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00220}00220\ \textcolor{stringliteral}{\ \ while\ (number.length\ <\ length)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00221}00221\ \textcolor{stringliteral}{\ \ \ \ number\ =\ '0'\ +\ number;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00222}00222\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00223}00223\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00224}00224\ \textcolor{stringliteral}{\ \ return\ number;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00225}00225\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00226}00226\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00227}00227\ \textcolor{stringliteral}{function\ convertTimezone(tz)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00228}00228\ \textcolor{stringliteral}{\ \ if\ (tz\ ===\ 'Z')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00229}00229\ \textcolor{stringliteral}{\ \ \ \ return\ 0;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00230}00230\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00231}00231\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00232}00232\ \textcolor{stringliteral}{\ \ var\ m\ =\ tz.match(/([\(\backslash\)+\(\backslash\)-\/\(\backslash\)s])(\(\backslash\)d\(\backslash\)d):?(\(\backslash\)d\(\backslash\)d)?/);}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00233}00233\ \textcolor{stringliteral}{\ \ if\ (m)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00234}00234\ \textcolor{stringliteral}{\ \ \ \ return\ (m[1]\ ===\ '-\/'\ ?\ -\/1\ :\ 1)\ *\ (parseInt(m[2],\ 10)\ +\ ((m[3]\ ?\ parseInt(m[3],\ 10)\ :\ 0)\ /\ 60))\ *\ 60;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00235}00235\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00236}00236\ \textcolor{stringliteral}{\ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{a00527_source_l00237}00237\ \textcolor{stringliteral}{\}}}
+
+\end{DoxyCode}

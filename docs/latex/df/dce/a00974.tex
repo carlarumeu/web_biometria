@@ -1,0 +1,72 @@
+\doxysection{seq-\/queue -\/ queue to keep request process in sequence}
+\hypertarget{a00974}{}\label{a00974}\index{seq-\/queue -\/ queue to keep request process in sequence@{seq-\/queue -\/ queue to keep request process in sequence}}
+Seq-\/queue is simple tool to keep requests to be executed in order.
+
+As we known, Node.\+js codes run in asynchronous mode and the callbacks are unordered. But sometimes we may need the requests to be processed in order. For example, in a game, a player would do some operations such as turn right and go ahead. And in the server side, we would like to process these requests one by one, not do them all at the same time.
+
+Seq-\/queue takes the responsibility to make the asynchronous, unordered processing flow into serial and ordered. It\textquotesingle{}s simple but not a repeated wheel.
+
+Seq-\/queue is a FIFO task queue and we can push tasks as we wish, anytime(before the queue closed), anywhere(if we hold the queue instance). \doxylink{a00844}{A} task is known as a function and we can do anything in the function and just need to call {\ttfamily task.\+done()} to tell the queue current task has finished. It promises that a task in queue would not be executed util all tasks before it finished.
+
+Seq-\/queue add timeout for each task execution. If a task throws an uncaught exception in its call back or a developer forgets to call {\ttfamily task.\+done()} callback, queue would be blocked and would not execute the left tasks. To avoid these situations, seq-\/queue set a timeout for each task. If a task timeout, queue would drop the task and notify develop by a \textquotesingle{}timeout\textquotesingle{} event and then invoke the next task. Any {\ttfamily task.\+done()} invoked in a timeout task would be ignored.
+
+
+\begin{DoxyItemize}
+\item Tags\+: node.\+js
+\end{DoxyItemize}\hypertarget{a00974_autotoc_md2266}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00974_autotoc_md2266}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ seq-\/queue}
+
+\end{DoxyCode}
+\hypertarget{a00974_autotoc_md2267}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00974_autotoc_md2267}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ javascript}
+\DoxyCodeLine{var\ seqqueue\ =\ require('seq-\/queue');}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ queue\ =\ seqqueue.createQueue(1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{queue.push(}
+\DoxyCodeLine{\ \ function(task)\ \{}
+\DoxyCodeLine{\ \ \ \ setTimeout(function()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ console.log('hello\ ');}
+\DoxyCodeLine{\ \ \ \ \ \ task.done();}
+\DoxyCodeLine{\ \ \ \ \},\ 500);}
+\DoxyCodeLine{\ \ \},\ }
+\DoxyCodeLine{\ \ function()\ \{}
+\DoxyCodeLine{\ \ \ \ console.log('task\ timeout');}
+\DoxyCodeLine{\ \ \},\ }
+\DoxyCodeLine{\ \ 1000}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{queue.push(}
+\DoxyCodeLine{\ \ function(task)\ \{}
+\DoxyCodeLine{\ \ \ \ setTimeout(function()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ console.log('world\string~');}
+\DoxyCodeLine{\ \ \ \ \ \ task.done();}
+\DoxyCodeLine{\ \ \ \ \},\ 500);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{a00974_autotoc_md2268}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00974_autotoc_md2268}
+\hypertarget{a00974_autotoc_md2269}{}\doxysubsubsection{\texorpdfstring{seqqueue.\+create\+Queue(timeout)}{seqqueue.\+create\+Queue(timeout)}}\label{a00974_autotoc_md2269}
+Create a new queue instance. \doxylink{a00844}{A} global timeout value in ms for the new instance can be set by {\ttfamily timeout} parameter or use the default timeout (3s) by no parameter.\hypertarget{a00974_autotoc_md2270}{}\doxysubsubsection{\texorpdfstring{queue.\+push(fn, ontimeout, timeout)}{queue.\+push(fn, ontimeout, timeout)}}\label{a00974_autotoc_md2270}
+Add a task into the queue instance. \hypertarget{a00974_autotoc_md2271}{}\doxysubsubsubsection{\texorpdfstring{Arguments}{Arguments}}\label{a00974_autotoc_md2271}
+
+\begin{DoxyItemize}
+\item \doxylink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn(task)} -\/ The function that describes the content of task and would be invoke by queue. {\ttfamily fn} takes a arguemnt task and we {\itshape must} call task.\+done() to tell queue current task has finished.
+\item ontimeout() -\/ Callback for task timeout.
+\item timeout -\/ Timeout in ms for {\ttfamily fn}. If specified, it would overwrite the global timeout that set by {\ttfamily create\+Queue} for {\ttfamily fn}.
+\end{DoxyItemize}\hypertarget{a00974_autotoc_md2272}{}\doxysubsubsection{\texorpdfstring{queue.\+close(force)}{queue.\+close(force)}}\label{a00974_autotoc_md2272}
+Close the queue. \doxylink{a00844}{A} closed queue would stop receiving new task immediately. And the left tasks would be treated in different ways decided by {\ttfamily force}. \hypertarget{a00974_autotoc_md2273}{}\doxysubsubsubsection{\texorpdfstring{Arguments}{Arguments}}\label{a00974_autotoc_md2273}
+
+\begin{DoxyItemize}
+\item force -\/ If true, queue would stop working immediately and ignore any tasks left in queue. Otherwise queue would execute the tasks in queue and then stop.
+\end{DoxyItemize}\hypertarget{a00974_autotoc_md2274}{}\doxysubsection{\texorpdfstring{Event}{Event}}\label{a00974_autotoc_md2274}
+Seq-\/queue instances extend the Event\+Emitter and would emit events in their life cycles. \hypertarget{a00974_autotoc_md2275}{}\doxysubsubsection{\texorpdfstring{\textquotesingle{}timeout\textquotesingle{}(totask)}{\textquotesingle{}timeout\textquotesingle{}(totask)}}\label{a00974_autotoc_md2275}
+If current task not invoke task.\+done() within the timeout ms, a timeout event would be emit. totask.\+fn and totask.\+timeout is the {\ttfamily fn} and {\ttfamily timeout} arguments that passed by {\ttfamily queue.\+push(2)}. \hypertarget{a00974_autotoc_md2276}{}\doxysubsubsection{\texorpdfstring{\textquotesingle{}error\textquotesingle{}(err, task)}{\textquotesingle{}error\textquotesingle{}(err, task)}}\label{a00974_autotoc_md2276}
+If the task function (not callbacks) throws an uncaught error, queue would emit an error event and passes the err and task informations by event callback arguments. \hypertarget{a00974_autotoc_md2277}{}\doxysubsubsection{\texorpdfstring{\textquotesingle{}closed\textquotesingle{}}{\textquotesingle{}closed\textquotesingle{}}}\label{a00974_autotoc_md2277}
+Emit when the \doxylink{a00518_ae3d44bd7a98cd613dafac36e16d4f504_ae3d44bd7a98cd613dafac36e16d4f504}{close(false)} is invoked. \hypertarget{a00974_autotoc_md2278}{}\doxysubsubsection{\texorpdfstring{\textquotesingle{}drained\textquotesingle{}}{\textquotesingle{}drained\textquotesingle{}}}\label{a00974_autotoc_md2278}
+Emit when \doxylink{a00518_ae3d44bd7a98cd613dafac36e16d4f504_ae3d44bd7a98cd613dafac36e16d4f504}{close(true)} is invoked or all tasks left have finished in closed status. 

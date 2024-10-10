@@ -1,0 +1,30 @@
+\doxysubsection{validation.\+js}
+\hypertarget{a00641_source}{}\label{a00641_source}\index{validation.js@{validation.js}}
+\mbox{\hyperlink{a00641}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00001}00001\ \textcolor{comment}{//\ src/utils/validation.js}}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00028}\mbox{\hyperlink{a00641_a647fe95991d7b1f56f8561600593cfa6_a647fe95991d7b1f56f8561600593cfa6}{00028}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00641_a647fe95991d7b1f56f8561600593cfa6_a647fe95991d7b1f56f8561600593cfa6}{validarMedicion}}\ =\ (medicion)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ medida\ !==\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'La\ medida\ debe\ ser\ un\ número'});}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ lugar\ !==\ \textcolor{stringliteral}{'string'}\ ||\ lugar.trim()\ ===\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'El\ lugar\ debe\ ser\ una\ cadena\ de\ texto\ no\ vacía'});}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ tipo\_gas\ !==\ \textcolor{stringliteral}{'string'}\ ||\ tipo\_gas.trim()\ ===\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'El\ tipo\_gas\ debe\ ser\ una\ cadena\ de\ texto\ no\ vacía'});}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (isNaN(Date.parse(hora)))\ \{}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'La\ hora\ debe\ ser\ una\ fecha\ válida\ en\ formato\ ISO\ 8601'});}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00046}00046\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a00641_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00641_source_l00048}00048\ \};}
+
+\end{DoxyCode}

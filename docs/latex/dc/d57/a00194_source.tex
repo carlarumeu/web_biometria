@@ -1,0 +1,33 @@
+\doxysubsection{inherits\+\_\+browser.\+js}
+\hypertarget{a00194_source}{}\label{a00194_source}\index{inherits\_browser.js@{inherits\_browser.js}}
+\mbox{\hyperlink{a00194}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00001}\mbox{\hyperlink{a00194_ade98a3ce1567c6269eb63fd80973019b_ade98a3ce1567c6269eb63fd80973019b}{00001}}\ \textcolor{keywordflow}{if}\ (typeof\ Object.create\ ===\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00002}00002\ \ \ \textcolor{comment}{//\ implementation\ from\ standard\ node.js\ 'util'\ module}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00003}00003\ \ \ module.exports\ =\ \textcolor{keyword}{function}\ inherits(\mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}},\ superCtor)\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (superCtor)\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00005}00005\ \ \ \ \ \ \ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.super\_\ =\ superCtor}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00006}00006\ \ \ \ \ \ \ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.prototype\ =\ Object.create(superCtor.prototype,\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00007}00007\ \ \ \ \ \ \ \ \ constructor:\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00008}00008\ \ \ \ \ \ \ \ \ \ \ value:\ ctor,}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ enumerable:\ false,}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ writable:\ true,}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ configurable:\ true}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00012}00012\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00013}00013\ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00015}00015\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00016}00016\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00017}00017\ \ \ \textcolor{comment}{//\ old\ school\ shim\ for\ old\ browsers}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00018}00018\ \ \ module.exports\ =\ \textcolor{keyword}{function}\ inherits(\mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}},\ superCtor)\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (superCtor)\ \{}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00020}00020\ \ \ \ \ \ \ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.super\_\ =\ superCtor}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00021}00021\ \ \ \ \ \ \ var\ TempCtor\ =\ \textcolor{keyword}{function}\ ()\ \{\}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00022}00022\ \ \ \ \ \ \ TempCtor.prototype\ =\ superCtor.prototype}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00023}00023\ \ \ \ \ \ \ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.prototype\ =\ \textcolor{keyword}{new}\ TempCtor()}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00024}00024\ \ \ \ \ \ \ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}.\mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}}.constructor\ =\ \mbox{\hyperlink{a01276_ad04db492527549bf4d1b8810b1e8e280_ad04db492527549bf4d1b8810b1e8e280}{ctor}}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00026}00026\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00194_source_l00027}00027\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,85 @@
+\doxysection{mime-\/types}
+\hypertarget{a00935}{}\label{a00935}\index{mime-\/types@{mime-\/types}}
+\label{a00935_autotoc_md1585}%
+\Hypertarget{a00935_autotoc_md1585}%
+
+
+\href{https://npmjs.org/package/mime-types}{\texttt{ }} \href{https://npmjs.org/package/mime-types}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://github.com/jshttp/mime-types/actions/workflows/ci.yml}{\texttt{ }} \href{https://coveralls.io/r/jshttp/mime-types?branch=master}{\texttt{ }}
+
+The ultimate javascript content-\/type utility.
+
+Similar to \href{https://www.npmjs.com/package/mime}{\texttt{ the {\ttfamily mime@1.\+x} module}}, except\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{No fallbacks.}} Instead of naively returning the first available type, {\ttfamily mime-\/types} simply returns {\ttfamily false}, so do `var type = mime.\+lookup(\textquotesingle{}unrecognized') \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} \textquotesingle{}application/octet-\/stream\textquotesingle{}{\ttfamily .}
+\item {\ttfamily No}new \doxylink{a00212_a2565597ae61f531186dd403d21b4a708_a2565597ae61f531186dd403d21b4a708}{Mime()}{\ttfamily business, so you could do}var lookup = require(\textquotesingle{}mime-\/types\textquotesingle{}).lookup{\ttfamily .}
+\item {\ttfamily No}.\doxylink{a00212_a14947f326ebc4da17b5d55921c25e9fb_a14947f326ebc4da17b5d55921c25e9fb}{define()}{\ttfamily functionality}
+\item {\ttfamily Bug fixes for}.lookup(path)\`{}
+\end{DoxyItemize}
+
+Otherwise, the API is compatible with {\ttfamily mime} 1.\+x.\hypertarget{a00935_autotoc_md1586}{}\doxysubsection{\texorpdfstring{Install}{Install}}\label{a00935_autotoc_md1586}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ mime-\/types}
+
+\end{DoxyCode}
+\hypertarget{a00935_autotoc_md1587}{}\doxysubsection{\texorpdfstring{Adding Types}{Adding Types}}\label{a00935_autotoc_md1587}
+All mime types are based on \href{https://www.npmjs.com/package/mime-db}{\texttt{ mime-\/db}}, so open a PR there if you\textquotesingle{}d like to add mime types.\hypertarget{a00935_autotoc_md1588}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00935_autotoc_md1588}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}\ =\ require(\textcolor{stringliteral}{'mime-\/types'})}
+
+\end{DoxyCode}
+
+
+All functions return {\ttfamily false} if input is invalid or not found.\hypertarget{a00935_autotoc_md1589}{}\doxysubsubsection{\texorpdfstring{mime.\+lookup(path)}{mime.\+lookup(path)}}\label{a00935_autotoc_md1589}
+Lookup the content-\/type associated with a file.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\textcolor{stringliteral}{'json'})\ \textcolor{comment}{//\ 'application/json'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\textcolor{stringliteral}{'.md'})\ \textcolor{comment}{//\ 'text/markdown'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\textcolor{stringliteral}{'file.html'})\ \textcolor{comment}{//\ 'text/html'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\textcolor{stringliteral}{'folder/file.js'})\ \textcolor{comment}{//\ 'application/javascript'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\textcolor{stringliteral}{'folder/.htaccess'})\ \textcolor{comment}{//\ false}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\textcolor{stringliteral}{'cats'})\ \textcolor{comment}{//\ false}}
+
+\end{DoxyCode}
+\hypertarget{a00935_autotoc_md1590}{}\doxysubsubsection{\texorpdfstring{mime.\+content\+Type(type)}{mime.\+content\+Type(type)}}\label{a00935_autotoc_md1590}
+Create a full content-\/type header given a content-\/type or extension. When given an extension, {\ttfamily mime.\+lookup} is used to get the matching content-\/type, otherwise the given content-\/type is used. Then if the content-\/type does not already have a {\ttfamily charset} parameter, {\ttfamily mime.\+charset} is used to get the default charset and add to the returned content-\/type.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.contentType(\textcolor{stringliteral}{'markdown'})\ \textcolor{comment}{//\ 'text/x-\/markdown;\ charset=utf-\/8'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.contentType(\textcolor{stringliteral}{'file.json'})\ \textcolor{comment}{//\ 'application/json;\ charset=utf-\/8'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.contentType(\textcolor{stringliteral}{'text/html'})\ \textcolor{comment}{//\ 'text/html;\ charset=utf-\/8'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.contentType(\textcolor{stringliteral}{'text/html;\ charset=iso-\/8859-\/1'})\ \textcolor{comment}{//\ 'text/html;\ charset=iso-\/8859-\/1'}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ from\ a\ full\ path}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.contentType(path.extname(\textcolor{stringliteral}{'/path/to/file.json'}))\ \textcolor{comment}{//\ 'application/json;\ charset=utf-\/8'}}
+
+\end{DoxyCode}
+\hypertarget{a00935_autotoc_md1591}{}\doxysubsubsection{\texorpdfstring{mime.\+extension(type)}{mime.\+extension(type)}}\label{a00935_autotoc_md1591}
+Get the default extension for a content-\/type.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.extension(\textcolor{stringliteral}{'application/octet-\/stream'})\ \textcolor{comment}{//\ 'bin'}}
+
+\end{DoxyCode}
+\hypertarget{a00935_autotoc_md1592}{}\doxysubsubsection{\texorpdfstring{mime.\+charset(type)}{mime.\+charset(type)}}\label{a00935_autotoc_md1592}
+Lookup the implied default charset of a content-\/type.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.charset(\textcolor{stringliteral}{'text/markdown'})\ \textcolor{comment}{//\ 'UTF-\/8'}}
+
+\end{DoxyCode}
+\hypertarget{a00935_autotoc_md1593}{}\doxysubsubsection{\texorpdfstring{var type = mime.\+types\mbox{[}extension\mbox{]}}{var type = mime.\+types\mbox{[}extension\mbox{]}}}\label{a00935_autotoc_md1593}
+\doxylink{a00844}{A} map of content-\/types by extension.\hypertarget{a00935_autotoc_md1594}{}\doxysubsubsection{\texorpdfstring{\mbox{[}extensions...\mbox{]} = mime.\+extensions\mbox{[}type\mbox{]}}{\mbox{[}extensions...\mbox{]} = mime.\+extensions\mbox{[}type\mbox{]}}}\label{a00935_autotoc_md1594}
+\doxylink{a00844}{A} map of extensions by content-\/type.\hypertarget{a00935_autotoc_md1595}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00935_autotoc_md1595}
+\mbox{[}MIT\mbox{]}(LICENSE) 

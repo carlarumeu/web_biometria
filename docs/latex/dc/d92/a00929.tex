@@ -1,0 +1,32 @@
+\doxysection{merge-\/descriptors}
+\hypertarget{a00929}{}\label{a00929}\index{merge-\/descriptors@{merge-\/descriptors}}
+\label{a00929_autotoc_md1449}%
+\Hypertarget{a00929_autotoc_md1449}%
+
+
+\href{https://npmjs.org/package/merge-descriptors}{\texttt{ }} \href{https://npmjs.org/package/merge-descriptors}{\texttt{ }} \href{https://travis-ci.org/component/merge-descriptors}{\texttt{ }} \href{https://coveralls.io/r/component/merge-descriptors?branch=master}{\texttt{ }}
+
+Merge objects using descriptors.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ thing\ =\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{get}\ name()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{'jon'}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ animal\ =\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}(animal,\ thing)}
+\DoxyCodeLine{}
+\DoxyCodeLine{animal.name\ ===\ \textcolor{stringliteral}{'jon'}}
+
+\end{DoxyCode}
+\hypertarget{a00929_autotoc_md1450}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00929_autotoc_md1450}
+\hypertarget{a00929_autotoc_md1451}{}\doxysubsubsection{\texorpdfstring{merge(destination, source)}{merge(destination, source)}}\label{a00929_autotoc_md1451}
+Redefines {\ttfamily destination}\textquotesingle{}s descriptors with {\ttfamily source}\textquotesingle{}s. The return value is the {\ttfamily destination} object.\hypertarget{a00929_autotoc_md1452}{}\doxysubsubsection{\texorpdfstring{merge(destination, source, false)}{merge(destination, source, false)}}\label{a00929_autotoc_md1452}
+Defines {\ttfamily source}\textquotesingle{}s descriptors on {\ttfamily destination} if {\ttfamily destination} does not have a descriptor by the same name. The return value is the {\ttfamily destination} object.\hypertarget{a00929_autotoc_md1453}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00929_autotoc_md1453}
+\mbox{[}MIT\mbox{]}(LICENSE) 

@@ -1,0 +1,208 @@
+\doxysubsection{Referencia del archivo server\+\_\+status.\+js}
+\hypertarget{a00311}{}\label{a00311}\index{server\_status.js@{server\_status.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00311_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_afbac9b89d04e44110804b5ffe0aed83c_afbac9b89d04e44110804b5ffe0aed83c}{SERVER\+\_\+\+STATUS\+\_\+\+IN\+\_\+\+TRANS}} = 1
+\begin{DoxyCompactList}\small\item\em Is raised when a multi-\/statement transaction has been started, either explicitly, by means of BEGIN or COMMIT AND CHAIN, or implicitly, by the first transactional statement, when autocommit=off. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_ae085342c6ef848f73572fa403c8205f2_ae085342c6ef848f73572fa403c8205f2}{SERVER\+\_\+\+STATUS\+\_\+\+AUTOCOMMIT}} = 2
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a5cff44c2f08fee33430d2e12684bbe8b_a5cff44c2f08fee33430d2e12684bbe8b}{SERVER\+\_\+\+MORE\+\_\+\+RESULTS\+\_\+\+EXISTS}} = 8
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a0b24bd782d70f18c7a3b8758d7bacc09_a0b24bd782d70f18c7a3b8758d7bacc09}{SERVER\+\_\+\+QUERY\+\_\+\+NO\+\_\+\+GOOD\+\_\+\+INDEX\+\_\+\+USED}} = 16
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a0164d3ae48f2beafaac7fa91a45c0a46_a0164d3ae48f2beafaac7fa91a45c0a46}{SERVER\+\_\+\+QUERY\+\_\+\+NO\+\_\+\+INDEX\+\_\+\+USED}} = 32
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a095ef5695a5c97166a756b691110206d_a095ef5695a5c97166a756b691110206d}{SERVER\+\_\+\+STATUS\+\_\+\+CURSOR\+\_\+\+EXISTS}} = 64
+\begin{DoxyCompactList}\small\item\em The server was able to fulfill the clients request and opened a read-\/only non-\/scrollable cursor for a query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a48c7bade6f6bbc6332f8cf2c3ed239d3_a48c7bade6f6bbc6332f8cf2c3ed239d3}{SERVER\+\_\+\+STATUS\+\_\+\+LAST\+\_\+\+ROW\+\_\+\+SENT}} = 128
+\begin{DoxyCompactList}\small\item\em This flag is sent when a read-\/only cursor is exhausted, in reply to COM\+\_\+\+STMT\+\_\+\+FETCH command. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a257d1258fb8029949025f283a413c6f7_a257d1258fb8029949025f283a413c6f7}{SERVER\+\_\+\+STATUS\+\_\+\+DB\+\_\+\+DROPPED}} = 256
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_a51bee2da0116c86440cc3e95eed41fbf_a51bee2da0116c86440cc3e95eed41fbf}{SERVER\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+BACKSLASH\+\_\+\+ESCAPES}} = 512
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_aa1a905538e9b43e7e7747d2aadd1fc7c_aa1a905538e9b43e7e7747d2aadd1fc7c}{SERVER\+\_\+\+STATUS\+\_\+\+METADATA\+\_\+\+CHANGED}} = 1024
+\begin{DoxyCompactList}\small\item\em Sent to the client if after a prepared statement reprepare we discovered that the new statement returns a different number of result set columns. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_ab130f56e6a2fd9659e776eb3a9a3c311_ab130f56e6a2fd9659e776eb3a9a3c311}{SERVER\+\_\+\+QUERY\+\_\+\+WAS\+\_\+\+SLOW}} = 2048
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_ac8f285b912b3628307f9d8613c8dbcb6_ac8f285b912b3628307f9d8613c8dbcb6}{SERVER\+\_\+\+PS\+\_\+\+OUT\+\_\+\+PARAMS}} = 4096
+\begin{DoxyCompactList}\small\item\em To mark Result\+Set containing output parameter values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_aaa462ff01156d90e214674b1dd0e27d8_aaa462ff01156d90e214674b1dd0e27d8}{SERVER\+\_\+\+STATUS\+\_\+\+IN\+\_\+\+TRANS\+\_\+\+READONLY}} = 0x2000
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00311_ac4a97fbd9b33ec304283620c5a9466e3_ac4a97fbd9b33ec304283620c5a9466e3}{SERVER\+\_\+\+SESSION\+\_\+\+STATE\+\_\+\+CHANGED}} = 0x4000
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00311_a5cff44c2f08fee33430d2e12684bbe8b_a5cff44c2f08fee33430d2e12684bbe8b}\index{server\_status.js@{server\_status.js}!SERVER\_MORE\_RESULTS\_EXISTS@{SERVER\_MORE\_RESULTS\_EXISTS}}
+\index{SERVER\_MORE\_RESULTS\_EXISTS@{SERVER\_MORE\_RESULTS\_EXISTS}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_MORE\_RESULTS\_EXISTS}{SERVER\_MORE\_RESULTS\_EXISTS}}
+{\footnotesize\ttfamily \label{a00311_a5cff44c2f08fee33430d2e12684bbe8b_a5cff44c2f08fee33430d2e12684bbe8b} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+MORE\+\_\+\+RESULTS\+\_\+\+EXISTS = 8}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00014}{14}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_ac8f285b912b3628307f9d8613c8dbcb6_ac8f285b912b3628307f9d8613c8dbcb6}\index{server\_status.js@{server\_status.js}!SERVER\_PS\_OUT\_PARAMS@{SERVER\_PS\_OUT\_PARAMS}}
+\index{SERVER\_PS\_OUT\_PARAMS@{SERVER\_PS\_OUT\_PARAMS}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_PS\_OUT\_PARAMS}{SERVER\_PS\_OUT\_PARAMS}}
+{\footnotesize\ttfamily \label{a00311_ac8f285b912b3628307f9d8613c8dbcb6_ac8f285b912b3628307f9d8613c8dbcb6} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+PS\+\_\+\+OUT\+\_\+\+PARAMS = 4096}
+
+
+
+To mark Result\+Set containing output parameter values. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00041}{41}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_a0b24bd782d70f18c7a3b8758d7bacc09_a0b24bd782d70f18c7a3b8758d7bacc09}\index{server\_status.js@{server\_status.js}!SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED@{SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED}}
+\index{SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED@{SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED}{SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED}}
+{\footnotesize\ttfamily \label{a00311_a0b24bd782d70f18c7a3b8758d7bacc09_a0b24bd782d70f18c7a3b8758d7bacc09} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+QUERY\+\_\+\+NO\+\_\+\+GOOD\+\_\+\+INDEX\+\_\+\+USED = 16}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00015}{15}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_a0164d3ae48f2beafaac7fa91a45c0a46_a0164d3ae48f2beafaac7fa91a45c0a46}\index{server\_status.js@{server\_status.js}!SERVER\_QUERY\_NO\_INDEX\_USED@{SERVER\_QUERY\_NO\_INDEX\_USED}}
+\index{SERVER\_QUERY\_NO\_INDEX\_USED@{SERVER\_QUERY\_NO\_INDEX\_USED}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_QUERY\_NO\_INDEX\_USED}{SERVER\_QUERY\_NO\_INDEX\_USED}}
+{\footnotesize\ttfamily \label{a00311_a0164d3ae48f2beafaac7fa91a45c0a46_a0164d3ae48f2beafaac7fa91a45c0a46} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+QUERY\+\_\+\+NO\+\_\+\+INDEX\+\_\+\+USED = 32}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00016}{16}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_ab130f56e6a2fd9659e776eb3a9a3c311_ab130f56e6a2fd9659e776eb3a9a3c311}\index{server\_status.js@{server\_status.js}!SERVER\_QUERY\_WAS\_SLOW@{SERVER\_QUERY\_WAS\_SLOW}}
+\index{SERVER\_QUERY\_WAS\_SLOW@{SERVER\_QUERY\_WAS\_SLOW}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_QUERY\_WAS\_SLOW}{SERVER\_QUERY\_WAS\_SLOW}}
+{\footnotesize\ttfamily \label{a00311_ab130f56e6a2fd9659e776eb3a9a3c311_ab130f56e6a2fd9659e776eb3a9a3c311} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+QUERY\+\_\+\+WAS\+\_\+\+SLOW = 2048}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00036}{36}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_ac4a97fbd9b33ec304283620c5a9466e3_ac4a97fbd9b33ec304283620c5a9466e3}\index{server\_status.js@{server\_status.js}!SERVER\_SESSION\_STATE\_CHANGED@{SERVER\_SESSION\_STATE\_CHANGED}}
+\index{SERVER\_SESSION\_STATE\_CHANGED@{SERVER\_SESSION\_STATE\_CHANGED}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_SESSION\_STATE\_CHANGED}{SERVER\_SESSION\_STATE\_CHANGED}}
+{\footnotesize\ttfamily \label{a00311_ac4a97fbd9b33ec304283620c5a9466e3_ac4a97fbd9b33ec304283620c5a9466e3} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+SESSION\+\_\+\+STATE\+\_\+\+CHANGED = 0x4000}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00044}{44}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_ae085342c6ef848f73572fa403c8205f2_ae085342c6ef848f73572fa403c8205f2}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_AUTOCOMMIT@{SERVER\_STATUS\_AUTOCOMMIT}}
+\index{SERVER\_STATUS\_AUTOCOMMIT@{SERVER\_STATUS\_AUTOCOMMIT}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_AUTOCOMMIT}{SERVER\_STATUS\_AUTOCOMMIT}}
+{\footnotesize\ttfamily \label{a00311_ae085342c6ef848f73572fa403c8205f2_ae085342c6ef848f73572fa403c8205f2} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+AUTOCOMMIT = 2}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00013}{13}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_a095ef5695a5c97166a756b691110206d_a095ef5695a5c97166a756b691110206d}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_CURSOR\_EXISTS@{SERVER\_STATUS\_CURSOR\_EXISTS}}
+\index{SERVER\_STATUS\_CURSOR\_EXISTS@{SERVER\_STATUS\_CURSOR\_EXISTS}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_CURSOR\_EXISTS}{SERVER\_STATUS\_CURSOR\_EXISTS}}
+{\footnotesize\ttfamily \label{a00311_a095ef5695a5c97166a756b691110206d_a095ef5695a5c97166a756b691110206d} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+CURSOR\+\_\+\+EXISTS = 64}
+
+
+
+The server was able to fulfill the clients request and opened a read-\/only non-\/scrollable cursor for a query. 
+
+This flag comes in reply to COM\+\_\+\+STMT\+\_\+\+EXECUTE and COM\+\_\+\+STMT\+\_\+\+FETCH commands. 
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00022}{22}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_a257d1258fb8029949025f283a413c6f7_a257d1258fb8029949025f283a413c6f7}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_DB\_DROPPED@{SERVER\_STATUS\_DB\_DROPPED}}
+\index{SERVER\_STATUS\_DB\_DROPPED@{SERVER\_STATUS\_DB\_DROPPED}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_DB\_DROPPED}{SERVER\_STATUS\_DB\_DROPPED}}
+{\footnotesize\ttfamily \label{a00311_a257d1258fb8029949025f283a413c6f7_a257d1258fb8029949025f283a413c6f7} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+DB\+\_\+\+DROPPED = 256}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00028}{28}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_afbac9b89d04e44110804b5ffe0aed83c_afbac9b89d04e44110804b5ffe0aed83c}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_IN\_TRANS@{SERVER\_STATUS\_IN\_TRANS}}
+\index{SERVER\_STATUS\_IN\_TRANS@{SERVER\_STATUS\_IN\_TRANS}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_IN\_TRANS}{SERVER\_STATUS\_IN\_TRANS}}
+{\footnotesize\ttfamily \label{a00311_afbac9b89d04e44110804b5ffe0aed83c_afbac9b89d04e44110804b5ffe0aed83c} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+IN\+\_\+\+TRANS = 1}
+
+
+
+Is raised when a multi-\/statement transaction has been started, either explicitly, by means of BEGIN or COMMIT AND CHAIN, or implicitly, by the first transactional statement, when autocommit=off. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00012}{12}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_aaa462ff01156d90e214674b1dd0e27d8_aaa462ff01156d90e214674b1dd0e27d8}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_IN\_TRANS\_READONLY@{SERVER\_STATUS\_IN\_TRANS\_READONLY}}
+\index{SERVER\_STATUS\_IN\_TRANS\_READONLY@{SERVER\_STATUS\_IN\_TRANS\_READONLY}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_IN\_TRANS\_READONLY}{SERVER\_STATUS\_IN\_TRANS\_READONLY}}
+{\footnotesize\ttfamily \label{a00311_aaa462ff01156d90e214674b1dd0e27d8_aaa462ff01156d90e214674b1dd0e27d8} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+IN\+\_\+\+TRANS\+\_\+\+READONLY = 0x2000}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00043}{43}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_a48c7bade6f6bbc6332f8cf2c3ed239d3_a48c7bade6f6bbc6332f8cf2c3ed239d3}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_LAST\_ROW\_SENT@{SERVER\_STATUS\_LAST\_ROW\_SENT}}
+\index{SERVER\_STATUS\_LAST\_ROW\_SENT@{SERVER\_STATUS\_LAST\_ROW\_SENT}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_LAST\_ROW\_SENT}{SERVER\_STATUS\_LAST\_ROW\_SENT}}
+{\footnotesize\ttfamily \label{a00311_a48c7bade6f6bbc6332f8cf2c3ed239d3_a48c7bade6f6bbc6332f8cf2c3ed239d3} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+LAST\+\_\+\+ROW\+\_\+\+SENT = 128}
+
+
+
+This flag is sent when a read-\/only cursor is exhausted, in reply to COM\+\_\+\+STMT\+\_\+\+FETCH command. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00027}{27}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_aa1a905538e9b43e7e7747d2aadd1fc7c_aa1a905538e9b43e7e7747d2aadd1fc7c}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_METADATA\_CHANGED@{SERVER\_STATUS\_METADATA\_CHANGED}}
+\index{SERVER\_STATUS\_METADATA\_CHANGED@{SERVER\_STATUS\_METADATA\_CHANGED}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_METADATA\_CHANGED}{SERVER\_STATUS\_METADATA\_CHANGED}}
+{\footnotesize\ttfamily \label{a00311_aa1a905538e9b43e7e7747d2aadd1fc7c_aa1a905538e9b43e7e7747d2aadd1fc7c} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+METADATA\+\_\+\+CHANGED = 1024}
+
+
+
+Sent to the client if after a prepared statement reprepare we discovered that the new statement returns a different number of result set columns. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00035}{35}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_a51bee2da0116c86440cc3e95eed41fbf_a51bee2da0116c86440cc3e95eed41fbf}\index{server\_status.js@{server\_status.js}!SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES@{SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES}}
+\index{SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES@{SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES}{SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES}}
+{\footnotesize\ttfamily \label{a00311_a51bee2da0116c86440cc3e95eed41fbf_a51bee2da0116c86440cc3e95eed41fbf} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} SERVER\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+BACKSLASH\+\_\+\+ESCAPES = 512}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00029}{29}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+
+\Hypertarget{a00311_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{server\_status.js@{server\_status.js}!strict@{strict}}
+\index{strict@{strict}!server\_status.js@{server\_status.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00311_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00311_source_l00001}{1}} del archivo \mbox{\hyperlink{a00311_source}{server\+\_\+status.\+js}}.
+

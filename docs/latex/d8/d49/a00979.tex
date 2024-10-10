@@ -1,0 +1,39 @@
+\doxysection{Polyfill for \texorpdfstring{$<$}{<}tt\texorpdfstring{$>$}{>}Object.\+set\+Prototype\+Of\texorpdfstring{$<$}{<}/tt\texorpdfstring{$>$}{>}}
+\hypertarget{a00979}{}\label{a00979}\index{Polyfill for $<$tt$>$Object.setPrototypeOf$<$/tt$>$@{Polyfill for $<$tt$>$Object.setPrototypeOf$<$/tt$>$}}
+\label{a00979_autotoc_md2383}%
+\Hypertarget{a00979_autotoc_md2383}%
+
+
+\href{https://npmjs.org/package/setprototypeof}{\texttt{ }} \href{https://npmjs.org/package/setprototypeof}{\texttt{ }} \href{https://github.com/standard/standard}{\texttt{ }}
+
+\doxylink{a00844}{A} simple cross platform implementation to set the prototype of an instianted object. Supports all modern browsers and at least back to IE8.\hypertarget{a00979_autotoc_md2384}{}\doxysubsection{\texorpdfstring{Usage\+:}{Usage\+:}}\label{a00979_autotoc_md2384}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ -\/-\/save\ setprototypeof}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_aa76cc157afb30404d8bee6cf35ebe8b2_aa76cc157afb30404d8bee6cf35ebe8b2}{setPrototypeOf}}\ =\ require(\textcolor{stringliteral}{'setprototypeof'})}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \{\}}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_aa76cc157afb30404d8bee6cf35ebe8b2_aa76cc157afb30404d8bee6cf35ebe8b2}{setPrototypeOf}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ \{}
+\DoxyCodeLine{\ \ foo:\ \textcolor{keyword}{function}\ ()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{'bar'}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.foo()\ \textcolor{comment}{//\ bar}}
+
+\end{DoxyCode}
+
+
+Type\+Script is also supported\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import\ setPrototypeOf\ from\ 'setprototypeof'}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,51 @@
+\doxysubsection{medicion\+Service.\+js}
+\label{a00110_source}\index{medicionService.js@{medicionService.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ pool\ from\ \textcolor{stringliteral}{'../config/db.js'};}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Obtener\ mediciones\ con\ filtros\ opcionales}}
+\DoxyCodeLine{00019\ export\ \textcolor{keyword}{const}\ obtenerMediciones\ =\ async\ (lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora)\ =>\ \{}
+\DoxyCodeLine{00020\ \ \ let\ query\ =\ \textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ WHERE\ 1=1'};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{const}\ params\ =\ [];}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordflow}{if}\ (lugar)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ lugar\ =\ ?'};}
+\DoxyCodeLine{00025\ \ \ \ \ params.push(lugar);}
+\DoxyCodeLine{00026\ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordflow}{if}\ (tipo\_gas)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ tipo\_gas\ =\ ?'};}
+\DoxyCodeLine{00030\ \ \ \ \ params.push(tipo\_gas);}
+\DoxyCodeLine{00031\ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{if}\ (desde\_hora)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ >=\ ?'};}
+\DoxyCodeLine{00035\ \ \ \ \ params.push(desde\_hora);}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{if}\ (hasta\_hora)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ query\ +=\ \textcolor{stringliteral}{'\ AND\ hora\ <=\ ?'};}
+\DoxyCodeLine{00040\ \ \ \ \ params.push(hasta\_hora);}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{const}\ [rows]\ =\ await\ pool.query(query,\ params);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordflow}{return}\ rows;}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Crear\ nueva\ medición}}
+\DoxyCodeLine{00061\ export\ \textcolor{keyword}{const}\ enviarMedicion\ =\ async\ (medicion)\ =>\ \{}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{const}\ query\ =\ \textcolor{stringliteral}{'INSERT\ INTO\ mediciones\ (medida,\ lugar,\ tipo\_gas,\ hora)\ VALUES\ (?,\ ?,\ ?,\ ?)'};}
+\DoxyCodeLine{00064\ \ \ await\ pool.query(query,\ [medida,\ lugar,\ tipo\_gas,\ hora]);}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ Obtener\ la\ última\ medición}}
+\DoxyCodeLine{00075\ export\ \textcolor{keyword}{const}\ obtenerUltimaMedicion\ =\ async\ ()\ =>\ \{}
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{const}\ [rows]\ =\ await\ pool.query(\textcolor{stringliteral}{'SELECT\ *\ FROM\ mediciones\ ORDER\ BY\ hora\ DESC\ LIMIT\ 1'});}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{return}\ rows[0];}
+\DoxyCodeLine{00078\ \};}
+
+\end{DoxyCode}

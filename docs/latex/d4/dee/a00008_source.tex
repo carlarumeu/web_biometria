@@ -1,0 +1,39 @@
+\doxysubsection{clipboard.\+js}
+\label{a00008_source}\index{clipboard.js@{clipboard.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00030\ let\ clipboard\_title\ =\ \textcolor{stringliteral}{"{}Copy\ to\ clipboard"{}}}
+\DoxyCodeLine{00031\ let\ clipboard\_icon\ =\ \`{}<svg\ xmlns=\textcolor{stringliteral}{"{}http://www.w3.org/2000/svg"{}}\ viewBox=\textcolor{stringliteral}{"{}0\ 0\ 24\ 24"{}}\ width=\textcolor{stringliteral}{"{}24"{}}\ height=\textcolor{stringliteral}{"{}24"{}}><path\ d=\textcolor{stringliteral}{"{}M0\ 0h24v24H0V0z"{}}\ fill=\textcolor{stringliteral}{"{}none"{}}/><path\ d=\textcolor{stringliteral}{"{}M16\ 1H4c-\/1.1\ 0-\/2\ .9-\/2\ 2v14h2V3h12V1zm3\ 4H8c-\/1.1\ 0-\/2\ .9-\/2\ 2v14c0\ 1.1.9\ 2\ 2\ 2h11c1.1\ 0\ 2-\/.9\ 2-\/2V7c0-\/1.1-\/.9-\/2-\/2-\/2zm0\ 16H8V7h11v14z"{}}/></svg>\`{}}
+\DoxyCodeLine{00032\ let\ clipboard\_successIcon\ =\ \`{}<svg\ xmlns=\textcolor{stringliteral}{"{}http://www.w3.org/2000/svg"{}}\ viewBox=\textcolor{stringliteral}{"{}0\ 0\ 24\ 24"{}}\ width=\textcolor{stringliteral}{"{}24"{}}\ height=\textcolor{stringliteral}{"{}24"{}}><path\ d=\textcolor{stringliteral}{"{}M0\ 0h24v24H0V0z"{}}\ fill=\textcolor{stringliteral}{"{}none"{}}/><path\ d=\textcolor{stringliteral}{"{}M9\ 16.17L4.83\ 12l-\/1.42\ 1.41L9\ 19\ 21\ 7l-\/1.41-\/1.41L9\ 16.17z"{}}/></svg>\`{}}
+\DoxyCodeLine{00033\ let\ clipboard\_successDuration\ =\ 1000}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \$(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordflow}{if}(navigator.clipboard)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ fragments\ =\ document.getElementsByClassName(\textcolor{stringliteral}{"{}fragment"{}})}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ fragment\ of\ fragments)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{const}\ clipboard\_div\ =\ document.createElement(\textcolor{stringliteral}{"{}div"{}})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ clipboard\_div.classList.add(\textcolor{stringliteral}{"{}clipboard"{}})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ clipboard\_div.innerHTML\ =\ clipboard\_icon}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ clipboard\_div.title\ =\ clipboard\_title}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \$(clipboard\_div).click(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ content\ =\ this.parentNode.cloneNode(\textcolor{keyword}{true})}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ filter\ out\ line\ number\ and\ folded\ fragments\ from\ file\ listings}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ content.querySelectorAll(\textcolor{stringliteral}{"{}.lineno,\ .ttc,\ .foldclosed"{}}).forEach((node)\ =>\ \{\ node.remove()\ \})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ let\ text\ =\ content.textContent}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remove\ trailing\ newlines\ and\ trailing\ spaces\ from\ empty\ lines}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ text\ =\ text.replace(/\string^\(\backslash\)s*\(\backslash\)n/gm,\textcolor{charliteral}{'\(\backslash\)n'}).replace(/\(\backslash\)n*\$/,\textcolor{stringliteral}{''})}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ navigator.clipboard.writeText(text);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ this.classList.add(\textcolor{stringliteral}{"{}success"{}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ this.innerHTML\ =\ clipboard\_successIcon}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ window.setTimeout(()\ =>\ \{\ \textcolor{comment}{//\ switch\ back\ to\ normal\ icon\ after\ timeout}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ this.classList.remove(\textcolor{stringliteral}{"{}success"{}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ this.innerHTML\ =\ clipboard\_icon}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \},\ clipboard\_successDuration);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \})}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ fragment.insertBefore(clipboard\_div,\ fragment.firstChild)}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \}}
+\DoxyCodeLine{00061\ \})}
+
+\end{DoxyCode}

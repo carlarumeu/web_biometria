@@ -1,0 +1,35 @@
+\doxysubsection{fakes.\+js}
+\hypertarget{a00452_source}{}\label{a00452_source}\index{fakes.js@{fakes.js}}
+\mbox{\hyperlink{a00452}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00001}\mbox{\hyperlink{a00452_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00452_source_l00003}\mbox{\hyperlink{a00452_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{00003}}\ var\ \mbox{\hyperlink{a00452_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}\ =\ require(\textcolor{stringliteral}{'../'});}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00004}\mbox{\hyperlink{a00452_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{00004}}\ var\ \mbox{\hyperlink{a00452_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}\ =\ require(\textcolor{stringliteral}{'tape'});}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00005}\mbox{\hyperlink{a00452_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{00005}}\ var\ \mbox{\hyperlink{a00452_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{hasToStringTag}}\ =\ require(\textcolor{stringliteral}{'has-\/tostringtag/shams'})();}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00006}\mbox{\hyperlink{a00452_a56555593fcdace53c8cf68fb2b4a8892_a56555593fcdace53c8cf68fb2b4a8892}{00006}}\ var\ \mbox{\hyperlink{a00452_a56555593fcdace53c8cf68fb2b4a8892_a56555593fcdace53c8cf68fb2b4a8892}{forEach}}\ =\ require(\textcolor{stringliteral}{'for-\/each'});}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00452_source_l00008}00008\ \mbox{\hyperlink{a00452_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(\textcolor{stringliteral}{'fakes'},\ \{\ skip:\ !\mbox{\hyperlink{a00452_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{hasToStringTag}}\ \},\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{a00452_a56555593fcdace53c8cf68fb2b4a8892_a56555593fcdace53c8cf68fb2b4a8892}{forEach}}([}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Array'},}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Boolean'},}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Date'},}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Error'},}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Number'},}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'RegExp'},}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'String'}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00017}00017\ \ \ \ \ ],\ \textcolor{keyword}{function}\ (expected)\ \{}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00018}00018\ \ \ \ \ \ \ \ \ var\ faker\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00019}00019\ \ \ \ \ \ \ \ \ faker[Symbol.toStringTag]\ =\ expected;}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{a00452_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00452_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(faker),}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'\{\ [Symbol(Symbol.toStringTag)]:\ \(\backslash\)''}\ +\ expected\ +\ \textcolor{charliteral}{'\(\backslash\)'}\ \}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00024}00024\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ '}faker\ masquerading\ as\ \textcolor{stringliteral}{'\ +\ expected\ +\ '}\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ \mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}\ shown\ as\ one\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00025}00025\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ );}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00026}00026\ \textcolor{stringliteral}{\ \ \ \ \});}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00027}00027\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00028}00028\ \textcolor{stringliteral}{\ \ \ \ t.end();}}
+\DoxyCodeLine{\Hypertarget{a00452_source_l00029}00029\ \textcolor{stringliteral}{\});}}
+
+\end{DoxyCode}

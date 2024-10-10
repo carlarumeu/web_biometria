@@ -1,0 +1,194 @@
+\doxysubsection{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/data.js}
+\hypertarget{a01732_source}{}\label{a01732_source}\index{dbcs-\/data.js@{dbcs-\/data.js}}
+\mbox{\hyperlink{a01732}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00001}\mbox{\hyperlink{a01732_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{"{}use\ strict"{}};}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00003}00003\ \textcolor{comment}{//\ Description\ of\ supported\ double\ byte\ encodings\ and\ aliases.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00004}00004\ \textcolor{comment}{//\ Tables\ are\ not\ require()-\/d\ until\ they\ are\ needed\ to\ speed\ up\ library\ load.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00005}00005\ \textcolor{comment}{//\ require()-\/s\ are\ direct\ to\ support\ Browserify.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00007}\mbox{\hyperlink{a01732_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00007}}\ module.exports\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00008}00008\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//\ ==\ Japanese/ShiftJIS\ ====================================================}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ All\ japanese\ encodings\ are\ based\ on\ JIS\ X\ set\ of\ standards:}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//\ JIS\ X\ 0201\ -\/\ Single-\/byte\ encoding\ of\ ASCII\ +\ ¥\ +\ Kana\ chars\ at\ 0xA1-\/0xDF.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ JIS\ X\ 0208\ -\/\ Main\ set\ of\ 6879\ characters,\ placed\ in\ 94x94\ plane,\ to\ be\ encoded\ by\ 2\ bytes.\ }}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ Has\ several\ variations\ in\ 1978,\ 1983,\ 1990\ and\ 1997.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ JIS\ X\ 0212\ -\/\ Supplementary\ plane\ of\ 6067\ chars\ in\ 94x94\ plane.\ 1990.\ Effectively\ dead.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ JIS\ X\ 0213\ -\/\ Extension\ and\ modern\ replacement\ of\ 0208\ and\ 0212.\ Total\ chars:\ 11233.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ planes,\ first\ is\ superset\ of\ 0208,\ second\ -\/\ revised\ 0212.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ Introduced\ in\ 2000,\ revised\ 2004.\ Some\ characters\ are\ in\ Unicode\ Plane\ 2\ (0x2xxxx)}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Byte\ encodings\ are:}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ \ *\ Shift\_JIS:\ Compatible\ with\ 0201,\ uses\ not\ defined\ chars\ in\ top\ half\ as\ lead\ bytes\ for\ double-\/byte}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoding\ of\ 0208.\ Lead\ byte\ ranges:\ 0x81-\/0x9F,\ 0xE0-\/0xEF;\ Trail\ byte\ ranges:\ 0x40-\/0x7E,\ 0x80-\/0x9E,\ 0x9F-\/0xFC.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Windows\ CP932\ is\ a\ superset\ of\ Shift\_JIS.\ Some\ companies\ added\ more\ chars,\ notably\ KDDI.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ \ *\ EUC-\/JP:\ \ \ \ Up\ to\ 3\ bytes\ per\ character.\ Used\ mostly\ on\ *nixes.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00-\/0x7F\ \ \ \ \ \ \ -\/\ lower\ part\ of\ 0201}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8E,\ 0xA1-\/0xDF\ -\/\ upper\ part\ of\ 0201}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xA1-\/0xFE)x2\ \ \ -\/\ 0208\ plane\ (94x94).}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8F,\ (0xA1-\/0xFE)x2\ -\/\ 0212\ plane\ (94x94).}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ \ *\ JIS\ X\ 208:\ 7-\/bit,\ direct\ encoding\ of\ 0208.\ Byte\ ranges:\ 0x21-\/0x7E\ (94\ values).\ Uncommon.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Used\ as-\/is\ in\ ISO2022\ family.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ \ *\ ISO2022-\/JP:\ Stateful\ encoding,\ with\ escape\ sequences\ to\ switch\ between\ ASCII,\ }}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0201-\/1976\ Roman,\ 0208-\/1978,\ 0208-\/1983.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ \ *\ ISO2022-\/JP-\/1:\ Adds\ esc\ seq\ for\ 0212-\/1990.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ \ *\ ISO2022-\/JP-\/2:\ Adds\ esc\ seq\ for\ GB2313-\/1980,\ KSX1001-\/1992,\ ISO8859-\/1,\ ISO8859-\/7.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ \ *\ ISO2022-\/JP-\/3:\ Adds\ esc\ seq\ for\ 0201-\/1976\ Kana\ set,\ 0213-\/2000\ Planes\ 1,\ 2.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ \ *\ ISO2022-\/JP-\/2004:\ Adds\ 0213-\/2004\ Plane\ 1.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ After\ JIS\ X\ 0213\ appeared,\ Shift\_JIS-\/2004,\ EUC-\/JISX0213\ and\ ISO2022-\/JP-\/2004\ followed,\ with\ just\ changing\ the\ planes.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ Overall,\ it\ seems\ that\ it's\ a\ mess\ :(\ http://www8.plala.or.jp/tkubota1/unicode-\/symbols-\/map2.html}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00041}00041\ \ \ \ \ \textcolor{stringliteral}{'shiftjis'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00043}00043\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/shiftjis.json'})\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00044}00044\ \ \ \ \ \ \ \ \ encodeAdd:\ \{\textcolor{stringliteral}{'\(\backslash\)u00a5'}:\ 0x5C,\ \textcolor{stringliteral}{'\(\backslash\)u203E'}:\ 0x7E\},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00045}00045\ \ \ \ \ \ \ \ \ encodeSkipVals:\ [\{from:\ 0xED40,\ to:\ 0xF940\}],}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00046}00046\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00047}00047\ \ \ \ \ \textcolor{stringliteral}{'csshiftjis'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00048}00048\ \ \ \ \ \textcolor{stringliteral}{'mskanji'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00049}00049\ \ \ \ \ \textcolor{stringliteral}{'sjis'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00050}00050\ \ \ \ \ \textcolor{stringliteral}{'windows31j'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00051}00051\ \ \ \ \ \textcolor{stringliteral}{'ms31j'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00052}00052\ \ \ \ \ \textcolor{stringliteral}{'xsjis'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00053}00053\ \ \ \ \ \textcolor{stringliteral}{'windows932'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00054}00054\ \ \ \ \ \textcolor{stringliteral}{'ms932'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00055}00055\ \ \ \ \ \textcolor{stringliteral}{'932'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00056}00056\ \ \ \ \ \textcolor{stringliteral}{'cp932'}:\ \textcolor{stringliteral}{'shiftjis'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00058}00058\ \ \ \ \ \textcolor{stringliteral}{'eucjp'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00060}00060\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/eucjp.json'})\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00061}00061\ \ \ \ \ \ \ \ \ encodeAdd:\ \{\textcolor{stringliteral}{'\(\backslash\)u00a5'}:\ 0x5C,\ \textcolor{stringliteral}{'\(\backslash\)u203E'}:\ 0x7E\},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00062}00062\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ TODO:\ KDDI\ extension\ to\ Shift\_JIS}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ TODO:\ IBM\ CCSID\ 942\ =\ CP932,\ but\ F0-\/F9\ custom\ chars\ and\ other\ char\ changes.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ TODO:\ IBM\ CCSID\ 943\ =\ Shift\_JIS\ =\ CP932\ with\ original\ Shift\_JIS\ lower\ 128\ chars.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ ==\ Chinese/GBK\ ==========================================================}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ http://en.wikipedia.org/wiki/GBK}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//\ We\ mostly\ implement\ W3C\ recommendation:\ https://www.w3.org/TR/encoding/\#gbk-\/encoder}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Oldest\ GB2312\ (1981,\ \string~7600\ chars)\ is\ a\ subset\ of\ CP936}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00074}00074\ \ \ \ \ \textcolor{stringliteral}{'gb2312'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00075}00075\ \ \ \ \ \textcolor{stringliteral}{'gb231280'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00076}00076\ \ \ \ \ \textcolor{stringliteral}{'gb23121980'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00077}00077\ \ \ \ \ \textcolor{stringliteral}{'csgb2312'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00078}00078\ \ \ \ \ \textcolor{stringliteral}{'csiso58gb231280'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00079}00079\ \ \ \ \ \textcolor{stringliteral}{'euccn'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ Microsoft's\ CP936\ is\ a\ subset\ and\ approximation\ of\ GBK.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00082}00082\ \ \ \ \ \textcolor{stringliteral}{'windows936'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00083}00083\ \ \ \ \ \textcolor{stringliteral}{'ms936'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00084}00084\ \ \ \ \ \textcolor{stringliteral}{'936'}:\ \textcolor{stringliteral}{'cp936'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00085}00085\ \ \ \ \ \textcolor{stringliteral}{'cp936'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00087}00087\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/cp936.json'})\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00088}00088\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//\ GBK\ (\string~22000\ chars)\ is\ an\ extension\ of\ CP936\ that\ added\ user-\/mapped\ chars\ and\ some\ other.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00091}00091\ \ \ \ \ \textcolor{stringliteral}{'gbk'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00093}00093\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/cp936.json'}).concat(require(\textcolor{stringliteral}{'./tables/gbk-\/added.json'}))\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00094}00094\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00095}00095\ \ \ \ \ \textcolor{stringliteral}{'xgbk'}:\ \textcolor{stringliteral}{'gbk'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00096}00096\ \ \ \ \ \textcolor{stringliteral}{'isoir58'}:\ \textcolor{stringliteral}{'gbk'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ GB18030\ is\ an\ algorithmic\ extension\ of\ GBK.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//\ Main\ source:\ https://www.w3.org/TR/encoding/\#gbk-\/encoder}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//\ http://icu-\/project.org/docs/papers/gb18030.html}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ http://source.icu-\/project.org/repos/icu/data/trunk/charset/data/xml/gb-\/18030-\/2000.xml}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ http://www.khngai.com/chinese/charmap/tblgbk.php?page=0}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00103}00103\ \ \ \ \ \textcolor{stringliteral}{'gb18030'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00105}00105\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/cp936.json'}).concat(require(\textcolor{stringliteral}{'./tables/gbk-\/added.json'}))\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00106}00106\ \ \ \ \ \ \ \ \ gb18030:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/gb18030-\/ranges.json'})\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00107}00107\ \ \ \ \ \ \ \ \ encodeSkipVals:\ [0x80],}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00108}00108\ \ \ \ \ \ \ \ \ encodeAdd:\ \{\textcolor{stringliteral}{'€'}:\ 0xA2E3\},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00109}00109\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00111}00111\ \ \ \ \ \textcolor{stringliteral}{'chinese'}:\ \textcolor{stringliteral}{'gb18030'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//\ ==\ Korean\ ===============================================================}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00115}00115\ \ \ \ \ \textcolor{comment}{//\ EUC-\/KR,\ KS\_C\_5601\ and\ KS\ X\ 1001\ are\ exactly\ the\ same.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00116}00116\ \ \ \ \ \textcolor{stringliteral}{'windows949'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00117}00117\ \ \ \ \ \textcolor{stringliteral}{'ms949'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00118}00118\ \ \ \ \ \textcolor{stringliteral}{'949'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00119}00119\ \ \ \ \ \textcolor{stringliteral}{'cp949'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00121}00121\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/cp949.json'})\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00122}00122\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00124}00124\ \ \ \ \ \textcolor{stringliteral}{'cseuckr'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00125}00125\ \ \ \ \ \textcolor{stringliteral}{'csksc56011987'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00126}00126\ \ \ \ \ \textcolor{stringliteral}{'euckr'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00127}00127\ \ \ \ \ \textcolor{stringliteral}{'isoir149'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00128}00128\ \ \ \ \ \textcolor{stringliteral}{'korean'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00129}00129\ \ \ \ \ \textcolor{stringliteral}{'ksc56011987'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00130}00130\ \ \ \ \ \textcolor{stringliteral}{'ksc56011989'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00131}00131\ \ \ \ \ \textcolor{stringliteral}{'ksc5601'}:\ \textcolor{stringliteral}{'cp949'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00134}00134\ \ \ \ \ \textcolor{comment}{//\ ==\ Big5/Taiwan/Hong\ Kong\ ================================================}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00135}00135\ \ \ \ \ \textcolor{comment}{//\ There\ are\ lots\ of\ tables\ for\ Big5\ and\ cp950.\ Please\ see\ the\ following\ links\ for\ history:}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00136}00136\ \ \ \ \ \textcolor{comment}{//\ http://moztw.org/docs/big5/\ \ http://www.haible.de/bruno/charsets/conversion-\/tables/Big5.html}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00137}00137\ \ \ \ \ \textcolor{comment}{//\ Variations,\ in\ roughly\ number\ of\ defined\ chars:}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//\ \ *\ Windows\ CP\ 950:\ Microsoft\ variant\ of\ Big5.\ Canonical:\ http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP950.TXT}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00139}00139\ \ \ \ \ \textcolor{comment}{//\ \ *\ Windows\ CP\ 951:\ Microsoft\ variant\ of\ Big5-\/HKSCS-\/2001.\ Seems\ to\ be\ never\ public.\ http://me.abelcheung.org/articles/research/what-\/is-\/cp951/}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ \ *\ Big5-\/2003\ (Taiwan\ standard)\ almost\ superset\ of\ cp950.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//\ \ *\ Unicode-\/at-\/on\ (UAO)\ /\ Mozilla\ 1.8.\ Falling\ out\ of\ use\ on\ the\ Web.\ Not\ supported\ by\ other\ browsers.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00142}00142\ \ \ \ \ \textcolor{comment}{//\ \ *\ Big5-\/HKSCS\ (-\/2001,\ -\/2004,\ -\/2008).\ Hong\ Kong\ standard.\ }}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ \ \ \ many\ unicode\ code\ points\ moved\ from\ PUA\ to\ Supplementary\ plane\ (U+2XXXX)\ over\ the\ years.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00144}00144\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Plus,\ it\ has\ 4\ combining\ sequences.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Seems\ that\ Mozilla\ refused\ to\ support\ it\ for\ 10\ yrs.\ https://bugzilla.mozilla.org/show\_bug.cgi?id=162431\ https://bugzilla.mozilla.org/show\_bug.cgi?id=310299}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//\ \ \ \ because\ big5-\/hkscs\ is\ the\ only\ encoding\ to\ include\ astral\ characters\ in\ non-\/algorithmic\ way.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00147}00147\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Implementations\ are\ not\ consistent\ within\ browsers;\ sometimes\ labeled\ as\ just\ big5.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00148}00148\ \ \ \ \ \textcolor{comment}{//\ \ \ \ MS\ Internet\ Explorer\ switches\ from\ big5\ to\ big5-\/hkscs\ when\ a\ patch\ applied.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00149}00149\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Great\ discussion\ \&\ recap\ of\ what's\ going\ on\ https://bugzilla.mozilla.org/show\_bug.cgi?id=912470\#c31}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ \ \ \ In\ the\ encoder,\ it\ might\ make\ sense\ to\ support\ encoding\ old\ PUA\ mappings\ to\ Big5\ bytes\ seq-\/s.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00151}00151\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Official\ spec:\ http://www.ogcio.gov.hk/en/business/tech\_promotion/ccli/terms/doc/2003cmp\_2008.txt}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ http://www.ogcio.gov.hk/tc/business/tech\_promotion/ccli/terms/doc/hkscs-\/2008-\/big5-\/iso.txt}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00154}00154\ \ \ \ \ \textcolor{comment}{//\ Current\ understanding\ of\ how\ to\ deal\ with\ Big5(-\/HKSCS)\ is\ in\ the\ Encoding\ Standard,\ http://encoding.spec.whatwg.org/\#big5-\/encoder}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00155}00155\ \ \ \ \ \textcolor{comment}{//\ Unicode\ mapping\ (http://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/OTHER/BIG5.TXT)\ is\ said\ to\ be\ wrong.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00157}00157\ \ \ \ \ \textcolor{stringliteral}{'windows950'}:\ \textcolor{stringliteral}{'cp950'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00158}00158\ \ \ \ \ \textcolor{stringliteral}{'ms950'}:\ \textcolor{stringliteral}{'cp950'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00159}00159\ \ \ \ \ \textcolor{stringliteral}{'950'}:\ \textcolor{stringliteral}{'cp950'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00160}00160\ \ \ \ \ \textcolor{stringliteral}{'cp950'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00162}00162\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/cp950.json'})\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00163}00163\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00165}00165\ \ \ \ \ \textcolor{comment}{//\ Big5\ has\ many\ variations\ and\ is\ an\ extension\ of\ cp950.\ We\ use\ Encoding\ Standard's\ as\ a\ consensus.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00166}00166\ \ \ \ \ \textcolor{stringliteral}{'big5'}:\ \textcolor{stringliteral}{'big5hkscs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00167}00167\ \ \ \ \ \textcolor{stringliteral}{'big5hkscs'}:\ \{}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00168}00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'\_dbcs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00169}00169\ \ \ \ \ \ \ \ \ table:\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ require(\textcolor{stringliteral}{'./tables/cp950.json'}).concat(require(\textcolor{stringliteral}{'./tables/big5-\/added.json'}))\ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00170}00170\ \ \ \ \ \ \ \ \ encodeSkipVals:\ [}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Although\ Encoding\ Standard\ says\ we\ should\ avoid\ encoding\ to\ HKSCS\ area\ (See\ Step\ 1\ of}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://encoding.spec.whatwg.org/\#index-\/big5-\/pointer),\ we\ still\ do\ it\ to\ increase\ compatibility\ with\ ICU.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ But\ if\ a\ single\ unicode\ point\ can\ be\ encoded\ both\ as\ HKSCS\ and\ regular\ Big5,\ we\ prefer\ the\ latter.}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ 0x8e69,\ 0x8e6f,\ 0x8e7e,\ 0x8eab,\ 0x8eb4,\ 0x8ecd,\ 0x8ed0,\ 0x8f57,\ 0x8f69,\ 0x8f6e,\ 0x8fcb,\ 0x8ffe,}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ 0x906d,\ 0x907a,\ 0x90c4,\ 0x90dc,\ 0x90f1,\ 0x91bf,\ 0x92af,\ 0x92b0,\ 0x92b1,\ 0x92b2,\ 0x92d1,\ 0x9447,\ 0x94ca,}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ 0x95d9,\ 0x96fc,\ 0x9975,\ 0x9b76,\ 0x9b78,\ 0x9b7b,\ 0x9bc6,\ 0x9bde,\ 0x9bec,\ 0x9bf6,\ 0x9c42,\ 0x9c53,\ 0x9c62,}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ 0x9c68,\ 0x9c6b,\ 0x9c77,\ 0x9cbc,\ 0x9cbd,\ 0x9cd0,\ 0x9d57,\ 0x9d5a,\ 0x9dc4,\ 0x9def,\ 0x9dfb,\ 0x9ea9,\ 0x9eef,}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ 0x9efd,\ 0x9f60,\ 0x9fcb,\ 0xa077,\ 0xa0dc,\ 0xa0df,\ 0x8fcc,\ 0x92c8,\ 0x9644,\ 0x96ed,}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 2\ of\ https://encoding.spec.whatwg.org/\#index-\/big5-\/pointer:\ Use\ last\ pointer\ for\ U+2550,\ U+255E,\ U+2561,\ U+256A,\ U+5341,\ or\ U+5345}}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ 0xa2a4,\ 0xa2a5,\ 0xa2a7,\ 0xa2a6,\ 0xa2cc,\ 0xa2ce,}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00182}00182\ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00183}00183\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{a01732_source_l00185}00185\ \ \ \ \ \textcolor{stringliteral}{'cnbig5'}:\ \textcolor{stringliteral}{'big5hkscs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00186}00186\ \ \ \ \ \textcolor{stringliteral}{'csbig5'}:\ \textcolor{stringliteral}{'big5hkscs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00187}00187\ \ \ \ \ \textcolor{stringliteral}{'xxbig5'}:\ \textcolor{stringliteral}{'big5hkscs'},}
+\DoxyCodeLine{\Hypertarget{a01732_source_l00188}00188\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,123 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/cookie-\/signature/index.js}
+\hypertarget{a01123}{}\label{a01123}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{sha1}} (str)
+\begin{DoxyCompactList}\small\item\em Private. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}} = require(\textquotesingle{}crypto\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Module dependencies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01123_a2ae74b621986bd2d222135508d36cd2c_a2ae74b621986bd2d222135508d36cd2c}{sign}}
+\begin{DoxyCompactList}\small\item\em Sign the given {\ttfamily val} with {\ttfamily secret}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01123_aee17cec6e9bceed014212c9893094d11_aee17cec6e9bceed014212c9893094d11}{unsign}}
+\begin{DoxyCompactList}\small\item\em Unsign and decode the given {\ttfamily val} with {\ttfamily secret}, returning {\ttfamily false} if the signature is invalid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}\index{index.js@{index.js}!sha1@{sha1}}
+\index{sha1@{sha1}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{sha1()}{sha1()}}
+{\footnotesize\ttfamily \label{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c} 
+function sha1 (\begin{DoxyParamCaption}\item[{}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Private. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01123_source_l00049}{49}} del archivo \mbox{\hyperlink{a01123_source}{node\+\_\+modules/cookie-\/signature/index.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}\index{index.js@{index.js}!crypto@{crypto}}
+\index{crypto@{crypto}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{crypto}{crypto}}
+{\footnotesize\ttfamily \label{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3} 
+var crypto = require(\textquotesingle{}crypto\textquotesingle{})}
+
+
+
+Module dependencies. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01123_source_l00005}{5}} del archivo \mbox{\hyperlink{a01123_source}{node\+\_\+modules/cookie-\/signature/index.\+js}}.
+
+\Hypertarget{a01123_a2ae74b621986bd2d222135508d36cd2c_a2ae74b621986bd2d222135508d36cd2c}\index{index.js@{index.js}!sign@{sign}}
+\index{sign@{sign}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{sign}{sign}}
+{\footnotesize\ttfamily \label{a01123_a2ae74b621986bd2d222135508d36cd2c_a2ae74b621986bd2d222135508d36cd2c} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} sign}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(val,\ secret)\{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ val)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Cookie\ value\ must\ be\ provided\ as\ a\ string."{}});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ secret)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Secret\ string\ must\ be\ provided."{}});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ val\ +\ \textcolor{charliteral}{'.'}\ +\ \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}}}
+\DoxyCodeLine{\ \ \ \ .createHmac(\textcolor{stringliteral}{'sha256'},\ secret)}
+\DoxyCodeLine{\ \ \ \ .update(val)}
+\DoxyCodeLine{\ \ \ \ .digest(\textcolor{stringliteral}{'base64'})}
+\DoxyCodeLine{\ \ \ \ .replace(/\(\backslash\)=+\$/,\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Sign the given {\ttfamily val} with {\ttfamily secret}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & val \\
+\hline
+{\em \{\+String\}} & secret \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{String\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01123_source_l00016}{16}} del archivo \mbox{\hyperlink{a01123_source}{node\+\_\+modules/cookie-\/signature/index.\+js}}.
+
+\Hypertarget{a01123_aee17cec6e9bceed014212c9893094d11_aee17cec6e9bceed014212c9893094d11}\index{index.js@{index.js}!unsign@{unsign}}
+\index{unsign@{unsign}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{unsign}{unsign}}
+{\footnotesize\ttfamily \label{a01123_aee17cec6e9bceed014212c9893094d11_aee17cec6e9bceed014212c9893094d11} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} unsign}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(val,\ secret)\{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ val)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Signed\ cookie\ string\ must\ be\ provided."{}});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{'string'}\ !=\ typeof\ secret)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{"{}Secret\ string\ must\ be\ provided."{}});}
+\DoxyCodeLine{\ \ var\ str\ =\ val.slice(0,\ val.lastIndexOf(\textcolor{charliteral}{'.'}))}
+\DoxyCodeLine{\ \ \ \ ,\ mac\ =\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.sign(str,\ secret);}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{sha1}}(mac)\ ==\ \mbox{\hyperlink{a01123_a16973f9a625111c122c03eeceaf8800c_a16973f9a625111c122c03eeceaf8800c}{sha1}}(val)\ ?\ str\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Unsign and decode the given {\ttfamily val} with {\ttfamily secret}, returning {\ttfamily false} if the signature is invalid. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & val \\
+\hline
+{\em \{\+String\}} & secret \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{String\texorpdfstring{$\vert$}{|}\+Boolean\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01123_source_l00036}{36}} del archivo \mbox{\hyperlink{a01123_source}{node\+\_\+modules/cookie-\/signature/index.\+js}}.
+

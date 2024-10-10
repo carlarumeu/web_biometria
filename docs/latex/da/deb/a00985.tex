@@ -1,0 +1,99 @@
+\doxysection{statuses}
+\hypertarget{a00985}{}\label{a00985}\index{statuses@{statuses}}
+\label{a00985_autotoc_md2430}%
+\Hypertarget{a00985_autotoc_md2430}%
+
+
+\href{https://npmjs.org/package/statuses}{\texttt{ }} \href{https://npmjs.org/package/statuses}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://github.com/jshttp/statuses/actions?query=workflow\%3Aci}{\texttt{ }} \href{https://coveralls.io/r/jshttp/statuses?branch=master}{\texttt{ }}
+
+HTTP status utility for node.
+
+This module provides a list of status codes and messages sourced from a few different projects\+:
+
+
+\begin{DoxyItemize}
+\item The \href{https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml}{\texttt{ IANA Status Code Registry}}
+\item The \href{https://nodejs.org/}{\texttt{ Node.\+js project}}
+\item The \href{https://www.nginx.com/}{\texttt{ NGINX project}}
+\item The \href{https://httpd.apache.org/}{\texttt{ Apache HTTP Server project}}
+\end{DoxyItemize}\hypertarget{a00985_autotoc_md2431}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00985_autotoc_md2431}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ statuses}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2432}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00985_autotoc_md2432}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ require(\textcolor{stringliteral}{'statuses'})}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2433}{}\doxysubsubsection{\texorpdfstring{status(code)}{status(code)}}\label{a00985_autotoc_md2433}
+Returns the status message string for a known HTTP status code. The code may be a number or a string. An error is thrown for an unknown status code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}(403)\ \textcolor{comment}{//\ =>\ 'Forbidden'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}('403')\ \textcolor{comment}{//\ =>\ 'Forbidden'}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}(306)\ \textcolor{comment}{//\ throws}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2434}{}\doxysubsubsection{\texorpdfstring{status(msg)}{status(msg)}}\label{a00985_autotoc_md2434}
+Returns the numeric status code for a known HTTP status message. The message is case-\/insensitive. An error is thrown for an unknown status message.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}(\textcolor{stringliteral}{'forbidden'})\ \textcolor{comment}{//\ =>\ 403}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}('Forbidden')\ \textcolor{comment}{//\ =>\ 403}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}('foo')\ \textcolor{comment}{//\ throws}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2435}{}\doxysubsubsection{\texorpdfstring{status.\+codes}{status.\+codes}}\label{a00985_autotoc_md2435}
+Returns an array of all the status codes as {\ttfamily Integer}s.\hypertarget{a00985_autotoc_md2436}{}\doxysubsubsection{\texorpdfstring{status.\+code\mbox{[}msg\mbox{]}}{status.\+code\mbox{[}msg\mbox{]}}}\label{a00985_autotoc_md2436}
+Returns the numeric status code for a known status message (in lower-\/case), otherwise {\ttfamily undefined}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}[\textcolor{stringliteral}{'not\ found'}]\ \textcolor{comment}{//\ =>\ 404}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2437}{}\doxysubsubsection{\texorpdfstring{status.\+empty\mbox{[}code\mbox{]}}{status.\+empty\mbox{[}code\mbox{]}}}\label{a00985_autotoc_md2437}
+Returns {\ttfamily true} if a status code expects an empty body.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.empty[200]\ \textcolor{comment}{//\ =>\ undefined}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.empty[204]\ \textcolor{comment}{//\ =>\ true}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.empty[304]\ \textcolor{comment}{//\ =>\ true}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2438}{}\doxysubsubsection{\texorpdfstring{status.\+message\mbox{[}code\mbox{]}}{status.\+message\mbox{[}code\mbox{]}}}\label{a00985_autotoc_md2438}
+Returns the string message for a known numeric status code, otherwise {\ttfamily undefined}. This object is the same format as the \href{https://nodejs.org/dist/latest/docs/api/http.html\#http_http_status_codes}{\texttt{ Node.\+js http module {\ttfamily http.\+STATUS\+\_\+\+CODES}}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.message[404]\ \textcolor{comment}{//\ =>\ 'Not\ Found'}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2439}{}\doxysubsubsection{\texorpdfstring{status.\+redirect\mbox{[}code\mbox{]}}{status.\+redirect\mbox{[}code\mbox{]}}}\label{a00985_autotoc_md2439}
+Returns {\ttfamily true} if a status code is a valid redirect status.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.redirect[200]\ \textcolor{comment}{//\ =>\ undefined}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.redirect[301]\ \textcolor{comment}{//\ =>\ true}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2440}{}\doxysubsubsection{\texorpdfstring{status.\+retry\mbox{[}code\mbox{]}}{status.\+retry\mbox{[}code\mbox{]}}}\label{a00985_autotoc_md2440}
+Returns {\ttfamily true} if you should retry the rest.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.retry[501]\ \textcolor{comment}{//\ =>\ undefined}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.retry[503]\ \textcolor{comment}{//\ =>\ true}}
+
+\end{DoxyCode}
+\hypertarget{a00985_autotoc_md2441}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00985_autotoc_md2441}
+\mbox{[}MIT\mbox{]}(LICENSE) 

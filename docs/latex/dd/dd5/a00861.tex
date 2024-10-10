@@ -1,0 +1,44 @@
+\doxysection{call-\/bind \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/call-\/bind"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/ljharb/call-\/bind.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00861}{}\label{a00861}\index{call-\/bind $<$sup$>$$<$a href="{}https://npmjs.org/package/call-\/bind"{} $>$$<$img src="{}https://versionbadg.es/ljharb/call-\/bind.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{call-\/bind $<$sup$>$$<$a href=""https://npmjs.org/package/call-\/bind"" $>$$<$img src=""https://versionbadg.es/ljharb/call-\/bind.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00861_autotoc_md233}%
+\Hypertarget{a00861_autotoc_md233}%
+
+
+\href{https://github.com/ljharb/call-bind/actions}{\texttt{ }} \href{https://app.codecov.io/gh/ljharb/call-bind/}{\texttt{ }} \href{https://david-dm.org/ljharb/call-bind}{\texttt{ }} \href{https://david-dm.org/ljharb/call-bind\#info=devDependencies}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=call-bind}{\texttt{ }}
+
+\href{https://npmjs.org/package/call-bind}{\texttt{ }}
+
+Robustly {\ttfamily .call.\+bind()} a function.\hypertarget{a00861_autotoc_md234}{}\doxysubsection{\texorpdfstring{Getting started}{Getting started}}\label{a00861_autotoc_md234}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ -\/-\/save\ call-\/bind}
+
+\end{DoxyCode}
+\hypertarget{a00861_autotoc_md235}{}\doxysubsection{\texorpdfstring{Usage/\+Examples}{Usage/\+Examples}}\label{a00861_autotoc_md235}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00047_a6092383d6d274186edb4b04aec2308ec_a6092383d6d274186edb4b04aec2308ec}{callBind}}\ =\ require(\textcolor{stringliteral}{'call-\/bind'});}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{callBound}}\ =\ require(\textcolor{stringliteral}{'call-\/bind/callBound'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{function}\ \mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\textcolor{keyword}{this},\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}},\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}},\ 3);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(arguments.length,\ 2);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{const}\ fBound\ =\ \mbox{\hyperlink{a00047_a6092383d6d274186edb4b04aec2308ec_a6092383d6d274186edb4b04aec2308ec}{callBind}}(\mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a01177_acab0c09ac73e7a3c85a21fa773e9b8b0_acab0c09ac73e7a3c85a21fa773e9b8b0}{slice}}\ =\ \mbox{\hyperlink{a01621_ab982ba5d35a56e74292f9eccbb3895d8_ab982ba5d35a56e74292f9eccbb3895d8}{callBound}}(\textcolor{stringliteral}{'Array.prototype.slice'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{delete}\ Function.prototype.call;}
+\DoxyCodeLine{\textcolor{keyword}{delete}\ Function.prototype.bind;}
+\DoxyCodeLine{}
+\DoxyCodeLine{fBound(1,\ 2,\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01177_acab0c09ac73e7a3c85a21fa773e9b8b0_acab0c09ac73e7a3c85a21fa773e9b8b0}{slice}}([1,\ 2,\ 3,\ 4],\ 1,\ -\/1),\ [2,\ 3]);}
+
+\end{DoxyCode}
+\hypertarget{a00861_autotoc_md236}{}\doxysubsection{\texorpdfstring{Tests}{Tests}}\label{a00861_autotoc_md236}
+Clone the repo, {\ttfamily npm install}, and run {\ttfamily npm test} 

@@ -1,0 +1,71 @@
+\doxysubsection{node\+\_\+modules/safe-\/buffer/index.js}
+\hypertarget{a01315_source}{}\label{a01315_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01315}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00002}00002\ \textcolor{comment}{/*\ eslint-\/disable\ node/no-\/deprecated-\/api\ */}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00003}00003\ var\ buffer\ =\ require(\textcolor{stringliteral}{'buffer'})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00004}00004\ var\ Buffer\ =\ buffer.Buffer}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00006}00006\ \textcolor{comment}{//\ alternative\ to\ using\ Object.keys\ for\ old\ browsers}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00007}00007\ function\ copyProps\ (src,\ dst)\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00008}00008\ \ \ \textcolor{keywordflow}{for}\ (var\ key\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ src)\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00009}00009\ \ \ \ \ dst[key]\ =\ src[key]}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00010}00010\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00012}00012\ \textcolor{keywordflow}{if}\ (Buffer.from\ \&\&\ Buffer.alloc\ \&\&\ Buffer.allocUnsafe\ \&\&\ Buffer.allocUnsafeSlow)\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00013}00013\ \ \ module.exports\ =\ buffer}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00014}00014\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00015}00015\ \ \ \textcolor{comment}{//\ Copy\ properties\ from\ require('buffer')}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00016}00016\ \ \ copyProps(buffer,\ exports)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00017}00017\ \ \ exports.Buffer\ =\ SafeBuffer}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00020}00020\ \textcolor{keyword}{function}\ SafeBuffer\ (arg,\ encodingOrOffset,\ length)\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00021}00021\ \ \ \textcolor{keywordflow}{return}\ Buffer(arg,\ encodingOrOffset,\ length)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00024}00024\ SafeBuffer.prototype\ =\ Object.create(Buffer.prototype)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00026}00026\ \textcolor{comment}{//\ Copy\ static\ methods\ from\ Buffer}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00027}00027\ copyProps(Buffer,\ SafeBuffer)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00029}00029\ SafeBuffer.from\ =\ function\ (arg,\ encodingOrOffset,\ length)\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00030}00030\ \ \ \textcolor{keywordflow}{if}\ (typeof\ arg\ ===\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'Argument\ must\ not\ be\ a\ number'})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00032}00032\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00033}00033\ \ \ \textcolor{keywordflow}{return}\ Buffer(arg,\ encodingOrOffset,\ length)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00036}00036\ SafeBuffer.alloc\ =\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}},\ fill,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00037}00037\ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}}\ !==\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'Argument\ must\ be\ a\ number'})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00039}00039\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00040}00040\ \ \ var\ buf\ =\ Buffer(\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00041}00041\ \ \ \textcolor{keywordflow}{if}\ (fill\ !==\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}\ ===\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00043}00043\ \ \ \ \ \ \ buf.fill(fill,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00044}00044\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00045}00045\ \ \ \ \ \ \ buf.fill(fill)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00047}00047\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00048}00048\ \ \ \ \ buf.fill(0)}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00049}00049\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00050}00050\ \ \ \textcolor{keywordflow}{return}\ buf}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00053}00053\ SafeBuffer.allocUnsafe\ =\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}}\ !==\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'Argument\ must\ be\ a\ number'})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00056}00056\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00057}00057\ \ \ \textcolor{keywordflow}{return}\ Buffer(\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{a01315_source_l00060}00060\ SafeBuffer.allocUnsafeSlow\ =\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}}\ !==\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'Argument\ must\ be\ a\ number'})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00063}00063\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00064}00064\ \ \ \textcolor{keywordflow}{return}\ buffer.SlowBuffer(\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}})}
+\DoxyCodeLine{\Hypertarget{a01315_source_l00065}00065\ \}}
+
+\end{DoxyCode}

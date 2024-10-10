@@ -1,0 +1,25 @@
+\doxysection{gopd \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/gopd"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/ljharb/gopd.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00907}{}\label{a00907}\index{gopd $<$sup$>$$<$a href="{}https://npmjs.org/package/gopd"{} $>$$<$img src="{}https://versionbadg.es/ljharb/gopd.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{gopd $<$sup$>$$<$a href=""https://npmjs.org/package/gopd"" $>$$<$img src=""https://versionbadg.es/ljharb/gopd.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00907_autotoc_md1186}%
+\Hypertarget{a00907_autotoc_md1186}%
+
+
+\href{https://github.com/ljharb/gopd/actions}{\texttt{ }} \href{https://app.codecov.io/gh/ljharb/gopd/}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=gopd}{\texttt{ }}
+
+\href{https://npmjs.org/package/gopd}{\texttt{ }}
+
+{\ttfamily Object.\+get\+Own\+Property\+Descriptor}, but accounts for IE\textquotesingle{}s broken implementation.\hypertarget{a00907_autotoc_md1187}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00907_autotoc_md1187}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01114_a84b871b070ccb8a7b1d0bf553be7be3b_a84b871b070ccb8a7b1d0bf553be7be3b}{gOPD}}\ =\ require(\textcolor{stringliteral}{'gopd'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01114_a84b871b070ccb8a7b1d0bf553be7be3b_a84b871b070ccb8a7b1d0bf553be7be3b}{gOPD}})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(typeof\ \mbox{\hyperlink{a01114_a84b871b070ccb8a7b1d0bf553be7be3b_a84b871b070ccb8a7b1d0bf553be7be3b}{gOPD}},\ \textcolor{stringliteral}{'function'},\ \textcolor{stringliteral}{'descriptors\ supported'});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ use\ gOPD\ like\ Object.getOwnPropertyDescriptor\ here}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.ok(!\mbox{\hyperlink{a01114_a84b871b070ccb8a7b1d0bf553be7be3b_a84b871b070ccb8a7b1d0bf553be7be3b}{gOPD}},\ \textcolor{stringliteral}{'descriptors\ not\ supported'});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

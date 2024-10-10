@@ -1,0 +1,115 @@
+\doxysubsection{node\+\_\+modules/parseurl/index.js}
+\hypertarget{a01297_source}{}\label{a01297_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01297}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00008}00008\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00015}00015\ var\ url\ =\ require(\textcolor{stringliteral}{'url'})}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00016}00016\ var\ \mbox{\hyperlink{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}{parse}}\ =\ url.\mbox{\hyperlink{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}{parse}}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00017}00017\ var\ Url\ =\ url.Url}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00024}00024\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}\ =\ parseurl}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00025}00025\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.original\ =\ \mbox{\hyperlink{a01297_a4cb8c6d8ea0504ff5413650aa6083fa6_a4cb8c6d8ea0504ff5413650aa6083fa6}{originalurl}}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00035}00035\ function\ parseurl\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00036}00036\ \ \ var\ url\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.url}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00038}00038\ \ \ \textcolor{keywordflow}{if}\ (url\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ URL\ is\ undefined}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00041}00041\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00043}00043\ \ \ var\ parsed\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.\_parsedUrl}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00045}00045\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00113_ac6bf5484b5676a3edfddf7ca77caa54a_ac6bf5484b5676a3edfddf7ca77caa54a}{fresh}}(url,\ parsed))\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Return\ cached\ URL\ parse}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ parsed}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00048}00048\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00050}00050\ \ \ \textcolor{comment}{//\ Parse\ the\ URL}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00051}00051\ \ \ parsed\ =\ fastparse(url)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00052}00052\ \ \ parsed.\_raw\ =\ url}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00054}00054\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.\_parsedUrl\ =\ parsed)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00055}00055\ \};}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00065}\mbox{\hyperlink{a01297_a4cb8c6d8ea0504ff5413650aa6083fa6_a4cb8c6d8ea0504ff5413650aa6083fa6}{00065}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01297_a4cb8c6d8ea0504ff5413650aa6083fa6_a4cb8c6d8ea0504ff5413650aa6083fa6}{originalurl}}\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00066}00066\ \ \ var\ url\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.originalUrl}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00068}00068\ \ \ \textcolor{keywordflow}{if}\ (typeof\ url\ !==\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Fallback}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ parseurl(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00071}00071\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00073}00073\ \ \ var\ parsed\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.\_parsedOriginalUrl}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00075}00075\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00113_ac6bf5484b5676a3edfddf7ca77caa54a_ac6bf5484b5676a3edfddf7ca77caa54a}{fresh}}(url,\ parsed))\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Return\ cached\ URL\ parse}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ parsed}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00078}00078\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00080}00080\ \ \ \textcolor{comment}{//\ Parse\ the\ URL}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00081}00081\ \ \ parsed\ =\ fastparse(url)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00082}00082\ \ \ parsed.\_raw\ =\ url}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00084}00084\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.\_parsedOriginalUrl\ =\ parsed)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00085}00085\ \};}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00095}00095\ \textcolor{keyword}{function}\ fastparse\ (str)\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00096}00096\ \ \ \textcolor{keywordflow}{if}\ (typeof\ str\ !==\ \textcolor{stringliteral}{'string'}\ ||\ str.charCodeAt(0)\ !==\ 0x2f\ \textcolor{comment}{/*\ /\ */})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}{parse}}(str)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00098}00098\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00100}00100\ \ \ var\ pathname\ =\ str}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00101}00101\ \ \ var\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00102}00102\ \ \ var\ search\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00104}00104\ \ \ \textcolor{comment}{//\ This\ takes\ the\ regexp\ from\ https://github.com/joyent/node/pull/7878}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00105}00105\ \ \ \textcolor{comment}{//\ Which\ is\ /\string^(\(\backslash\)/[\string^?\#\(\backslash\)s]*)(\(\backslash\)?[\string^\#\(\backslash\)s]*)?\$/}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00106}00106\ \ \ \textcolor{comment}{//\ And\ unrolls\ it\ into\ a\ for\ loop}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00107}00107\ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 1;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ str.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{switch}\ (str.charCodeAt(\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}))\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00109}00109\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3f:\ \textcolor{comment}{/*\ ?\ \ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (search\ ===\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ pathname\ =\ str.substring(0,\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ str.substring(\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ +\ 1)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ search\ =\ str.substring(\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00116}00116\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x09:\ \textcolor{comment}{/*\ \(\backslash\)t\ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00117}00117\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0a:\ \textcolor{comment}{/*\ \(\backslash\)n\ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00118}00118\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0c:\ \textcolor{comment}{/*\ \(\backslash\)f\ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00119}00119\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0d:\ \textcolor{comment}{/*\ \(\backslash\)r\ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00120}00120\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x20:\ \textcolor{comment}{/*\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00121}00121\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x23:\ \textcolor{comment}{/*\ \#\ \ */}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00122}00122\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xa0:}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00123}00123\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xfeff:}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}{parse}}(str)}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00126}00126\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00128}00128\ \ \ var\ url\ =\ Url\ !==\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00129}00129\ \ \ \ \ ?\ \textcolor{keyword}{new}\ Url()}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00130}00130\ \ \ \ \ :\ \{\}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00132}00132\ \ \ url.path\ =\ str}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00133}00133\ \ \ url.href\ =\ str}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00134}00134\ \ \ url.pathname\ =\ pathname}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00136}00136\ \ \ \textcolor{keywordflow}{if}\ (search\ !==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00137}00137\ \ \ \ \ url.query\ =\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00138}00138\ \ \ \ \ url.search\ =\ search}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00139}00139\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00141}00141\ \ \ \textcolor{keywordflow}{return}\ url}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00142}00142\ \}}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{a01297_source_l00153}00153\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00113_ac6bf5484b5676a3edfddf7ca77caa54a_ac6bf5484b5676a3edfddf7ca77caa54a}{fresh}}\ (url,\ parsedUrl)\ \{}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00154}00154\ \ \ \textcolor{keywordflow}{return}\ typeof\ parsedUrl\ ===\ \textcolor{stringliteral}{'object'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00155}00155\ \ \ \ \ parsedUrl\ !==\ \textcolor{keyword}{null}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00156}00156\ \ \ \ \ (Url\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ ||\ parsedUrl\ instanceof\ Url)\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00157}00157\ \ \ \ \ parsedUrl.\_raw\ ===\ url}
+\DoxyCodeLine{\Hypertarget{a01297_source_l00158}00158\ \}}
+
+\end{DoxyCode}

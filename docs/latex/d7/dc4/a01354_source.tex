@@ -1,0 +1,20 @@
+\doxysubsection{node\+\_\+modules/toidentifier/index.js}
+\hypertarget{a01354_source}{}\label{a01354_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01354}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01354_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01354_source_l00014}00014\ module.exports\ =\ toIdentifier}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01354_source_l00024}00024\ \textcolor{keyword}{function}\ toIdentifier\ (str)\ \{}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00025}00025\ \ \ \textcolor{keywordflow}{return}\ str}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00026}00026\ \ \ \ \ .split(\textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00027}00027\ \ \ \ \ .map(\textcolor{keyword}{function}\ (\mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}}.slice(0,\ 1).toUpperCase()\ +\ \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}}.slice(1)}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00029}00029\ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00030}00030\ \ \ \ \ .\mbox{\hyperlink{a00128_a1b09aaf68c8a94c60f4b0cb28eec4132_a1b09aaf68c8a94c60f4b0cb28eec4132}{join}}(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00031}00031\ \ \ \ \ .replace(/[\string^\ \_0-\/9\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}-\/z]/gi,\ \textcolor{stringliteral}{''})}
+\DoxyCodeLine{\Hypertarget{a01354_source_l00032}00032\ \}}
+
+\end{DoxyCode}

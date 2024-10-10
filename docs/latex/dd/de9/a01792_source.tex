@@ -1,0 +1,115 @@
+\doxysubsection{commands/binlog\+\_\+dump.js}
+\hypertarget{a01792_source}{}\label{a01792_source}\index{binlog\_dump.js@{binlog\_dump.js}}
+\mbox{\hyperlink{a01792}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00001}\mbox{\hyperlink{a01792_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00003}\mbox{\hyperlink{a01792_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00684}{Command}}\ =\ require(\textcolor{stringliteral}{'./command'});}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00004}\mbox{\hyperlink{a01792_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01792_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}\ =\ require(\textcolor{stringliteral}{'../packets'});}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00006}\mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{00006}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{eventParsers}}\ =\ [];}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00008}\mbox{\hyperlink{a00648}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00648}{BinlogEventHeader}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00009}\mbox{\hyperlink{a00648_ae26084abf79b88162e1ce95bf48c38ae_ae26084abf79b88162e1ce95bf48c38ae}{00009}}\ \ \ \mbox{\hyperlink{a00648_ae26084abf79b88162e1ce95bf48c38ae_ae26084abf79b88162e1ce95bf48c38ae}{constructor}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00010}00010\ \ \ \ \ this.timestamp\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00011}00011\ \ \ \ \ this.eventType\ =\ packet.readInt8();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00012}00012\ \ \ \ \ this.serverId\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00013}00013\ \ \ \ \ this.eventSize\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00014}00014\ \ \ \ \ this.logPos\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00015}00015\ \ \ \ \ this.flags\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00016}00016\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00019}\mbox{\hyperlink{a00652}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00652}{BinlogDump}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{a00684}{Command}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00020}\mbox{\hyperlink{a00652_ac62b2ea4880f0a5c64004c60bbce8ade_ac62b2ea4880f0a5c64004c60bbce8ade}{00020}}\ \ \ \mbox{\hyperlink{a00652_ac62b2ea4880f0a5c64004c60bbce8ade_ac62b2ea4880f0a5c64004c60bbce8ade}{constructor}}(opts)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ this.onResult\ =\ callback;}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00023}00023\ \ \ \ \ this.opts\ =\ opts;}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00024}00024\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00026}\mbox{\hyperlink{a00652_a9abe89519e664ef2055611b9286190c1_a9abe89519e664ef2055611b9286190c1}{00026}}\ \ \ \mbox{\hyperlink{a00652_a9abe89519e664ef2055611b9286190c1_a9abe89519e664ef2055611b9286190c1}{start}}(packet,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{const}\ newPacket\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.BinlogDump(this.opts);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00028}00028\ \ \ \ \ connection.writePacket(newPacket.toPacket(1));}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00652}{BinlogDump}}.prototype.\mbox{\hyperlink{a00652_aed1cfdebdd5cc3447bf8d79a45df7634_aed1cfdebdd5cc3447bf8d79a45df7634}{binlogData}};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00030}00030\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00032}\mbox{\hyperlink{a00652_aed1cfdebdd5cc3447bf8d79a45df7634_aed1cfdebdd5cc3447bf8d79a45df7634}{00032}}\ \ \ \mbox{\hyperlink{a00652_aed1cfdebdd5cc3447bf8d79a45df7634_aed1cfdebdd5cc3447bf8d79a45df7634}{binlogData}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ ok\ -\/\ continue\ consuming\ events}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ error\ -\/\ error}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ eof\ -\/\ end\ of\ binlog}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (packet.isEOF())\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00037}00037\ \ \ \ \ \ \ this.emit(\textcolor{stringliteral}{'eof'});}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ binlog\ event\ header}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00041}00041\ \ \ \ \ packet.readInt8();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{const}\ header\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00648}{BinlogEventHeader}}(packet);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{const}\ EventParser\ =\ \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{eventParsers}}[header.eventType];}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ event;}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (EventParser)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keyword}{event}\ =\ \textcolor{keyword}{new}\ EventParser(packet);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00047}00047\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keyword}{event}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00049}00049\ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{'UNKNOWN'}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00050}00050\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{event}.header\ =\ header;}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00053}00053\ \ \ \ \ this.emit(\textcolor{stringliteral}{'event'},\ event);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00652}{BinlogDump}}.prototype.\mbox{\hyperlink{a00652_aed1cfdebdd5cc3447bf8d79a45df7634_aed1cfdebdd5cc3447bf8d79a45df7634}{binlogData}};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00055}00055\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00058}\mbox{\hyperlink{a00656}{00058}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00656}{RotateEvent}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00059}\mbox{\hyperlink{a00656_a744188847c3d181570c15e37125a7046_a744188847c3d181570c15e37125a7046}{00059}}\ \ \ \mbox{\hyperlink{a00656_a744188847c3d181570c15e37125a7046_a744188847c3d181570c15e37125a7046}{constructor}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00060}00060\ \ \ \ \ this.pposition\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ TODO:\ read\ uint64\ here}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00062}00062\ \ \ \ \ packet.readInt32();\ \textcolor{comment}{//\ positionDword2}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00063}00063\ \ \ \ \ this.nextBinlog\ =\ packet.readString();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00064}00064\ \ \ \ \ this.name\ =\ \textcolor{stringliteral}{'RotateEvent'};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00068}\mbox{\hyperlink{a00660}{00068}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00660}{FormatDescriptionEvent}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00069}\mbox{\hyperlink{a00660_a9ddf8e65d84ad1866ec416fdbb2f606f_a9ddf8e65d84ad1866ec416fdbb2f606f}{00069}}\ \ \ \mbox{\hyperlink{a00660_a9ddf8e65d84ad1866ec416fdbb2f606f_a9ddf8e65d84ad1866ec416fdbb2f606f}{constructor}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00070}00070\ \ \ \ \ this.binlogVersion\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00071}00071\ \ \ \ \ this.serverVersion\ =\ packet.readString(50).replace(/\(\backslash\)u0000.*/,\ \textcolor{stringliteral}{''});\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/control-\/regex}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00072}00072\ \ \ \ \ this.createTimestamp\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00073}00073\ \ \ \ \ this.eventHeaderLength\ =\ packet.readInt8();\ \textcolor{comment}{//\ should\ be\ 19}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00074}00074\ \ \ \ \ this.eventsLength\ =\ packet.readBuffer();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00075}00075\ \ \ \ \ this.name\ =\ \textcolor{stringliteral}{'FormatDescriptionEvent'};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00076}00076\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00079}\mbox{\hyperlink{a00664}{00079}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00664}{QueryEvent}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00080}\mbox{\hyperlink{a00664_a8d1e5567793a54240feb82b8cb101286_a8d1e5567793a54240feb82b8cb101286}{00080}}\ \ \ \mbox{\hyperlink{a00664_a8d1e5567793a54240feb82b8cb101286_a8d1e5567793a54240feb82b8cb101286}{constructor}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{const}\ parseStatusVars\ =\ require(\textcolor{stringliteral}{'../packets/binlog\_query\_statusvars.js'});}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00082}00082\ \ \ \ \ this.slaveProxyId\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00083}00083\ \ \ \ \ this.executionTime\ =\ packet.readInt32();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{const}\ schemaLength\ =\ packet.readInt8();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00085}00085\ \ \ \ \ this.errorCode\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{const}\ statusVarsLength\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{const}\ statusVars\ =\ packet.readBuffer(statusVarsLength);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00088}00088\ \ \ \ \ this.schema\ =\ packet.readString(schemaLength);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00089}00089\ \ \ \ \ packet.readInt8();\ \textcolor{comment}{//\ should\ be\ zero}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00090}00090\ \ \ \ \ this.statusVars\ =\ parseStatusVars(statusVars);}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00091}00091\ \ \ \ \ this.\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ packet.readString();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00092}00092\ \ \ \ \ this.name\ =\ \textcolor{stringliteral}{'QueryEvent'};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00093}00093\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00096}\mbox{\hyperlink{a00668}{00096}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00668}{XidEvent}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00097}\mbox{\hyperlink{a00668_abcb5b87a14ff356cf606da42456855bd_abcb5b87a14ff356cf606da42456855bd}{00097}}\ \ \ \mbox{\hyperlink{a00668_abcb5b87a14ff356cf606da42456855bd_abcb5b87a14ff356cf606da42456855bd}{constructor}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00098}00098\ \ \ \ \ this.binlogVersion\ =\ packet.readInt16();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00099}00099\ \ \ \ \ this.xid\ =\ packet.readInt64();}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00100}00100\ \ \ \ \ this.name\ =\ \textcolor{stringliteral}{'XidEvent'};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00101}00101\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00104}00104\ \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{eventParsers}}[2]\ =\ \mbox{\hyperlink{a00664}{QueryEvent}};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00105}00105\ \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{eventParsers}}[4]\ =\ \mbox{\hyperlink{a00656}{RotateEvent}};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00106}00106\ \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{eventParsers}}[15]\ =\ \mbox{\hyperlink{a00660}{FormatDescriptionEvent}};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00107}00107\ \mbox{\hyperlink{a01792_a0152e0d7d162fe430949bcddb192ab34_a0152e0d7d162fe430949bcddb192ab34}{eventParsers}}[16]\ =\ \mbox{\hyperlink{a00668}{XidEvent}};}
+\DoxyCodeLine{\Hypertarget{a01792_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{a01792_source_l00109}\mbox{\hyperlink{a01792_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00109}}\ module.exports\ =\ \mbox{\hyperlink{a01273_aa8522091a3c683b9b2ac071a408c8715_aa8522091a3c683b9b2ac071a408c8715}{BinlogDump}};}
+
+\end{DoxyCode}

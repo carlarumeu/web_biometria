@@ -1,0 +1,343 @@
+\doxysubsection{Referencia del archivo express/lib/utils.js}
+\hypertarget{a01699}{}\label{a01699}\index{utils.js@{utils.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a01699_abc106415f3f1c8486e67f651c684e808_abc106415f3f1c8486e67f651c684e808}{accept\+Params}} (str)
+\begin{DoxyCompactList}\small\item\em Parse accept params {\ttfamily str} returning an object with {\ttfamily .value}, {\ttfamily .quality} and {\ttfamily .params}. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01699_a4bb8aefd023a03df298d1f87088056fa_a4bb8aefd023a03df298d1f87088056fa}{new\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Return new empty object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01699_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\begin{DoxyCompactList}\small\item\em express Copyright(c) 2009-\/2013 TJ Holowaychuk Copyright(c) 2014-\/2015 Douglas Christopher Wilson MIT Licensed \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01699_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}
+\begin{DoxyCompactList}\small\item\em Module dependencies. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01699_ab637d2913d46b0471a9a788a18c7e8ed_ab637d2913d46b0471a9a788a18c7e8ed}{content\+Type}} = require(\textquotesingle{}content-\/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01699_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}} = require(\textquotesingle{}depd\textquotesingle{})(\textquotesingle{}\mbox{\hyperlink{a01369_af0deccff0ccdd703412620ba83155b82_af0deccff0ccdd703412620ba83155b82}{express}}\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01699_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4}{flatten}} = require(\textquotesingle{}array-\/flatten\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Flatten the given {\ttfamily arr}. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01699_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}} = require(\textquotesingle{}\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\textquotesingle{}).mime
+\item 
+var \mbox{\hyperlink{a01699_aa7b4b88130584154c4a863b71b8a3075_aa7b4b88130584154c4a863b71b8a3075}{etag}} = require(\textquotesingle{}etag\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Return strong ETag for {\ttfamily body}. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01699_adccce5d9fde7ce401d03984f2d2a4715_adccce5d9fde7ce401d03984f2d2a4715}{proxyaddr}} = require(\textquotesingle{}\mbox{\hyperlink{a00572_a8bf6a1661b948405c3e30f40584760ff_a8bf6a1661b948405c3e30f40584760ff}{proxy}}-\/addr\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01699_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}} = require(\textquotesingle{}qs\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01699_af8c28d4993e33a1363bbd398159bf09f_af8c28d4993e33a1363bbd398159bf09f}{querystring}} = require(\textquotesingle{}querystring\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01699_a97aaee205028aabf6150a73c24632b0b_a97aaee205028aabf6150a73c24632b0b}{normalize\+Type}}
+\begin{DoxyCompactList}\small\item\em Normalize the given {\ttfamily type}, for example "{}html"{} becomes "{}text/html"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01699_abfd856f10a75f11cc2c9968e55881574_abfd856f10a75f11cc2c9968e55881574}{normalize\+Types}}
+\begin{DoxyCompactList}\small\item\em Normalize {\ttfamily types}, for example "{}html"{} becomes "{}text/html"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_aa1ae8b5aa0df46fcc9f22aba2deb965a}{content\+Disposition}}
+\begin{DoxyCompactList}\small\item\em Generate Content-\/\+Disposition header appropriate for the filename. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01699_ad5c0c0aa44974b31c6e4d3c6552b16e2_ad5c0c0aa44974b31c6e4d3c6552b16e2}{compile\+ETag}}
+\begin{DoxyCompactList}\small\item\em Compile "{}etag"{} value to function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01699_abc106415f3f1c8486e67f651c684e808_abc106415f3f1c8486e67f651c684e808}\index{utils.js@{utils.js}!acceptParams@{acceptParams}}
+\index{acceptParams@{acceptParams}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{acceptParams()}{acceptParams()}}
+{\footnotesize\ttfamily \label{a01699_abc106415f3f1c8486e67f651c684e808_abc106415f3f1c8486e67f651c684e808} 
+function accept\+Params (\begin{DoxyParamCaption}\item[{}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Parse accept params {\ttfamily str} returning an object with {\ttfamily .value}, {\ttfamily .quality} and {\ttfamily .params}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & str \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Object\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00126}{126}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_a4bb8aefd023a03df298d1f87088056fa_a4bb8aefd023a03df298d1f87088056fa}\index{utils.js@{utils.js}!newObject@{newObject}}
+\index{newObject@{newObject}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{newObject()}{newObject()}}
+{\footnotesize\ttfamily \label{a01699_a4bb8aefd023a03df298d1f87088056fa_a4bb8aefd023a03df298d1f87088056fa} 
+function new\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return new empty object. 
+
+\begin{DoxyReturn}{Devuelve}
+\{Object\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00301}{301}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01699_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}\index{utils.js@{utils.js}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily \label{a01699_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4} 
+var Buffer}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ require(\textcolor{stringliteral}{'safe-\/buffer'}).Buffer}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_aa1ae8b5aa0df46fcc9f22aba2deb965a}{contentDisposition}}\ =\ require(\textcolor{stringliteral}{'content-\/disposition'})}
+
+\end{DoxyCode}
+
+
+Module dependencies. 
+
+@api private 
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00015}{15}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_ad5c0c0aa44974b31c6e4d3c6552b16e2_ad5c0c0aa44974b31c6e4d3c6552b16e2}\index{utils.js@{utils.js}!compileETag@{compileETag}}
+\index{compileETag@{compileETag}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{compileETag}{compileETag}}
+{\footnotesize\ttfamily \label{a01699_ad5c0c0aa44974b31c6e4d3c6552b16e2_ad5c0c0aa44974b31c6e4d3c6552b16e2} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} compile\+ETag}
+
+
+
+Compile "{}etag"{} value to function. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Boolean\texorpdfstring{$\vert$}{|}\+String\texorpdfstring{$\vert$}{|}\+Function\}} & val \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Function\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00150}{150}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_aa1ae8b5aa0df46fcc9f22aba2deb965a}\index{utils.js@{utils.js}!contentDisposition@{contentDisposition}}
+\index{contentDisposition@{contentDisposition}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{contentDisposition}{contentDisposition}}
+{\footnotesize\ttfamily \label{a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_aa1ae8b5aa0df46fcc9f22aba2deb965a} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} content\+Disposition}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \mbox{\hyperlink{a01699_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.function(\mbox{\hyperlink{a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_aa1ae8b5aa0df46fcc9f22aba2deb965a}{contentDisposition}},}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{'utils.contentDisposition:\ use\ content-\/disposition\ npm\ module\ instead'})}
+
+\end{DoxyCode}
+
+
+Generate Content-\/\+Disposition header appropriate for the filename. 
+
+non-\/ascii filenames are urlencoded and a filename\texorpdfstring{$\ast$}{*} parameter is added
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{String\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00114}{114}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_ab637d2913d46b0471a9a788a18c7e8ed_ab637d2913d46b0471a9a788a18c7e8ed}\index{utils.js@{utils.js}!contentType@{contentType}}
+\index{contentType@{contentType}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{contentType}{contentType}}
+{\footnotesize\ttfamily \label{a01699_ab637d2913d46b0471a9a788a18c7e8ed_ab637d2913d46b0471a9a788a18c7e8ed} 
+var content\+Type = require(\textquotesingle{}content-\/\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00017}{17}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}\index{utils.js@{utils.js}!deprecate@{deprecate}}
+\index{deprecate@{deprecate}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{deprecate}{deprecate}}
+{\footnotesize\ttfamily \label{a01699_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620} 
+var deprecate = require(\textquotesingle{}depd\textquotesingle{})(\textquotesingle{}\mbox{\hyperlink{a01369_af0deccff0ccdd703412620ba83155b82_af0deccff0ccdd703412620ba83155b82}{express}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00018}{18}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_aa7b4b88130584154c4a863b71b8a3075_aa7b4b88130584154c4a863b71b8a3075}\index{utils.js@{utils.js}!etag@{etag}}
+\index{etag@{etag}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{etag}{etag}}
+{\footnotesize\ttfamily \label{a01699_aa7b4b88130584154c4a863b71b8a3075_aa7b4b88130584154c4a863b71b8a3075} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} etag = require(\textquotesingle{}etag\textquotesingle{})}
+
+
+
+Return strong ETag for {\ttfamily body}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\texorpdfstring{$\vert$}{|}\+Buffer\}} & body \\
+\hline
+{\em \{\+String\}} & \mbox{[}encoding\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{String\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00021}{21}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4}\index{utils.js@{utils.js}!flatten@{flatten}}
+\index{flatten@{flatten}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{flatten}{flatten}}
+{\footnotesize\ttfamily \label{a01699_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} flatten = require(\textquotesingle{}array-\/flatten\textquotesingle{})}
+
+
+
+Flatten the given {\ttfamily arr}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Array\}} & arr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Array\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00019}{19}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}\index{utils.js@{utils.js}!mime@{mime}}
+\index{mime@{mime}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{mime}{mime}}
+{\footnotesize\ttfamily \label{a01699_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375} 
+var mime = require(\textquotesingle{}\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\textquotesingle{}).mime}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00020}{20}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_a97aaee205028aabf6150a73c24632b0b_a97aaee205028aabf6150a73c24632b0b}\index{utils.js@{utils.js}!normalizeType@{normalizeType}}
+\index{normalizeType@{normalizeType}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{normalizeType}{normalizeType}}
+{\footnotesize\ttfamily \label{a01699_a97aaee205028aabf6150a73c24632b0b_a97aaee205028aabf6150a73c24632b0b} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} normalize\+Type}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})\{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \string~type.indexOf(\textcolor{charliteral}{'/'})}
+\DoxyCodeLine{\ \ \ \ ?\ \mbox{\hyperlink{a01699_abc106415f3f1c8486e67f651c684e808_abc106415f3f1c8486e67f651c684e808}{acceptParams}}(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})}
+\DoxyCodeLine{\ \ \ \ :\ \{\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ \mbox{\hyperlink{a01699_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}),\ params:\ \{\}\ \};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Normalize the given {\ttfamily type}, for example "{}html"{} becomes "{}text/html"{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Object\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00081}{81}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_abfd856f10a75f11cc2c9968e55881574_abfd856f10a75f11cc2c9968e55881574}\index{utils.js@{utils.js}!normalizeTypes@{normalizeTypes}}
+\index{normalizeTypes@{normalizeTypes}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{normalizeTypes}{normalizeTypes}}
+{\footnotesize\ttfamily \label{a01699_abfd856f10a75f11cc2c9968e55881574_abfd856f10a75f11cc2c9968e55881574} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} normalize\+Types}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00215_a5802f014ed8e96d3a513f114faa91d12_a5802f014ed8e96d3a513f114faa91d12}{types}})\{}
+\DoxyCodeLine{\ \ var\ ret\ =\ [];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ \mbox{\hyperlink{a00215_a5802f014ed8e96d3a513f114faa91d12_a5802f014ed8e96d3a513f114faa91d12}{types}}.length;\ ++\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})\ \{}
+\DoxyCodeLine{\ \ \ \ ret.push(\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.normalizeType(\mbox{\hyperlink{a00215_a5802f014ed8e96d3a513f114faa91d12_a5802f014ed8e96d3a513f114faa91d12}{types}}[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]));}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Normalize {\ttfamily types}, for example "{}html"{} becomes "{}text/html"{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Array\}} & types \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Array\} @api private 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00095}{95}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_adccce5d9fde7ce401d03984f2d2a4715_adccce5d9fde7ce401d03984f2d2a4715}\index{utils.js@{utils.js}!proxyaddr@{proxyaddr}}
+\index{proxyaddr@{proxyaddr}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{proxyaddr}{proxyaddr}}
+{\footnotesize\ttfamily \label{a01699_adccce5d9fde7ce401d03984f2d2a4715_adccce5d9fde7ce401d03984f2d2a4715} 
+var proxyaddr = require(\textquotesingle{}\mbox{\hyperlink{a00572_a8bf6a1661b948405c3e30f40584760ff_a8bf6a1661b948405c3e30f40584760ff}{proxy}}-\/addr\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00022}{22}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}\index{utils.js@{utils.js}!qs@{qs}}
+\index{qs@{qs}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{qs}{qs}}
+{\footnotesize\ttfamily \label{a01699_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af} 
+var qs = require(\textquotesingle{}qs\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00023}{23}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_af8c28d4993e33a1363bbd398159bf09f_af8c28d4993e33a1363bbd398159bf09f}\index{utils.js@{utils.js}!querystring@{querystring}}
+\index{querystring@{querystring}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{querystring}{querystring}}
+{\footnotesize\ttfamily \label{a01699_af8c28d4993e33a1363bbd398159bf09f_af8c28d4993e33a1363bbd398159bf09f} 
+var querystring = require(\textquotesingle{}querystring\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00024}{24}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+
+\Hypertarget{a01699_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{utils.js@{utils.js}!strict@{strict}}
+\index{strict@{strict}!utils.js@{utils.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01699_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+express Copyright(c) 2009-\/2013 TJ Holowaychuk Copyright(c) 2014-\/2015 Douglas Christopher Wilson MIT Licensed 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01699_source_l00008}{8}} del archivo \mbox{\hyperlink{a01699_source}{express/lib/utils.\+js}}.
+

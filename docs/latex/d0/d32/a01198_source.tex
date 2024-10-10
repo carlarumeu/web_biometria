@@ -1,0 +1,365 @@
+\doxysubsection{node\+\_\+modules/get-\/intrinsic/index.js}
+\hypertarget{a01198_source}{}\label{a01198_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01198}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00001}\mbox{\hyperlink{a01198_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00003}\mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{00003}}\ var\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00005}\mbox{\hyperlink{a01198_aef9dd234a1848605908b453684f83214_aef9dd234a1848605908b453684f83214}{00005}}\ var\ \mbox{\hyperlink{a01198_aef9dd234a1848605908b453684f83214_aef9dd234a1848605908b453684f83214}{\$Error}}\ =\ require(\textcolor{stringliteral}{'es-\/errors'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00006}\mbox{\hyperlink{a01198_a0b856862f462dd3c2e305915f7307f5b_a0b856862f462dd3c2e305915f7307f5b}{00006}}\ var\ \mbox{\hyperlink{a01198_a0b856862f462dd3c2e305915f7307f5b_a0b856862f462dd3c2e305915f7307f5b}{\$EvalError}}\ =\ require(\textcolor{stringliteral}{'es-\/errors/eval'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00007}\mbox{\hyperlink{a01198_a6f26640a1e7da58e7dccc8a18288aca3_a6f26640a1e7da58e7dccc8a18288aca3}{00007}}\ var\ \mbox{\hyperlink{a01198_a6f26640a1e7da58e7dccc8a18288aca3_a6f26640a1e7da58e7dccc8a18288aca3}{\$RangeError}}\ =\ require(\textcolor{stringliteral}{'es-\/errors/range'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00008}\mbox{\hyperlink{a01198_a833ac5ba0b59202b260eb1e253a43b4d_a833ac5ba0b59202b260eb1e253a43b4d}{00008}}\ var\ \mbox{\hyperlink{a01198_a833ac5ba0b59202b260eb1e253a43b4d_a833ac5ba0b59202b260eb1e253a43b4d}{\$ReferenceError}}\ =\ require(\textcolor{stringliteral}{'es-\/errors/ref'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00009}\mbox{\hyperlink{a01198_a3c59defabcfbf5d2871d42f7e3fa051d_a3c59defabcfbf5d2871d42f7e3fa051d}{00009}}\ var\ \mbox{\hyperlink{a01198_a3c59defabcfbf5d2871d42f7e3fa051d_a3c59defabcfbf5d2871d42f7e3fa051d}{\$SyntaxError}}\ =\ require(\textcolor{stringliteral}{'es-\/errors/syntax'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00010}\mbox{\hyperlink{a01198_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066}{00010}}\ var\ \mbox{\hyperlink{a01198_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066}{\$TypeError}}\ =\ require(\textcolor{stringliteral}{'es-\/errors/type'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00011}\mbox{\hyperlink{a01198_a6ced0964077a387483c5e89fe659f552_a6ced0964077a387483c5e89fe659f552}{00011}}\ var\ \mbox{\hyperlink{a01198_a6ced0964077a387483c5e89fe659f552_a6ced0964077a387483c5e89fe659f552}{\$URIError}}\ =\ require(\textcolor{stringliteral}{'es-\/errors/uri'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00013}\mbox{\hyperlink{a01198_ae1ca0b413d72d022df2d07db270f843c_ae1ca0b413d72d022df2d07db270f843c}{00013}}\ var\ \mbox{\hyperlink{a01198_ae1ca0b413d72d022df2d07db270f843c_ae1ca0b413d72d022df2d07db270f843c}{\$Function}}\ =\ Function;}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00015}00015\ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ consistent-\/return}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00016}\mbox{\hyperlink{a01198_aa98dfcfcdf8b819198b2aa8de6dc8202_aa98dfcfcdf8b819198b2aa8de6dc8202}{00016}}\ var\ \mbox{\hyperlink{a01198_aa98dfcfcdf8b819198b2aa8de6dc8202_aa98dfcfcdf8b819198b2aa8de6dc8202}{getEvalledConstructor}}\ =\ \textcolor{keyword}{function}\ (expressionSyntax)\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_ae1ca0b413d72d022df2d07db270f843c_ae1ca0b413d72d022df2d07db270f843c}{\$Function}}(\textcolor{stringliteral}{'"{}use\ strict"{};\ return\ ('}\ +\ expressionSyntax\ +\ \textcolor{stringliteral}{').constructor;'})();}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00019}00019\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{\}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00020}00020\ \};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00022}\mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{00022}}\ var\ \mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{\$gOPD}}\ =\ Object.getOwnPropertyDescriptor;}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00023}\mbox{\hyperlink{a01198_a67c65781130b9bd54e65c97ce701639b_a67c65781130b9bd54e65c97ce701639b}{00023}}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{\$gOPD}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{\$gOPD}}(\{\},\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00026}00026\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{\$gOPD}}\ =\ \textcolor{keyword}{null};\ \textcolor{comment}{//\ this\ is\ IE\ 8,\ which\ has\ a\ broken\ gOPD}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00031}\mbox{\hyperlink{a01198_a527089ca5a2b1ebdec717975303e773d_a527089ca5a2b1ebdec717975303e773d}{00031}}\ var\ \mbox{\hyperlink{a01198_a527089ca5a2b1ebdec717975303e773d_a527089ca5a2b1ebdec717975303e773d}{throwTypeError}}\ =\ \textcolor{keyword}{function}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01198_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066}{\$TypeError}}();}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00033}00033\ \};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00034}\mbox{\hyperlink{a01198_a14e9825a03b702659cc4080f9a04d0fa_a14e9825a03b702659cc4080f9a04d0fa}{00034}}\ var\ \mbox{\hyperlink{a01198_a14e9825a03b702659cc4080f9a04d0fa_a14e9825a03b702659cc4080f9a04d0fa}{ThrowTypeError}}\ =\ \mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{\$gOPD}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00035}00035\ \ \ \ \ ?\ (\textcolor{keyword}{function}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ no-\/unused-\/expressions,\ no-\/caller,\ no-\/restricted-\/properties}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ arguments.callee;\ \textcolor{comment}{//\ IE\ 8\ does\ not\ throw\ here}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_a527089ca5a2b1ebdec717975303e773d_a527089ca5a2b1ebdec717975303e773d}{throwTypeError}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00040}00040\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (calleeThrows)\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ IE\ 8\ throws\ on\ Object.getOwnPropertyDescriptor(arguments,\ '')}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_aeb6ee481deb2eb6f750452e290d2d7d7_aeb6ee481deb2eb6f750452e290d2d7d7}{\$gOPD}}(arguments,\ \textcolor{stringliteral}{'callee'}).get;}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (gOPDthrows)\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_a527089ca5a2b1ebdec717975303e773d_a527089ca5a2b1ebdec717975303e773d}{throwTypeError}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00048}00048\ \ \ \ \ \}())}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00049}00049\ \ \ \ \ :\ \mbox{\hyperlink{a01198_a527089ca5a2b1ebdec717975303e773d_a527089ca5a2b1ebdec717975303e773d}{throwTypeError}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00051}\mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{00051}}\ var\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ =\ require(\textcolor{stringliteral}{'has-\/symbols'})();}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00052}\mbox{\hyperlink{a01198_a6e02f864c8434e34306f8f7536301706_a6e02f864c8434e34306f8f7536301706}{00052}}\ var\ \mbox{\hyperlink{a01198_a6e02f864c8434e34306f8f7536301706_a6e02f864c8434e34306f8f7536301706}{hasProto}}\ =\ require(\textcolor{stringliteral}{'has-\/proto'})();}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00054}\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{00054}}\ var\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ =\ Object.getPrototypeOf\ ||\ (}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{a01198_a6e02f864c8434e34306f8f7536301706_a6e02f864c8434e34306f8f7536301706}{hasProto}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00056}00056\ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00572_a81e910173af87b1161e719a504d52407_a81e910173af87b1161e719a504d52407}{x}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00572_a81e910173af87b1161e719a504d52407_a81e910173af87b1161e719a504d52407}{x}}.\_\_proto\_\_;\ \}\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/proto}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00057}00057\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a01195_a2d30a83186dbd0b9ecc3c1e9330136b6_a2d30a83186dbd0b9ecc3c1e9330136b6}{null}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00058}00058\ );}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00060}\mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{00060}}\ var\ \mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{needsEval}}\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00062}\mbox{\hyperlink{a01198_a38e09766ab55ad6d8193d486066b339a_a38e09766ab55ad6d8193d486066b339a}{00062}}\ var\ \mbox{\hyperlink{a01198_a38e09766ab55ad6d8193d486066b339a_a38e09766ab55ad6d8193d486066b339a}{TypedArray}}\ =\ typeof\ Uint8Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ||\ !\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(Uint8Array);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00064}\mbox{\hyperlink{a01198_a1d2ab5d1afc27d5ac306fda0bc6cdee3_a1d2ab5d1afc27d5ac306fda0bc6cdee3}{00064}}\ var\ \mbox{\hyperlink{a01198_a1d2ab5d1afc27d5ac306fda0bc6cdee3_a1d2ab5d1afc27d5ac306fda0bc6cdee3}{INTRINSICS}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00065}00065\ \ \ \ \ \_\_proto\_\_:\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00066}00066\ \ \ \ \ \textcolor{stringliteral}{'\%AggregateError\%'}:\ typeof\ AggregateError\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ AggregateError,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00067}00067\ \ \ \ \ \textcolor{stringliteral}{'\%Array\%'}:\ Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00068}00068\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayBuffer\%'}:\ typeof\ ArrayBuffer\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ ArrayBuffer,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00069}00069\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayIteratorPrototype\%'}:\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ \&\&\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ ?\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}([][Symbol.iterator]())\ :\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00070}00070\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncFromSyncIteratorPrototype\%'}:\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00071}00071\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncFunction\%'}:\ \mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{needsEval}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00072}00072\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncGenerator\%'}:\ \mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{needsEval}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00073}00073\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncGeneratorFunction\%'}:\ \mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{needsEval}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00074}00074\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncIteratorPrototype\%'}:\ \mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{needsEval}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00075}00075\ \ \ \ \ \textcolor{stringliteral}{'\%Atomics\%'}:\ typeof\ Atomics\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Atomics,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00076}00076\ \ \ \ \ \textcolor{stringliteral}{'\%BigInt\%'}:\ typeof\ BigInt\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ BigInt,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00077}00077\ \ \ \ \ \textcolor{stringliteral}{'\%BigInt64Array\%'}:\ typeof\ BigInt64Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ BigInt64Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00078}00078\ \ \ \ \ \textcolor{stringliteral}{'\%BigUint64Array\%'}:\ typeof\ BigUint64Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ BigUint64Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00079}00079\ \ \ \ \ \textcolor{stringliteral}{'\%Boolean\%'}:\ Boolean,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00080}00080\ \ \ \ \ \textcolor{stringliteral}{'\%DataView\%'}:\ typeof\ DataView\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ DataView,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00081}00081\ \ \ \ \ \textcolor{stringliteral}{'\%Date\%'}:\ Date,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00082}00082\ \ \ \ \ \textcolor{stringliteral}{'\%decodeURI\%'}:\ decodeURI,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00083}00083\ \ \ \ \ \textcolor{stringliteral}{'\%decodeURIComponent\%'}:\ decodeURIComponent,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00084}00084\ \ \ \ \ \textcolor{stringliteral}{'\%encodeURI\%'}:\ encodeURI,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00085}00085\ \ \ \ \ \textcolor{stringliteral}{'\%encodeURIComponent\%'}:\ encodeURIComponent,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00086}00086\ \ \ \ \ \textcolor{stringliteral}{'\%Error\%'}:\ \mbox{\hyperlink{a01198_aef9dd234a1848605908b453684f83214_aef9dd234a1848605908b453684f83214}{\$Error}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00087}00087\ \ \ \ \ \textcolor{stringliteral}{'\%eval\%'}:\ \mbox{\hyperlink{a01195_af037b8dfb5958687bbe2894c4bef9863_af037b8dfb5958687bbe2894c4bef9863}{eval}},\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/eval}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00088}00088\ \ \ \ \ \textcolor{stringliteral}{'\%EvalError\%'}:\ \mbox{\hyperlink{a01198_a0b856862f462dd3c2e305915f7307f5b_a0b856862f462dd3c2e305915f7307f5b}{\$EvalError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00089}00089\ \ \ \ \ \textcolor{stringliteral}{'\%Float32Array\%'}:\ typeof\ Float32Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Float32Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00090}00090\ \ \ \ \ \textcolor{stringliteral}{'\%Float64Array\%'}:\ typeof\ Float64Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Float64Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00091}00091\ \ \ \ \ \textcolor{stringliteral}{'\%FinalizationRegistry\%'}:\ typeof\ FinalizationRegistry\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ FinalizationRegistry,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00092}00092\ \ \ \ \ \textcolor{stringliteral}{'\%Function\%'}:\ \mbox{\hyperlink{a01198_ae1ca0b413d72d022df2d07db270f843c_ae1ca0b413d72d022df2d07db270f843c}{\$Function}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00093}00093\ \ \ \ \ \textcolor{stringliteral}{'\%GeneratorFunction\%'}:\ \mbox{\hyperlink{a01198_a36b20ab31b30139714a502e309da00af_a36b20ab31b30139714a502e309da00af}{needsEval}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00094}00094\ \ \ \ \ \textcolor{stringliteral}{'\%Int8Array\%'}:\ typeof\ Int8Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Int8Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00095}00095\ \ \ \ \ \textcolor{stringliteral}{'\%Int16Array\%'}:\ typeof\ Int16Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Int16Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00096}00096\ \ \ \ \ \textcolor{stringliteral}{'\%Int32Array\%'}:\ typeof\ Int32Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Int32Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00097}00097\ \ \ \ \ \textcolor{stringliteral}{'\%isFinite\%'}:\ isFinite,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00098}00098\ \ \ \ \ \textcolor{stringliteral}{'\%isNaN\%'}:\ isNaN,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00099}00099\ \ \ \ \ \textcolor{stringliteral}{'\%IteratorPrototype\%'}:\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ \&\&\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ ?\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}([][Symbol.iterator]()))\ :\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00100}00100\ \ \ \ \ \textcolor{stringliteral}{'\%JSON\%'}:\ typeof\ \mbox{\hyperlink{a00320_a5c2083d67680a698a2c2d545b649a6f5_a5c2083d67680a698a2c2d545b649a6f5}{JSON}}\ ===\ \textcolor{stringliteral}{'object'}\ ?\ \mbox{\hyperlink{a00320_a5c2083d67680a698a2c2d545b649a6f5_a5c2083d67680a698a2c2d545b649a6f5}{JSON}}\ :\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00101}00101\ \ \ \ \ \textcolor{stringliteral}{'\%Map\%'}:\ typeof\ Map\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Map,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00102}00102\ \ \ \ \ \textcolor{stringliteral}{'\%MapIteratorPrototype\%'}:\ typeof\ Map\ ===\ \textcolor{stringliteral}{'undefined'}\ ||\ !\mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ ||\ !\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(\textcolor{keyword}{new}\ Map()[Symbol.iterator]()),}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00103}00103\ \ \ \ \ \textcolor{stringliteral}{'\%Math\%'}:\ Math,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00104}00104\ \ \ \ \ \textcolor{stringliteral}{'\%Number\%'}:\ Number,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00105}00105\ \ \ \ \ \textcolor{stringliteral}{'\%Object\%'}:\ Object,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00106}00106\ \ \ \ \ \textcolor{stringliteral}{'\%parseFloat\%'}:\ parseFloat,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00107}00107\ \ \ \ \ \textcolor{stringliteral}{'\%parseInt\%'}:\ parseInt,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00108}00108\ \ \ \ \ \textcolor{stringliteral}{'\%Promise\%'}:\ typeof\ Promise\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Promise,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00109}00109\ \ \ \ \ \textcolor{stringliteral}{'\%Proxy\%'}:\ typeof\ Proxy\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Proxy,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00110}00110\ \ \ \ \ \textcolor{stringliteral}{'\%RangeError\%'}:\ \mbox{\hyperlink{a01198_a6f26640a1e7da58e7dccc8a18288aca3_a6f26640a1e7da58e7dccc8a18288aca3}{\$RangeError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00111}00111\ \ \ \ \ \textcolor{stringliteral}{'\%ReferenceError\%'}:\ \mbox{\hyperlink{a01198_a833ac5ba0b59202b260eb1e253a43b4d_a833ac5ba0b59202b260eb1e253a43b4d}{\$ReferenceError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00112}00112\ \ \ \ \ \textcolor{stringliteral}{'\%Reflect\%'}:\ typeof\ Reflect\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Reflect,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00113}00113\ \ \ \ \ \textcolor{stringliteral}{'\%RegExp\%'}:\ RegExp,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00114}00114\ \ \ \ \ \textcolor{stringliteral}{'\%Set\%'}:\ typeof\ Set\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Set,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00115}00115\ \ \ \ \ \textcolor{stringliteral}{'\%SetIteratorPrototype\%'}:\ typeof\ Set\ ===\ \textcolor{stringliteral}{'undefined'}\ ||\ !\mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ ||\ !\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(\textcolor{keyword}{new}\ Set()[Symbol.iterator]()),}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00116}00116\ \ \ \ \ \textcolor{stringliteral}{'\%SharedArrayBuffer\%'}:\ typeof\ SharedArrayBuffer\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ SharedArrayBuffer,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00117}00117\ \ \ \ \ \textcolor{stringliteral}{'\%String\%'}:\ String,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00118}00118\ \ \ \ \ \textcolor{stringliteral}{'\%StringIteratorPrototype\%'}:\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ \&\&\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}\ ?\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(\textcolor{stringliteral}{''}[Symbol.iterator]())\ :\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00119}00119\ \ \ \ \ \textcolor{stringliteral}{'\%Symbol\%'}:\ \mbox{\hyperlink{a01198_ab265d6ce76982576467ae1e40245a76d_ab265d6ce76982576467ae1e40245a76d}{hasSymbols}}\ ?\ Symbol\ :\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00120}00120\ \ \ \ \ \textcolor{stringliteral}{'\%SyntaxError\%'}:\ \mbox{\hyperlink{a01198_a3c59defabcfbf5d2871d42f7e3fa051d_a3c59defabcfbf5d2871d42f7e3fa051d}{\$SyntaxError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00121}00121\ \ \ \ \ \textcolor{stringliteral}{'\%ThrowTypeError\%'}:\ \mbox{\hyperlink{a01198_a14e9825a03b702659cc4080f9a04d0fa_a14e9825a03b702659cc4080f9a04d0fa}{ThrowTypeError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00122}00122\ \ \ \ \ \textcolor{stringliteral}{'\%TypedArray\%'}:\ \mbox{\hyperlink{a01198_a38e09766ab55ad6d8193d486066b339a_a38e09766ab55ad6d8193d486066b339a}{TypedArray}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00123}00123\ \ \ \ \ \textcolor{stringliteral}{'\%TypeError\%'}:\ \mbox{\hyperlink{a01198_aa0071a8b77c07790e5c41e2893518066_aa0071a8b77c07790e5c41e2893518066}{\$TypeError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00124}00124\ \ \ \ \ \textcolor{stringliteral}{'\%Uint8Array\%'}:\ typeof\ Uint8Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Uint8Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00125}00125\ \ \ \ \ \textcolor{stringliteral}{'\%Uint8ClampedArray\%'}:\ typeof\ Uint8ClampedArray\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Uint8ClampedArray,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00126}00126\ \ \ \ \ \textcolor{stringliteral}{'\%Uint16Array\%'}:\ typeof\ Uint16Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Uint16Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00127}00127\ \ \ \ \ \textcolor{stringliteral}{'\%Uint32Array\%'}:\ typeof\ Uint32Array\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ Uint32Array,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00128}00128\ \ \ \ \ \textcolor{stringliteral}{'\%URIError\%'}:\ \mbox{\hyperlink{a01198_a6ced0964077a387483c5e89fe659f552_a6ced0964077a387483c5e89fe659f552}{\$URIError}},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00129}00129\ \ \ \ \ \textcolor{stringliteral}{'\%WeakMap\%'}:\ typeof\ WeakMap\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ WeakMap,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00130}00130\ \ \ \ \ \textcolor{stringliteral}{'\%WeakRef\%'}:\ typeof\ WeakRef\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ WeakRef,}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00131}00131\ \ \ \ \ \textcolor{stringliteral}{'\%WeakSet\%'}:\ typeof\ WeakSet\ ===\ \textcolor{stringliteral}{'undefined'}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ WeakSet}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00132}00132\ \};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00134}00134\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{null}.error;\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/unused-\/expressions}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00137}00137\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://github.com/tc39/proposal-\/shadowrealm/pull/384\#issuecomment-\/1364264229}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00139}00139\ \ \ \ \ \ \ \ \ var\ errorProto\ =\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(\mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}));}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00140}00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_a1d2ab5d1afc27d5ac306fda0bc6cdee3_a1d2ab5d1afc27d5ac306fda0bc6cdee3}{INTRINSICS}}[\textcolor{stringliteral}{'\%Error.prototype\%'}]\ =\ errorProto;}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00142}00142\ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00144}\mbox{\hyperlink{a01198_a1af90393d090060db90c45832671edd2_a1af90393d090060db90c45832671edd2}{00144}}\ var\ \mbox{\hyperlink{a01198_a1af90393d090060db90c45832671edd2_a1af90393d090060db90c45832671edd2}{doEval}}\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01198_a1af90393d090060db90c45832671edd2_a1af90393d090060db90c45832671edd2}{doEval}}(name)\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00145}00145\ \ \ \ \ var\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ===\ \textcolor{stringliteral}{'\%AsyncFunction\%'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00147}00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ \mbox{\hyperlink{a01198_aa98dfcfcdf8b819198b2aa8de6dc8202_aa98dfcfcdf8b819198b2aa8de6dc8202}{getEvalledConstructor}}(\textcolor{stringliteral}{'async\ function\ ()\ \{\}'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00148}00148\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (name\ ===\ \textcolor{stringliteral}{'\%GeneratorFunction\%'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ \mbox{\hyperlink{a01198_aa98dfcfcdf8b819198b2aa8de6dc8202_aa98dfcfcdf8b819198b2aa8de6dc8202}{getEvalledConstructor}}(\textcolor{stringliteral}{'function*\ ()\ \{\}'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00150}00150\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (name\ ===\ \textcolor{stringliteral}{'\%AsyncGeneratorFunction\%'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00151}00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ \mbox{\hyperlink{a01198_aa98dfcfcdf8b819198b2aa8de6dc8202_aa98dfcfcdf8b819198b2aa8de6dc8202}{getEvalledConstructor}}(\textcolor{stringliteral}{'async\ function*\ ()\ \{\}'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00152}00152\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (name\ ===\ \textcolor{stringliteral}{'\%AsyncGenerator\%'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00153}00153\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}\ =\ \mbox{\hyperlink{a01198_a1af90393d090060db90c45832671edd2_a1af90393d090060db90c45832671edd2}{doEval}}(\textcolor{stringliteral}{'\%AsyncGeneratorFunction\%'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}.prototype;}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00157}00157\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (name\ ===\ \textcolor{stringliteral}{'\%AsyncIteratorPrototype\%'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00158}00158\ \ \ \ \ \ \ \ \ var\ gen\ =\ \mbox{\hyperlink{a01198_a1af90393d090060db90c45832671edd2_a1af90393d090060db90c45832671edd2}{doEval}}(\textcolor{stringliteral}{'\%AsyncGenerator\%'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (gen\ \&\&\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ \mbox{\hyperlink{a01198_a8cfba932e510c58e75654c8bf0c22e8a_a8cfba932e510c58e75654c8bf0c22e8a}{getProto}}(gen.prototype);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00164}00164\ \ \ \ \ \mbox{\hyperlink{a01198_a1d2ab5d1afc27d5ac306fda0bc6cdee3_a1d2ab5d1afc27d5ac306fda0bc6cdee3}{INTRINSICS}}[name]\ =\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00166}00166\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00167}00167\ \};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00169}\mbox{\hyperlink{a01198_aa76d99781bab666c7084a7702719ee28_aa76d99781bab666c7084a7702719ee28}{00169}}\ var\ \mbox{\hyperlink{a01198_aa76d99781bab666c7084a7702719ee28_aa76d99781bab666c7084a7702719ee28}{LEGACY\_ALIASES}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00170}00170\ \ \ \ \ \_\_proto\_\_:\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00171}00171\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayBufferPrototype\%'}:\ [\textcolor{stringliteral}{'ArrayBuffer'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00172}00172\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00173}00173\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayProto\_entries\%'}:\ [\textcolor{stringliteral}{'Array'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'entries'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00174}00174\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayProto\_forEach\%'}:\ [\textcolor{stringliteral}{'Array'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'forEach'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00175}00175\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayProto\_keys\%'}:\ [\textcolor{stringliteral}{'Array'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'keys'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00176}00176\ \ \ \ \ \textcolor{stringliteral}{'\%ArrayProto\_values\%'}:\ [\textcolor{stringliteral}{'Array'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'values'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00177}00177\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncFunctionPrototype\%'}:\ [\textcolor{stringliteral}{'AsyncFunction'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00178}00178\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncGenerator\%'}:\ [\textcolor{stringliteral}{'AsyncGeneratorFunction'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00179}00179\ \ \ \ \ \textcolor{stringliteral}{'\%AsyncGeneratorPrototype\%'}:\ [\textcolor{stringliteral}{'AsyncGeneratorFunction'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00180}00180\ \ \ \ \ \textcolor{stringliteral}{'\%BooleanPrototype\%'}:\ [\textcolor{stringliteral}{'Boolean'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00181}00181\ \ \ \ \ \textcolor{stringliteral}{'\%DataViewPrototype\%'}:\ [\textcolor{stringliteral}{'DataView'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00182}00182\ \ \ \ \ \textcolor{stringliteral}{'\%DatePrototype\%'}:\ [\textcolor{stringliteral}{'Date'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00183}00183\ \ \ \ \ \textcolor{stringliteral}{'\%ErrorPrototype\%'}:\ [\textcolor{stringliteral}{'Error'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00184}00184\ \ \ \ \ \textcolor{stringliteral}{'\%EvalErrorPrototype\%'}:\ [\textcolor{stringliteral}{'EvalError'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00185}00185\ \ \ \ \ \textcolor{stringliteral}{'\%Float32ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Float32Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00186}00186\ \ \ \ \ \textcolor{stringliteral}{'\%Float64ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Float64Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00187}00187\ \ \ \ \ \textcolor{stringliteral}{'\%FunctionPrototype\%'}:\ [\textcolor{stringliteral}{'Function'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00188}00188\ \ \ \ \ \textcolor{stringliteral}{'\%Generator\%'}:\ [\textcolor{stringliteral}{'GeneratorFunction'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00189}00189\ \ \ \ \ \textcolor{stringliteral}{'\%GeneratorPrototype\%'}:\ [\textcolor{stringliteral}{'GeneratorFunction'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00190}00190\ \ \ \ \ \textcolor{stringliteral}{'\%Int8ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Int8Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00191}00191\ \ \ \ \ \textcolor{stringliteral}{'\%Int16ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Int16Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00192}00192\ \ \ \ \ \textcolor{stringliteral}{'\%Int32ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Int32Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00193}00193\ \ \ \ \ \textcolor{stringliteral}{'\%JSONParse\%'}:\ [\textcolor{stringliteral}{'JSON'},\ \textcolor{stringliteral}{'parse'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00194}00194\ \ \ \ \ \textcolor{stringliteral}{'\%JSONStringify\%'}:\ [\textcolor{stringliteral}{'JSON'},\ \textcolor{stringliteral}{'stringify'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00195}00195\ \ \ \ \ \textcolor{stringliteral}{'\%MapPrototype\%'}:\ [\textcolor{stringliteral}{'Map'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00196}00196\ \ \ \ \ \textcolor{stringliteral}{'\%NumberPrototype\%'}:\ [\textcolor{stringliteral}{'Number'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00197}00197\ \ \ \ \ \textcolor{stringliteral}{'\%ObjectPrototype\%'}:\ [\textcolor{stringliteral}{'Object'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00198}00198\ \ \ \ \ \textcolor{stringliteral}{'\%ObjProto\_toString\%'}:\ [\textcolor{stringliteral}{'Object'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'toString'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00199}00199\ \ \ \ \ \textcolor{stringliteral}{'\%ObjProto\_valueOf\%'}:\ [\textcolor{stringliteral}{'Object'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'valueOf'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00200}00200\ \ \ \ \ \textcolor{stringliteral}{'\%PromisePrototype\%'}:\ [\textcolor{stringliteral}{'Promise'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00201}00201\ \ \ \ \ \textcolor{stringliteral}{'\%PromiseProto\_then\%'}:\ [\textcolor{stringliteral}{'Promise'},\ \textcolor{stringliteral}{'prototype'},\ \textcolor{stringliteral}{'then'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00202}00202\ \ \ \ \ \textcolor{stringliteral}{'\%Promise\_all\%'}:\ [\textcolor{stringliteral}{'Promise'},\ \textcolor{stringliteral}{'all'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00203}00203\ \ \ \ \ \textcolor{stringliteral}{'\%Promise\_reject\%'}:\ [\textcolor{stringliteral}{'Promise'},\ \textcolor{stringliteral}{'reject'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00204}00204\ \ \ \ \ \textcolor{stringliteral}{'\%Promise\_resolve\%'}:\ [\textcolor{stringliteral}{'Promise'},\ \textcolor{stringliteral}{'resolve'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00205}00205\ \ \ \ \ \textcolor{stringliteral}{'\%RangeErrorPrototype\%'}:\ [\textcolor{stringliteral}{'RangeError'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00206}00206\ \ \ \ \ \textcolor{stringliteral}{'\%ReferenceErrorPrototype\%'}:\ [\textcolor{stringliteral}{'ReferenceError'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00207}00207\ \ \ \ \ \textcolor{stringliteral}{'\%RegExpPrototype\%'}:\ [\textcolor{stringliteral}{'RegExp'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00208}00208\ \ \ \ \ \textcolor{stringliteral}{'\%SetPrototype\%'}:\ [\textcolor{stringliteral}{'Set'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00209}00209\ \ \ \ \ \textcolor{stringliteral}{'\%SharedArrayBufferPrototype\%'}:\ [\textcolor{stringliteral}{'SharedArrayBuffer'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00210}00210\ \ \ \ \ \textcolor{stringliteral}{'\%StringPrototype\%'}:\ [\textcolor{stringliteral}{'String'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00211}00211\ \ \ \ \ \textcolor{stringliteral}{'\%SymbolPrototype\%'}:\ [\textcolor{stringliteral}{'Symbol'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00212}00212\ \ \ \ \ \textcolor{stringliteral}{'\%SyntaxErrorPrototype\%'}:\ [\textcolor{stringliteral}{'SyntaxError'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00213}00213\ \ \ \ \ \textcolor{stringliteral}{'\%TypedArrayPrototype\%'}:\ [\textcolor{stringliteral}{'TypedArray'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00214}00214\ \ \ \ \ \textcolor{stringliteral}{'\%TypeErrorPrototype\%'}:\ [\textcolor{stringliteral}{'TypeError'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00215}00215\ \ \ \ \ \textcolor{stringliteral}{'\%Uint8ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Uint8Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00216}00216\ \ \ \ \ \textcolor{stringliteral}{'\%Uint8ClampedArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Uint8ClampedArray'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00217}00217\ \ \ \ \ \textcolor{stringliteral}{'\%Uint16ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Uint16Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00218}00218\ \ \ \ \ \textcolor{stringliteral}{'\%Uint32ArrayPrototype\%'}:\ [\textcolor{stringliteral}{'Uint32Array'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00219}00219\ \ \ \ \ \textcolor{stringliteral}{'\%URIErrorPrototype\%'}:\ [\textcolor{stringliteral}{'URIError'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00220}00220\ \ \ \ \ \textcolor{stringliteral}{'\%WeakMapPrototype\%'}:\ [\textcolor{stringliteral}{'WeakMap'},\ \textcolor{stringliteral}{'prototype'}],}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00221}00221\ \ \ \ \ \textcolor{stringliteral}{'\%WeakSetPrototype\%'}:\ [\textcolor{stringliteral}{'WeakSet'},\ \textcolor{stringliteral}{'prototype'}]}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00222}00222\ \};}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00224}\mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{00224}}\ var\ \mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}\ =\ require(\textcolor{stringliteral}{'function-\/bind'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00225}\mbox{\hyperlink{a01198_a0511343fcdbac93090154dce865cbfd5_a0511343fcdbac93090154dce865cbfd5}{00225}}\ var\ \mbox{\hyperlink{a01198_a0511343fcdbac93090154dce865cbfd5_a0511343fcdbac93090154dce865cbfd5}{hasOwn}}\ =\ require(\textcolor{stringliteral}{'hasown'});}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00226}\mbox{\hyperlink{a01198_a2c96cf366fce4b04c5f6f68bc44c7827_a2c96cf366fce4b04c5f6f68bc44c7827}{00226}}\ var\ \mbox{\hyperlink{a01198_a2c96cf366fce4b04c5f6f68bc44c7827_a2c96cf366fce4b04c5f6f68bc44c7827}{\$concat}}\ =\ \mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}.call(Function.call,\ Array.prototype.concat);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00227}\mbox{\hyperlink{a01198_a0f7cac8bcd95a3f442c0020d16009df6_a0f7cac8bcd95a3f442c0020d16009df6}{00227}}\ var\ \mbox{\hyperlink{a01198_a0f7cac8bcd95a3f442c0020d16009df6_a0f7cac8bcd95a3f442c0020d16009df6}{\$spliceApply}}\ =\ \mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}.call(Function.apply,\ Array.prototype.splice);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00228}\mbox{\hyperlink{a01198_a736a94fdf895c6cb9b3285f10c07e8e6_a736a94fdf895c6cb9b3285f10c07e8e6}{00228}}\ var\ \mbox{\hyperlink{a01198_a736a94fdf895c6cb9b3285f10c07e8e6_a736a94fdf895c6cb9b3285f10c07e8e6}{\$replace}}\ =\ \mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}.call(Function.call,\ String.prototype.replace);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00229}\mbox{\hyperlink{a01198_af9e188a7fa00005e2d7d5f2655b60b7a_af9e188a7fa00005e2d7d5f2655b60b7a}{00229}}\ var\ \mbox{\hyperlink{a01198_af9e188a7fa00005e2d7d5f2655b60b7a_af9e188a7fa00005e2d7d5f2655b60b7a}{\$strSlice}}\ =\ \mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}.call(Function.call,\ String.prototype.slice);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00230}\mbox{\hyperlink{a01198_a904aa8da1d90b4a7a817f376f3adda40_a904aa8da1d90b4a7a817f376f3adda40}{00230}}\ var\ \mbox{\hyperlink{a01198_a904aa8da1d90b4a7a817f376f3adda40_a904aa8da1d90b4a7a817f376f3adda40}{\$exec}}\ =\ \mbox{\hyperlink{a01198_a19486bed968a6392ace0ade14136e21a_a19486bed968a6392ace0ade14136e21a}{bind}}.call(Function.call,\ RegExp.prototype.exec);}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{a01198_source_l00232}00232\ \textcolor{comment}{/*\ adapted\ from\ https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js\#L6735-\/L6744\ */}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00233}\mbox{\hyperlink{a01198_a62074e86e05f3542ee655a7f4f49d1dd_a62074e86e05f3542ee655a7f4f49d1dd}{00233}}\ var\ \mbox{\hyperlink{a01198_a62074e86e05f3542ee655a7f4f49d1dd_a62074e86e05f3542ee655a7f4f49d1dd}{rePropName}}\ =\ /[\string^\%.[\(\backslash\)]]+|\(\backslash\)[(?:(-\/?\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+(?:\(\backslash\).\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+)?)|([\textcolor{stringliteral}{"{}'])((?:(?!\(\backslash\)2)[\string^\(\backslash\)\(\backslash\)]|\(\backslash\)\(\backslash\).)*?)\(\backslash\)2)\(\backslash\)]|(?=(?:\(\backslash\).|\(\backslash\)[\(\backslash\)])(?:\(\backslash\).|\(\backslash\)[\(\backslash\)]|\%\$))/g;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00234}00234\ \textcolor{stringliteral}{var\ reEscapeChar\ =\ /\(\backslash\)\(\backslash\)(\(\backslash\)\(\backslash\))?/g;\ /**\ Used\ to\ match\ backslashes\ in\ property\ paths.\ */}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00235}00235\ \textcolor{stringliteral}{var\ stringToPath\ =\ function\ stringToPath(string)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00236}00236\ \textcolor{stringliteral}{\ \ \ \ var\ first\ =\ \$strSlice(string,\ 0,\ 1);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00237}00237\ \textcolor{stringliteral}{\ \ \ \ var\ last\ =\ \$strSlice(string,\ -\/1);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00238}00238\ \textcolor{stringliteral}{\ \ \ \ if\ (first\ ===\ '\%'\ \&\&\ last\ !==\ '\%')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00239}00239\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ \$SyntaxError('invalid\ intrinsic\ syntax,\ expected\ closing\ \`{}\%`');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00240}00240\ \textcolor{stringliteral}{\ \ \ \ \}\ else\ if\ (last\ ===\ '\%'\ \&\&\ first\ !==\ '\%')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00241}00241\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ \$SyntaxError('invalid\ intrinsic\ syntax,\ expected\ opening\ \`{}\%`');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00242}00242\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00243}00243\ \textcolor{stringliteral}{\ \ \ \ var\ result\ =\ [];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00244}00244\ \textcolor{stringliteral}{\ \ \ \ \$replace(string,\ rePropName,\ function\ (match,\ number,\ quote,\ subString)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00245}00245\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ result[result.length]\ =\ quote\ ?\ \$replace(subString,\ reEscapeChar,\ '\$1')\ :\ number\ ||\ match;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00246}00246\ \textcolor{stringliteral}{\ \ \ \ \});}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00247}00247\ \textcolor{stringliteral}{\ \ \ \ return\ result;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00248}00248\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00249}00249\ \textcolor{stringliteral}{/*\ end\ adaptation\ */}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00250}00250\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00251}00251\ \textcolor{stringliteral}{var\ getBaseIntrinsic\ =\ function\ getBaseIntrinsic(name,\ allowMissing)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00252}00252\ \textcolor{stringliteral}{\ \ \ \ var\ intrinsicName\ =\ name;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00253}00253\ \textcolor{stringliteral}{\ \ \ \ var\ alias;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00254}00254\ \textcolor{stringliteral}{\ \ \ \ if\ (hasOwn(LEGACY\_ALIASES,\ intrinsicName))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00255}00255\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ alias\ =\ LEGACY\_ALIASES[intrinsicName];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00256}00256\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ intrinsicName\ =\ '\%'\ +\ alias[0]\ +\ '\%';}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00257}00257\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00258}00258\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00259}00259\ \textcolor{stringliteral}{\ \ \ \ if\ (hasOwn(INTRINSICS,\ intrinsicName))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00260}00260\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ var\ value\ =\ INTRINSICS[intrinsicName];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00261}00261\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ if\ (value\ ===\ needsEval)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00262}00262\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ doEval(intrinsicName);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00263}00263\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00264}00264\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ if\ (typeof\ value\ ===\ 'undefined'\ \&\&\ !allowMissing)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00265}00265\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ \$TypeError('intrinsic\ '\ +\ name\ +\ '\ exists,\ but\ is\ not\ available.\ Please\ file\ an\ issue!');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00266}00266\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00267}00267\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00268}00268\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ return\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00269}00269\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ alias:\ alias,}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00270}00270\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ name:\ intrinsicName,}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00271}00271\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ value:\ value}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00272}00272\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00273}00273\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00274}00274\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00275}00275\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ \$SyntaxError('intrinsic\ '\ +\ name\ +\ '\ does\ not\ exist!');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00276}00276\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00277}00277\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00278}00278\ \textcolor{stringliteral}{module.exports\ =\ function\ GetIntrinsic(name,\ allowMissing)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00279}00279\ \textcolor{stringliteral}{\ \ \ \ if\ (typeof\ name\ !==\ 'string'\ ||\ name.length\ ===\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00280}00280\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ \$TypeError('intrinsic\ name\ must\ be\ a\ non-\/empty\ string');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00281}00281\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00282}00282\ \textcolor{stringliteral}{\ \ \ \ if\ (arguments.length\ >\ 1\ \&\&\ typeof\ allowMissing\ !==\ 'boolean')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00283}00283\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ \$TypeError('"{}}allowMissing\textcolor{stringliteral}{"{}\ argument\ must\ be\ a\ boolean');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00284}00284\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00285}00285\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00286}00286\ \textcolor{stringliteral}{\ \ \ \ if\ (\$exec(/\string^\%?[\string^\%]*\%?\$/,\ name)\ ===\ null)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00287}00287\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ throw\ new\ \$SyntaxError('`\%`\ may\ not\ be\ present\ anywhere\ but\ at\ the\ beginning\ and\ end\ of\ the\ intrinsic\ name');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00288}00288\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00289}00289\ \textcolor{stringliteral}{\ \ \ \ var\ parts\ =\ stringToPath(name);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00290}00290\ \textcolor{stringliteral}{\ \ \ \ var\ intrinsicBaseName\ =\ parts.length\ >\ 0\ ?\ parts[0]\ :\ '';}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00291}00291\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00292}00292\ \textcolor{stringliteral}{\ \ \ \ var\ intrinsic\ =\ getBaseIntrinsic('\%'\ +\ intrinsicBaseName\ +\ '\%',\ allowMissing);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00293}00293\ \textcolor{stringliteral}{\ \ \ \ var\ intrinsicRealName\ =\ intrinsic.name;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00294}00294\ \textcolor{stringliteral}{\ \ \ \ var\ value\ =\ intrinsic.value;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00295}00295\ \textcolor{stringliteral}{\ \ \ \ var\ skipFurtherCaching\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00296}00296\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00297}00297\ \textcolor{stringliteral}{\ \ \ \ var\ alias\ =\ intrinsic.alias;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00298}00298\ \textcolor{stringliteral}{\ \ \ \ if\ (alias)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00299}00299\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ intrinsicBaseName\ =\ alias[0];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00300}00300\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \$spliceApply(parts,\ \$concat([0,\ 1],\ alias));}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00301}00301\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00302}00302\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00303}00303\ \textcolor{stringliteral}{\ \ \ \ for\ (var\ i\ =\ 1,\ isOwn\ =\ true;\ i\ <\ parts.length;\ i\ +=\ 1)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00304}00304\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ var\ part\ =\ parts[i];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00305}00305\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ var\ first\ =\ \$strSlice(part,\ 0,\ 1);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00306}00306\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ var\ last\ =\ \$strSlice(part,\ -\/1);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00307}00307\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ if\ (}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00308}00308\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ (}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00309}00309\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (first\ ===\ '"{}}\textcolor{stringliteral}{'\ ||\ first\ ===\ "{}'}\textcolor{stringliteral}{"{}\ ||\ first\ ===\ '`')}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00310}00310\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ (last\ ===\ '"{}}\textcolor{stringliteral}{'\ ||\ last\ ===\ "{}'}\textcolor{stringliteral}{"{}\ ||\ last\ ===\ '`')}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00311}00311\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00312}00312\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \&\&\ first\ !==\ last}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00313}00313\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ )\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00314}00314\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ \$SyntaxError('property\ names\ with\ quotes\ must\ have\ matching\ quotes');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00315}00315\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00316}00316\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ if\ (part\ ===\ 'constructor'\ ||\ !isOwn)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00317}00317\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ skipFurtherCaching\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00318}00318\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00319}00319\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00320}00320\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ intrinsicBaseName\ +=\ '.'\ +\ part;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00321}\mbox{\hyperlink{a01198_a38021819d0fd34e2df47d1d71842238f_a38021819d0fd34e2df47d1d71842238f}{00321}}\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ intrinsicRealName\ =\ '\%'\ +\ intrinsicBaseName\ +\ '\%';}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00322}00322\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00323}00323\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ if\ (hasOwn(INTRINSICS,\ intrinsicRealName))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00324}00324\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ value\ =\ INTRINSICS[intrinsicRealName];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00325}00325\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}\ else\ if\ (value\ !=\ null)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00326}00326\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (!(part\ in\ value))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00327}00327\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!allowMissing)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00328}00328\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ \$TypeError('base\ intrinsic\ for\ '\ +\ name\ +\ '\ exists,\ but\ the\ property\ is\ not\ available.');}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00329}00329\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00330}00330\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ void\ undefined;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00331}00331\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00332}00332\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (\$gOPD\ \&\&\ (i\ +\ 1)\ >=\ parts.length)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00333}00333\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ desc\ =\ \$gOPD(value,\ part);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00334}00334\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isOwn\ =\ !!desc;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00335}00335\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00336}00336\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ By\ convention,\ when\ a\ data\ property\ is\ converted\ to\ an\ accessor}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00337}00337\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ property\ to\ emulate\ a\ data\ property\ that\ does\ not\ suffer\ from}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00338}00338\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ the\ override\ mistake,\ that\ accessor's\ getter\ is\ marked\ with}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00339}00339\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ an\ \`{}originalValue`\ property.\ Here,\ when\ we\ detect\ this,\ we}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00340}00340\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ uphold\ the\ illusion\ by\ pretending\ to\ see\ that\ original\ data}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00341}00341\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ property,\ i.e.,\ returning\ the\ value\ rather\ than\ the\ getter}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00342}00342\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ itself.}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00343}00343\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (isOwn\ \&\&\ 'get'\ in\ desc\ \&\&\ !('originalValue'\ in\ desc.get))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00344}00344\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ desc.get;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00345}00345\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00346}00346\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ value[part];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00347}00347\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00348}00348\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \}\ else\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00349}00349\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isOwn\ =\ hasOwn(value,\ part);}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00350}00350\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ value[part];}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00351}00351\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00352}00352\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00353}00353\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (isOwn\ \&\&\ !skipFurtherCaching)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00354}00354\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ INTRINSICS[intrinsicRealName]\ =\ value;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00355}00355\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00356}00356\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00357}00357\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00358}\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{00358}}\ \textcolor{stringliteral}{\ \ \ \ return\ value;}}
+\DoxyCodeLine{\Hypertarget{a01198_source_l00359}00359\ \textcolor{stringliteral}{\};}}
+
+\end{DoxyCode}

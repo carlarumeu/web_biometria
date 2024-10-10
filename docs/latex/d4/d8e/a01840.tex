@@ -1,0 +1,251 @@
+\doxysubsection{Referencia del archivo lib/parse.js}
+\hypertarget{a01840}{}\label{a01840}\index{parse.js@{parse.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01840_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}} = require(\textquotesingle{}./utils\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{has}} = Object.\+prototype.\+has\+Own\+Property
+\item 
+var \mbox{\hyperlink{a01840_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53}{is\+Array}} = Array.\+is\+Array
+\item 
+var \mbox{\hyperlink{a01840_a25652520ac081f98103987b0e68544cf_a25652520ac081f98103987b0e68544cf}{defaults}}
+\item 
+var \mbox{\hyperlink{a01840_a48bc885ef7be5572a4710a70d94481c6_a48bc885ef7be5572a4710a70d94481c6}{interpret\+Numeric\+Entities}}
+\item 
+var \mbox{\hyperlink{a01840_a0c14946e237bb7787b114e039cd68cd4_a0c14946e237bb7787b114e039cd68cd4}{parse\+Array\+Value}}
+\item 
+var \mbox{\hyperlink{a01840_a33ca8289542d20c9f81663c44b04ff16_a33ca8289542d20c9f81663c44b04ff16}{iso\+Sentinel}} = \textquotesingle{}utf8=\%26\%2310003\%3B\textquotesingle{}
+\item 
+var \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charset\+Sentinel}} = \textquotesingle{}utf8=\%E2\%9\mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}\%93\textquotesingle{}
+\item 
+var \mbox{\hyperlink{a01840_a852ccea0762322c7f23cc9cacb36ff22_a852ccea0762322c7f23cc9cacb36ff22}{parse\+Values}}
+\item 
+var \mbox{\hyperlink{a01840_a2b468c74c0f0cb987557bd798ebf058d_a2b468c74c0f0cb987557bd798ebf058d}{parse\+Object}}
+\item 
+var \mbox{\hyperlink{a01840_a7736b91ecb2c8f5524cb40ebb7860847_a7736b91ecb2c8f5524cb40ebb7860847}{parse\+Keys}}
+\item 
+var \mbox{\hyperlink{a01840_afc315fb58a5a8855f2a5ddce61e963e0_afc315fb58a5a8855f2a5ddce61e963e0}{normalize\+Parse\+Options}}
+\item 
+module \mbox{\hyperlink{a01840_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}\index{parse.js@{parse.js}!charsetSentinel@{charsetSentinel}}
+\index{charsetSentinel@{charsetSentinel}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{charsetSentinel}{charsetSentinel}}
+{\footnotesize\ttfamily \label{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8} 
+var charset\+Sentinel = \textquotesingle{}utf8=\%E2\%9\mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}\%93\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00053}{53}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a25652520ac081f98103987b0e68544cf_a25652520ac081f98103987b0e68544cf}\index{parse.js@{parse.js}!defaults@{defaults}}
+\index{defaults@{defaults}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{defaults}{defaults}}
+{\footnotesize\ttfamily \label{a01840_a25652520ac081f98103987b0e68544cf_a25652520ac081f98103987b0e68544cf} 
+var defaults}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ allowDots:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ allowEmptyArrays:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ allowPrototypes:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ allowSparse:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ arrayLimit:\ 20,}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'utf-\/8'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charsetSentinel}}:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ comma:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ decodeDotInKeys:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}:\ \mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}.decode,}
+\DoxyCodeLine{\ \ \ \ delimiter:\ \textcolor{charliteral}{'\&'},}
+\DoxyCodeLine{\ \ \ \ depth:\ 5,}
+\DoxyCodeLine{\ \ \ \ duplicates:\ \textcolor{stringliteral}{'combine'},}
+\DoxyCodeLine{\ \ \ \ ignoreQueryPrefix:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01840_a48bc885ef7be5572a4710a70d94481c6_a48bc885ef7be5572a4710a70d94481c6}{interpretNumericEntities}}:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ parameterLimit:\ 1000,}
+\DoxyCodeLine{\ \ \ \ parseArrays:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\ \ \ \ plainObjects:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ strictDepth:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ strictNullHandling:\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00008}{8}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{parse.js@{parse.js}!exports@{exports}}
+\index{exports@{exports}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01840_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (str,\ opts)\ \{}
+\DoxyCodeLine{\ \ \ \ var\ options\ =\ \mbox{\hyperlink{a01840_afc315fb58a5a8855f2a5ddce61e963e0_afc315fb58a5a8855f2a5ddce61e963e0}{normalizeParseOptions}}(opts);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (str\ ===\ \textcolor{stringliteral}{''}\ ||\ str\ ===\ \textcolor{keyword}{null}\ ||\ typeof\ str\ ===\ \textcolor{stringliteral}{'undefined'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ options.plainObjects\ ?\ Object.create(\textcolor{keyword}{null})\ :\ \{\};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ var\ tempObj\ =\ typeof\ str\ ===\ \textcolor{stringliteral}{'string'}\ ?\ \mbox{\hyperlink{a01840_a852ccea0762322c7f23cc9cacb36ff22_a852ccea0762322c7f23cc9cacb36ff22}{parseValues}}(str,\ options)\ :\ str;}
+\DoxyCodeLine{\ \ \ \ var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ options.plainObjects\ ?\ Object.create(\textcolor{keyword}{null})\ :\ \{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ var\ \mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}}\ =\ Object.keys(tempObj);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ \mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}}.length;\ ++\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ var\ key\ =\ \mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}}[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ var\ newObj\ =\ \mbox{\hyperlink{a01840_a7736b91ecb2c8f5524cb40ebb7860847_a7736b91ecb2c8f5524cb40ebb7860847}{parseKeys}}(key,\ tempObj[key],\ options,\ typeof\ str\ ===\ \textcolor{stringliteral}{'string'});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}.merge(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ newObj,\ options);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (options.allowSparse\ ===\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}.compact(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00272}{272}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}\index{parse.js@{parse.js}!has@{has}}
+\index{has@{has}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{has}{has}}
+{\footnotesize\ttfamily \label{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914} 
+var has = Object.\+prototype.\+has\+Own\+Property}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00005}{5}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a48bc885ef7be5572a4710a70d94481c6_a48bc885ef7be5572a4710a70d94481c6}\index{parse.js@{parse.js}!interpretNumericEntities@{interpretNumericEntities}}
+\index{interpretNumericEntities@{interpretNumericEntities}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{interpretNumericEntities}{interpretNumericEntities}}
+{\footnotesize\ttfamily \label{a01840_a48bc885ef7be5572a4710a70d94481c6_a48bc885ef7be5572a4710a70d94481c6} 
+var interpret\+Numeric\+Entities}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (str)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ str.replace(/\&\#(\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+);/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}},\ \textcolor{keyword}{function}\ (\$0,\ numberStr)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.fromCharCode(parseInt(numberStr,\ 10));}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00031}{31}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53}\index{parse.js@{parse.js}!isArray@{isArray}}
+\index{isArray@{isArray}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{isArray}{isArray}}
+{\footnotesize\ttfamily \label{a01840_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53} 
+var is\+Array = Array.\+is\+Array}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00006}{6}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a33ca8289542d20c9f81663c44b04ff16_a33ca8289542d20c9f81663c44b04ff16}\index{parse.js@{parse.js}!isoSentinel@{isoSentinel}}
+\index{isoSentinel@{isoSentinel}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{isoSentinel}{isoSentinel}}
+{\footnotesize\ttfamily \label{a01840_a33ca8289542d20c9f81663c44b04ff16_a33ca8289542d20c9f81663c44b04ff16} 
+var iso\+Sentinel = \textquotesingle{}utf8=\%26\%2310003\%3B\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00050}{50}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_afc315fb58a5a8855f2a5ddce61e963e0_afc315fb58a5a8855f2a5ddce61e963e0}\index{parse.js@{parse.js}!normalizeParseOptions@{normalizeParseOptions}}
+\index{normalizeParseOptions@{normalizeParseOptions}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{normalizeParseOptions}{normalizeParseOptions}}
+{\footnotesize\ttfamily \label{a01840_afc315fb58a5a8855f2a5ddce61e963e0_afc315fb58a5a8855f2a5ddce61e963e0} 
+var normalize\+Parse\+Options}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00217}{217}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a0c14946e237bb7787b114e039cd68cd4_a0c14946e237bb7787b114e039cd68cd4}\index{parse.js@{parse.js}!parseArrayValue@{parseArrayValue}}
+\index{parseArrayValue@{parseArrayValue}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{parseArrayValue}{parseArrayValue}}
+{\footnotesize\ttfamily \label{a01840_a0c14946e237bb7787b114e039cd68cd4_a0c14946e237bb7787b114e039cd68cd4} 
+var parse\+Array\+Value}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (val,\ options)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (val\ \&\&\ typeof\ val\ ===\ \textcolor{stringliteral}{'string'}\ \&\&\ options.comma\ \&\&\ val.indexOf(\textcolor{charliteral}{','})\ >\ -\/1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val.split(\textcolor{charliteral}{','});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00037}{37}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a7736b91ecb2c8f5524cb40ebb7860847_a7736b91ecb2c8f5524cb40ebb7860847}\index{parse.js@{parse.js}!parseKeys@{parseKeys}}
+\index{parseKeys@{parseKeys}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{parseKeys}{parseKeys}}
+{\footnotesize\ttfamily \label{a01840_a7736b91ecb2c8f5524cb40ebb7860847_a7736b91ecb2c8f5524cb40ebb7860847} 
+var parse\+Keys}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00160}{160}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a2b468c74c0f0cb987557bd798ebf058d_a2b468c74c0f0cb987557bd798ebf058d}\index{parse.js@{parse.js}!parseObject@{parseObject}}
+\index{parseObject@{parseObject}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{parseObject}{parseObject}}
+{\footnotesize\ttfamily \label{a01840_a2b468c74c0f0cb987557bd798ebf058d_a2b468c74c0f0cb987557bd798ebf058d} 
+var parse\+Object}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00122}{122}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a852ccea0762322c7f23cc9cacb36ff22_a852ccea0762322c7f23cc9cacb36ff22}\index{parse.js@{parse.js}!parseValues@{parseValues}}
+\index{parseValues@{parseValues}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{parseValues}{parseValues}}
+{\footnotesize\ttfamily \label{a01840_a852ccea0762322c7f23cc9cacb36ff22_a852ccea0762322c7f23cc9cacb36ff22} 
+var parse\+Values}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00055}{55}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{parse.js@{parse.js}!strict@{strict}}
+\index{strict@{strict}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01840_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00001}{1}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+
+\Hypertarget{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}\index{parse.js@{parse.js}!utils@{utils}}
+\index{utils@{utils}!parse.js@{parse.js}}
+\doxyparagraph{\texorpdfstring{utils}{utils}}
+{\footnotesize\ttfamily \label{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53} 
+var utils = require(\textquotesingle{}./utils\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01840_source_l00003}{3}} del archivo \mbox{\hyperlink{a01840_source}{lib/parse.\+js}}.
+

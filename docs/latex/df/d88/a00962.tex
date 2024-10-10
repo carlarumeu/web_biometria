@@ -1,0 +1,153 @@
+\doxysection{raw-\/body}
+\hypertarget{a00962}{}\label{a00962}\index{raw-\/body@{raw-\/body}}
+\label{a00962_autotoc_md2082}%
+\Hypertarget{a00962_autotoc_md2082}%
+
+
+\href{https://npmjs.org/package/raw-body}{\texttt{ }} \href{https://npmjs.org/package/raw-body}{\texttt{ }} \href{https://nodejs.org/en/download/}{\texttt{ }} \href{https://github.com/jshttp/stream-utils/raw-body?query=workflow\%3Aci}{\texttt{ }} \href{https://coveralls.io/r/stream-utils/raw-body?branch=master}{\texttt{ }}
+
+Gets the entire buffer of a stream either as a {\ttfamily Buffer} or a string. Validates the stream\textquotesingle{}s length against an expected length and maximum limit. Ideal for parsing request bodies.\hypertarget{a00962_autotoc_md2083}{}\doxysubsection{\texorpdfstring{Install}{Install}}\label{a00962_autotoc_md2083}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ raw-\/body}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2084}{}\doxysubsubsection{\texorpdfstring{Type\+Script}{Type\+Script}}\label{a00962_autotoc_md2084}
+This module includes a \href{https://www.typescriptlang.org/}{\texttt{ Type\+Script}} declaration file to enable auto complete in compatible editors and type information for Type\+Script projects. This module depends on the Node.\+js types, so install {\ttfamily @types/node}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ @types/node}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2085}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00962_autotoc_md2085}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ getRawBody\ =\ require(\textcolor{stringliteral}{'raw-\/body'})}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2086}{}\doxysubsubsection{\texorpdfstring{get\+Raw\+Body(stream, \mbox{[}options\mbox{]}, \mbox{[}callback\mbox{]})}{get\+Raw\+Body(stream, \mbox{[}options\mbox{]}, \mbox{[}callback\mbox{]})}}\label{a00962_autotoc_md2086}
+{\bfseries{Returns a promise if no callback specified and global {\ttfamily Promise} exists.}}
+
+Options\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily length} -\/ The length of the stream. If the contents of the stream do not add up to this length, an {\ttfamily 400} error code is returned.
+\item {\ttfamily limit} -\/ The byte limit of the body. This is the number of bytes or any string format supported by \href{https://www.npmjs.com/package/bytes}{\texttt{ bytes}}, for example {\ttfamily 1000}, `\textquotesingle{}500kb'{\ttfamily or}\textquotesingle{}3mb\textquotesingle{}{\ttfamily . If the body ends up being larger than this limit, a}413{\ttfamily error code is returned. -\/}encoding{\ttfamily -\/ The encoding to use to decode the body into a string. By default, a}Buffer{\ttfamily instance will be returned when no encoding is specified. Most likely, you want}utf-\/8{\ttfamily , so setting}encoding{\ttfamily to}true{\ttfamily will decode as}utf-\/8\`{}. You can use any type of encoding supported by \href{https://www.npmjs.org/package/iconv-lite\#readme}{\texttt{ iconv-\/lite}}.
+\end{DoxyItemize}
+
+You can also pass a string in place of options to just specify the encoding.
+
+If an error occurs, the stream will be paused, everything unpiped, and you are responsible for correctly disposing the stream. For HTTP requests, you may need to finish consuming the stream if you want to keep the socket open for future requests. For streams that use file descriptors, you should {\ttfamily stream.\+destroy()} or {\ttfamily stream.\+close()} to prevent leaks.\hypertarget{a00962_autotoc_md2087}{}\doxysubsection{\texorpdfstring{Errors}{Errors}}\label{a00962_autotoc_md2087}
+This module creates errors depending on the error condition during reading. The error may be an error from the underlying Node.\+js implementation, but is otherwise an error created by this module, which has the following attributes\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily limit} -\/ the limit in bytes
+\item {\ttfamily length} and {\ttfamily expected} -\/ the expected length of the stream
+\item {\ttfamily received} -\/ the received bytes
+\item {\ttfamily encoding} -\/ the invalid encoding
+\item {\ttfamily status} and {\ttfamily status\+Code} -\/ the corresponding status code for the error
+\item {\ttfamily type} -\/ the error type
+\end{DoxyItemize}\hypertarget{a00962_autotoc_md2088}{}\doxysubsubsection{\texorpdfstring{Types}{Types}}\label{a00962_autotoc_md2088}
+The errors from this module have a {\ttfamily type} property which allows for the programmatic determination of the type of error returned.\hypertarget{a00962_autotoc_md2089}{}\doxysubsubsubsection{\texorpdfstring{encoding.\+unsupported}{encoding.\+unsupported}}\label{a00962_autotoc_md2089}
+This error will occur when the {\ttfamily encoding} option is specified, but the value does not map to an encoding supported by the \href{https://www.npmjs.org/package/iconv-lite\#readme}{\texttt{ iconv-\/lite}} module.\hypertarget{a00962_autotoc_md2090}{}\doxysubsubsubsection{\texorpdfstring{entity.\+too.\+large}{entity.\+too.\+large}}\label{a00962_autotoc_md2090}
+This error will occur when the {\ttfamily limit} option is specified, but the stream has an entity that is larger.\hypertarget{a00962_autotoc_md2091}{}\doxysubsubsubsection{\texorpdfstring{request.\+aborted}{request.\+aborted}}\label{a00962_autotoc_md2091}
+This error will occur when the request stream is aborted by the client before reading the body has finished.\hypertarget{a00962_autotoc_md2092}{}\doxysubsubsubsection{\texorpdfstring{request.\+size.\+invalid}{request.\+size.\+invalid}}\label{a00962_autotoc_md2092}
+This error will occur when the {\ttfamily length} option is specified, but the stream has emitted more bytes.\hypertarget{a00962_autotoc_md2093}{}\doxysubsubsubsection{\texorpdfstring{stream.\+encoding.\+set}{stream.\+encoding.\+set}}\label{a00962_autotoc_md2093}
+This error will occur when the given stream has an encoding set on it, making it a decoded stream. The stream should not have an encoding set and is expected to emit {\ttfamily Buffer} objects.\hypertarget{a00962_autotoc_md2094}{}\doxysubsubsubsection{\texorpdfstring{stream.\+not.\+readable}{stream.\+not.\+readable}}\label{a00962_autotoc_md2094}
+This error will occur when the given stream is not readable.\hypertarget{a00962_autotoc_md2095}{}\doxysubsection{\texorpdfstring{Examples}{Examples}}\label{a00962_autotoc_md2095}
+\hypertarget{a00962_autotoc_md2096}{}\doxysubsubsection{\texorpdfstring{Simple Express example}{Simple Express example}}\label{a00962_autotoc_md2096}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}\ =\ require(\textcolor{stringliteral}{'content-\/type'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01369_af0deccff0ccdd703412620ba83155b82_af0deccff0ccdd703412620ba83155b82}{express}}\ =\ require('\mbox{\hyperlink{a01369_af0deccff0ccdd703412620ba83155b82_af0deccff0ccdd703412620ba83155b82}{express}}')}
+\DoxyCodeLine{var\ getRawBody\ =\ require('\mbox{\hyperlink{a00104_a6fddf0a674d03300188e5ba3195c9a00_a6fddf0a674d03300188e5ba3195c9a00}{raw}}-\/body')}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}\ =\ \mbox{\hyperlink{a01369_af0deccff0ccdd703412620ba83155b82_af0deccff0ccdd703412620ba83155b82}{express}}()}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}}(function\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ next)\ \{}
+\DoxyCodeLine{\ \ getRawBody(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \{}
+\DoxyCodeLine{\ \ \ \ length:\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.headers[\textcolor{stringliteral}{'content-\/length'}],}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01702_abcb5d8b4a4a1f3baf285ff81dae46fdf_abcb5d8b4a4a1f3baf285ff81dae46fdf}{limit}}:\ \textcolor{stringliteral}{'1mb'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}:\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}.parse(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}).parameters.charset}
+\DoxyCodeLine{\ \ \},\ \textcolor{keyword}{function}\ (err,\ string)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \textcolor{keywordflow}{return}\ next(err)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.text\ =\ \textcolor{keywordtype}{string}}
+\DoxyCodeLine{\ \ \ \ next()}
+\DoxyCodeLine{\ \ \})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ now\ access\ req.text}}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2097}{}\doxysubsubsection{\texorpdfstring{Simple Koa example}{Simple Koa example}}\label{a00962_autotoc_md2097}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}\ =\ require(\textcolor{stringliteral}{'content-\/type'})}
+\DoxyCodeLine{var\ getRawBody\ =\ require('\mbox{\hyperlink{a00104_a6fddf0a674d03300188e5ba3195c9a00_a6fddf0a674d03300188e5ba3195c9a00}{raw}}-\/body')}
+\DoxyCodeLine{var\ koa\ =\ require('koa')}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}\ =\ koa()}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}}(function\ *\ (next)\ \{}
+\DoxyCodeLine{\ \ this.text\ =\ \mbox{\hyperlink{a01195_a0302af30a2a8ae3cfda9ca3b7eeaf48d_a0302af30a2a8ae3cfda9ca3b7eeaf48d}{yield}}\ getRawBody(this.req,\ \{}
+\DoxyCodeLine{\ \ \ \ length:\ this.req.headers[\textcolor{stringliteral}{'content-\/length'}],}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01702_abcb5d8b4a4a1f3baf285ff81dae46fdf_abcb5d8b4a4a1f3baf285ff81dae46fdf}{limit}}:\ \textcolor{stringliteral}{'1mb'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}:\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}.parse(this.req).parameters.charset}
+\DoxyCodeLine{\ \ \})}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a01195_a0302af30a2a8ae3cfda9ca3b7eeaf48d_a0302af30a2a8ae3cfda9ca3b7eeaf48d}{yield}}\ next}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ now\ access\ this.text}}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2098}{}\doxysubsubsection{\texorpdfstring{Using as a promise}{Using as a promise}}\label{a00962_autotoc_md2098}
+To use this library as a promise, simply omit the {\ttfamily callback} and a promise is returned, provided that a global {\ttfamily Promise} is defined.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ getRawBody\ =\ require(\textcolor{stringliteral}{'raw-\/body'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require('\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ server\ =\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ getRawBody(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+\DoxyCodeLine{\ \ \ \ .then(\textcolor{keyword}{function}\ (buf)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.statusCode\ =\ 200}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(buf.length\ +\ \textcolor{stringliteral}{'\ bytes\ submitted'})}
+\DoxyCodeLine{\ \ \ \ \})}
+\DoxyCodeLine{\ \ \ \ .\textcolor{keywordflow}{catch}(\textcolor{keyword}{function}\ (err)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.statusCode\ =\ 500}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(err.message)}
+\DoxyCodeLine{\ \ \ \ \})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000)}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2099}{}\doxysubsubsection{\texorpdfstring{Using with Type\+Script}{Using with Type\+Script}}\label{a00962_autotoc_md2099}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import\ *\ as\ getRawBody\ from\ 'raw-\/body';}
+\DoxyCodeLine{import\ *\ as\ http\ from\ 'http';}
+\DoxyCodeLine{}
+\DoxyCodeLine{const\ server\ =\ http.createServer((req,\ res)\ =>\ \{}
+\DoxyCodeLine{\ \ getRawBody(req)}
+\DoxyCodeLine{\ \ .then((buf)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ res.statusCode\ =\ 200;}
+\DoxyCodeLine{\ \ \ \ res.end(buf.length\ +\ '\ bytes\ submitted');}
+\DoxyCodeLine{\ \ \})}
+\DoxyCodeLine{\ \ .catch((err)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ res.statusCode\ =\ err.statusCode;}
+\DoxyCodeLine{\ \ \ \ res.end(err.message);}
+\DoxyCodeLine{\ \ \});}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000);}
+
+\end{DoxyCode}
+\hypertarget{a00962_autotoc_md2100}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00962_autotoc_md2100}
+\mbox{[}MIT\mbox{]}(LICENSE) 

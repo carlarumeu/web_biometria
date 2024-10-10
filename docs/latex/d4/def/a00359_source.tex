@@ -1,0 +1,33 @@
+\doxysubsection{prepare\+\_\+statement.\+js}
+\hypertarget{a00359_source}{}\label{a00359_source}\index{prepare\_statement.js@{prepare\_statement.js}}
+\mbox{\hyperlink{a00359}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00001}\mbox{\hyperlink{a00359_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00359_source_l00003}\mbox{\hyperlink{a00359_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00776}{Packet}}\ =\ require(\textcolor{stringliteral}{'../packets/packet'});}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00004}\mbox{\hyperlink{a00359_a4036b39ca2065aa41a2d7251b6fe0e05_a4036b39ca2065aa41a2d7251b6fe0e05}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00359_a4036b39ca2065aa41a2d7251b6fe0e05_a4036b39ca2065aa41a2d7251b6fe0e05}{CommandCodes}}\ =\ require(\textcolor{stringliteral}{'../constants/commands'});}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00005}\mbox{\hyperlink{a00359_a02b2449d0572f8f88045e482fdb246c5_a02b2449d0572f8f88045e482fdb246c5}{00005}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00359_a02b2449d0572f8f88045e482fdb246c5_a02b2449d0572f8f88045e482fdb246c5}{StringParser}}\ =\ require(\textcolor{stringliteral}{'../parsers/string.js'});}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00006}\mbox{\hyperlink{a00359_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{00006}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00359_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{CharsetToEncoding}}\ =\ require(\textcolor{stringliteral}{'../constants/charset\_encodings.js'});}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00359_source_l00008}\mbox{\hyperlink{a00780}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00780}{PrepareStatement}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00009}\mbox{\hyperlink{a00780_a82abaa33b6360c8382189d04b87a9c7c_a82abaa33b6360c8382189d04b87a9c7c}{00009}}\ \ \ \mbox{\hyperlink{a00780_a82abaa33b6360c8382189d04b87a9c7c_a82abaa33b6360c8382189d04b87a9c7c}{constructor}}(sql,\ charsetNumber)\ \{}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00010}00010\ \ \ \ \ this.\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}\ =\ sql;}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00011}00011\ \ \ \ \ this.charsetNumber\ =\ charsetNumber;}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00012}00012\ \ \ \ \ this.\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}\ =\ \mbox{\hyperlink{a00359_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{CharsetToEncoding}}[charsetNumber];}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00013}00013\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{a00359_source_l00015}\mbox{\hyperlink{a00780_a980a4f76aba375a64f7dd792eb792e44_a980a4f76aba375a64f7dd792eb792e44}{00015}}\ \ \ \mbox{\hyperlink{a00780_a980a4f76aba375a64f7dd792eb792e44_a980a4f76aba375a64f7dd792eb792e44}{toPacket}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{const}\ buf\ =\ \mbox{\hyperlink{a00359_a02b2449d0572f8f88045e482fdb246c5_a02b2449d0572f8f88045e482fdb246c5}{StringParser}}.encode(this.\mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}},\ this.\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}});}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{const}\ length\ =\ 5\ +\ buf.length;}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{const}\ buffer\ =\ Buffer.allocUnsafe(length);}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{const}\ packet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00359_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{Packet}}(0,\ buffer,\ 0,\ length);}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00020}00020\ \ \ \ \ packet.offset\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00021}00021\ \ \ \ \ packet.writeInt8(\mbox{\hyperlink{a00359_a4036b39ca2065aa41a2d7251b6fe0e05_a4036b39ca2065aa41a2d7251b6fe0e05}{CommandCodes}}.STMT\_PREPARE);}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00022}00022\ \ \ \ \ packet.writeBuffer(buf);}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ packet;}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00024}00024\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{a00359_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a00359_source_l00027}\mbox{\hyperlink{a00359_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00027}}\ module.exports\ =\ \mbox{\hyperlink{a01276_a5ca7c890fbb897f01987adf32a5104d7_a5ca7c890fbb897f01987adf32a5104d7}{PrepareStatement}};}
+
+\end{DoxyCode}

@@ -1,0 +1,63 @@
+\doxysection{ms}
+\hypertarget{a00971}{}\label{a00971}\index{ms@{ms}}
+\label{a00971_autotoc_md2226}%
+\Hypertarget{a00971_autotoc_md2226}%
+
+
+
+
+Use this package to easily convert various time formats to milliseconds.\hypertarget{a00971_autotoc_md2227}{}\doxysubsection{\texorpdfstring{Examples}{Examples}}\label{a00971_autotoc_md2227}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ms(\textcolor{stringliteral}{'2\ days'})\ \ \textcolor{comment}{//\ 172800000}}
+\DoxyCodeLine{ms('1\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}')\ \ \ \ \ \ \textcolor{comment}{//\ 86400000}}
+\DoxyCodeLine{ms('10\mbox{\hyperlink{a01264_a79fe0eb780a2a4b5543b4dddf8b6188a_a79fe0eb780a2a4b5543b4dddf8b6188a}{h}}')\ \ \ \ \ \textcolor{comment}{//\ 36000000}}
+\DoxyCodeLine{ms('2.5\ hrs')\ \textcolor{comment}{//\ 9000000}}
+\DoxyCodeLine{ms('2\mbox{\hyperlink{a01264_a79fe0eb780a2a4b5543b4dddf8b6188a_a79fe0eb780a2a4b5543b4dddf8b6188a}{h}}')\ \ \ \ \ \ \textcolor{comment}{//\ 7200000}}
+\DoxyCodeLine{ms('1\mbox{\hyperlink{a01264_a9e77e016b2928d7dcb493b89a0c9dc32_a9e77e016b2928d7dcb493b89a0c9dc32}{m}}')\ \ \ \ \ \ \textcolor{comment}{//\ 60000}}
+\DoxyCodeLine{ms('5\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}')\ \ \ \ \ \ \textcolor{comment}{//\ 5000}}
+\DoxyCodeLine{ms('1\mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}}')\ \ \ \ \ \ \textcolor{comment}{//\ 31557600000}}
+\DoxyCodeLine{ms('100')\ \ \ \ \ \textcolor{comment}{//\ 100}}
+\DoxyCodeLine{ms('-\/3\ days')\ \textcolor{comment}{//\ -\/259200000}}
+\DoxyCodeLine{ms('-\/1\mbox{\hyperlink{a01264_a79fe0eb780a2a4b5543b4dddf8b6188a_a79fe0eb780a2a4b5543b4dddf8b6188a}{h}}')\ \ \ \ \ \textcolor{comment}{//\ -\/3600000}}
+\DoxyCodeLine{ms('-\/200')\ \ \ \ \textcolor{comment}{//\ -\/200}}
+
+\end{DoxyCode}
+\hypertarget{a00971_autotoc_md2228}{}\doxysubsubsection{\texorpdfstring{Convert from Milliseconds}{Convert from Milliseconds}}\label{a00971_autotoc_md2228}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ms(60000)\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}1m"{}}}
+\DoxyCodeLine{ms(2\ *\ 60000)\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}2m"{}}}
+\DoxyCodeLine{ms(-\/3\ *\ 60000)\ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}-\/3m"{}}}
+\DoxyCodeLine{ms(ms('10\ hours'))\ \ \ \ \textcolor{comment}{//\ "{}10h"{}}}
+
+\end{DoxyCode}
+\hypertarget{a00971_autotoc_md2229}{}\doxysubsubsection{\texorpdfstring{Time Format Written-\/\+Out}{Time Format Written-\/\+Out}}\label{a00971_autotoc_md2229}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ms(60000,\ \{\ long:\ \textcolor{keyword}{true}\ \})\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}1\ minute"{}}}
+\DoxyCodeLine{ms(2\ *\ 60000,\ \{\ long:\ \textcolor{keyword}{true}\ \})\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}2\ minutes"{}}}
+\DoxyCodeLine{ms(-\/3\ *\ 60000,\ \{\ long:\ \textcolor{keyword}{true}\ \})\ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}-\/3\ minutes"{}}}
+\DoxyCodeLine{ms(ms(\textcolor{stringliteral}{'10\ hours'}),\ \{\ long:\ \textcolor{keyword}{true}\ \})\ \ \ \ \textcolor{comment}{//\ "{}10\ hours"{}}}
+
+\end{DoxyCode}
+\hypertarget{a00971_autotoc_md2230}{}\doxysubsection{\texorpdfstring{Features}{Features}}\label{a00971_autotoc_md2230}
+
+\begin{DoxyItemize}
+\item Works both in \href{https://nodejs.org}{\texttt{ Node.\+js}} and in the browser
+\item If a number is supplied to {\ttfamily ms}, a string with a unit is returned
+\item If a string that contains the number is supplied, it returns it as a number (e.\+g.\+: it returns {\ttfamily 100} for `\textquotesingle{}100'\`{})
+\item If you pass a string with a number and a valid unit, the number of equivalent milliseconds is returned
+\end{DoxyItemize}\hypertarget{a00971_autotoc_md2231}{}\doxysubsection{\texorpdfstring{Related Packages}{Related Packages}}\label{a00971_autotoc_md2231}
+
+\begin{DoxyItemize}
+\item \href{https://github.com/knpwrs/ms.macro}{\texttt{ ms.\+macro}} -\/ Run {\ttfamily ms} as a macro at build-\/time.
+\end{DoxyItemize}\hypertarget{a00971_autotoc_md2232}{}\doxysubsection{\texorpdfstring{Caught a Bug?}{Caught a Bug?}}\label{a00971_autotoc_md2232}
+
+\begin{DoxyEnumerate}
+\item \href{https://help.github.com/articles/fork-a-repo/}{\texttt{ Fork}} this repository to your own Git\+Hub account and then \href{https://help.github.com/articles/cloning-a-repository/}{\texttt{ clone}} it to your local device
+\item Link the package to the global module directory\+: {\ttfamily npm link}
+\item Within the module you want to test your local development instance of ms, just link it to the dependencies\+: {\ttfamily npm link ms}. Instead of the default one from npm, Node.\+js will now use your clone of ms!
+\end{DoxyEnumerate}
+
+As always, you can run the tests using\+: {\ttfamily npm test} 

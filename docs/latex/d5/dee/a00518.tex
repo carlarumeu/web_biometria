@@ -1,0 +1,345 @@
+\doxysubsection{Referencia del archivo seq-\/queue.js}
+\hypertarget{a00518}{}\label{a00518}\index{seq-\/queue.js@{seq-\/queue.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \mbox{\hyperlink{a00518_ad57db69f456bd679167cecd98d6c4019_ad57db69f456bd679167cecd98d6c4019}{Event\+Emitter}} = require(\textquotesingle{}events\textquotesingle{}).Event\+Emitter
+\item 
+var \mbox{\hyperlink{a00518_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44}{util}} = require(\textquotesingle{}util\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a00518_ac867258e39c1ba9c80c29fe540ad216a_ac867258e39c1ba9c80c29fe540ad216a}{DEFAULT\+\_\+\+TIMEOUT}} = 3000
+\item 
+var \mbox{\hyperlink{a00518_a422139068cf85f832e1f8bd49a0cdd41_a422139068cf85f832e1f8bd49a0cdd41}{INIT\+\_\+\+ID}} = 0
+\item 
+var \mbox{\hyperlink{a00518_a0b11833f52a30fc88a6a2e238d75fbec_a0b11833f52a30fc88a6a2e238d75fbec}{EVENT\+\_\+\+CLOSED}} = \textquotesingle{}closed\textquotesingle{}
+\item 
+var \mbox{\hyperlink{a00518_abea1d81d1b0466bd50a676c13864b782_abea1d81d1b0466bd50a676c13864b782}{EVENT\+\_\+\+DRAINED}} = \textquotesingle{}drained\textquotesingle{}
+\item 
+var \mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}}
+\begin{DoxyCompactList}\small\item\em Instance a new queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00518_a995f82172185c17609fb3633e73afb69_a995f82172185c17609fb3633e73afb69}{push}}
+\begin{DoxyCompactList}\small\item\em Add a task into queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00518_ae3d44bd7a98cd613dafac36e16d4f504_ae3d44bd7a98cd613dafac36e16d4f504}{close}}
+\begin{DoxyCompactList}\small\item\em Close queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00518_ad9ee4565a9ac0003cc8adc74169f9d3f_ad9ee4565a9ac0003cc8adc74169f9d3f}{\+\_\+next}}
+\begin{DoxyCompactList}\small\item\em Invoke next task. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} = \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{module.\+exports}}
+\begin{DoxyCompactList}\small\item\em Queue manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} \mbox{\hyperlink{a00518_afd32d4d6c4db034ce3d4854adbc2ce5c_afd32d4d6c4db034ce3d4854adbc2ce5c}{STATUS\+\_\+\+IDLE}} = 0
+\begin{DoxyCompactList}\small\item\em Queue status\+: idle, welcome new tasks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} \mbox{\hyperlink{a00518_a03ce3ee99249156c37f7f2e6a1457698_a03ce3ee99249156c37f7f2e6a1457698}{STATUS\+\_\+\+BUSY}} = 1
+\begin{DoxyCompactList}\small\item\em Queue status\+: busy, queue is working for some tasks now. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} \mbox{\hyperlink{a00518_af3d6cc52d8fda29cd88cee863842770b_af3d6cc52d8fda29cd88cee863842770b}{STATUS\+\_\+\+CLOSED}} = 2
+\begin{DoxyCompactList}\small\item\em Queue status\+: closed, queue has closed and would not receive task any more and is processing the remaining tasks now. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} \mbox{\hyperlink{a00518_a05c16956ed306758861698e73dc0c2a2_a05c16956ed306758861698e73dc0c2a2}{STATUS\+\_\+\+DRAINED}} = 3
+\begin{DoxyCompactList}\small\item\em Queue status\+: drained, queue is ready to be destroy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} \mbox{\hyperlink{a00518_a72e5fc71cca56b4314a152c8581d64f8_a72e5fc71cca56b4314a152c8581d64f8}{create\+Queue}}
+\begin{DoxyCompactList}\small\item\em Create Sequence queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00518_ad9ee4565a9ac0003cc8adc74169f9d3f_ad9ee4565a9ac0003cc8adc74169f9d3f}\index{seq-\/queue.js@{seq-\/queue.js}!\_next@{\_next}}
+\index{\_next@{\_next}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{\_next}{\_next}}
+{\footnotesize\ttfamily \label{a00518_ad9ee4565a9ac0003cc8adc74169f9d3f_ad9ee4565a9ac0003cc8adc74169f9d3f} 
+\mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \+\_\+next}
+
+
+
+Invoke next task. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\texorpdfstring{$\vert$}{|}\+Number\}} & tid last executed task id @api private \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00090}{90}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_ae3d44bd7a98cd613dafac36e16d4f504_ae3d44bd7a98cd613dafac36e16d4f504}\index{seq-\/queue.js@{seq-\/queue.js}!close@{close}}
+\index{close@{close}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily \label{a00518_ae3d44bd7a98cd613dafac36e16d4f504_ae3d44bd7a98cd613dafac36e16d4f504} 
+\mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} close}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(force)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ !==\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_IDLE\ \&\&\ \textcolor{keyword}{this}.status\ !==\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_BUSY)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(force)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_DRAINED;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.timerId)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ clearTimeout(this.timerId);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ this.timerId\ =\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.emit(\mbox{\hyperlink{a00518_abea1d81d1b0466bd50a676c13864b782_abea1d81d1b0466bd50a676c13864b782}{EVENT\_DRAINED}});}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_CLOSED;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.emit(\mbox{\hyperlink{a00518_a0b11833f52a30fc88a6a2e238d75fbec_a0b11833f52a30fc88a6a2e238d75fbec}{EVENT\_CLOSED}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Close queue. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Boolean\}} & force if true will close the queue immediately else will execute the rest task in queue \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00065}{65}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a72e5fc71cca56b4314a152c8581d64f8_a72e5fc71cca56b4314a152c8581d64f8}\index{seq-\/queue.js@{seq-\/queue.js}!createQueue@{createQueue}}
+\index{createQueue@{createQueue}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{createQueue}{createQueue}}
+{\footnotesize\ttfamily \label{a00518_a72e5fc71cca56b4314a152c8581d64f8_a72e5fc71cca56b4314a152c8581d64f8} 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} create\+Queue}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{SeqQueue}}(\mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Create Sequence queue. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Number\}} & timeout a global timeout for the new queue instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Object\} new queue instance @member\+Of Seq\+Queue\+Manager 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00197}{197}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_ac867258e39c1ba9c80c29fe540ad216a_ac867258e39c1ba9c80c29fe540ad216a}\index{seq-\/queue.js@{seq-\/queue.js}!DEFAULT\_TIMEOUT@{DEFAULT\_TIMEOUT}}
+\index{DEFAULT\_TIMEOUT@{DEFAULT\_TIMEOUT}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{DEFAULT\_TIMEOUT}{DEFAULT\_TIMEOUT}}
+{\footnotesize\ttfamily \label{a00518_ac867258e39c1ba9c80c29fe540ad216a_ac867258e39c1ba9c80c29fe540ad216a} 
+var DEFAULT\+\_\+\+TIMEOUT = 3000}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00004}{4}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a0b11833f52a30fc88a6a2e238d75fbec_a0b11833f52a30fc88a6a2e238d75fbec}\index{seq-\/queue.js@{seq-\/queue.js}!EVENT\_CLOSED@{EVENT\_CLOSED}}
+\index{EVENT\_CLOSED@{EVENT\_CLOSED}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{EVENT\_CLOSED}{EVENT\_CLOSED}}
+{\footnotesize\ttfamily \label{a00518_a0b11833f52a30fc88a6a2e238d75fbec_a0b11833f52a30fc88a6a2e238d75fbec} 
+var EVENT\+\_\+\+CLOSED = \textquotesingle{}closed\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00006}{6}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_abea1d81d1b0466bd50a676c13864b782_abea1d81d1b0466bd50a676c13864b782}\index{seq-\/queue.js@{seq-\/queue.js}!EVENT\_DRAINED@{EVENT\_DRAINED}}
+\index{EVENT\_DRAINED@{EVENT\_DRAINED}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{EVENT\_DRAINED}{EVENT\_DRAINED}}
+{\footnotesize\ttfamily \label{a00518_abea1d81d1b0466bd50a676c13864b782_abea1d81d1b0466bd50a676c13864b782} 
+var EVENT\+\_\+\+DRAINED = \textquotesingle{}drained\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00007}{7}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_ad57db69f456bd679167cecd98d6c4019_ad57db69f456bd679167cecd98d6c4019}\index{seq-\/queue.js@{seq-\/queue.js}!EventEmitter@{EventEmitter}}
+\index{EventEmitter@{EventEmitter}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{EventEmitter}{EventEmitter}}
+{\footnotesize\ttfamily \label{a00518_ad57db69f456bd679167cecd98d6c4019_ad57db69f456bd679167cecd98d6c4019} 
+var Event\+Emitter = require(\textquotesingle{}events\textquotesingle{}).Event\+Emitter}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00001}{1}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a422139068cf85f832e1f8bd49a0cdd41_a422139068cf85f832e1f8bd49a0cdd41}\index{seq-\/queue.js@{seq-\/queue.js}!INIT\_ID@{INIT\_ID}}
+\index{INIT\_ID@{INIT\_ID}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{INIT\_ID}{INIT\_ID}}
+{\footnotesize\ttfamily \label{a00518_a422139068cf85f832e1f8bd49a0cdd41_a422139068cf85f832e1f8bd49a0cdd41} 
+var INIT\+\_\+\+ID = 0}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00005}{5}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a995f82172185c17609fb3633e73afb69_a995f82172185c17609fb3633e73afb69}\index{seq-\/queue.js@{seq-\/queue.js}!push@{push}}
+\index{push@{push}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{push}{push}}
+{\footnotesize\ttfamily \label{a00518_a995f82172185c17609fb3633e73afb69_a995f82172185c17609fb3633e73afb69} 
+\mbox{\hyperlink{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}{Seq\+Queue}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} push}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}},\ ontimeout,\ \mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ !==\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_IDLE\ \&\&\ \textcolor{keyword}{this}.status\ !==\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_BUSY)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(typeof\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}\ !==\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'fn\ should\ be\ a\ function.'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ this.queue.push(\{\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}:\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}},\ ontimeout:\ ontimeout,\ \mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}}:\ \mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}}\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ ===\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_IDLE)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_BUSY;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ var\ \textcolor{keyword}{self}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.nextTick(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{self}.\_next(\textcolor{keyword}{self}.curId);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Add a task into queue. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fn} & new request \\
+\hline
+{\em ontimeout} & callback when task timeout \\
+\hline
+{\em timeout} & timeout for current request. take the global timeout if this is invalid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true or false 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00039}{39}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106}\index{seq-\/queue.js@{seq-\/queue.js}!SeqQueue@{SeqQueue}}
+\index{SeqQueue@{SeqQueue}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{SeqQueue}{SeqQueue}}
+{\footnotesize\ttfamily \label{a00518_a07f6d655e6fa079dd5fd42ea2ed61106_a07f6d655e6fa079dd5fd42ea2ed61106} 
+var Seq\+Queue}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}})\ \{}
+\DoxyCodeLine{\ \ \ \ EventEmitter.call(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}}\ \&\&\ \mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}}\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}}\ =\ \mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}};}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00521_a819aaeaa17cffb37ebc9c81d46edf048_a819aaeaa17cffb37ebc9c81d46edf048}{timeout}}\ =\ \mbox{\hyperlink{a00518_ac867258e39c1ba9c80c29fe540ad216a_ac867258e39c1ba9c80c29fe540ad216a}{DEFAULT\_TIMEOUT}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ this.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ \mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{SeqQueueManager}}.STATUS\_IDLE;}
+\DoxyCodeLine{\ \ \ \ this.curId\ =\ \mbox{\hyperlink{a00518_a422139068cf85f832e1f8bd49a0cdd41_a422139068cf85f832e1f8bd49a0cdd41}{INIT\_ID}};}
+\DoxyCodeLine{\ \ \ \ this.queue\ =\ [];}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Instance a new queue. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Number\}} & timeout a global timeout for new queue\\
+\hline
+\end{DoxyParams}
+@constructor 
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00016}{16}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}\index{seq-\/queue.js@{seq-\/queue.js}!SeqQueueManager@{SeqQueueManager}}
+\index{SeqQueueManager@{SeqQueueManager}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{SeqQueueManager}{SeqQueueManager}}
+{\footnotesize\ttfamily \label{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965} 
+var Seq\+Queue\+Manager = \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{module.\+exports}}}
+
+
+
+Queue manager. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00151}{151}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a03ce3ee99249156c37f7f2e6a1457698_a03ce3ee99249156c37f7f2e6a1457698}\index{seq-\/queue.js@{seq-\/queue.js}!STATUS\_BUSY@{STATUS\_BUSY}}
+\index{STATUS\_BUSY@{STATUS\_BUSY}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{STATUS\_BUSY}{STATUS\_BUSY}}
+{\footnotesize\ttfamily \label{a00518_a03ce3ee99249156c37f7f2e6a1457698_a03ce3ee99249156c37f7f2e6a1457698} 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} STATUS\+\_\+\+BUSY = 1}
+
+
+
+Queue status\+: busy, queue is working for some tasks now. 
+
+@const @type \{Number\} @member\+Of Seq\+Queue\+Manager 
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00169}{169}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_af3d6cc52d8fda29cd88cee863842770b_af3d6cc52d8fda29cd88cee863842770b}\index{seq-\/queue.js@{seq-\/queue.js}!STATUS\_CLOSED@{STATUS\_CLOSED}}
+\index{STATUS\_CLOSED@{STATUS\_CLOSED}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{STATUS\_CLOSED}{STATUS\_CLOSED}}
+{\footnotesize\ttfamily \label{a00518_af3d6cc52d8fda29cd88cee863842770b_af3d6cc52d8fda29cd88cee863842770b} 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} STATUS\+\_\+\+CLOSED = 2}
+
+
+
+Queue status\+: closed, queue has closed and would not receive task any more and is processing the remaining tasks now. 
+
+@const @type \{Number\} @member\+Of Seq\+Queue\+Manager 
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00179}{179}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a05c16956ed306758861698e73dc0c2a2_a05c16956ed306758861698e73dc0c2a2}\index{seq-\/queue.js@{seq-\/queue.js}!STATUS\_DRAINED@{STATUS\_DRAINED}}
+\index{STATUS\_DRAINED@{STATUS\_DRAINED}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{STATUS\_DRAINED}{STATUS\_DRAINED}}
+{\footnotesize\ttfamily \label{a00518_a05c16956ed306758861698e73dc0c2a2_a05c16956ed306758861698e73dc0c2a2} 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} STATUS\+\_\+\+DRAINED = 3}
+
+
+
+Queue status\+: drained, queue is ready to be destroy. 
+
+@const @type \{Number\} @member\+Of Seq\+Queue\+Manager 
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00188}{188}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_afd32d4d6c4db034ce3d4854adbc2ce5c_afd32d4d6c4db034ce3d4854adbc2ce5c}\index{seq-\/queue.js@{seq-\/queue.js}!STATUS\_IDLE@{STATUS\_IDLE}}
+\index{STATUS\_IDLE@{STATUS\_IDLE}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{STATUS\_IDLE}{STATUS\_IDLE}}
+{\footnotesize\ttfamily \label{a00518_afd32d4d6c4db034ce3d4854adbc2ce5c_afd32d4d6c4db034ce3d4854adbc2ce5c} 
+\mbox{\hyperlink{a00518_aa7d22708440e097962b9babf95d09965_aa7d22708440e097962b9babf95d09965}{Seq\+Queue\+Manager}} STATUS\+\_\+\+IDLE = 0}
+
+
+
+Queue status\+: idle, welcome new tasks. 
+
+@const @type \{Number\} @member\+Of Seq\+Queue\+Manager 
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00160}{160}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+
+\Hypertarget{a00518_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44}\index{seq-\/queue.js@{seq-\/queue.js}!util@{util}}
+\index{util@{util}!seq-\/queue.js@{seq-\/queue.js}}
+\doxyparagraph{\texorpdfstring{util}{util}}
+{\footnotesize\ttfamily \label{a00518_a8f5b2e09d5197e9d28f6032dff542d44_a8f5b2e09d5197e9d28f6032dff542d44} 
+var util = require(\textquotesingle{}util\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00518_source_l00002}{2}} del archivo \mbox{\hyperlink{a00518_source}{seq-\/queue.\+js}}.
+

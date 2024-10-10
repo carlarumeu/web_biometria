@@ -1,0 +1,45 @@
+\doxysubsection{Referencia del archivo validation.\+js}
+\hypertarget{a00641}{}\label{a00641}\index{validation.js@{validation.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00641_a647fe95991d7b1f56f8561600593cfa6_a647fe95991d7b1f56f8561600593cfa6}{validar\+Medicion}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00641_a647fe95991d7b1f56f8561600593cfa6_a647fe95991d7b1f56f8561600593cfa6}\index{validation.js@{validation.js}!validarMedicion@{validarMedicion}}
+\index{validarMedicion@{validarMedicion}!validation.js@{validation.js}}
+\doxyparagraph{\texorpdfstring{validarMedicion}{validarMedicion}}
+{\footnotesize\ttfamily \label{a00641_a647fe95991d7b1f56f8561600593cfa6_a647fe95991d7b1f56f8561600593cfa6} 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} validar\+Medicion}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ (medicion)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ medida\ !==\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'La\ medida\ debe\ ser\ un\ número'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ lugar\ !==\ \textcolor{stringliteral}{'string'}\ ||\ lugar.trim()\ ===\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'El\ lugar\ debe\ ser\ una\ cadena\ de\ texto\ no\ vacía'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ tipo\_gas\ !==\ \textcolor{stringliteral}{'string'}\ ||\ tipo\_gas.trim()\ ===\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'El\ tipo\_gas\ debe\ ser\ una\ cadena\ de\ texto\ no\ vacía'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (isNaN(Date.parse(hora)))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'La\ hora\ debe\ ser\ una\ fecha\ válida\ en\ formato\ ISO\ 8601'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00641_source_l00028}{28}} del archivo \mbox{\hyperlink{a00641_source}{validation.\+js}}.
+

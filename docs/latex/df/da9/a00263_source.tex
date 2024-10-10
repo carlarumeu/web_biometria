@@ -1,0 +1,42 @@
+\doxysubsection{ping.\+js}
+\hypertarget{a00263_source}{}\label{a00263_source}\index{ping.js@{ping.js}}
+\mbox{\hyperlink{a00263}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00001}\mbox{\hyperlink{a00263_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00263_source_l00003}\mbox{\hyperlink{a00263_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00684}{Command}}\ =\ require(\textcolor{stringliteral}{'./command'});}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00004}\mbox{\hyperlink{a00263_a984bde8f55585ce81551e9a95052ba14_a984bde8f55585ce81551e9a95052ba14}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00263_a984bde8f55585ce81551e9a95052ba14_a984bde8f55585ce81551e9a95052ba14}{CommandCode}}\ =\ require(\textcolor{stringliteral}{'../constants/commands'});}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00005}\mbox{\hyperlink{a00263_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{00005}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00776}{Packet}}\ =\ require(\textcolor{stringliteral}{'../packets/packet'});}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a00263_source_l00007}00007\ \textcolor{comment}{//\ TODO:\ time\ statistics?}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00008}00008\ \textcolor{comment}{//\ usefull\ for\ queue\ size\ and\ network\ latency\ monitoring}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00009}00009\ \textcolor{comment}{//\ store\ created,sent,reply\ timestamps}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00010}\mbox{\hyperlink{a00692}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00692}{Ping}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{a00684}{Command}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00011}\mbox{\hyperlink{a00692_a2f9f17afaaf316723058f2a462cba1a9_a2f9f17afaaf316723058f2a462cba1a9}{00011}}\ \ \ \mbox{\hyperlink{a00692_a2f9f17afaaf316723058f2a462cba1a9_a2f9f17afaaf316723058f2a462cba1a9}{constructor}}(callback)\ \{}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00013}00013\ \ \ \ \ this.onResult\ =\ callback;}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00014}00014\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a00263_source_l00016}\mbox{\hyperlink{a00692_a3f60e50b76b70f7a5934e0b7d51b0cd2_a3f60e50b76b70f7a5934e0b7d51b0cd2}{00016}}\ \ \ \mbox{\hyperlink{a00692_a3f60e50b76b70f7a5934e0b7d51b0cd2_a3f60e50b76b70f7a5934e0b7d51b0cd2}{start}}(packet,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{const}\ ping\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00263_abe58c58a92965efa33fded76fddbe074_abe58c58a92965efa33fded76fddbe074}{Packet}}(}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00018}00018\ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00019}00019\ \ \ \ \ \ \ Buffer.from([1,\ 0,\ 0,\ 0,\ \mbox{\hyperlink{a00263_a984bde8f55585ce81551e9a95052ba14_a984bde8f55585ce81551e9a95052ba14}{CommandCode}}.PING]),}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00020}00020\ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00021}00021\ \ \ \ \ \ \ 5}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00022}00022\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00023}00023\ \ \ \ \ connection.writePacket(ping);}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00692}{Ping}}.prototype.\mbox{\hyperlink{a00692_afdc3624715a52006b22a6cfcd62ba7bd_afdc3624715a52006b22a6cfcd62ba7bd}{pingResponse}};}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00025}00025\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a00263_source_l00027}\mbox{\hyperlink{a00692_afdc3624715a52006b22a6cfcd62ba7bd_afdc3624715a52006b22a6cfcd62ba7bd}{00027}}\ \ \ \mbox{\hyperlink{a00692_afdc3624715a52006b22a6cfcd62ba7bd_afdc3624715a52006b22a6cfcd62ba7bd}{pingResponse}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ TODO:\ check\ it's\ OK\ packet.\ error\ check\ already\ done\ in\ caller}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.onResult)\ \{}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00030}00030\ \ \ \ \ \ \ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.nextTick(this.onResult.bind(\textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00033}00033\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{a00263_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a00263_source_l00036}\mbox{\hyperlink{a00263_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00036}}\ module.exports\ =\ \mbox{\hyperlink{a01273_ad953baab1d22f9595927e18f6ac8ec16_ad953baab1d22f9595927e18f6ac8ec16}{Ping}};}
+
+\end{DoxyCode}

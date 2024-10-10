@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente field_flags.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d5/d0f/a00308_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">field_flags.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d0f/a00308.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Manually extracted from mysql-5.5.23/include/mysql_com.h</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_abe99fb8ef21004c0d1d76c2a3eb36cde.html#abe99fb8ef21004c0d1d76c2a3eb36cde">    4</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.NOT_NULL = 1; <span class="comment">/* Field can&#39;t be NULL */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_ad61e79c7938ec6edd54132758afd933f.html#ad61e79c7938ec6edd54132758afd933f">    5</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.PRI_KEY = 2; <span class="comment">/* Field is part of a primary key */</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_ade9e063dfc8f7747e5a221c98163c14d.html#ade9e063dfc8f7747e5a221c98163c14d">    6</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.UNIQUE_KEY = 4; <span class="comment">/* Field is part of a unique key */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_ab7bb3ca8a34d572c4f5212c2ddac28e7.html#ab7bb3ca8a34d572c4f5212c2ddac28e7">    7</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.MULTIPLE_KEY = 8; <span class="comment">/* Field is part of a key */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_aaf4b4acb6d563789c6eff32ec6ef0fe4.html#aaf4b4acb6d563789c6eff32ec6ef0fe4">    8</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.BLOB = 16; <span class="comment">/* Field is a blob */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_a6741dfd3f30c27845326952fc7e03e74.html#a6741dfd3f30c27845326952fc7e03e74">    9</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.UNSIGNED = 32; <span class="comment">/* Field is unsigned */</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_ab30bac429328220109951e17c3cc0b58.html#ab30bac429328220109951e17c3cc0b58">   10</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.ZEROFILL = 64; <span class="comment">/* Field is zerofill */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_afc4d4400b7fde2b9bd952771c47a58c2.html#afc4d4400b7fde2b9bd952771c47a58c2">   11</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.BINARY = 128; <span class="comment">/* Field is binary   */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/* The following are only sent to new clients */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_aad4aebcaef2efac304838c1941276306.html#aad4aebcaef2efac304838c1941276306">   14</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.ENUM = 256; <span class="comment">/* field is an enum */</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_a7a424ea3487a388e264b880da15979e2.html#a7a424ea3487a388e264b880da15979e2">   15</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.AUTO_INCREMENT = 512; <span class="comment">/* field is a autoincrement field */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_a38f526bda306641bc8cd65ab6ac14587.html#a38f526bda306641bc8cd65ab6ac14587">   16</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.TIMESTAMP = 1024; <span class="comment">/* Field is a timestamp */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_a10aa6cf1253702291c026238a0e5e0ef.html#a10aa6cf1253702291c026238a0e5e0ef">   17</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.SET = 2048; <span class="comment">/* field is a set */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_a6eed407ab554e62fa61c97024c05b270.html#a6eed407ab554e62fa61c97024c05b270">   18</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.NO_DEFAULT_VALUE = 4096; <span class="comment">/* Field doesn&#39;t have default value */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_aba13a17e70557c5d2389542c6f5c70f0.html#aba13a17e70557c5d2389542c6f5c70f0">   19</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.ON_UPDATE_NOW = 8192; <span class="comment">/* Field is set to NOW on UPDATE */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d5/d0f/a00308_a84c6adf402288930736c73cb80c871ef.html#a84c6adf402288930736c73cb80c871ef">   20</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.NUM = 32768; <span class="comment">/* Field is num (for clients) */</span></div>
+<div class="ttc" id="aa01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_html_aa4072ba4b6b56b0fb6f4801f17ab2b34"><div class="ttname"><a href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a></div><div class="ttdeci">module exports</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da7/a01102_source.html#l00011">node_modules/aws-ssl-profiles/lib/index.js:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_457720dc0ac69b5252346002178dc270.html">constants</a></li><li class="navelem"><a class="el" href="../../d5/d0f/a00308.html">field_flags.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>
