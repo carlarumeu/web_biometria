@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2" kind="dir">
+    <compoundname>controllers</compoundname>
+    <innerfile refid="dd/dad/a00005">medicionController.js</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="controllers/"/>
+  </compounddef>
+</doxygen>

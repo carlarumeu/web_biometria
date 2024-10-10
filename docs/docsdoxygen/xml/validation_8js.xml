@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="validation_8js" kind="file" language="C++">
+    <compoundname>validation.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">//<sp/>src/utils/validation.js</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@module<sp/>validation</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Funciones<sp/>de<sp/>validación<sp/>para<sp/>las<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>validarMedicion</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>medicion<sp/>-<sp/>Objeto<sp/>que<sp/>contiene<sp/>los<sp/>datos<sp/>de<sp/>la<sp/>medición<sp/>a<sp/>validar.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{number}<sp/>medicion.medida<sp/>-<sp/>Valor<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>medicion.lugar<sp/>-<sp/>Lugar<sp/>donde<sp/>se<sp/>tomó<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>medicion.tipo_gas<sp/>-<sp/>Tipo<sp/>de<sp/>gas<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>medicion.hora<sp/>-<sp/>Hora<sp/>en<sp/>la<sp/>que<sp/>se<sp/>realizó<sp/>la<sp/>medición<sp/>(formato<sp/>ISO<sp/>8601).</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{boolean}<sp/>Devuelve<sp/>true<sp/>si<sp/>la<sp/>medición<sp/>es<sp/>válida.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@throws<sp/>{Error}<sp/>Si<sp/>alguna<sp/>de<sp/>las<sp/>validaciones<sp/>falla.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@example</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>//<sp/>Ejemplo<sp/>de<sp/>uso</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>try<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/>validarMedicion({<sp/>medida:<sp/>12.34,<sp/>lugar:<sp/>&apos;Laboratorio&apos;,<sp/>tipo_gas:<sp/>&apos;Oxígeno&apos;,<sp/>hora:<sp/>&apos;2024-10-08T12:00:00Z&apos;<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>}<sp/>catch<sp/>(error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/>console.error(error.message);</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>validarMedicion<sp/>=<sp/>(medicion)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>{<sp/>medida,<sp/>lugar,<sp/>tipo_gas,<sp/>hora<sp/>}<sp/>=<sp/>medicion;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(typeof<sp/>medida<sp/>!==<sp/>&apos;number&apos;)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>new<sp/>Error(&apos;La<sp/>medida<sp/>debe<sp/>ser<sp/>un<sp/>número&apos;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(typeof<sp/>lugar<sp/>!==<sp/>&apos;string&apos;<sp/>||<sp/>lugar.trim()<sp/>===<sp/>&apos;&apos;)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>new<sp/>Error(&apos;El<sp/>lugar<sp/>debe<sp/>ser<sp/>una<sp/>cadena<sp/>de<sp/>texto<sp/>no<sp/>vacía&apos;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(typeof<sp/>tipo_gas<sp/>!==<sp/>&apos;string&apos;<sp/>||<sp/>tipo_gas.trim()<sp/>===<sp/>&apos;&apos;)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>new<sp/>Error(&apos;El<sp/>tipo_gas<sp/>debe<sp/>ser<sp/>una<sp/>cadena<sp/>de<sp/>texto<sp/>no<sp/>vacía&apos;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(isNaN(Date.parse(hora)))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>new<sp/>Error(&apos;La<sp/>hora<sp/>debe<sp/>ser<sp/>una<sp/>fecha<sp/>válida<sp/>en<sp/>formato<sp/>ISO<sp/>8601&apos;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="utils/validation.js"/>
+  </compounddef>
+</doxygen>

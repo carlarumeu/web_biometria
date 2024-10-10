@@ -15,6 +15,7 @@ import { obtenerMediciones, enviarMedicion, obtenerUltimaMedicion } from '../ser
  * Los filtros incluyen lugar, tipo de gas, desde_hora y hasta_hora.
  * @returns {Promise<void>} Respuesta con el resultado de la operación.
  */
+//req, res -> getMediciones()
 export const getMediciones = async (req, res) => {
   try {
     const { lugar, tipo_gas, desde_hora, hasta_hora } = req.query;
@@ -37,6 +38,7 @@ export const getMediciones = async (req, res) => {
  */
 
 // Crear nueva medición
+// req, res -> postMedicion()
 export const postMedicion = async (req, res) => {
   try {
     const nuevaMedicion = req.body;
@@ -59,6 +61,7 @@ export const postMedicion = async (req, res) => {
  */
 
 // Obtener la última medición
+// req, res -> getUltimaMedicion()
 export const getUltimaMedicion = async (req, res) => {
   try {
     const ultimaMedicion = await obtenerUltimaMedicion();

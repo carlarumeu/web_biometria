@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="d7/d46/a00002" kind="file" language="C++">
+    <compoundname>db.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">//<sp/>src/config/db.js</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>{<sp/>createPool<sp/>}<sp/>from<sp/>&apos;mysql2/promise&apos;;</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>dotenv<sp/>from<sp/>&apos;dotenv&apos;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Cargar<sp/>las<sp/>variables<sp/>de<sp/>entorno<sp/>desde<sp/>el<sp/>archivo<sp/>.env</highlight></codeline>
+<codeline><highlight class="normal">dotenv.config();</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@module<sp/>db</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Configuración<sp/>y<sp/>creación<sp/>de<sp/>un<sp/>pool<sp/>de<sp/>conexiones<sp/>a<sp/>la<sp/>base<sp/>de<sp/>datos<sp/>MySQL.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@const<sp/>{Pool}<sp/>pool</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Pool<sp/>de<sp/>conexiones<sp/>para<sp/>la<sp/>base<sp/>de<sp/>datos<sp/>MySQL.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Se<sp/>utiliza<sp/>para<sp/>manejar<sp/>múltiples<sp/>conexiones<sp/>de<sp/>forma<sp/>eficiente.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>pool<sp/>=<sp/>createPool({</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{string}<sp/>host<sp/>-<sp/>El<sp/>host<sp/>del<sp/>servidor<sp/>MySQL.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Se<sp/>obtiene<sp/>de<sp/>la<sp/>variable<sp/>de<sp/>entorno<sp/>MYSQLDB_HOST.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>host:<sp/>process.env.MYSQLDB_HOST,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{string}<sp/>user<sp/>-<sp/>Nombre<sp/>de<sp/>usuario<sp/>para<sp/>la<sp/>conexión<sp/>a<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Este<sp/>valor<sp/>está<sp/>fijado<sp/>como<sp/>&apos;root&apos;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>user:<sp/>&apos;root&apos;,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{string}<sp/>password<sp/>-<sp/>Contraseña<sp/>para<sp/>la<sp/>conexión<sp/>a<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Se<sp/>obtiene<sp/>de<sp/>la<sp/>variable<sp/>de<sp/>entorno<sp/>MYSQLDB_ROOT_PASSWORD.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>password:<sp/>process.env.MYSQLDB_ROOT_PASSWORD,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{number}<sp/>port<sp/>-<sp/>Puerto<sp/>del<sp/>servidor<sp/>MySQL.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Se<sp/>obtiene<sp/>de<sp/>la<sp/>variable<sp/>de<sp/>entorno<sp/>MYSQLDB_DOCKER_PORT.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>port:<sp/>process.env.MYSQLDB_DOCKER_PORT,</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{string}<sp/>database<sp/>-<sp/>Nombre<sp/>de<sp/>la<sp/>base<sp/>de<sp/>datos<sp/>a<sp/>utilizar.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Este<sp/>valor<sp/>está<sp/>fijado<sp/>como<sp/>&apos;biometria_bbdd&apos;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>database:<sp/>&apos;biometria_bbdd&apos;,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{boolean}<sp/>waitForConnections<sp/>-<sp/>Indica<sp/>si<sp/>el<sp/>pool<sp/>debe<sp/>esperar<sp/>a<sp/>que<sp/>haya<sp/>conexiones<sp/>disponibles.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>waitForConnections:<sp/>true,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{number}<sp/>connectionLimit<sp/>-<sp/>Límite<sp/>máximo<sp/>de<sp/>conexiones<sp/>en<sp/>el<sp/>pool.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>connectionLimit:<sp/>10,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>@property<sp/>{number}<sp/>queueLimit<sp/>-<sp/>Límite<sp/>de<sp/>conexiones<sp/>en<sp/>cola.<sp/>0<sp/>indica<sp/>que<sp/>no<sp/>hay<sp/>límite.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>queueLimit:<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Exportar<sp/>el<sp/>pool<sp/>de<sp/>conexiones<sp/>para<sp/>su<sp/>uso<sp/>en<sp/>otros<sp/>módulos</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>default<sp/>pool;</highlight></codeline>
+    </programlisting>
+    <location file="config/db.js"/>
+  </compounddef>
+</doxygen>

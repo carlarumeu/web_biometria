@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="d4/d51/a00017" kind="file" language="C++">
+    <compoundname>medicionRoutes.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">import<sp/>{<sp/>Router<sp/>}<sp/>from<sp/>&apos;express&apos;;</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>{<sp/>getMediciones,<sp/>postMedicion,<sp/>getUltimaMedicion<sp/>}<sp/>from<sp/>&apos;../controllers/medicionController.js&apos;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>router<sp/>=<sp/>Router();</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@module<sp/>medicionRoutes</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Rutas<sp/>para<sp/>manejar<sp/>las<sp/>operaciones<sp/>relacionadas<sp/>con<sp/>las<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@route<sp/>GET<sp/>/</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@group<sp/>medicionRoutes</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Obtiene<sp/>todas<sp/>las<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@produces<sp/>application/json</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Array&lt;Object&gt;}<sp/>200<sp/>-<sp/>Lista<sp/>de<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Error}<sp/>400<sp/>-<sp/>Si<sp/>ocurre<sp/>un<sp/>error<sp/>al<sp/>obtener<sp/>las<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">router.get(&apos;/&apos;,<sp/>getMediciones);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@route<sp/>POST<sp/>/</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@group<sp/>medicionRoutes</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Crea<sp/>una<sp/>nueva<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@produces<sp/>application/json</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>medicion.body.required<sp/>-<sp/>Objeto<sp/>que<sp/>contiene<sp/>los<sp/>datos<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Object}<sp/>201<sp/>-<sp/>Mensaje<sp/>de<sp/>éxito.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Error}<sp/>400<sp/>-<sp/>Si<sp/>ocurre<sp/>un<sp/>error<sp/>al<sp/>crear<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">router.post(&apos;/&apos;,<sp/>postMedicion);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@route<sp/>GET<sp/>/ultima</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@group<sp/>medicionRoutes</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Obtiene<sp/>la<sp/>última<sp/>medición<sp/>registrada.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@produces<sp/>application/json</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Object}<sp/>200<sp/>-<sp/>Última<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Error}<sp/>404<sp/>-<sp/>Si<sp/>no<sp/>se<sp/>encuentra<sp/>ninguna<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Error}<sp/>400<sp/>-<sp/>Si<sp/>ocurre<sp/>un<sp/>error<sp/>al<sp/>obtener<sp/>la<sp/>última<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">router.get(&apos;/ultima&apos;,<sp/>getUltimaMedicion);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>default<sp/>router;</highlight></codeline>
+    </programlisting>
+    <location file="routes/medicionRoutes.js"/>
+  </compounddef>
+</doxygen>

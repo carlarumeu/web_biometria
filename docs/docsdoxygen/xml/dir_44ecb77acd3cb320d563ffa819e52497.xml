@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="dir_44ecb77acd3cb320d563ffa819e52497" kind="dir">
+    <compoundname>middlewares</compoundname>
+    <innerfile refid="da/d45/a00011">errorHandler.js</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="middlewares/"/>
+  </compounddef>
+</doxygen>

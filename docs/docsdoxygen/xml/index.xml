@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="es">
+  <compound refid="d7/d46/a00002" kind="file"><name>db.js</name>
+  </compound>
+  <compound refid="dd/dad/a00005" kind="file"><name>medicionController.js</name>
+  </compound>
+  <compound refid="d4/dee/a00008" kind="file"><name>index.js</name>
+  </compound>
+  <compound refid="da/d45/a00011" kind="file"><name>errorHandler.js</name>
+  </compound>
+  <compound refid="d2/de7/a00014" kind="file"><name>mediacionModel.js</name>
+  </compound>
+  <compound refid="d4/d51/a00017" kind="file"><name>medicionRoutes.js</name>
+  </compound>
+  <compound refid="db/db2/a00020" kind="file"><name>medicionService.js</name>
+  </compound>
+  <compound refid="d3/d52/a00023" kind="file"><name>validation.js</name>
+  </compound>
+  <compound refid="dir_9f351d46ce3cc29445a41dc3a31e6919" kind="dir"><name>config</name>
+  </compound>
+  <compound refid="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2" kind="dir"><name>controllers</name>
+  </compound>
+  <compound refid="dir_44ecb77acd3cb320d563ffa819e52497" kind="dir"><name>middlewares</name>
+  </compound>
+  <compound refid="dir_1ae4179d5e953611aae20c997279e02c" kind="dir"><name>models</name>
+  </compound>
+  <compound refid="dir_533417642d4c22e94ed6b0528ca3d24e" kind="dir"><name>routes</name>
+  </compound>
+  <compound refid="dir_056ec8f0377ddc4293192cbc6b19c99c" kind="dir"><name>services</name>
+  </compound>
+  <compound refid="dir_cbdb8362360e11eafe2fa3bc74cf0ffd" kind="dir"><name>utils</name>
+  </compound>
+</doxygenindex>
