@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="dd/dad/a00005" kind="file" language="C++">
+    <compoundname>medicionController.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">import<sp/>{<sp/>obtenerMediciones,<sp/>enviarMedicion,<sp/>obtenerUltimaMedicion<sp/>}<sp/>from<sp/>&apos;../services/medicionService.js&apos;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Obtener<sp/>todas<sp/>las<sp/>mediciones<sp/>(con<sp/>filtros<sp/>opcionales)</highlight></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@module<sp/>mediciones</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Controlador<sp/>para<sp/>manejar<sp/>las<sp/>operaciones<sp/>relacionadas<sp/>con<sp/>las<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>getMediciones</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>req<sp/>-<sp/>Objeto<sp/>de<sp/>solicitud<sp/>HTTP.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>res<sp/>-<sp/>Objeto<sp/>de<sp/>respuesta<sp/>HTTP.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Obtiene<sp/>todas<sp/>las<sp/>mediciones<sp/>con<sp/>filtros<sp/>opcionales.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Los<sp/>filtros<sp/>incluyen<sp/>lugar,<sp/>tipo<sp/>de<sp/>gas,<sp/>desde_hora<sp/>y<sp/>hasta_hora.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Promise&lt;void&gt;}<sp/>Respuesta<sp/>con<sp/>el<sp/>resultado<sp/>de<sp/>la<sp/>operación.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>getMediciones<sp/>=<sp/>async<sp/>(req,<sp/>res)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>try<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>{<sp/>lugar,<sp/>tipo_gas,<sp/>desde_hora,<sp/>hasta_hora<sp/>}<sp/>=<sp/>req.query;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>mediciones<sp/>=<sp/>await<sp/>obtenerMediciones(lugar,<sp/>tipo_gas,<sp/>desde_hora,<sp/>hasta_hora);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(200).json(mediciones);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/>catch<sp/>(error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(400).json({<sp/>message:<sp/>error.message<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>postMedicion</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>req<sp/>-<sp/>Objeto<sp/>de<sp/>solicitud<sp/>HTTP.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>res<sp/>-<sp/>Objeto<sp/>de<sp/>respuesta<sp/>HTTP.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Crea<sp/>una<sp/>nueva<sp/>medición<sp/>en<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>La<sp/>información<sp/>de<sp/>la<sp/>medición<sp/>se<sp/>obtiene<sp/>del<sp/>cuerpo<sp/>de<sp/>la<sp/>solicitud.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Promise&lt;void&gt;}<sp/>Respuesta<sp/>con<sp/>el<sp/>resultado<sp/>de<sp/>la<sp/>operación.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Crear<sp/>nueva<sp/>medición</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>postMedicion<sp/>=<sp/>async<sp/>(req,<sp/>res)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>try<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>nuevaMedicion<sp/>=<sp/>req.body;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>await<sp/>enviarMedicion(nuevaMedicion);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(201).json({<sp/>message:<sp/>&apos;Medición<sp/>creada<sp/>correctamente&apos;<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/>catch<sp/>(error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(400).json({<sp/>message:<sp/>error.message<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>getUltimaMedicion</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>req<sp/>-<sp/>Objeto<sp/>de<sp/>solicitud<sp/>HTTP.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>res<sp/>-<sp/>Objeto<sp/>de<sp/>respuesta<sp/>HTTP.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Obtiene<sp/>la<sp/>última<sp/>medición<sp/>registrada.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Si<sp/>no<sp/>se<sp/>encuentra<sp/>ninguna<sp/>medición,<sp/>se<sp/>retorna<sp/>un<sp/>error<sp/>404.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Promise&lt;void&gt;}<sp/>Respuesta<sp/>con<sp/>la<sp/>última<sp/>medición<sp/>o<sp/>un<sp/>mensaje<sp/>de<sp/>error.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Obtener<sp/>la<sp/>última<sp/>medición</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>getUltimaMedicion<sp/>=<sp/>async<sp/>(req,<sp/>res)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>try<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>ultimaMedicion<sp/>=<sp/>await<sp/>obtenerUltimaMedicion();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!ultimaMedicion)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>res.status(404).json({<sp/>message:<sp/>&apos;No<sp/>se<sp/>encontró<sp/>ninguna<sp/>medición&apos;<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(200).json(ultimaMedicion);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/>catch<sp/>(error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(400).json({<sp/>message:<sp/>error.message<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="controllers/medicionController.js"/>
+  </compounddef>
+</doxygen>

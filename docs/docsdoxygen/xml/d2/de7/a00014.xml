@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="d2/de7/a00014" kind="file" language="C++">
+    <compoundname>mediacionModel.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">//<sp/>src/models/medicionModel.js</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>pool<sp/>from<sp/>&apos;../config/db.js&apos;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@module<sp/>medicionModel</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Modelo<sp/>para<sp/>manejar<sp/>operaciones<sp/>relacionadas<sp/>con<sp/>las<sp/>mediciones<sp/>en<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>getMediciones</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>filters<sp/>-<sp/>Filtros<sp/>para<sp/>las<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>[filters.lugar]<sp/>-<sp/>Lugar<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>[filters.tipo_gas]<sp/>-<sp/>Tipo<sp/>de<sp/>gas<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>[filters.desde_hora]<sp/>-<sp/>Hora<sp/>de<sp/>inicio<sp/>para<sp/>el<sp/>filtro<sp/>de<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>[filters.hasta_hora]<sp/>-<sp/>Hora<sp/>de<sp/>fin<sp/>para<sp/>el<sp/>filtro<sp/>de<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Promise&lt;Array&lt;Object&gt;&gt;}<sp/>Lista<sp/>de<sp/>mediciones<sp/>que<sp/>cumplen<sp/>con<sp/>los<sp/>filtros<sp/>especificados.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@throws<sp/>{Error}<sp/>Si<sp/>ocurre<sp/>un<sp/>error<sp/>durante<sp/>la<sp/>consulta<sp/>a<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>getMediciones<sp/>=<sp/>async<sp/>(filters)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>let<sp/>query<sp/>=<sp/>&apos;SELECT<sp/>*<sp/>FROM<sp/>mediciones<sp/>WHERE<sp/>1=1&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>params<sp/>=<sp/>[];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(filters.lugar)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>query<sp/>+=<sp/>&apos;<sp/>AND<sp/>lugar<sp/>=<sp/>?&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>params.push(filters.lugar);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(filters.tipo_gas)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>query<sp/>+=<sp/>&apos;<sp/>AND<sp/>tipo_gas<sp/>=<sp/>?&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>params.push(filters.tipo_gas);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(filters.desde_hora)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>query<sp/>+=<sp/>&apos;<sp/>AND<sp/>hora<sp/>&gt;=<sp/>?&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>params.push(filters.desde_hora);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(filters.hasta_hora)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>query<sp/>+=<sp/>&apos;<sp/>AND<sp/>hora<sp/>&lt;=<sp/>?&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>params.push(filters.hasta_hora);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>[rows]<sp/>=<sp/>await<sp/>pool.query(query,<sp/>params);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>rows;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>insertMedicion</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{Object}<sp/>medicion<sp/>-<sp/>Objeto<sp/>que<sp/>contiene<sp/>los<sp/>datos<sp/>de<sp/>la<sp/>medición<sp/>a<sp/>insertar.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{number}<sp/>medicion.medida<sp/>-<sp/>Valor<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>medicion.lugar<sp/>-<sp/>Lugar<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>medicion.tipo_gas<sp/>-<sp/>Tipo<sp/>de<sp/>gas<sp/>de<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>{string}<sp/>medicion.hora<sp/>-<sp/>Hora<sp/>en<sp/>la<sp/>que<sp/>se<sp/>realizó<sp/>la<sp/>medición.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Promise&lt;number&gt;}<sp/>ID<sp/>de<sp/>la<sp/>medición<sp/>insertada.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@throws<sp/>{Error}<sp/>Si<sp/>ocurre<sp/>un<sp/>error<sp/>durante<sp/>la<sp/>inserción<sp/>en<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>insertMedicion<sp/>=<sp/>async<sp/>(medicion)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>{<sp/>medida,<sp/>lugar,<sp/>tipo_gas,<sp/>hora<sp/>}<sp/>=<sp/>medicion;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>query<sp/>=<sp/>&apos;INSERT<sp/>INTO<sp/>mediciones<sp/>(medida,<sp/>lugar,<sp/>tipo_gas,<sp/>hora)<sp/>VALUES<sp/>(?,<sp/>?,<sp/>?,<sp/>?)&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>[result]<sp/>=<sp/>await<sp/>pool.execute(query,<sp/>[medida,<sp/>lugar,<sp/>tipo_gas,<sp/>hora]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>result.insertId;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>getUltimaMedicion</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@async</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{Promise&lt;Object|null&gt;}<sp/>La<sp/>última<sp/>medición<sp/>registrada,<sp/>o<sp/>null<sp/>si<sp/>no<sp/>hay<sp/>mediciones.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@throws<sp/>{Error}<sp/>Si<sp/>ocurre<sp/>un<sp/>error<sp/>durante<sp/>la<sp/>consulta<sp/>a<sp/>la<sp/>base<sp/>de<sp/>datos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>getUltimaMedicion<sp/>=<sp/>async<sp/>()<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>query<sp/>=<sp/>&apos;SELECT<sp/>*<sp/>FROM<sp/>mediciones<sp/>ORDER<sp/>BY<sp/>hora<sp/>DESC<sp/>LIMIT<sp/>1&apos;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>[rows]<sp/>=<sp/>await<sp/>pool.query(query);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>rows[0];</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="models/mediacionModel.js"/>
+  </compounddef>
+</doxygen>

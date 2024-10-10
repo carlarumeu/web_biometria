@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="error_handler_8js" kind="file" language="C++">
+    <compoundname>errorHandler.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">//<sp/>src/middlewares/errorHandler.js</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>const<sp/>errorHandler<sp/>=<sp/>(err,<sp/>req,<sp/>res,<sp/>next)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>console.error(err.stack);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.status(500).json({<sp/>message:<sp/>&apos;Internal<sp/>Server<sp/>Error&apos;<sp/>});</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="middlewares/errorHandler.js"/>
+  </compounddef>
+</doxygen>

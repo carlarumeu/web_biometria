@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="index_8js" kind="file" language="C++">
+    <compoundname>index.js</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">import<sp/>express<sp/>from<sp/>&apos;express&apos;;</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>{config}<sp/>from<sp/>&apos;dotenv&apos;;</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>medicionRoutes<sp/>from<sp/>&apos;./routes/medicionRoutes.js&apos;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Cargar<sp/>las<sp/>variables<sp/>de<sp/>entorno<sp/>desde<sp/>el<sp/>archivo<sp/>.env</highlight></codeline>
+<codeline><highlight class="normal">config()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Crear<sp/>una<sp/>instancia<sp/>de<sp/>la<sp/>aplicación<sp/>Express</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>app<sp/>=<sp/>express()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Middleware<sp/>para<sp/>parsear<sp/>el<sp/>cuerpo<sp/>de<sp/>las<sp/>solicitudes<sp/>como<sp/>JSON</highlight></codeline>
+<codeline><highlight class="normal">app.use(express.json());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Definir<sp/>las<sp/>rutas<sp/>de<sp/>mediciones</highlight></codeline>
+<codeline><highlight class="normal">app.use(&apos;/mediciones&apos;,<sp/>medicionRoutes);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@route<sp/>GET<sp/>/</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@group<sp/>Welcome</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{string}<sp/>Mensaje<sp/>de<sp/>bienvenida</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@throws<sp/>{Error}<sp/>Si<sp/>hay<sp/>un<sp/>problema<sp/>en<sp/>el<sp/>servidor</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Ruta<sp/>de<sp/>bienvenida</highlight></codeline>
+<codeline><highlight class="normal">app.get(&apos;/&apos;,<sp/>(req,<sp/>res)<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.send(&apos;Bienvenido<sp/>a<sp/>la<sp/>API<sp/>de<sp/>mediciones&apos;);</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Servidor<sp/>en<sp/>escucha</highlight></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@function<sp/>startServer</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@description<sp/>Inicia<sp/>el<sp/>servidor<sp/>en<sp/>el<sp/>puerto<sp/>especificado<sp/>en<sp/>las<sp/>variables<sp/>de<sp/>entorno.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>{void}</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">app.listen(process.env.NODE_DOCKER_PORT,<sp/>()<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>console.log(&apos;Servidor<sp/>corriendo<sp/>en<sp/>el<sp/>puerto<sp/>${process.env.NODE_DOCKER_PORT}&apos;);</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+    </programlisting>
+    <location file="index.js"/>
+  </compounddef>
+</doxygen>

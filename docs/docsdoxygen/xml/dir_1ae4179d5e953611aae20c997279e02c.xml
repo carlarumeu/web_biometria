@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="dir_1ae4179d5e953611aae20c997279e02c" kind="dir">
+    <compoundname>models</compoundname>
+    <innerfile refid="d2/de7/a00014">mediacionModel.js</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="models/"/>
+  </compounddef>
+</doxygen>

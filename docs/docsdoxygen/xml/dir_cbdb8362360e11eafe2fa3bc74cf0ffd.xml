@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="es">
+  <compounddef id="dir_cbdb8362360e11eafe2fa3bc74cf0ffd" kind="dir">
+    <compoundname>utils</compoundname>
+    <innerfile refid="d3/d52/a00023">validation.js</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="utils/"/>
+  </compounddef>
+</doxygen>
