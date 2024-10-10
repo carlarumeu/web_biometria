@@ -1,3 +1,16 @@
+/*
+ * Nombre del fichero: db.js
+ * Descripción: Configuración y creación de un pool de conexiones a la base de datos MySQL.
+ * Autores: Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos.
+ * Fecha: 8 de octubre de 2024
+ *
+ * Este archivo ha sido realizado por Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos el 8 de octubre de 2024.
+ * Contiene la configuración y creación de un pool de conexiones a la base de datos MySQL utilizando mysql2/promise y dotenv.
+ * 
+ * Todos los derechos reservados.
+ */
+
+
 // src/config/db.js
 import { createPool } from 'mysql2/promise';
 import dotenv from 'dotenv';

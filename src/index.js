@@ -1,3 +1,15 @@
+/*
+ * Nombre del fichero: app.js
+ * Descripción: Archivo principal para iniciar la aplicación Express y definir las rutas.
+ * Autores: Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos
+ * Fecha: 8 de octubre de 2024
+ *
+ * Este archivo ha sido realizado por Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos el 8 de octubre de 2024.
+ * Contiene la configuración inicial de la aplicación, la definición de rutas y el inicio del servidor.
+ * 
+ * Todos los derechos reservados.
+ */
+
 import express from 'express';
 import {config} from 'dotenv';
 import medicionRoutes from './routes/medicionRoutes.js';

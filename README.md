@@ -94,4 +94,8 @@ ejemplosdatos.sql: Inserta datos de ejemplo en la tabla mediciones.
 
 Este proyecto está bajo la licencia MIT.
 
+</div><h2>:memo: Proyectos relacionados</h2>
+https://github.com/carlarumeu/Arduino-Biometria
+https://github.com/carlarumeu/android_biometria 
+
 Hecho con :heart: por Carla Rumeu Montesinos

@@ -1,3 +1,15 @@
+/*
+ * Nombre del fichero: validation.js
+ * Descripción: Funciones de validación para las mediciones de gases.
+ * Autores: Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos
+ * Fecha: 8 de octubre de 2024
+ *
+ * Este archivo ha sido realizado por Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos el 8 de octubre de 2024.
+ * Contiene las funciones para validar los datos de las mediciones, asegurando que cumplen con los requisitos necesarios.
+ * 
+ * Todos los derechos reservados.
+ */
+
 // src/utils/validation.js
 
 
