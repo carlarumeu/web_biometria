@@ -1,0 +1,62 @@
+\doxysubsection{has-\/symbols/test/tests.js}
+\hypertarget{a01717_source}{}\label{a01717_source}\index{tests.js@{tests.js}}
+\mbox{\hyperlink{a01717}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00001}\mbox{\hyperlink{a01717_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00003}00003\ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ consistent-\/return}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00004}\mbox{\hyperlink{a01717_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00004}}\ module.exports\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01222_a5acbb382e9201bd88f6643a25aa68b08_a5acbb382e9201bd88f6643a25aa68b08}{runSymbolTests}}(\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(typeof\ Symbol,\ \textcolor{stringliteral}{'function'},\ \textcolor{stringliteral}{'global\ Symbol\ is\ a\ function'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Symbol\ !==\ \textcolor{stringliteral}{'function'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.notEqual(Symbol(),\ Symbol(),\ \textcolor{stringliteral}{'two\ symbols\ are\ not\ equal'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00011}00011\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00012}00012\ \textcolor{comment}{\ \ \ \ t.equal(}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00013}00013\ \textcolor{comment}{\ \ \ \ \ \ \ \ Symbol.prototype.toString.call(Symbol('foo')),}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00014}00014\ \textcolor{comment}{\ \ \ \ \ \ \ \ Symbol.prototype.toString.call(Symbol('foo')),}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00015}00015\ \textcolor{comment}{\ \ \ \ \ \ \ \ 'two\ symbols\ with\ the\ same\ description\ stringify\ the\ same'}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00016}00016\ \textcolor{comment}{\ \ \ \ );}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00017}00017\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00019}00019\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00020}00020\ \textcolor{comment}{\ \ \ \ var\ foo\ =\ Symbol('foo');}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00022}00022\ \textcolor{comment}{\ \ \ \ t.notEqual(}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00023}00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ String(foo),}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00024}00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ String(Symbol('bar')),}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00025}00025\ \textcolor{comment}{\ \ \ \ \ \ \ \ 'two\ symbols\ with\ different\ descriptions\ do\ not\ stringify\ the\ same'}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00026}00026\ \textcolor{comment}{\ \ \ \ );}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00027}00027\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(typeof\ Symbol.prototype.toString,\ \textcolor{stringliteral}{'function'},\ \textcolor{stringliteral}{'Symbol\#toString\ is\ a\ function'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ t.equal(String(foo),\ Symbol.prototype.toString.call(foo),\ 'Symbol\#toString\ equals\ String\ of\ the\ same\ symbol');}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(typeof\ Object.getOwnPropertySymbols,\ \textcolor{stringliteral}{'function'},\ \textcolor{stringliteral}{'Object.getOwnPropertySymbols\ is\ a\ function'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00034}00034\ \ \ \ \ var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00035}00035\ \ \ \ \ var\ sym\ =\ Symbol(\textcolor{stringliteral}{'test'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00036}00036\ \ \ \ \ var\ symObj\ =\ Object(sym);}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.notEqual(typeof\ sym,\ \textcolor{stringliteral}{'string'},\ \textcolor{stringliteral}{'Symbol\ is\ not\ a\ string'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(Object.prototype.toString.call(sym),\ \textcolor{stringliteral}{'[object\ Symbol]'},\ \textcolor{stringliteral}{'symbol\ primitive\ Object\#toStrings\ properly'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(Object.prototype.toString.call(symObj),\ \textcolor{stringliteral}{'[object\ Symbol]'},\ \textcolor{stringliteral}{'symbol\ primitive\ Object\#toStrings\ properly'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00041}00041\ \ \ \ \ var\ symVal\ =\ 42;}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}[sym]\ =\ symVal;}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ no-\/restricted-\/syntax}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (sym\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})\ \{\ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.fail(\textcolor{stringliteral}{'symbol\ property\ key\ was\ found\ in\ for..in\ of\ object'});\ \}}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{a01717_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.deepEqual(Object.keys(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),\ [],\ \textcolor{stringliteral}{'no\ enumerable\ own\ keys\ on\ symbol-\/valued\ object'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.deepEqual(Object.getOwnPropertyNames(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),\ [],\ \textcolor{stringliteral}{'no\ own\ names\ on\ symbol-\/valued\ object'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.deepEqual(Object.getOwnPropertySymbols(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),\ [sym],\ \textcolor{stringliteral}{'one\ own\ symbol\ on\ symbol-\/valued\ object'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(Object.prototype.propertyIsEnumerable.call(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ sym),\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{'symbol\ is\ enumerable'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.deepEqual(Object.getOwnPropertyDescriptor(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ sym),\ \{}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00051}00051\ \ \ \ \ \ \ \ \ configurable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00052}00052\ \ \ \ \ \ \ \ \ enumerable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00053}00053\ \ \ \ \ \ \ \ \ value:\ 42,}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00054}00054\ \ \ \ \ \ \ \ \ writable:\ true}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00055}00055\ \ \ \ \ \},\ \textcolor{stringliteral}{'property\ descriptor\ is\ correct'});}
+\DoxyCodeLine{\Hypertarget{a01717_source_l00056}00056\ \};}
+
+\end{DoxyCode}

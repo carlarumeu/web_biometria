@@ -1,0 +1,28 @@
+\doxysubsection{node\+\_\+modules/iconv-\/lite/encodings/index.js}
+\hypertarget{a01231_source}{}\label{a01231_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01231}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00001}\mbox{\hyperlink{a01231_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{"{}use\ strict"{}};}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01231_source_l00003}00003\ \textcolor{comment}{//\ Update\ this\ array\ if\ you\ add/rename/remove\ files\ in\ this\ directory.}}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00004}00004\ \textcolor{comment}{//\ We\ support\ Browserify\ by\ skipping\ automatic\ module\ discovery\ and\ requiring\ modules\ directly.}}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00005}\mbox{\hyperlink{a01231_a4d77cb9bee576c07f3bbf9aec2c1278c_a4d77cb9bee576c07f3bbf9aec2c1278c}{00005}}\ var\ \mbox{\hyperlink{a01231_a4d77cb9bee576c07f3bbf9aec2c1278c_a4d77cb9bee576c07f3bbf9aec2c1278c}{modules}}\ =\ [}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00006}00006\ \ \ \ \ require(\textcolor{stringliteral}{"{}./internal"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00007}00007\ \ \ \ \ require(\textcolor{stringliteral}{"{}./utf16"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00008}00008\ \ \ \ \ require(\textcolor{stringliteral}{"{}./utf7"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00009}00009\ \ \ \ \ require(\textcolor{stringliteral}{"{}./sbcs-\/codec"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00010}00010\ \ \ \ \ require(\textcolor{stringliteral}{"{}./sbcs-\/data"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00011}00011\ \ \ \ \ require(\textcolor{stringliteral}{"{}./sbcs-\/data-\/generated"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00012}00012\ \ \ \ \ require(\textcolor{stringliteral}{"{}./dbcs-\/codec"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00013}00013\ \ \ \ \ require(\textcolor{stringliteral}{"{}./dbcs-\/data"{}}),}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00014}00014\ ];}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01231_source_l00016}00016\ \textcolor{comment}{//\ Put\ all\ encoding/alias/codec\ definitions\ to\ single\ object\ and\ export\ it.\ }}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00017}\mbox{\hyperlink{a01231_a0b44ada0eb2bff001b89e271db3b4b47_a0b44ada0eb2bff001b89e271db3b4b47}{00017}}\ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ \mbox{\hyperlink{a01231_a4d77cb9bee576c07f3bbf9aec2c1278c_a4d77cb9bee576c07f3bbf9aec2c1278c}{modules}}.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00018}00018\ \ \ \ \ var\ module\ =\ \mbox{\hyperlink{a01231_a4d77cb9bee576c07f3bbf9aec2c1278c_a4d77cb9bee576c07f3bbf9aec2c1278c}{modules}}[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}];}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ enc\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ module)}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Object.prototype.hasOwnProperty.call(module,\ enc))}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}[enc]\ =\ module[enc];}
+\DoxyCodeLine{\Hypertarget{a01231_source_l00022}00022\ \}}
+
+\end{DoxyCode}

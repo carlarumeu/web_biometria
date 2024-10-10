@@ -1,0 +1,133 @@
+\doxysubsection{compressed\+\_\+protocol.\+js}
+\hypertarget{a00278_source}{}\label{a00278_source}\index{compressed\_protocol.js@{compressed\_protocol.js}}
+\mbox{\hyperlink{a00278}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00001}\mbox{\hyperlink{a00278_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00003}00003\ \textcolor{comment}{//\ connection\ mixins}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00004}00004\ \textcolor{comment}{//\ implementation\ of\ http://dev.mysql.com/doc/internals/en/compression.html}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00006}\mbox{\hyperlink{a00278_a27ccbb53720cd053c6ced7d851a6992e_a27ccbb53720cd053c6ced7d851a6992e}{00006}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00278_a27ccbb53720cd053c6ced7d851a6992e_a27ccbb53720cd053c6ced7d851a6992e}{zlib}}\ =\ require(\textcolor{stringliteral}{'zlib'});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00007}\mbox{\hyperlink{a00278_aa7aceac8e06d335ae844bd256e37cf51_aa7aceac8e06d335ae844bd256e37cf51}{00007}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00728}{PacketParser}}\ =\ require(\textcolor{stringliteral}{'./packet\_parser.js'});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00009}\mbox{\hyperlink{a00278_a05c88bf72143c764be7adf62897696ee_a05c88bf72143c764be7adf62897696ee}{00009}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00278_a05c88bf72143c764be7adf62897696ee_a05c88bf72143c764be7adf62897696ee}{handleCompressedPacket}}(packet)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00010}00010\ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ consistent-\/this,\ no-\/invalid-\/this}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00011}00011\ \ \ \textcolor{keyword}{const}\ connection\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00012}00012\ \ \ \textcolor{keyword}{const}\ deflatedLength\ =\ packet.readInt24();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00013}00013\ \ \ \textcolor{keyword}{const}\ body\ =\ packet.readBuffer();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00015}00015\ \ \ \textcolor{keywordflow}{if}\ (deflatedLength\ !==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00016}00016\ \ \ \ \ connection.inflateQueue.push(task\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00017}00017\ \ \ \ \ \ \ \mbox{\hyperlink{a00278_a27ccbb53720cd053c6ced7d851a6992e_a27ccbb53720cd053c6ced7d851a6992e}{zlib}}.inflate(body,\ (err,\ data)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ connection.\_handleNetworkError(err);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00022}00022\ \ \ \ \ \ \ \ \ connection.\_bumpCompressedSequenceId(packet.numPackets);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00023}00023\ \ \ \ \ \ \ \ \ connection.\_inflatedPacketsParser.execute(data);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00024}00024\ \ \ \ \ \ \ \ \ task.done();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00025}00025\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00026}00026\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00027}00027\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00028}00028\ \ \ \ \ connection.inflateQueue.push(task\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00029}00029\ \ \ \ \ \ \ connection.\_bumpCompressedSequenceId(packet.numPackets);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00030}00030\ \ \ \ \ \ \ connection.\_inflatedPacketsParser.execute(body);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00031}00031\ \ \ \ \ \ \ task.done();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00032}00032\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00033}00033\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00036}\mbox{\hyperlink{a00278_acdd0c7004e9a88715887b789254bf1d8_acdd0c7004e9a88715887b789254bf1d8}{00036}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00278_acdd0c7004e9a88715887b789254bf1d8_acdd0c7004e9a88715887b789254bf1d8}{writeCompressed}}(buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00037}00037\ \ \ \textcolor{comment}{//\ http://dev.mysql.com/doc/internals/en/example-\/several-\/mysql-\/packets.html}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00038}00038\ \ \ \textcolor{comment}{//\ note:\ sending\ a\ MySQL\ Packet\ of\ the\ size\ 2\string^24−5\ to\ 2\string^24−1\ via\ compression}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00039}00039\ \ \ \textcolor{comment}{//\ leads\ to\ at\ least\ one\ extra\ compressed\ packet.}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00040}00040\ \ \ \textcolor{comment}{//\ (this\ is\ because\ "{}length\ of\ the\ packet\ before\ compression"{}\ need\ to\ fit}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00041}00041\ \ \ \textcolor{comment}{//\ into\ 3\ byte\ unsigned\ int.\ "{}length\ of\ the\ packet\ before\ compression"{}\ includes}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00042}00042\ \ \ \textcolor{comment}{//\ 4\ byte\ packet\ header,\ hence\ 2\string^24−5)}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00043}00043\ \ \ \textcolor{keyword}{const}\ MAX\_COMPRESSED\_LENGTH\ =\ 16777210;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00044}00044\ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ start;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00045}00045\ \ \ \textcolor{keywordflow}{if}\ (buffer.length\ >\ MAX\_COMPRESSED\_LENGTH)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{for}\ (start\ =\ 0;\ start\ <\ buffer.length;\ start\ +=\ MAX\_COMPRESSED\_LENGTH)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00047}00047\ \ \ \ \ \ \ \mbox{\hyperlink{a00278_acdd0c7004e9a88715887b789254bf1d8_acdd0c7004e9a88715887b789254bf1d8}{writeCompressed}}.call(}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ no-\/invalid-\/this}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00050}00050\ \ \ \ \ \ \ \ \ buffer.slice(start,\ start\ +\ MAX\_COMPRESSED\_LENGTH)}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00051}00051\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00054}00054\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00056}00056\ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ no-\/invalid-\/this,\ consistent-\/this}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00057}00057\ \ \ \textcolor{keyword}{const}\ connection\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00059}00059\ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ packetLen\ =\ buffer.length;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00060}00060\ \ \ \textcolor{keyword}{const}\ compressHeader\ =\ Buffer.allocUnsafe(7);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00062}00062\ \ \ \textcolor{comment}{//\ seqqueue\ is\ used\ here\ because\ zlib\ async\ execution\ is\ routed\ via\ thread\ pool}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00063}00063\ \ \ \textcolor{comment}{//\ internally\ and\ when\ we\ have\ multiple\ compressed\ packets\ arriving\ we\ need}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00064}00064\ \ \ \textcolor{comment}{//\ to\ assemble\ uncompressed\ result\ sequentially}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00065}00065\ \ \ (\textcolor{keyword}{function}(seqId)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00066}00066\ \ \ \ \ connection.deflateQueue.push(task\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00067}00067\ \ \ \ \ \ \ \mbox{\hyperlink{a00278_a27ccbb53720cd053c6ced7d851a6992e_a27ccbb53720cd053c6ced7d851a6992e}{zlib}}.deflate(buffer,\ (err,\ compressed)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ connection.\_handleFatalError(err);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ compressedLength\ =\ compressed.length;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (compressedLength\ <\ packetLen)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt8(compressedLength\ \&\ 0xff,\ 0);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt16LE(compressedLength\ >>\ 8,\ 1);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt8(seqId,\ 3);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt8(packetLen\ \&\ 0xff,\ 4);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt16LE(packetLen\ >>\ 8,\ 5);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ connection.writeUncompressed(compressHeader);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ connection.writeUncompressed(compressed);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00082}00082\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ http://dev.mysql.com/doc/internals/en/uncompressed-\/payload.html}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ To\ send\ an\ uncompressed\ payload:}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ -\/\ set\ length\ of\ payload\ before\ compression\ to\ 0}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ -\/\ the\ compressed\ payload\ contains\ the\ uncompressed\ payload\ instead.}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ compressedLength\ =\ packetLen;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ packetLen\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt8(compressedLength\ \&\ 0xff,\ 0);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt16LE(compressedLength\ >>\ 8,\ 1);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt8(seqId,\ 3);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt8(packetLen\ \&\ 0xff,\ 4);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ compressHeader.writeUInt16LE(packetLen\ >>\ 8,\ 5);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ connection.writeUncompressed(compressHeader);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ connection.writeUncompressed(buffer);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00097}00097\ \ \ \ \ \ \ \ \ task.done();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00098}00098\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00099}00099\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00100}00100\ \ \ \})(connection.compressedSequenceId);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00101}00101\ \ \ connection.\_bumpCompressedSequenceId(1);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00104}\mbox{\hyperlink{a00278_a01518d510b0c24505398c8ada71beb57_a01518d510b0c24505398c8ada71beb57}{00104}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00278_a01518d510b0c24505398c8ada71beb57_a01518d510b0c24505398c8ada71beb57}{enableCompression}}(connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00105}00105\ \ \ connection.\_lastWrittenPacketId\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00106}00106\ \ \ connection.\_lastReceivedPacketId\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00108}00108\ \ \ connection.\_handleCompressedPacket\ =\ \mbox{\hyperlink{a00278_a05c88bf72143c764be7adf62897696ee_a05c88bf72143c764be7adf62897696ee}{handleCompressedPacket}};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00109}00109\ \ \ connection.\_inflatedPacketsParser\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00278_aa7aceac8e06d335ae844bd256e37cf51_aa7aceac8e06d335ae844bd256e37cf51}{PacketParser}}(\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00110}00110\ \ \ \ \ connection.handlePacket(\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00111}00111\ \ \ \},\ 4);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00112}00112\ \ \ connection.\_inflatedPacketsParser.\_lastPacket\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00113}00113\ \ \ connection.packetParser\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00278_aa7aceac8e06d335ae844bd256e37cf51_aa7aceac8e06d335ae844bd256e37cf51}{PacketParser}}(packet\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00114}00114\ \ \ \ \ connection.\_handleCompressedPacket(packet);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00115}00115\ \ \ \},\ 7);}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00117}00117\ \ \ connection.writeUncompressed\ =\ connection.write;}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00118}00118\ \ \ connection.write\ =\ \mbox{\hyperlink{a00278_acdd0c7004e9a88715887b789254bf1d8_acdd0c7004e9a88715887b789254bf1d8}{writeCompressed}};}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00120}00120\ \ \ \textcolor{keyword}{const}\ seqqueue\ =\ require(\textcolor{stringliteral}{'seq-\/queue'});}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00121}00121\ \ \ connection.inflateQueue\ =\ seqqueue.createQueue();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00122}00122\ \ \ connection.deflateQueue\ =\ seqqueue.createQueue();}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{a00278_source_l00125}\mbox{\hyperlink{a00278_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00125}}\ module.exports\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00126}00126\ \ \ \mbox{\hyperlink{a00278_a01518d510b0c24505398c8ada71beb57_a01518d510b0c24505398c8ada71beb57}{enableCompression}}:\ \mbox{\hyperlink{a00278_a01518d510b0c24505398c8ada71beb57_a01518d510b0c24505398c8ada71beb57}{enableCompression}}}
+\DoxyCodeLine{\Hypertarget{a00278_source_l00127}00127\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,128 @@
+\doxysubsection{language.\+js}
+\hypertarget{a00416_source}{}\label{a00416_source}\index{language.js@{language.js}}
+\mbox{\hyperlink{a00416}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00009}\mbox{\hyperlink{a00416_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00009}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00016}\mbox{\hyperlink{a00416_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00016}}\ module.exports\ =\ \mbox{\hyperlink{a00416_a8bf8af32e6e32ad9ed82cbdc62cb2274_a8bf8af32e6e32ad9ed82cbdc62cb2274}{preferredLanguages}};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00017}\mbox{\hyperlink{a00416_a8bf8af32e6e32ad9ed82cbdc62cb2274_a8bf8af32e6e32ad9ed82cbdc62cb2274}{00017}}\ module.exports.preferredLanguages\ =\ \mbox{\hyperlink{a00416_a8bf8af32e6e32ad9ed82cbdc62cb2274_a8bf8af32e6e32ad9ed82cbdc62cb2274}{preferredLanguages}};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00024}00024\ var\ simpleLanguageRegExp\ =\ /\string^\(\backslash\)\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}*([\string^\(\backslash\)\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\(\backslash\)-\/;]+)(?:-\/([\string^\(\backslash\)\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}};]+))?\(\backslash\)\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}*(?:;(.*))?\$/;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00031}00031\ \textcolor{keyword}{function}\ parseAcceptLanguage(accept)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00032}00032\ \ \ var\ accepts\ =\ accept.split(\textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00034}00034\ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0,\ \mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ accepts.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00035}00035\ \ \ \ \ var\ \mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}}\ =\ parseLanguage(accepts[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}].\mbox{\hyperlink{a00572_aac10a47c7891260e376a1a98d7dd7c28_aac10a47c7891260e376a1a98d7dd7c28}{trim}}(),\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}});}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00038}00038\ \ \ \ \ \ \ accepts[\mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}}++]\ =\ \mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00040}00040\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00042}00042\ \ \ \textcolor{comment}{//\ trim\ accepts}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00043}00043\ \ \ accepts.length\ =\ \mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00045}00045\ \ \ \textcolor{keywordflow}{return}\ accepts;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00053}00053\ \textcolor{keyword}{function}\ parseLanguage(str,\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00054}00054\ \ \ var\ \mbox{\hyperlink{a00119_aee433120cbb9ab29eb32064146e11ef5_aee433120cbb9ab29eb32064146e11ef5}{match}}\ =\ simpleLanguageRegExp.exec(str);}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00055}00055\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a00119_aee433120cbb9ab29eb32064146e11ef5_aee433120cbb9ab29eb32064146e11ef5}{match}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00057}00057\ \ \ var\ prefix\ =\ \mbox{\hyperlink{a00119_aee433120cbb9ab29eb32064146e11ef5_aee433120cbb9ab29eb32064146e11ef5}{match}}[1]}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00058}00058\ \ \ var\ suffix\ =\ \mbox{\hyperlink{a00119_aee433120cbb9ab29eb32064146e11ef5_aee433120cbb9ab29eb32064146e11ef5}{match}}[2]}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00059}00059\ \ \ var\ full\ =\ prefix}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}\ (suffix)\ full\ +=\ \textcolor{stringliteral}{"{}-\/"{}}\ +\ suffix;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00063}00063\ \ \ var\ q\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00119_aee433120cbb9ab29eb32064146e11ef5_aee433120cbb9ab29eb32064146e11ef5}{match}}[3])\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00065}00065\ \ \ \ \ var\ params\ =\ \mbox{\hyperlink{a00119_aee433120cbb9ab29eb32064146e11ef5_aee433120cbb9ab29eb32064146e11ef5}{match}}[3].split(\textcolor{charliteral}{';'})}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}}\ =\ 0;\ \mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}}\ <\ params.length;\ \mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00067}00067\ \ \ \ \ \ \ var\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ =\ params[\mbox{\hyperlink{a00059_aeea493c7afe8b905d89d2ef3ac307efb_aeea493c7afe8b905d89d2ef3ac307efb}{j}}].split(\textcolor{charliteral}{'='});}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00068}00068\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}[0]\ ===\ \textcolor{charliteral}{'q'})\ q\ =\ parseFloat(\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}[1]);}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00070}00070\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00072}00072\ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00073}00073\ \ \ \ \ prefix:\ prefix,}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00074}00074\ \ \ \ \ suffix:\ suffix,}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00075}00075\ \ \ \ \ q:\ q,}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}:\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}},}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00077}00077\ \ \ \ \ full:\ full}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00078}00078\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00086}00086\ \textcolor{keyword}{function}\ getLanguagePriority(\mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}},\ accepted,\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00087}00087\ \ \ var\ priority\ =\ \{\mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}}:\ -\/1,\ q:\ 0,\ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}:\ 0\};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00089}00089\ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ accepted.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00090}00090\ \ \ \ \ var\ spec\ =\ specify(\mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}},\ accepted[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}],\ index);}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (spec\ \&\&\ (priority.s\ -\/\ spec.s\ ||\ priority.q\ -\/\ spec.q\ ||\ priority.o\ -\/\ spec.o)\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00093}00093\ \ \ \ \ \ \ priority\ =\ spec;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00095}00095\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00097}00097\ \ \ \textcolor{keywordflow}{return}\ priority;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00105}00105\ \textcolor{keyword}{function}\ specify(\mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}},\ spec,\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00106}00106\ \ \ var\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ =\ parseLanguage(\mbox{\hyperlink{a01288_a06c08a07ae0a0d399b49658047e51393_a06c08a07ae0a0d399b49658047e51393}{language}})}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00107}00107\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00108}00108\ \ \ var\ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00109}00109\ \ \ \textcolor{keywordflow}{if}(spec.full.toLowerCase()\ ===\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}.full.toLowerCase())\{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\ |=\ 4;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00111}00111\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (spec.prefix.toLowerCase()\ ===\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}.full.toLowerCase())\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00112}00112\ \ \ \ \ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\ |=\ 2;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00113}00113\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (spec.full.toLowerCase()\ ===\ \mbox{\hyperlink{a00572_ac483f6ce851c9ecd9fb835ff7551737c_ac483f6ce851c9ecd9fb835ff7551737c}{p}}.prefix.toLowerCase())\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\ |=\ 1;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00115}00115\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (spec.full\ !==\ \textcolor{charliteral}{'*'}\ )\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00117}00117\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00119}00119\ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00120}00120\ \ \ \ \ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}:\ index,}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00121}00121\ \ \ \ \ \mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}}:\ spec.i,}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00122}00122\ \ \ \ \ q:\ spec.q,}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}:\ \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00124}00124\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00125}00125\ \};}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00132}\mbox{\hyperlink{a00416_a3333738f57aad85ca925e9c6c2f10004_a3333738f57aad85ca925e9c6c2f10004}{00132}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00416_a8bf8af32e6e32ad9ed82cbdc62cb2274_a8bf8af32e6e32ad9ed82cbdc62cb2274}{preferredLanguages}}(accept,\ provided)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00133}00133\ \ \ \textcolor{comment}{//\ RFC\ 2616\ sec\ 14.4:\ no\ header\ =\ *}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00134}00134\ \ \ var\ accepts\ =\ parseAcceptLanguage(accept\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ ?\ \textcolor{charliteral}{'*'}\ :\ accept\ ||\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00136}00136\ \ \ \textcolor{keywordflow}{if}\ (!provided)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00137}00137\ \ \ \ \ \textcolor{comment}{//\ sorted\ list\ of\ all\ languages}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{return}\ accepts}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00139}00139\ \ \ \ \ \ \ .filter(isQuality)}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00140}00140\ \ \ \ \ \ \ .sort(compareSpecs)}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00141}00141\ \ \ \ \ \ \ .map(getFullLanguage);}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00142}00142\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00144}00144\ \ \ var\ priorities\ =\ provided.map(\textcolor{keyword}{function}\ getPriority(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}},\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{return}\ getLanguagePriority(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}},\ accepts,\ index);}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00146}00146\ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00148}00148\ \ \ \textcolor{comment}{//\ sorted\ list\ of\ accepted\ languages}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00149}00149\ \ \ \textcolor{keywordflow}{return}\ priorities.filter(isQuality).sort(compareSpecs).map(\textcolor{keyword}{function}\ getLanguage(priority)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00150}00150\ \ \ \ \ \textcolor{keywordflow}{return}\ provided[priorities.indexOf(priority)];}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00151}00151\ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00152}00152\ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00159}00159\ \textcolor{keyword}{function}\ compareSpecs(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00160}00160\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}.q\ -\/\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.q)\ ||\ (\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}.s\ -\/\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.s)\ ||\ (\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.o\ -\/\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}.o)\ ||\ (\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.i\ -\/\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}.i)\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00161}00161\ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00168}00168\ \textcolor{keyword}{function}\ getFullLanguage(spec)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00169}00169\ \ \ \textcolor{keywordflow}{return}\ spec.full;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{a00416_source_l00177}00177\ \textcolor{keyword}{function}\ isQuality(spec)\ \{}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00178}00178\ \ \ \textcolor{keywordflow}{return}\ spec.q\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{a00416_source_l00179}00179\ \}}
+
+\end{DoxyCode}

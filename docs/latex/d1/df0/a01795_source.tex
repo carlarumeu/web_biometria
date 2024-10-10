@@ -1,0 +1,39 @@
+\doxysubsection{packets/binlog\+\_\+dump.js}
+\hypertarget{a01795_source}{}\label{a01795_source}\index{binlog\_dump.js@{binlog\_dump.js}}
+\mbox{\hyperlink{a01795}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00001}\mbox{\hyperlink{a01795_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01795_source_l00003}00003\ \textcolor{comment}{//\ http://dev.mysql.com/doc/internals/en/com-\/binlog-\/dump.html\#packet-\/COM\_BINLOG\_DUMP}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a01795_source_l00005}\mbox{\hyperlink{a01795_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{00005}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00776}{Packet}}\ =\ require(\textcolor{stringliteral}{'../packets/packet'});}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00006}\mbox{\hyperlink{a01795_a4036b39ca2065aa41a2d7251b6fe0e05_a4036b39ca2065aa41a2d7251b6fe0e05}{00006}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01795_a4036b39ca2065aa41a2d7251b6fe0e05_a4036b39ca2065aa41a2d7251b6fe0e05}{CommandCodes}}\ =\ require(\textcolor{stringliteral}{'../constants/commands'});}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a01795_source_l00008}00008\ \textcolor{comment}{//\ TODO:\ add\ flag\ to\ constants}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00009}00009\ \textcolor{comment}{//\ 0x01\ -\/\ BINLOG\_DUMP\_NON\_BLOCK}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00010}00010\ \textcolor{comment}{//\ send\ EOF\ instead\ of\ blocking}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00011}00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00652}{BinlogDump}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00012}\mbox{\hyperlink{a00652_ac62b2ea4880f0a5c64004c60bbce8ade_ac62b2ea4880f0a5c64004c60bbce8ade}{00012}}\ \ \ \mbox{\hyperlink{a00652_ac62b2ea4880f0a5c64004c60bbce8ade_ac62b2ea4880f0a5c64004c60bbce8ade}{constructor}}(opts)\ \{}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00013}00013\ \ \ \ \ this.binlogPos\ =\ opts.binlogPos\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00014}00014\ \ \ \ \ this.serverId\ =\ opts.serverId\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00015}00015\ \ \ \ \ this.flags\ =\ opts.flags\ ||\ 0;}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00016}00016\ \ \ \ \ this.filename\ =\ opts.filename\ ||\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00017}00017\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a01795_source_l00019}\mbox{\hyperlink{a00652_a14b62bf73313d221f6ffd6f264613eb0_a14b62bf73313d221f6ffd6f264613eb0}{00019}}\ \ \ \mbox{\hyperlink{a00652_a14b62bf73313d221f6ffd6f264613eb0_a14b62bf73313d221f6ffd6f264613eb0}{toPacket}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{const}\ length\ =\ 15\ +\ Buffer.byteLength(this.filename,\ \textcolor{stringliteral}{'utf8'});\ \textcolor{comment}{//\ TODO:\ should\ be\ ascii?}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{const}\ buffer\ =\ Buffer.allocUnsafe(length);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{const}\ packet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01795_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{Packet}}(0,\ buffer,\ 0,\ length);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00023}00023\ \ \ \ \ packet.offset\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00024}00024\ \ \ \ \ packet.writeInt8(\mbox{\hyperlink{a01795_a4036b39ca2065aa41a2d7251b6fe0e05_a4036b39ca2065aa41a2d7251b6fe0e05}{CommandCodes}}.BINLOG\_DUMP);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00025}00025\ \ \ \ \ packet.writeInt32(this.binlogPos);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00026}00026\ \ \ \ \ packet.writeInt16(this.flags);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00027}00027\ \ \ \ \ packet.writeInt32(this.serverId);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00028}00028\ \ \ \ \ packet.writeString(this.filename);}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ packet;}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00030}00030\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{a01795_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{a01795_source_l00033}\mbox{\hyperlink{a01795_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00033}}\ module.exports\ =\ \mbox{\hyperlink{a01273_aa8522091a3c683b9b2ac071a408c8715_aa8522091a3c683b9b2ac071a408c8715}{BinlogDump}};}
+
+\end{DoxyCode}

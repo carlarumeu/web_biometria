@@ -1,0 +1,35 @@
+\doxysubsection{db.\+js}
+\hypertarget{a00533_source}{}\label{a00533_source}\index{db.js@{db.js}}
+\mbox{\hyperlink{a00533}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00001}00001\ \textcolor{comment}{//\ src/config/db.js}}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00002}\mbox{\hyperlink{a00533_a59be084da8908b7d77ff34b25cd84488_a59be084da8908b7d77ff34b25cd84488}{00002}}\ \textcolor{keyword}{import}\ \{\ \mbox{\hyperlink{a01267_aeab3853c80fad52654c5ec9c3c49940e_aeab3853c80fad52654c5ec9c3c49940e}{createPool}}\ \}\ from\ \textcolor{stringliteral}{'mysql2/promise'};}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00003}\mbox{\hyperlink{a00533_a7915d01bec9411e95ebf62e18d424d06_a7915d01bec9411e95ebf62e18d424d06}{00003}}\ \textcolor{keyword}{import}\ \mbox{\hyperlink{a00533_a7915d01bec9411e95ebf62e18d424d06_a7915d01bec9411e95ebf62e18d424d06}{dotenv}}\ from\ \textcolor{stringliteral}{'dotenv'};}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00005}00005\ \textcolor{comment}{//\ Cargar\ las\ variables\ de\ entorno\ desde\ el\ archivo\ .env}}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00006}00006\ \mbox{\hyperlink{a00533_a7915d01bec9411e95ebf62e18d424d06_a7915d01bec9411e95ebf62e18d424d06}{dotenv}}.config();}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00019}\mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{00019}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}\ =\ \mbox{\hyperlink{a01267_aeab3853c80fad52654c5ec9c3c49940e_aeab3853c80fad52654c5ec9c3c49940e}{createPool}}(\{}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00024}00024\ \ \ \ \ host:\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.env.MYSQLDB\_HOST,}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00030}00030\ \ \ \ \ user:\ \textcolor{stringliteral}{'root'},}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00036}00036\ \ \ \ \ password:\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.env.MYSQLDB\_ROOT\_PASSWORD,}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00042}00042\ \ \ \ \ port:\ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.env.MYSQLDB\_DOCKER\_PORT,}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00049}00049\ \ \ \ \ database:\ \textcolor{stringliteral}{'biometria\_bbdd'},}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00054}00054\ \ \ \ \ waitForConnections:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00059}00059\ \ \ \ \ connectionLimit:\ 10,}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00064}00064\ \ \ \ \ queueLimit:\ 0}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00065}00065\ \});}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{a00533_source_l00067}00067\ \textcolor{comment}{//\ Exportar\ el\ pool\ de\ conexiones\ para\ su\ uso\ en\ otros\ módulos}}
+\DoxyCodeLine{\Hypertarget{a00533_source_l00068}00068\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keywordflow}{default}\ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}};}
+
+\end{DoxyCode}

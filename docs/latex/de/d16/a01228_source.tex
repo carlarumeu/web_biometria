@@ -1,0 +1,232 @@
+\doxysubsection{node\+\_\+modules/http-\/errors/index.js}
+\hypertarget{a01228_source}{}\label{a01228_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01228}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00008}00008\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00015}00015\ var\ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}\ =\ require(\textcolor{stringliteral}{'depd'})(\textcolor{stringliteral}{'http-\/errors'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00016}00016\ var\ \mbox{\hyperlink{a00101_aa76cc157afb30404d8bee6cf35ebe8b2_aa76cc157afb30404d8bee6cf35ebe8b2}{setPrototypeOf}}\ =\ require(\textcolor{stringliteral}{'setprototypeof'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00017}00017\ var\ \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}\ =\ require(\textcolor{stringliteral}{'statuses'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00018}00018\ var\ inherits\ =\ require('inherits')}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00019}00019\ var\ toIdentifier\ =\ require('toidentifier')}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00026}00026\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}\ =\ \mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{createError}}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00027}00027\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.HttpError\ =\ createHttpErrorConstructor()}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00028}00028\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.isHttpError\ =\ createIsHttpErrorFunction(module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.HttpError)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00030}00030\ \textcolor{comment}{//\ Populate\ exports\ for\ all\ constructors}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00031}00031\ populateConstructorExports(module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}},\ \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.codes,\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.HttpError)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00038}00038\ function\ codeClass\ (\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00039}00039\ \ \ \textcolor{keywordflow}{return}\ Number(String(\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}).charAt(0)\ +\ \textcolor{stringliteral}{'00'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00049}00049\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{createError}}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00050}00050\ \ \ \textcolor{comment}{//\ so\ much\ arity\ going\ on\ \string~\_\string~}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00051}00051\ \ \ var\ err}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00052}00052\ \ \ var\ msg}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00053}00053\ \ \ var\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ 500}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00054}00054\ \ \ var\ props\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00055}00055\ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ arguments.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00056}00056\ \ \ \ \ var\ arg\ =\ arguments[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00057}00057\ \ \ \ \ var\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ =\ typeof\ arg}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'object'}\ \&\&\ arg\ instanceof\ \mbox{\hyperlink{a00772}{Error}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00059}00059\ \ \ \ \ \ \ err\ =\ arg}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00060}00060\ \ \ \ \ \ \ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ err.status\ ||\ err.statusCode\ ||\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00061}00061\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'number'}\ \&\&\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ ===\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00062}00062\ \ \ \ \ \ \ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ arg}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00063}00063\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00064}00064\ \ \ \ \ \ \ msg\ =\ arg}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00065}00065\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'object'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00066}00066\ \ \ \ \ \ \ props\ =\ arg}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00067}00067\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00068}00068\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ \#'}\ +\ (\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ +\ 1)\ +\ \textcolor{stringliteral}{'\ unsupported\ type\ '}\ +\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00070}00070\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00072}00072\ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ ===\ \textcolor{stringliteral}{'number'}\ \&\&\ (\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status\ <\ 400\ ||\ status\ >}}=\ 600))\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'non-\/error\ status\ code;\ use\ only\ 4xx\ or\ 5xx\ status\ codes'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00076}00076\ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ !==\ \textcolor{stringliteral}{'number'}\ ||}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00077}00077\ \ \ \ \ (!\mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.message[\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}]\ \&\&\ (\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status\ <\ 400\ ||\ status\ >}}=\ 600)))\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ 500}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00079}00079\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00081}00081\ \ \ \textcolor{comment}{//\ constructor}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00082}00082\ \ \ var\ HttpError\ =\ \mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{createError}}[\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}]\ ||\ \mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{createError}}[codeClass(\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}})]}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00084}00084\ \ \ \textcolor{keywordflow}{if}\ (!err)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00085}00085\ \ \ \ \ \textcolor{comment}{//\ create\ error}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00086}00086\ \ \ \ \ err\ =\ HttpError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00087}00087\ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ HttpError(msg)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00088}00088\ \ \ \ \ \ \ :\ \mbox{\hyperlink{a01195_a7af34e8e129dfe2752fd55ac3e2e467a_a7af34e8e129dfe2752fd55ac3e2e467a}{new}}\ \mbox{\hyperlink{a00772}{Error}}(msg\ ||\ \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.message[\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}])}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{a00772}{Error}}.captureStackTrace(err,\ \mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{createError}})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00090}00090\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00092}00092\ \ \ \mbox{\hyperlink{a01195_a36b902f5bfe184879eb3e29b44502eb3_a36b902f5bfe184879eb3e29b44502eb3}{if}}\ (!HttpError\ ||\ !(err\ instanceof\ HttpError)\ ||\ err.\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ !==\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ add\ properties\ to\ generic\ error}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00094}00094\ \ \ \ \ err.expose\ =\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ <\ 500}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00095}00095\ \ \ \ \ err.status\ =\ err.statusCode\ =\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00096}00096\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00098}00098\ \ \ \textcolor{keywordflow}{for}\ (var\ key\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ props)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ !==\ \textcolor{stringliteral}{'status'}\ \&\&\ key\ !==\ \textcolor{stringliteral}{'statusCode'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00100}00100\ \ \ \ \ \ \ err[key]\ =\ props[key]}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00102}00102\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00104}00104\ \ \ \textcolor{keywordflow}{return}\ err}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00112}00112\ \textcolor{keyword}{function}\ createHttpErrorConstructor\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00113}00113\ \ \ \textcolor{keyword}{function}\ HttpError\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'cannot\ construct\ abstract\ class'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00115}00115\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00117}00117\ \ \ inherits(HttpError,\ \mbox{\hyperlink{a00772}{Error}})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00119}00119\ \ \ \textcolor{keywordflow}{return}\ HttpError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00127}00127\ \textcolor{keyword}{function}\ createClientErrorConstructor\ (HttpError,\ name,\ code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00128}00128\ \ \ var\ className\ =\ toClassName(name)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00130}00130\ \ \ \textcolor{keyword}{function}\ ClientError\ (message)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ create\ the\ error\ object}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00132}00132\ \ \ \ \ var\ msg\ =\ message\ !=\ \textcolor{keyword}{null}\ ?\ message\ :\ \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.message[code]}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00133}00133\ \ \ \ \ var\ err\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(msg)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00135}00135\ \ \ \ \ \textcolor{comment}{//\ capture\ a\ stack\ trace\ to\ the\ construction\ point}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00136}00136\ \ \ \ \ \mbox{\hyperlink{a00772}{Error}}.captureStackTrace(err,\ ClientError)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//\ adjust\ the\ [[Prototype]]}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00139}00139\ \ \ \ \ \mbox{\hyperlink{a00101_aa76cc157afb30404d8bee6cf35ebe8b2_aa76cc157afb30404d8bee6cf35ebe8b2}{setPrototypeOf}}(err,\ ClientError.prototype)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//\ redefine\ the\ error\ message}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00142}00142\ \ \ \ \ Object.defineProperty(err,\ 'message',\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00143}00143\ \ \ \ \ \ \ enumerable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00144}00144\ \ \ \ \ \ \ configurable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00145}00145\ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ msg,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00146}00146\ \ \ \ \ \ \ writable:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00147}00147\ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00149}00149\ \ \ \ \ \textcolor{comment}{//\ redefine\ the\ error\ name}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00150}00150\ \ \ \ \ Object.defineProperty(err,\ \textcolor{stringliteral}{'name'},\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00151}00151\ \ \ \ \ \ \ enumerable:\ false,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00152}00152\ \ \ \ \ \ \ configurable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00153}00153\ \ \ \ \ \ \ value:\ className,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00154}00154\ \ \ \ \ \ \ writable:\ true}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00155}00155\ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ err}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00158}00158\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00160}00160\ \ \ inherits(ClientError,\ HttpError)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00161}00161\ \ \ nameFunc(ClientError,\ className)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00163}00163\ \ \ ClientError.prototype.status\ =\ code}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00164}00164\ \ \ ClientError.prototype.statusCode\ =\ code}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00165}00165\ \ \ ClientError.prototype.expose\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00167}00167\ \ \ \textcolor{keywordflow}{return}\ ClientError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00168}00168\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00175}00175\ \textcolor{keyword}{function}\ createIsHttpErrorFunction\ (HttpError)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00176}00176\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{function}\ isHttpError\ (val)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{if}\ (!val\ ||\ typeof\ val\ !==\ \textcolor{stringliteral}{'object'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00178}00178\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ instanceof\ HttpError)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00182}00182\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{return}\ val\ instanceof\ \mbox{\hyperlink{a00772}{Error}}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00186}00186\ \ \ \ \ \ \ typeof\ val.expose\ ===\ \textcolor{stringliteral}{'boolean'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00187}00187\ \ \ \ \ \ \ typeof\ val.statusCode\ ===\ \textcolor{stringliteral}{'number'}\ \&\&\ val.status\ ===\ val.statusCode}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00188}00188\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00196}00196\ \textcolor{keyword}{function}\ createServerErrorConstructor\ (HttpError,\ name,\ code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00197}00197\ \ \ var\ className\ =\ toClassName(name)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00199}00199\ \ \ \textcolor{keyword}{function}\ ServerError\ (message)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00200}00200\ \ \ \ \ \textcolor{comment}{//\ create\ the\ error\ object}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00201}00201\ \ \ \ \ var\ msg\ =\ message\ !=\ \textcolor{keyword}{null}\ ?\ message\ :\ \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.message[code]}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00202}00202\ \ \ \ \ var\ err\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(msg)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00204}00204\ \ \ \ \ \textcolor{comment}{//\ capture\ a\ stack\ trace\ to\ the\ construction\ point}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00205}00205\ \ \ \ \ \mbox{\hyperlink{a00772}{Error}}.captureStackTrace(err,\ ServerError)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00207}00207\ \ \ \ \ \textcolor{comment}{//\ adjust\ the\ [[Prototype]]}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00208}00208\ \ \ \ \ \mbox{\hyperlink{a00101_aa76cc157afb30404d8bee6cf35ebe8b2_aa76cc157afb30404d8bee6cf35ebe8b2}{setPrototypeOf}}(err,\ ServerError.prototype)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00210}00210\ \ \ \ \ \textcolor{comment}{//\ redefine\ the\ error\ message}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00211}00211\ \ \ \ \ Object.defineProperty(err,\ 'message',\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00212}00212\ \ \ \ \ \ \ enumerable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00213}00213\ \ \ \ \ \ \ configurable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00214}00214\ \ \ \ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}:\ msg,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00215}00215\ \ \ \ \ \ \ writable:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00216}00216\ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00218}00218\ \ \ \ \ \textcolor{comment}{//\ redefine\ the\ error\ name}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00219}00219\ \ \ \ \ Object.defineProperty(err,\ \textcolor{stringliteral}{'name'},\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00220}00220\ \ \ \ \ \ \ enumerable:\ false,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00221}00221\ \ \ \ \ \ \ configurable:\ true,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00222}00222\ \ \ \ \ \ \ value:\ className,}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00223}00223\ \ \ \ \ \ \ writable:\ true}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00224}00224\ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{return}\ err}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00227}00227\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00229}00229\ \ \ inherits(ServerError,\ HttpError)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00230}00230\ \ \ nameFunc(ServerError,\ className)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00232}00232\ \ \ ServerError.prototype.status\ =\ code}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00233}00233\ \ \ ServerError.prototype.statusCode\ =\ code}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00234}00234\ \ \ ServerError.prototype.expose\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00236}00236\ \ \ \textcolor{keywordflow}{return}\ ServerError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00237}00237\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00244}00244\ \textcolor{keyword}{function}\ nameFunc\ (func,\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00245}00245\ \ \ var\ desc\ =\ Object.getOwnPropertyDescriptor(func,\ \textcolor{stringliteral}{'name'})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00247}00247\ \ \ \textcolor{keywordflow}{if}\ (desc\ \&\&\ desc.configurable)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00248}00248\ \ \ \ \ desc.value\ =\ name}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00249}00249\ \ \ \ \ Object.defineProperty(func,\ \textcolor{stringliteral}{'name'},\ desc)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00250}00250\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00251}00251\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00258}00258\ \textcolor{keyword}{function}\ populateConstructorExports\ (\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}},\ codes,\ HttpError)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00259}00259\ \ \ codes.forEach(\textcolor{keyword}{function}\ forEachCode\ (code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00260}00260\ \ \ \ \ var\ CodeError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00261}00261\ \ \ \ \ var\ name\ =\ toIdentifier(\mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.message[code])}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{switch}\ (codeClass(code))\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00264}00264\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 400:}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00265}00265\ \ \ \ \ \ \ \ \ CodeError\ =\ createClientErrorConstructor(HttpError,\ name,\ code)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00267}00267\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 500:}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00268}00268\ \ \ \ \ \ \ \ \ CodeError\ =\ createServerErrorConstructor(HttpError,\ name,\ code)}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00270}00270\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00272}00272\ \ \ \ \ \textcolor{keywordflow}{if}\ (CodeError)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00273}00273\ \ \ \ \ \ \ \textcolor{comment}{//\ export\ the\ constructor}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00274}00274\ \ \ \ \ \ \ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}[code]\ =\ CodeError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00275}00275\ \ \ \ \ \ \ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}[name]\ =\ CodeError}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00276}00276\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00277}00277\ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00278}00278\ \}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{a01228_source_l00285}00285\ \textcolor{keyword}{function}\ toClassName\ (name)\ \{}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00286}00286\ \ \ \textcolor{keywordflow}{return}\ name.substr(-\/5)\ !==\ \textcolor{stringliteral}{'Error'}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00287}00287\ \ \ \ \ ?\ name\ +\ \textcolor{stringliteral}{'Error'}}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00288}00288\ \ \ \ \ :\ name}
+\DoxyCodeLine{\Hypertarget{a01228_source_l00289}00289\ \}}
+
+\end{DoxyCode}

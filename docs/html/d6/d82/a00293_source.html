@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente client.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d6/d82/a00293_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">client.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d82/a00293.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// This file was modified by Oracle on September 21, 2021.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// New capability for multi-factor authentication based on mandatory session</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// trackers, that are signaled with an extra single-byte prefix on new</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// versions of the MySQL server.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Modifications copyright (c) 2021, Oracle and/or its affiliates.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    7</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Manually extracted from mysql-5.5.23/include/mysql_com.h</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_afd1a632c96ab0a037526bc8cc307d1c7.html#afd1a632c96ab0a037526bc8cc307d1c7">   10</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.LONG_PASSWORD = 0x00000001; <span class="comment">/* new more secure passwords */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_aaaf9eec4258b42c66c0b2369055f3de4.html#aaaf9eec4258b42c66c0b2369055f3de4">   11</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.FOUND_ROWS = 0x00000002; <span class="comment">/* found instead of affected rows */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_adec98164553d583a4ab7363834b769e0.html#adec98164553d583a4ab7363834b769e0">   12</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.LONG_FLAG = 0x00000004; <span class="comment">/* get all column flags */</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a77060d321737f654bedada9828a3d0dc.html#a77060d321737f654bedada9828a3d0dc">   13</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.CONNECT_WITH_DB = 0x00000008; <span class="comment">/* one can specify db on connect */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a00500eab5c06e320eaa0574e775c3bae.html#a00500eab5c06e320eaa0574e775c3bae">   14</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.NO_SCHEMA = 0x00000010; <span class="comment">/* don&#39;t allow database.table.column */</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_aed55938a795a13917dcec9a3245f5e6b.html#aed55938a795a13917dcec9a3245f5e6b">   15</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.COMPRESS = 0x00000020; <span class="comment">/* can use compression protocol */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a22a1557a8aadc6e90ef3e313807f5326.html#a22a1557a8aadc6e90ef3e313807f5326">   16</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.ODBC = 0x00000040; <span class="comment">/* odbc client */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a7cce76282b9fcb039a1df3e640894cd3.html#a7cce76282b9fcb039a1df3e640894cd3">   17</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.LOCAL_FILES = 0x00000080; <span class="comment">/* can use LOAD DATA LOCAL */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_ae95e44c3be325098eb5811f418b3d177.html#ae95e44c3be325098eb5811f418b3d177">   18</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.IGNORE_SPACE = 0x00000100; <span class="comment">/* ignore spaces before &#39;&#39; */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a60a0f87113aa9712019686f72a526595.html#a60a0f87113aa9712019686f72a526595">   19</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.PROTOCOL_41 = 0x00000200; <span class="comment">/* new 4.1 protocol */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_abd81c49c5ea9fd97a5eb49f724478660.html#abd81c49c5ea9fd97a5eb49f724478660">   20</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.INTERACTIVE = 0x00000400; <span class="comment">/* this is an interactive client */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a33f5bf655a02fa49b57363a440e22051.html#a33f5bf655a02fa49b57363a440e22051">   21</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.SSL = 0x00000800; <span class="comment">/* switch to ssl after handshake */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a07487de2ee1a9a44eb060e9cebc86c08.html#a07487de2ee1a9a44eb060e9cebc86c08">   22</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.IGNORE_SIGPIPE = 0x00001000; <span class="comment">/* IGNORE sigpipes */</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a85c55c7f822e8d2d229891290d1db19a.html#a85c55c7f822e8d2d229891290d1db19a">   23</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.TRANSACTIONS = 0x00002000; <span class="comment">/* client knows about transactions */</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a31f603dac063e79075cb4afe10de9284.html#a31f603dac063e79075cb4afe10de9284">   24</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.RESERVED = 0x00004000; <span class="comment">/* old flag for 4.1 protocol  */</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a63d2cd37aa6b3024dd6171edc6932dff.html#a63d2cd37aa6b3024dd6171edc6932dff">   25</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.SECURE_CONNECTION = 0x00008000; <span class="comment">/* new 4.1 authentication */</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_ab368019f87b7d33fd61f7335fe53de3a.html#ab368019f87b7d33fd61f7335fe53de3a">   26</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.MULTI_STATEMENTS = 0x00010000; <span class="comment">/* enable/disable multi-stmt support */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a757a4206bcc554e267b80aac19aa76b3.html#a757a4206bcc554e267b80aac19aa76b3">   27</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.MULTI_RESULTS = 0x00020000; <span class="comment">/* enable/disable multi-results */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a67b3161be7b01eac619ff68d70ad4a8e.html#a67b3161be7b01eac619ff68d70ad4a8e">   28</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.PS_MULTI_RESULTS = 0x00040000; <span class="comment">/* multi-results in ps-protocol */</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_abc969e8a5c2dab64160537c424f78abe.html#abc969e8a5c2dab64160537c424f78abe">   29</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.PLUGIN_AUTH = 0x00080000; <span class="comment">/* client supports plugin authentication */</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a25e4ed3e8ba1cbd90382ecf8ef247f3a.html#a25e4ed3e8ba1cbd90382ecf8ef247f3a">   30</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.CONNECT_ATTRS = 0x00100000; <span class="comment">/* permits connection attributes */</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_af3440c0c0310506bef295b639044a05b.html#af3440c0c0310506bef295b639044a05b">   31</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.PLUGIN_AUTH_LENENC_CLIENT_DATA = 0x00200000; <span class="comment">/* Understands length-encoded integer for auth response data in Protocol::HandshakeResponse41. */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_ad4799f7e7f8b973ca7d541efddc51696.html#ad4799f7e7f8b973ca7d541efddc51696">   32</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.CAN_HANDLE_EXPIRED_PASSWORDS = 0x00400000; <span class="comment">/* Announces support for expired password extension. */</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a7be7a795f89e0b1be1307758a66ce76b.html#a7be7a795f89e0b1be1307758a66ce76b">   33</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.SESSION_TRACK = 0x00800000; <span class="comment">/* Can set SERVER_SESSION_STATE_CHANGED in the Status Flags and send session-state change data after a OK packet. */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a481fc55703fea30065839c257779ebe5.html#a481fc55703fea30065839c257779ebe5">   34</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.DEPRECATE_EOF = 0x01000000; <span class="comment">/* Can send OK after a Text Resultset. */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a877cddb4878c10222892d87fa27cff60.html#a877cddb4878c10222892d87fa27cff60">   36</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.SSL_VERIFY_SERVER_CERT = 0x40000000;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_aa72e15595a1219a2e792d23153a7fa19.html#aa72e15595a1219a2e792d23153a7fa19">   37</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.REMEMBER_OPTIONS = 0x80000000;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d6/d82/a00293_a8ffc0a147cadd032cb220621780bf3cf.html#a8ffc0a147cadd032cb220621780bf3cf">   39</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.MULTI_FACTOR_AUTHENTICATION = 0x10000000; <span class="comment">/* multi-factor authentication */</span></div>
+<div class="ttc" id="aa01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_html_aa4072ba4b6b56b0fb6f4801f17ab2b34"><div class="ttname"><a href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a></div><div class="ttdeci">module exports</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da7/a01102_source.html#l00011">node_modules/aws-ssl-profiles/lib/index.js:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_457720dc0ac69b5252346002178dc270.html">constants</a></li><li class="navelem"><a class="el" href="../../d6/d82/a00293.html">client.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

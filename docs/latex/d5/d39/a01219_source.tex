@@ -1,0 +1,19 @@
+\doxysubsection{node\+\_\+modules/has-\/symbols/index.js}
+\hypertarget{a01219_source}{}\label{a01219_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01219}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00001}\mbox{\hyperlink{a01219_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01219_source_l00003}\mbox{\hyperlink{a01219_a429a7db2f2ccf236e6e9e4edbc7db2a7_a429a7db2f2ccf236e6e9e4edbc7db2a7}{00003}}\ var\ \mbox{\hyperlink{a01219_a429a7db2f2ccf236e6e9e4edbc7db2a7_a429a7db2f2ccf236e6e9e4edbc7db2a7}{origSymbol}}\ =\ typeof\ Symbol\ !==\ \textcolor{stringliteral}{'undefined'}\ \&\&\ Symbol;}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00004}\mbox{\hyperlink{a01219_a4fc9c8249be63c9102e4c03a0134fceb_a4fc9c8249be63c9102e4c03a0134fceb}{00004}}\ var\ \mbox{\hyperlink{a01219_a4fc9c8249be63c9102e4c03a0134fceb_a4fc9c8249be63c9102e4c03a0134fceb}{hasSymbolSham}}\ =\ require(\textcolor{stringliteral}{'./shams'});}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a01219_source_l00006}\mbox{\hyperlink{a01219_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00006}}\ module.exports\ =\ \textcolor{keyword}{function}\ hasNativeSymbols()\ \{}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a01219_a429a7db2f2ccf236e6e9e4edbc7db2a7_a429a7db2f2ccf236e6e9e4edbc7db2a7}{origSymbol}}\ !==\ \textcolor{stringliteral}{'function'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Symbol\ !==\ \textcolor{stringliteral}{'function'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a01219_a429a7db2f2ccf236e6e9e4edbc7db2a7_a429a7db2f2ccf236e6e9e4edbc7db2a7}{origSymbol}}(\textcolor{stringliteral}{'foo'})\ !==\ \textcolor{stringliteral}{'symbol'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ Symbol(\textcolor{stringliteral}{'bar'})\ !==\ \textcolor{stringliteral}{'symbol'})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{a01219_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01219_a4fc9c8249be63c9102e4c03a0134fceb_a4fc9c8249be63c9102e4c03a0134fceb}{hasSymbolSham}}();}
+\DoxyCodeLine{\Hypertarget{a01219_source_l00013}00013\ \};}
+
+\end{DoxyCode}

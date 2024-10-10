@@ -1,0 +1,830 @@
+\doxysection{README}
+\hypertarget{a00958}{}\label{a00958}\index{README@{README}}
+
+
+ \hypertarget{a00958_autotoc_md2006}{}\doxysubsection{\texorpdfstring{qs \textsuperscript{\href{https://npmjs.org/package/qs}{\texttt{ }}}}{qs \textsuperscript{\href{https://npmjs.org/package/qs}{\texttt{ }}}}}\label{a00958_autotoc_md2006}
+\href{https://github.com/ljharb/qs/actions}{\texttt{ }} \href{https://app.codecov.io/gh/ljharb/qs/}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=qs}{\texttt{ }} \href{https://bestpractices.coreinfrastructure.org/projects/9058}{\texttt{ }}
+
+\href{https://npmjs.org/package/qs}{\texttt{ }}
+
+\doxylink{a00844}{A} querystring parsing and stringifying library with some added security.
+
+Lead Maintainer\+: \href{https://github.com/ljharb}{\texttt{ Jordan Harband}}
+
+The {\bfseries{qs}} module was originally created and maintained by \href{https://github.com/visionmedia/node-querystring}{\texttt{ TJ Holowaychuk}}.\hypertarget{a00958_autotoc_md2007}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{a00958_autotoc_md2007}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}\ =\ require(\textcolor{stringliteral}{'qs'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=c'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'c'}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ str\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(str,\ \textcolor{stringliteral}{'a=c'});}
+
+\end{DoxyCode}
+\hypertarget{a00958_autotoc_md2008}{}\doxysubsubsubsection{\texorpdfstring{Parsing Objects}{Parsing Objects}}\label{a00958_autotoc_md2008}
+\mbox{[}\mbox{]}(\#prevent\+Eval) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{keywordtype}{string},\ [options]);}
+
+\end{DoxyCode}
+
+
+{\bfseries{qs}} allows you to create nested objects within your query strings, by surrounding the name of sub-\/keys with square brackets {\ttfamily \mbox{[}\mbox{]}}. For example, the string `\textquotesingle{}foo\mbox{[}bar\mbox{]}=baz'\`{} converts to\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo[bar]=baz'}),\ \{}
+\DoxyCodeLine{\ \ \ \ foo:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ bar:\ \textcolor{stringliteral}{'baz'}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+
+
+When using the {\ttfamily plain\+Objects} option the parsed value is returned as a null object, created via {\ttfamily Object.\+create(null)} and as such you should be aware that prototype methods will not exist on it and a user may set those names to whatever value they like\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ nullObject\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[hasOwnProperty]=b'},\ \{\ plainObjects:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(nullObject,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ hasOwnProperty:\ \textcolor{charliteral}{'b'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+By default parameters that would overwrite properties on the object prototype are ignored, if you wish to keep the data from those fields either use {\ttfamily plain\+Objects} as mentioned above, or set {\ttfamily allow\+Prototypes} to {\ttfamily true} which will allow user input to overwrite those properties. {\itshape WARNING} It is generally a bad idea to enable this option as it can cause problems when attempting to use the properties that have been overwritten. Always be careful with this option.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ protoObject\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[hasOwnProperty]=b'},\ \{\ allowPrototypes:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(protoObject,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ hasOwnProperty:\ \textcolor{charliteral}{'b'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+URI encoded strings work too\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a\%5Bb\%5D=c'}),\ \{}
+\DoxyCodeLine{\ \ \ \ a:\ \{\ b:\ \textcolor{stringliteral}{'c'}\ \}}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+
+
+You can also nest your objects, like `\textquotesingle{}foo\mbox{[}bar\mbox{]}\mbox{[}baz\mbox{]}=foobarbaz'\`{}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo[bar][baz]=foobarbaz'}),\ \{}
+\DoxyCodeLine{\ \ \ \ foo:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ bar:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ baz:\ \textcolor{stringliteral}{'foobarbaz'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+
+
+By default, when nesting objects {\bfseries{qs}} will only parse up to 5 children deep. This means if you attempt to parse a string like `\textquotesingle{}a\mbox{[}b\mbox{]}\mbox{[}c\mbox{]}\mbox{[}d\mbox{]}\mbox{[}e\mbox{]}\mbox{[}f\mbox{]}\mbox{[}g\mbox{]}\mbox{[}h\mbox{]}\mbox{[}i\mbox{]}=j'\`{} your resulting object will be\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ expected\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'[g][h][i]'}:\ \textcolor{charliteral}{'j'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{var\ \textcolor{keywordtype}{string}\ =\ \textcolor{stringliteral}{'a[b][c][d][e][f][g][h][i]=j'};}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{keywordtype}{string}),\ expected);}
+
+\end{DoxyCode}
+
+
+This depth can be overridden by passing a {\ttfamily depth} option to {\ttfamily qs.\+parse(string, \mbox{[}options\mbox{]})}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ deep\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[b][c][d][e][f][g][h][i]=j'},\ \{\ depth:\ 1\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(deep,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \{\ \textcolor{stringliteral}{'[c][d][e][f][g][h][i]'}:\ \textcolor{charliteral}{'j'}\ \}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+You can configure {\bfseries{qs}} to throw an error when parsing nested input beyond this depth using the {\ttfamily strict\+Depth} option (defaulted to false)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[b][c][d][e][f][g][h][i]=j'},\ \{\ depth:\ 1,\ strictDepth:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (err)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}(err\ instanceof\ RangeError);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.strictEqual(err.message,\ \textcolor{stringliteral}{'Input\ depth\ exceeded\ depth\ option\ of\ 1\ and\ strictDepth\ is\ true'});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The depth limit helps mitigate abuse when {\bfseries{qs}} is used to parse user input, and it is recommended to keep it a reasonably small number. The strict\+Depth option adds a layer of protection by throwing an error when the limit is exceeded, allowing you to catch and handle such cases.
+
+For similar reasons, by default {\bfseries{qs}} will only parse up to 1000 parameters. This can be overridden by passing a {\ttfamily parameter\+Limit} option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ limited\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=b\&c=d'},\ \{\ parameterLimit:\ 1\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(limited,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'}\ \});}
+
+\end{DoxyCode}
+
+
+To bypass the leading question mark, use {\ttfamily ignore\+Query\+Prefix}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ prefixed\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'?a=b\&c=d'},\ \{\ ignoreQueryPrefix:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(prefixed,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'}\ \});}
+
+\end{DoxyCode}
+
+
+An optional delimiter can also be passed\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ delimited\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=b;c=d'},\ \{\ delimiter:\ \textcolor{charliteral}{';'}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(delimited,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'}\ \});}
+
+\end{DoxyCode}
+
+
+Delimiters can be a regular expression too\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ regexed\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=b;c=d,e=f'},\ \{\ delimiter:\ /[;,]/\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(regexed,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'},\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \textcolor{charliteral}{'f'}\ \});}
+
+\end{DoxyCode}
+
+
+Option {\ttfamily allow\+Dots} can be used to enable dot notation\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withDots\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a.b=c'},\ \{\ allowDots:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withDots,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{charliteral}{'c'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+Option {\ttfamily decode\+Dot\+In\+Keys} can be used to decode dots in keys Note\+: it implies {\ttfamily allow\+Dots}, so {\ttfamily parse} will error if you set {\ttfamily decode\+Dot\+In\+Keys} to {\ttfamily true}, and {\ttfamily allow\+Dots} to {\ttfamily false}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withDots\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'name\%252Eobj.first=John\&name\%252Eobj.last=Doe'},\ \{\ decodeDotInKeys:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withDots,\ \{\ \textcolor{stringliteral}{'name.obj'}:\ \{\ first:\ \textcolor{stringliteral}{'John'},\ last:\ \textcolor{stringliteral}{'Doe'}\ \}\});}
+
+\end{DoxyCode}
+
+
+Option {\ttfamily allow\+Empty\+Arrays} can be used to allowing empty array values in object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withEmptyArrays\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo[]\&bar=baz'},\ \{\ allowEmptyArrays:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withEmptyArrays,\ \{\ foo:\ [],\ bar:\ \textcolor{stringliteral}{'baz'}\ \});}
+
+\end{DoxyCode}
+
+
+Option {\ttfamily duplicates} can be used to change the behavior when duplicate keys are encountered 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo=bar\&foo=baz'}),\ \{\ foo:\ [\textcolor{stringliteral}{'bar'},\ \textcolor{stringliteral}{'baz'}]\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo=bar\&foo=baz'},\ \{\ duplicates:\ \textcolor{stringliteral}{'combine'}\ \}),\ \{\ foo:\ [\textcolor{stringliteral}{'bar'},\ \textcolor{stringliteral}{'baz'}]\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo=bar\&foo=baz'},\ \{\ duplicates:\ \textcolor{stringliteral}{'first'}\ \}),\ \{\ foo:\ \textcolor{stringliteral}{'bar'}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'foo=bar\&foo=baz'},\ \{\ duplicates:\ \textcolor{stringliteral}{'last'}\ \}),\ \{\ foo:\ \textcolor{stringliteral}{'baz'}\ \});}
+
+\end{DoxyCode}
+
+
+If you have to deal with legacy browsers or services, there\textquotesingle{}s also support for decoding percent-\/encoded octets as iso-\/8859-\/1\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ oldCharset\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=\%A7'},\ \{\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'iso-\/8859-\/1'}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(oldCharset,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'§'}\ \});}
+
+\end{DoxyCode}
+
+
+Some services add an initial {\ttfamily utf8=✓} value to forms so that old Internet Explorer versions are more likely to submit the form as utf-\/8. Additionally, the server can check the value against wrong encodings of the checkmark character and detect that a query string or {\ttfamily application/x-\/www-\/form-\/urlencoded} body was {\itshape not} sent as utf-\/8, eg. if the form had an {\ttfamily accept-\/charset} parameter or the containing page had a different character set.
+
+{\bfseries{qs}} supports this mechanism via the {\ttfamily charset\+Sentinel} option. If specified, the {\ttfamily utf8} parameter will be omitted from the returned object. It will be used to switch to {\ttfamily iso-\/8859-\/1}/{\ttfamily utf-\/8} mode depending on how the checkmark is encoded.
+
+{\bfseries{Important}}\+: When you specify both the {\ttfamily charset} option and the {\ttfamily charset\+Sentinel} option, the {\ttfamily charset} will be overridden when the request contains a {\ttfamily utf8} parameter from which the actual charset can be deduced. In that sense the {\ttfamily charset} will behave as the default charset rather than the authoritative charset.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ detectedAsUtf8\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'utf8=\%E2\%9C\%93\&a=\%C3\%B8'},\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'iso-\/8859-\/1'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charsetSentinel}}:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(detectedAsUtf8,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'ø'}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Browsers\ encode\ the\ checkmark\ as\ \&\#10003;\ when\ submitting\ as\ iso-\/8859-\/1:}}
+\DoxyCodeLine{var\ detectedAsIso8859\_1\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'utf8=\%26\%2310003\%3B\&a=\%F8'},\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'utf-\/8'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charsetSentinel}}:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(detectedAsIso8859\_1,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'ø'}\ \});}
+
+\end{DoxyCode}
+
+
+If you want to decode the {\ttfamily \&\#...;} syntax to the actual character, you can specify the {\ttfamily interpret\+Numeric\+Entities} option as well\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ detectedAsIso8859\_1\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=\%26\%239786\%3B'},\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'iso-\/8859-\/1'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01840_a48bc885ef7be5572a4710a70d94481c6_a48bc885ef7be5572a4710a70d94481c6}{interpretNumericEntities}}:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(detectedAsIso8859\_1,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'☺'}\ \});}
+
+\end{DoxyCode}
+
+
+It also works when the charset has been detected in {\ttfamily charset\+Sentinel} mode.\hypertarget{a00958_autotoc_md2009}{}\doxysubsubsubsection{\texorpdfstring{Parsing Arrays}{Parsing Arrays}}\label{a00958_autotoc_md2009}
+{\bfseries{qs}} can also parse arrays using a similar {\ttfamily \mbox{[}\mbox{]}} notation\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withArray\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[]=b\&a[]=c'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withArray,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'}]\ \});}
+
+\end{DoxyCode}
+
+
+You may specify an index as well\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withIndexes\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[1]=c\&a[0]=b'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withIndexes,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'}]\ \});}
+
+\end{DoxyCode}
+
+
+Note that the only difference between an index in an array and a key in an object is that the value between the brackets must be a number to create an array. When creating arrays with specific indices, {\bfseries{qs}} will compact a sparse array to only the existing values preserving their order\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ noSparse\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[1]=b\&a[15]=c'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(noSparse,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'}]\ \});}
+
+\end{DoxyCode}
+
+
+You may also use {\ttfamily allow\+Sparse} option to parse sparse arrays\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ sparseArray\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[1]=2\&a[3]=5'},\ \{\ allowSparse:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(sparseArray,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [,\ \textcolor{charliteral}{'2'},\ ,\ \textcolor{charliteral}{'5'}]\ \});}
+
+\end{DoxyCode}
+
+
+Note that an empty string is also a value, and will be preserved\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withEmptyString\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[]=\&a[]=b'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withEmptyString,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{stringliteral}{''},\ \textcolor{charliteral}{'b'}]\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ withIndexedEmptyString\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[0]=b\&a[1]=\&a[2]=c'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withIndexedEmptyString,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{stringliteral}{''},\ \textcolor{charliteral}{'c'}]\ \});}
+
+\end{DoxyCode}
+
+
+{\bfseries{qs}} will also limit specifying indices in an array to a maximum index of {\ttfamily 20}. Any array members with an index of greater than {\ttfamily 20} will instead be converted to an object with the index as the key. This is needed to handle cases when someone sent, for example, {\ttfamily a\mbox{[}999999999\mbox{]}} and it will take significant time to iterate over this huge array.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withMaxIndex\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[100]=b'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withMaxIndex,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \textcolor{stringliteral}{'100'}:\ \textcolor{charliteral}{'b'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+This limit can be overridden by passing an {\ttfamily array\+Limit} option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withArrayLimit\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[1]=b'},\ \{\ arrayLimit:\ 0\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(withArrayLimit,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \textcolor{charliteral}{'1'}:\ \textcolor{charliteral}{'b'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+To disable array parsing entirely, set {\ttfamily parse\+Arrays} to {\ttfamily false}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ noParsingArrays\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[]=b'},\ \{\ parseArrays:\ \textcolor{keyword}{false}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(noParsingArrays,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \textcolor{charliteral}{'0'}:\ \textcolor{charliteral}{'b'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+If you mix notations, {\bfseries{qs}} will merge the two items into an object\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ mixedNotation\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[0]=b\&a[b]=c'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(mixedNotation,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \textcolor{charliteral}{'0'}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{charliteral}{'c'}\ \}\ \});}
+
+\end{DoxyCode}
+
+
+You can also create arrays of objects\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ arraysOfObjects\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a[][b]=c'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(arraysOfObjects,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{charliteral}{'c'}\ \}]\ \});}
+
+\end{DoxyCode}
+
+
+Some people use comma to join array, {\bfseries{qs}} can parse it\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ arraysOfObjects\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=b,c'},\ \{\ comma:\ \textcolor{keyword}{true}\ \})}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(arraysOfObjects,\ \{\ a:\ [\textcolor{stringliteral}{'b'},\ \textcolor{stringliteral}{'c'}]\ \})}
+
+\end{DoxyCode}
+ ({\itshape this cannot convert nested objects, such as {\ttfamily a=\{b\+:1\},\{c\+:d\}}})\hypertarget{a00958_autotoc_md2010}{}\doxysubsubsubsection{\texorpdfstring{Parsing primitive/scalar values (numbers, booleans, null, etc)}{Parsing primitive/scalar values (numbers, booleans, null, etc)}}\label{a00958_autotoc_md2010}
+By default, all values are parsed as strings. This behavior will not change and is explained in \href{https://github.com/ljharb/qs/issues/91}{\texttt{ issue \#91}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ primitiveValues\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=15\&b=true\&c=null'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(primitiveValues,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'15'},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{stringliteral}{'true'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{stringliteral}{'null'}\ \});}
+
+\end{DoxyCode}
+
+
+If you wish to auto-\/convert values which look like numbers, booleans, and other values into their primitive counterparts, you can use the \href{https://github.com/xpepermint/query-types}{\texttt{ query-\/types Express JS middleware}} which will auto-\/convert all request query parameters.\hypertarget{a00958_autotoc_md2011}{}\doxysubsubsubsection{\texorpdfstring{Stringifying}{Stringifying}}\label{a00958_autotoc_md2011}
+\mbox{[}\mbox{]}(\#prevent\+Eval) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\textcolor{keywordtype}{object},\ [options]);}
+
+\end{DoxyCode}
+
+
+When stringifying, {\bfseries{qs}} by default URI encodes output. Objects are stringified as you would expect\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \textcolor{stringliteral}{'b'}\ \}),\ \textcolor{stringliteral}{'a=b'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \{\ b:\ \textcolor{stringliteral}{'c'}\ \}\ \}),\ \textcolor{stringliteral}{'a\%5Bb\%5D=c'});}
+
+\end{DoxyCode}
+
+
+This encoding can be disabled by setting the {\ttfamily encode} option to {\ttfamily false}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ unencoded\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{charliteral}{'c'}\ \}\ \},\ \{\ \mbox{\hyperlink{a01234_ae23b090bc621f1115f8fa339550977e4_ae23b090bc621f1115f8fa339550977e4}{encode}}:\ \textcolor{keyword}{false}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(unencoded,\ \textcolor{stringliteral}{'a[b]=c'});}
+
+\end{DoxyCode}
+
+
+Encoding can be disabled for keys by setting the {\ttfamily encode\+Values\+Only} option to {\ttfamily true}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ encodedValues\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(}
+\DoxyCodeLine{\ \ \ \ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ [\textcolor{charliteral}{'d'},\ \textcolor{stringliteral}{'e=f'}],\ \mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}:\ [[\textcolor{charliteral}{'g'}],\ [\textcolor{charliteral}{'h'}]]\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ encodeValuesOnly:\ \textcolor{keyword}{true}\ \}}
+\DoxyCodeLine{);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(encodedValues,\textcolor{stringliteral}{'a=b\&c[0]=d\&c[1]=e\%3Df\&f[0][0]=g\&f[1][0]=h'});}
+
+\end{DoxyCode}
+
+
+This encoding can also be replaced by a custom encoding method set as {\ttfamily encoder} option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ encoded\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{charliteral}{'c'}\ \}\ \},\ \{\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}:\ \textcolor{keyword}{function}\ (str)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Passed\ in\ values\ \`{}a`,\ \`{}b`,\ \`{}c`}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{comment}{//\ Return\ encoded\ string}}
+\DoxyCodeLine{\}\})}
+
+\end{DoxyCode}
+
+
+{\itshape (Note\+: the {\ttfamily encoder} option does not apply if {\ttfamily encode} is {\ttfamily false})}
+
+Analogue to the {\ttfamily encoder} there is a {\ttfamily decoder} option for {\ttfamily parse} to override decoding of properties and values\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ decoded\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'x=z'},\ \{\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}:\ \textcolor{keyword}{function}\ (str)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Passed\ in\ values\ \`{}x`,\ \`{}z`}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{comment}{//\ Return\ decoded\ string}}
+\DoxyCodeLine{\}\})}
+
+\end{DoxyCode}
+
+
+You can encode keys and values using different logic by using the type argument provided to the encoder\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ encoded\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{charliteral}{'c'}\ \}\ \},\ \{\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}:\ \textcolor{keyword}{function}\ (str,\ defaultEncoder,\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}},\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'key'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{comment}{//\ Encoded\ key}}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'value'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{comment}{//\ Encoded\ value}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}\})}
+
+\end{DoxyCode}
+
+
+The type argument is also provided to the decoder\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ decoded\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'x=z'},\ \{\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}:\ \textcolor{keyword}{function}\ (str,\ defaultDecoder,\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}},\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'key'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{comment}{//\ Decoded\ key}}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ \textcolor{stringliteral}{'value'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{comment}{//\ Decoded\ value}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}\})}
+
+\end{DoxyCode}
+
+
+Examples beyond this point will be shown as though the output is not URI encoded for clarity. Please note that the return values in these cases {\itshape will} be URI encoded during real usage.
+
+When arrays are stringified, they follow the {\ttfamily array\+Format} option, which defaults to {\ttfamily indices}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'},\ \textcolor{charliteral}{'d'}]\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a[0]=b\&a[1]=c\&a[2]=d'}}
+
+\end{DoxyCode}
+
+
+You may override this by setting the {\ttfamily indices} option to {\ttfamily false}, or to be more explicit, the {\ttfamily array\+Format} option to {\ttfamily repeat}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'},\ \textcolor{charliteral}{'d'}]\ \},\ \{\ indices:\ \textcolor{keyword}{false}\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a=b\&a=c\&a=d'}}
+
+\end{DoxyCode}
+
+
+You may use the {\ttfamily array\+Format} option to specify the format of the output array\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'}]\ \},\ \{\ arrayFormat:\ \textcolor{stringliteral}{'indices'}\ \})}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a[0]=b\&a[1]=c'}}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ [\textcolor{stringliteral}{'b'},\ \textcolor{stringliteral}{'c'}]\ \},\ \{\ arrayFormat:\ \textcolor{stringliteral}{'brackets'}\ \})}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a[]=b\&a[]=c'}}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'}]\ \},\ \{\ arrayFormat:\ \textcolor{stringliteral}{'repeat'}\ \})}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a=b\&a=c'}}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ [\textcolor{stringliteral}{'b'},\ \textcolor{stringliteral}{'c'}]\ \},\ \{\ arrayFormat:\ \textcolor{stringliteral}{'comma'}\ \})}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a=b,c'}}
+
+\end{DoxyCode}
+
+
+Note\+: when using {\ttfamily array\+Format} set to `\textquotesingle{}comma'{\ttfamily , you can also pass the}comma\+Round\+Trip{\ttfamily option set to}true{\ttfamily or}false{\ttfamily , to append}\mbox{[}\mbox{]}\`{} on single-\/item arrays, so that they can round trip through a parse.
+
+When objects are stringified, by default they use bracket notation\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \{\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'},\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \textcolor{charliteral}{'f'}\ \}\ \}\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a[b][c]=d\&a[b][e]=f'}}
+
+\end{DoxyCode}
+
+
+You may override this to use dot notation by setting the {\ttfamily allow\+Dots} option to {\ttfamily true}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \{\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'},\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \textcolor{charliteral}{'f'}\ \}\ \}\ \},\ \{\ allowDots:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a.b.c=d\&a.b.e=f'}}
+
+\end{DoxyCode}
+
+
+You may encode the dot notation in the keys of object with option {\ttfamily encode\+Dot\+In\+Keys} by setting it to {\ttfamily true}\+: Note\+: it implies {\ttfamily allow\+Dots}, so {\ttfamily stringify} will error if you set {\ttfamily decode\+Dot\+In\+Keys} to {\ttfamily true}, and {\ttfamily allow\+Dots} to {\ttfamily false}. Caveat\+: when {\ttfamily encode\+Values\+Only} is {\ttfamily true} as well as {\ttfamily encode\+Dot\+In\+Keys}, only dots in keys and nothing else will be encoded. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \textcolor{stringliteral}{"{}name.obj"{}}:\ \{\ \textcolor{stringliteral}{"{}first"{}}:\ \textcolor{stringliteral}{"{}John"{}},\ \textcolor{stringliteral}{"{}last"{}}:\ \textcolor{stringliteral}{"{}Doe"{}}\ \}\ \},\ \{\ allowDots:\ \textcolor{keyword}{true},\ encodeDotInKeys:\ \textcolor{keyword}{true}\ \})}
+\DoxyCodeLine{\textcolor{comment}{//\ 'name\%252Eobj.first=John\&name\%252Eobj.last=Doe'}}
+
+\end{DoxyCode}
+
+
+You may allow empty array values by setting the {\ttfamily allow\+Empty\+Arrays} option to {\ttfamily true}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ foo:\ [],\ bar:\ \textcolor{stringliteral}{'baz'}\ \},\ \{\ allowEmptyArrays:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'foo[]\&bar=baz'}}
+
+\end{DoxyCode}
+
+
+Empty strings and null values will omit the value, but the equals sign (=) remains in place\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \textcolor{stringliteral}{''}\ \}),\ \textcolor{stringliteral}{'a='});}
+
+\end{DoxyCode}
+
+
+Key with no values (such as an empty object or array) will return nothing\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ []\ \}),\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \{\}\ \}),\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ [\{\}]\ \}),\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ []\}\ \}),\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \{\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \{\}\}\ \}),\ \textcolor{stringliteral}{''});}
+
+\end{DoxyCode}
+
+
+Properties that are set to {\ttfamily undefined} will be omitted entirely\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ null,\ b:\ undefined\ \}),\ \textcolor{stringliteral}{'a='});}
+
+\end{DoxyCode}
+
+
+The query string may optionally be prepended with a question mark\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \textcolor{stringliteral}{'b'},\ c:\ \textcolor{stringliteral}{'d'}\ \},\ \{\ addQueryPrefix:\ true\ \}),\ \textcolor{stringliteral}{'?a=b\&c=d'});}
+
+\end{DoxyCode}
+
+
+The delimiter may be overridden with stringify as well\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \textcolor{stringliteral}{'b'},\ c:\ \textcolor{stringliteral}{'d'}\ \},\ \{\ delimiter:\ \textcolor{stringliteral}{';'}\ \}),\ \textcolor{stringliteral}{'a=b;c=d'});}
+
+\end{DoxyCode}
+
+
+If you only want to override the serialization of {\ttfamily Date} objects, you can provide a {\ttfamily serialize\+Date} option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ date\ =\ \textcolor{keyword}{new}\ Date(7);}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ date\ \}),\ \textcolor{stringliteral}{'a=1970-\/01-\/01T00:00:00.007Z'}.replace(/:/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}},\ \textcolor{stringliteral}{'\%3A'}));}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ date\ \},\ \{\ serializeDate:\ function\ (d)\ \{\ return\ d.getTime();\ \}\ \}),}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'a=7'}}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+
+
+You may use the {\ttfamily sort} option to affect the order of parameter keys\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{function}\ alphabeticalSort(\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.localeCompare(\mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ a:\ \textcolor{stringliteral}{'c'},\ z:\ \textcolor{stringliteral}{'y'},\ b\ :\ \textcolor{stringliteral}{'f'}\ \},\ \{\ sort:\ alphabeticalSort\ \}),\ \textcolor{stringliteral}{'a=c\&b=f\&z=y'});}
+
+\end{DoxyCode}
+
+
+Finally, you can use the {\ttfamily filter} option to restrict which keys will be included in the stringified output. If you pass a function, it will be called for each key to obtain the replacement value. Otherwise, if you pass an array, it will be used to select properties and array indices for stringification\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{function}\ filterFunc(prefix,\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (prefix\ ==\ \textcolor{charliteral}{'b'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Return\ an\ \`{}undefined`\ value\ to\ omit\ a\ property.}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (prefix\ ==\ \textcolor{stringliteral}{'e[f]'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}.getTime();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (prefix\ ==\ \textcolor{stringliteral}{'e[g][0]'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'},\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \{\ \mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}:\ \textcolor{keyword}{new}\ Date(123),\ \mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}}:\ [2]\ \}\ \},\ \{\ filter:\ filterFunc\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a=b\&c=d\&e[f]=123\&e[g][0]=4'}}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{charliteral}{'d'},\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \textcolor{charliteral}{'f'}\ \},\ \{\ filter:\ [\textcolor{charliteral}{'a'},\ \textcolor{charliteral}{'e'}]\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a=b\&e=f'}}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ [\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'},\ \textcolor{charliteral}{'d'}],\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}:\ \textcolor{charliteral}{'f'}\ \},\ \{\ filter:\ [\textcolor{charliteral}{'a'},\ 0,\ 2]\ \});}
+\DoxyCodeLine{\textcolor{comment}{//\ 'a[0]=b\&a[2]=d'}}
+
+\end{DoxyCode}
+
+
+You could also use {\ttfamily filter} to inject custom serialization for user defined types. Consider you\textquotesingle{}re working with some api that expects query strings of the format for ranges\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{https://domain.com/endpoint?range=30...70}
+
+\end{DoxyCode}
+
+
+For which you model as\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }Range\ \{}
+\DoxyCodeLine{\ \ \ \ constructor(from,\ to)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.from\ =\ from;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ this.to\ =\ to;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+You could {\itshape inject} a custom serializer to handle values of this type\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}:\ \textcolor{keyword}{new}\ Range(30,\ 70),}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ filter:\ (prefix,\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ instanceof\ Range)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \`{}\$\{\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}.from\}...\$\{\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}.to\}\`{};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ serialize\ the\ usual\ way}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{);}
+\DoxyCodeLine{\textcolor{comment}{//\ range=30...70}}
+
+\end{DoxyCode}
+\hypertarget{a00958_autotoc_md2012}{}\doxysubsubsubsection{\texorpdfstring{Handling of {\ttfamily null} values}{Handling of {\ttfamily null} values}}\label{a00958_autotoc_md2012}
+By default, {\ttfamily null} values are treated like empty strings\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ withNull\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{keyword}{null},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{stringliteral}{''}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(withNull,\ \textcolor{stringliteral}{'a=\&b='});}
+
+\end{DoxyCode}
+
+
+Parsing does not distinguish between parameters with and without equal signs. Both are converted to empty strings.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ equalsInsensitive\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a\&b='});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(equalsInsensitive,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{''},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{stringliteral}{''}\ \});}
+
+\end{DoxyCode}
+
+
+To distinguish between {\ttfamily null} values and empty strings use the {\ttfamily strict\+Null\+Handling} flag. In the result string the {\ttfamily null} values have no {\ttfamily =} sign\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ strictNull\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{keyword}{null},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{stringliteral}{''}\ \},\ \{\ strictNullHandling:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(strictNull,\ \textcolor{stringliteral}{'a\&b='});}
+
+\end{DoxyCode}
+
+
+To parse values without {\ttfamily =} back to {\ttfamily null} use the {\ttfamily strict\+Null\+Handling} flag\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ parsedStrictNull\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a\&b='},\ \{\ strictNullHandling:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(parsedStrictNull,\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{keyword}{null},\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \textcolor{stringliteral}{''}\ \});}
+
+\end{DoxyCode}
+
+
+To completely skip rendering keys with {\ttfamily null} values, use the {\ttfamily skip\+Nulls} flag\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ nullsSkipped\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{charliteral}{'b'},\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}:\ \textcolor{keyword}{null}\},\ \{\ skipNulls:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(nullsSkipped,\ \textcolor{stringliteral}{'a=b'});}
+
+\end{DoxyCode}
+
+
+If you\textquotesingle{}re communicating with legacy systems, you can switch to {\ttfamily iso-\/8859-\/1} using the {\ttfamily charset} option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ iso\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ æ:\ \textcolor{stringliteral}{'æ'}\ \},\ \{\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'iso-\/8859-\/1'}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(iso,\ \textcolor{stringliteral}{'\%E6=\%E6'});}
+
+\end{DoxyCode}
+
+
+Characters that don\textquotesingle{}t exist in {\ttfamily iso-\/8859-\/1} will be converted to numeric entities, similar to what browsers do\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ numeric\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'☺'}\ \},\ \{\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'iso-\/8859-\/1'}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(numeric,\ \textcolor{stringliteral}{'a=\%26\%239786\%3B'});}
+
+\end{DoxyCode}
+
+
+You can use the {\ttfamily charset\+Sentinel} option to announce the character by including an {\ttfamily utf8=✓} parameter with the proper encoding if the checkmark, similar to what Ruby on Rails and others do when submitting forms.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01210_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}{sentinel}}\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'☺'}\ \},\ \{\ \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charsetSentinel}}:\ \textcolor{keyword}{true}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01210_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}{sentinel}},\ \textcolor{stringliteral}{'utf8=\%E2\%9C\%93\&a=\%E2\%98\%BA'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01840_a33ca8289542d20c9f81663c44b04ff16_a33ca8289542d20c9f81663c44b04ff16}{isoSentinel}}\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'æ'}\ \},\ \{\ \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charsetSentinel}}:\ \textcolor{keyword}{true},\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'iso-\/8859-\/1'}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01840_a33ca8289542d20c9f81663c44b04ff16_a33ca8289542d20c9f81663c44b04ff16}{isoSentinel}},\ \textcolor{stringliteral}{'utf8=\%26\%2310003\%3B\&a=\%E6'});}
+
+\end{DoxyCode}
+\hypertarget{a00958_autotoc_md2013}{}\doxysubsubsubsection{\texorpdfstring{Dealing with special character sets}{Dealing with special character sets}}\label{a00958_autotoc_md2013}
+By default the encoding and decoding of characters is done in {\ttfamily utf-\/8}, and {\ttfamily iso-\/8859-\/1} support is also built in via the {\ttfamily charset} parameter.
+
+If you wish to encode querystrings to a different character set (i.\+e. \href{https://en.wikipedia.org/wiki/Shift_JIS}{\texttt{ Shift JIS}}) you can use the \href{https://github.com/martinheidegger/qs-iconv}{\texttt{ {\ttfamily qs-\/iconv}}} library\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}\ =\ require(\textcolor{stringliteral}{'qs-\/iconv/encoder'})(\textcolor{stringliteral}{'shift\_jis'});}
+\DoxyCodeLine{var\ shiftJISEncoded\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.stringify(\{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'こんにちは！'}\ \},\ \{\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}:\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(shiftJISEncoded,\ \textcolor{stringliteral}{'a=\%82\%B1\%82\%F1\%82\%C9\%82\%BF\%82\%CD\%81I'});}
+
+\end{DoxyCode}
+
+
+This also works for decoding of query strings\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}\ =\ require(\textcolor{stringliteral}{'qs-\/iconv/decoder'})(\textcolor{stringliteral}{'shift\_jis'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse(\textcolor{stringliteral}{'a=\%82\%B1\%82\%F1\%82\%C9\%82\%BF\%82\%CD\%81I'},\ \{\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}:\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}\ \});}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ \textcolor{stringliteral}{'こんにちは！'}\ \});}
+
+\end{DoxyCode}
+\hypertarget{a00958_autotoc_md2014}{}\doxysubsubsubsection{\texorpdfstring{RFC 3986 and RFC 1738 space encoding}{RFC 3986 and RFC 1738 space encoding}}\label{a00958_autotoc_md2014}
+RFC3986 used as default option and encodes \textquotesingle{} \textquotesingle{} to {\itshape \%20} which is backward compatible. In the same time, output can be stringified as per RFC1738 with \textquotesingle{} \textquotesingle{} equal to \textquotesingle{}+\textquotesingle{}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{assert.equal(qs.stringify(\{\ a:\ 'b\ c'\ \}),\ 'a=b\%20c');}
+\DoxyCodeLine{assert.equal(qs.stringify(\{\ a:\ 'b\ c'\ \},\ \{\ format\ :\ 'RFC3986'\ \}),\ 'a=b\%20c');}
+\DoxyCodeLine{assert.equal(qs.stringify(\{\ a:\ 'b\ c'\ \},\ \{\ format\ :\ 'RFC1738'\ \}),\ 'a=b+c');}
+
+\end{DoxyCode}
+\hypertarget{a00958_autotoc_md2015}{}\doxysubsubsection{\texorpdfstring{Security}{Security}}\label{a00958_autotoc_md2015}
+Please email \href{https://github.com/ljharb}{\texttt{ @ljharb}} or see \href{https://tidelift.com/security}{\texttt{ https\+://tidelift.\+com/security}} if you have a potential security vulnerability to report.\hypertarget{a00958_autotoc_md2016}{}\doxysubsubsection{\texorpdfstring{qs for enterprise}{qs for enterprise}}\label{a00958_autotoc_md2016}
+Available as part of the Tidelift Subscription
+
+The maintainers of qs and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. \href{https://tidelift.com/subscription/pkg/npm-qs?utm_source=npm-qs&utm_medium=referral&utm_campaign=enterprise&utm_term=repo}{\texttt{ Learn more.}}\hypertarget{a00958_autotoc_md2017}{}\doxysubsubsection{\texorpdfstring{Acknowledgements}{Acknowledgements}}\label{a00958_autotoc_md2017}
+qs logo by \href{https://github.com/numi-hq/open-design}{\texttt{ NUMI}}\+:
+
+\href{https://numi.tech/?ref=qs}{\texttt{ }} 

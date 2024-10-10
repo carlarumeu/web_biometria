@@ -1,0 +1,196 @@
+\doxysubsection{Referencia del archivo auth\+\_\+41.\+js}
+\hypertarget{a00224}{}\label{a00224}\index{auth\_41.js@{auth\_41.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}} (msg, msg1, msg2)
+\item 
+function \mbox{\hyperlink{a00224_ab4c9e74aa938223b8bd98d9062da0894_ab4c9e74aa938223b8bd98d9062da0894}{xor}} (\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}, \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})
+\item 
+function \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}} (password, scramble1, scramble2)
+\item 
+function \mbox{\hyperlink{a00224_aaca10214b2da004f26c366e55bcea3e3_aaca10214b2da004f26c366e55bcea3e3}{xor\+Rotating}} (\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}, seed)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00224_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00224_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}{crypto}} = require(\textquotesingle{}crypto\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}} = xor
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00224_a91dfee70a485f8a35ca640dddbf57be3_a91dfee70a485f8a35ca640dddbf57be3}{calculate\+Token\+From\+Password\+Sha}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00224_ac38323bf6e41a5c5392155777f060a99_ac38323bf6e41a5c5392155777f060a99}{calculate\+Token}} = \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00224_a4c6ef892a32b4a57a78bb5d85de49a27_a4c6ef892a32b4a57a78bb5d85de49a27}{verify\+Token}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00224_ac4f0821c77281ffbf4aeafae8c4f6e6d_ac4f0821c77281ffbf4aeafae8c4f6e6d}{double\+Sha1}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xor\+Rotating}} = xor\+Rotating
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}\index{auth\_41.js@{auth\_41.js}!sha1@{sha1}}
+\index{sha1@{sha1}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{sha1()}{sha1()}}
+{\footnotesize\ttfamily \label{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1} 
+function sha1 (\begin{DoxyParamCaption}\item[{}]{msg}{, }\item[{}]{msg1}{, }\item[{}]{msg2}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00029}{29}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 0
+\Hypertarget{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}\index{auth\_41.js@{auth\_41.js}!token@{token}}
+\index{token@{token}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{token()}{token()}}
+{\footnotesize\ttfamily \label{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077} 
+function token (\begin{DoxyParamCaption}\item[{}]{password}{, }\item[{}]{scramble1}{, }\item[{}]{scramble2}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00053}{53}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+\Hypertarget{a00224_ab4c9e74aa938223b8bd98d9062da0894_ab4c9e74aa938223b8bd98d9062da0894}\index{auth\_41.js@{auth\_41.js}!xor@{xor}}
+\index{xor@{xor}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{xor()}{xor()}}
+{\footnotesize\ttfamily \label{a00224_ab4c9e74aa938223b8bd98d9062da0894_ab4c9e74aa938223b8bd98d9062da0894} 
+function xor (\begin{DoxyParamCaption}\item[{}]{a}{, }\item[{}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00043}{43}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{a00224_aaca10214b2da004f26c366e55bcea3e3_aaca10214b2da004f26c366e55bcea3e3}\index{auth\_41.js@{auth\_41.js}!xorRotating@{xorRotating}}
+\index{xorRotating@{xorRotating}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{xorRotating()}{xorRotating()}}
+{\footnotesize\ttfamily \label{a00224_aaca10214b2da004f26c366e55bcea3e3_aaca10214b2da004f26c366e55bcea3e3} 
+function xor\+Rotating (\begin{DoxyParamCaption}\item[{}]{a}{, }\item[{}]{seed}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00086}{86}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00224_ac38323bf6e41a5c5392155777f060a99_ac38323bf6e41a5c5392155777f060a99}\index{auth\_41.js@{auth\_41.js}!calculateToken@{calculateToken}}
+\index{calculateToken@{calculateToken}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{calculateToken}{calculateToken}}
+{\footnotesize\ttfamily \label{a00224_ac38323bf6e41a5c5392155777f060a99_ac38323bf6e41a5c5392155777f060a99} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} calculate\+Token = \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00074}{74}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_a91dfee70a485f8a35ca640dddbf57be3_a91dfee70a485f8a35ca640dddbf57be3}\index{auth\_41.js@{auth\_41.js}!calculateTokenFromPasswordSha@{calculateTokenFromPasswordSha}}
+\index{calculateTokenFromPasswordSha@{calculateTokenFromPasswordSha}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{calculateTokenFromPasswordSha}{calculateTokenFromPasswordSha}}
+{\footnotesize\ttfamily \label{a00224_a91dfee70a485f8a35ca640dddbf57be3_a91dfee70a485f8a35ca640dddbf57be3} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} calculate\+Token\+From\+Password\+Sha}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(}
+\DoxyCodeLine{\ \ passwordSha,}
+\DoxyCodeLine{\ \ scramble1,}
+\DoxyCodeLine{\ \ scramble2}
+\DoxyCodeLine{)\ \{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ authPluginData1\ =\ scramble1.slice(0,\ 8);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ authPluginData2\ =\ scramble2.slice(0,\ 12);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ stage2\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(passwordSha);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ stage3\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(authPluginData1,\ authPluginData2,\ stage2);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}}(stage3,\ passwordSha);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00061}{61}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}\index{auth\_41.js@{auth\_41.js}!crypto@{crypto}}
+\index{crypto@{crypto}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{crypto}{crypto}}
+{\footnotesize\ttfamily \label{a00224_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} crypto = require(\textquotesingle{}crypto\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00027}{27}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_ac4f0821c77281ffbf4aeafae8c4f6e6d_ac4f0821c77281ffbf4aeafae8c4f6e6d}\index{auth\_41.js@{auth\_41.js}!doubleSha1@{doubleSha1}}
+\index{doubleSha1@{doubleSha1}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{doubleSha1}{doubleSha1}}
+{\footnotesize\ttfamily \label{a00224_ac4f0821c77281ffbf4aeafae8c4f6e6d_ac4f0821c77281ffbf4aeafae8c4f6e6d} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} double\+Sha1}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(password)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(\mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(password));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00082}{82}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{auth\_41.js@{auth\_41.js}!strict@{strict}}
+\index{strict@{strict}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00224_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00001}{1}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_a4c6ef892a32b4a57a78bb5d85de49a27_a4c6ef892a32b4a57a78bb5d85de49a27}\index{auth\_41.js@{auth\_41.js}!verifyToken@{verifyToken}}
+\index{verifyToken@{verifyToken}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{verifyToken}{verifyToken}}
+{\footnotesize\ttfamily \label{a00224_a4c6ef892a32b4a57a78bb5d85de49a27_a4c6ef892a32b4a57a78bb5d85de49a27} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} verify\+Token}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(publicSeed1,\ publicSeed2,\ \mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}},\ doubleSha)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ hashStage1\ =\ \mbox{\hyperlink{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}{xor}}(\mbox{\hyperlink{a00224_a81bee978c5fa3ac8cfe4c2ae7cd4c077_a81bee978c5fa3ac8cfe4c2ae7cd4c077}{token}},\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(publicSeed1,\ publicSeed2,\ doubleSha));}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ candidateHash2\ =\ \mbox{\hyperlink{a00224_ad6b696bb439b7decbda2c0ce16ffe6d1_ad6b696bb439b7decbda2c0ce16ffe6d1}{sha1}}(hashStage1);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ candidateHash2.compare(doubleSha)\ ===\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00076}{76}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415}\index{auth\_41.js@{auth\_41.js}!xor@{xor}}
+\index{xor@{xor}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{xor}{xor}}
+{\footnotesize\ttfamily \label{a00224_ac86b7bf7be04f14ee2d74dbcc4eb2415_ac86b7bf7be04f14ee2d74dbcc4eb2415} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} xor = xor}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00051}{51}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+
+\Hypertarget{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}\index{auth\_41.js@{auth\_41.js}!xorRotating@{xorRotating}}
+\index{xorRotating@{xorRotating}!auth\_41.js@{auth\_41.js}}
+\doxyparagraph{\texorpdfstring{xorRotating}{xorRotating}}
+{\footnotesize\ttfamily \label{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} xor\+Rotating = xor\+Rotating}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00224_source_l00095}{95}} del archivo \mbox{\hyperlink{a00224_source}{auth\+\_\+41.\+js}}.
+

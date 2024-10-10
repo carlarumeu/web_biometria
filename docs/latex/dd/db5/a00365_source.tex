@@ -1,0 +1,31 @@
+\doxysubsection{ssl\+\_\+request.\+js}
+\hypertarget{a00365_source}{}\label{a00365_source}\index{ssl\_request.js@{ssl\_request.js}}
+\mbox{\hyperlink{a00365}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00001}\mbox{\hyperlink{a00365_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00365_source_l00003}\mbox{\hyperlink{a00365_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00365_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}\ =\ require(\textcolor{stringliteral}{'../constants/client'});}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00004}\mbox{\hyperlink{a00365_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00776}{Packet}}\ =\ require(\textcolor{stringliteral}{'../packets/packet'});}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00365_source_l00006}\mbox{\hyperlink{a00792}{00006}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00792}{SSLRequest}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00007}\mbox{\hyperlink{a00792_a1153ed851749f7e9c76604071d363f9e_a1153ed851749f7e9c76604071d363f9e}{00007}}\ \ \ \mbox{\hyperlink{a00792_a1153ed851749f7e9c76604071d363f9e_a1153ed851749f7e9c76604071d363f9e}{constructor}}(flags,\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00008}00008\ \ \ \ \ this.clientFlags\ =\ flags\ |\ \mbox{\hyperlink{a00365_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}.SSL;}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00009}00009\ \ \ \ \ this.\mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}\ =\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}};}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00010}00010\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{a00365_source_l00012}\mbox{\hyperlink{a00792_a5e95952ed6c9aa5f23649c3d65c352c4_a5e95952ed6c9aa5f23649c3d65c352c4}{00012}}\ \ \ \mbox{\hyperlink{a00792_a5e95952ed6c9aa5f23649c3d65c352c4_a5e95952ed6c9aa5f23649c3d65c352c4}{toPacket}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{const}\ length\ =\ 36;}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{const}\ buffer\ =\ Buffer.allocUnsafe(length);}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{const}\ packet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00365_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{Packet}}(0,\ buffer,\ 0,\ length);}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00016}00016\ \ \ \ \ buffer.fill(0);}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00017}00017\ \ \ \ \ packet.offset\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00018}00018\ \ \ \ \ packet.writeInt32(this.clientFlags);}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00019}00019\ \ \ \ \ packet.writeInt32(0);\ \textcolor{comment}{//\ max\ packet\ size.\ todo:\ move\ to\ config}}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00020}00020\ \ \ \ \ packet.writeInt8(this.\mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}});}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ packet;}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00022}00022\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{a00365_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{a00365_source_l00025}\mbox{\hyperlink{a00365_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00025}}\ module.exports\ =\ \mbox{\hyperlink{a01276_a220e35e13f61684195a0815408171331_a220e35e13f61684195a0815408171331}{SSLRequest}};}
+
+\end{DoxyCode}

@@ -1,0 +1,77 @@
+\doxysection{content-\/type}
+\hypertarget{a00865}{}\label{a00865}\index{content-\/type@{content-\/type}}
+\label{a00865_autotoc_md266}%
+\Hypertarget{a00865_autotoc_md266}%
+
+
+\href{https://npmjs.org/package/content-type}{\texttt{ }} \href{https://npmjs.org/package/content-type}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://github.com/jshttp/content-type/actions/workflows/ci.yml}{\texttt{ }} \href{https://coveralls.io/r/jshttp/content-type?branch=master}{\texttt{ }}
+
+Create and parse HTTP Content-\/\+Type header according to RFC 7231\hypertarget{a00865_autotoc_md267}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00865_autotoc_md267}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ content-\/type}
+
+\end{DoxyCode}
+\hypertarget{a00865_autotoc_md268}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00865_autotoc_md268}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}\ =\ require(\textcolor{stringliteral}{'content-\/type'})}
+
+\end{DoxyCode}
+\hypertarget{a00865_autotoc_md269}{}\doxysubsubsection{\texorpdfstring{content\+Type.\+parse(string)}{content\+Type.\+parse(string)}}\label{a00865_autotoc_md269}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}.parse(\textcolor{stringliteral}{'image/svg+xml;\ charset=utf-\/8'})}
+
+\end{DoxyCode}
+
+
+Parse a {\ttfamily Content-\/\+Type} header. This will return an object with the following properties (examples are shown for the string `\textquotesingle{}image/svg+xml; charset=utf-\/8'\`{})\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily type}\+: The media type (the type and subtype, always lower case). Example\+: `\textquotesingle{}image/svg+xml'\`{}
+\item {\ttfamily parameters}\+: An object of the parameters in the media type (name of parameter always lower case). Example\+: `\{charset\+: \textquotesingle{}utf-\/8'\}\`{}
+\end{DoxyItemize}
+
+Throws a {\ttfamily Type\+Error} if the string is missing or invalid.\hypertarget{a00865_autotoc_md270}{}\doxysubsubsection{\texorpdfstring{content\+Type.\+parse(req)}{content\+Type.\+parse(req)}}\label{a00865_autotoc_md270}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}.parse(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+
+\end{DoxyCode}
+
+
+Parse the {\ttfamily Content-\/\+Type} header from the given {\ttfamily req}. Short-\/cut for `content\+Type.\+parse(req.\+headers\mbox{[}\textquotesingle{}content-\/type'\mbox{]})\`{}.
+
+Throws a {\ttfamily Type\+Error} if the {\ttfamily Content-\/\+Type} header is missing or invalid.\hypertarget{a00865_autotoc_md271}{}\doxysubsubsection{\texorpdfstring{content\+Type.\+parse(res)}{content\+Type.\+parse(res)}}\label{a00865_autotoc_md271}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}.parse(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+
+\end{DoxyCode}
+
+
+Parse the {\ttfamily Content-\/\+Type} header set on the given {\ttfamily res}. Short-\/cut for `content\+Type.\+parse(res.\+get\+Header(\textquotesingle{}content-\/type'))\`{}.
+
+Throws a {\ttfamily Type\+Error} if the {\ttfamily Content-\/\+Type} header is missing or invalid.\hypertarget{a00865_autotoc_md272}{}\doxysubsubsection{\texorpdfstring{content\+Type.\+format(obj)}{content\+Type.\+format(obj)}}\label{a00865_autotoc_md272}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ str\ =\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}.format(\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'image/svg+xml'},}
+\DoxyCodeLine{\ \ parameters:\ \{\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'utf-\/8'}\ \}}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Format an object into a {\ttfamily Content-\/\+Type} header. This will return a string of the content type for the given object with the following properties (examples are shown that produce the string `\textquotesingle{}image/svg+xml; charset=utf-\/8'\`{})\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily type}\+: The media type (will be lower-\/cased). Example\+: `\textquotesingle{}image/svg+xml'\`{}
+\item {\ttfamily parameters}\+: An object of the parameters in the media type (name of the parameter will be lower-\/cased). Example\+: `\{charset\+: \textquotesingle{}utf-\/8'\}\`{}
+\end{DoxyItemize}
+
+Throws a {\ttfamily Type\+Error} if the object contains an invalid type or parameter names.\hypertarget{a00865_autotoc_md273}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00865_autotoc_md273}
+\mbox{[}MIT\mbox{]}(LICENSE) 

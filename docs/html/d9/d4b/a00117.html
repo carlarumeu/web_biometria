@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: C:/Users/Carla R/Desktop/biometria/NODEJS-MYSQL-DOCKER/src/utils/validation.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d9/d4b/a00117.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">C:/Users/Carla R/Desktop/biometria/NODEJS-MYSQL-DOCKER/src/utils/validation.js</div></div>
+</div><!--header-->
+<div class="contents">
+<p>@function validarMedicion @async</p>
+<p>@function validarMedicion @async </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Object}</td><td>medicion - Objeto que contiene los datos de la medición a validar. </td></tr>
+    <tr><td class="paramname">{number}</td><td>medicion.medida - Valor de la medición. </td></tr>
+    <tr><td class="paramname">{string}</td><td>medicion.lugar - Lugar donde se tomó la medición. </td></tr>
+    <tr><td class="paramname">{string}</td><td>medicion.tipo_gas - Tipo de gas de la medición. </td></tr>
+    <tr><td class="paramname">{string}</td><td>medicion.hora - Hora en la que se realizó la medición (formato ISO 8601). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>{boolean} Devuelve true si la medición es válida. </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">{Error}</td><td>Si alguna de las validaciones falla.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>// Ejemplo de uso try { validarMedicion({ medida: 12.34, lugar: 'Laboratorio', tipo_gas: 'Oxígeno', hora: '2024-10-08T12:00:00Z' }); } catch (error) { console.error(error.message); }</p>
+<div class="fragment"><div class="line">[75C8:6284][2024-04-13T21:02:08]i001: Burn v3.10.4.4718, Windows v10.0 (Build 22631: Service Pack 0), path: C:\Windows\Temp\{558D5E0C-C290-4131-829A-531A065C58E6}\.cr\VC_redist.x86.exe</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i009: Command Line: &#39;-burn.clean.room=C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\VC_redist.x86.exe -burn.filehandle.attached=556 -burn.filehandle.self=552 /q /norestart /log C:\Users\Carla R\dd_setup_20240413205812_678_Microsoft.VisualCpp.Redist.14.log&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleOriginalSource&#39; to value &#39;C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\VC_redist.x86.exe&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleOriginalSourceFolder&#39; to value &#39;C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleLog&#39; to value &#39;C:\Users\Carla&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleName&#39; to value &#39;Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.38.33135&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleManufacturer&#39; to value &#39;Microsoft Corporation&#39;</div>
+<div class="line">[75C8:6208][2024-04-13T21:02:08]i000: Setting version variable &#39;WixBundleFileVersion&#39; to value &#39;14.38.33135.0&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i100: Detect begin, 10 packages</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting version variable &#39;windows_uCRT_DetectKey&#39; to value &#39;10.0.22621.2506&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting numeric variable &#39;windows_uCRT_DetectKeyExists&#39; to value 1</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i102: Detected related bundle: {410c0ee1-00bb-41b6-9772-e12c2828b02f}, type: Upgrade, scope: PerMachine, version: 14.36.32532.0, operation: MajorUpgrade</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.3 AND NOT VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.3 AND VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.2 AND NOT VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.2 AND VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.1 AND NOT VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.1 AND VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.0 AND NOT VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;(VersionNT = v6.0 AND VersionNT64) AND (windows_uCRT_DetectKeyExists AND windows_uCRT_DetectKey &gt;= v10.0.10240.0)&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i103: Detected related package: {73F77E4E-5A17-46E5-A5FC-8A061047725F}, scope: PerMachine, version: 14.36.32532.0, language: 0 operation: MajorUpgrade</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i103: Detected related package: {C2C59CAB-8766-4ABD-A8EF-1151A36C41E5}, scope: PerMachine, version: 14.36.32532.0, language: 0 operation: MajorUpgrade</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: Windows81_x86, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: Windows81_x64, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: Windows8_x86, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: Windows8_x64, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: Windows7_MSU_x86, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: Windows7_MSU_x64, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: WindowsVista_MSU_x86, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: WindowsVista_MSU_x64, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: vcRuntimeMinimum_x86, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i101: Detected package: vcRuntimeAdditional_x86, state: Absent, cached: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT &gt;= v6.1&#39; evaluates to true.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i199: Detect complete, result: 0x0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i200: Plan begin, 10 packages, action: Install</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.3 AND NOT VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: Windows81_x86</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.3 AND VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: Windows81_x64</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.2 AND NOT VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: Windows8_x86</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.2 AND VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: Windows8_x64</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.1 AND NOT VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: Windows7_MSU_x86</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.1 AND VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: Windows7_MSU_x64</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.0 AND NOT VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: WindowsVista_MSU_x86</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i052: Condition &#39;VersionNT = v6.0 AND VersionNT64&#39; evaluates to false.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]w321: Skipping dependency registration on package with no dependency providers: WindowsVista_MSU_x64</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleRollbackLog_vcRuntimeMinimum_x86&#39; to value &#39;C:\Users\Carla_000_vcRuntimeMinimum_x86_rollback.log&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleLog_vcRuntimeMinimum_x86&#39; to value &#39;C:\Users\Carla_000_vcRuntimeMinimum_x86.log&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleRollbackLog_vcRuntimeAdditional_x86&#39; to value &#39;C:\Users\Carla_001_vcRuntimeAdditional_x86_rollback.log&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i000: Setting string variable &#39;WixBundleLog_vcRuntimeAdditional_x86&#39; to value &#39;C:\Users\Carla_001_vcRuntimeAdditional_x86.log&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: Windows81_x86, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: Windows81_x64, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: Windows8_x86, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: Windows8_x64, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: Windows7_MSU_x86, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: Windows7_MSU_x64, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: WindowsVista_MSU_x86, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: WindowsVista_MSU_x64, state: Absent, default requested: Absent, ba requested: Absent, execute: None, rollback: None, cache: No, uncache: No, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: vcRuntimeMinimum_x86, state: Absent, default requested: Present, ba requested: Present, execute: Install, rollback: Uninstall, cache: Yes, uncache: No, dependency: Register</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i201: Planned package: vcRuntimeAdditional_x86, state: Absent, default requested: Present, ba requested: Present, execute: Install, rollback: Uninstall, cache: Yes, uncache: No, dependency: Register</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i207: Planned related bundle: {410c0ee1-00bb-41b6-9772-e12c2828b02f}, type: Upgrade, default requested: Absent, ba requested: Absent, execute: Uninstall, rollback: Install, dependency: None</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i299: Plan complete, result: 0x0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i300: Apply begin</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i010: Launching elevated engine process.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i011: Launched elevated engine process.</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:08]i012: Connected to elevated engine.</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i358: Pausing automatic updates.</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i359: Paused automatic updates.</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i360: Creating a system restore point.</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]w363: Could not create system restore point, error: 0x80070422. Continuing...</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i370: Session begin, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{46c3b171-c15c-4137-8e1d-67eeb2985b44}, options: 0x7, disable resume: No</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i000: Caching bundle from: &#39;C:\Windows\Temp\{D859E2E5-B1E5-4606-97CE-B3AF0316FA7C}\.be\VC_redist.x86.exe&#39; to: &#39;C:\ProgramData\Package Cache\{46c3b171-c15c-4137-8e1d-67eeb2985b44}\VC_redist.x86.exe&#39;</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i320: Registering bundle dependency provider: VC,redist.x86,x86,14.38,bundle, version: 14.38.33135.0</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:08]i371: Updating session, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{46c3b171-c15c-4137-8e1d-67eeb2985b44}, resume: Active, restart initiated: No, disable resume: No</div>
+<div class="line">[55D4:5950][2024-04-13T21:02:08]i305: Verified acquired payload: vcRuntimeMinimum_x86 at path: C:\ProgramData\Package Cache\.unverified\vcRuntimeMinimum_x86, moving to: C:\ProgramData\Package Cache\{286DC39B-5FB7-4AFF-9DD4-22DB47664CD7}v14.38.33135\packages\vcRuntimeMinimum_x86\vc_runtimeMinimum_x86.msi.</div>
+<div class="line">[55D4:5950][2024-04-13T21:02:08]i305: Verified acquired payload: cab54A5CABBE7274D8A22EB58060AAB7623 at path: C:\ProgramData\Package Cache\.unverified\cab54A5CABBE7274D8A22EB58060AAB7623, moving to: C:\ProgramData\Package Cache\{286DC39B-5FB7-4AFF-9DD4-22DB47664CD7}v14.38.33135\packages\vcRuntimeMinimum_x86\cab1.cab.</div>
+<div class="line">[55D4:5950][2024-04-13T21:02:09]i305: Verified acquired payload: vcRuntimeAdditional_x86 at path: C:\ProgramData\Package Cache\.unverified\vcRuntimeAdditional_x86, moving to: C:\ProgramData\Package Cache\{9C19C103-7DB1-44D1-A039-2C076A633A38}v14.38.33135\packages\vcRuntimeAdditional_x86\vc_runtimeAdditional_x86.msi.</div>
+<div class="line">[55D4:5950][2024-04-13T21:02:09]i305: Verified acquired payload: cabB3E1576D1FEFBB979E13B1A5379E0B16 at path: C:\ProgramData\Package Cache\.unverified\cabB3E1576D1FEFBB979E13B1A5379E0B16, moving to: C:\ProgramData\Package Cache\{9C19C103-7DB1-44D1-A039-2C076A633A38}v14.38.33135\packages\vcRuntimeAdditional_x86\cab1.cab.</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:09]i301: Applying execute package: vcRuntimeMinimum_x86, action: Install, path: C:\ProgramData\Package Cache\{286DC39B-5FB7-4AFF-9DD4-22DB47664CD7}v14.38.33135\packages\vcRuntimeMinimum_x86\vc_runtimeMinimum_x86.msi, arguments: &#39; MSIFASTINSTALL=&quot;7&quot; NOVSUI=&quot;1&quot;&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:09]i319: Applied execute package: vcRuntimeMinimum_x86, result: 0x0, restart: None</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:09]i325: Registering dependency: {46c3b171-c15c-4137-8e1d-67eeb2985b44} on package provider: Microsoft.VS.VC_RuntimeMinimumVSU_x86,v14, package: vcRuntimeMinimum_x86</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:09]i301: Applying execute package: vcRuntimeAdditional_x86, action: Install, path: C:\ProgramData\Package Cache\{9C19C103-7DB1-44D1-A039-2C076A633A38}v14.38.33135\packages\vcRuntimeAdditional_x86\vc_runtimeAdditional_x86.msi, arguments: &#39; MSIFASTINSTALL=&quot;7&quot; NOVSUI=&quot;1&quot;&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i319: Applied execute package: vcRuntimeAdditional_x86, result: 0x0, restart: None</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:10]i325: Registering dependency: {46c3b171-c15c-4137-8e1d-67eeb2985b44} on package provider: Microsoft.VS.VC_RuntimeAdditionalVSU_x86,v14, package: vcRuntimeAdditional_x86</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:10]i301: Applying execute package: {410c0ee1-00bb-41b6-9772-e12c2828b02f}, action: Uninstall, path: C:\ProgramData\Package Cache\{410c0ee1-00bb-41b6-9772-e12c2828b02f}\VC_redist.x86.exe, arguments: &#39;&quot;C:\ProgramData\Package Cache\{410c0ee1-00bb-41b6-9772-e12c2828b02f}\VC_redist.x86.exe&quot; -uninstall -quiet -burn.related.upgrade -burn.ancestors={46c3b171-c15c-4137-8e1d-67eeb2985b44} -burn.filehandle.self=1048&#39;</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i319: Applied execute package: {410c0ee1-00bb-41b6-9772-e12c2828b02f}, result: 0x0, restart: None</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:10]i372: Session end, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{46c3b171-c15c-4137-8e1d-67eeb2985b44}, resume: ARP, restart: None, disable resume: No</div>
+<div class="line">[55D4:10FC][2024-04-13T21:02:10]i371: Updating session, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{46c3b171-c15c-4137-8e1d-67eeb2985b44}, resume: ARP, restart initiated: No, disable resume: No</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i399: Apply complete, result: 0x0, restart: None, ba requested restart:  No</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i500: Shutting down, exit code: 0x0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: SystemFolder = C:\Windows\system32\</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: VersionNT = 10.0.0.0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: VersionNT64 = 10.0.0.0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: windows_uCRT_DetectKey = 10.0.22621.2506</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: windows_uCRT_DetectKeyExists = 1</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleAction = 5</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleElevated = 1</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleFileVersion = 14.38.33135.0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleInstalled = 0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleLog = C:\Users\Carla</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleLog_vcRuntimeAdditional_x86 = C:\Users\Carla_001_vcRuntimeAdditional_x86.log</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleLog_vcRuntimeMinimum_x86 = C:\Users\Carla_000_vcRuntimeMinimum_x86.log</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleManufacturer = Microsoft Corporation</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleName = Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.38.33135</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleOriginalSource = C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\VC_redist.x86.exe</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleOriginalSourceFolder = C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleProviderKey = VC,redist.x86,x86,14.38,bundle</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleRollbackLog_vcRuntimeAdditional_x86 = C:\Users\Carla_001_vcRuntimeAdditional_x86_rollback.log</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleRollbackLog_vcRuntimeMinimum_x86 = C:\Users\Carla_000_vcRuntimeMinimum_x86_rollback.log</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleSourceProcessFolder = C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleSourceProcessPath = C:\ProgramData\Microsoft\VisualStudio\Packages\Microsoft.VisualCpp.Redist.14,version=14.38.33135,chip=x86\VC_redist.x86.exe</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleTag = </div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i410: Variable: WixBundleVersion = 14.38.33135.0</div>
+<div class="line">[75C8:6284][2024-04-13T21:02:10]i007: Exit code: 0x0, restarting: No</div>
+</div><!-- fragment --><p> <a class="el" href="../../d3/d00/a00113.html">R/Desktop/biometria/NODEJS-MYSQL-DOCKER/src/utils/validation.js</a> </p>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

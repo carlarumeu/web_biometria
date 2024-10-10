@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente change_user.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d2/d86/a01798_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">commands/change_user.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d86/a01798.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// This file was modified by Oracle on September 21, 2021.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// The changes involve saving additional authentication factor passwords</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// in the command scope and enabling multi-factor authentication in the</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// client-side when the server supports it.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Modifications copyright (c) 2021, Oracle and/or its affiliates.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    7</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_a66861095fa9af8c5ced7a5f76ea2d12e.html#a66861095fa9af8c5ced7a5f76ea2d12e">    9</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d3/db4/a00684.html">Command</a> = require(<span class="stringliteral">&#39;./command.js&#39;</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">   10</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d2/d86/a01798_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a> = require(<span class="stringliteral">&#39;../packets/index.js&#39;</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_ab348ea2cefbd2143ecca79d296743944.html#ab348ea2cefbd2143ecca79d296743944">   11</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d2/d86/a01798_ab348ea2cefbd2143ecca79d296743944.html#ab348ea2cefbd2143ecca79d296743944">ClientConstants</a> = require(<span class="stringliteral">&#39;../constants/client&#39;</span>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_a5c06ae224c5df5d8b0e114df4d4bc3c4.html#a5c06ae224c5df5d8b0e114df4d4bc3c4">   12</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d5/d39/a00676.html">ClientHandshake</a> = require(<span class="stringliteral">&#39;./client_handshake.js&#39;</span>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">   13</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d2/d86/a01798_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a> = require(<span class="stringliteral">&#39;../constants/charset_encodings.js&#39;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d5/d40/a00672.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d5/d40/a00672.html">ChangeUser</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../d3/db4/a00684.html">Command</a> {</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d5/d40/a00672_a3efb590d26849333a418acd182d6fe91.html#a3efb590d26849333a418acd182d6fe91">   16</a></span>  <a class="code hl_function" href="../../d5/d40/a00672_a3efb590d26849333a418acd182d6fe91.html#a3efb590d26849333a418acd182d6fe91">constructor</a>(options, callback) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a6bb85d4878dcc4e75bf4de82052df6fd.html#a6bb85d4878dcc4e75bf4de82052df6fd">super</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    this.onResult = callback;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    this.user = options.user;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    this.password = options.password;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// &quot;password1&quot; is an alias of &quot;password&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    this.password1 = options.password;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    this.password2 = options.password2;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    this.password3 = options.password3;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    this.database = options.database;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    this.passwordSha1 = options.passwordSha1;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    this.charsetNumber = options.charsetNumber;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    this.currentConfig = options.currentConfig;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    this.authenticationFactor = 0;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d5/d40/a00672_addc804bcd06c8cf50a3cbf097e804364.html#addc804bcd06c8cf50a3cbf097e804364">   31</a></span>  <a class="code hl_function" href="../../d5/d40/a00672_addc804bcd06c8cf50a3cbf097e804364.html#addc804bcd06c8cf50a3cbf097e804364">start</a>(packet, connection) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> newPacket = <span class="keyword">new</span> <a class="code hl_variable" href="../../d2/dc8/a00242_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a>.ChangeUser({</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      flags: connection.config.clientFlags,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      user: this.user,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      database: this.database,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      charsetNumber: this.charsetNumber,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      password: this.password,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      passwordSha1: this.passwordSha1,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      authPluginData1: connection._handshakePacket.authPluginData1,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      authPluginData2: connection._handshakePacket.authPluginData2</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    });</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    this.currentConfig.user = this.user;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    this.currentConfig.password = this.password;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    this.currentConfig.database = this.database;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    this.currentConfig.charsetNumber = this.charsetNumber;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    connection.clientEncoding = <a class="code hl_variable" href="../../d2/d42/a01801_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a>[this.charsetNumber];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// clear prepared statements cache as all statements become invalid after changeUser</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    connection._statements.clear();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    connection.writePacket(newPacket.toPacket());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// check if the server supports multi-factor authentication</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">const</span> multiFactorAuthentication = connection.serverCapabilityFlags &amp; <a class="code hl_variable" href="../../d2/d42/a01801_ab348ea2cefbd2143ecca79d296743944.html#ab348ea2cefbd2143ecca79d296743944">ClientConstants</a>.MULTI_FACTOR_AUTHENTICATION;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (multiFactorAuthentication) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="comment">// if the server supports multi-factor authentication, we enable it in</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="comment">// the client</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      this.authenticationFactor = 1;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d5/d40/a00672.html">ChangeUser</a>.prototype.handshakeResult;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_ac9dc9fd1d4b2aa02d890625c67107c61.html#ac9dc9fd1d4b2aa02d890625c67107c61">   61</a></span><a class="code hl_class" href="../../d5/d40/a00672.html">ChangeUser</a>.prototype.handshakeResult =</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_class" href="../../d5/d39/a00676.html">ClientHandshake</a>.prototype.<a class="code hl_function" href="../../d5/d39/a00676_aeb1492a5598740ab8f214a016d7ce65d.html#aeb1492a5598740ab8f214a016d7ce65d">handshakeResult</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_a3ec703e3f3ac71445f0d98e89accbe69.html#a3ec703e3f3ac71445f0d98e89accbe69">   63</a></span><a class="code hl_class" href="../../d5/d40/a00672.html">ChangeUser</a>.prototype.calculateNativePasswordAuthToken =</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_class" href="../../d5/d39/a00676.html">ClientHandshake</a>.prototype.<a class="code hl_function" href="../../d5/d39/a00676_a1763c2d361fbe39dc6dff14d17280a49.html#a1763c2d361fbe39dc6dff14d17280a49">calculateNativePasswordAuthToken</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d2/d86/a01798_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">   66</a></span>module.exports = <a class="code hl_variable" href="../../de/d85/a01273_ac6efea14c55e0d33e1b8a7b181d40066.html#ac6efea14c55e0d33e1b8a7b181d40066">ChangeUser</a>;</div>
+<div class="ttc" id="aa00242_a887343288e6f7e38e88d542c46e3dc66_html_a887343288e6f7e38e88d542c46e3dc66"><div class="ttname"><a href="../../d2/dc8/a00242_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a></div><div class="ttdeci">const Packets</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dc8/a00242_source.html#l00008">auth_switch.js:8</a></div></div>
+<div class="ttc" id="aa00672_a3efb590d26849333a418acd182d6fe91_html_a3efb590d26849333a418acd182d6fe91"><div class="ttname"><a href="../../d5/d40/a00672_a3efb590d26849333a418acd182d6fe91.html#a3efb590d26849333a418acd182d6fe91">ChangeUser::constructor</a></div><div class="ttdeci">constructor(options, callback)</div><div class="ttdef"><b>Definition</b> <a href="#l00016">commands/change_user.js:16</a></div></div>
+<div class="ttc" id="aa00672_addc804bcd06c8cf50a3cbf097e804364_html_addc804bcd06c8cf50a3cbf097e804364"><div class="ttname"><a href="../../d5/d40/a00672_addc804bcd06c8cf50a3cbf097e804364.html#addc804bcd06c8cf50a3cbf097e804364">ChangeUser::start</a></div><div class="ttdeci">start(packet, connection)</div><div class="ttdef"><b>Definition</b> <a href="#l00031">commands/change_user.js:31</a></div></div>
+<div class="ttc" id="aa00672_html"><div class="ttname"><a href="../../d5/d40/a00672.html">ChangeUser</a></div><div class="ttdef"><b>Definition</b> <a href="#l00015">commands/change_user.js:15</a></div></div>
+<div class="ttc" id="aa00676_a1763c2d361fbe39dc6dff14d17280a49_html_a1763c2d361fbe39dc6dff14d17280a49"><div class="ttname"><a href="../../d5/d39/a00676_a1763c2d361fbe39dc6dff14d17280a49.html#a1763c2d361fbe39dc6dff14d17280a49">ClientHandshake::calculateNativePasswordAuthToken</a></div><div class="ttdeci">calculateNativePasswordAuthToken(authPluginData)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d1a/a00251_source.html#l00086">client_handshake.js:86</a></div></div>
+<div class="ttc" id="aa00676_aeb1492a5598740ab8f214a016d7ce65d_html_aeb1492a5598740ab8f214a016d7ce65d"><div class="ttname"><a href="../../d5/d39/a00676_aeb1492a5598740ab8f214a016d7ce65d.html#aeb1492a5598740ab8f214a016d7ce65d">ClientHandshake::handshakeResult</a></div><div class="ttdeci">handshakeResult(packet, connection)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d1a/a00251_source.html#l00172">client_handshake.js:172</a></div></div>
+<div class="ttc" id="aa00676_html"><div class="ttname"><a href="../../d5/d39/a00676.html">ClientHandshake</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d1a/a00251_source.html#l00029">client_handshake.js:29</a></div></div>
+<div class="ttc" id="aa00684_html"><div class="ttname"><a href="../../d3/db4/a00684.html">Command</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d39/a00257_source.html#l00006">command.js:6</a></div></div>
+<div class="ttc" id="aa01195_a6bb85d4878dcc4e75bf4de82052df6fd_html_a6bb85d4878dcc4e75bf4de82052df6fd"><div class="ttname"><a href="../../d8/df3/a01195_a6bb85d4878dcc4e75bf4de82052df6fd.html#a6bb85d4878dcc4e75bf4de82052df6fd">super</a></div><div class="ttdeci">var super</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00032">node_modules/generate-function/index.js:32</a></div></div>
+<div class="ttc" id="aa01273_ac6efea14c55e0d33e1b8a7b181d40066_html_ac6efea14c55e0d33e1b8a7b181d40066"><div class="ttname"><a href="../../de/d85/a01273_ac6efea14c55e0d33e1b8a7b181d40066.html#ac6efea14c55e0d33e1b8a7b181d40066">ChangeUser</a></div><div class="ttdeci">const ChangeUser</div><div class="ttdef"><b>Definition</b> <a href="../../de/d85/a01273_source.html#l00012">node_modules/mysql2/lib/commands/index.js:12</a></div></div>
+<div class="ttc" id="aa01798_a1408b5a0d26ac3180269cd6bb8bc00e8_html_a1408b5a0d26ac3180269cd6bb8bc00e8"><div class="ttname"><a href="../../d2/d86/a01798_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a></div><div class="ttdeci">const CharsetToEncoding</div><div class="ttdef"><b>Definition</b> <a href="#l00013">commands/change_user.js:13</a></div></div>
+<div class="ttc" id="aa01798_a887343288e6f7e38e88d542c46e3dc66_html_a887343288e6f7e38e88d542c46e3dc66"><div class="ttname"><a href="../../d2/d86/a01798_a887343288e6f7e38e88d542c46e3dc66.html#a887343288e6f7e38e88d542c46e3dc66">Packets</a></div><div class="ttdeci">const Packets</div><div class="ttdef"><b>Definition</b> <a href="#l00010">commands/change_user.js:10</a></div></div>
+<div class="ttc" id="aa01798_ab348ea2cefbd2143ecca79d296743944_html_ab348ea2cefbd2143ecca79d296743944"><div class="ttname"><a href="../../d2/d86/a01798_ab348ea2cefbd2143ecca79d296743944.html#ab348ea2cefbd2143ecca79d296743944">ClientConstants</a></div><div class="ttdeci">const ClientConstants</div><div class="ttdef"><b>Definition</b> <a href="#l00011">commands/change_user.js:11</a></div></div>
+<div class="ttc" id="aa01801_a1408b5a0d26ac3180269cd6bb8bc00e8_html_a1408b5a0d26ac3180269cd6bb8bc00e8"><div class="ttname"><a href="../../d2/d42/a01801_a1408b5a0d26ac3180269cd6bb8bc00e8.html#a1408b5a0d26ac3180269cd6bb8bc00e8">CharsetToEncoding</a></div><div class="ttdeci">const CharsetToEncoding</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d42/a01801_source.html#l00007">packets/change_user.js:7</a></div></div>
+<div class="ttc" id="aa01801_ab348ea2cefbd2143ecca79d296743944_html_ab348ea2cefbd2143ecca79d296743944"><div class="ttname"><a href="../../d2/d42/a01801_ab348ea2cefbd2143ecca79d296743944.html#ab348ea2cefbd2143ecca79d296743944">ClientConstants</a></div><div class="ttdeci">const ClientConstants</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d42/a01801_source.html#l00004">packets/change_user.js:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_23d0479fb3f29d968a6231243124bf05.html">commands</a></li><li class="navelem"><a class="el" href="../../d2/d86/a01798.html">change_user.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

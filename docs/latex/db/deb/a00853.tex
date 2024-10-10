@@ -1,0 +1,34 @@
+\doxysection{Array Flatten}
+\hypertarget{a00853}{}\label{a00853}\index{Array Flatten@{Array Flatten}}
+\label{a00853_autotoc_md50}%
+\Hypertarget{a00853_autotoc_md50}%
+
+
+\href{https://npmjs.org/package/array-flatten}{\texttt{ }} \href{https://npmjs.org/package/array-flatten}{\texttt{ }} \href{https://travis-ci.org/blakeembrey/array-flatten}{\texttt{ }} \href{https://coveralls.io/r/blakeembrey/array-flatten?branch=master}{\texttt{ }}
+
+\begin{quote}
+Flatten an array of nested arrays into a single flat array. Accepts an optional depth. \end{quote}
+\hypertarget{a00853_autotoc_md51}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00853_autotoc_md51}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ array-\/flatten\ -\/-\/save}
+
+\end{DoxyCode}
+\hypertarget{a00853_autotoc_md52}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00853_autotoc_md52}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4}{flatten}}\ =\ require(\textcolor{stringliteral}{'array-\/flatten'})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4}{flatten}}([1,\ [2,\ [3,\ [4,\ [5],\ 6],\ 7],\ 8],\ 9])}
+\DoxyCodeLine{\textcolor{comment}{//=>\ [1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9]}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4}{flatten}}([1,\ [2,\ [3,\ [4,\ [5],\ 6],\ 7],\ 8],\ 9],\ 2)}
+\DoxyCodeLine{\textcolor{comment}{//=>\ [1,\ 2,\ 3,\ [4,\ [5],\ 6],\ 7,\ 8,\ 9]}}
+\DoxyCodeLine{}
+\DoxyCodeLine{(function\ ()\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00101_a19188fd934b073f6bf88119434489ad4_a19188fd934b073f6bf88119434489ad4}{flatten}}(arguments)\ \textcolor{comment}{//=>\ [1,\ 2,\ 3]}}
+\DoxyCodeLine{\})(1,\ [2,\ 3])}
+
+\end{DoxyCode}
+\hypertarget{a00853_autotoc_md53}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00853_autotoc_md53}
+MIT 

@@ -1,0 +1,72 @@
+\doxysubsection{commands/change\+\_\+user.js}
+\hypertarget{a01798_source}{}\label{a01798_source}\index{change\_user.js@{change\_user.js}}
+\mbox{\hyperlink{a01798}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00001}00001\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ September\ 21,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00002}00002\ \textcolor{comment}{//\ The\ changes\ involve\ saving\ additional\ authentication\ factor\ passwords}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00003}00003\ \textcolor{comment}{//\ in\ the\ command\ scope\ and\ enabling\ multi-\/factor\ authentication\ in\ the}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00004}00004\ \textcolor{comment}{//\ client-\/side\ when\ the\ server\ supports\ it.}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00005}00005\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a01798_source_l00007}\mbox{\hyperlink{a01798_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00007}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01798_source_l00009}\mbox{\hyperlink{a01798_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{00009}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00684}{Command}}\ =\ require(\textcolor{stringliteral}{'./command.js'});}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00010}\mbox{\hyperlink{a01798_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{00010}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01798_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}\ =\ require(\textcolor{stringliteral}{'../packets/index.js'});}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00011}\mbox{\hyperlink{a01798_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{00011}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01798_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}\ =\ require(\textcolor{stringliteral}{'../constants/client'});}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00012}\mbox{\hyperlink{a01798_a5c06ae224c5df5d8b0e114df4d4bc3c4_a5c06ae224c5df5d8b0e114df4d4bc3c4}{00012}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00676}{ClientHandshake}}\ =\ require(\textcolor{stringliteral}{'./client\_handshake.js'});}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00013}\mbox{\hyperlink{a01798_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{00013}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01798_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{CharsetToEncoding}}\ =\ require(\textcolor{stringliteral}{'../constants/charset\_encodings.js'});}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{a01798_source_l00015}\mbox{\hyperlink{a00672}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00672}{ChangeUser}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{a00684}{Command}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00016}\mbox{\hyperlink{a00672_a3efb590d26849333a418acd182d6fe91_a3efb590d26849333a418acd182d6fe91}{00016}}\ \ \ \mbox{\hyperlink{a00672_a3efb590d26849333a418acd182d6fe91_a3efb590d26849333a418acd182d6fe91}{constructor}}(options,\ callback)\ \{}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00018}00018\ \ \ \ \ this.onResult\ =\ callback;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00019}00019\ \ \ \ \ this.user\ =\ options.user;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00020}00020\ \ \ \ \ this.password\ =\ options.password;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ "{}password1"{}\ is\ an\ alias\ of\ "{}password"{}}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00022}00022\ \ \ \ \ this.password1\ =\ options.password;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00023}00023\ \ \ \ \ this.password2\ =\ options.password2;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00024}00024\ \ \ \ \ this.password3\ =\ options.password3;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00025}00025\ \ \ \ \ this.database\ =\ options.database;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00026}00026\ \ \ \ \ this.passwordSha1\ =\ options.passwordSha1;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00027}00027\ \ \ \ \ this.charsetNumber\ =\ options.charsetNumber;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00028}00028\ \ \ \ \ this.currentConfig\ =\ options.currentConfig;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00029}00029\ \ \ \ \ this.authenticationFactor\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00030}00030\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00031}\mbox{\hyperlink{a00672_addc804bcd06c8cf50a3cbf097e804364_addc804bcd06c8cf50a3cbf097e804364}{00031}}\ \ \ \mbox{\hyperlink{a00672_addc804bcd06c8cf50a3cbf097e804364_addc804bcd06c8cf50a3cbf097e804364}{start}}(packet,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{const}\ newPacket\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.ChangeUser(\{}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00033}00033\ \ \ \ \ \ \ flags:\ connection.config.clientFlags,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00034}00034\ \ \ \ \ \ \ user:\ this.user,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00035}00035\ \ \ \ \ \ \ database:\ this.database,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00036}00036\ \ \ \ \ \ \ charsetNumber:\ this.charsetNumber,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00037}00037\ \ \ \ \ \ \ password:\ this.password,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00038}00038\ \ \ \ \ \ \ passwordSha1:\ this.passwordSha1,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00039}00039\ \ \ \ \ \ \ authPluginData1:\ connection.\_handshakePacket.authPluginData1,}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00040}00040\ \ \ \ \ \ \ authPluginData2:\ connection.\_handshakePacket.authPluginData2}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00041}00041\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00042}00042\ \ \ \ \ this.currentConfig.user\ =\ this.user;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00043}00043\ \ \ \ \ this.currentConfig.password\ =\ this.password;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00044}00044\ \ \ \ \ this.currentConfig.database\ =\ this.database;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00045}00045\ \ \ \ \ this.currentConfig.charsetNumber\ =\ this.charsetNumber;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00046}00046\ \ \ \ \ connection.clientEncoding\ =\ \mbox{\hyperlink{a01801_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{CharsetToEncoding}}[this.charsetNumber];}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ clear\ prepared\ statements\ cache\ as\ all\ statements\ become\ invalid\ after\ changeUser}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00048}00048\ \ \ \ \ connection.\_statements.clear();}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00049}00049\ \ \ \ \ connection.writePacket(newPacket.toPacket());}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ check\ if\ the\ server\ supports\ multi-\/factor\ authentication}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{const}\ multiFactorAuthentication\ =\ connection.serverCapabilityFlags\ \&\ \mbox{\hyperlink{a01801_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}.MULTI\_FACTOR\_AUTHENTICATION;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (multiFactorAuthentication)\ \{}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00053}00053\ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ server\ supports\ multi-\/factor\ authentication,\ we\ enable\ it\ in}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00054}00054\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ client}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00055}00055\ \ \ \ \ \ \ this.authenticationFactor\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00672}{ChangeUser}}.prototype.handshakeResult;}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{a01798_source_l00061}\mbox{\hyperlink{a01798_ac9dc9fd1d4b2aa02d890625c67107c61_ac9dc9fd1d4b2aa02d890625c67107c61}{00061}}\ \mbox{\hyperlink{a00672}{ChangeUser}}.prototype.handshakeResult\ =}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00062}00062\ \ \ \mbox{\hyperlink{a00676}{ClientHandshake}}.prototype.\mbox{\hyperlink{a00676_aeb1492a5598740ab8f214a016d7ce65d_aeb1492a5598740ab8f214a016d7ce65d}{handshakeResult}};}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00063}\mbox{\hyperlink{a01798_a3ec703e3f3ac71445f0d98e89accbe69_a3ec703e3f3ac71445f0d98e89accbe69}{00063}}\ \mbox{\hyperlink{a00672}{ChangeUser}}.prototype.calculateNativePasswordAuthToken\ =}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00064}00064\ \ \ \mbox{\hyperlink{a00676}{ClientHandshake}}.prototype.\mbox{\hyperlink{a00676_a1763c2d361fbe39dc6dff14d17280a49_a1763c2d361fbe39dc6dff14d17280a49}{calculateNativePasswordAuthToken}};}
+\DoxyCodeLine{\Hypertarget{a01798_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{a01798_source_l00066}\mbox{\hyperlink{a01798_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00066}}\ module.exports\ =\ \mbox{\hyperlink{a01273_ac6efea14c55e0d33e1b8a7b181d40066_ac6efea14c55e0d33e1b8a7b181d40066}{ChangeUser}};}
+
+\end{DoxyCode}

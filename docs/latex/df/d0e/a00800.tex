@@ -1,0 +1,190 @@
+\doxysubsection{Referencia de la clase Pool}
+\hypertarget{a00800}{}\label{a00800}\index{Pool@{Pool}}
+
+
+Diagrama de herencia de Pool
+% FIG 0
+
+
+Diagrama de colaboración de Pool\+:
+% FIG 1
+\doxysubsubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00800_abd6e35d3aa9ba98773bae4f3e7cbd0d4_abd6e35d3aa9ba98773bae4f3e7cbd0d4}{constructor}} (options)
+\item 
+\mbox{\hyperlink{a00800_a29ea81c18f1c82159636c9d1bdc6a804_a29ea81c18f1c82159636c9d1bdc6a804}{promise}} (promise\+Impl)
+\item 
+\mbox{\hyperlink{a00800_acb586eb257e03bf7f0a4bb94724c0789_acb586eb257e03bf7f0a4bb94724c0789}{get\+Connection}} (cb)
+\item 
+\mbox{\hyperlink{a00800_aec266bc42cd073847995fd266fffdc84_aec266bc42cd073847995fd266fffdc84}{release\+Connection}} (connection)
+\item 
+\mbox{\hyperlink{a00800_ad4537bcecffa5fd8a8768fdd1ad08aed_ad4537bcecffa5fd8a8768fdd1ad08aed}{end}} (cb)
+\item 
+\mbox{\hyperlink{a00800_a7b80fda4124a2c48b4c144ec125b98d8_a7b80fda4124a2c48b4c144ec125b98d8}{query}} (sql, values, cb)
+\item 
+\mbox{\hyperlink{a00800_a5c63622b4c3cb616ac5fb68f7394a8f7_a5c63622b4c3cb616ac5fb68f7394a8f7}{execute}} (sql, values, cb)
+\item 
+\mbox{\hyperlink{a00800_a53bb021b8dbb7ded025af5ead68c4e2c_a53bb021b8dbb7ded025af5ead68c4e2c}{\+\_\+remove\+Connection}} (connection)
+\item 
+\mbox{\hyperlink{a00800_adee270b6963da42556c4ef7548c3ff73_adee270b6963da42556c4ef7548c3ff73}{\+\_\+remove\+Idle\+Timeout\+Connections}} ()
+\item 
+\mbox{\hyperlink{a00800_aada96aff24e86dd32bc23a3ab5de5d58_aada96aff24e86dd32bc23a3ab5de5d58}{format}} (sql, values)
+\item 
+\mbox{\hyperlink{a00800_ab731855a9d20dd6178586bf45f9c209e_ab731855a9d20dd6178586bf45f9c209e}{escape}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})
+\item 
+\mbox{\hyperlink{a00800_a4fbdfe1c451d9d524b4560305517f431_a4fbdfe1c451d9d524b4560305517f431}{escape\+Id}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00021}{21}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de funciones miembro}
+\Hypertarget{a00800_a53bb021b8dbb7ded025af5ead68c4e2c_a53bb021b8dbb7ded025af5ead68c4e2c}\index{Pool@{Pool}!\_removeConnection@{\_removeConnection}}
+\index{\_removeConnection@{\_removeConnection}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{\_removeConnection()}{\_removeConnection()}}
+{\footnotesize\ttfamily \label{a00800_a53bb021b8dbb7ded025af5ead68c4e2c_a53bb021b8dbb7ded025af5ead68c4e2c} 
+Pool\+::\+\_\+remove\+Connection (\begin{DoxyParamCaption}\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00187}{187}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{a00800_adee270b6963da42556c4ef7548c3ff73_adee270b6963da42556c4ef7548c3ff73}\index{Pool@{Pool}!\_removeIdleTimeoutConnections@{\_removeIdleTimeoutConnections}}
+\index{\_removeIdleTimeoutConnections@{\_removeIdleTimeoutConnections}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{\_removeIdleTimeoutConnections()}{\_removeIdleTimeoutConnections()}}
+{\footnotesize\ttfamily \label{a00800_adee270b6963da42556c4ef7548c3ff73_adee270b6963da42556c4ef7548c3ff73} 
+Pool\+::\+\_\+remove\+Idle\+Timeout\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00195}{195}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+Gráfico de llamadas a esta función\+:
+% FIG 4
+\Hypertarget{a00800_abd6e35d3aa9ba98773bae4f3e7cbd0d4_abd6e35d3aa9ba98773bae4f3e7cbd0d4}\index{Pool@{Pool}!constructor@{constructor}}
+\index{constructor@{constructor}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{constructor()}{constructor()}}
+{\footnotesize\ttfamily \label{a00800_abd6e35d3aa9ba98773bae4f3e7cbd0d4_abd6e35d3aa9ba98773bae4f3e7cbd0d4} 
+Pool\+::constructor (\begin{DoxyParamCaption}\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00022}{22}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 5
+\Hypertarget{a00800_ad4537bcecffa5fd8a8768fdd1ad08aed_ad4537bcecffa5fd8a8768fdd1ad08aed}\index{Pool@{Pool}!end@{end}}
+\index{end@{end}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{a00800_ad4537bcecffa5fd8a8768fdd1ad08aed_ad4537bcecffa5fd8a8768fdd1ad08aed} 
+Pool\+::end (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00101}{101}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+\Hypertarget{a00800_ab731855a9d20dd6178586bf45f9c209e_ab731855a9d20dd6178586bf45f9c209e}\index{Pool@{Pool}!escape@{escape}}
+\index{escape@{escape}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{escape()}{escape()}}
+{\footnotesize\ttfamily \label{a00800_ab731855a9d20dd6178586bf45f9c209e_ab731855a9d20dd6178586bf45f9c209e} 
+Pool\+::escape (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00225}{225}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+\Hypertarget{a00800_a4fbdfe1c451d9d524b4560305517f431_a4fbdfe1c451d9d524b4560305517f431}\index{Pool@{Pool}!escapeId@{escapeId}}
+\index{escapeId@{escapeId}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{escapeId()}{escapeId()}}
+{\footnotesize\ttfamily \label{a00800_a4fbdfe1c451d9d524b4560305517f431_a4fbdfe1c451d9d524b4560305517f431} 
+Pool\+::escape\+Id (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00233}{233}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+\Hypertarget{a00800_a5c63622b4c3cb616ac5fb68f7394a8f7_a5c63622b4c3cb616ac5fb68f7394a8f7}\index{Pool@{Pool}!execute@{execute}}
+\index{execute@{execute}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{a00800_a5c63622b4c3cb616ac5fb68f7394a8f7_a5c63622b4c3cb616ac5fb68f7394a8f7} 
+Pool\+::execute (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00165}{165}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+\Hypertarget{a00800_aada96aff24e86dd32bc23a3ab5de5d58_aada96aff24e86dd32bc23a3ab5de5d58}\index{Pool@{Pool}!format@{format}}
+\index{format@{format}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily \label{a00800_aada96aff24e86dd32bc23a3ab5de5d58_aada96aff24e86dd32bc23a3ab5de5d58} 
+Pool\+::format (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00216}{216}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+\Hypertarget{a00800_acb586eb257e03bf7f0a4bb94724c0789_acb586eb257e03bf7f0a4bb94724c0789}\index{Pool@{Pool}!getConnection@{getConnection}}
+\index{getConnection@{getConnection}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{getConnection()}{getConnection()}}
+{\footnotesize\ttfamily \label{a00800_acb586eb257e03bf7f0a4bb94724c0789_acb586eb257e03bf7f0a4bb94724c0789} 
+Pool\+::get\+Connection (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00041}{41}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 7
+\Hypertarget{a00800_a29ea81c18f1c82159636c9d1bdc6a804_a29ea81c18f1c82159636c9d1bdc6a804}\index{Pool@{Pool}!promise@{promise}}
+\index{promise@{promise}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{promise()}{promise()}}
+{\footnotesize\ttfamily \label{a00800_a29ea81c18f1c82159636c9d1bdc6a804_a29ea81c18f1c82159636c9d1bdc6a804} 
+Pool\+::promise (\begin{DoxyParamCaption}\item[{}]{promise\+Impl}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00036}{36}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+\Hypertarget{a00800_a7b80fda4124a2c48b4c144ec125b98d8_a7b80fda4124a2c48b4c144ec125b98d8}\index{Pool@{Pool}!query@{query}}
+\index{query@{query}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily \label{a00800_a7b80fda4124a2c48b4c144ec125b98d8_a7b80fda4124a2c48b4c144ec125b98d8} 
+Pool\+::query (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00134}{134}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 8
+\Hypertarget{a00800_aec266bc42cd073847995fd266fffdc84_aec266bc42cd073847995fd266fffdc84}\index{Pool@{Pool}!releaseConnection@{releaseConnection}}
+\index{releaseConnection@{releaseConnection}!Pool@{Pool}}
+\doxyparagraph{\texorpdfstring{releaseConnection()}{releaseConnection()}}
+{\footnotesize\ttfamily \label{a00800_aec266bc42cd073847995fd266fffdc84_aec266bc42cd073847995fd266fffdc84} 
+Pool\+::release\+Connection (\begin{DoxyParamCaption}\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00386_source_l00084}{84}} del archivo \mbox{\hyperlink{a00386_source}{pool.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 9
+Gráfico de llamadas a esta función\+:
+% FIG 10
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00386}{pool.\+js}}\end{DoxyCompactItemize}

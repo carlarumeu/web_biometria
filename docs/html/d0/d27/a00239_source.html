@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente sha256_password.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d0/d27/a00239_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sha256_password.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d27/a00239.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_acbb4c5f02ab36e356c3b3f65f566161b.html#acbb4c5f02ab36e356c3b3f65f566161b">    3</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d0/d27/a00239_acbb4c5f02ab36e356c3b3f65f566161b.html#acbb4c5f02ab36e356c3b3f65f566161b">PLUGIN_NAME</a> = <span class="stringliteral">&#39;sha256_password&#39;</span>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_a44d29f599486b46f8b3f74e5ff5e8b94.html#a44d29f599486b46f8b3f74e5ff5e8b94">    4</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d0/d27/a00239_a44d29f599486b46f8b3f74e5ff5e8b94.html#a44d29f599486b46f8b3f74e5ff5e8b94">crypto</a> = require(<span class="stringliteral">&#39;crypto&#39;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_a92b303b76a3f942ea819498907d5e83c.html#a92b303b76a3f942ea819498907d5e83c">    5</a></span><span class="keyword">const</span> { <a class="code hl_variable" href="../../d5/ddf/a00224_ab8e1d34fb39e74004156ceda02ba7b55.html#ab8e1d34fb39e74004156ceda02ba7b55">xorRotating</a> } = require(<span class="stringliteral">&#39;../auth_41&#39;</span>);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_a319d128b24a5994b40f78c67db00c188.html#a319d128b24a5994b40f78c67db00c188">    7</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d0/d27/a00239_a319d128b24a5994b40f78c67db00c188.html#a319d128b24a5994b40f78c67db00c188">REQUEST_SERVER_KEY_PACKET</a> = Buffer.from([1]);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_a1f518cafe6895a42e3bbe2640cb3e559.html#a1f518cafe6895a42e3bbe2640cb3e559">    9</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d0/d27/a00239_a1f518cafe6895a42e3bbe2640cb3e559.html#a1f518cafe6895a42e3bbe2640cb3e559">STATE_INITIAL</a> = 0;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_a11cede967da32d9bed2ac84cbd1cc028.html#a11cede967da32d9bed2ac84cbd1cc028">   10</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d0/d27/a00239_a11cede967da32d9bed2ac84cbd1cc028.html#a11cede967da32d9bed2ac84cbd1cc028">STATE_WAIT_SERVER_KEY</a> = 1;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_acab7a117dcfa84c44d74d30ebe3444ea.html#acab7a117dcfa84c44d74d30ebe3444ea">   11</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d0/d27/a00239_acab7a117dcfa84c44d74d30ebe3444ea.html#acab7a117dcfa84c44d74d30ebe3444ea">STATE_FINAL</a> = -1;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_ad1f75d2d9eb08fff8577daddb0786d0c.html#ad1f75d2d9eb08fff8577daddb0786d0c">   13</a></span><span class="keyword">function</span> <a class="code hl_function" href="../../d0/d27/a00239_ad1f75d2d9eb08fff8577daddb0786d0c.html#ad1f75d2d9eb08fff8577daddb0786d0c">encrypt</a>(password, scramble, key) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">const</span> stage1 = <a class="code hl_variable" href="../../d5/ddf/a00224_ab8e1d34fb39e74004156ceda02ba7b55.html#ab8e1d34fb39e74004156ceda02ba7b55">xorRotating</a>(</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Buffer.from(`${password}\0`, <span class="stringliteral">&#39;utf8&#39;</span>),</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    scramble</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  );</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/d27/a00239_a44d29f599486b46f8b3f74e5ff5e8b94.html#a44d29f599486b46f8b3f74e5ff5e8b94">crypto</a>.publicEncrypt(key, stage1);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d0/d27/a00239_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">   21</a></span>module.exports = (pluginOptions = {}) =&gt; ({ connection }) =&gt; {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> state = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> scramble = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">const</span> password = connection.config.password;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keyword">const</span> authWithKey = serverKey =&gt; {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> _password = <a class="code hl_function" href="../../d0/d27/a00239_ad1f75d2d9eb08fff8577daddb0786d0c.html#ad1f75d2d9eb08fff8577daddb0786d0c">encrypt</a>(password, scramble, serverKey);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    state = <a class="code hl_variable" href="../../d0/d27/a00239_acab7a117dcfa84c44d74d30ebe3444ea.html#acab7a117dcfa84c44d74d30ebe3444ea">STATE_FINAL</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">return</span> _password;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  };</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordflow">return</span> data =&gt; {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">switch</span> (state) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d0/d27/a00239_a1f518cafe6895a42e3bbe2640cb3e559.html#a1f518cafe6895a42e3bbe2640cb3e559">STATE_INITIAL</a>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        scramble = data.slice(0, 20);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// if client provides key we can save one extra roundrip on first connection</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (pluginOptions.serverPublicKey) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>          <span class="keywordflow">return</span> authWithKey(pluginOptions.serverPublicKey);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        state = <a class="code hl_variable" href="../../d0/d27/a00239_a11cede967da32d9bed2ac84cbd1cc028.html#a11cede967da32d9bed2ac84cbd1cc028">STATE_WAIT_SERVER_KEY</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/d27/a00239_a319d128b24a5994b40f78c67db00c188.html#a319d128b24a5994b40f78c67db00c188">REQUEST_SERVER_KEY_PACKET</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d0/d27/a00239_a11cede967da32d9bed2ac84cbd1cc028.html#a11cede967da32d9bed2ac84cbd1cc028">STATE_WAIT_SERVER_KEY</a>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (pluginOptions.onServerPublicKey) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          pluginOptions.onServerPublicKey(data);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> authWithKey(data);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d0/d27/a00239_acab7a117dcfa84c44d74d30ebe3444ea.html#acab7a117dcfa84c44d74d30ebe3444ea">STATE_FINAL</a>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          `Unexpected data <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> AuthMoreData packet received by ${<a class="code hl_variable" href="../../d0/d27/a00239_acbb4c5f02ab36e356c3b3f65f566161b.html#acbb4c5f02ab36e356c3b3f65f566161b">PLUGIN_NAME</a>} <a class="code hl_variable" href="../../d6/d06/a00572_a2e8a79061fcc588ba355a7772b9d8eb5.html#a2e8a79061fcc588ba355a7772b9d8eb5">plugin</a> <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> <a class="code hl_variable" href="../../d0/d27/a00239_acab7a117dcfa84c44d74d30ebe3444ea.html#acab7a117dcfa84c44d74d30ebe3444ea">STATE_FINAL</a> state.`</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        );</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      `Unexpected data <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> AuthMoreData packet received by ${<a class="code hl_variable" href="../../d0/d27/a00239_acbb4c5f02ab36e356c3b3f65f566161b.html#acbb4c5f02ab36e356c3b3f65f566161b">PLUGIN_NAME</a>} <a class="code hl_variable" href="../../d6/d06/a00572_a2e8a79061fcc588ba355a7772b9d8eb5.html#a2e8a79061fcc588ba355a7772b9d8eb5">plugin</a> <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> state ${state}`</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    );</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+</div>
+<div class="ttc" id="aa00224_ab8e1d34fb39e74004156ceda02ba7b55_html_ab8e1d34fb39e74004156ceda02ba7b55"><div class="ttname"><a href="../../d5/ddf/a00224_ab8e1d34fb39e74004156ceda02ba7b55.html#ab8e1d34fb39e74004156ceda02ba7b55">xorRotating</a></div><div class="ttdeci">exports xorRotating</div><div class="ttdef"><b>Definition</b> <a href="../../d5/ddf/a00224_source.html#l00095">auth_41.js:95</a></div></div>
+<div class="ttc" id="aa00239_a11cede967da32d9bed2ac84cbd1cc028_html_a11cede967da32d9bed2ac84cbd1cc028"><div class="ttname"><a href="../../d0/d27/a00239_a11cede967da32d9bed2ac84cbd1cc028.html#a11cede967da32d9bed2ac84cbd1cc028">STATE_WAIT_SERVER_KEY</a></div><div class="ttdeci">const STATE_WAIT_SERVER_KEY</div><div class="ttdef"><b>Definition</b> <a href="#l00010">sha256_password.js:10</a></div></div>
+<div class="ttc" id="aa00239_a1f518cafe6895a42e3bbe2640cb3e559_html_a1f518cafe6895a42e3bbe2640cb3e559"><div class="ttname"><a href="../../d0/d27/a00239_a1f518cafe6895a42e3bbe2640cb3e559.html#a1f518cafe6895a42e3bbe2640cb3e559">STATE_INITIAL</a></div><div class="ttdeci">const STATE_INITIAL</div><div class="ttdef"><b>Definition</b> <a href="#l00009">sha256_password.js:9</a></div></div>
+<div class="ttc" id="aa00239_a319d128b24a5994b40f78c67db00c188_html_a319d128b24a5994b40f78c67db00c188"><div class="ttname"><a href="../../d0/d27/a00239_a319d128b24a5994b40f78c67db00c188.html#a319d128b24a5994b40f78c67db00c188">REQUEST_SERVER_KEY_PACKET</a></div><div class="ttdeci">const REQUEST_SERVER_KEY_PACKET</div><div class="ttdef"><b>Definition</b> <a href="#l00007">sha256_password.js:7</a></div></div>
+<div class="ttc" id="aa00239_a44d29f599486b46f8b3f74e5ff5e8b94_html_a44d29f599486b46f8b3f74e5ff5e8b94"><div class="ttname"><a href="../../d0/d27/a00239_a44d29f599486b46f8b3f74e5ff5e8b94.html#a44d29f599486b46f8b3f74e5ff5e8b94">crypto</a></div><div class="ttdeci">const crypto</div><div class="ttdef"><b>Definition</b> <a href="#l00004">sha256_password.js:4</a></div></div>
+<div class="ttc" id="aa00239_acab7a117dcfa84c44d74d30ebe3444ea_html_acab7a117dcfa84c44d74d30ebe3444ea"><div class="ttname"><a href="../../d0/d27/a00239_acab7a117dcfa84c44d74d30ebe3444ea.html#acab7a117dcfa84c44d74d30ebe3444ea">STATE_FINAL</a></div><div class="ttdeci">const STATE_FINAL</div><div class="ttdef"><b>Definition</b> <a href="#l00011">sha256_password.js:11</a></div></div>
+<div class="ttc" id="aa00239_acbb4c5f02ab36e356c3b3f65f566161b_html_acbb4c5f02ab36e356c3b3f65f566161b"><div class="ttname"><a href="../../d0/d27/a00239_acbb4c5f02ab36e356c3b3f65f566161b.html#acbb4c5f02ab36e356c3b3f65f566161b">PLUGIN_NAME</a></div><div class="ttdeci">const PLUGIN_NAME</div><div class="ttdef"><b>Definition</b> <a href="#l00003">sha256_password.js:3</a></div></div>
+<div class="ttc" id="aa00239_ad1f75d2d9eb08fff8577daddb0786d0c_html_ad1f75d2d9eb08fff8577daddb0786d0c"><div class="ttname"><a href="../../d0/d27/a00239_ad1f75d2d9eb08fff8577daddb0786d0c.html#ad1f75d2d9eb08fff8577daddb0786d0c">encrypt</a></div><div class="ttdeci">function encrypt(password, scramble, key)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">sha256_password.js:13</a></div></div>
+<div class="ttc" id="aa00572_a2e8a79061fcc588ba355a7772b9d8eb5_html_a2e8a79061fcc588ba355a7772b9d8eb5"><div class="ttname"><a href="../../d6/d06/a00572_a2e8a79061fcc588ba355a7772b9d8eb5.html#a2e8a79061fcc588ba355a7772b9d8eb5">plugin</a></div><div class="ttdeci">function y y ui plugin</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00114">jquery.js:114</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+<div class="ttc" id="aa01195_aaf64ea1eb68af5440a0249f7788f1af5_html_aaf64ea1eb68af5440a0249f7788f1af5"><div class="ttname"><a href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a></div><div class="ttdeci">var in</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00011">node_modules/generate-function/index.js:11</a></div></div>
+<div class="ttc" id="aa01276_ab90d95850f9ba1903a6704f6fa8eccb6_html_ab90d95850f9ba1903a6704f6fa8eccb6"><div class="ttname"><a href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a></div><div class="ttdeci">exports Error</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d37/a01276_source.html#l00152">node_modules/mysql2/lib/packets/index.js:152</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_8641b7cea6173ee3a9b00cd8b2e360d9.html">auth_plugins</a></li><li class="navelem"><a class="el" href="../../d0/d27/a00239.html">sha256_password.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

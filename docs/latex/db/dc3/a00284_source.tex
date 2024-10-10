@@ -1,0 +1,290 @@
+\doxysubsection{connection\+\_\+config.\+js}
+\hypertarget{a00284_source}{}\label{a00284_source}\index{connection\_config.js@{connection\_config.js}}
+\mbox{\hyperlink{a00284}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00001}00001\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ September\ 21,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00002}00002\ \textcolor{comment}{//\ New\ connection\ options\ for\ additional\ authentication\ factors\ were}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00003}00003\ \textcolor{comment}{//\ introduced.}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00004}00004\ \textcolor{comment}{//\ Multi-\/factor\ authentication\ capability\ is\ now\ enabled\ if\ one\ of\ these}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00005}00005\ \textcolor{comment}{//\ options\ is\ used.}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00006}00006\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00284_source_l00008}\mbox{\hyperlink{a00284_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00008}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a00284_source_l00010}\mbox{\hyperlink{a00284_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}{00010}}\ \textcolor{keyword}{const}\ \{\ URL\ \}\ =\ require(\textcolor{stringliteral}{'url'});}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00011}\mbox{\hyperlink{a00284_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{00011}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00284_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}\ =\ require(\textcolor{stringliteral}{'./constants/client'});}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00012}\mbox{\hyperlink{a00284_a9e874c65dfd6a2bd1d88ed059fdf48a1_a9e874c65dfd6a2bd1d88ed059fdf48a1}{00012}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00284_a9e874c65dfd6a2bd1d88ed059fdf48a1_a9e874c65dfd6a2bd1d88ed059fdf48a1}{Charsets}}\ =\ require(\textcolor{stringliteral}{'./constants/charsets'});}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00013}00013\ \textcolor{keyword}{const}\ \{\ \mbox{\hyperlink{a00572_a6641ae2f10ab157da5542f91413f064e_a6641ae2f10ab157da5542f91413f064e}{version}}\ \}\ =\ require(\textcolor{stringliteral}{'../package.json'})}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00014}00014\ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ SSLProfiles\ =\ \mbox{\hyperlink{a01195_a2d30a83186dbd0b9ecc3c1e9330136b6_a2d30a83186dbd0b9ecc3c1e9330136b6}{null}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a00284_source_l00016}\mbox{\hyperlink{a00284_aeb44902124e5835464033ee3acb464ac_aeb44902124e5835464033ee3acb464ac}{00016}}\ \mbox{\hyperlink{a00284_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}{const}}\ \mbox{\hyperlink{a00284_aeb44902124e5835464033ee3acb464ac_aeb44902124e5835464033ee3acb464ac}{validOptions}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00017}00017\ \ \ \mbox{\hyperlink{a01267_acb7887575c66f8b0d702bfbb959a11d1_acb7887575c66f8b0d702bfbb959a11d1}{authPlugins}}:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00018}00018\ \ \ authSwitchHandler:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00019}00019\ \ \ bigNumberStrings:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00020}00020\ \ \ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00021}00021\ \ \ charsetNumber:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00022}00022\ \ \ compress:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00023}00023\ \ \ connectAttributes:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00024}00024\ \ \ connectTimeout:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00025}00025\ \ \ database:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00026}00026\ \ \ dateStrings:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00027}00027\ \ \ \mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00028}00028\ \ \ decimalNumbers:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00029}00029\ \ \ enableKeepAlive:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00030}00030\ \ \ flags:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00031}00031\ \ \ host:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00032}00032\ \ \ insecureAuth:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00033}00033\ \ \ infileStreamFactory:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00034}00034\ \ \ isServer:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00035}00035\ \ \ keepAliveInitialDelay:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00036}00036\ \ \ localAddress:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00037}00037\ \ \ maxPreparedStatements:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00038}00038\ \ \ multipleStatements:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00039}00039\ \ \ namedPlaceholders:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00040}00040\ \ \ nestTables:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00041}00041\ \ \ password:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00042}00042\ \ \ \textcolor{comment}{//\ with\ multi-\/factor\ authentication,\ the\ main\ password\ (used\ for\ the\ first}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00043}00043\ \ \ \textcolor{comment}{//\ authentication\ factor)\ can\ be\ provided\ via\ password1}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00044}00044\ \ \ password1:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00045}00045\ \ \ password2:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00046}00046\ \ \ password3:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00047}00047\ \ \ passwordSha1:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00048}00048\ \ \ \mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00049}00049\ \ \ port:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00050}00050\ \ \ queryFormat:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00051}00051\ \ \ rowsAsArray:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00052}00052\ \ \ socketPath:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00053}00053\ \ \ ssl:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00054}00054\ \ \ \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00055}00055\ \ \ stringifyObjects:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00056}00056\ \ \ supportBigNumbers:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00057}00057\ \ \ timezone:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00058}00058\ \ \ trace:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00059}00059\ \ \ typeCast:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00060}00060\ \ \ uri:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00061}00061\ \ \ user:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00062}00062\ \ \ \textcolor{comment}{//\ These\ options\ are\ used\ for\ Pool}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00063}00063\ \ \ connectionLimit:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00064}00064\ \ \ maxIdle:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00065}00065\ \ \ idleTimeout:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00066}00066\ \ \ Promise:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00067}00067\ \ \ queueLimit:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00068}00068\ \ \ waitForConnections:\ 1,}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00069}00069\ \ \ jsonStrings:\ 1}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00070}00070\ \};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{a00284_source_l00072}\mbox{\hyperlink{a00724}{00072}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00724}{ConnectionConfig}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00073}\mbox{\hyperlink{a00724_a44cafc8e740afeda312d502a040bcaee_a44cafc8e740afeda312d502a040bcaee}{00073}}\ \ \ \mbox{\hyperlink{a00724_a44cafc8e740afeda312d502a040bcaee_a44cafc8e740afeda312d502a040bcaee}{constructor}}(options)\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ options\ ===\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00075}00075\ \ \ \ \ \ \ options\ =\ \mbox{\hyperlink{a00724}{ConnectionConfig}}.\mbox{\hyperlink{a00724_a1bf1807e1e92900d48de50ad48625ca2_a1bf1807e1e92900d48de50ad48625ca2}{parseUrl}}(options);}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00076}00076\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (options\ \&\&\ options.uri)\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uriOptions\ =\ \mbox{\hyperlink{a00724}{ConnectionConfig}}.\mbox{\hyperlink{a00724_a1bf1807e1e92900d48de50ad48625ca2_a1bf1807e1e92900d48de50ad48625ca2}{parseUrl}}(options.uri);}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00078}00078\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ key\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ uriOptions)\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Object.prototype.hasOwnProperty.call(uriOptions,\ key))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (options[key])\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00081}00081\ \ \ \ \ \ \ \ \ options[key]\ =\ uriOptions[key];}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00082}00082\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ key\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00085}00085\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Object.prototype.hasOwnProperty.call(options,\ key))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00284_aeb44902124e5835464033ee3acb464ac_aeb44902124e5835464033ee3acb464ac}{validOptions}}[key]\ !==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ REVIEW:\ Should\ this\ be\ emitted\ somehow?}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ no-\/console}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00089}00089\ \ \ \ \ \ \ \ \ console.error(}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \`{}Ignoring\ invalid\ configuration\ option\ passed\ to\ \mbox{\hyperlink{a00720}{Connection}}:\ \$\{key\}.\ This\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ currently\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ warning,\ but\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ future\ versions\ of\ MySQL2,\ an\ error\ will\ be\ thrown\ \textcolor{keywordflow}{if}\ you\ pass\ an\ invalid\ configuration\ option\ to\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ \mbox{\hyperlink{a00720}{Connection}}\`{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00091}00091\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00092}00092\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00094}00094\ \ \ \ \ this.isServer\ =\ options.isServer;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00095}00095\ \ \ \ \ this.\mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}\ =\ options.stream;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00096}00096\ \ \ \ \ this.host\ =\ options.host\ ||\ \textcolor{stringliteral}{'localhost'};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00097}00097\ \ \ \ \ this.port\ =\ (typeof\ options.port\ ===\ \textcolor{stringliteral}{'string'}\ ?\ parseInt(options.port,\ 10)\ :\ options.port)||\ 3306;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00098}00098\ \ \ \ \ this.localAddress\ =\ options.localAddress;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00099}00099\ \ \ \ \ this.socketPath\ =\ options.socketPath;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00100}00100\ \ \ \ \ this.user\ =\ options.user\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ for\ the\ purpose\ of\ multi-\/factor\ authentication,\ or\ not,\ the\ main}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ password\ (used\ for\ the\ 1st\ authentication\ factor)\ can\ also\ be}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//\ provided\ via\ the\ "{}password1"{}\ option}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00104}00104\ \ \ \ \ this.password\ =\ options.password\ ||\ options.password1\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00105}00105\ \ \ \ \ this.password2\ =\ options.password2\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00106}00106\ \ \ \ \ this.password3\ =\ options.password3\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00107}00107\ \ \ \ \ this.passwordSha1\ =\ options.passwordSha1\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00108}00108\ \ \ \ \ this.database\ =\ options.database;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00109}00109\ \ \ \ \ this.connectTimeout\ =\ isNaN(options.connectTimeout)}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00110}00110\ \ \ \ \ \ \ ?\ 10\ *\ 1000}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00111}00111\ \ \ \ \ \ \ :\ options.connectTimeout;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00112}00112\ \ \ \ \ this.insecureAuth\ =\ options.insecureAuth\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00113}00113\ \ \ \ \ this.infileStreamFactory\ =\ options.infileStreamFactory\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00114}00114\ \ \ \ \ this.supportBigNumbers\ =\ options.supportBigNumbers\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00115}00115\ \ \ \ \ this.bigNumberStrings\ =\ options.bigNumberStrings\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00116}00116\ \ \ \ \ this.decimalNumbers\ =\ options.decimalNumbers\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00117}00117\ \ \ \ \ this.dateStrings\ =\ options.dateStrings\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00118}00118\ \ \ \ \ this.\mbox{\hyperlink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug}}\ =\ options.debug;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00119}00119\ \ \ \ \ this.trace\ =\ options.trace\ !==\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00120}00120\ \ \ \ \ this.stringifyObjects\ =\ options.stringifyObjects\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00121}00121\ \ \ \ \ this.enableKeepAlive\ =\ options.enableKeepAlive\ !==\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00122}00122\ \ \ \ \ this.keepAliveInitialDelay\ =\ options.keepAliveInitialDelay;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00124}00124\ \ \ \ \ \ \ options.timezone\ \&\&}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00125}00125\ \ \ \ \ \ \ !/\string^(?:local|Z|[\ +-\/]\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}:\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}})\$/.test(options.timezone)}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00126}00126\ \ \ \ \ )\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00127}00127\ \ \ \ \ \ \ \textcolor{comment}{//\ strictly\ supports\ timezones\ specified\ by\ mysqljs/mysql:}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00128}00128\ \ \ \ \ \ \ \textcolor{comment}{//\ https://github.com/mysqljs/mysql\#user-\/content-\/connection-\/options}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00129}00129\ \ \ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line\ no-\/console}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00130}00130\ \ \ \ \ \ \ console.error(}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00131}00131\ \ \ \ \ \ \ \ \ \`{}Ignoring\ invalid\ timezone\ passed\ to\ \mbox{\hyperlink{a00720}{Connection}}:\ \$\{options.timezone\}.\ This\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ currently\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ warning,\ but\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ future\ versions\ of\ MySQL2,\ an\ error\ will\ be\ thrown\ \textcolor{keywordflow}{if}\ you\ pass\ an\ invalid\ configuration\ option\ to\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ \mbox{\hyperlink{a00720}{Connection}}\`{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00132}00132\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00133}00133\ \ \ \ \ \ \ \textcolor{comment}{//\ SqlStrings\ falls\ back\ to\ UTC\ on\ invalid\ timezone}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00134}00134\ \ \ \ \ \ \ this.timezone\ =\ \textcolor{charliteral}{'Z'};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00135}00135\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00136}00136\ \ \ \ \ \ \ this.timezone\ =\ options.timezone\ ||\ \textcolor{stringliteral}{'local'};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00138}00138\ \ \ \ \ this.queryFormat\ =\ options.queryFormat;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00139}00139\ \ \ \ \ this.\mbox{\hyperlink{a00533_a6292ea809b7ad5ee57995c471d3aaa0d_a6292ea809b7ad5ee57995c471d3aaa0d}{pool}}\ =\ options.pool\ ||\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00140}00140\ \ \ \ \ this.ssl\ =}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00141}00141\ \ \ \ \ \ \ typeof\ options.ssl\ ===\ \textcolor{stringliteral}{'string'}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00142}00142\ \ \ \ \ \ \ \ \ ?\ \mbox{\hyperlink{a00724}{ConnectionConfig}}.\mbox{\hyperlink{a00724_aca7dcb29c971bf0abf0b921e3cbfd065_aca7dcb29c971bf0abf0b921e3cbfd065}{getSSLProfile}}(options.ssl)}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00143}00143\ \ \ \ \ \ \ \ \ :\ options.ssl\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00144}00144\ \ \ \ \ this.multipleStatements\ =\ options.multipleStatements\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00145}00145\ \ \ \ \ this.rowsAsArray\ =\ options.rowsAsArray\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00146}00146\ \ \ \ \ this.namedPlaceholders\ =\ options.namedPlaceholders\ ||\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00147}00147\ \ \ \ \ this.nestTables\ =}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00148}00148\ \ \ \ \ \ \ options.nestTables\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ ?\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ :\ options.nestTables;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00149}00149\ \ \ \ \ this.typeCast\ =\ options.typeCast\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ ?\ \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}}\ :\ options.typeCast;}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00150}00150\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.timezone[0]\ ===\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00151}00151\ \ \ \ \ \ \ \textcolor{comment}{//\ "{}+"{}\ is\ a\ url\ encoded\ char\ for\ space\ so\ it}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00152}00152\ \ \ \ \ \ \ \textcolor{comment}{//\ gets\ translated\ to\ space\ when\ giving\ a}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00153}00153\ \ \ \ \ \ \ \textcolor{comment}{//\ connection\ string..}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00154}00154\ \ \ \ \ \ \ this.timezone\ =\ \`{}+\$\{this.timezone.slice(1)\}\`{};}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.ssl)\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00157}00157\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ this.ssl\ !==\ \textcolor{stringliteral}{'object'})\ \{}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \`{}\mbox{\hyperlink{a00293_a33f5bf655a02fa49b57363a440e22051_a33f5bf655a02fa49b57363a440e22051}{SSL}}\ profile\ must\ be\ an\ \textcolor{keywordtype}{object},\ instead\ it\textcolor{stringliteral}{'s\ a\ \$\{typeof\ this.ssl\}`}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00160}00160\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ );}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00161}00161\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00162}00162\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ Default\ rejectUnauthorized\ to\ true}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00163}00163\ \textcolor{stringliteral}{\ \ \ \ \ \ this.ssl.rejectUnauthorized\ =\ this.ssl.rejectUnauthorized\ !==\ false;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00164}00164\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00165}00165\ \textcolor{stringliteral}{\ \ \ \ this.maxPacketSize\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00166}00166\ \textcolor{stringliteral}{\ \ \ \ this.charsetNumber\ =\ options.charset}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00167}00167\ \textcolor{stringliteral}{\ \ \ \ \ \ ?\ ConnectionConfig.getCharsetNumber(options.charset)}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00168}00168\ \textcolor{stringliteral}{\ \ \ \ \ \ :\ options.charsetNumber\ ||\ Charsets.UTF8MB4\_UNICODE\_CI;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00169}00169\ \textcolor{stringliteral}{\ \ \ \ this.compress\ =\ options.compress\ ||\ false;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00170}00170\ \textcolor{stringliteral}{\ \ \ \ this.authPlugins\ =\ options.authPlugins;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00171}00171\ \textcolor{stringliteral}{\ \ \ \ this.authSwitchHandler\ =\ options.authSwitchHandler;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00172}00172\ \textcolor{stringliteral}{\ \ \ \ this.clientFlags\ =\ ConnectionConfig.mergeFlags(}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00173}00173\ \textcolor{stringliteral}{\ \ \ \ \ \ ConnectionConfig.getDefaultFlags(options),}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00174}00174\ \textcolor{stringliteral}{\ \ \ \ \ \ options.flags\ ||\ '}\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00175}00175\ \textcolor{stringliteral}{\ \ \ \ );}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00176}00176\ \textcolor{stringliteral}{\ \ \ \ //\ Default\ connection\ attributes}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00177}00177\ \textcolor{stringliteral}{\ \ \ \ //\ https://dev.mysql.com/doc/refman/8.0/en/performance-\/schema-\/connection-\/attribute-\/tables.html}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00178}00178\ \textcolor{stringliteral}{\ \ \ \ const\ defaultConnectAttributes\ =\ \ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00179}00179\ \textcolor{stringliteral}{\ \ \ \ \ \ \_client\_name:\ '}Node-\/MySQL-\/2\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00180}00180\ \textcolor{stringliteral}{\ \ \ \ \ \ \_client\_version:\ version}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00181}00181\ \textcolor{stringliteral}{\ \ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00182}00182\ \textcolor{stringliteral}{\ \ \ \ this.connectAttributes\ =\ \{\ ...defaultConnectAttributes,\ ...(options.connectAttributes\ ||\ \{\})\};}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00183}00183\ \textcolor{stringliteral}{\ \ \ \ this.maxPreparedStatements\ =\ options.maxPreparedStatements\ ||\ 16000;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00184}00184\ \textcolor{stringliteral}{\ \ \ \ this.jsonStrings\ =\ options.jsonStrings\ ||\ false;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00185}00185\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00186}00186\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00187}\mbox{\hyperlink{a00724_a88b0c23ad73c23a849d222b4b9980c9f_a88b0c23ad73c23a849d222b4b9980c9f}{00187}}\ \textcolor{stringliteral}{\ \ static\ mergeFlags(default\_flags,\ user\_flags)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00188}00188\ \textcolor{stringliteral}{\ \ \ \ let\ flags\ =\ 0x0,}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00189}00189\ \textcolor{stringliteral}{\ \ \ \ \ \ i;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00190}00190\ \textcolor{stringliteral}{\ \ \ \ if\ (!Array.isArray(user\_flags))\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00191}00191\ \textcolor{stringliteral}{\ \ \ \ \ \ user\_flags\ =\ String(user\_flags\ ||\ '}\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00192}00192\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ .toUpperCase()}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00193}00193\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ .split(/\(\backslash\)s*,+\(\backslash\)s*/);}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00194}00194\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00195}00195\ \textcolor{stringliteral}{\ \ \ \ //\ add\ default\ flags\ unless\ "{}blacklisted"{}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00196}00196\ \textcolor{stringliteral}{\ \ \ \ for\ (i\ in\ default\_flags)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00197}00197\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (user\_flags.indexOf(`-\/\$\{default\_flags[i]\}`)\ >=\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00198}00198\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00199}00199\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00200}00200\ \textcolor{stringliteral}{\ \ \ \ \ \ flags\ |=\ ClientConstants[default\_flags[i]]\ ||\ 0x0;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00201}00201\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00202}00202\ \textcolor{stringliteral}{\ \ \ \ //\ add\ user\ flags\ unless\ already\ already\ added}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00203}00203\ \textcolor{stringliteral}{\ \ \ \ for\ (i\ in\ user\_flags)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00204}00204\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (user\_flags[i][0]\ ===\ '}-\/\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00205}00205\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00206}00206\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00207}00207\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (default\_flags.indexOf(user\_flags[i])\ >=\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00208}00208\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ continue;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00209}00209\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00210}00210\ \textcolor{stringliteral}{\ \ \ \ \ \ flags\ |=\ ClientConstants[user\_flags[i]]\ ||\ 0x0;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00211}00211\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00212}00212\ \textcolor{stringliteral}{\ \ \ \ return\ flags;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00213}00213\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00214}00214\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00215}\mbox{\hyperlink{a00724_a9e83f707ddb707e50441ac56cc10c05f_a9e83f707ddb707e50441ac56cc10c05f}{00215}}\ \textcolor{stringliteral}{\ \ static\ getDefaultFlags(options)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00216}00216\ \textcolor{stringliteral}{\ \ \ \ const\ defaultFlags\ =\ [}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00217}00217\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_afd1a632c96ab0a037526bc8cc307d1c7_afd1a632c96ab0a037526bc8cc307d1c7}{LONG\_PASSWORD}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00218}00218\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_aaaf9eec4258b42c66c0b2369055f3de4_aaaf9eec4258b42c66c0b2369055f3de4}{FOUND\_ROWS}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00219}00219\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_adec98164553d583a4ab7363834b769e0_adec98164553d583a4ab7363834b769e0}{LONG\_FLAG}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00220}00220\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a77060d321737f654bedada9828a3d0dc_a77060d321737f654bedada9828a3d0dc}{CONNECT\_WITH\_DB}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00221}00221\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a22a1557a8aadc6e90ef3e313807f5326_a22a1557a8aadc6e90ef3e313807f5326}{ODBC}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00222}00222\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a7cce76282b9fcb039a1df3e640894cd3_a7cce76282b9fcb039a1df3e640894cd3}{LOCAL\_FILES}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00223}00223\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_ae95e44c3be325098eb5811f418b3d177_ae95e44c3be325098eb5811f418b3d177}{IGNORE\_SPACE}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00224}00224\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a60a0f87113aa9712019686f72a526595_a60a0f87113aa9712019686f72a526595}{PROTOCOL\_41}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00225}00225\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a07487de2ee1a9a44eb060e9cebc86c08_a07487de2ee1a9a44eb060e9cebc86c08}{IGNORE\_SIGPIPE}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00226}00226\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a85c55c7f822e8d2d229891290d1db19a_a85c55c7f822e8d2d229891290d1db19a}{TRANSACTIONS}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00227}00227\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a31f603dac063e79075cb4afe10de9284_a31f603dac063e79075cb4afe10de9284}{RESERVED}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00228}00228\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a63d2cd37aa6b3024dd6171edc6932dff_a63d2cd37aa6b3024dd6171edc6932dff}{SECURE\_CONNECTION}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00229}00229\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a757a4206bcc554e267b80aac19aa76b3_a757a4206bcc554e267b80aac19aa76b3}{MULTI\_RESULTS}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00230}00230\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a85c55c7f822e8d2d229891290d1db19a_a85c55c7f822e8d2d229891290d1db19a}{TRANSACTIONS}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00231}00231\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a7be7a795f89e0b1be1307758a66ce76b_a7be7a795f89e0b1be1307758a66ce76b}{SESSION\_TRACK}}\textcolor{stringliteral}{',}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00232}00232\ \textcolor{stringliteral}{\ \ \ \ \ \ '}\mbox{\hyperlink{a00293_a25e4ed3e8ba1cbd90382ecf8ef247f3a_a25e4ed3e8ba1cbd90382ecf8ef247f3a}{CONNECT\_ATTRS}}\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00233}00233\ \textcolor{stringliteral}{\ \ \ \ ];}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00234}00234\ \textcolor{stringliteral}{\ \ \ \ if\ (options\ \&\&\ options.multipleStatements)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00235}00235\ \textcolor{stringliteral}{\ \ \ \ \ \ defaultFlags.push('}\mbox{\hyperlink{a00293_ab368019f87b7d33fd61f7335fe53de3a_ab368019f87b7d33fd61f7335fe53de3a}{MULTI\_STATEMENTS}}\textcolor{stringliteral}{');}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00236}00236\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00237}00237\ \textcolor{stringliteral}{\ \ \ \ defaultFlags.push('}\mbox{\hyperlink{a00293_abc969e8a5c2dab64160537c424f78abe_abc969e8a5c2dab64160537c424f78abe}{PLUGIN\_AUTH}}\textcolor{stringliteral}{');}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00238}00238\ \textcolor{stringliteral}{\ \ \ \ defaultFlags.push('}\mbox{\hyperlink{a00293_af3440c0c0310506bef295b639044a05b_af3440c0c0310506bef295b639044a05b}{PLUGIN\_AUTH\_LENENC\_CLIENT\_DATA}}\textcolor{stringliteral}{');}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00239}00239\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00240}00240\ \textcolor{stringliteral}{\ \ \ \ return\ defaultFlags;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00241}00241\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00242}00242\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00243}\mbox{\hyperlink{a00724_ab9c92b8960b18e8f67e17673f1e3c6c7_ab9c92b8960b18e8f67e17673f1e3c6c7}{00243}}\ \textcolor{stringliteral}{\ \ static\ getCharsetNumber(charset)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00244}00244\ \textcolor{stringliteral}{\ \ \ \ const\ num\ =\ Charsets[charset.toUpperCase()];}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00245}00245\ \textcolor{stringliteral}{\ \ \ \ if\ (num\ ===\ undefined)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00246}00246\ \textcolor{stringliteral}{\ \ \ \ \ \ throw\ new\ TypeError(`Unknown\ charset\ '}\$\{\mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}\}\textcolor{stringliteral}{'\`{});}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00247}00247\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00248}00248\ \textcolor{stringliteral}{\ \ \ \ return\ num;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00249}00249\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00250}00250\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00251}\mbox{\hyperlink{a00724_aca7dcb29c971bf0abf0b921e3cbfd065_aca7dcb29c971bf0abf0b921e3cbfd065}{00251}}\ \textcolor{stringliteral}{\ \ static\ getSSLProfile(name)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00252}00252\ \textcolor{stringliteral}{\ \ \ \ if\ (!SSLProfiles)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00253}00253\ \textcolor{stringliteral}{\ \ \ \ \ \ SSLProfiles\ =\ require('}./constants/ssl\_profiles.js\textcolor{stringliteral}{');}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00254}00254\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00255}00255\ \textcolor{stringliteral}{\ \ \ \ const\ ssl\ =\ SSLProfiles[name];}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00256}00256\ \textcolor{stringliteral}{\ \ \ \ if\ (ssl\ ===\ undefined)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00257}00257\ \textcolor{stringliteral}{\ \ \ \ \ \ throw\ new\ TypeError(`Unknown\ SSL\ profile\ '}\$\{name\}\textcolor{stringliteral}{'\`{});}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00258}00258\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00259}00259\ \textcolor{stringliteral}{\ \ \ \ return\ ssl;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00260}00260\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00261}00261\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00262}\mbox{\hyperlink{a00724_a1bf1807e1e92900d48de50ad48625ca2_a1bf1807e1e92900d48de50ad48625ca2}{00262}}\ \textcolor{stringliteral}{\ \ static\ parseUrl(url)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00263}00263\ \textcolor{stringliteral}{\ \ \ \ const\ parsedUrl\ =\ new\ URL(url);}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00264}00264\ \textcolor{stringliteral}{\ \ \ \ const\ options\ =\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00265}00265\ \textcolor{stringliteral}{\ \ \ \ \ \ host:\ decodeURIComponent(parsedUrl.hostname),}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00266}00266\ \textcolor{stringliteral}{\ \ \ \ \ \ port:\ parseInt(parsedUrl.port,\ 10),}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00267}00267\ \textcolor{stringliteral}{\ \ \ \ \ \ database:\ decodeURIComponent(parsedUrl.pathname.slice(1)),}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00268}00268\ \textcolor{stringliteral}{\ \ \ \ \ \ user:\ decodeURIComponent(parsedUrl.username),}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00269}00269\ \textcolor{stringliteral}{\ \ \ \ \ \ password:\ decodeURIComponent(parsedUrl.password),}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00270}00270\ \textcolor{stringliteral}{\ \ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00271}00271\ \textcolor{stringliteral}{\ \ \ \ parsedUrl.searchParams.forEach((value,\ key)\ =>\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00272}00272\ \textcolor{stringliteral}{\ \ \ \ \ \ try\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00273}00273\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ //\ Try\ to\ parse\ this\ as\ a\ JSON\ expression\ first}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00274}00274\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ options[key]\ =\ JSON.parse(value);}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00275}00275\ \textcolor{stringliteral}{\ \ \ \ \ \ \}\ catch\ (err)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00276}00276\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ //\ Otherwise\ assume\ it\ is\ a\ plain\ string}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00277}00277\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ options[key]\ =\ value;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00278}00278\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00279}00279\ \textcolor{stringliteral}{\ \ \ \ \});}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00280}00280\ \textcolor{stringliteral}{\ \ \ \ return\ options;}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00281}00281\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00282}00282\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00283}00283\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a00284_source_l00284}\mbox{\hyperlink{a00284_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00284}}\ \textcolor{stringliteral}{module.exports\ =\ ConnectionConfig;}}
+
+\end{DoxyCode}

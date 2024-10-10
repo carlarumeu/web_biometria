@@ -1,0 +1,134 @@
+\doxysubsection{Referencia del archivo sha256\+\_\+password.\+js}
+\hypertarget{a00239}{}\label{a00239}\index{sha256\_password.js@{sha256\_password.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00239_ad1f75d2d9eb08fff8577daddb0786d0c_ad1f75d2d9eb08fff8577daddb0786d0c}{encrypt}} (password, scramble, key)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00239_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00239_acbb4c5f02ab36e356c3b3f65f566161b_acbb4c5f02ab36e356c3b3f65f566161b}{PLUGIN\+\_\+\+NAME}} = \textquotesingle{}\mbox{\hyperlink{a00242_ac39ed6febdc60aead625b5b3c8ce931a_ac39ed6febdc60aead625b5b3c8ce931a}{sha256\+\_\+password}}\textquotesingle{}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00239_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}{crypto}} = require(\textquotesingle{}crypto\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00239_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}{const}} \{ \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xor\+Rotating}} \} = require(\textquotesingle{}../auth\+\_\+41\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00239_a319d128b24a5994b40f78c67db00c188_a319d128b24a5994b40f78c67db00c188}{REQUEST\+\_\+\+SERVER\+\_\+\+KEY\+\_\+\+PACKET}} = Buffer.\+from(\mbox{[}1\mbox{]})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00239_a1f518cafe6895a42e3bbe2640cb3e559_a1f518cafe6895a42e3bbe2640cb3e559}{STATE\+\_\+\+INITIAL}} = 0
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00239_a11cede967da32d9bed2ac84cbd1cc028_a11cede967da32d9bed2ac84cbd1cc028}{STATE\+\_\+\+WAIT\+\_\+\+SERVER\+\_\+\+KEY}} = 1
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00239_acab7a117dcfa84c44d74d30ebe3444ea_acab7a117dcfa84c44d74d30ebe3444ea}{STATE\+\_\+\+FINAL}} = -\/1
+\item 
+module \mbox{\hyperlink{a00239_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00239_ad1f75d2d9eb08fff8577daddb0786d0c_ad1f75d2d9eb08fff8577daddb0786d0c}\index{sha256\_password.js@{sha256\_password.js}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \label{a00239_ad1f75d2d9eb08fff8577daddb0786d0c_ad1f75d2d9eb08fff8577daddb0786d0c} 
+function encrypt (\begin{DoxyParamCaption}\item[{}]{password}{, }\item[{}]{scramble}{, }\item[{}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00013}{13}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00239_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}\index{sha256\_password.js@{sha256\_password.js}!const@{const}}
+\index{const@{const}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{const}{const}}
+{\footnotesize\ttfamily \label{a00239_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c} 
+const \{ \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xor\+Rotating}} \} = require(\textquotesingle{}../auth\+\_\+41\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00005}{5}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}\index{sha256\_password.js@{sha256\_password.js}!crypto@{crypto}}
+\index{crypto@{crypto}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{crypto}{crypto}}
+{\footnotesize\ttfamily \label{a00239_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} crypto = require(\textquotesingle{}crypto\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00004}{4}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{sha256\_password.js@{sha256\_password.js}!exports@{exports}}
+\index{exports@{exports}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00239_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00021}{21}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_acbb4c5f02ab36e356c3b3f65f566161b_acbb4c5f02ab36e356c3b3f65f566161b}\index{sha256\_password.js@{sha256\_password.js}!PLUGIN\_NAME@{PLUGIN\_NAME}}
+\index{PLUGIN\_NAME@{PLUGIN\_NAME}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{PLUGIN\_NAME}{PLUGIN\_NAME}}
+{\footnotesize\ttfamily \label{a00239_acbb4c5f02ab36e356c3b3f65f566161b_acbb4c5f02ab36e356c3b3f65f566161b} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} PLUGIN\+\_\+\+NAME = \textquotesingle{}\mbox{\hyperlink{a00242_ac39ed6febdc60aead625b5b3c8ce931a_ac39ed6febdc60aead625b5b3c8ce931a}{sha256\+\_\+password}}\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00003}{3}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_a319d128b24a5994b40f78c67db00c188_a319d128b24a5994b40f78c67db00c188}\index{sha256\_password.js@{sha256\_password.js}!REQUEST\_SERVER\_KEY\_PACKET@{REQUEST\_SERVER\_KEY\_PACKET}}
+\index{REQUEST\_SERVER\_KEY\_PACKET@{REQUEST\_SERVER\_KEY\_PACKET}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{REQUEST\_SERVER\_KEY\_PACKET}{REQUEST\_SERVER\_KEY\_PACKET}}
+{\footnotesize\ttfamily \label{a00239_a319d128b24a5994b40f78c67db00c188_a319d128b24a5994b40f78c67db00c188} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} REQUEST\+\_\+\+SERVER\+\_\+\+KEY\+\_\+\+PACKET = Buffer.\+from(\mbox{[}1\mbox{]})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00007}{7}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_acab7a117dcfa84c44d74d30ebe3444ea_acab7a117dcfa84c44d74d30ebe3444ea}\index{sha256\_password.js@{sha256\_password.js}!STATE\_FINAL@{STATE\_FINAL}}
+\index{STATE\_FINAL@{STATE\_FINAL}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_FINAL}{STATE\_FINAL}}
+{\footnotesize\ttfamily \label{a00239_acab7a117dcfa84c44d74d30ebe3444ea_acab7a117dcfa84c44d74d30ebe3444ea} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+FINAL = -\/1}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00011}{11}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_a1f518cafe6895a42e3bbe2640cb3e559_a1f518cafe6895a42e3bbe2640cb3e559}\index{sha256\_password.js@{sha256\_password.js}!STATE\_INITIAL@{STATE\_INITIAL}}
+\index{STATE\_INITIAL@{STATE\_INITIAL}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_INITIAL}{STATE\_INITIAL}}
+{\footnotesize\ttfamily \label{a00239_a1f518cafe6895a42e3bbe2640cb3e559_a1f518cafe6895a42e3bbe2640cb3e559} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+INITIAL = 0}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00009}{9}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_a11cede967da32d9bed2ac84cbd1cc028_a11cede967da32d9bed2ac84cbd1cc028}\index{sha256\_password.js@{sha256\_password.js}!STATE\_WAIT\_SERVER\_KEY@{STATE\_WAIT\_SERVER\_KEY}}
+\index{STATE\_WAIT\_SERVER\_KEY@{STATE\_WAIT\_SERVER\_KEY}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_WAIT\_SERVER\_KEY}{STATE\_WAIT\_SERVER\_KEY}}
+{\footnotesize\ttfamily \label{a00239_a11cede967da32d9bed2ac84cbd1cc028_a11cede967da32d9bed2ac84cbd1cc028} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+WAIT\+\_\+\+SERVER\+\_\+\+KEY = 1}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00010}{10}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+
+\Hypertarget{a00239_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{sha256\_password.js@{sha256\_password.js}!strict@{strict}}
+\index{strict@{strict}!sha256\_password.js@{sha256\_password.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00239_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00239_source_l00001}{1}} del archivo \mbox{\hyperlink{a00239_source}{sha256\+\_\+password.\+js}}.
+

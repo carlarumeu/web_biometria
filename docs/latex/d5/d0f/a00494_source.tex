@@ -1,0 +1,29 @@
+\doxysubsection{formats.\+js}
+\hypertarget{a00494_source}{}\label{a00494_source}\index{formats.js@{formats.js}}
+\mbox{\hyperlink{a00494}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00001}\mbox{\hyperlink{a00494_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00494_source_l00003}\mbox{\hyperlink{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc}{00003}}\ var\ \mbox{\hyperlink{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc}{replace}}\ =\ String.prototype.replace;}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00004}\mbox{\hyperlink{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c}{00004}}\ var\ \mbox{\hyperlink{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c}{percentTwenties}}\ =\ /\%20/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}};}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00494_source_l00006}\mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{00006}}\ var\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00007}00007\ \ \ \ \ RFC1738:\ \textcolor{stringliteral}{'RFC1738'},}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00008}00008\ \ \ \ \ RFC3986:\ \textcolor{stringliteral}{'RFC3986'}}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00009}00009\ \};}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a00494_source_l00011}\mbox{\hyperlink{a00494_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00011}}\ module.exports\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00012}00012\ \ \ \ \ \textcolor{stringliteral}{'default'}:\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}.RFC3986,}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{a00062_a8b728f13fab33c62e04926e9947a6545_a8b728f13fab33c62e04926e9947a6545}{formatters}}:\ \{}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00014}00014\ \ \ \ \ \ \ \ \ RFC1738:\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc}{replace}}.call(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}},\ \mbox{\hyperlink{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c}{percentTwenties}},\ \textcolor{charliteral}{'+'});}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00016}00016\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00017}00017\ \ \ \ \ \ \ \ \ RFC3986:\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}});}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00020}00020\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00021}00021\ \ \ \ \ RFC1738:\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}.RFC1738,}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00022}00022\ \ \ \ \ RFC3986:\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}.RFC3986}
+\DoxyCodeLine{\Hypertarget{a00494_source_l00023}00023\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,33 @@
+\doxysubsection{commands/register\+\_\+slave.js}
+\hypertarget{a01816_source}{}\label{a01816_source}\index{register\_slave.js@{register\_slave.js}}
+\mbox{\hyperlink{a01816}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00001}\mbox{\hyperlink{a01816_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01816_source_l00003}\mbox{\hyperlink{a01816_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00684}{Command}}\ =\ require(\textcolor{stringliteral}{'./command'});}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00004}\mbox{\hyperlink{a01816_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01816_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}\ =\ require(\textcolor{stringliteral}{'../packets'});}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a01816_source_l00006}\mbox{\hyperlink{a00712}{00006}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00712}{RegisterSlave}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{a00684}{Command}}\ \{}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00007}\mbox{\hyperlink{a00712_a2004d4e8b2ea301097c1be87f2ec3f7c_a2004d4e8b2ea301097c1be87f2ec3f7c}{00007}}\ \ \ \mbox{\hyperlink{a00712_a2004d4e8b2ea301097c1be87f2ec3f7c_a2004d4e8b2ea301097c1be87f2ec3f7c}{constructor}}(opts,\ callback)\ \{}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00009}00009\ \ \ \ \ this.onResult\ =\ callback;}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00010}00010\ \ \ \ \ this.opts\ =\ opts;}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00011}00011\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a01816_source_l00013}\mbox{\hyperlink{a00712_af66ddcb9a5199dece42cdaaec32ddd6c_af66ddcb9a5199dece42cdaaec32ddd6c}{00013}}\ \ \ \mbox{\hyperlink{a00712_af66ddcb9a5199dece42cdaaec32ddd6c_af66ddcb9a5199dece42cdaaec32ddd6c}{start}}(packet,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{const}\ newPacket\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.RegisterSlave(this.opts);}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00015}00015\ \ \ \ \ connection.writePacket(newPacket.toPacket(1));}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00712}{RegisterSlave}}.prototype.\mbox{\hyperlink{a00712_aea42a5c44dd53bc9e25b74a71b9ba652_aea42a5c44dd53bc9e25b74a71b9ba652}{registerResponse}};}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00017}00017\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a01816_source_l00019}\mbox{\hyperlink{a00712_aea42a5c44dd53bc9e25b74a71b9ba652_aea42a5c44dd53bc9e25b74a71b9ba652}{00019}}\ \ \ \mbox{\hyperlink{a00712_aea42a5c44dd53bc9e25b74a71b9ba652_aea42a5c44dd53bc9e25b74a71b9ba652}{registerResponse}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.onResult)\ \{}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00021}00021\ \ \ \ \ \ \ \mbox{\hyperlink{a00197_abcedab16429ea0641c6596f556f2e102_abcedab16429ea0641c6596f556f2e102}{process}}.nextTick(this.onResult.bind(\textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00024}00024\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{a01816_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a01816_source_l00027}\mbox{\hyperlink{a01816_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00027}}\ module.exports\ =\ \mbox{\hyperlink{a01273_abdc5ee2a214041f0d60df998d804a973_abdc5ee2a214041f0d60df998d804a973}{RegisterSlave}};}
+
+\end{DoxyCode}

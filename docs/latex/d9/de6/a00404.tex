@@ -1,0 +1,288 @@
+\doxysubsection{Referencia del archivo utf32.\+js}
+\hypertarget{a00404}{}\label{a00404}\index{utf32.js@{utf32.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87}{Utf32\+Codec}} (codec\+Options, \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}})
+\item 
+function \mbox{\hyperlink{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309}{Utf32\+Encoder}} (options, codec)
+\item 
+function \mbox{\hyperlink{a00404_a2e017a9c85f2aa5cc96786a026f4bdb1_a2e017a9c85f2aa5cc96786a026f4bdb1}{Utf32\+Decoder}} (options, codec)
+\item 
+function \mbox{\hyperlink{a00404_aba981d54a53e686b330a70d05247e74f_aba981d54a53e686b330a70d05247e74f}{\+\_\+write\+Codepoint}} (dst, \mbox{\hyperlink{a00572_aff241db241bb474dade51b204204fcfd_aff241db241bb474dade51b204204fcfd}{offset}}, codepoint, bad\+Char)
+\item 
+function \mbox{\hyperlink{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910}{Utf32\+Auto\+Codec}} (options, \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}})
+\item 
+function \mbox{\hyperlink{a00404_a4736135f63d511de7ffe6216d4a6d713_a4736135f63d511de7ffe6216d4a6d713}{Utf32\+Auto\+Encoder}} (options, codec)
+\item 
+function \mbox{\hyperlink{a00404_a913c56ca05a4b002b96c0cfb843f475d_a913c56ca05a4b002b96c0cfb843f475d}{Utf32\+Auto\+Decoder}} (options, codec)
+\item 
+function \mbox{\hyperlink{a00404_af0913bd709f2392ab465e2f12a78599e_af0913bd709f2392ab465e2f12a78599e}{detect\+Encoding}} (bufs, default\+Encoding)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00404_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a00404_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}} = require(\textquotesingle{}safer-\/buffer\textquotesingle{}).Buffer
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae}{\+\_\+utf32}} = \mbox{\hyperlink{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87}{Utf32\+Codec}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_a1342becd9347ad909c6fdf1b85210999_a1342becd9347ad909c6fdf1b85210999}{utf32le}} = \{ type\+: \textquotesingle{}\mbox{\hyperlink{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae}{\+\_\+utf32}}\textquotesingle{}, is\+LE\+: \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}} \}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_a0d85cd8b1b2ff4ed525b1ac6b8298eef_a0d85cd8b1b2ff4ed525b1ac6b8298eef}{utf32be}} = \{ type\+: \textquotesingle{}\mbox{\hyperlink{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae}{\+\_\+utf32}}\textquotesingle{}, is\+LE\+: \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}} \}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_a737b057bbae62df0f3ce76ec2f2a90d2_a737b057bbae62df0f3ce76ec2f2a90d2}{ucs4le}} = \textquotesingle{}\mbox{\hyperlink{a00404_a1342becd9347ad909c6fdf1b85210999_a1342becd9347ad909c6fdf1b85210999}{utf32le}}\textquotesingle{}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_a05c0a60431d36c555c71cd749262b67a_a05c0a60431d36c555c71cd749262b67a}{ucs4be}} = \textquotesingle{}\mbox{\hyperlink{a00404_a0d85cd8b1b2ff4ed525b1ac6b8298eef_a0d85cd8b1b2ff4ed525b1ac6b8298eef}{utf32be}}\textquotesingle{}
+\item 
+\mbox{\hyperlink{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87}{Utf32\+Codec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00404_a8e77e07805128d12eb89ff985b4cedcd_a8e77e07805128d12eb89ff985b4cedcd}{encoder}} = \mbox{\hyperlink{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309}{Utf32\+Encoder}}
+\item 
+\mbox{\hyperlink{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87}{Utf32\+Codec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00404_adb2d9a21726e5c1803c028d28a4c15c2_adb2d9a21726e5c1803c028d28a4c15c2}{decoder}} = \mbox{\hyperlink{a00404_a2e017a9c85f2aa5cc96786a026f4bdb1_a2e017a9c85f2aa5cc96786a026f4bdb1}{Utf32\+Decoder}}
+\item 
+\mbox{\hyperlink{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309}{Utf32\+Encoder}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00404_ab6cfe160c79b6039bef97ba5dfcfdbef_ab6cfe160c79b6039bef97ba5dfcfdbef}{write}}
+\item 
+\mbox{\hyperlink{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309}{Utf32\+Encoder}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}{end}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_adde2f74f93c29fad2a8c79342db15617_adde2f74f93c29fad2a8c79342db15617}{utf32}} = \mbox{\hyperlink{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910}{Utf32\+Auto\+Codec}}
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a00404_a8e0230748dd9707b1401658dd53d83ba_a8e0230748dd9707b1401658dd53d83ba}{ucs4}} = \textquotesingle{}\mbox{\hyperlink{a00404_adde2f74f93c29fad2a8c79342db15617_adde2f74f93c29fad2a8c79342db15617}{utf32}}\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00404_aba981d54a53e686b330a70d05247e74f_aba981d54a53e686b330a70d05247e74f}\index{utf32.js@{utf32.js}!\_writeCodepoint@{\_writeCodepoint}}
+\index{\_writeCodepoint@{\_writeCodepoint}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{\_writeCodepoint()}{\_writeCodepoint()}}
+{\footnotesize\ttfamily \label{a00404_aba981d54a53e686b330a70d05247e74f_aba981d54a53e686b330a70d05247e74f} 
+function \+\_\+write\+Codepoint (\begin{DoxyParamCaption}\item[{}]{dst}{, }\item[{}]{offset}{, }\item[{}]{codepoint}{, }\item[{}]{bad\+Char}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00155}{155}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_af0913bd709f2392ab465e2f12a78599e_af0913bd709f2392ab465e2f12a78599e}\index{utf32.js@{utf32.js}!detectEncoding@{detectEncoding}}
+\index{detectEncoding@{detectEncoding}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{detectEncoding()}{detectEncoding()}}
+{\footnotesize\ttfamily \label{a00404_af0913bd709f2392ab465e2f12a78599e_af0913bd709f2392ab465e2f12a78599e} 
+function detect\+Encoding (\begin{DoxyParamCaption}\item[{}]{bufs}{, }\item[{}]{default\+Encoding}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00275}{275}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 0
+\Hypertarget{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910}\index{utf32.js@{utf32.js}!Utf32AutoCodec@{Utf32AutoCodec}}
+\index{Utf32AutoCodec@{Utf32AutoCodec}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Utf32AutoCodec()}{Utf32AutoCodec()}}
+{\footnotesize\ttfamily \label{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910} 
+function Utf32\+Auto\+Codec (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{iconv}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00195}{195}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a913c56ca05a4b002b96c0cfb843f475d_a913c56ca05a4b002b96c0cfb843f475d}\index{utf32.js@{utf32.js}!Utf32AutoDecoder@{Utf32AutoDecoder}}
+\index{Utf32AutoDecoder@{Utf32AutoDecoder}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Utf32AutoDecoder()}{Utf32AutoDecoder()}}
+{\footnotesize\ttfamily \label{a00404_a913c56ca05a4b002b96c0cfb843f475d_a913c56ca05a4b002b96c0cfb843f475d} 
+function Utf32\+Auto\+Decoder (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{codec}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00223}{223}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a4736135f63d511de7ffe6216d4a6d713_a4736135f63d511de7ffe6216d4a6d713}\index{utf32.js@{utf32.js}!Utf32AutoEncoder@{Utf32AutoEncoder}}
+\index{Utf32AutoEncoder@{Utf32AutoEncoder}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Utf32AutoEncoder()}{Utf32AutoEncoder()}}
+{\footnotesize\ttfamily \label{a00404_a4736135f63d511de7ffe6216d4a6d713_a4736135f63d511de7ffe6216d4a6d713} 
+function Utf32\+Auto\+Encoder (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{codec}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00204}{204}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87}\index{utf32.js@{utf32.js}!Utf32Codec@{Utf32Codec}}
+\index{Utf32Codec@{Utf32Codec}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Utf32Codec()}{Utf32Codec()}}
+{\footnotesize\ttfamily \label{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87} 
+function Utf32\+Codec (\begin{DoxyParamCaption}\item[{}]{codec\+Options}{, }\item[{}]{iconv}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00009}{9}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a2e017a9c85f2aa5cc96786a026f4bdb1_a2e017a9c85f2aa5cc96786a026f4bdb1}\index{utf32.js@{utf32.js}!Utf32Decoder@{Utf32Decoder}}
+\index{Utf32Decoder@{Utf32Decoder}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Utf32Decoder()}{Utf32Decoder()}}
+{\footnotesize\ttfamily \label{a00404_a2e017a9c85f2aa5cc96786a026f4bdb1_a2e017a9c85f2aa5cc96786a026f4bdb1} 
+function Utf32\+Decoder (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{codec}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00100}{100}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309}\index{utf32.js@{utf32.js}!Utf32Encoder@{Utf32Encoder}}
+\index{Utf32Encoder@{Utf32Encoder}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Utf32Encoder()}{Utf32Encoder()}}
+{\footnotesize\ttfamily \label{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309} 
+function Utf32\+Encoder (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{codec}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00027}{27}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae}\index{utf32.js@{utf32.js}!\_utf32@{\_utf32}}
+\index{\_utf32@{\_utf32}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{\_utf32}{\_utf32}}
+{\footnotesize\ttfamily \label{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \+\_\+utf32 = \mbox{\hyperlink{a00404_aea400ff3e39b93e0b6fdaf9c37c5df87_aea400ff3e39b93e0b6fdaf9c37c5df87}{Utf32\+Codec}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00007}{7}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}\index{utf32.js@{utf32.js}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily \label{a00404_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4} 
+var Buffer = require(\textquotesingle{}safer-\/buffer\textquotesingle{}).Buffer}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00003}{3}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_adb2d9a21726e5c1803c028d28a4c15c2_adb2d9a21726e5c1803c028d28a4c15c2}\index{utf32.js@{utf32.js}!decoder@{decoder}}
+\index{decoder@{decoder}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{decoder}{decoder}}
+{\footnotesize\ttfamily \label{a00404_adb2d9a21726e5c1803c028d28a4c15c2_adb2d9a21726e5c1803c028d28a4c15c2} 
+\mbox{\hyperlink{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910}{Utf32\+Auto\+Codec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} decoder = \mbox{\hyperlink{a00404_a2e017a9c85f2aa5cc96786a026f4bdb1_a2e017a9c85f2aa5cc96786a026f4bdb1}{Utf32\+Decoder}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00023}{23}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a8e77e07805128d12eb89ff985b4cedcd_a8e77e07805128d12eb89ff985b4cedcd}\index{utf32.js@{utf32.js}!encoder@{encoder}}
+\index{encoder@{encoder}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{encoder}{encoder}}
+{\footnotesize\ttfamily \label{a00404_a8e77e07805128d12eb89ff985b4cedcd_a8e77e07805128d12eb89ff985b4cedcd} 
+\mbox{\hyperlink{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910}{Utf32\+Auto\+Codec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} encoder = \mbox{\hyperlink{a00404_a70d168479f579711e5998682a0d7f309_a70d168479f579711e5998682a0d7f309}{Utf32\+Encoder}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00022}{22}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}\index{utf32.js@{utf32.js}!end@{end}}
+\index{end@{end}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \label{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e} 
+\mbox{\hyperlink{a00404_a913c56ca05a4b002b96c0cfb843f475d_a913c56ca05a4b002b96c0cfb843f475d}{Utf32\+Auto\+Decoder}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} end}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!this.highSurrogate)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ var\ buf\ =\ \mbox{\hyperlink{a00404_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.alloc(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (this.isLE)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ buf.writeUInt32LE(this.highSurrogate,\ 0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ buf.writeUInt32BE(this.highSurrogate,\ 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ this.highSurrogate\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00081}{81}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{utf32.js@{utf32.js}!strict@{strict}}
+\index{strict@{strict}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00404_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00001}{1}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a8e0230748dd9707b1401658dd53d83ba_a8e0230748dd9707b1401658dd53d83ba}\index{utf32.js@{utf32.js}!ucs4@{ucs4}}
+\index{ucs4@{ucs4}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{ucs4}{ucs4}}
+{\footnotesize\ttfamily \label{a00404_a8e0230748dd9707b1401658dd53d83ba_a8e0230748dd9707b1401658dd53d83ba} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} ucs4 = \textquotesingle{}\mbox{\hyperlink{a00404_adde2f74f93c29fad2a8c79342db15617_adde2f74f93c29fad2a8c79342db15617}{utf32}}\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00193}{193}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a05c0a60431d36c555c71cd749262b67a_a05c0a60431d36c555c71cd749262b67a}\index{utf32.js@{utf32.js}!ucs4be@{ucs4be}}
+\index{ucs4be@{ucs4be}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{ucs4be}{ucs4be}}
+{\footnotesize\ttfamily \label{a00404_a05c0a60431d36c555c71cd749262b67a_a05c0a60431d36c555c71cd749262b67a} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} ucs4be = \textquotesingle{}\mbox{\hyperlink{a00404_a0d85cd8b1b2ff4ed525b1ac6b8298eef_a0d85cd8b1b2ff4ed525b1ac6b8298eef}{utf32be}}\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00020}{20}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a737b057bbae62df0f3ce76ec2f2a90d2_a737b057bbae62df0f3ce76ec2f2a90d2}\index{utf32.js@{utf32.js}!ucs4le@{ucs4le}}
+\index{ucs4le@{ucs4le}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{ucs4le}{ucs4le}}
+{\footnotesize\ttfamily \label{a00404_a737b057bbae62df0f3ce76ec2f2a90d2_a737b057bbae62df0f3ce76ec2f2a90d2} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} ucs4le = \textquotesingle{}\mbox{\hyperlink{a00404_a1342becd9347ad909c6fdf1b85210999_a1342becd9347ad909c6fdf1b85210999}{utf32le}}\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00019}{19}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_adde2f74f93c29fad2a8c79342db15617_adde2f74f93c29fad2a8c79342db15617}\index{utf32.js@{utf32.js}!utf32@{utf32}}
+\index{utf32@{utf32}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{utf32}{utf32}}
+{\footnotesize\ttfamily \label{a00404_adde2f74f93c29fad2a8c79342db15617_adde2f74f93c29fad2a8c79342db15617} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} utf32 = \mbox{\hyperlink{a00404_a73f770d2fc8ae96a600ac56341eff910_a73f770d2fc8ae96a600ac56341eff910}{Utf32\+Auto\+Codec}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00192}{192}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a0d85cd8b1b2ff4ed525b1ac6b8298eef_a0d85cd8b1b2ff4ed525b1ac6b8298eef}\index{utf32.js@{utf32.js}!utf32be@{utf32be}}
+\index{utf32be@{utf32be}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{utf32be}{utf32be}}
+{\footnotesize\ttfamily \label{a00404_a0d85cd8b1b2ff4ed525b1ac6b8298eef_a0d85cd8b1b2ff4ed525b1ac6b8298eef} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} utf32be = \{ type\+: \textquotesingle{}\mbox{\hyperlink{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae}{\+\_\+utf32}}\textquotesingle{}, is\+LE\+: \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}} \}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00016}{16}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_a1342becd9347ad909c6fdf1b85210999_a1342becd9347ad909c6fdf1b85210999}\index{utf32.js@{utf32.js}!utf32le@{utf32le}}
+\index{utf32le@{utf32le}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{utf32le}{utf32le}}
+{\footnotesize\ttfamily \label{a00404_a1342becd9347ad909c6fdf1b85210999_a1342becd9347ad909c6fdf1b85210999} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} utf32le = \{ type\+: \textquotesingle{}\mbox{\hyperlink{a00404_a6a198a3d1b76b61220884b499489ecae_a6a198a3d1b76b61220884b499489ecae}{\+\_\+utf32}}\textquotesingle{}, is\+LE\+: \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}} \}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00015}{15}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+
+\Hypertarget{a00404_ab6cfe160c79b6039bef97ba5dfcfdbef_ab6cfe160c79b6039bef97ba5dfcfdbef}\index{utf32.js@{utf32.js}!write@{write}}
+\index{write@{write}!utf32.js@{utf32.js}}
+\doxyparagraph{\texorpdfstring{write}{write}}
+{\footnotesize\ttfamily \label{a00404_ab6cfe160c79b6039bef97ba5dfcfdbef_ab6cfe160c79b6039bef97ba5dfcfdbef} 
+\mbox{\hyperlink{a00404_a913c56ca05a4b002b96c0cfb843f475d_a913c56ca05a4b002b96c0cfb843f475d}{Utf32\+Auto\+Decoder}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} write}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00404_source_l00032}{32}} del archivo \mbox{\hyperlink{a00404_source}{utf32.\+js}}.
+

@@ -1,0 +1,102 @@
+\doxysection{README}
+\hypertarget{a00996}{}\label{a00996}\index{README@{README}}
+ \&\#xa0;  \doxysubsection*{PROYECTO BIOMETRÍA Y MEDIOAMBIENTE}
+
+\doxysubsubsection*{Contenedores Docker, Base de Datos y API}
+
+
+
+\href{\#dart-about}{\texttt{ Acerca del proyecto}} \&\#xa0; \texorpdfstring{$\vert$}{|} \&\#xa0; \href{\#rocket-technologies}{\texttt{ Tecnologías}} \&\#xa0; \texorpdfstring{$\vert$}{|} \&\#xa0; \href{\#white_check_mark-requirements}{\texttt{ Requisitos}} \&\#xa0; \texorpdfstring{$\vert$}{|} \&\#xa0; \href{\#checkered_flag-starting}{\texttt{ Comenzando}} \&\#xa0; \texorpdfstring{$\vert$}{|} \&\#xa0; \href{\#computer-database-queries}{\texttt{ Consultas}} \&\#xa0; \texorpdfstring{$\vert$}{|} \&\#xa0; \href{\#memo-license}{\texttt{ Licencia}} \&\#xa0; \texorpdfstring{$\vert$}{|} \&\#xa0; \href{https://github.com/eleecash}{\texttt{ Autor}} 
+
+~\newline
+
+
+\doxysubsubsection*{\+:dart\+: Acerca del proyecto}
+
+Este proyecto define una API REST para obtener y almacenar mediciones de sensores de gases. Utiliza una arquitectura Docker con contenedores para la aplicación Node.\+js y una base de datos My\+SQL, permitiendo un entorno fácilmente replicable y escalable.
+
+\doxysubsubsection*{\+:rocket\+: Tecnologías}
+
+
+\begin{DoxyItemize}
+\item Docker
+\item Node.\+js
+\item My\+SQL
+\item Express
+\item My\+SQL2 (Node Package)
+\end{DoxyItemize}
+
+\doxysubsubsection*{\+:white\+\_\+check\+\_\+mark\+: Requisitos}
+
+Antes de comenzar, asegúrate de tener Git, Node.\+js y Docker instalados en tu máquina.
+
+Asegúrate de definir las siguientes variables de entorno en un archivo .env en el directorio raíz del proyecto\+:
+
+MYSQLDB\+\_\+\+HOST=mysqldb MYSQLDB\+\_\+\+USER=root MYSQLDB\+\_\+\+ROOT\+\_\+\+PASSWORD=123456 MYSQLDB\+\_\+\+DATABASE=biometria\+\_\+bbdd MYSQLDB\+\_\+\+LOCAL\+\_\+\+PORT=3306 MYSQLDB\+\_\+\+DOCKER\+\_\+\+PORT=3306
+
+NODE\+\_\+\+LOCAL\+\_\+\+PORT=3000 NODE\+\_\+\+DOCKER\+\_\+\+PORT=3000
+
+\doxysubsubsection*{\+:checkered\+\_\+flag\+: Comenzando}
+
+Pasos para clonar y levantar los contenedores Docker\+: Clonar el proyecto desde Git\+Hub\+:
+
+
+\begin{DoxyEnumerate}
+\item Clonar el proyecto desde Git\+Hub\+: \href{https://github.com/carlarumeu/web_biometria}{\texttt{ https\+://github.\+com/carlarumeu/web\+\_\+biometria}}
+\item Accede al directorio del proyecto\+: cd web\+\_\+biometria
+\item Crea el archivo .env con las variables de entorno necesarias\+: touch .env
+\item Construir y levantar los contenedores utilizando Docker Compose\+: docker-\/compose up --build
+\item Accede a la aplicación\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item La API estará disponible en \href{http://localhost:3000}{\texttt{ http\+://localhost\+:3000}}.
+\item La base de datos My\+SQL estará escuchando en el puerto 3306.
+\end{DoxyItemize}
+
+Estructura del Proyecto\+:
+\begin{DoxyItemize}
+\item Dockerfile\+: Define la imagen de Node.\+js para la aplicación y el entorno de trabajo.
+\item docker-\/compose.\+yml\+: Configura los servicios de Docker para la base de datos My\+SQL y la aplicación Node.\+js.
+\item \doxylink{a00533}{db.\+js}\+: Configuración de la conexión a la base de datos.
+\item \doxylink{a00536}{medicion\+Controller.\+js}\+: Controladores para manejar las rutas de la API.
+\item \doxylink{a00638}{medicion\+Service.\+js}\+: Servicios que interactúan con la base de datos.
+\item index.\+js\+: Punto de entrada principal del servidor Express.
+\item database-\/init.\+sql\+: Script SQL para inicializar la base de datos.
+\item ejemplosdatos.\+sql\+: Datos de ejemplo para pruebas iniciales.
+\end{DoxyItemize}
+
+\doxysubsubsection*{\+:computer\+: Consultas a la Base de Datos}
+
+
+\begin{DoxyItemize}
+\item Obtener todas las mediciones\+: GET /mediciones
+\end{DoxyItemize}
+
+Parámetros opcionales\+:
+
+
+\begin{DoxyItemize}
+\item lugar\+: Filtra por lugar.
+\item tipo\+\_\+gas\+: Filtra por tipo de gas.
+\item desde\+\_\+hora\+: Filtra desde una hora específica.
+\item hasta\+\_\+hora\+: Filtra hasta una hora específica.
+\item Enviar una nueva medición POST /mediciones
+\end{DoxyItemize}
+
+Cuerpo de la solicitud (JSON)\+:
+
+\{ "{}medida"{}\+: 50.\+5, "{}lugar"{}\+: "{}\+Zona Industrial"{}, "{}tipo\+\_\+gas"{}\+: "{}\+CO2"{}, "{}hora"{}\+: "{}2024-\/09-\/26\+T14\+:30\+:00"{} \}
+
+
+\begin{DoxyItemize}
+\item Obtener la última medición registrada\+: GET /mediciones/ultima
+\item Inicializar la base de datos manualmente\+: Si necesitas inicializar o reinicializar la base de datos, puedes usar los archivos SQL proporcionados en la carpeta src/mysql-\/init/\+:
+\end{DoxyItemize}
+
+database-\/init.\+sql\+: Crea las tablas necesarias. ejemplosdatos.\+sql\+: Inserta datos de ejemplo en la tabla mediciones.
+
+\doxysubsubsection*{\+:memo\+: License}
+
+Este proyecto está bajo la licencia MIT.
+
+Hecho con \+:heart\+: por Carla Rumeu Montesinos 

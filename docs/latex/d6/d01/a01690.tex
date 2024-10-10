@@ -1,0 +1,105 @@
+\doxysubsection{Referencia del archivo express/lib/middleware/query.js}
+\hypertarget{a01690}{}\label{a01690}\index{query.js@{query.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01690_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\begin{DoxyCompactList}\small\item\em express Copyright(c) 2009-\/2013 TJ Holowaychuk Copyright(c) 2013 Roman Shtylman Copyright(c) 2014-\/2015 Douglas Christopher Wilson MIT Licensed \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01690_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}
+\begin{DoxyCompactList}\small\item\em Module dependencies. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}} = require(\textquotesingle{}qs\textquotesingle{})
+\item 
+module \mbox{\hyperlink{a01690_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01690_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{query.js@{query.js}!exports@{exports}}
+\index{exports@{exports}!query.js@{query.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01690_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}(options)\ \{}
+\DoxyCodeLine{\ \ var\ opts\ =\ \mbox{\hyperlink{a01690_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}(\{\},\ options)}
+\DoxyCodeLine{\ \ var\ queryparse\ =\ \mbox{\hyperlink{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}{qs}}.parse;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (typeof\ options\ ===\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\ \ \ \ queryparse\ =\ options;}
+\DoxyCodeLine{\ \ \ \ opts\ =\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (opts\ !==\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}\ \&\&\ opts.allowPrototypes\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}})\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ opts.allowPrototypes\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00101_a3934419f0f9a2068c705a0013b77fab3_a3934419f0f9a2068c705a0013b77fab3}{query}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ next)\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.query)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ var\ val\ =\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}).query;}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.query\ =\ queryparse(val,\ opts);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ next();}
+\DoxyCodeLine{\ \ \};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Object\}} & options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Function\} @api public 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01690_source_l00025}{25}} del archivo \mbox{\hyperlink{a01690_source}{express/lib/middleware/query.\+js}}.
+
+\Hypertarget{a01690_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}\index{query.js@{query.js}!merge@{merge}}
+\index{merge@{merge}!query.js@{query.js}}
+\doxyparagraph{\texorpdfstring{merge}{merge}}
+{\footnotesize\ttfamily \label{a01690_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57} 
+var merge}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ require(\textcolor{stringliteral}{'utils-\/merge'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}\ =\ require('parseurl')}
+
+\end{DoxyCode}
+
+
+Module dependencies. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01690_source_l00015}{15}} del archivo \mbox{\hyperlink{a01690_source}{express/lib/middleware/query.\+js}}.
+
+\Hypertarget{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af}\index{query.js@{query.js}!qs@{qs}}
+\index{qs@{qs}!query.js@{query.js}}
+\doxyparagraph{\texorpdfstring{qs}{qs}}
+{\footnotesize\ttfamily \label{a01690_ae113bda2a6abef22f6372c8fd21e22af_ae113bda2a6abef22f6372c8fd21e22af} 
+var qs = require(\textquotesingle{}qs\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01690_source_l00017}{17}} del archivo \mbox{\hyperlink{a01690_source}{express/lib/middleware/query.\+js}}.
+
+\Hypertarget{a01690_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{query.js@{query.js}!strict@{strict}}
+\index{strict@{strict}!query.js@{query.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01690_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+express Copyright(c) 2009-\/2013 TJ Holowaychuk Copyright(c) 2013 Roman Shtylman Copyright(c) 2014-\/2015 Douglas Christopher Wilson MIT Licensed 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01690_source_l00009}{9}} del archivo \mbox{\hyperlink{a01690_source}{express/lib/middleware/query.\+js}}.
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente mime.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dd/dc1/a00212_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mime.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dc1/a00212.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">    1</a></span>var <a class="code hl_variable" href="../../dd/dc1/a00212_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a> = require(<span class="stringliteral">&#39;path&#39;</span>);</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">    2</a></span>var <a class="code hl_variable" href="../../dd/dc1/a00212_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a> = require(<span class="stringliteral">&#39;fs&#39;</span>);</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">function</span> <a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>() {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  <span class="comment">// Map of extension -&gt; mime type</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  this.<a class="code hl_variable" href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a> = Object.create(<span class="keyword">null</span>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="comment">// Map of mime type -&gt; extension</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  this.extensions = Object.create(<span class="keyword">null</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_a14947f326ebc4da17b5d55921c25e9fb.html#a14947f326ebc4da17b5d55921c25e9fb">   21</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>.prototype.define = <span class="keyword">function</span> (<a class="code hl_variable" href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a>) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">for</span> (var <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a> <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> <a class="code hl_variable" href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a>) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    var exts = <a class="code hl_variable" href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a>[<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span> (var <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> = 0; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> &lt; exts.length; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>++) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env.DEBUG_MIME &amp;&amp; <span class="keyword">this</span>.types[exts[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>]]) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        console.warn((this._loading || <span class="stringliteral">&quot;define()&quot;</span>).<a class="code hl_variable" href="../../d5/d0f/a00494_afd83a7a4c1a27011426e0e517bddbfbc.html#afd83a7a4c1a27011426e0e517bddbfbc">replace</a>(/.*\<span class="comment">//, &#39;&#39;), &#39;changes &quot;&#39; + exts[i] + &#39;&quot; extension type from &#39; +</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>          this.<a class="code hl_variable" href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a>[exts[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>]] + <span class="stringliteral">&#39; to &#39;</span> + <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      this.<a class="code hl_variable" href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a>[exts[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>]] = <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Default extension is the first one we encounter</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!this.extensions[<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>]) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      this.extensions[<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>] = exts[0];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_a27bc756ecb4feeac726a395f4911bf5b.html#a27bc756ecb4feeac726a395f4911bf5b">   48</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>.prototype.load = <span class="keyword">function</span>(<a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  this._loading = <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// Read file and split into lines</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  var <a class="code hl_variable" href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a> = {},</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      content = <a class="code hl_variable" href="../../dd/dc1/a00212_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a>.readFileSync(<a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>, <span class="stringliteral">&#39;ascii&#39;</span>),</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      lines = content.split(/[\<a class="code hl_variable" href="../../de/db1/a00197_a07c0e0a63b5b484807c0331c78558c9e.html#a07c0e0a63b5b484807c0331c78558c9e">r</a>\<a class="code hl_variable" href="../../de/db1/a00197_a3c7365c007156a2a63223e3c9909fbf8.html#a3c7365c007156a2a63223e3c9909fbf8">n</a>]+/);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  lines.forEach(<span class="keyword">function</span>(line) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// Clean up whitespace/comments, and split into fields</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    var <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a> = line.replace(/\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>*#.*|^\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>*|\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>*$/<a class="code hl_variable" href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a>, <span class="stringliteral">&#39;&#39;</span>).split(/\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>+/);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_variable" href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a>[<a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>.shift()] = <a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  });</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  this.<a class="code hl_variable" href="../../dd/dc1/a00212_a14947f326ebc4da17b5d55921c25e9fb.html#a14947f326ebc4da17b5d55921c25e9fb">define</a>(map);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  this._loading = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="};">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_ae5b6a81b39aee7431966aa0cb45c9d82.html#ae5b6a81b39aee7431966aa0cb45c9d82">   69</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>.prototype.lookup = <span class="keyword">function</span>(<a class="code hl_variable" href="../../dd/dc1/a00212_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>, fallback) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  var ext = <a class="code hl_variable" href="../../dd/dc1/a00212_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>.replace(/^.*[\.\/\\]/, <span class="stringliteral">&#39;&#39;</span>).toLowerCase();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a>[ext] || fallback || this.<a class="code hl_variable" href="../../dd/dc1/a00212_afca09a8404b2481ca11258e9284f8768.html#afca09a8404b2481ca11258e9284f8768">default_type</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="};">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_a0442fbc62163718c2d1b972be791c68b.html#a0442fbc62163718c2d1b972be791c68b">   78</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>.prototype.extension = <span class="keyword">function</span>(mimeType) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  var <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a> = mimeType.match(/^\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>*([^;\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>]*)(?:;|\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>|$)/)[1].toLowerCase();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">return</span> this.extensions[<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>];</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">// Default instance</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">   84</a></span>var <a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a> = <span class="keyword">new</span> <a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">// Define built-in types</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.define(require(<span class="stringliteral">&#39;./types.json&#39;</span>));</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">// Default type</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_afca09a8404b2481ca11258e9284f8768.html#afca09a8404b2481ca11258e9284f8768">   90</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.default_type = <a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.lookup(<span class="stringliteral">&#39;bin&#39;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">//</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// Additional API specific to the default instance</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">//</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">   96</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.Mime = <a class="code hl_variable" href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="};">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_a5b36c326d69a8d40f13180381e8e5371.html#a5b36c326d69a8d40f13180381e8e5371">  101</a></span><a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.charsets = {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <a class="code hl_variable" href="../../dd/dc1/a00212_ae5b6a81b39aee7431966aa0cb45c9d82.html#ae5b6a81b39aee7431966aa0cb45c9d82">lookup</a>: <span class="keyword">function</span>(mimeType, fallback) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// Assume text types are utf8</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> (/^text\/|^<a class="code hl_variable" href="../../d0/dc2/a00104_aa30c9d0e437092b0607b68dee5b2c751.html#aa30c9d0e437092b0607b68dee5b2c751">application</a>\/(javascript|<a class="code hl_variable" href="../../d0/dc2/a00104_ac6fdc7f7005e375dc7d7dce4bc785ab4.html#ac6fdc7f7005e375dc7d7dce4bc785ab4">json</a>)/).test(mimeType) ? <span class="stringliteral">&#39;UTF-8&#39;</span> : fallback;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../dd/dc1/a00212_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">  108</a></span>module.exports = <a class="code hl_variable" href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>;</div>
+<div class="ttc" id="aa00104_aa30c9d0e437092b0607b68dee5b2c751_html_aa30c9d0e437092b0607b68dee5b2c751"><div class="ttname"><a href="../../d0/dc2/a00104_aa30c9d0e437092b0607b68dee5b2c751.html#aa30c9d0e437092b0607b68dee5b2c751">application</a></div><div class="ttdeci">exports application</div><div class="ttdoc">Expose the prototypes.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00063">express.js:63</a></div></div>
+<div class="ttc" id="aa00104_ac6fdc7f7005e375dc7d7dce4bc785ab4_html_ac6fdc7f7005e375dc7d7dce4bc785ab4"><div class="ttname"><a href="../../d0/dc2/a00104_ac6fdc7f7005e375dc7d7dce4bc785ab4.html#ac6fdc7f7005e375dc7d7dce4bc785ab4">json</a></div><div class="ttdeci">exports json</div><div class="ttdoc">Expose middleware.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00078">express.js:78</a></div></div>
+<div class="ttc" id="aa00197_a07c0e0a63b5b484807c0331c78558c9e_html_a07c0e0a63b5b484807c0331c78558c9e"><div class="ttname"><a href="../../de/db1/a00197_a07c0e0a63b5b484807c0331c78558c9e.html#a07c0e0a63b5b484807c0331c78558c9e">r</a></div><div class="ttdeci">function t t t IPv4 t r</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_a3c7365c007156a2a63223e3c9909fbf8_html_a3c7365c007156a2a63223e3c9909fbf8"><div class="ttname"><a href="../../de/db1/a00197_a3c7365c007156a2a63223e3c9909fbf8.html#a3c7365c007156a2a63223e3c9909fbf8">n</a></div><div class="ttdeci">function t t n</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_a5e25b1d1bed9ab5f3174b76d6a722180_html_a5e25b1d1bed9ab5f3174b76d6a722180"><div class="ttname"><a href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a></div><div class="ttdeci">function t t t IPv4 t i</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_abcedab16429ea0641c6596f556f2e102_html_abcedab16429ea0641c6596f556f2e102"><div class="ttname"><a href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a></div><div class="ttdeci">function t t t IPv4 t t IPv6 t IPv4 t IPv4 t IPv4 t IPv6 t IPv4 t IPv6 t IPv4 t IPv4 t IPv4 t IPv4 t IPv6 t t t t t process</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_ad9a7d92cb87932d25187fdec3ba1b621_html_ad9a7d92cb87932d25187fdec3ba1b621"><div class="ttname"><a href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a></div><div class="ttdeci">function s</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00209_a14523cb74edc3f6175c54e598a379c27_html_a14523cb74edc3f6175c54e598a379c27"><div class="ttname"><a href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a></div><div class="ttdeci">var file</div><div class="ttdef"><b>Definition</b> <a href="../../d3/de5/a00209_source.html#l00004">cli.js:4</a></div></div>
+<div class="ttc" id="aa00209_affea7e61106a6a9da029c8af702aaf20_html_affea7e61106a6a9da029c8af702aaf20"><div class="ttname"><a href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a></div><div class="ttdeci">var type</div><div class="ttdef"><b>Definition</b> <a href="../../d3/de5/a00209_source.html#l00005">cli.js:5</a></div></div>
+<div class="ttc" id="aa00212_a14947f326ebc4da17b5d55921c25e9fb_html_a14947f326ebc4da17b5d55921c25e9fb"><div class="ttname"><a href="../../dd/dc1/a00212_a14947f326ebc4da17b5d55921c25e9fb.html#a14947f326ebc4da17b5d55921c25e9fb">define</a></div><div class="ttdeci">Mime prototype define</div><div class="ttdoc">Define mimetype -&gt; extension mappings.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">mime.js:21</a></div></div>
+<div class="ttc" id="aa00212_a2565597ae61f531186dd403d21b4a708_html_a2565597ae61f531186dd403d21b4a708"><div class="ttname"><a href="../../dd/dc1/a00212_a2565597ae61f531186dd403d21b4a708.html#a2565597ae61f531186dd403d21b4a708">Mime</a></div><div class="ttdeci">mime Mime</div><div class="ttdef"><b>Definition</b> <a href="#l00096">mime.js:96</a></div></div>
+<div class="ttc" id="aa00212_aa72e0c8a20e6bcc571d3a1c51846e627_html_aa72e0c8a20e6bcc571d3a1c51846e627"><div class="ttname"><a href="../../dd/dc1/a00212_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a></div><div class="ttdeci">var path</div><div class="ttdef"><b>Definition</b> <a href="#l00001">mime.js:1</a></div></div>
+<div class="ttc" id="aa00212_ab4d288fe448bcc077971c41ae3797375_html_ab4d288fe448bcc077971c41ae3797375"><div class="ttname"><a href="../../dd/dc1/a00212_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a></div><div class="ttdeci">var mime</div><div class="ttdef"><b>Definition</b> <a href="#l00084">mime.js:84</a></div></div>
+<div class="ttc" id="aa00212_ae5b6a81b39aee7431966aa0cb45c9d82_html_ae5b6a81b39aee7431966aa0cb45c9d82"><div class="ttname"><a href="../../dd/dc1/a00212_ae5b6a81b39aee7431966aa0cb45c9d82.html#ae5b6a81b39aee7431966aa0cb45c9d82">lookup</a></div><div class="ttdeci">Mime prototype lookup</div><div class="ttdoc">Lookup a mime type based on extension.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">mime.js:69</a></div></div>
+<div class="ttc" id="aa00212_aebcdd70130f7e0b00b39cc981ab0bab0_html_aebcdd70130f7e0b00b39cc981ab0bab0"><div class="ttname"><a href="../../dd/dc1/a00212_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a></div><div class="ttdeci">var fs</div><div class="ttdef"><b>Definition</b> <a href="#l00002">mime.js:2</a></div></div>
+<div class="ttc" id="aa00212_afca09a8404b2481ca11258e9284f8768_html_afca09a8404b2481ca11258e9284f8768"><div class="ttname"><a href="../../dd/dc1/a00212_afca09a8404b2481ca11258e9284f8768.html#afca09a8404b2481ca11258e9284f8768">default_type</a></div><div class="ttdeci">mime default_type</div><div class="ttdef"><b>Definition</b> <a href="#l00090">mime.js:90</a></div></div>
+<div class="ttc" id="aa00215_a5802f014ed8e96d3a513f114faa91d12_html_a5802f014ed8e96d3a513f114faa91d12"><div class="ttname"><a href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a></div><div class="ttdeci">const types</div><div class="ttdef"><b>Definition</b> <a href="../../d3/dd5/a00215_source.html#l00046">build.js:46</a></div></div>
+<div class="ttc" id="aa00344_a7dfceba4d8646e1fc3116bc603b378bd_html_a7dfceba4d8646e1fc3116bc603b378bd"><div class="ttname"><a href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a></div><div class="ttdeci">const fields</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d8e/a00344_source.html#l00007">column_definition.js:7</a></div></div>
+<div class="ttc" id="aa00494_afd83a7a4c1a27011426e0e517bddbfbc_html_afd83a7a4c1a27011426e0e517bddbfbc"><div class="ttname"><a href="../../d5/d0f/a00494_afd83a7a4c1a27011426e0e517bddbfbc.html#afd83a7a4c1a27011426e0e517bddbfbc">replace</a></div><div class="ttdeci">var replace</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0f/a00494_source.html#l00003">formats.js:3</a></div></div>
+<div class="ttc" id="aa00572_a103df269476e78897c9c4c6cb8f4eb06_html_a103df269476e78897c9c4c6cb8f4eb06"><div class="ttname"><a href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a></div><div class="ttdeci">var g</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00002">jquery.js:2</a></div></div>
+<div class="ttc" id="aa01108_a48e18769649a3ca5bab0fafdec44cb15_html_a48e18769649a3ca5bab0fafdec44cb15"><div class="ttname"><a href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a></div><div class="ttdeci">var map</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dd7/a01108_source.html#l00028">node_modules/bytes/index.js:28</a></div></div>
+<div class="ttc" id="aa01195_aaf64ea1eb68af5440a0249f7788f1af5_html_aaf64ea1eb68af5440a0249f7788f1af5"><div class="ttname"><a href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a></div><div class="ttdeci">var in</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00011">node_modules/generate-function/index.js:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_4e7a69d9fb790f05d68aa5ff29db8e52.html">mime</a></li><li class="navelem"><a class="el" href="../../dd/dc1/a00212.html">mime.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

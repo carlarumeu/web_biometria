@@ -1,0 +1,55 @@
+\doxysection{EE First}
+\hypertarget{a00883}{}\label{a00883}\index{EE First@{EE First}}
+\label{a00883_autotoc_md687}%
+\Hypertarget{a00883_autotoc_md687}%
+
+
+\href{https://npmjs.org/package/ee-first}{\texttt{ }} \href{https://travis-ci.org/jonathanong/ee-first}{\texttt{ }} \href{https://coveralls.io/r/jonathanong/ee-first?branch=master}{\texttt{ }} \doxylink{a01789}{} \href{https://npmjs.org/package/ee-first}{\texttt{ }} \href{https://www.gittip.com/jonathanong/}{\texttt{ }}
+
+Get the first event in a set of event emitters and event pairs, then clean up after itself.\hypertarget{a00883_autotoc_md688}{}\doxysubsection{\texorpdfstring{Install}{Install}}\label{a00883_autotoc_md688}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ ee-\/first}
+
+\end{DoxyCode}
+\hypertarget{a00883_autotoc_md689}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00883_autotoc_md689}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ first\ =\ require(\textcolor{stringliteral}{'ee-\/first'})}
+
+\end{DoxyCode}
+\hypertarget{a00883_autotoc_md690}{}\doxysubsubsection{\texorpdfstring{first(arr, listener)}{first(arr, listener)}}\label{a00883_autotoc_md690}
+Invoke {\ttfamily listener} on the first event from the list specified in {\ttfamily arr}. {\ttfamily arr} is an array of arrays, with each array in the format {\ttfamily \mbox{[}ee, ...event\mbox{]}}. {\ttfamily listener} will be called only once, the first time any of the given events are emitted. If {\ttfamily error} is one of the listened events, then if that fires first, the {\ttfamily listener} will be given the {\ttfamily err} argument.
+
+The {\ttfamily listener} is invoked as {\ttfamily listener(err, ee, event, args)}, where {\ttfamily err} is the first argument emitted from an {\ttfamily error} event, if applicable; {\ttfamily ee} is the event emitter that fired; {\ttfamily event} is the string event name that fired; and {\ttfamily args} is an array of the arguments that were emitted on the event.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ ee1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00257_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e}{EventEmitter}}()}
+\DoxyCodeLine{var\ ee2\ =\ \mbox{\hyperlink{a01195_a7af34e8e129dfe2752fd55ac3e2e467a_a7af34e8e129dfe2752fd55ac3e2e467a}{new}}\ EventEmitter()}
+\DoxyCodeLine{}
+\DoxyCodeLine{first([}
+\DoxyCodeLine{\ \ [ee1,\ '\mbox{\hyperlink{a00518_ae3d44bd7a98cd613dafac36e16d4f504_ae3d44bd7a98cd613dafac36e16d4f504}{close}}',\ '\mbox{\hyperlink{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}{end}}',\ 'error'],}
+\DoxyCodeLine{\ \ [ee2,\ 'error']}
+\DoxyCodeLine{],\ function\ (err,\ ee,\ event,\ args)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ listener\ invoked}}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\hypertarget{a00883_autotoc_md691}{}\doxysubsubsubsection{\texorpdfstring{.cancel()}{.cancel()}}\label{a00883_autotoc_md691}
+The group of listeners can be cancelled before being invoked and have all the event listeners removed from the underlying event emitters.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ thunk\ =\ first([}
+\DoxyCodeLine{\ \ [ee1,\ \textcolor{stringliteral}{'close'},\ \textcolor{stringliteral}{'end'},\ \textcolor{stringliteral}{'error'}],}
+\DoxyCodeLine{\ \ [ee2,\ \textcolor{stringliteral}{'error'}]}
+\DoxyCodeLine{],\ \textcolor{keyword}{function}\ (err,\ ee,\ event,\ args)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ listener\ invoked}}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ cancel\ and\ clean\ up}}
+\DoxyCodeLine{thunk.cancel()}
+
+\end{DoxyCode}
+ 

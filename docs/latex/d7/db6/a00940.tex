@@ -1,0 +1,25 @@
+\doxysection{caching\+\_\+sha2\+\_\+password}
+\hypertarget{a00940}{}\label{a00940}\index{caching\_sha2\_password@{caching\_sha2\_password}}
+\label{a00940_autotoc_md1654}%
+\Hypertarget{a00940_autotoc_md1654}%
+
+
+\href{https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html}{\texttt{ https\+://dev.\+mysql.\+com/doc/refman/8.\+0/en/caching-\/sha2-\/pluggable-\/authentication.\+html}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}\ =\ require(\textcolor{stringliteral}{'mysql'});}
+\DoxyCodeLine{\mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}.createConnection(\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a01267_acb7887575c66f8b0d702bfbb959a11d1_acb7887575c66f8b0d702bfbb959a11d1}{authPlugins}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{caching\_sha2\_password}}:\ \mbox{\hyperlink{a00386_a699e8352660a850837aba221e4b4f62c_a699e8352660a850837aba221e4b4f62c}{mysql}}.authPlugins.caching\_sha2\_password(\{}
+\DoxyCodeLine{\ \ \ \ \ \ onServerPublikKey:\ \textcolor{keyword}{function}(key)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ console.log(key);}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ serverPublicKey:\ \textcolor{stringliteral}{'xxxyyy'},}
+\DoxyCodeLine{\ \ \ \ \ \ overrideIsSecure:\ \textcolor{keyword}{true}\ \textcolor{comment}{//}}
+\DoxyCodeLine{\ \ \ \ \})}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+ 

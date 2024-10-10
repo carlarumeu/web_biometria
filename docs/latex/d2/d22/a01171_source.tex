@@ -1,0 +1,83 @@
+\doxysubsection{node\+\_\+modules/etag/index.js}
+\hypertarget{a01171_source}{}\label{a01171_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01171}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00014}00014\ module.exports\ =\ \mbox{\hyperlink{a01699_aa7b4b88130584154c4a863b71b8a3075_aa7b4b88130584154c4a863b71b8a3075}{etag}}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00021}00021\ var\ \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}}\ =\ require(\textcolor{stringliteral}{'crypto'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00022}00022\ var\ Stats\ =\ require('\mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}').Stats}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00029}00029\ var\ \mbox{\hyperlink{a01177_a7c9b2c6889147a97101a5409709b8d91_a7c9b2c6889147a97101a5409709b8d91}{toString}}\ =\ Object.\mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}}.\mbox{\hyperlink{a01177_a7c9b2c6889147a97101a5409709b8d91_a7c9b2c6889147a97101a5409709b8d91}{toString}}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00039}00039\ function\ entitytag\ (entity)\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00040}00040\ \ \ \textcolor{keywordflow}{if}\ (entity.length\ ===\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ fast-\/path\ empty}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00042}00042\ \ \ \ \ return\ \textcolor{stringliteral}{'"{}0-\/2jmj7l5rSw0yVb/vlWAYkK/YBwk"{}'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00043}00043\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00045}00045\ \ \ \textcolor{comment}{//\ compute\ hash\ of\ entity}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00046}00046\ \ \ var\ hash\ =\ \mbox{\hyperlink{a01123_a3eca37c9aac9a17870baa116339724e3_a3eca37c9aac9a17870baa116339724e3}{crypto}}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00047}00047\ \ \ \ \ .createHash(\textcolor{stringliteral}{'sha1'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00048}00048\ \ \ \ \ .update(entity,\ \textcolor{stringliteral}{'utf8'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00049}00049\ \ \ \ \ .digest(\textcolor{stringliteral}{'base64'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00050}00050\ \ \ \ \ .substring(0,\ 27)}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00052}00052\ \ \ \textcolor{comment}{//\ compute\ length\ of\ entity}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00053}00053\ \ \ var\ len\ =\ typeof\ entity\ ===\ \textcolor{stringliteral}{'string'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00054}00054\ \ \ \ \ ?\ Buffer.byteLength(entity,\ \textcolor{stringliteral}{'utf8'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00055}00055\ \ \ \ \ :\ entity.length}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00057}00057\ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'"{}'}\ +\ len.toString(16)\ +\ \textcolor{charliteral}{'-\/'}\ +\ hash\ +\ \textcolor{charliteral}{'"{}'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00070}00070\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01699_aa7b4b88130584154c4a863b71b8a3075_aa7b4b88130584154c4a863b71b8a3075}{etag}}\ (entity,\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00071}00071\ \ \ \textcolor{keywordflow}{if}\ (entity\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ entity\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00073}00073\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00075}00075\ \ \ \textcolor{comment}{//\ support\ fs.Stats\ object}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00076}00076\ \ \ var\ isStats\ =\ isstats(entity)}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00077}00077\ \ \ var\ weak\ =\ options\ \&\&\ typeof\ options.weak\ ===\ \textcolor{stringliteral}{'boolean'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00078}00078\ \ \ \ \ ?\ options.weak}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00079}00079\ \ \ \ \ :\ isStats}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00081}00081\ \ \ \textcolor{comment}{//\ validate\ argument}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}\ (!isStats\ \&\&\ typeof\ entity\ !==\ \textcolor{stringliteral}{'string'}\ \&\&\ !Buffer.isBuffer(entity))\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ entity\ must\ be\ string,\ Buffer,\ or\ fs.Stats'})}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00086}00086\ \ \ \textcolor{comment}{//\ generate\ entity\ tag}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00087}00087\ \ \ var\ tag\ =\ isStats}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00088}00088\ \ \ \ \ ?\ stattag(entity)}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00089}00089\ \ \ \ \ :\ entitytag(entity)}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00091}00091\ \ \ \mbox{\hyperlink{a01195_a6a8cb5879785c584b473a97b4661bec4_a6a8cb5879785c584b473a97b4661bec4}{return}}\ weak}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00092}00092\ \ \ \ \ ?\ \textcolor{stringliteral}{'W/'}\ +\ tag}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00093}00093\ \ \ \ \ :\ tag}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00104}00104\ function\ isstats\ (\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00105}00105\ \ \ \textcolor{comment}{//\ genuine\ fs.Stats}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00106}00106\ \ \ \textcolor{keywordflow}{if}\ (typeof\ Stats\ ===\ \textcolor{stringliteral}{'function'}\ \&\&\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ instanceof\ Stats)\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00108}00108\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00110}00110\ \ \ \textcolor{comment}{//\ quack\ quack}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00111}00111\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ \&\&\ typeof\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ ===\ \textcolor{stringliteral}{'object'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00112}00112\ \ \ \ \ \textcolor{stringliteral}{'ctime'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ \&\&\ \mbox{\hyperlink{a01177_a7c9b2c6889147a97101a5409709b8d91_a7c9b2c6889147a97101a5409709b8d91}{toString}}.call(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.ctime)\ ===\ \textcolor{stringliteral}{'[object\ Date]'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00113}00113\ \ \ \ \ \textcolor{stringliteral}{'mtime'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ \&\&\ \mbox{\hyperlink{a01177_a7c9b2c6889147a97101a5409709b8d91_a7c9b2c6889147a97101a5409709b8d91}{toString}}.call(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.mtime)\ ===\ \textcolor{stringliteral}{'[object\ Date]'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00114}00114\ \ \ \ \ \textcolor{stringliteral}{'ino'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ \&\&\ typeof\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.ino\ ===\ \textcolor{stringliteral}{'number'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00115}00115\ \ \ \ \ \textcolor{stringliteral}{'size'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ \&\&\ typeof\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.size\ ===\ \textcolor{stringliteral}{'number'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00126}00126\ \textcolor{keyword}{function}\ stattag\ (stat)\ \{}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00127}00127\ \ \ var\ mtime\ =\ stat.mtime.getTime().toString(16)}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00128}00128\ \ \ var\ \mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}}\ =\ stat.size.toString(16)}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{a01171_source_l00130}00130\ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'"{}'}\ +\ \mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}}\ +\ \textcolor{charliteral}{'-\/'}\ +\ mtime\ +\ \textcolor{charliteral}{'"{}'}}
+\DoxyCodeLine{\Hypertarget{a01171_source_l00131}00131\ \}}
+
+\end{DoxyCode}

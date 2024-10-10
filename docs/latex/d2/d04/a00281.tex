@@ -1,0 +1,217 @@
+\doxysubsection{Referencia del archivo connection.\+js}
+\hypertarget{a00281}{}\label{a00281}\index{connection.js@{connection.js}}
+\doxysubsubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a00720}{Connection}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00281_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_ab38a5f575f16b59b9767541bcf93fd85_ab38a5f575f16b59b9767541bcf93fd85}{Net}} = require(\textquotesingle{}\mbox{\hyperlink{a00401_ae13111a77351cc6bf302612aa5d97d08_ae13111a77351cc6bf302612aa5d97d08}{net}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a1d1f106ae0340f357fea8f0108c840ca_a1d1f106ae0340f357fea8f0108c840ca}{Tls}} = require(\textquotesingle{}tls\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_aaf8b0d7689eedb933b77676aedb07a1d_aaf8b0d7689eedb933b77676aedb07a1d}{Timers}} = require(\textquotesingle{}timers\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e}{Event\+Emitter}} = require(\textquotesingle{}events\textquotesingle{}).Event\+Emitter
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a2d56116718357c48c86245ea884f5167_a2d56116718357c48c86245ea884f5167}{Readable}} = require(\textquotesingle{}\mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}\textquotesingle{}).Readable
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a44efcb8b385c28a6219e2d7a1408a57b_a44efcb8b385c28a6219e2d7a1408a57b}{Queue}} = require(\textquotesingle{}denque\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}{Sql\+String}} = require(\textquotesingle{}sqlstring\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00281_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}{const}} \{ \mbox{\hyperlink{a00206_a066103f1e2a7b2f1563ff90ca14b24f5_a066103f1e2a7b2f1563ff90ca14b24f5}{create\+LRU}} \} = require(\textquotesingle{}lru.\+min\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_aa7aceac8e06d335ae844bd256e37cf51_aa7aceac8e06d335ae844bd256e37cf51}{Packet\+Parser}} = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{packet\+\_\+parser.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}} = require(\textquotesingle{}./packets/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{index.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_aeee7c5453a5fba57458131645541ae42_aeee7c5453a5fba57458131645541ae42}{Commands}} = require(\textquotesingle{}./commands/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{index.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863}{Connection\+Config}} = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{connection\+\_\+config.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00281_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{Charset\+To\+Encoding}} = require(\textquotesingle{}./constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{charset\+\_\+encodings.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}} \mbox{\hyperlink{a00281_aa753588a9157d438cf1de937b4b54dc5_aa753588a9157d438cf1de937b4b54dc5}{\+\_\+connection\+Id}} = 0
+\item 
+\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}} \mbox{\hyperlink{a00281_ad2dd47588b9951ecd65979e2c53fc79d_ad2dd47588b9951ecd65979e2c53fc79d}{convert\+Named\+Placeholders}} = \mbox{\hyperlink{a01195_a2d30a83186dbd0b9ecc3c1e9330136b6_a2d30a83186dbd0b9ecc3c1e9330136b6}{null}}
+\item 
+module \mbox{\hyperlink{a00281_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} = \mbox{\hyperlink{a00720}{Connection}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00281_aa753588a9157d438cf1de937b4b54dc5_aa753588a9157d438cf1de937b4b54dc5}\index{connection.js@{connection.js}!\_connectionId@{\_connectionId}}
+\index{\_connectionId@{\_connectionId}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{\_connectionId}{\_connectionId}}
+{\footnotesize\ttfamily \label{a00281_aa753588a9157d438cf1de937b4b54dc5_aa753588a9157d438cf1de937b4b54dc5} 
+\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}} \+\_\+connection\+Id = 0}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00033}{33}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}\index{connection.js@{connection.js}!CharsetToEncoding@{CharsetToEncoding}}
+\index{CharsetToEncoding@{CharsetToEncoding}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{CharsetToEncoding}{CharsetToEncoding}}
+{\footnotesize\ttfamily \label{a00281_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Charset\+To\+Encoding = require(\textquotesingle{}./constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{charset\+\_\+encodings.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00031}{31}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_aeee7c5453a5fba57458131645541ae42_aeee7c5453a5fba57458131645541ae42}\index{connection.js@{connection.js}!Commands@{Commands}}
+\index{Commands@{Commands}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Commands}{Commands}}
+{\footnotesize\ttfamily \label{a00281_aeee7c5453a5fba57458131645541ae42_aeee7c5453a5fba57458131645541ae42} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Commands = require(\textquotesingle{}./commands/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{index.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00029}{29}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863}\index{connection.js@{connection.js}!ConnectionConfig@{ConnectionConfig}}
+\index{ConnectionConfig@{ConnectionConfig}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{ConnectionConfig}{ConnectionConfig}}
+{\footnotesize\ttfamily \label{a00281_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Connection\+Config = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{connection\+\_\+config.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00030}{30}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}\index{connection.js@{connection.js}!const@{const}}
+\index{const@{const}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{const}{const}}
+{\footnotesize\ttfamily \label{a00281_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c} 
+const \{ \mbox{\hyperlink{a00206_a066103f1e2a7b2f1563ff90ca14b24f5_a066103f1e2a7b2f1563ff90ca14b24f5}{create\+LRU}} \} = require(\textquotesingle{}lru.\+min\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00025}{25}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_ad2dd47588b9951ecd65979e2c53fc79d_ad2dd47588b9951ecd65979e2c53fc79d}\index{connection.js@{connection.js}!convertNamedPlaceholders@{convertNamedPlaceholders}}
+\index{convertNamedPlaceholders@{convertNamedPlaceholders}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{convertNamedPlaceholders}{convertNamedPlaceholders}}
+{\footnotesize\ttfamily \label{a00281_ad2dd47588b9951ecd65979e2c53fc79d_ad2dd47588b9951ecd65979e2c53fc79d} 
+\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}} convert\+Named\+Placeholders = \mbox{\hyperlink{a01195_a2d30a83186dbd0b9ecc3c1e9330136b6_a2d30a83186dbd0b9ecc3c1e9330136b6}{null}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00035}{35}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e}\index{connection.js@{connection.js}!EventEmitter@{EventEmitter}}
+\index{EventEmitter@{EventEmitter}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{EventEmitter}{EventEmitter}}
+{\footnotesize\ttfamily \label{a00281_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Event\+Emitter = require(\textquotesingle{}events\textquotesingle{}).Event\+Emitter}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00021}{21}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{connection.js@{connection.js}!exports@{exports}}
+\index{exports@{exports}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00281_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports = \mbox{\hyperlink{a00720}{Connection}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00948}{948}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_ab38a5f575f16b59b9767541bcf93fd85_ab38a5f575f16b59b9767541bcf93fd85}\index{connection.js@{connection.js}!Net@{Net}}
+\index{Net@{Net}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Net}{Net}}
+{\footnotesize\ttfamily \label{a00281_ab38a5f575f16b59b9767541bcf93fd85_ab38a5f575f16b59b9767541bcf93fd85} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Net = require(\textquotesingle{}\mbox{\hyperlink{a00401_ae13111a77351cc6bf302612aa5d97d08_ae13111a77351cc6bf302612aa5d97d08}{net}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00018}{18}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_aa7aceac8e06d335ae844bd256e37cf51_aa7aceac8e06d335ae844bd256e37cf51}\index{connection.js@{connection.js}!PacketParser@{PacketParser}}
+\index{PacketParser@{PacketParser}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{PacketParser}{PacketParser}}
+{\footnotesize\ttfamily \label{a00281_aa7aceac8e06d335ae844bd256e37cf51_aa7aceac8e06d335ae844bd256e37cf51} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Packet\+Parser = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{packet\+\_\+parser.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00027}{27}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}\index{connection.js@{connection.js}!Packets@{Packets}}
+\index{Packets@{Packets}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Packets}{Packets}}
+{\footnotesize\ttfamily \label{a00281_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Packets = require(\textquotesingle{}./packets/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{index.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00028}{28}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a44efcb8b385c28a6219e2d7a1408a57b_a44efcb8b385c28a6219e2d7a1408a57b}\index{connection.js@{connection.js}!Queue@{Queue}}
+\index{Queue@{Queue}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Queue}{Queue}}
+{\footnotesize\ttfamily \label{a00281_a44efcb8b385c28a6219e2d7a1408a57b_a44efcb8b385c28a6219e2d7a1408a57b} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Queue = require(\textquotesingle{}denque\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00023}{23}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a2d56116718357c48c86245ea884f5167_a2d56116718357c48c86245ea884f5167}\index{connection.js@{connection.js}!Readable@{Readable}}
+\index{Readable@{Readable}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Readable}{Readable}}
+{\footnotesize\ttfamily \label{a00281_a2d56116718357c48c86245ea884f5167_a2d56116718357c48c86245ea884f5167} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Readable = require(\textquotesingle{}\mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}\textquotesingle{}).Readable}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00022}{22}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459}\index{connection.js@{connection.js}!SqlString@{SqlString}}
+\index{SqlString@{SqlString}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{SqlString}{SqlString}}
+{\footnotesize\ttfamily \label{a00281_a268f67bb058cd36c3821a17e40390459_a268f67bb058cd36c3821a17e40390459} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Sql\+String = require(\textquotesingle{}sqlstring\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00024}{24}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{connection.js@{connection.js}!strict@{strict}}
+\index{strict@{strict}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00281_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00016}{16}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_aaf8b0d7689eedb933b77676aedb07a1d_aaf8b0d7689eedb933b77676aedb07a1d}\index{connection.js@{connection.js}!Timers@{Timers}}
+\index{Timers@{Timers}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Timers}{Timers}}
+{\footnotesize\ttfamily \label{a00281_aaf8b0d7689eedb933b77676aedb07a1d_aaf8b0d7689eedb933b77676aedb07a1d} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Timers = require(\textquotesingle{}timers\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00020}{20}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00281_a1d1f106ae0340f357fea8f0108c840ca_a1d1f106ae0340f357fea8f0108c840ca}\index{connection.js@{connection.js}!Tls@{Tls}}
+\index{Tls@{Tls}!connection.js@{connection.js}}
+\doxyparagraph{\texorpdfstring{Tls}{Tls}}
+{\footnotesize\ttfamily \label{a00281_a1d1f106ae0340f357fea8f0108c840ca_a1d1f106ae0340f357fea8f0108c840ca} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Tls = require(\textquotesingle{}tls\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00019}{19}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+

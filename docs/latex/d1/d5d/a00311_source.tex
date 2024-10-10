@@ -1,0 +1,26 @@
+\doxysubsection{server\+\_\+status.\+js}
+\hypertarget{a00311_source}{}\label{a00311_source}\index{server\_status.js@{server\_status.js}}
+\mbox{\hyperlink{a00311}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00001}\mbox{\hyperlink{a00311_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00311_source_l00003}00003\ \textcolor{comment}{//\ Manually\ extracted\ from\ mysql-\/5.5.23/include/mysql\_com.h}}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a00311_source_l00012}\mbox{\hyperlink{a00311_afbac9b89d04e44110804b5ffe0aed83c_afbac9b89d04e44110804b5ffe0aed83c}{00012}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_IN\_TRANS\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00013}\mbox{\hyperlink{a00311_ae085342c6ef848f73572fa403c8205f2_ae085342c6ef848f73572fa403c8205f2}{00013}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_AUTOCOMMIT\ =\ 2;\ \textcolor{comment}{/*\ Server\ in\ auto\_commit\ mode\ */}}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00014}\mbox{\hyperlink{a00311_a5cff44c2f08fee33430d2e12684bbe8b_a5cff44c2f08fee33430d2e12684bbe8b}{00014}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_MORE\_RESULTS\_EXISTS\ =\ 8;\ \textcolor{comment}{/*\ Multi\ query\ -\/\ next\ query\ exists\ */}}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00015}\mbox{\hyperlink{a00311_a0b24bd782d70f18c7a3b8758d7bacc09_a0b24bd782d70f18c7a3b8758d7bacc09}{00015}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED\ =\ 16;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00016}\mbox{\hyperlink{a00311_a0164d3ae48f2beafaac7fa91a45c0a46_a0164d3ae48f2beafaac7fa91a45c0a46}{00016}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_QUERY\_NO\_INDEX\_USED\ =\ 32;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00022}\mbox{\hyperlink{a00311_a095ef5695a5c97166a756b691110206d_a095ef5695a5c97166a756b691110206d}{00022}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_CURSOR\_EXISTS\ =\ 64;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00027}\mbox{\hyperlink{a00311_a48c7bade6f6bbc6332f8cf2c3ed239d3_a48c7bade6f6bbc6332f8cf2c3ed239d3}{00027}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_LAST\_ROW\_SENT\ =\ 128;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00028}\mbox{\hyperlink{a00311_a257d1258fb8029949025f283a413c6f7_a257d1258fb8029949025f283a413c6f7}{00028}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_DB\_DROPPED\ =\ 256;\ \textcolor{comment}{/*\ A\ database\ was\ dropped\ */}}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00029}\mbox{\hyperlink{a00311_a51bee2da0116c86440cc3e95eed41fbf_a51bee2da0116c86440cc3e95eed41fbf}{00029}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES\ =\ 512;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00035}\mbox{\hyperlink{a00311_aa1a905538e9b43e7e7747d2aadd1fc7c_aa1a905538e9b43e7e7747d2aadd1fc7c}{00035}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_METADATA\_CHANGED\ =\ 1024;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00036}\mbox{\hyperlink{a00311_ab130f56e6a2fd9659e776eb3a9a3c311_ab130f56e6a2fd9659e776eb3a9a3c311}{00036}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_QUERY\_WAS\_SLOW\ =\ 2048;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a00311_source_l00041}\mbox{\hyperlink{a00311_ac8f285b912b3628307f9d8613c8dbcb6_ac8f285b912b3628307f9d8613c8dbcb6}{00041}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_PS\_OUT\_PARAMS\ =\ 4096;}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a00311_source_l00043}\mbox{\hyperlink{a00311_aaa462ff01156d90e214674b1dd0e27d8_aaa462ff01156d90e214674b1dd0e27d8}{00043}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_STATUS\_IN\_TRANS\_READONLY\ =\ 0x2000;\ \textcolor{comment}{//\ in\ a\ read-\/only\ transaction}}
+\DoxyCodeLine{\Hypertarget{a00311_source_l00044}\mbox{\hyperlink{a00311_ac4a97fbd9b33ec304283620c5a9466e3_ac4a97fbd9b33ec304283620c5a9466e3}{00044}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.SERVER\_SESSION\_STATE\_CHANGED\ =\ 0x4000;}
+
+\end{DoxyCode}

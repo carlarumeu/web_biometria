@@ -1,0 +1,260 @@
+\doxysubsection{Referencia de la clase Query}
+\hypertarget{a00704}{}\label{a00704}\index{Query@{Query}}
+
+
+Diagrama de herencia de Query
+% FIG 0
+
+
+Diagrama de colaboración de Query\+:
+% FIG 1
+\doxysubsubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00704_ac4fb34147ba397fa7bf82191069fdc58_ac4fb34147ba397fa7bf82191069fdc58}{constructor}} (options, callback)
+\item 
+\mbox{\hyperlink{a00704_a71be39032337f1434304f3fac5d48bd0_a71be39032337f1434304f3fac5d48bd0}{then}} ()
+\item 
+\mbox{\hyperlink{a00704_ae5707ab94b20a487b2d7df558af9410f_ae5707ab94b20a487b2d7df558af9410f}{start}} (\+\_\+packet, connection)
+\item 
+\mbox{\hyperlink{a00704_a92e0e8d523fbed6c959e7a14196e91d4_a92e0e8d523fbed6c959e7a14196e91d4}{done}} ()
+\item 
+\mbox{\hyperlink{a00704_ae4d6270f6ea059638a37c32127719d20_ae4d6270f6ea059638a37c32127719d20}{done\+Insert}} (rs)
+\item 
+\mbox{\hyperlink{a00704_af28752f213d2ad737bd8585a5a6a0067_af28752f213d2ad737bd8585a5a6a0067}{resultset\+Header}} (packet, connection)
+\item 
+\mbox{\hyperlink{a00704_ad46dd1463f04a5cd2a42498850463691_ad46dd1463f04a5cd2a42498850463691}{\+\_\+stream\+Local\+Infile}} (connection, path)
+\item 
+\mbox{\hyperlink{a00704_a832dcd25c306016f7c4795596f1d8e8f_a832dcd25c306016f7c4795596f1d8e8f}{read\+Field}} (packet, connection)
+\item 
+\mbox{\hyperlink{a00704_a9e0b784aa98f2f6bd5c1d6d366dd5d35_a9e0b784aa98f2f6bd5c1d6d366dd5d35}{fields\+EOF}} (packet, connection)
+\item 
+\mbox{\hyperlink{a00704_a0a4d9abf80239c1d235f7e5896736f72_a0a4d9abf80239c1d235f7e5896736f72}{row}} (packet, \+\_\+connection)
+\item 
+\mbox{\hyperlink{a00704_af43ed3d114a3ecd14d8410426486fdf4_af43ed3d114a3ecd14d8410426486fdf4}{infile\+Ok}} (packet, connection)
+\item 
+\mbox{\hyperlink{a00704_a45dfbf5e5126b6a975122a2ce2fd92cb_a45dfbf5e5126b6a975122a2ce2fd92cb}{stream}} (options)
+\item 
+\mbox{\hyperlink{a00704_ab7e39856ad03844d24efe38a121b969c_ab7e39856ad03844d24efe38a121b969c}{\+\_\+set\+Timeout}} ()
+\item 
+\mbox{\hyperlink{a00704_af5cc1157d7bbf615981b191ebc37dbac_af5cc1157d7bbf615981b191ebc37dbac}{\+\_\+handle\+Timeout\+Error}} ()
+\item 
+\mbox{\hyperlink{a00704_ae4a83a17445ec69ccb73103e04675c04_ae4a83a17445ec69ccb73103e04675c04}{constructor}} (sql, charset\+Number)
+\item 
+\mbox{\hyperlink{a00704_a62abfadb74399bba28ff5c5aa4f529d6_a62abfadb74399bba28ff5c5aa4f529d6}{to\+Packet}} ()
+\end{DoxyCompactItemize}
+\doxyparagraph*{Métodos públicos heredados de \mbox{\hyperlink{a00684}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00684_abe4bf2e39056a28c4ea510cdd0520cef_abe4bf2e39056a28c4ea510cdd0520cef}{constructor}} ()
+\item 
+\mbox{\hyperlink{a00684_a2b04c7a7cf565f0faa758435f30c0669_a2b04c7a7cf565f0faa758435f30c0669}{state\+Name}} ()
+\item 
+\mbox{\hyperlink{a00684_aee684a8d804245990df341f52906abc2_aee684a8d804245990df341f52906abc2}{execute}} (packet, connection)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00016}{16}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de funciones miembro}
+\Hypertarget{a00704_af5cc1157d7bbf615981b191ebc37dbac_af5cc1157d7bbf615981b191ebc37dbac}\index{Query@{Query}!\_handleTimeoutError@{\_handleTimeoutError}}
+\index{\_handleTimeoutError@{\_handleTimeoutError}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{\_handleTimeoutError()}{\_handleTimeoutError()}}
+{\footnotesize\ttfamily \label{a00704_af5cc1157d7bbf615981b191ebc37dbac_af5cc1157d7bbf615981b191ebc37dbac} 
+Query\+::\+\_\+handle\+Timeout\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00302}{302}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{a00704_ab7e39856ad03844d24efe38a121b969c_ab7e39856ad03844d24efe38a121b969c}\index{Query@{Query}!\_setTimeout@{\_setTimeout}}
+\index{\_setTimeout@{\_setTimeout}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{\_setTimeout()}{\_setTimeout()}}
+{\footnotesize\ttfamily \label{a00704_ab7e39856ad03844d24efe38a121b969c_ab7e39856ad03844d24efe38a121b969c} 
+Query\+::\+\_\+set\+Timeout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00292}{292}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+Gráfico de llamadas a esta función\+:
+% FIG 4
+\Hypertarget{a00704_ad46dd1463f04a5cd2a42498850463691_ad46dd1463f04a5cd2a42498850463691}\index{Query@{Query}!\_streamLocalInfile@{\_streamLocalInfile}}
+\index{\_streamLocalInfile@{\_streamLocalInfile}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{\_streamLocalInfile()}{\_streamLocalInfile()}}
+{\footnotesize\ttfamily \label{a00704_ad46dd1463f04a5cd2a42498850463691_ad46dd1463f04a5cd2a42498850463691} 
+Query\+::\+\_\+stream\+Local\+Infile (\begin{DoxyParamCaption}\item[{}]{connection}{, }\item[{}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00138}{138}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 5
+\Hypertarget{a00704_ac4fb34147ba397fa7bf82191069fdc58_ac4fb34147ba397fa7bf82191069fdc58}\index{Query@{Query}!constructor@{constructor}}
+\index{constructor@{constructor}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{constructor()}{constructor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{a00704_ac4fb34147ba397fa7bf82191069fdc58_ac4fb34147ba397fa7bf82191069fdc58} 
+Query\+::constructor (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00017}{17}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+\Hypertarget{a00704_ae4a83a17445ec69ccb73103e04675c04_ae4a83a17445ec69ccb73103e04675c04}\index{Query@{Query}!constructor@{constructor}}
+\index{constructor@{constructor}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{constructor()}{constructor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{a00704_ae4a83a17445ec69ccb73103e04675c04_ae4a83a17445ec69ccb73103e04675c04} 
+Query\+::constructor (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{charset\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01696_source_l00009}{9}} del archivo \mbox{\hyperlink{a01696_source}{mysql2/lib/packets/query.\+js}}.
+
+\Hypertarget{a00704_a92e0e8d523fbed6c959e7a14196e91d4_a92e0e8d523fbed6c959e7a14196e91d4}\index{Query@{Query}!done@{done}}
+\index{done@{done}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily \label{a00704_a92e0e8d523fbed6c959e7a14196e91d4_a92e0e8d523fbed6c959e7a14196e91d4} 
+Query\+::done (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00064}{64}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 6
+\Hypertarget{a00704_ae4d6270f6ea059638a37c32127719d20_ae4d6270f6ea059638a37c32127719d20}\index{Query@{Query}!doneInsert@{doneInsert}}
+\index{doneInsert@{doneInsert}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{doneInsert()}{doneInsert()}}
+{\footnotesize\ttfamily \label{a00704_ae4d6270f6ea059638a37c32127719d20_ae4d6270f6ea059638a37c32127719d20} 
+Query\+::done\+Insert (\begin{DoxyParamCaption}\item[{}]{rs}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00097}{97}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 7
+\Hypertarget{a00704_a9e0b784aa98f2f6bd5c1d6d366dd5d35_a9e0b784aa98f2f6bd5c1d6d366dd5d35}\index{Query@{Query}!fieldsEOF@{fieldsEOF}}
+\index{fieldsEOF@{fieldsEOF}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{fieldsEOF()}{fieldsEOF()}}
+{\footnotesize\ttfamily \label{a00704_a9e0b784aa98f2f6bd5c1d6d366dd5d35_a9e0b784aa98f2f6bd5c1d6d366dd5d35} 
+Query\+::fields\+EOF (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00221}{221}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 8
+\Hypertarget{a00704_af43ed3d114a3ecd14d8410426486fdf4_af43ed3d114a3ecd14d8410426486fdf4}\index{Query@{Query}!infileOk@{infileOk}}
+\index{infileOk@{infileOk}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{infileOk()}{infileOk()}}
+{\footnotesize\ttfamily \label{a00704_af43ed3d114a3ecd14d8410426486fdf4_af43ed3d114a3ecd14d8410426486fdf4} 
+Query\+::infile\+Ok (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00259}{259}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 9
+\Hypertarget{a00704_a832dcd25c306016f7c4795596f1d8e8f_a832dcd25c306016f7c4795596f1d8e8f}\index{Query@{Query}!readField@{readField}}
+\index{readField@{readField}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{readField()}{readField()}}
+{\footnotesize\ttfamily \label{a00704_a832dcd25c306016f7c4795596f1d8e8f_a832dcd25c306016f7c4795596f1d8e8f} 
+Query\+::read\+Field (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00190}{190}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 10
+Gráfico de llamadas a esta función\+:
+% FIG 11
+\Hypertarget{a00704_af28752f213d2ad737bd8585a5a6a0067_af28752f213d2ad737bd8585a5a6a0067}\index{Query@{Query}!resultsetHeader@{resultsetHeader}}
+\index{resultsetHeader@{resultsetHeader}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{resultsetHeader()}{resultsetHeader()}}
+{\footnotesize\ttfamily \label{a00704_af28752f213d2ad737bd8585a5a6a0067_af28752f213d2ad737bd8585a5a6a0067} 
+Query\+::resultset\+Header (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00117}{117}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 12
+Gráfico de llamadas a esta función\+:
+% FIG 13
+\Hypertarget{a00704_a0a4d9abf80239c1d235f7e5896736f72_a0a4d9abf80239c1d235f7e5896736f72}\index{Query@{Query}!row@{row}}
+\index{row@{row}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{row()}{row()}}
+{\footnotesize\ttfamily \label{a00704_a0a4d9abf80239c1d235f7e5896736f72_a0a4d9abf80239c1d235f7e5896736f72} 
+Query\+::row (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{\+\_\+connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00230}{230}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 14
+Gráfico de llamadas a esta función\+:
+% FIG 15
+\Hypertarget{a00704_ae5707ab94b20a487b2d7df558af9410f_ae5707ab94b20a487b2d7df558af9410f}\index{Query@{Query}!start@{start}}
+\index{start@{start}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{a00704_ae5707ab94b20a487b2d7df558af9410f_ae5707ab94b20a487b2d7df558af9410f} 
+Query\+::start (\begin{DoxyParamCaption}\item[{}]{\+\_\+packet}{, }\item[{}]{connection}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00047}{47}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 16
+\Hypertarget{a00704_a45dfbf5e5126b6a975122a2ce2fd92cb_a45dfbf5e5126b6a975122a2ce2fd92cb}\index{Query@{Query}!stream@{stream}}
+\index{stream@{stream}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{stream()}{stream()}}
+{\footnotesize\ttfamily \label{a00704_a45dfbf5e5126b6a975122a2ce2fd92cb_a45dfbf5e5126b6a975122a2ce2fd92cb} 
+Query\+::stream (\begin{DoxyParamCaption}\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00264}{264}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+\Hypertarget{a00704_a71be39032337f1434304f3fac5d48bd0_a71be39032337f1434304f3fac5d48bd0}\index{Query@{Query}!then@{then}}
+\index{then@{then}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{then()}{then()}}
+{\footnotesize\ttfamily \label{a00704_a71be39032337f1434304f3fac5d48bd0_a71be39032337f1434304f3fac5d48bd0} 
+Query\+::then (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01693_source_l00038}{38}} del archivo \mbox{\hyperlink{a01693_source}{mysql2/lib/commands/query.\+js}}.
+
+\Hypertarget{a00704_a62abfadb74399bba28ff5c5aa4f529d6_a62abfadb74399bba28ff5c5aa4f529d6}\index{Query@{Query}!toPacket@{toPacket}}
+\index{toPacket@{toPacket}!Query@{Query}}
+\doxyparagraph{\texorpdfstring{toPacket()}{toPacket()}}
+{\footnotesize\ttfamily \label{a00704_a62abfadb74399bba28ff5c5aa4f529d6_a62abfadb74399bba28ff5c5aa4f529d6} 
+Query\+::to\+Packet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01696_source_l00015}{15}} del archivo \mbox{\hyperlink{a01696_source}{mysql2/lib/packets/query.\+js}}.
+
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01693}{mysql2/lib/commands/query.\+js}}\item 
+\mbox{\hyperlink{a01696}{mysql2/lib/packets/query.\+js}}\end{DoxyCompactItemize}

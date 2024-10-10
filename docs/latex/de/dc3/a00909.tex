@@ -1,0 +1,24 @@
+\doxysection{has-\/property-\/descriptors \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/has-\/property-\/descriptors"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/inspect-\/js/has-\/property-\/descriptors.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00909}{}\label{a00909}\index{has-\/property-\/descriptors $<$sup$>$$<$a href="{}https://npmjs.org/package/has-\/property-\/descriptors"{} $>$$<$img src="{}https://versionbadg.es/inspect-\/js/has-\/property-\/descriptors.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{has-\/property-\/descriptors $<$sup$>$$<$a href=""https://npmjs.org/package/has-\/property-\/descriptors"" $>$$<$img src=""https://versionbadg.es/inspect-\/js/has-\/property-\/descriptors.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00909_autotoc_md1195}%
+\Hypertarget{a00909_autotoc_md1195}%
+
+
+\href{https://github.com/inspect-js/has-property-descriptors/actions}{\texttt{ }} \href{https://app.codecov.io/gh/inspect-js/has-property-descriptors/}{\texttt{ }} \href{https://david-dm.org/inspect-js/has-property-descriptors}{\texttt{ }} \href{https://david-dm.org/inspect-js/has-property-descriptors\#info=devDependencies}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=has-property-descriptors}{\texttt{ }}
+
+\href{https://npmjs.org/package/has-property-descriptors}{\texttt{ }}
+
+Does the environment have full property descriptor support? Handles IE 8\textquotesingle{}s broken define\+Property/g\+OPD.\hypertarget{a00909_autotoc_md1196}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{a00909_autotoc_md1196}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}\ =\ require(\textcolor{stringliteral}{'has-\/property-\/descriptors'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}(),\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ will\ be\ \`{}false`\ in\ IE\ 6-\/8,\ and\ ES5\ engines}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Arrays\ can\ not\ have\ their\ length\ \`{}[[Defined]]`\ in\ some\ engines}}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(\mbox{\hyperlink{a01135_a8fc758637ef26252a15041e36da39e0a_a8fc758637ef26252a15041e36da39e0a}{hasPropertyDescriptors}}.hasArrayLengthDefineBug(),\ \textcolor{keyword}{false});\ \textcolor{comment}{//\ will\ be\ \`{}true`\ in\ Firefox\ 4-\/22,\ and\ node\ v0.6}}
+
+\end{DoxyCode}
+\hypertarget{a00909_autotoc_md1197}{}\doxysubsection{\texorpdfstring{Tests}{Tests}}\label{a00909_autotoc_md1197}
+Simply clone the repo, {\ttfamily npm install}, and run {\ttfamily npm test} 

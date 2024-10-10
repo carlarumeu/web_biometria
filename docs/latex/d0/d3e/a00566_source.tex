@@ -1,0 +1,211 @@
+\doxysubsection{dynsections.\+js}
+\hypertarget{a00566_source}{}\label{a00566_source}\index{dynsections.js@{dynsections.js}}
+\mbox{\hyperlink{a00566}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00002}00002\ \textcolor{comment}{\ @licstart\ \ The\ following\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file.}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00003}00003\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00004}00004\ \textcolor{comment}{\ The\ MIT\ License\ (MIT)}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00005}00005\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00006}00006\ \textcolor{comment}{\ Copyright\ (C)\ 1997-\/2020\ by\ Dimitri\ van\ Heesch}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00007}00007\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00008}00008\ \textcolor{comment}{\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this\ software}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00009}00009\ \textcolor{comment}{\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00010}00010\ \textcolor{comment}{\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00011}00011\ \textcolor{comment}{\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00012}00012\ \textcolor{comment}{\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00013}00013\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00014}00014\ \textcolor{comment}{\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00015}00015\ \textcolor{comment}{\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00016}00016\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00017}00017\ \textcolor{comment}{\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00018}00018\ \textcolor{comment}{\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00019}00019\ \textcolor{comment}{\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00020}00020\ \textcolor{comment}{\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00021}00021\ \textcolor{comment}{\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00022}00022\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00023}00023\ \textcolor{comment}{\ @licend\ \ The\ above\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00024}00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00026}\mbox{\hyperlink{a00566_a1922c462474df7dfd18741c961d59a25_a1922c462474df7dfd18741c961d59a25}{00026}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00566_a1922c462474df7dfd18741c961d59a25_a1922c462474df7dfd18741c961d59a25}{toggleVisibility}}(linkObj)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00027}00027\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00566_a77a50b20b8c68f3987edc8970169150a_a77a50b20b8c68f3987edc8970169150a}{dynsection}}.toggleVisibility(linkObj);}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00030}\mbox{\hyperlink{a00566_a77a50b20b8c68f3987edc8970169150a_a77a50b20b8c68f3987edc8970169150a}{00030}}\ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ \mbox{\hyperlink{a00566_a77a50b20b8c68f3987edc8970169150a_a77a50b20b8c68f3987edc8970169150a}{dynsection}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00032}00032\ \ \ \textcolor{comment}{//\ helper\ function}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00033}00033\ \ \ updateStripes\ :\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00034}00034\ \ \ \ \ \$(\textcolor{stringliteral}{'table.directory\ tr'}).}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00035}00035\ \ \ \ \ \ \ removeClass(\textcolor{stringliteral}{'even'}).filter(\textcolor{stringliteral}{':visible:even'}).addClass(\textcolor{stringliteral}{'even'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00036}00036\ \ \ \ \ \$(\textcolor{stringliteral}{'table.directory\ tr'}).}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00037}00037\ \ \ \ \ \ \ removeClass(\textcolor{stringliteral}{'odd'}).filter(\textcolor{stringliteral}{':visible:odd'}).addClass(\textcolor{stringliteral}{'odd'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00038}00038\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00040}00040\ \ \ \mbox{\hyperlink{a00566_a1922c462474df7dfd18741c961d59a25_a1922c462474df7dfd18741c961d59a25}{toggleVisibility}}\ :\ \textcolor{keyword}{function}(linkObj)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{const}\ base\ =\ \$(linkObj).attr(\textcolor{stringliteral}{'id'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{const}\ summary\ =\ \$(\textcolor{charliteral}{'\#'}+base+\textcolor{stringliteral}{'-\/summary'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{const}\ content\ =\ \$(\textcolor{charliteral}{'\#'}+base+\textcolor{stringliteral}{'-\/content'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{const}\ trigger\ =\ \$(\textcolor{charliteral}{'\#'}+base+\textcolor{stringliteral}{'-\/trigger'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{const}\ src=\$(trigger).attr(\textcolor{stringliteral}{'src'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (content.is(\textcolor{stringliteral}{':visible'})===\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00047}00047\ \ \ \ \ \ \ content.hide();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00048}00048\ \ \ \ \ \ \ summary.show();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00049}00049\ \ \ \ \ \ \ \$(linkObj).addClass(\textcolor{stringliteral}{'closed'}).removeClass(\textcolor{stringliteral}{'opened'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00050}00050\ \ \ \ \ \ \ \$(trigger).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/8)+\textcolor{stringliteral}{'closed.png'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00051}00051\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00052}00052\ \ \ \ \ \ \ content.show();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00053}00053\ \ \ \ \ \ \ summary.hide();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00054}00054\ \ \ \ \ \ \ \$(linkObj).removeClass(\textcolor{stringliteral}{'closed'}).addClass(\textcolor{stringliteral}{'opened'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00055}00055\ \ \ \ \ \ \ \$(trigger).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/10)+\textcolor{stringliteral}{'open.png'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00058}00058\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00060}00060\ \ \ toggleLevel\ :\ \textcolor{keyword}{function}(level)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00061}00061\ \ \ \ \ \$(\textcolor{stringliteral}{'table.directory\ tr'}).each(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00572_ae5e71a2600e8891c54854be157cc6626_ae5e71a2600e8891c54854be157cc6626}{l}}\ =\ this.\textcolor{keywordtype}{id}.split(\textcolor{charliteral}{'\_'}).length-\/1;}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ \$(\textcolor{stringliteral}{'\#img'}+this.\textcolor{keywordtype}{id}.substring(3));}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ =\ \$(\textcolor{stringliteral}{'\#arr'}+this.\textcolor{keywordtype}{id}.substring(3));}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00572_ae5e71a2600e8891c54854be157cc6626_ae5e71a2600e8891c54854be157cc6626}{l}}<level+1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}.removeClass(\textcolor{stringliteral}{'iconfopen\ iconfclosed'}).addClass(\textcolor{stringliteral}{'iconfopen'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.html(\textcolor{stringliteral}{'\&\#9660;'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00068}00068\ \ \ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).show();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00069}00069\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00572_ae5e71a2600e8891c54854be157cc6626_ae5e71a2600e8891c54854be157cc6626}{l}}==level+1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}.removeClass(\textcolor{stringliteral}{'iconfclosed\ iconfopen'}).addClass(\textcolor{stringliteral}{'iconfclosed'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}.html(\textcolor{stringliteral}{'\&\#9658;'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00072}00072\ \ \ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).show();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00073}00073\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00074}00074\ \ \ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).hide();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00075}00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00076}00076\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00077}00077\ \ \ \ \ this.updateStripes();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00078}00078\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00080}00080\ \ \ toggleFolder\ :\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ the\ clicked\ row}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{const}\ currentRow\ =\ \$(\textcolor{stringliteral}{'\#row\_'}+\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ all\ rows\ after\ the\ clicked\ row}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{const}\ rows\ =\ currentRow.nextAll(\textcolor{stringliteral}{"{}tr"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{const}\ re\ =\ \textcolor{keyword}{new}\ RegExp(\textcolor{stringliteral}{'\string^row\_'}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{'\(\backslash\)\(\backslash\)d+\_\$'},\ \textcolor{stringliteral}{"{}i"{}});\ \textcolor{comment}{//only\ one\ sub}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ only\ match\ elements\ AFTER\ this\ one\ (can't\ hide\ elements\ before)}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{const}\ childRows\ =\ rows.filter(\textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ this.\textcolor{keywordtype}{id}.match(re);\ \});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ first\ row\ is\ visible\ we\ are\ HIDING}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (childRows.filter(\textcolor{stringliteral}{':first'}).is(\textcolor{stringliteral}{':visible'})===\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00094}00094\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ down\ arrow\ by\ right\ arrow\ for\ current\ row}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00095}00095\ \ \ \ \ \ \ \textcolor{keyword}{const}\ currentRowSpans\ =\ currentRow.find(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00096}00096\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.iconfopen"{}}).removeClass(\textcolor{stringliteral}{"{}iconfopen"{}}).addClass(\textcolor{stringliteral}{"{}iconfclosed"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00097}00097\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.arrow"{}}).html(\textcolor{stringliteral}{'\&\#9658;'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00098}00098\ \ \ \ \ \ \ rows.filter(\textcolor{stringliteral}{"{}[id\string^=row\_"{}}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{"{}]"{}}).hide();\ \textcolor{comment}{//\ hide\ all\ children}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00099}00099\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ we\ are\ SHOWING}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00100}00100\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ right\ arrow\ by\ down\ arrow\ for\ current\ row}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00101}00101\ \ \ \ \ \ \ \textcolor{keyword}{const}\ currentRowSpans\ =\ currentRow.find(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00102}00102\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.iconfclosed"{}}).removeClass(\textcolor{stringliteral}{"{}iconfclosed"{}}).addClass(\textcolor{stringliteral}{"{}iconfopen"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00103}00103\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.arrow"{}}).html(\textcolor{stringliteral}{'\&\#9660;'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00104}00104\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ down\ arrows\ by\ right\ arrows\ for\ child\ rows}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00105}00105\ \ \ \ \ \ \ \textcolor{keyword}{const}\ childRowsSpans\ =\ childRows.find(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00106}00106\ \ \ \ \ \ \ childRowsSpans.filter(\textcolor{stringliteral}{"{}.iconfopen"{}}).removeClass(\textcolor{stringliteral}{"{}iconfopen"{}}).addClass(\textcolor{stringliteral}{"{}iconfclosed"{}});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00107}00107\ \ \ \ \ \ \ childRowsSpans.filter(\textcolor{stringliteral}{"{}.arrow"{}}).html(\textcolor{stringliteral}{'\&\#9658;'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00108}00108\ \ \ \ \ \ \ childRows.show();\ \textcolor{comment}{//show\ all\ children}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00110}00110\ \ \ \ \ this.updateStripes();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00111}00111\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00113}00113\ \ \ toggleInherit\ :\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{const}\ rows\ =\ \$(\textcolor{stringliteral}{'tr.inherit.'}+\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{const}\ img\ =\ \$(\textcolor{stringliteral}{'tr.inherit\_header.'}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{'\ img'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00116}00116\ \ \ \ \ \textcolor{keyword}{const}\ src\ =\ \$(img).attr(\textcolor{stringliteral}{'src'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (rows.filter(\textcolor{stringliteral}{':first'}).is(\textcolor{stringliteral}{':visible'})===\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00118}00118\ \ \ \ \ \ \ rows.css(\textcolor{stringliteral}{'display'},\textcolor{stringliteral}{'none'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00119}00119\ \ \ \ \ \ \ \$(img).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/8)+\textcolor{stringliteral}{'closed.png'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00120}00120\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00121}00121\ \ \ \ \ \ \ rows.css(\textcolor{stringliteral}{'display'},\textcolor{stringliteral}{'table-\/row'});\ \textcolor{comment}{//\ using\ show()\ causes\ jump\ in\ firefox}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00122}00122\ \ \ \ \ \ \ \$(img).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/10)+\textcolor{stringliteral}{'open.png'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00124}00124\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00125}00125\ \};}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00127}\mbox{\hyperlink{a00566_a879f2f408e2a87a6c9000a977fe8098a_a879f2f408e2a87a6c9000a977fe8098a}{00127}}\ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ \mbox{\hyperlink{a00566_a879f2f408e2a87a6c9000a977fe8098a_a879f2f408e2a87a6c9000a977fe8098a}{codefold}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00128}00128\ \ \ opened\ :\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00130}00130\ \ \ \textcolor{comment}{//\ in\ case\ HTML\_COLORSTYLE\ is\ LIGHT\ or\ DARK\ the\ vars\ will\ be\ replaced,\ so\ we\ write\ them\ out\ explicitly\ and\ use\ double\ quotes}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00131}00131\ \ \ plusImg:\ \ [\ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/plus-\/image)"{}},\ \ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/plus-\/image-\/relpath)"{}}\ ],}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00132}00132\ \ \ minusImg:\ [\ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/minus-\/image)"{}},\ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/minus-\/image-\/relpath)"{}}\ ],}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00134}00134\ \ \ \textcolor{comment}{//\ toggle\ all\ folding\ blocks}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00135}00135\ \ \ toggle\_all\ :\ \textcolor{keyword}{function}(relPath)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.opened)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00137}00137\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'\#fold\_all'}).css(\textcolor{stringliteral}{'background-\/image'},this.plusImg[relPath]);}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00138}00138\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldopen]'}).hide();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00139}00139\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldclosed]'}).show();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00140}00140\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00141}00141\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'\#fold\_all'}).css(\textcolor{stringliteral}{'background-\/image'},this.minusImg[relPath]);}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00142}00142\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldopen]'}).show();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00143}00143\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldclosed]'}).hide();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00145}00145\ \ \ \ \ this.opened=!this.opened;}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00146}00146\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00148}00148\ \ \ \textcolor{comment}{//\ toggle\ single\ folding\ block}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00149}00149\ \ \ toggle\ :\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00150}00150\ \ \ \ \ \$(\textcolor{stringliteral}{'\#foldopen'}+\textcolor{keywordtype}{id}).toggle();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00151}00151\ \ \ \ \ \$(\textcolor{stringliteral}{'\#foldclosed'}+\textcolor{keywordtype}{id}).toggle();}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00152}00152\ \ \ \},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{a00566_source_l00154}00154\ \ \ \mbox{\hyperlink{a01687_a1dc0aa163de2e7161fbb52b60824b4c6_a1dc0aa163de2e7161fbb52b60824b4c6}{init}}\ :\ \textcolor{keyword}{function}(relPath)\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00155}00155\ \ \ \ \ \$(\textcolor{stringliteral}{'span[class=lineno]'}).css(\{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00156}00156\ \ \ \ \ \ \ \textcolor{stringliteral}{'padding-\/right'}:\textcolor{stringliteral}{'4px'},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00157}00157\ \ \ \ \ \ \ \textcolor{stringliteral}{'margin-\/right'}:\textcolor{stringliteral}{'2px'},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00158}00158\ \ \ \ \ \ \ \textcolor{stringliteral}{'display'}:\textcolor{stringliteral}{'inline-\/block'},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00159}00159\ \ \ \ \ \ \ \textcolor{stringliteral}{'width'}:\textcolor{stringliteral}{'54px'},}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00160}00160\ \ \ \ \ \ \ \textcolor{stringliteral}{'background'}:\textcolor{stringliteral}{'linear-\/gradient(var(-\/-\/fold-\/line-\/color),var(-\/-\/fold-\/line-\/color))\ no-\/repeat\ 46px/2px\ 100\%'}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00161}00161\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00162}00162\ \ \ \ \ \textcolor{comment}{//\ add\ global\ toggle\ to\ first\ line}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00163}00163\ \ \ \ \ \$(\textcolor{stringliteral}{'span[class=lineno]:first'}).append(\textcolor{stringliteral}{'<span\ class="{}fold"{}\ id="{}fold\_all"{}\ '}+}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00164}00164\ \ \ \ \ \ \ \textcolor{stringliteral}{'onclick="{}javascript:codefold.toggle\_all('}+relPath+\textcolor{stringliteral}{');"{}\ '}+}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00165}00165\ \ \ \ \ \ \ \textcolor{stringliteral}{'style="{}background-\/image:'}+this.minusImg[relPath]+\textcolor{stringliteral}{';"{}></span>'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00166}00166\ \ \ \ \ \textcolor{comment}{//\ add\ vertical\ lines\ to\ other\ rows}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00167}00167\ \ \ \ \ \$(\textcolor{stringliteral}{'span[class=lineno]'}).not(\textcolor{stringliteral}{':eq(0)'}).append(\textcolor{stringliteral}{'<span\ class="{}fold"{}></span>'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00168}00168\ \ \ \ \ \textcolor{comment}{//\ add\ toggle\ controls\ to\ lines\ with\ fold\ divs}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00169}00169\ \ \ \ \ \$(\textcolor{stringliteral}{'div[class=foldopen]'}).each(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00170}00170\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ specific\ id\ to\ use}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00171}00171\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{id}\ \ \ \ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{'id'}).replace(\textcolor{stringliteral}{'foldopen'},\textcolor{stringliteral}{''});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00172}00172\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ start\ and\ end\ foldable\ fragment\ attributes}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00173}00173\ \ \ \ \ \ \ \textcolor{keyword}{const}\ start\ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{'data-\/start'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00174}00174\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}{end}}\ \ \ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{'data-\/end'});}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00175}00175\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ normal\ fold\ span\ with\ controls\ for\ the\ first\ line\ of\ a\ foldable\ fragment}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00176}00176\ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).find(\textcolor{stringliteral}{'span[class=fold]:first'}).replaceWith(\textcolor{stringliteral}{'<span\ class="{}fold"{}\ '}+}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'onclick="{}javascript:codefold.toggle(\(\backslash\)''}+\textcolor{keywordtype}{id}+\textcolor{charliteral}{'\(\backslash\)'});\textcolor{stringliteral}{"{}\ '+}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00178}00178\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'style="{}}background-\/image:\textcolor{stringliteral}{'+codefold.minusImg[relPath]+'};\textcolor{stringliteral}{"{}></span>');}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00179}00179\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ append\ div\ for\ folded\ (closed)\ representation}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00180}00180\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(this).after('<div\ id="{}}foldclosed\textcolor{stringliteral}{'+id+'}\textcolor{stringliteral}{"{}\ class="{}}foldclosed\textcolor{stringliteral}{"{}\ style="{}}display:none;\textcolor{stringliteral}{"{}></div>');}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00181}00181\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ extract\ the\ first\ line\ from\ the\ "{}}open\textcolor{stringliteral}{"{}\ section\ to\ represent\ closed\ content}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00182}00182\ \textcolor{stringliteral}{\ \ \ \ \ \ const\ line\ =\ \$(this).children().first().clone();}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00183}00183\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ remove\ any\ glow\ that\ might\ still\ be\ active\ on\ the\ original\ line}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00184}00184\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(line).removeClass('glow');}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00185}00185\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (start)\ \{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00186}00186\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ //\ if\ line\ already\ ends\ with\ a\ start\ marker\ (e.g.\ trailing\ \{),\ remove\ it}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00187}00187\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \$(line).html(\$(line).html().replace(new\ RegExp('\(\backslash\)\(\backslash\)s*'+start+'\(\backslash\)\(\backslash\)s*\$','g'),''));}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00188}00188\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00189}00189\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ replace\ minus\ with\ plus\ symbol}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00190}00190\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(line).find('span[class=fold]').css('background-\/image',codefold.plusImg[relPath]);}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00191}00191\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ append\ ellipsis}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00192}00192\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(line).append('\ '+start+'<a\ href="{}}javascript:\mbox{\hyperlink{a00566_a879f2f408e2a87a6c9000a977fe8098a_a879f2f408e2a87a6c9000a977fe8098a}{codefold}}.toggle(\(\backslash\)\textcolor{stringliteral}{''}+\textcolor{keywordtype}{id}+\textcolor{charliteral}{'\(\backslash\)'})\textcolor{stringliteral}{"{}>\&\#8230;</a>'+end);}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00193}00193\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ insert\ constructed\ line\ into\ closed\ div}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00194}00194\ \textcolor{stringliteral}{\ \ \ \ \ \ \$('\#foldclosed'+id).html(line);}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00195}00195\ \textcolor{stringliteral}{\ \ \ \ \});}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00196}00196\ \textcolor{stringliteral}{\ \ \},}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00197}00197\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00198}00198\ \textcolor{stringliteral}{/*\ @license-\/end\ */}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00199}00199\ \textcolor{stringliteral}{\$(function()\ \{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00200}00200\ \textcolor{stringliteral}{\ \ \$('.code,.codeRef').each(function()\ \{}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00201}00201\ \textcolor{stringliteral}{\ \ \ \ \$(this).data('powertip',\$('\#a'+\$(this).attr('href').replace(/.*\(\backslash\)//,'').replace(/[\string^a-\/z\_A-\/Z0-\/9]/g,'\_')).html());}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00202}00202\ \textcolor{stringliteral}{\ \ \ \ \$.fn.powerTip.smartPlacementLists.s\ =\ [\ 's',\ 'n',\ 'ne',\ 'se'\ ];}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00203}00203\ \textcolor{stringliteral}{\ \ \ \ \$(this).powerTip(\{\ placement:\ 's',\ smartPlacement:\ true,\ mouseOnToPopup:\ true\ \});}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00204}00204\ \textcolor{stringliteral}{\ \ \});}}
+\DoxyCodeLine{\Hypertarget{a00566_source_l00205}00205\ \textcolor{stringliteral}{\});}}
+
+\end{DoxyCode}

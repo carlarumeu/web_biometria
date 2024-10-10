@@ -1,0 +1,272 @@
+\doxysubsection{Referencia del archivo lib/stringify.js}
+\hypertarget{a01846}{}\label{a01846}\index{stringify.js@{stringify.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01846_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a01846_a710fc3247f6eb20f2e2e5e9208679a7a_a710fc3247f6eb20f2e2e5e9208679a7a}{get\+Side\+Channel}} = require(\textquotesingle{}side-\/channel\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01846_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}} = require(\textquotesingle{}./utils\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01846_a4e8736840cc8c2a92c2007063fc5219c_a4e8736840cc8c2a92c2007063fc5219c}{formats}} = require(\textquotesingle{}./formats\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a01846_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{has}} = Object.\+prototype.\+has\+Own\+Property
+\item 
+var \mbox{\hyperlink{a01846_af155f5b9ed5f3779b1128a55e3d7e903_af155f5b9ed5f3779b1128a55e3d7e903}{array\+Prefix\+Generators}}
+\item 
+var \mbox{\hyperlink{a01846_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53}{is\+Array}} = Array.\+is\+Array
+\item 
+var \mbox{\hyperlink{a01846_aa24e781fe0b662d38aac138432ec5e48_aa24e781fe0b662d38aac138432ec5e48}{push}} = Array.\+prototype.\+push
+\item 
+var \mbox{\hyperlink{a01846_a00df3c159b3e1a41474d78951b4962c3_a00df3c159b3e1a41474d78951b4962c3}{push\+To\+Array}}
+\item 
+var \mbox{\hyperlink{a01846_a1a2871cda0627e3c58a38e9e151b3d20_a1a2871cda0627e3c58a38e9e151b3d20}{to\+ISO}} = Date.\+prototype.\+to\+ISOString
+\item 
+var \mbox{\hyperlink{a01846_a95208a2696daae2e31f55a7ccbdf6546_a95208a2696daae2e31f55a7ccbdf6546}{default\+Format}} = \mbox{\hyperlink{a01306_a4e8736840cc8c2a92c2007063fc5219c_a4e8736840cc8c2a92c2007063fc5219c}{formats}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{a01102_af9407f361b2d982c5af536898b63fc11_af9407f361b2d982c5af536898b63fc11}{default}}\textquotesingle{}\mbox{]}
+\item 
+var \mbox{\hyperlink{a01846_a25652520ac081f98103987b0e68544cf_a25652520ac081f98103987b0e68544cf}{defaults}}
+\item 
+var \mbox{\hyperlink{a01846_a978904a46b19ae1c2dd927262a663431_a978904a46b19ae1c2dd927262a663431}{is\+Non\+Nullish\+Primitive}}
+\item 
+var \mbox{\hyperlink{a01846_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}{sentinel}} = \{\}
+\item 
+var \mbox{\hyperlink{a01846_a933f8ff8d69be620d8091034ba62666c_a933f8ff8d69be620d8091034ba62666c}{stringify}}
+\item 
+var \mbox{\hyperlink{a01846_a90ed96dd7b45f0d1a5b8706f76991d38_a90ed96dd7b45f0d1a5b8706f76991d38}{normalize\+Stringify\+Options}}
+\item 
+module \mbox{\hyperlink{a01846_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01846_af155f5b9ed5f3779b1128a55e3d7e903_af155f5b9ed5f3779b1128a55e3d7e903}\index{stringify.js@{stringify.js}!arrayPrefixGenerators@{arrayPrefixGenerators}}
+\index{arrayPrefixGenerators@{arrayPrefixGenerators}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{arrayPrefixGenerators}{arrayPrefixGenerators}}
+{\footnotesize\ttfamily \label{a01846_af155f5b9ed5f3779b1128a55e3d7e903_af155f5b9ed5f3779b1128a55e3d7e903} 
+var array\+Prefix\+Generators}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ brackets:\ \textcolor{keyword}{function}\ brackets(prefix)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prefix\ +\ \textcolor{stringliteral}{'[]'};}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ comma:\ \textcolor{stringliteral}{'comma'},}
+\DoxyCodeLine{\ \ \ \ indices:\ \textcolor{keyword}{function}\ indices(prefix,\ key)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prefix\ +\ \textcolor{charliteral}{'['}\ +\ key\ +\ \textcolor{charliteral}{']'};}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01837_a1da39873b2351cb41deb24dfbe8c4d79_a1da39873b2351cb41deb24dfbe8c4d79}{repeat}}:\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01837_a1da39873b2351cb41deb24dfbe8c4d79_a1da39873b2351cb41deb24dfbe8c4d79}{repeat}}(prefix)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prefix;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00008}{8}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a95208a2696daae2e31f55a7ccbdf6546_a95208a2696daae2e31f55a7ccbdf6546}\index{stringify.js@{stringify.js}!defaultFormat@{defaultFormat}}
+\index{defaultFormat@{defaultFormat}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{defaultFormat}{defaultFormat}}
+{\footnotesize\ttfamily \label{a01846_a95208a2696daae2e31f55a7ccbdf6546_a95208a2696daae2e31f55a7ccbdf6546} 
+var default\+Format = \mbox{\hyperlink{a01306_a4e8736840cc8c2a92c2007063fc5219c_a4e8736840cc8c2a92c2007063fc5219c}{formats}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{a01102_af9407f361b2d982c5af536898b63fc11_af9407f361b2d982c5af536898b63fc11}{default}}\textquotesingle{}\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00029}{29}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a25652520ac081f98103987b0e68544cf_a25652520ac081f98103987b0e68544cf}\index{stringify.js@{stringify.js}!defaults@{defaults}}
+\index{defaults@{defaults}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{defaults}{defaults}}
+{\footnotesize\ttfamily \label{a01846_a25652520ac081f98103987b0e68544cf_a25652520ac081f98103987b0e68544cf} 
+var defaults}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ addQueryPrefix:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ allowDots:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ allowEmptyArrays:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ arrayFormat:\ \textcolor{stringliteral}{'indices'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}:\ \textcolor{stringliteral}{'utf-\/8'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01840_a86b524e0e38653a02fe391ebdb4d89c8_a86b524e0e38653a02fe391ebdb4d89c8}{charsetSentinel}}:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ delimiter:\ \textcolor{charliteral}{'\&'},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01234_ae23b090bc621f1115f8fa339550977e4_ae23b090bc621f1115f8fa339550977e4}{encode}}:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\ \ \ \ encodeDotInKeys:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}:\ \mbox{\hyperlink{a01846_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}.encode,}
+\DoxyCodeLine{\ \ \ \ encodeValuesOnly:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27}{format}}:\ \mbox{\hyperlink{a01846_a95208a2696daae2e31f55a7ccbdf6546_a95208a2696daae2e31f55a7ccbdf6546}{defaultFormat}},}
+\DoxyCodeLine{\ \ \ \ formatter:\ \mbox{\hyperlink{a01846_a4e8736840cc8c2a92c2007063fc5219c_a4e8736840cc8c2a92c2007063fc5219c}{formats}}.formatters[\mbox{\hyperlink{a01846_a95208a2696daae2e31f55a7ccbdf6546_a95208a2696daae2e31f55a7ccbdf6546}{defaultFormat}}],}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ indices:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ serializeDate:\ \textcolor{keyword}{function}\ serializeDate(date)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01846_a1a2871cda0627e3c58a38e9e151b3d20_a1a2871cda0627e3c58a38e9e151b3d20}{toISO}}.call(date);}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ skipNulls:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ strictNullHandling:\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00030}{30}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{stringify.js@{stringify.js}!exports@{exports}}
+\index{exports@{exports}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01846_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00276}{276}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a4e8736840cc8c2a92c2007063fc5219c_a4e8736840cc8c2a92c2007063fc5219c}\index{stringify.js@{stringify.js}!formats@{formats}}
+\index{formats@{formats}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{formats}{formats}}
+{\footnotesize\ttfamily \label{a01846_a4e8736840cc8c2a92c2007063fc5219c_a4e8736840cc8c2a92c2007063fc5219c} 
+var formats = require(\textquotesingle{}./formats\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00005}{5}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a710fc3247f6eb20f2e2e5e9208679a7a_a710fc3247f6eb20f2e2e5e9208679a7a}\index{stringify.js@{stringify.js}!getSideChannel@{getSideChannel}}
+\index{getSideChannel@{getSideChannel}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{getSideChannel}{getSideChannel}}
+{\footnotesize\ttfamily \label{a01846_a710fc3247f6eb20f2e2e5e9208679a7a_a710fc3247f6eb20f2e2e5e9208679a7a} 
+var get\+Side\+Channel = require(\textquotesingle{}side-\/channel\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00003}{3}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}\index{stringify.js@{stringify.js}!has@{has}}
+\index{has@{has}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{has}{has}}
+{\footnotesize\ttfamily \label{a01846_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914} 
+var has = Object.\+prototype.\+has\+Own\+Property}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00006}{6}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53}\index{stringify.js@{stringify.js}!isArray@{isArray}}
+\index{isArray@{isArray}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{isArray}{isArray}}
+{\footnotesize\ttfamily \label{a01846_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53} 
+var is\+Array = Array.\+is\+Array}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00021}{21}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a978904a46b19ae1c2dd927262a663431_a978904a46b19ae1c2dd927262a663431}\index{stringify.js@{stringify.js}!isNonNullishPrimitive@{isNonNullishPrimitive}}
+\index{isNonNullishPrimitive@{isNonNullishPrimitive}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{isNonNullishPrimitive}{isNonNullishPrimitive}}
+{\footnotesize\ttfamily \label{a01846_a978904a46b19ae1c2dd927262a663431_a978904a46b19ae1c2dd927262a663431} 
+var is\+Non\+Nullish\+Primitive}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01846_a978904a46b19ae1c2dd927262a663431_a978904a46b19ae1c2dd927262a663431}{isNonNullishPrimitive}}(\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ typeof\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ ===\ \textcolor{stringliteral}{'string'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ||\ typeof\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ ===\ \textcolor{stringliteral}{'number'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ||\ typeof\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ ===\ \textcolor{stringliteral}{'boolean'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ||\ typeof\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ ===\ \textcolor{stringliteral}{'symbol'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ||\ typeof\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ ===\ \textcolor{stringliteral}{'bigint'};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00053}{53}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a90ed96dd7b45f0d1a5b8706f76991d38_a90ed96dd7b45f0d1a5b8706f76991d38}\index{stringify.js@{stringify.js}!normalizeStringifyOptions@{normalizeStringifyOptions}}
+\index{normalizeStringifyOptions@{normalizeStringifyOptions}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{normalizeStringifyOptions}{normalizeStringifyOptions}}
+{\footnotesize\ttfamily \label{a01846_a90ed96dd7b45f0d1a5b8706f76991d38_a90ed96dd7b45f0d1a5b8706f76991d38} 
+var normalize\+Stringify\+Options}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00202}{202}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_aa24e781fe0b662d38aac138432ec5e48_aa24e781fe0b662d38aac138432ec5e48}\index{stringify.js@{stringify.js}!push@{push}}
+\index{push@{push}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{push}{push}}
+{\footnotesize\ttfamily \label{a01846_aa24e781fe0b662d38aac138432ec5e48_aa24e781fe0b662d38aac138432ec5e48} 
+var push = Array.\+prototype.\+push}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00022}{22}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a00df3c159b3e1a41474d78951b4962c3_a00df3c159b3e1a41474d78951b4962c3}\index{stringify.js@{stringify.js}!pushToArray@{pushToArray}}
+\index{pushToArray@{pushToArray}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{pushToArray}{pushToArray}}
+{\footnotesize\ttfamily \label{a01846_a00df3c159b3e1a41474d78951b4962c3_a00df3c159b3e1a41474d78951b4962c3} 
+var push\+To\+Array}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (arr,\ valueOrArray)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01846_aa24e781fe0b662d38aac138432ec5e48_aa24e781fe0b662d38aac138432ec5e48}{push}}.apply(arr,\ \mbox{\hyperlink{a01846_adca5ce0ed65a1514a671ae81eb33bd53_adca5ce0ed65a1514a671ae81eb33bd53}{isArray}}(valueOrArray)\ ?\ valueOrArray\ :\ [valueOrArray]);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00023}{23}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d}\index{stringify.js@{stringify.js}!sentinel@{sentinel}}
+\index{sentinel@{sentinel}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{sentinel}{sentinel}}
+{\footnotesize\ttfamily \label{a01846_a2da6b014cd66589b4bfca00873aeb11d_a2da6b014cd66589b4bfca00873aeb11d} 
+var sentinel = \{\}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00061}{61}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{stringify.js@{stringify.js}!strict@{strict}}
+\index{strict@{strict}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01846_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00001}{1}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a933f8ff8d69be620d8091034ba62666c_a933f8ff8d69be620d8091034ba62666c}\index{stringify.js@{stringify.js}!stringify@{stringify}}
+\index{stringify@{stringify}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{stringify}{stringify}}
+{\footnotesize\ttfamily \label{a01846_a933f8ff8d69be620d8091034ba62666c_a933f8ff8d69be620d8091034ba62666c} 
+var stringify}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00063}{63}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a1a2871cda0627e3c58a38e9e151b3d20_a1a2871cda0627e3c58a38e9e151b3d20}\index{stringify.js@{stringify.js}!toISO@{toISO}}
+\index{toISO@{toISO}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{toISO}{toISO}}
+{\footnotesize\ttfamily \label{a01846_a1a2871cda0627e3c58a38e9e151b3d20_a1a2871cda0627e3c58a38e9e151b3d20} 
+var to\+ISO = Date.\+prototype.\+to\+ISOString}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00027}{27}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+
+\Hypertarget{a01846_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}\index{stringify.js@{stringify.js}!utils@{utils}}
+\index{utils@{utils}!stringify.js@{stringify.js}}
+\doxyparagraph{\texorpdfstring{utils}{utils}}
+{\footnotesize\ttfamily \label{a01846_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53} 
+var utils = require(\textquotesingle{}./utils\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01846_source_l00004}{4}} del archivo \mbox{\hyperlink{a01846_source}{lib/stringify.\+js}}.
+

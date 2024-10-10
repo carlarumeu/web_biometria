@@ -1,0 +1,30 @@
+\doxysubsection{validation.\+js}
+\label{a00113_source}\index{validation.js@{validation.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ src/utils/validation.js}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00028\ export\ \textcolor{keyword}{const}\ validarMedicion\ =\ (medicion)\ =>\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \{\ medida,\ lugar,\ tipo\_gas,\ hora\ \}\ =\ medicion;}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ medida\ !==\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Error(\textcolor{stringliteral}{'La\ medida\ debe\ ser\ un\ número'});}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ lugar\ !==\ \textcolor{stringliteral}{'string'}\ ||\ lugar.trim()\ ===\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Error(\textcolor{stringliteral}{'El\ lugar\ debe\ ser\ una\ cadena\ de\ texto\ no\ vacía'});}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ tipo\_gas\ !==\ \textcolor{stringliteral}{'string'}\ ||\ tipo\_gas.trim()\ ===\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Error(\textcolor{stringliteral}{'El\ tipo\_gas\ debe\ ser\ una\ cadena\ de\ texto\ no\ vacía'});}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (isNaN(Date.parse(hora)))\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Error(\textcolor{stringliteral}{'La\ hora\ debe\ ser\ una\ fecha\ válida\ en\ formato\ ISO\ 8601'});}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

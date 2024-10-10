@@ -1,0 +1,11 @@
+\doxysubsection{error\+Handler.\+js}
+\label{a00101_source}\index{errorHandler.js@{errorHandler.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ src/middlewares/errorHandler.js}}
+\DoxyCodeLine{00002\ export\ \textcolor{keyword}{const}\ errorHandler\ =\ (err,\ req,\ res,\ next)\ =>\ \{}
+\DoxyCodeLine{00003\ \ \ \ \ console.error(err.stack);}
+\DoxyCodeLine{00004\ \ \ \ \ res.status(500).json(\{\ message:\ \textcolor{stringliteral}{'Internal\ Server\ Error'}\ \});}
+\DoxyCodeLine{00005\ \};}
+
+\end{DoxyCode}

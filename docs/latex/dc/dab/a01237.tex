@@ -1,0 +1,2728 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/long/index.js}
+\hypertarget{a01237}{}\label{a01237}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01237_a5bf45fc51bc0426586792b5f9cb95431_a5bf45fc51bc0426586792b5f9cb95431}{catch}} (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})
+\item 
+function \mbox{\hyperlink{a01237_ae87870f7108ac720cff5f3f432b9f0f3_ae87870f7108ac720cff5f3f432b9f0f3}{Long}} (low, high, unsigned)
+\item 
+function \mbox{\hyperlink{a01237_a9fa1d2c92d5c36576fc88f6a1f68284b_a9fa1d2c92d5c36576fc88f6a1f68284b}{is\+Long}} (\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})
+\begin{DoxyCompactList}\small\item\em @function \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01237_a4239fbbe8c4562a351b550250b5fe619_a4239fbbe8c4562a351b550250b5fe619}{ctz32}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})
+\begin{DoxyCompactList}\small\item\em @function \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01237_aeca8920e257a840c7f30fbcfcb9aed6d_aeca8920e257a840c7f30fbcfcb9aed6d}{from\+Int}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}, unsigned)
+\item 
+function \mbox{\hyperlink{a01237_a98511324cb7f120ba0e829ac1590cf32_a98511324cb7f120ba0e829ac1590cf32}{from\+Number}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}, unsigned)
+\item 
+function \mbox{\hyperlink{a01237_a50593dbc261b172e4d8b4b773157fd27_a50593dbc261b172e4d8b4b773157fd27}{from\+Bits}} (low\+Bits, high\+Bits, unsigned)
+\item 
+function \mbox{\hyperlink{a01237_a9ae53eb26d614d2444cdc9a832a14e81_a9ae53eb26d614d2444cdc9a832a14e81}{from\+String}} (str, unsigned, radix)
+\item 
+function \mbox{\hyperlink{a01237_afb7b22d61888a3782a02efb5622aa0fd_afb7b22d61888a3782a02efb5622aa0fd}{from\+Value}} (val, unsigned)
+\begin{DoxyCompactList}\small\item\em @function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \mbox{\hyperlink{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}{wasm}} = \mbox{\hyperlink{a01195_a2d30a83186dbd0b9ecc3c1e9330136b6_a2d30a83186dbd0b9ecc3c1e9330136b6}{null}}
+\begin{DoxyCompactList}\small\item\em @license Copyright 2009 The Closure Library Authors Copyright 2020 Daniel Wirtz / The long.\+js Authors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abe4cc9788f52e49485473dc699537388_abe4cc9788f52e49485473dc699537388}{try}}
+\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{is\+Long}} = is\+Long
+\begin{DoxyCompactList}\small\item\em Tests if the specified object is a Long. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_aa270556316328316957b05df065142d5_aa270556316328316957b05df065142d5}{INT\+\_\+\+CACHE}} = \{\}
+\begin{DoxyCompactList}\small\item\em \doxylink{a00844}{A} cache of the Long representations of small integer values. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a71457c80c147c23fa062134a65c29bb7_a71457c80c147c23fa062134a65c29bb7}{UINT\+\_\+\+CACHE}} = \{\}
+\begin{DoxyCompactList}\small\item\em \doxylink{a00844}{A} cache of the Long representations of small unsigned integer values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}} = from\+Int
+\begin{DoxyCompactList}\small\item\em Returns a Long representing the given 32 bit integer value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_a3682c64d9f10e0eb159469a27d2d77c3_a3682c64d9f10e0eb159469a27d2d77c3}{from\+Number}} = from\+Number
+\begin{DoxyCompactList}\small\item\em Returns a Long representing the given value, provided that it is a finite number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}} = from\+Bits
+\begin{DoxyCompactList}\small\item\em Returns a Long representing the 64 bit integer that comes by concatenating the given low and high bits. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_adc919b34f39f7fd40d8904e7ecdc6400_adc919b34f39f7fd40d8904e7ecdc6400}{pow\+\_\+dbl}} = Math.\+pow
+\begin{DoxyCompactList}\small\item\em @function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_afa5a3e4304a66b6502ee45a946b6176e_afa5a3e4304a66b6502ee45a946b6176e}{from\+String}} = from\+String
+\begin{DoxyCompactList}\small\item\em Returns a Long representation of the given string, written using the specified radix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{from\+Value}} = from\+Value
+\begin{DoxyCompactList}\small\item\em Converts the specified value to a Long using the appropriate from\texorpdfstring{$\ast$}{*} function for its type. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4}{TWO\+\_\+\+PWR\+\_\+16\+\_\+\+DBL}} = 1 $<$$<$ 16
+\begin{DoxyCompactList}\small\item\em @type \{number\} @const @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_ace22a13fa54d3e757fb2f6afb9a7c6d9_ace22a13fa54d3e757fb2f6afb9a7c6d9}{TWO\+\_\+\+PWR\+\_\+24\+\_\+\+DBL}} = 1 $<$$<$ 24
+\begin{DoxyCompactList}\small\item\em @type \{number\} @const @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\+\_\+\+PWR\+\_\+32\+\_\+\+DBL}} = \mbox{\hyperlink{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4}{TWO\+\_\+\+PWR\+\_\+16\+\_\+\+DBL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4}{TWO\+\_\+\+PWR\+\_\+16\+\_\+\+DBL}}
+\begin{DoxyCompactList}\small\item\em @type \{number\} @const @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_aa803787abfacd9e2ad50c8b23fd363a9_aa803787abfacd9e2ad50c8b23fd363a9}{TWO\+\_\+\+PWR\+\_\+64\+\_\+\+DBL}} = \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\+\_\+\+PWR\+\_\+32\+\_\+\+DBL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\+\_\+\+PWR\+\_\+32\+\_\+\+DBL}}
+\begin{DoxyCompactList}\small\item\em @type \{number\} @const @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_ab1ec9b5780c0a7448a5f5829be0b74d5_ab1ec9b5780c0a7448a5f5829be0b74d5}{TWO\+\_\+\+PWR\+\_\+63\+\_\+\+DBL}} = \mbox{\hyperlink{a01237_aa803787abfacd9e2ad50c8b23fd363a9_aa803787abfacd9e2ad50c8b23fd363a9}{TWO\+\_\+\+PWR\+\_\+64\+\_\+\+DBL}} / 2
+\begin{DoxyCompactList}\small\item\em @type \{number\} @const @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a0eaae65ce6d25ba985bad4dd90a34260_a0eaae65ce6d25ba985bad4dd90a34260}{TWO\+\_\+\+PWR\+\_\+24}} = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(\mbox{\hyperlink{a01237_ace22a13fa54d3e757fb2f6afb9a7c6d9_ace22a13fa54d3e757fb2f6afb9a7c6d9}{TWO\+\_\+\+PWR\+\_\+24\+\_\+\+DBL}})
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @const @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a2610f9b78232bda11b2fa63c930b3ef7_a2610f9b78232bda11b2fa63c930b3ef7}{ZERO}} = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(0)
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_adfb75f3ed10ec9d71977d6d53fd750e6_adfb75f3ed10ec9d71977d6d53fd750e6}{UZERO}} = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(0, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a10633d23fbed3c46a0a25a34474d8510_a10633d23fbed3c46a0a25a34474d8510}{ONE}} = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(1)
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a337119821513cb26cfa2499ced775aa0_a337119821513cb26cfa2499ced775aa0}{UONE}} = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(1, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_afbf71d15b1d83a1230102678c9950d7d_afbf71d15b1d83a1230102678c9950d7d}{NEG\+\_\+\+ONE}} = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(-\/1)
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_ae0a0454ee409787ef161593fe79079c2_ae0a0454ee409787ef161593fe79079c2}{MAX\+\_\+\+VALUE}} = \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}}(0x\+FFFFFFFF \texorpdfstring{$\vert$}{|} 0, 0x7\+FFFFFFF \texorpdfstring{$\vert$}{|} 0, \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}})
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a1675577b82328d6d7c73385767591d4a_a1675577b82328d6d7c73385767591d4a}{MAX\+\_\+\+UNSIGNED\+\_\+\+VALUE}} = \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}}(0x\+FFFFFFFF \texorpdfstring{$\vert$}{|} 0, 0x\+FFFFFFFF \texorpdfstring{$\vert$}{|} 0, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_a658bfd7bf2057953eb283172659d2268_a658bfd7bf2057953eb283172659d2268}{MIN\+\_\+\+VALUE}} = \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}}(0, 0x80000000 \texorpdfstring{$\vert$}{|} 0, \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}})
+\begin{DoxyCompactList}\small\item\em @type \{!\+Long\} @inner \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} = \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{Long.\+prototype}}
+\begin{DoxyCompactList}\small\item\em @alias Long.\+prototype @inner \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a6d36cc5d1b63d0a8e27a97b6be2ee7a5_a6d36cc5d1b63d0a8e27a97b6be2ee7a5}{to\+Int}}
+\begin{DoxyCompactList}\small\item\em Converts the Long to a 32 bit integer, assuming it is a 32 bit integer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a5092c3ce75e09e6874313df3fc6d7196_a5092c3ce75e09e6874313df3fc6d7196}{to\+Number}}
+\begin{DoxyCompactList}\small\item\em Converts the Long to a the nearest floating-\/point representation of this value (double, 53 bit mantissa). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a0f93c73e5b1fc9629f1fd3554d002ced_a0f93c73e5b1fc9629f1fd3554d002ced}{to\+String}}
+\begin{DoxyCompactList}\small\item\em Converts the Long to a string written in the specified radix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ac8dcd44e64627459800a4a893dbedcd2_ac8dcd44e64627459800a4a893dbedcd2}{get\+High\+Bits}}
+\begin{DoxyCompactList}\small\item\em Gets the high 32 bits as a signed integer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a706ce44f0ab1ccd505bcfaac41302ad8_a706ce44f0ab1ccd505bcfaac41302ad8}{get\+High\+Bits\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Gets the high 32 bits as an unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_af8ba78bb4d67caf264af8bb452ad223f_af8ba78bb4d67caf264af8bb452ad223f}{get\+Low\+Bits}}
+\begin{DoxyCompactList}\small\item\em Gets the low 32 bits as a signed integer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a38a0302c8025d633f9a6bfeb93f2a665_a38a0302c8025d633f9a6bfeb93f2a665}{get\+Low\+Bits\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Gets the low 32 bits as an unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_abdf736b071498c50e05fb479675faf3c_abdf736b071498c50e05fb479675faf3c}{get\+Num\+Bits\+Abs}}
+\begin{DoxyCompactList}\small\item\em Gets the number of bits needed to represent the absolute value of this Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a16a44bae441805a0def5a4db5243162a_a16a44bae441805a0def5a4db5243162a}{is\+Zero}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value equals zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a824164c22ccdf3f52cff348c83dd08e8_a824164c22ccdf3f52cff348c83dd08e8}{eqz}} = \mbox{\hyperlink{a01237_a16a44bae441805a0def5a4db5243162a_a16a44bae441805a0def5a4db5243162a}{Long\+Prototype.\+is\+Zero}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value equals zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a9a95247cc0683fe372cc62edb37fd3cd_a9a95247cc0683fe372cc62edb37fd3cd}{is\+Negative}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is negative. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a06a2ccd6baeeffb74912283e8204f649_a06a2ccd6baeeffb74912283e8204f649}{is\+Positive}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is positive or zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a5a6d8820684763477ec7ad5efdc44b3b_a5a6d8820684763477ec7ad5efdc44b3b}{is\+Odd}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is odd. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a6526c9cc2a231737f268b033cc191a98_a6526c9cc2a231737f268b033cc191a98}{is\+Even}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is even. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ad229f448a893363dda8c6716108663f4_ad229f448a893363dda8c6716108663f4}{equals}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value equals the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6}{eq}} = \mbox{\hyperlink{a01237_ad229f448a893363dda8c6716108663f4_ad229f448a893363dda8c6716108663f4}{Long\+Prototype.\+equals}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value equals the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}{not\+Equals}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value differs from the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ae7af9f6310dd26fdf01abdd0a8a76875_ae7af9f6310dd26fdf01abdd0a8a76875}{neq}} = \mbox{\hyperlink{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}{Long\+Prototype.\+not\+Equals}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value differs from the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a4c27baafd450238566ee82fd95e3bc1b_a4c27baafd450238566ee82fd95e3bc1b}{ne}} = \mbox{\hyperlink{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}{Long\+Prototype.\+not\+Equals}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value differs from the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a3b785172bc40376da41a2cf296a0a965_a3b785172bc40376da41a2cf296a0a965}{less\+Than}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is less than the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ad6c71863bd83b0ca049f55d3bb3f0105_ad6c71863bd83b0ca049f55d3bb3f0105}{lt}} = \mbox{\hyperlink{a01237_a3b785172bc40376da41a2cf296a0a965_a3b785172bc40376da41a2cf296a0a965}{Long\+Prototype.\+less\+Than}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is less than the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}{less\+Than\+Or\+Equal}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is less than or equal the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a3d146cc0ed37be54c4e70dfeb1391313_a3d146cc0ed37be54c4e70dfeb1391313}{lte}} = \mbox{\hyperlink{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}{Long\+Prototype.\+less\+Than\+Or\+Equal}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is less than or equal the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a}{le}} = \mbox{\hyperlink{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}{Long\+Prototype.\+less\+Than\+Or\+Equal}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is less than or equal the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a0ad960682c7bab5e8ff96463ccdfba6a_a0ad960682c7bab5e8ff96463ccdfba6a}{greater\+Than}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is greater than the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_adf255e13f6654220155e6602a6d5481b_adf255e13f6654220155e6602a6d5481b}{gt}} = \mbox{\hyperlink{a01237_a0ad960682c7bab5e8ff96463ccdfba6a_a0ad960682c7bab5e8ff96463ccdfba6a}{Long\+Prototype.\+greater\+Than}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is greater than the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}{greater\+Than\+Or\+Equal}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is greater than or equal the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a3d8450ebe6b80d3a072f60e46d2e3ad9_a3d8450ebe6b80d3a072f60e46d2e3ad9}{gte}} = \mbox{\hyperlink{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}{Long\+Prototype.\+greater\+Than\+Or\+Equal}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is greater than or equal the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a04ceb998bda8088ad9650eb2fdfad866_a04ceb998bda8088ad9650eb2fdfad866}{ge}} = \mbox{\hyperlink{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}{Long\+Prototype.\+greater\+Than\+Or\+Equal}}
+\begin{DoxyCompactList}\small\item\em Tests if this Long\textquotesingle{}s value is greater than or equal the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a13dbb15b63f0c317a8545e0128d39c60_a13dbb15b63f0c317a8545e0128d39c60}{compare}}
+\begin{DoxyCompactList}\small\item\em Compares this Long\textquotesingle{}s value with the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316}{comp}} = \mbox{\hyperlink{a01237_a13dbb15b63f0c317a8545e0128d39c60_a13dbb15b63f0c317a8545e0128d39c60}{Long\+Prototype.\+compare}}
+\begin{DoxyCompactList}\small\item\em Compares this Long\textquotesingle{}s value with the specified\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_aafb4b95213c0e8f93d3ac8ec687924eb_aafb4b95213c0e8f93d3ac8ec687924eb}{negate}}
+\begin{DoxyCompactList}\small\item\em Negates this Long\textquotesingle{}s value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ab49f736b39a52f051bde165dd1a14165_ab49f736b39a52f051bde165dd1a14165}{neg}} = \mbox{\hyperlink{a01237_aafb4b95213c0e8f93d3ac8ec687924eb_aafb4b95213c0e8f93d3ac8ec687924eb}{Long\+Prototype.\+negate}}
+\begin{DoxyCompactList}\small\item\em Negates this Long\textquotesingle{}s value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a5935566873bf60b695fbceca9df883d0_a5935566873bf60b695fbceca9df883d0}{add}}
+\begin{DoxyCompactList}\small\item\em Returns the sum of this and the specified Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a4c8fc2025a3beeff5a877e608ac15155_a4c8fc2025a3beeff5a877e608ac15155}{subtract}}
+\begin{DoxyCompactList}\small\item\em Returns the difference of this and the specified Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_aa57d3d0484d1c8baeb1acf8a6a773b39_aa57d3d0484d1c8baeb1acf8a6a773b39}{sub}} = \mbox{\hyperlink{a01237_a4c8fc2025a3beeff5a877e608ac15155_a4c8fc2025a3beeff5a877e608ac15155}{Long\+Prototype.\+subtract}}
+\begin{DoxyCompactList}\small\item\em Returns the difference of this and the specified Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a48b27e8b6ac21b916965966bbabebdbb_a48b27e8b6ac21b916965966bbabebdbb}{multiply}}
+\begin{DoxyCompactList}\small\item\em Returns the product of this and the specified Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a086fb43a5c1071fbfea460f415d8eb96_a086fb43a5c1071fbfea460f415d8eb96}{mul}} = \mbox{\hyperlink{a01237_a48b27e8b6ac21b916965966bbabebdbb_a48b27e8b6ac21b916965966bbabebdbb}{Long\+Prototype.\+multiply}}
+\begin{DoxyCompactList}\small\item\em Returns the product of this and the specified Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_afe23bb1a1d1a88cdedba7b683ab6e77b_afe23bb1a1d1a88cdedba7b683ab6e77b}{divide}}
+\begin{DoxyCompactList}\small\item\em Returns this Long divided by the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ad0dda96dfc771375c80cc246c67929d6_ad0dda96dfc771375c80cc246c67929d6}{div}} = \mbox{\hyperlink{a01237_afe23bb1a1d1a88cdedba7b683ab6e77b_afe23bb1a1d1a88cdedba7b683ab6e77b}{Long\+Prototype.\+divide}}
+\begin{DoxyCompactList}\small\item\em Returns this Long divided by the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}{modulo}}
+\begin{DoxyCompactList}\small\item\em Returns this Long modulo the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_afe8b4d98ba998dc78d0369b49d2aebf3_afe8b4d98ba998dc78d0369b49d2aebf3}{mod}} = \mbox{\hyperlink{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}{Long\+Prototype.\+modulo}}
+\begin{DoxyCompactList}\small\item\em Returns this Long modulo the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_afc3bf5c0a581b82e373c599b5c43e15b_afc3bf5c0a581b82e373c599b5c43e15b}{rem}} = \mbox{\hyperlink{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}{Long\+Prototype.\+modulo}}
+\begin{DoxyCompactList}\small\item\em Returns this Long modulo the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}
+\begin{DoxyCompactList}\small\item\em Returns the bitwise NOT of this Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_acc76b432492a754bd6dbc036226cd150_acc76b432492a754bd6dbc036226cd150}{count\+Leading\+Zeros}}
+\begin{DoxyCompactList}\small\item\em Returns count leading zeros of this Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a023af6feddeb5d7174bd85bfb60dc0fb_a023af6feddeb5d7174bd85bfb60dc0fb}{clz}} = \mbox{\hyperlink{a01237_acc76b432492a754bd6dbc036226cd150_acc76b432492a754bd6dbc036226cd150}{Long\+Prototype.\+count\+Leading\+Zeros}}
+\begin{DoxyCompactList}\small\item\em Returns count leading zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a6240b1a31ee6298e8b157bdbf76f5e3d_a6240b1a31ee6298e8b157bdbf76f5e3d}{count\+Trailing\+Zeros}}
+\begin{DoxyCompactList}\small\item\em Returns count trailing zeros of this Long. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ac4069dc58d5445f178833ac90b457dca_ac4069dc58d5445f178833ac90b457dca}{ctz}} = \mbox{\hyperlink{a01237_a6240b1a31ee6298e8b157bdbf76f5e3d_a6240b1a31ee6298e8b157bdbf76f5e3d}{Long\+Prototype.\+count\+Trailing\+Zeros}}
+\begin{DoxyCompactList}\small\item\em Returns count trailing zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_af6ba5df101e5630835a0a5d778844922_af6ba5df101e5630835a0a5d778844922}{and}}
+\begin{DoxyCompactList}\small\item\em Returns the bitwise AND of this Long and the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a88083640992a53a144223e2bd602d47d_a88083640992a53a144223e2bd602d47d}{or}}
+\begin{DoxyCompactList}\small\item\em Returns the bitwise OR of this Long and the specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a57a7f84d7a6445fc4bcc479225c29be3_a57a7f84d7a6445fc4bcc479225c29be3}{xor}}
+\begin{DoxyCompactList}\small\item\em Returns the bitwise XOR of this Long and the given one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_aaad3c8b0d6696565664e45cbb26fe85b_aaad3c8b0d6696565664e45cbb26fe85b}{shift\+Left}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits shifted to the left by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_adff4d5229510bc56f1b1961dd20c8a2f_adff4d5229510bc56f1b1961dd20c8a2f}{shl}} = \mbox{\hyperlink{a01237_aaad3c8b0d6696565664e45cbb26fe85b_aaad3c8b0d6696565664e45cbb26fe85b}{Long\+Prototype.\+shift\+Left}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits shifted to the left by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ab811dcdc8a6b90bf6cd035916fe6d3f3_ab811dcdc8a6b90bf6cd035916fe6d3f3}{shift\+Right}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits arithmetically shifted to the right by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a06f6cd01f7ce128a682b22f0295389cd_a06f6cd01f7ce128a682b22f0295389cd}{shr}} = \mbox{\hyperlink{a01237_ab811dcdc8a6b90bf6cd035916fe6d3f3_ab811dcdc8a6b90bf6cd035916fe6d3f3}{Long\+Prototype.\+shift\+Right}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits arithmetically shifted to the right by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}{shift\+Right\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits logically shifted to the right by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a26d4ad3a147fbecfee2d72ce92729829_a26d4ad3a147fbecfee2d72ce92729829}{shru}} = \mbox{\hyperlink{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}{Long\+Prototype.\+shift\+Right\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits logically shifted to the right by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a77e8ed07b198c5cf6d107260fa5125bc_a77e8ed07b198c5cf6d107260fa5125bc}{shr\+\_\+u}} = \mbox{\hyperlink{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}{Long\+Prototype.\+shift\+Right\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits logically shifted to the right by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a100eed368f6b8025913813f9dbf314f9_a100eed368f6b8025913813f9dbf314f9}{rotate\+Left}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits rotated to the left by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a9c531fa0a10808753826697ca8dfb48b_a9c531fa0a10808753826697ca8dfb48b}{rotate\+Right}}
+\begin{DoxyCompactList}\small\item\em Returns this Long with bits rotated to the right by the given amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a260f93e309c51a85dd2d7bcef816e699_a260f93e309c51a85dd2d7bcef816e699}{to\+Signed}}
+\begin{DoxyCompactList}\small\item\em Converts this Long to signed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a692e14c9e32b6ad903bec89014e94a15_a692e14c9e32b6ad903bec89014e94a15}{to\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Converts this Long to unsigned. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_ad42de39e174086451dd936c0252a6c00_ad42de39e174086451dd936c0252a6c00}{to\+Bytes}}
+\begin{DoxyCompactList}\small\item\em Converts this Long to its byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a35d437c896d464906b3b3419674a35de_a35d437c896d464906b3b3419674a35de}{to\+Bytes\+LE}}
+\begin{DoxyCompactList}\small\item\em Converts this Long to its little endian byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} \mbox{\hyperlink{a01237_a5649943f8615c57ed6dad52e64095046_a5649943f8615c57ed6dad52e64095046}{to\+Bytes\+BE}}
+\begin{DoxyCompactList}\small\item\em Converts this Long to its big endian byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_ab0273758bdc337547e9df300c1a76956_ab0273758bdc337547e9df300c1a76956}{from\+Bytes}}
+\begin{DoxyCompactList}\small\item\em Creates a Long from its byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_a5738038439f4b91454660f4ed7c76881_a5738038439f4b91454660f4ed7c76881}{from\+Bytes\+LE}}
+\begin{DoxyCompactList}\small\item\em Creates a Long from its little endian byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} \mbox{\hyperlink{a01237_a5e999de87365c50f951facf8ad56c6dc_a5e999de87365c50f951facf8ad56c6dc}{from\+Bytes\+BE}}
+\begin{DoxyCompactList}\small\item\em Creates a Long from its big endian byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01102_af9407f361b2d982c5af536898b63fc11_af9407f361b2d982c5af536898b63fc11}{default}} \mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01237_a5bf45fc51bc0426586792b5f9cb95431_a5bf45fc51bc0426586792b5f9cb95431}\index{index.js@{index.js}!catch@{catch}}
+\index{catch@{catch}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{catch()}{catch()}}
+{\footnotesize\ttfamily \label{a01237_a5bf45fc51bc0426586792b5f9cb95431_a5bf45fc51bc0426586792b5f9cb95431} 
+catch (\begin{DoxyParamCaption}\item[{}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00027}{27}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a4239fbbe8c4562a351b550250b5fe619_a4239fbbe8c4562a351b550250b5fe619}\index{index.js@{index.js}!ctz32@{ctz32}}
+\index{ctz32@{ctz32}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{ctz32()}{ctz32()}}
+{\footnotesize\ttfamily \label{a01237_a4239fbbe8c4562a351b550250b5fe619_a4239fbbe8c4562a351b550250b5fe619} 
+function ctz32 (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+
+
+@function 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\texorpdfstring{$\ast$}{*}\}} & value number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{number\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00105}{105}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a50593dbc261b172e4d8b4b773157fd27_a50593dbc261b172e4d8b4b773157fd27}\index{index.js@{index.js}!fromBits@{fromBits}}
+\index{fromBits@{fromBits}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromBits()}{fromBits()}}
+{\footnotesize\ttfamily \label{a01237_a50593dbc261b172e4d8b4b773157fd27_a50593dbc261b172e4d8b4b773157fd27} 
+function from\+Bits (\begin{DoxyParamCaption}\item[{}]{low\+Bits}{, }\item[{}]{high\+Bits}{, }\item[{}]{unsigned}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & low\+Bits \\
+\hline
+{\em \{number\}} & high\+Bits \\
+\hline
+{\em \{boolean=\}} & unsigned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00215}{215}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aeca8920e257a840c7f30fbcfcb9aed6d_aeca8920e257a840c7f30fbcfcb9aed6d}\index{index.js@{index.js}!fromInt@{fromInt}}
+\index{fromInt@{fromInt}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromInt()}{fromInt()}}
+{\footnotesize\ttfamily \label{a01237_aeca8920e257a840c7f30fbcfcb9aed6d_aeca8920e257a840c7f30fbcfcb9aed6d} 
+function from\+Int (\begin{DoxyParamCaption}\item[{}]{value}{, }\item[{}]{unsigned}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & value \\
+\hline
+{\em \{boolean=\}} & unsigned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00138}{138}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a98511324cb7f120ba0e829ac1590cf32_a98511324cb7f120ba0e829ac1590cf32}\index{index.js@{index.js}!fromNumber@{fromNumber}}
+\index{fromNumber@{fromNumber}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromNumber()}{fromNumber()}}
+{\footnotesize\ttfamily \label{a01237_a98511324cb7f120ba0e829ac1590cf32_a98511324cb7f120ba0e829ac1590cf32} 
+function from\+Number (\begin{DoxyParamCaption}\item[{}]{value}{, }\item[{}]{unsigned}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & value \\
+\hline
+{\em \{boolean=\}} & unsigned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00180}{180}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a9ae53eb26d614d2444cdc9a832a14e81_a9ae53eb26d614d2444cdc9a832a14e81}\index{index.js@{index.js}!fromString@{fromString}}
+\index{fromString@{fromString}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromString()}{fromString()}}
+{\footnotesize\ttfamily \label{a01237_a9ae53eb26d614d2444cdc9a832a14e81_a9ae53eb26d614d2444cdc9a832a14e81} 
+function from\+String (\begin{DoxyParamCaption}\item[{}]{str}{, }\item[{}]{unsigned}{, }\item[{}]{radix}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & str \\
+\hline
+{\em \{(boolean\texorpdfstring{$\vert$}{|}number)=\}} & unsigned \\
+\hline
+{\em \{number=\}} & radix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00246}{246}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_afb7b22d61888a3782a02efb5622aa0fd_afb7b22d61888a3782a02efb5622aa0fd}\index{index.js@{index.js}!fromValue@{fromValue}}
+\index{fromValue@{fromValue}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromValue()}{fromValue()}}
+{\footnotesize\ttfamily \label{a01237_afb7b22d61888a3782a02efb5622aa0fd_afb7b22d61888a3782a02efb5622aa0fd} 
+function from\+Value (\begin{DoxyParamCaption}\item[{}]{val}{, }\item[{}]{unsigned}{}\end{DoxyParamCaption})}
+
+
+
+@function 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\texorpdfstring{$\vert$}{|}!\{low} & number, high\+: number, unsigned\+: boolean\}\} val \\
+\hline
+{\em \{boolean=\}} & unsigned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00306}{306}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a9fa1d2c92d5c36576fc88f6a1f68284b_a9fa1d2c92d5c36576fc88f6a1f68284b}\index{index.js@{index.js}!isLong@{isLong}}
+\index{isLong@{isLong}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isLong()}{isLong()}}
+{\footnotesize\ttfamily \label{a01237_a9fa1d2c92d5c36576fc88f6a1f68284b_a9fa1d2c92d5c36576fc88f6a1f68284b} 
+function is\+Long (\begin{DoxyParamCaption}\item[{}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+@function 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\texorpdfstring{$\ast$}{*}\}} & obj Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00095}{95}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ae87870f7108ac720cff5f3f432b9f0f3_ae87870f7108ac720cff5f3f432b9f0f3}\index{index.js@{index.js}!Long@{Long}}
+\index{Long@{Long}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{Long()}{Long()}}
+{\footnotesize\ttfamily \label{a01237_ae87870f7108ac720cff5f3f432b9f0f3_ae87870f7108ac720cff5f3f432b9f0f3} 
+function Long (\begin{DoxyParamCaption}\item[{}]{low}{, }\item[{}]{high}{, }\item[{}]{unsigned}{}\end{DoxyParamCaption})}
+
+The low 32 bits as a signed value. @type \{number\}
+
+The high 32 bits as a signed value. @type \{number\}
+
+Whether unsigned or not. @type \{boolean\}
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00041}{41}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01237_a5935566873bf60b695fbceca9df883d0_a5935566873bf60b695fbceca9df883d0}\index{index.js@{index.js}!add@{add}}
+\index{add@{add}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{add}{add}}
+{\footnotesize\ttfamily \label{a01237_a5935566873bf60b695fbceca9df883d0_a5935566873bf60b695fbceca9df883d0} 
+\mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}} \mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}} \mbox{\hyperlink{a00572_a651e1f77bdcb2a41caf54678099ac151_a651e1f77bdcb2a41caf54678099ac151}{ui}} \mbox{\hyperlink{a00572_a2e8a79061fcc588ba355a7772b9d8eb5_a2e8a79061fcc588ba355a7772b9d8eb5}{plugin}} \mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}} \mbox{\hyperlink{a00572_a651e1f77bdcb2a41caf54678099ac151_a651e1f77bdcb2a41caf54678099ac151}{ui}} \mbox{\hyperlink{a00572_a2e8a79061fcc588ba355a7772b9d8eb5_a2e8a79061fcc588ba355a7772b9d8eb5}{plugin}} \mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}} \mbox{\hyperlink{a00572_a651e1f77bdcb2a41caf54678099ac151_a651e1f77bdcb2a41caf54678099ac151}{ui}} \mbox{\hyperlink{a00572_a2e8a79061fcc588ba355a7772b9d8eb5_a2e8a79061fcc588ba355a7772b9d8eb5}{plugin}} \mbox{\hyperlink{a01264_a0abc9ddee91887084fd7f38e1bcb6f7f_a0abc9ddee91887084fd7f38e1bcb6f7f}{y}} \mbox{\hyperlink{a00572_a651e1f77bdcb2a41caf54678099ac151_a651e1f77bdcb2a41caf54678099ac151}{ui}} \mbox{\hyperlink{a00572_a2e8a79061fcc588ba355a7772b9d8eb5_a2e8a79061fcc588ba355a7772b9d8eb5}{plugin}} add}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a5935566873bf60b695fbceca9df883d0_a5935566873bf60b695fbceca9df883d0}{add}}(addend)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(addend))}
+\DoxyCodeLine{\ \ \ \ addend\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(addend);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ var\ a48\ =\ this.high\ >>>\ 16;}
+\DoxyCodeLine{\ \ var\ a32\ =\ this.high\ \&\ 0xFFFF;}
+\DoxyCodeLine{\ \ var\ a16\ =\ this.low\ >>>\ 16;}
+\DoxyCodeLine{\ \ var\ a00\ =\ this.low\ \&\ 0xFFFF;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ var\ b48\ =\ addend.high\ >>>\ 16;}
+\DoxyCodeLine{\ \ var\ b32\ =\ addend.high\ \&\ 0xFFFF;}
+\DoxyCodeLine{\ \ var\ b16\ =\ addend.low\ >>>\ 16;}
+\DoxyCodeLine{\ \ var\ b00\ =\ addend.low\ \&\ 0xFFFF;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ var\ c48\ =\ 0,\ c32\ =\ 0,\ c16\ =\ 0,\ c00\ =\ 0;}
+\DoxyCodeLine{\ \ c00\ +=\ a00\ +\ b00;}
+\DoxyCodeLine{\ \ c16\ +=\ c00\ >>>\ 16;}
+\DoxyCodeLine{\ \ c00\ \&=\ 0xFFFF;}
+\DoxyCodeLine{\ \ c16\ +=\ a16\ +\ b16;}
+\DoxyCodeLine{\ \ c32\ +=\ c16\ >>>\ 16;}
+\DoxyCodeLine{\ \ c16\ \&=\ 0xFFFF;}
+\DoxyCodeLine{\ \ c32\ +=\ a32\ +\ b32;}
+\DoxyCodeLine{\ \ c48\ +=\ c32\ >>>\ 16;}
+\DoxyCodeLine{\ \ c32\ \&=\ 0xFFFF;}
+\DoxyCodeLine{\ \ c48\ +=\ a48\ +\ b48;}
+\DoxyCodeLine{\ \ c48\ \&=\ 0xFFFF;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}((c16\ <<\ 16)\ |\ c00,\ (c48\ <<\ 16)\ |\ c32,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns the sum of this and the specified Long. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & addend Addend \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Sum 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00833}{833}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_af6ba5df101e5630835a0a5d778844922_af6ba5df101e5630835a0a5d778844922}\index{index.js@{index.js}!and@{and}}
+\index{and@{and}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{and}{and}}
+{\footnotesize\ttfamily \label{a01237_af6ba5df101e5630835a0a5d778844922_af6ba5df101e5630835a0a5d778844922} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} and}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_af6ba5df101e5630835a0a5d778844922_af6ba5df101e5630835a0a5d778844922}{and}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(other))}
+\DoxyCodeLine{\ \ \ \ other\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(other);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.low\ \&\ other.low,\ \textcolor{keyword}{this}.high\ \&\ other.high,\ \textcolor{keyword}{this}.unsigned);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns the bitwise AND of this Long and the specified. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other Long \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01180}{1180}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a023af6feddeb5d7174bd85bfb60dc0fb_a023af6feddeb5d7174bd85bfb60dc0fb}\index{index.js@{index.js}!clz@{clz}}
+\index{clz@{clz}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{clz}{clz}}
+{\footnotesize\ttfamily \label{a01237_a023af6feddeb5d7174bd85bfb60dc0fb_a023af6feddeb5d7174bd85bfb60dc0fb} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} clz = \mbox{\hyperlink{a01237_acc76b432492a754bd6dbc036226cd150_acc76b432492a754bd6dbc036226cd150}{Long\+Prototype.\+count\+Leading\+Zeros}}}
+
+
+
+Returns count leading zeros. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#count\+Leading\+Zeros}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01155}{1155}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316}\index{index.js@{index.js}!comp@{comp}}
+\index{comp@{comp}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{comp}{comp}}
+{\footnotesize\ttfamily \label{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} comp = \mbox{\hyperlink{a01237_a13dbb15b63f0c317a8545e0128d39c60_a13dbb15b63f0c317a8545e0128d39c60}{Long\+Prototype.\+compare}}}
+
+
+
+Compares this Long\textquotesingle{}s value with the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#compare}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{number\} 0 if they are the same, 1 if the this is greater and -\/1 if the given one is greater 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00807}{807}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a13dbb15b63f0c317a8545e0128d39c60_a13dbb15b63f0c317a8545e0128d39c60}\index{index.js@{index.js}!compare@{compare}}
+\index{compare@{compare}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{compare}{compare}}
+{\footnotesize\ttfamily \label{a01237_a13dbb15b63f0c317a8545e0128d39c60_a13dbb15b63f0c317a8545e0128d39c60} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} compare}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a13dbb15b63f0c317a8545e0128d39c60_a13dbb15b63f0c317a8545e0128d39c60}{compare}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(other))}
+\DoxyCodeLine{\ \ \ \ other\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(other);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (this.\mbox{\hyperlink{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6}{eq}}(other))}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\ \ var\ thisNeg\ =\ this.\mbox{\hyperlink{a01237_a9a95247cc0683fe372cc62edb37fd3cd_a9a95247cc0683fe372cc62edb37fd3cd}{isNegative}}(),}
+\DoxyCodeLine{\ \ \ \ otherNeg\ =\ other.isNegative();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (thisNeg\ \&\&\ !otherNeg)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!thisNeg\ \&\&\ otherNeg)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!this.\textcolor{keywordtype}{unsigned})}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_aa57d3d0484d1c8baeb1acf8a6a773b39_aa57d3d0484d1c8baeb1acf8a6a773b39}{sub}}(other).isNegative()\ ?\ -\/1\ :\ 1;}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ (other.high\ >>>\ 0)\ >\ (this.high\ >>>\ 0)\ ||\ (other.high\ ===\ \textcolor{keyword}{this}.high\ \&\&\ (other.low\ >>>\ 0)\ >\ (\textcolor{keyword}{this}.low\ >>>\ 0))\ ?\ -\/1\ :\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Compares this Long\textquotesingle{}s value with the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{number\} 0 if they are the same, 1 if the this is greater and -\/1 if the given one is greater 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00782}{782}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_acc76b432492a754bd6dbc036226cd150_acc76b432492a754bd6dbc036226cd150}\index{index.js@{index.js}!countLeadingZeros@{countLeadingZeros}}
+\index{countLeadingZeros@{countLeadingZeros}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{countLeadingZeros}{countLeadingZeros}}
+{\footnotesize\ttfamily \label{a01237_acc76b432492a754bd6dbc036226cd150_acc76b432492a754bd6dbc036226cd150} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} count\+Leading\+Zeros}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_acc76b432492a754bd6dbc036226cd150_acc76b432492a754bd6dbc036226cd150}{countLeadingZeros}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high\ ?\ Math.clz32(this.high)\ :\ Math.clz32(this.low)\ +\ 32;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns count leading zeros of this Long. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01145}{1145}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a6240b1a31ee6298e8b157bdbf76f5e3d_a6240b1a31ee6298e8b157bdbf76f5e3d}\index{index.js@{index.js}!countTrailingZeros@{countTrailingZeros}}
+\index{countTrailingZeros@{countTrailingZeros}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{countTrailingZeros}{countTrailingZeros}}
+{\footnotesize\ttfamily \label{a01237_a6240b1a31ee6298e8b157bdbf76f5e3d_a6240b1a31ee6298e8b157bdbf76f5e3d} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} count\+Trailing\+Zeros}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a6240b1a31ee6298e8b157bdbf76f5e3d_a6240b1a31ee6298e8b157bdbf76f5e3d}{countTrailingZeros}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.low\ ?\ \mbox{\hyperlink{a01237_a4239fbbe8c4562a351b550250b5fe619_a4239fbbe8c4562a351b550250b5fe619}{ctz32}}(this.low)\ :\ \mbox{\hyperlink{a01237_a4239fbbe8c4562a351b550250b5fe619_a4239fbbe8c4562a351b550250b5fe619}{ctz32}}(\mbox{\hyperlink{a01195_a5a2c462c0f07b0d5f91d9d42bbd4ea4d_a5a2c462c0f07b0d5f91d9d42bbd4ea4d}{this}}.high)\ +\ 32;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns count trailing zeros of this Long. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01162}{1162}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ac4069dc58d5445f178833ac90b457dca_ac4069dc58d5445f178833ac90b457dca}\index{index.js@{index.js}!ctz@{ctz}}
+\index{ctz@{ctz}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{ctz}{ctz}}
+{\footnotesize\ttfamily \label{a01237_ac4069dc58d5445f178833ac90b457dca_ac4069dc58d5445f178833ac90b457dca} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} ctz = \mbox{\hyperlink{a01237_a6240b1a31ee6298e8b157bdbf76f5e3d_a6240b1a31ee6298e8b157bdbf76f5e3d}{Long\+Prototype.\+count\+Trailing\+Zeros}}}
+
+
+
+Returns count trailing zeros. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#count\+Trailing\+Zeros}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01172}{1172}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ad0dda96dfc771375c80cc246c67929d6_ad0dda96dfc771375c80cc246c67929d6}\index{index.js@{index.js}!div@{div}}
+\index{div@{div}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{div}{div}}
+{\footnotesize\ttfamily \label{a01237_ad0dda96dfc771375c80cc246c67929d6_ad0dda96dfc771375c80cc246c67929d6} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} div = \mbox{\hyperlink{a01237_afe23bb1a1d1a88cdedba7b683ab6e77b_afe23bb1a1d1a88cdedba7b683ab6e77b}{Long\+Prototype.\+divide}}}
+
+
+
+Returns this Long divided by the specified. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#divide}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & divisor Divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Quotient 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01089}{1089}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_afe23bb1a1d1a88cdedba7b683ab6e77b_afe23bb1a1d1a88cdedba7b683ab6e77b}\index{index.js@{index.js}!divide@{divide}}
+\index{divide@{divide}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{divide}{divide}}
+{\footnotesize\ttfamily \label{a01237_afe23bb1a1d1a88cdedba7b683ab6e77b_afe23bb1a1d1a88cdedba7b683ab6e77b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} divide}
+
+
+
+Returns this Long divided by the specified. 
+
+The result is signed if this Long is signed or unsigned if this Long is unsigned. @this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & divisor Divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Quotient 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00976}{976}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6}\index{index.js@{index.js}!eq@{eq}}
+\index{eq@{eq}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{eq}{eq}}
+{\footnotesize\ttfamily \label{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} eq = \mbox{\hyperlink{a01237_ad229f448a893363dda8c6716108663f4_ad229f448a893363dda8c6716108663f4}{Long\+Prototype.\+equals}}}
+
+
+
+Tests if this Long\textquotesingle{}s value equals the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#equals}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00659}{659}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ad229f448a893363dda8c6716108663f4_ad229f448a893363dda8c6716108663f4}\index{index.js@{index.js}!equals@{equals}}
+\index{equals@{equals}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{equals}{equals}}
+{\footnotesize\ttfamily \label{a01237_ad229f448a893363dda8c6716108663f4_ad229f448a893363dda8c6716108663f4} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} equals}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ad229f448a893363dda8c6716108663f4_ad229f448a893363dda8c6716108663f4}{equals}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(other))}
+\DoxyCodeLine{\ \ \ \ other\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(other);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (this.\textcolor{keywordtype}{unsigned}\ !==\ other.unsigned\ \&\&\ (\textcolor{keyword}{this}.high\ >>>\ 31)\ ===\ 1\ \&\&\ (other.high\ >>>\ 31)\ ===\ 1)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high\ ===\ other.high\ \&\&\ this.low\ ===\ other.low;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value equals the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00645}{645}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a824164c22ccdf3f52cff348c83dd08e8_a824164c22ccdf3f52cff348c83dd08e8}\index{index.js@{index.js}!eqz@{eqz}}
+\index{eqz@{eqz}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{eqz}{eqz}}
+{\footnotesize\ttfamily \label{a01237_a824164c22ccdf3f52cff348c83dd08e8_a824164c22ccdf3f52cff348c83dd08e8} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} eqz = \mbox{\hyperlink{a01237_a16a44bae441805a0def5a4db5243162a_a16a44bae441805a0def5a4db5243162a}{Long\+Prototype.\+is\+Zero}}}
+
+
+
+Tests if this Long\textquotesingle{}s value equals zero. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#is\+Zero}}. \begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00601}{601}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}\index{index.js@{index.js}!fromBits@{fromBits}}
+\index{fromBits@{fromBits}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromBits}{fromBits}}
+{\footnotesize\ttfamily \label{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Bits = from\+Bits}
+
+
+
+Returns a Long representing the 64 bit integer that comes by concatenating the given low and high bits. 
+
+Each is assumed to use 32 bits. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & low\+Bits The low 32 bits \\
+\hline
+{\em \{number\}} & high\+Bits The high 32 bits \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00228}{228}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ab0273758bdc337547e9df300c1a76956_ab0273758bdc337547e9df300c1a76956}\index{index.js@{index.js}!fromBytes@{fromBytes}}
+\index{fromBytes@{fromBytes}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromBytes}{fromBytes}}
+{\footnotesize\ttfamily \label{a01237_ab0273758bdc337547e9df300c1a76956_ab0273758bdc337547e9df300c1a76956} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Bytes}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ab0273758bdc337547e9df300c1a76956_ab0273758bdc337547e9df300c1a76956}{fromBytes}}(\mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}},\ \textcolor{keywordtype}{unsigned},\ \mbox{\hyperlink{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a}{le}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a}{le}}\ ?\ \mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}}.fromBytesLE(\mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}},\ \textcolor{keywordtype}{unsigned})\ :\ \mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}}.fromBytesBE(\mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}},\ \textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Creates a Long from its byte representation. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Array.$<$number$>$\}} & bytes Byte representation \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+{\em \{boolean=\}} & le Whether little or big endian, defaults to big endian \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01423}{1423}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a5e999de87365c50f951facf8ad56c6dc_a5e999de87365c50f951facf8ad56c6dc}\index{index.js@{index.js}!fromBytesBE@{fromBytesBE}}
+\index{fromBytesBE@{fromBytesBE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromBytesBE}{fromBytesBE}}
+{\footnotesize\ttfamily \label{a01237_a5e999de87365c50f951facf8ad56c6dc_a5e999de87365c50f951facf8ad56c6dc} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Bytes\+BE}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a5e999de87365c50f951facf8ad56c6dc_a5e999de87365c50f951facf8ad56c6dc}{fromBytesBE}}(\mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}},\ \textcolor{keywordtype}{unsigned})\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}}(}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[4]\ <<\ 24\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[5]\ <<\ 16\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[6]\ <<\ 8\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[7],}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[0]\ <<\ 24\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[1]\ <<\ 16\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[2]\ <<\ 8\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[3],}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{unsigned}}
+\DoxyCodeLine{\ \ );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Creates a Long from its big endian byte representation. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Array.$<$number$>$\}} & bytes Big endian byte representation \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01453}{1453}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a5738038439f4b91454660f4ed7c76881_a5738038439f4b91454660f4ed7c76881}\index{index.js@{index.js}!fromBytesLE@{fromBytesLE}}
+\index{fromBytesLE@{fromBytesLE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromBytesLE}{fromBytesLE}}
+{\footnotesize\ttfamily \label{a01237_a5738038439f4b91454660f4ed7c76881_a5738038439f4b91454660f4ed7c76881} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Bytes\+LE}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a5738038439f4b91454660f4ed7c76881_a5738038439f4b91454660f4ed7c76881}{fromBytesLE}}(\mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}},\ \textcolor{keywordtype}{unsigned})\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}}(}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[0]\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[1]\ <<\ 8\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[2]\ <<\ 16\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[3]\ <<\ 24,}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[4]\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[5]\ <<\ 8\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[6]\ <<\ 16\ |}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}[7]\ <<\ 24,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{unsigned}}
+\DoxyCodeLine{\ \ );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Creates a Long from its little endian byte representation. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Array.$<$number$>$\}} & bytes Little endian byte representation \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01433}{1433}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}\index{index.js@{index.js}!fromInt@{fromInt}}
+\index{fromInt@{fromInt}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromInt}{fromInt}}
+{\footnotesize\ttfamily \label{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Int = from\+Int}
+
+
+
+Returns a Long representing the given 32 bit integer value. 
+
+@function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & value The 32 bit integer in question \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00172}{172}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a3682c64d9f10e0eb159469a27d2d77c3_a3682c64d9f10e0eb159469a27d2d77c3}\index{index.js@{index.js}!fromNumber@{fromNumber}}
+\index{fromNumber@{fromNumber}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromNumber}{fromNumber}}
+{\footnotesize\ttfamily \label{a01237_a3682c64d9f10e0eb159469a27d2d77c3_a3682c64d9f10e0eb159469a27d2d77c3} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Number = from\+Number}
+
+
+
+Returns a Long representing the given value, provided that it is a finite number. 
+
+Otherwise, zero is returned. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & value The number in question \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00206}{206}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_afa5a3e4304a66b6502ee45a946b6176e_afa5a3e4304a66b6502ee45a946b6176e}\index{index.js@{index.js}!fromString@{fromString}}
+\index{fromString@{fromString}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromString}{fromString}}
+{\footnotesize\ttfamily \label{a01237_afa5a3e4304a66b6502ee45a946b6176e_afa5a3e4304a66b6502ee45a946b6176e} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+String = from\+String}
+
+
+
+Returns a Long representation of the given string, written using the specified radix. 
+
+@function 
+\begin{DoxyParams}{Parámetros}
+{\em \{string\}} & str The textual representation of the Long \\
+\hline
+{\em \{(boolean\texorpdfstring{$\vert$}{|}number)=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+{\em \{number=\}} & radix The radix in which the text is written (2-\/36), defaults to 10 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} The corresponding Long value 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00297}{297}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}\index{index.js@{index.js}!fromValue@{fromValue}}
+\index{fromValue@{fromValue}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{fromValue}{fromValue}}
+{\footnotesize\ttfamily \label{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} from\+Value = from\+Value}
+
+
+
+Converts the specified value to a Long using the appropriate from\texorpdfstring{$\ast$}{*} function for its type. 
+
+@function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\texorpdfstring{$\vert$}{|}!\{low} & number, high\+: number, unsigned\+: boolean\}\} val Value \\
+\hline
+{\em \{boolean=\}} & unsigned Whether unsigned or not, defaults to signed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00322}{322}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a04ceb998bda8088ad9650eb2fdfad866_a04ceb998bda8088ad9650eb2fdfad866}\index{index.js@{index.js}!ge@{ge}}
+\index{ge@{ge}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{ge}{ge}}
+{\footnotesize\ttfamily \label{a01237_a04ceb998bda8088ad9650eb2fdfad866_a04ceb998bda8088ad9650eb2fdfad866} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} ge = \mbox{\hyperlink{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}{Long\+Prototype.\+greater\+Than\+Or\+Equal}}}
+
+
+
+Tests if this Long\textquotesingle{}s value is greater than or equal the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#greater\+Than\+Or\+Equal}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00773}{773}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ac8dcd44e64627459800a4a893dbedcd2_ac8dcd44e64627459800a4a893dbedcd2}\index{index.js@{index.js}!getHighBits@{getHighBits}}
+\index{getHighBits@{getHighBits}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{getHighBits}{getHighBits}}
+{\footnotesize\ttfamily \label{a01237_ac8dcd44e64627459800a4a893dbedcd2_ac8dcd44e64627459800a4a893dbedcd2} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} get\+High\+Bits}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ac8dcd44e64627459800a4a893dbedcd2_ac8dcd44e64627459800a4a893dbedcd2}{getHighBits}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Gets the high 32 bits as a signed integer. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} Signed high bits 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00542}{542}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a706ce44f0ab1ccd505bcfaac41302ad8_a706ce44f0ab1ccd505bcfaac41302ad8}\index{index.js@{index.js}!getHighBitsUnsigned@{getHighBitsUnsigned}}
+\index{getHighBitsUnsigned@{getHighBitsUnsigned}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{getHighBitsUnsigned}{getHighBitsUnsigned}}
+{\footnotesize\ttfamily \label{a01237_a706ce44f0ab1ccd505bcfaac41302ad8_a706ce44f0ab1ccd505bcfaac41302ad8} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} get\+High\+Bits\+Unsigned}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a706ce44f0ab1ccd505bcfaac41302ad8_a706ce44f0ab1ccd505bcfaac41302ad8}{getHighBitsUnsigned}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high\ >>>\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Gets the high 32 bits as an unsigned integer. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} Unsigned high bits 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00551}{551}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_af8ba78bb4d67caf264af8bb452ad223f_af8ba78bb4d67caf264af8bb452ad223f}\index{index.js@{index.js}!getLowBits@{getLowBits}}
+\index{getLowBits@{getLowBits}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{getLowBits}{getLowBits}}
+{\footnotesize\ttfamily \label{a01237_af8ba78bb4d67caf264af8bb452ad223f_af8ba78bb4d67caf264af8bb452ad223f} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} get\+Low\+Bits}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_af8ba78bb4d67caf264af8bb452ad223f_af8ba78bb4d67caf264af8bb452ad223f}{getLowBits}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.low;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Gets the low 32 bits as a signed integer. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} Signed low bits 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00560}{560}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a38a0302c8025d633f9a6bfeb93f2a665_a38a0302c8025d633f9a6bfeb93f2a665}\index{index.js@{index.js}!getLowBitsUnsigned@{getLowBitsUnsigned}}
+\index{getLowBitsUnsigned@{getLowBitsUnsigned}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{getLowBitsUnsigned}{getLowBitsUnsigned}}
+{\footnotesize\ttfamily \label{a01237_a38a0302c8025d633f9a6bfeb93f2a665_a38a0302c8025d633f9a6bfeb93f2a665} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} get\+Low\+Bits\+Unsigned}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a38a0302c8025d633f9a6bfeb93f2a665_a38a0302c8025d633f9a6bfeb93f2a665}{getLowBitsUnsigned}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.low\ >>>\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Gets the low 32 bits as an unsigned integer. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} Unsigned low bits 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00569}{569}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_abdf736b071498c50e05fb479675faf3c_abdf736b071498c50e05fb479675faf3c}\index{index.js@{index.js}!getNumBitsAbs@{getNumBitsAbs}}
+\index{getNumBitsAbs@{getNumBitsAbs}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{getNumBitsAbs}{getNumBitsAbs}}
+{\footnotesize\ttfamily \label{a01237_abdf736b071498c50e05fb479675faf3c_abdf736b071498c50e05fb479675faf3c} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} get\+Num\+Bits\+Abs}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_abdf736b071498c50e05fb479675faf3c_abdf736b071498c50e05fb479675faf3c}{getNumBitsAbs}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (this.\mbox{\hyperlink{a01237_a9a95247cc0683fe372cc62edb37fd3cd_a9a95247cc0683fe372cc62edb37fd3cd}{isNegative}}())\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6}{eq}}(\mbox{\hyperlink{a01237_a658bfd7bf2057953eb283172659d2268_a658bfd7bf2057953eb283172659d2268}{MIN\_VALUE}})\ ?\ 64\ :\ this.\mbox{\hyperlink{a01237_ab49f736b39a52f051bde165dd1a14165_ab49f736b39a52f051bde165dd1a14165}{neg}}().getNumBitsAbs();}
+\DoxyCodeLine{\ \ var\ val\ =\ this.high\ !=\ 0\ ?\ this.high\ :\ this.low;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{for}\ (var\ bit\ =\ 31;\ bit\ >\ 0;\ bit-\/-\/)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ ((val\ \&\ (1\ <<\ bit))\ !=\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high\ !=\ 0\ ?\ bit\ +\ 33\ :\ bit\ +\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Gets the number of bits needed to represent the absolute value of this Long. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00578}{578}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a0ad960682c7bab5e8ff96463ccdfba6a_a0ad960682c7bab5e8ff96463ccdfba6a}\index{index.js@{index.js}!greaterThan@{greaterThan}}
+\index{greaterThan@{greaterThan}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{greaterThan}{greaterThan}}
+{\footnotesize\ttfamily \label{a01237_a0ad960682c7bab5e8ff96463ccdfba6a_a0ad960682c7bab5e8ff96463ccdfba6a} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} greater\+Than}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a0ad960682c7bab5e8ff96463ccdfba6a_a0ad960682c7bab5e8ff96463ccdfba6a}{greaterThan}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316}{comp}}(\ other)\ >\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is greater than the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00737}{737}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}\index{index.js@{index.js}!greaterThanOrEqual@{greaterThanOrEqual}}
+\index{greaterThanOrEqual@{greaterThanOrEqual}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{greaterThanOrEqual}{greaterThanOrEqual}}
+{\footnotesize\ttfamily \label{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} greater\+Than\+Or\+Equal}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}{greaterThanOrEqual}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316}{comp}}(\ other)\ >=\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is greater than or equal the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00755}{755}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_adf255e13f6654220155e6602a6d5481b_adf255e13f6654220155e6602a6d5481b}\index{index.js@{index.js}!gt@{gt}}
+\index{gt@{gt}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{gt}{gt}}
+{\footnotesize\ttfamily \label{a01237_adf255e13f6654220155e6602a6d5481b_adf255e13f6654220155e6602a6d5481b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} gt = \mbox{\hyperlink{a01237_a0ad960682c7bab5e8ff96463ccdfba6a_a0ad960682c7bab5e8ff96463ccdfba6a}{Long\+Prototype.\+greater\+Than}}}
+
+
+
+Tests if this Long\textquotesingle{}s value is greater than the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#greater\+Than}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00747}{747}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a3d8450ebe6b80d3a072f60e46d2e3ad9_a3d8450ebe6b80d3a072f60e46d2e3ad9}\index{index.js@{index.js}!gte@{gte}}
+\index{gte@{gte}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{gte}{gte}}
+{\footnotesize\ttfamily \label{a01237_a3d8450ebe6b80d3a072f60e46d2e3ad9_a3d8450ebe6b80d3a072f60e46d2e3ad9} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} gte = \mbox{\hyperlink{a01237_abf8ac33baa97e6dd57637ef16ea86ad3_abf8ac33baa97e6dd57637ef16ea86ad3}{Long\+Prototype.\+greater\+Than\+Or\+Equal}}}
+
+
+
+Tests if this Long\textquotesingle{}s value is greater than or equal the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#greater\+Than\+Or\+Equal}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00765}{765}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aa270556316328316957b05df065142d5_aa270556316328316957b05df065142d5}\index{index.js@{index.js}!INT\_CACHE@{INT\_CACHE}}
+\index{INT\_CACHE@{INT\_CACHE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{INT\_CACHE}{INT\_CACHE}}
+{\footnotesize\ttfamily \label{a01237_aa270556316328316957b05df065142d5_aa270556316328316957b05df065142d5} 
+var INT\+\_\+\+CACHE = \{\}}
+
+
+
+\doxylink{a00844}{A} cache of the Long representations of small integer values. 
+
+@type \{!\+Object\} @inner 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00123}{123}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a6526c9cc2a231737f268b033cc191a98_a6526c9cc2a231737f268b033cc191a98}\index{index.js@{index.js}!isEven@{isEven}}
+\index{isEven@{isEven}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isEven}{isEven}}
+{\footnotesize\ttfamily \label{a01237_a6526c9cc2a231737f268b033cc191a98_a6526c9cc2a231737f268b033cc191a98} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} is\+Even}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a6526c9cc2a231737f268b033cc191a98_a6526c9cc2a231737f268b033cc191a98}{isEven}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ (this.low\ \&\ 1)\ ===\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is even. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00635}{635}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}\index{index.js@{index.js}!isLong@{isLong}}
+\index{isLong@{isLong}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isLong}{isLong}}
+{\footnotesize\ttfamily \label{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} is\+Long = is\+Long}
+
+
+
+Tests if the specified object is a Long. 
+
+@function 
+\begin{DoxyParams}{Parámetros}
+{\em \{\texorpdfstring{$\ast$}{*}\}} & obj Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00116}{116}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a9a95247cc0683fe372cc62edb37fd3cd_a9a95247cc0683fe372cc62edb37fd3cd}\index{index.js@{index.js}!isNegative@{isNegative}}
+\index{isNegative@{isNegative}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isNegative}{isNegative}}
+{\footnotesize\ttfamily \label{a01237_a9a95247cc0683fe372cc62edb37fd3cd_a9a95247cc0683fe372cc62edb37fd3cd} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} is\+Negative}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a9a95247cc0683fe372cc62edb37fd3cd_a9a95247cc0683fe372cc62edb37fd3cd}{isNegative}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ !this.\textcolor{keywordtype}{unsigned}\ \&\&\ this.high\ <\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is negative. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00608}{608}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a5a6d8820684763477ec7ad5efdc44b3b_a5a6d8820684763477ec7ad5efdc44b3b}\index{index.js@{index.js}!isOdd@{isOdd}}
+\index{isOdd@{isOdd}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isOdd}{isOdd}}
+{\footnotesize\ttfamily \label{a01237_a5a6d8820684763477ec7ad5efdc44b3b_a5a6d8820684763477ec7ad5efdc44b3b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} is\+Odd}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a5a6d8820684763477ec7ad5efdc44b3b_a5a6d8820684763477ec7ad5efdc44b3b}{isOdd}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ (this.low\ \&\ 1)\ ===\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is odd. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00626}{626}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a06a2ccd6baeeffb74912283e8204f649_a06a2ccd6baeeffb74912283e8204f649}\index{index.js@{index.js}!isPositive@{isPositive}}
+\index{isPositive@{isPositive}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isPositive}{isPositive}}
+{\footnotesize\ttfamily \label{a01237_a06a2ccd6baeeffb74912283e8204f649_a06a2ccd6baeeffb74912283e8204f649} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} is\+Positive}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a06a2ccd6baeeffb74912283e8204f649_a06a2ccd6baeeffb74912283e8204f649}{isPositive}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\textcolor{keywordtype}{unsigned}\ ||\ this.high\ >=\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is positive or zero. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00617}{617}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a16a44bae441805a0def5a4db5243162a_a16a44bae441805a0def5a4db5243162a}\index{index.js@{index.js}!isZero@{isZero}}
+\index{isZero@{isZero}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{isZero}{isZero}}
+{\footnotesize\ttfamily \label{a01237_a16a44bae441805a0def5a4db5243162a_a16a44bae441805a0def5a4db5243162a} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} is\+Zero}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a16a44bae441805a0def5a4db5243162a_a16a44bae441805a0def5a4db5243162a}{isZero}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high\ ===\ 0\ \&\&\ this.low\ ===\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value equals zero. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00593}{593}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a}\index{index.js@{index.js}!le@{le}}
+\index{le@{le}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{le}{le}}
+{\footnotesize\ttfamily \label{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} le = \mbox{\hyperlink{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}{Long\+Prototype.\+less\+Than\+Or\+Equal}}}
+
+
+
+Tests if this Long\textquotesingle{}s value is less than or equal the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#less\+Than\+Or\+Equal}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00729}{729}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a3b785172bc40376da41a2cf296a0a965_a3b785172bc40376da41a2cf296a0a965}\index{index.js@{index.js}!lessThan@{lessThan}}
+\index{lessThan@{lessThan}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{lessThan}{lessThan}}
+{\footnotesize\ttfamily \label{a01237_a3b785172bc40376da41a2cf296a0a965_a3b785172bc40376da41a2cf296a0a965} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} less\+Than}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a3b785172bc40376da41a2cf296a0a965_a3b785172bc40376da41a2cf296a0a965}{lessThan}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316}{comp}}(\ other)\ <\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is less than the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00693}{693}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}\index{index.js@{index.js}!lessThanOrEqual@{lessThanOrEqual}}
+\index{lessThanOrEqual@{lessThanOrEqual}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{lessThanOrEqual}{lessThanOrEqual}}
+{\footnotesize\ttfamily \label{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} less\+Than\+Or\+Equal}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}{lessThanOrEqual}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_a33e3b5296f866a66acae6bd74f2b2316_a33e3b5296f866a66acae6bd74f2b2316}{comp}}(\ other)\ <=\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value is less than or equal the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00711}{711}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}\index{index.js@{index.js}!Long@{Long}}
+\index{Long@{Long}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{Long}{Long}}
+{\footnotesize\ttfamily \label{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7} 
+\mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}} \mbox{\hyperlink{a01102_af9407f361b2d982c5af536898b63fc11_af9407f361b2d982c5af536898b63fc11}{default}} Long}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01467}{1467}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}\index{index.js@{index.js}!LongPrototype@{LongPrototype}}
+\index{LongPrototype@{LongPrototype}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{LongPrototype}{LongPrototype}}
+{\footnotesize\ttfamily \label{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020} 
+var Long\+Prototype = \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{Long.\+prototype}}}
+
+
+
+@alias Long.\+prototype @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00469}{469}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ad6c71863bd83b0ca049f55d3bb3f0105_ad6c71863bd83b0ca049f55d3bb3f0105}\index{index.js@{index.js}!lt@{lt}}
+\index{lt@{lt}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{lt}{lt}}
+{\footnotesize\ttfamily \label{a01237_ad6c71863bd83b0ca049f55d3bb3f0105_ad6c71863bd83b0ca049f55d3bb3f0105} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} lt = \mbox{\hyperlink{a01237_a3b785172bc40376da41a2cf296a0a965_a3b785172bc40376da41a2cf296a0a965}{Long\+Prototype.\+less\+Than}}}
+
+
+
+Tests if this Long\textquotesingle{}s value is less than the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#less\+Than}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00703}{703}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a3d146cc0ed37be54c4e70dfeb1391313_a3d146cc0ed37be54c4e70dfeb1391313}\index{index.js@{index.js}!lte@{lte}}
+\index{lte@{lte}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{lte}{lte}}
+{\footnotesize\ttfamily \label{a01237_a3d146cc0ed37be54c4e70dfeb1391313_a3d146cc0ed37be54c4e70dfeb1391313} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} lte = \mbox{\hyperlink{a01237_a123d88a67ea6e1c4c01a6f26ef405abe_a123d88a67ea6e1c4c01a6f26ef405abe}{Long\+Prototype.\+less\+Than\+Or\+Equal}}}
+
+
+
+Tests if this Long\textquotesingle{}s value is less than or equal the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#less\+Than\+Or\+Equal}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00721}{721}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a1675577b82328d6d7c73385767591d4a_a1675577b82328d6d7c73385767591d4a}\index{index.js@{index.js}!MAX\_UNSIGNED\_VALUE@{MAX\_UNSIGNED\_VALUE}}
+\index{MAX\_UNSIGNED\_VALUE@{MAX\_UNSIGNED\_VALUE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{MAX\_UNSIGNED\_VALUE}{MAX\_UNSIGNED\_VALUE}}
+{\footnotesize\ttfamily \label{a01237_a1675577b82328d6d7c73385767591d4a_a1675577b82328d6d7c73385767591d4a} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} MAX\+\_\+\+UNSIGNED\+\_\+\+VALUE = \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}}(0x\+FFFFFFFF \texorpdfstring{$\vert$}{|} 0, 0x\+FFFFFFFF \texorpdfstring{$\vert$}{|} 0, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+@type \{!\+Long\} @inner 
+
+Maximum unsigned value.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00445}{445}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ae0a0454ee409787ef161593fe79079c2_ae0a0454ee409787ef161593fe79079c2}\index{index.js@{index.js}!MAX\_VALUE@{MAX\_VALUE}}
+\index{MAX\_VALUE@{MAX\_VALUE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{MAX\_VALUE}{MAX\_VALUE}}
+{\footnotesize\ttfamily \label{a01237_ae0a0454ee409787ef161593fe79079c2_ae0a0454ee409787ef161593fe79079c2} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} MAX\+\_\+\+VALUE = \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}}(0x\+FFFFFFFF \texorpdfstring{$\vert$}{|} 0, 0x7\+FFFFFFF \texorpdfstring{$\vert$}{|} 0, \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}})}
+
+
+
+@type \{!\+Long\} @inner 
+
+Maximum signed value.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00433}{433}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a658bfd7bf2057953eb283172659d2268_a658bfd7bf2057953eb283172659d2268}\index{index.js@{index.js}!MIN\_VALUE@{MIN\_VALUE}}
+\index{MIN\_VALUE@{MIN\_VALUE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{MIN\_VALUE}{MIN\_VALUE}}
+{\footnotesize\ttfamily \label{a01237_a658bfd7bf2057953eb283172659d2268_a658bfd7bf2057953eb283172659d2268} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} MIN\+\_\+\+VALUE = \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{from\+Bits}}(0, 0x80000000 \texorpdfstring{$\vert$}{|} 0, \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}})}
+
+
+
+@type \{!\+Long\} @inner 
+
+Minimum signed value.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00457}{457}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_afe8b4d98ba998dc78d0369b49d2aebf3_afe8b4d98ba998dc78d0369b49d2aebf3}\index{index.js@{index.js}!mod@{mod}}
+\index{mod@{mod}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{mod}{mod}}
+{\footnotesize\ttfamily \label{a01237_afe8b4d98ba998dc78d0369b49d2aebf3_afe8b4d98ba998dc78d0369b49d2aebf3} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} mod = \mbox{\hyperlink{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}{Long\+Prototype.\+modulo}}}
+
+
+
+Returns this Long modulo the specified. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#modulo}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & divisor Divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Remainder 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01121}{1121}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}\index{index.js@{index.js}!modulo@{modulo}}
+\index{modulo@{modulo}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{modulo}{modulo}}
+{\footnotesize\ttfamily \label{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} modulo}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}{modulo}}(divisor)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(divisor))}
+\DoxyCodeLine{\ \ \ \ divisor\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(divisor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}{wasm}})\ \{}
+\DoxyCodeLine{\ \ \ \ var\ low\ =\ (this.\textcolor{keywordtype}{unsigned}\ ?\ \mbox{\hyperlink{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}{wasm}}[\textcolor{stringliteral}{"{}rem\_u"{}}]\ :\ \mbox{\hyperlink{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}{wasm}}[\textcolor{stringliteral}{"{}rem\_s"{}}])(}
+\DoxyCodeLine{\ \ \ \ \ \ this.low,}
+\DoxyCodeLine{\ \ \ \ \ \ this.high,}
+\DoxyCodeLine{\ \ \ \ \ \ divisor.low,}
+\DoxyCodeLine{\ \ \ \ \ \ divisor.high}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(low,\ \mbox{\hyperlink{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}{wasm}}[\textcolor{stringliteral}{"{}get\_high"{}}](),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_aa57d3d0484d1c8baeb1acf8a6a773b39_aa57d3d0484d1c8baeb1acf8a6a773b39}{sub}}(this.\mbox{\hyperlink{a01237_ad0dda96dfc771375c80cc246c67929d6_ad0dda96dfc771375c80cc246c67929d6}{div}}(divisor).\mbox{\hyperlink{a01237_a086fb43a5c1071fbfea460f415d8eb96_a086fb43a5c1071fbfea460f415d8eb96}{mul}}(divisor));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns this Long modulo the specified. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & divisor Divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Remainder 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01097}{1097}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a086fb43a5c1071fbfea460f415d8eb96_a086fb43a5c1071fbfea460f415d8eb96}\index{index.js@{index.js}!mul@{mul}}
+\index{mul@{mul}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{mul}{mul}}
+{\footnotesize\ttfamily \label{a01237_a086fb43a5c1071fbfea460f415d8eb96_a086fb43a5c1071fbfea460f415d8eb96} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} mul = \mbox{\hyperlink{a01237_a48b27e8b6ac21b916965966bbabebdbb_a48b27e8b6ac21b916965966bbabebdbb}{Long\+Prototype.\+multiply}}}
+
+
+
+Returns the product of this and the specified Long. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#multiply}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & multiplier Multiplier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Product 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00967}{967}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a48b27e8b6ac21b916965966bbabebdbb_a48b27e8b6ac21b916965966bbabebdbb}\index{index.js@{index.js}!multiply@{multiply}}
+\index{multiply@{multiply}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{multiply}{multiply}}
+{\footnotesize\ttfamily \label{a01237_a48b27e8b6ac21b916965966bbabebdbb_a48b27e8b6ac21b916965966bbabebdbb} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} multiply}
+
+
+
+Returns the product of this and the specified Long. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & multiplier Multiplier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Product 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00890}{890}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a4c27baafd450238566ee82fd95e3bc1b_a4c27baafd450238566ee82fd95e3bc1b}\index{index.js@{index.js}!ne@{ne}}
+\index{ne@{ne}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{ne}{ne}}
+{\footnotesize\ttfamily \label{a01237_a4c27baafd450238566ee82fd95e3bc1b_a4c27baafd450238566ee82fd95e3bc1b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} ne = \mbox{\hyperlink{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}{Long\+Prototype.\+not\+Equals}}}
+
+
+
+Tests if this Long\textquotesingle{}s value differs from the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#not\+Equals}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00685}{685}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ab49f736b39a52f051bde165dd1a14165_ab49f736b39a52f051bde165dd1a14165}\index{index.js@{index.js}!neg@{neg}}
+\index{neg@{neg}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{neg}{neg}}
+{\footnotesize\ttfamily \label{a01237_ab49f736b39a52f051bde165dd1a14165_ab49f736b39a52f051bde165dd1a14165} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} neg = \mbox{\hyperlink{a01237_aafb4b95213c0e8f93d3ac8ec687924eb_aafb4b95213c0e8f93d3ac8ec687924eb}{Long\+Prototype.\+negate}}}
+
+
+
+Negates this Long\textquotesingle{}s value. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#negate}}. @function \begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Negated Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00825}{825}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_afbf71d15b1d83a1230102678c9950d7d_afbf71d15b1d83a1230102678c9950d7d}\index{index.js@{index.js}!NEG\_ONE@{NEG\_ONE}}
+\index{NEG\_ONE@{NEG\_ONE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{NEG\_ONE}{NEG\_ONE}}
+{\footnotesize\ttfamily \label{a01237_afbf71d15b1d83a1230102678c9950d7d_afbf71d15b1d83a1230102678c9950d7d} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} NEG\+\_\+\+ONE = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(-\/1)}
+
+
+
+@type \{!\+Long\} @inner 
+
+Signed negative one.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00421}{421}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aafb4b95213c0e8f93d3ac8ec687924eb_aafb4b95213c0e8f93d3ac8ec687924eb}\index{index.js@{index.js}!negate@{negate}}
+\index{negate@{negate}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{negate}{negate}}
+{\footnotesize\ttfamily \label{a01237_aafb4b95213c0e8f93d3ac8ec687924eb_aafb4b95213c0e8f93d3ac8ec687924eb} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} negate}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_aafb4b95213c0e8f93d3ac8ec687924eb_aafb4b95213c0e8f93d3ac8ec687924eb}{negate}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!this.\textcolor{keywordtype}{unsigned}\ \&\&\ this.\mbox{\hyperlink{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6}{eq}}(\mbox{\hyperlink{a01237_a658bfd7bf2057953eb283172659d2268_a658bfd7bf2057953eb283172659d2268}{MIN\_VALUE}}))}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a658bfd7bf2057953eb283172659d2268_a658bfd7bf2057953eb283172659d2268}{MIN\_VALUE}};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}().add(\mbox{\hyperlink{a01237_a10633d23fbed3c46a0a25a34474d8510_a10633d23fbed3c46a0a25a34474d8510}{ONE}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Negates this Long\textquotesingle{}s value. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Negated Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00814}{814}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ae7af9f6310dd26fdf01abdd0a8a76875_ae7af9f6310dd26fdf01abdd0a8a76875}\index{index.js@{index.js}!neq@{neq}}
+\index{neq@{neq}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{neq}{neq}}
+{\footnotesize\ttfamily \label{a01237_ae7af9f6310dd26fdf01abdd0a8a76875_ae7af9f6310dd26fdf01abdd0a8a76875} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} neq = \mbox{\hyperlink{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}{Long\+Prototype.\+not\+Equals}}}
+
+
+
+Tests if this Long\textquotesingle{}s value differs from the specified\textquotesingle{}s. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#not\+Equals}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00677}{677}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}\index{index.js@{index.js}!not@{not}}
+\index{not@{not}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{not}{not}}
+{\footnotesize\ttfamily \label{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} not}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(\string~this.low,\ \string~this.high,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns the bitwise NOT of this Long. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!\+Long\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01136}{1136}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}\index{index.js@{index.js}!notEquals@{notEquals}}
+\index{notEquals@{notEquals}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{notEquals}{notEquals}}
+{\footnotesize\ttfamily \label{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} not\+Equals}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a69732c18ed1ba51a4da4173010594a74_a69732c18ed1ba51a4da4173010594a74}{notEquals}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ !this.\mbox{\hyperlink{a01237_a8143aba4b5feecd1f9ec141a3e04c1e6_a8143aba4b5feecd1f9ec141a3e04c1e6}{eq}}(\ other);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tests if this Long\textquotesingle{}s value differs from the specified\textquotesingle{}s. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{boolean\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00667}{667}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a10633d23fbed3c46a0a25a34474d8510_a10633d23fbed3c46a0a25a34474d8510}\index{index.js@{index.js}!ONE@{ONE}}
+\index{ONE@{ONE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{ONE}{ONE}}
+{\footnotesize\ttfamily \label{a01237_a10633d23fbed3c46a0a25a34474d8510_a10633d23fbed3c46a0a25a34474d8510} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} ONE = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(1)}
+
+
+
+@type \{!\+Long\} @inner 
+
+Signed one.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00397}{397}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a88083640992a53a144223e2bd602d47d_a88083640992a53a144223e2bd602d47d}\index{index.js@{index.js}!or@{or}}
+\index{or@{or}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{or}{or}}
+{\footnotesize\ttfamily \label{a01237_a88083640992a53a144223e2bd602d47d_a88083640992a53a144223e2bd602d47d} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} or}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a88083640992a53a144223e2bd602d47d_a88083640992a53a144223e2bd602d47d}{or}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(other))}
+\DoxyCodeLine{\ \ \ \ other\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(other);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.low\ |\ other.low,\ \textcolor{keyword}{this}.high\ |\ other.high,\ \textcolor{keyword}{this}.unsigned);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns the bitwise OR of this Long and the specified. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other Long \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01192}{1192}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_adc919b34f39f7fd40d8904e7ecdc6400_adc919b34f39f7fd40d8904e7ecdc6400}\index{index.js@{index.js}!pow\_dbl@{pow\_dbl}}
+\index{pow\_dbl@{pow\_dbl}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{pow\_dbl}{pow\_dbl}}
+{\footnotesize\ttfamily \label{a01237_adc919b34f39f7fd40d8904e7ecdc6400_adc919b34f39f7fd40d8904e7ecdc6400} 
+var pow\+\_\+dbl = Math.\+pow}
+
+
+
+@function 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & base \\
+\hline
+{\em \{number\}} & exponent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{number\} @inner 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00237}{237}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_afc3bf5c0a581b82e373c599b5c43e15b_afc3bf5c0a581b82e373c599b5c43e15b}\index{index.js@{index.js}!rem@{rem}}
+\index{rem@{rem}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{rem}{rem}}
+{\footnotesize\ttfamily \label{a01237_afc3bf5c0a581b82e373c599b5c43e15b_afc3bf5c0a581b82e373c599b5c43e15b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} rem = \mbox{\hyperlink{a01237_ae744e995fe717fffc43139012a2848e9_ae744e995fe717fffc43139012a2848e9}{Long\+Prototype.\+modulo}}}
+
+
+
+Returns this Long modulo the specified. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#modulo}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & divisor Divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Remainder 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01129}{1129}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a100eed368f6b8025913813f9dbf314f9_a100eed368f6b8025913813f9dbf314f9}\index{index.js@{index.js}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{rotateLeft}{rotateLeft}}
+{\footnotesize\ttfamily \label{a01237_a100eed368f6b8025913813f9dbf314f9_a100eed368f6b8025913813f9dbf314f9} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} rotate\+Left}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a100eed368f6b8025913813f9dbf314f9_a100eed368f6b8025913813f9dbf314f9}{rotateLeft}}(numBits)\ \{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(numBits))\ numBits\ =\ numBits.toInt();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((numBits\ \&=\ 63)\ ===\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (numBits\ ===\ 32)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.high,\ this.low,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (numBits\ <\ 32)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}\ =\ (32\ -\/\ numBits);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(((this.low\ <<\ numBits)\ |\ (this.high\ >>>\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})),\ ((this.high\ <<\ numBits)\ |\ (this.low\ >>>\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ numBits\ -\/=\ 32;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}\ =\ (32\ -\/\ numBits);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(((this.high\ <<\ numBits)\ |\ (this.low\ >>>\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})),\ ((this.low\ <<\ numBits)\ |\ (this.high\ >>>\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{LongPrototype}}.rotl\ =\ \mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{LongPrototype}}.rotateLeft}
+
+\end{DoxyCode}
+
+
+Returns this Long with bits rotated to the left by the given amount. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Rotated Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01296}{1296}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a9c531fa0a10808753826697ca8dfb48b_a9c531fa0a10808753826697ca8dfb48b}\index{index.js@{index.js}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{rotateRight}{rotateRight}}
+{\footnotesize\ttfamily \label{a01237_a9c531fa0a10808753826697ca8dfb48b_a9c531fa0a10808753826697ca8dfb48b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} rotate\+Right}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a9c531fa0a10808753826697ca8dfb48b_a9c531fa0a10808753826697ca8dfb48b}{rotateRight}}(numBits)\ \{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(numBits))\ numBits\ =\ numBits.toInt();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((numBits\ \&=\ 63)\ ===\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (numBits\ ===\ 32)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.high,\ this.low,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (numBits\ <\ 32)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}\ =\ (32\ -\/\ numBits);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(((this.high\ <<\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ |\ (this.low\ >>>\ numBits)),\ ((this.low\ <<\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ |\ (this.high\ >>>\ numBits)),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ numBits\ -\/=\ 32;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}\ =\ (32\ -\/\ numBits);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(((this.low\ <<\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ |\ (this.high\ >>>\ numBits)),\ ((this.high\ <<\ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}})\ |\ (this.low\ >>>\ numBits)),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{LongPrototype}}.rotr\ =\ \mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{LongPrototype}}.rotateRight}
+
+\end{DoxyCode}
+
+
+Returns this Long with bits rotated to the right by the given amount. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Rotated Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01323}{1323}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aaad3c8b0d6696565664e45cbb26fe85b_aaad3c8b0d6696565664e45cbb26fe85b}\index{index.js@{index.js}!shiftLeft@{shiftLeft}}
+\index{shiftLeft@{shiftLeft}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shiftLeft}{shiftLeft}}
+{\footnotesize\ttfamily \label{a01237_aaad3c8b0d6696565664e45cbb26fe85b_aaad3c8b0d6696565664e45cbb26fe85b} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shift\+Left}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_aaad3c8b0d6696565664e45cbb26fe85b_aaad3c8b0d6696565664e45cbb26fe85b}{shiftLeft}}(numBits)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(numBits))}
+\DoxyCodeLine{\ \ \ \ numBits\ =\ numBits.toInt();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((numBits\ \&=\ 63)\ ===\ 0)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (numBits\ <\ 32)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.low\ <<\ numBits,\ (this.high\ <<\ numBits)\ |\ (this.low\ >>>\ (32\ -\/\ numBits)),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(0,\ this.low\ <<\ (numBits\ -\/\ 32),\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns this Long with bits shifted to the left by the given amount. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01216}{1216}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ab811dcdc8a6b90bf6cd035916fe6d3f3_ab811dcdc8a6b90bf6cd035916fe6d3f3}\index{index.js@{index.js}!shiftRight@{shiftRight}}
+\index{shiftRight@{shiftRight}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shiftRight}{shiftRight}}
+{\footnotesize\ttfamily \label{a01237_ab811dcdc8a6b90bf6cd035916fe6d3f3_ab811dcdc8a6b90bf6cd035916fe6d3f3} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shift\+Right}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ab811dcdc8a6b90bf6cd035916fe6d3f3_ab811dcdc8a6b90bf6cd035916fe6d3f3}{shiftRight}}(numBits)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(numBits))}
+\DoxyCodeLine{\ \ \ \ numBits\ =\ numBits.toInt();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((numBits\ \&=\ 63)\ ===\ 0)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (numBits\ <\ 32)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}((this.low\ >>>\ numBits)\ |\ (this.high\ <<\ (32\ -\/\ numBits)),\ this.high\ >>\ numBits,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.high\ >>\ (numBits\ -\/\ 32),\ this.high\ >=\ 0\ ?\ 0\ :\ -\/1,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns this Long with bits arithmetically shifted to the right by the given amount. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01241}{1241}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}\index{index.js@{index.js}!shiftRightUnsigned@{shiftRightUnsigned}}
+\index{shiftRightUnsigned@{shiftRightUnsigned}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shiftRightUnsigned}{shiftRightUnsigned}}
+{\footnotesize\ttfamily \label{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shift\+Right\+Unsigned}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}{shiftRightUnsigned}}(numBits)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(numBits))\ numBits\ =\ numBits.toInt();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((numBits\ \&=\ 63)\ ===\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (numBits\ <\ 32)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}((this.low\ >>>\ numBits)\ |\ (this.high\ <<\ (32\ -\/\ numBits)),\ this.high\ >>>\ numBits,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (numBits\ ===\ 32)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.high,\ 0,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.high\ >>>\ (numBits\ -\/\ 32),\ 0,\ this.\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns this Long with bits logically shifted to the right by the given amount. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01266}{1266}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_adff4d5229510bc56f1b1961dd20c8a2f_adff4d5229510bc56f1b1961dd20c8a2f}\index{index.js@{index.js}!shl@{shl}}
+\index{shl@{shl}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shl}{shl}}
+{\footnotesize\ttfamily \label{a01237_adff4d5229510bc56f1b1961dd20c8a2f_adff4d5229510bc56f1b1961dd20c8a2f} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shl = \mbox{\hyperlink{a01237_aaad3c8b0d6696565664e45cbb26fe85b_aaad3c8b0d6696565664e45cbb26fe85b}{Long\+Prototype.\+shift\+Left}}}
+
+
+
+Returns this Long with bits shifted to the left by the given amount. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#shift\+Left}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01233}{1233}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a06f6cd01f7ce128a682b22f0295389cd_a06f6cd01f7ce128a682b22f0295389cd}\index{index.js@{index.js}!shr@{shr}}
+\index{shr@{shr}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shr}{shr}}
+{\footnotesize\ttfamily \label{a01237_a06f6cd01f7ce128a682b22f0295389cd_a06f6cd01f7ce128a682b22f0295389cd} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shr = \mbox{\hyperlink{a01237_ab811dcdc8a6b90bf6cd035916fe6d3f3_ab811dcdc8a6b90bf6cd035916fe6d3f3}{Long\+Prototype.\+shift\+Right}}}
+
+
+
+Returns this Long with bits arithmetically shifted to the right by the given amount. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#shift\+Right}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01258}{1258}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a77e8ed07b198c5cf6d107260fa5125bc_a77e8ed07b198c5cf6d107260fa5125bc}\index{index.js@{index.js}!shr\_u@{shr\_u}}
+\index{shr\_u@{shr\_u}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shr\_u}{shr\_u}}
+{\footnotesize\ttfamily \label{a01237_a77e8ed07b198c5cf6d107260fa5125bc_a77e8ed07b198c5cf6d107260fa5125bc} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shr\+\_\+u = \mbox{\hyperlink{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}{Long\+Prototype.\+shift\+Right\+Unsigned}}}
+
+
+
+Returns this Long with bits logically shifted to the right by the given amount. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#shift\+Right\+Unsigned}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01288}{1288}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a26d4ad3a147fbecfee2d72ce92729829_a26d4ad3a147fbecfee2d72ce92729829}\index{index.js@{index.js}!shru@{shru}}
+\index{shru@{shru}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{shru}{shru}}
+{\footnotesize\ttfamily \label{a01237_a26d4ad3a147fbecfee2d72ce92729829_a26d4ad3a147fbecfee2d72ce92729829} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} shru = \mbox{\hyperlink{a01237_a3bdb1f7632bea83afbae01b50ae3f3ee_a3bdb1f7632bea83afbae01b50ae3f3ee}{Long\+Prototype.\+shift\+Right\+Unsigned}}}
+
+
+
+Returns this Long with bits logically shifted to the right by the given amount. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#shift\+Right\+Unsigned}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}!\+Long\}} & num\+Bits Number of bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Shifted Long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01280}{1280}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aa57d3d0484d1c8baeb1acf8a6a773b39_aa57d3d0484d1c8baeb1acf8a6a773b39}\index{index.js@{index.js}!sub@{sub}}
+\index{sub@{sub}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{sub}{sub}}
+{\footnotesize\ttfamily \label{a01237_aa57d3d0484d1c8baeb1acf8a6a773b39_aa57d3d0484d1c8baeb1acf8a6a773b39} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} sub = \mbox{\hyperlink{a01237_a4c8fc2025a3beeff5a877e608ac15155_a4c8fc2025a3beeff5a877e608ac15155}{Long\+Prototype.\+subtract}}}
+
+
+
+Returns the difference of this and the specified Long. 
+
+This is an alias of {\ttfamily \doxylink{}{Long\#subtract}}. @function 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & subtrahend Subtrahend \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Difference 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00882}{882}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a4c8fc2025a3beeff5a877e608ac15155_a4c8fc2025a3beeff5a877e608ac15155}\index{index.js@{index.js}!subtract@{subtract}}
+\index{subtract@{subtract}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{subtract}{subtract}}
+{\footnotesize\ttfamily \label{a01237_a4c8fc2025a3beeff5a877e608ac15155_a4c8fc2025a3beeff5a877e608ac15155} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} subtract}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a4c8fc2025a3beeff5a877e608ac15155_a4c8fc2025a3beeff5a877e608ac15155}{subtract}}(subtrahend)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(subtrahend))}
+\DoxyCodeLine{\ \ \ \ subtrahend\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(subtrahend);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a01237_a5935566873bf60b695fbceca9df883d0_a5935566873bf60b695fbceca9df883d0}{add}}(subtrahend.neg());}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns the difference of this and the specified Long. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & subtrahend Subtrahend \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Difference 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00870}{870}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ad42de39e174086451dd936c0252a6c00_ad42de39e174086451dd936c0252a6c00}\index{index.js@{index.js}!toBytes@{toBytes}}
+\index{toBytes@{toBytes}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toBytes}{toBytes}}
+{\footnotesize\ttfamily \label{a01237_ad42de39e174086451dd936c0252a6c00_ad42de39e174086451dd936c0252a6c00} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Bytes}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_ad42de39e174086451dd936c0252a6c00_ad42de39e174086451dd936c0252a6c00}{toBytes}}(\mbox{\hyperlink{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a}{le}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_aa23f614cfec8acc3dcca51a416df5d9a_aa23f614cfec8acc3dcca51a416df5d9a}{le}}\ ?\ this.\mbox{\hyperlink{a01237_a35d437c896d464906b3b3419674a35de_a35d437c896d464906b3b3419674a35de}{toBytesLE}}()\ :\ \mbox{\hyperlink{a01195_a5a2c462c0f07b0d5f91d9d42bbd4ea4d_a5a2c462c0f07b0d5f91d9d42bbd4ea4d}{this}}.\mbox{\hyperlink{a01237_a5649943f8615c57ed6dad52e64095046_a5649943f8615c57ed6dad52e64095046}{toBytesBE}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts this Long to its byte representation. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{boolean=\}} & le Whether little or big endian, defaults to big endian @this \{!\+Long\} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Array.$<$number$>$\} Byte representation 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01372}{1372}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a5649943f8615c57ed6dad52e64095046_a5649943f8615c57ed6dad52e64095046}\index{index.js@{index.js}!toBytesBE@{toBytesBE}}
+\index{toBytesBE@{toBytesBE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toBytesBE}{toBytesBE}}
+{\footnotesize\ttfamily \label{a01237_a5649943f8615c57ed6dad52e64095046_a5649943f8615c57ed6dad52e64095046} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Bytes\+BE}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a5649943f8615c57ed6dad52e64095046_a5649943f8615c57ed6dad52e64095046}{toBytesBE}}()\ \{}
+\DoxyCodeLine{\ \ var\ hi\ =\ this.high,}
+\DoxyCodeLine{\ \ \ \ lo\ =\ this.low;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ [}
+\DoxyCodeLine{\ \ \ \ hi\ >>>\ 24,}
+\DoxyCodeLine{\ \ \ \ hi\ >>>\ 16\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ hi\ >>>\ 8\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ hi\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ lo\ >>>\ 24,}
+\DoxyCodeLine{\ \ \ \ lo\ >>>\ 16\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ lo\ >>>\ 8\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ lo\ \&\ 0xff}
+\DoxyCodeLine{\ \ ];}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts this Long to its big endian byte representation. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!\+Array.$<$number$>$\} Big endian byte representation 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01401}{1401}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a35d437c896d464906b3b3419674a35de_a35d437c896d464906b3b3419674a35de}\index{index.js@{index.js}!toBytesLE@{toBytesLE}}
+\index{toBytesLE@{toBytesLE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toBytesLE}{toBytesLE}}
+{\footnotesize\ttfamily \label{a01237_a35d437c896d464906b3b3419674a35de_a35d437c896d464906b3b3419674a35de} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Bytes\+LE}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a35d437c896d464906b3b3419674a35de_a35d437c896d464906b3b3419674a35de}{toBytesLE}}()\ \{}
+\DoxyCodeLine{\ \ var\ hi\ =\ this.high,}
+\DoxyCodeLine{\ \ \ \ lo\ =\ this.low;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ [}
+\DoxyCodeLine{\ \ \ \ lo\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ lo\ >>>\ 8\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ lo\ >>>\ 16\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ lo\ >>>\ 24,}
+\DoxyCodeLine{\ \ \ \ hi\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ hi\ >>>\ 8\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ hi\ >>>\ 16\ \&\ 0xff,}
+\DoxyCodeLine{\ \ \ \ hi\ >>>\ 24}
+\DoxyCodeLine{\ \ ];}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts this Long to its little endian byte representation. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!\+Array.$<$number$>$\} Little endian byte representation 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01381}{1381}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a6d36cc5d1b63d0a8e27a97b6be2ee7a5_a6d36cc5d1b63d0a8e27a97b6be2ee7a5}\index{index.js@{index.js}!toInt@{toInt}}
+\index{toInt@{toInt}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toInt}{toInt}}
+{\footnotesize\ttfamily \label{a01237_a6d36cc5d1b63d0a8e27a97b6be2ee7a5_a6d36cc5d1b63d0a8e27a97b6be2ee7a5} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Int}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a6d36cc5d1b63d0a8e27a97b6be2ee7a5_a6d36cc5d1b63d0a8e27a97b6be2ee7a5}{toInt}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\textcolor{keywordtype}{unsigned}\ ?\ this.low\ >>>\ 0\ :\ this.low;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts the Long to a 32 bit integer, assuming it is a 32 bit integer. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00476}{476}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a5092c3ce75e09e6874313df3fc6d7196_a5092c3ce75e09e6874313df3fc6d7196}\index{index.js@{index.js}!toNumber@{toNumber}}
+\index{toNumber@{toNumber}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toNumber}{toNumber}}
+{\footnotesize\ttfamily \label{a01237_a5092c3ce75e09e6874313df3fc6d7196_a5092c3ce75e09e6874313df3fc6d7196} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Number}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a5092c3ce75e09e6874313df3fc6d7196_a5092c3ce75e09e6874313df3fc6d7196}{toNumber}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (this.\textcolor{keywordtype}{unsigned})}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ ((this.high\ >>>\ 0)\ *\ \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\_PWR\_32\_DBL}})\ +\ (this.low\ >>>\ 0);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.high\ *\ \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\_PWR\_32\_DBL}}\ +\ (this.low\ >>>\ 0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts the Long to a the nearest floating-\/point representation of this value (double, 53 bit mantissa). 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{number\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00485}{485}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a260f93e309c51a85dd2d7bcef816e699_a260f93e309c51a85dd2d7bcef816e699}\index{index.js@{index.js}!toSigned@{toSigned}}
+\index{toSigned@{toSigned}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toSigned}{toSigned}}
+{\footnotesize\ttfamily \label{a01237_a260f93e309c51a85dd2d7bcef816e699_a260f93e309c51a85dd2d7bcef816e699} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Signed}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a260f93e309c51a85dd2d7bcef816e699_a260f93e309c51a85dd2d7bcef816e699}{toSigned}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!this.\textcolor{keywordtype}{unsigned})}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.low,\ this.high,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts this Long to signed. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Signed long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01349}{1349}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a0f93c73e5b1fc9629f1fd3554d002ced_a0f93c73e5b1fc9629f1fd3554d002ced}\index{index.js@{index.js}!toString@{toString}}
+\index{toString@{toString}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toString}{toString}}
+{\footnotesize\ttfamily \label{a01237_a0f93c73e5b1fc9629f1fd3554d002ced_a0f93c73e5b1fc9629f1fd3554d002ced} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+String}
+
+
+
+Converts the Long to a string written in the specified radix. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{number=\}} & radix Radix (2-\/36), defaults to 10 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{string\} @override 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \{\+Range\+Error\}} & If {\ttfamily radix} is out of range \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00499}{499}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a692e14c9e32b6ad903bec89014e94a15_a692e14c9e32b6ad903bec89014e94a15}\index{index.js@{index.js}!toUnsigned@{toUnsigned}}
+\index{toUnsigned@{toUnsigned}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{toUnsigned}{toUnsigned}}
+{\footnotesize\ttfamily \label{a01237_a692e14c9e32b6ad903bec89014e94a15_a692e14c9e32b6ad903bec89014e94a15} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} to\+Unsigned}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a692e14c9e32b6ad903bec89014e94a15_a692e14c9e32b6ad903bec89014e94a15}{toUnsigned}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (this.\textcolor{keywordtype}{unsigned})}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.low,\ this.high,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Converts this Long to unsigned. 
+
+@this \{!\+Long\} \begin{DoxyReturn}{Devuelve}
+\{!\+Long\} Unsigned long 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01360}{1360}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_abe4cc9788f52e49485473dc699537388_abe4cc9788f52e49485473dc699537388}\index{index.js@{index.js}!try@{try}}
+\index{try@{try}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{try}{try}}
+{\footnotesize\ttfamily \label{a01237_abe4cc9788f52e49485473dc699537388_abe4cc9788f52e49485473dc699537388} 
+try}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}{wasm}}\ =\ \textcolor{keyword}{new}\ WebAssembly.Instance(\textcolor{keyword}{new}\ WebAssembly.Module(\textcolor{keyword}{new}\ Uint8Array([}
+\DoxyCodeLine{\ \ \ \ 0,\ 97,\ 115,\ 109,\ 1,\ 0,\ 0,\ 0,\ 1,\ 13,\ 2,\ 96,\ 0,\ 1,\ 127,\ 96,\ 4,\ 127,\ 127,\ 127,\ 127,\ 1,\ 127,\ 3,\ 7,\ 6,\ 0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 6,\ 6,\ 1,\ 127,\ 1,\ 65,\ 0,\ 11,\ 7,\ 50,\ 6,\ 3,\ 109,\ 117,\ 108,\ 0,\ 1,\ 5,\ 100,\ 105,\ 118,\ 95,\ 115,\ 0,\ 2,\ 5,\ 100,\ 105,\ 118,\ 95,\ 117,\ 0,\ 3,\ 5,\ 114,\ 101,\ 109,\ 95,\ 115,\ 0,\ 4,\ 5,\ 114,\ 101,\ 109,\ 95,\ 117,\ 0,\ 5,\ 8,\ 103,\ 101,\ 116,\ 95,\ 104,\ 105,\ 103,\ 104,\ 0,\ 0,\ 10,\ 191,\ 1,\ 6,\ 4,\ 0,\ 35,\ 0,\ 11,\ 36,\ 1,\ 1,\ 126,\ 32,\ 0,\ 173,\ 32,\ 1,\ 173,\ 66,\ 32,\ 134,\ 132,\ 32,\ 2,\ 173,\ 32,\ 3,\ 173,\ 66,\ 32,\ 134,\ 132,\ 126,\ 34,\ 4,\ 66,\ 32,\ 135,\ 167,\ 36,\ 0,\ 32,\ 4,\ 167,\ 11,\ 36,\ 1,\ 1,\ 126,\ 32,\ 0,\ 173,\ 32,\ 1,\ 173,\ 66,\ 32,\ 134,\ 132,\ 32,\ 2,\ 173,\ 32,\ 3,\ 173,\ 66,\ 32,\ 134,\ 132,\ 127,\ 34,\ 4,\ 66,\ 32,\ 135,\ 167,\ 36,\ 0,\ 32,\ 4,\ 167,\ 11,\ 36,\ 1,\ 1,\ 126,\ 32,\ 0,\ 173,\ 32,\ 1,\ 173,\ 66,\ 32,\ 134,\ 132,\ 32,\ 2,\ 173,\ 32,\ 3,\ 173,\ 66,\ 32,\ 134,\ 132,\ 128,\ 34,\ 4,\ 66,\ 32,\ 135,\ 167,\ 36,\ 0,\ 32,\ 4,\ 167,\ 11,\ 36,\ 1,\ 1,\ 126,\ 32,\ 0,\ 173,\ 32,\ 1,\ 173,\ 66,\ 32,\ 134,\ 132,\ 32,\ 2,\ 173,\ 32,\ 3,\ 173,\ 66,\ 32,\ 134,\ 132,\ 129,\ 34,\ 4,\ 66,\ 32,\ 135,\ 167,\ 36,\ 0,\ 32,\ 4,\ 167,\ 11,\ 36,\ 1,\ 1,\ 126,\ 32,\ 0,\ 173,\ 32,\ 1,\ 173,\ 66,\ 32,\ 134,\ 132,\ 32,\ 2,\ 173,\ 32,\ 3,\ 173,\ 66,\ 32,\ 134,\ 132,\ 130,\ 34,\ 4,\ 66,\ 32,\ 135,\ 167,\ 36,\ 0,\ 32,\ 4,\ 167,\ 11}
+\DoxyCodeLine{\ \ ])),\ \{\}).\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00023}{23}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4}\index{index.js@{index.js}!TWO\_PWR\_16\_DBL@{TWO\_PWR\_16\_DBL}}
+\index{TWO\_PWR\_16\_DBL@{TWO\_PWR\_16\_DBL}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{TWO\_PWR\_16\_DBL}{TWO\_PWR\_16\_DBL}}
+{\footnotesize\ttfamily \label{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4} 
+var TWO\+\_\+\+PWR\+\_\+16\+\_\+\+DBL = 1 $<$$<$ 16}
+
+
+
+@type \{number\} @const @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00332}{332}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a0eaae65ce6d25ba985bad4dd90a34260_a0eaae65ce6d25ba985bad4dd90a34260}\index{index.js@{index.js}!TWO\_PWR\_24@{TWO\_PWR\_24}}
+\index{TWO\_PWR\_24@{TWO\_PWR\_24}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{TWO\_PWR\_24}{TWO\_PWR\_24}}
+{\footnotesize\ttfamily \label{a01237_a0eaae65ce6d25ba985bad4dd90a34260_a0eaae65ce6d25ba985bad4dd90a34260} 
+var TWO\+\_\+\+PWR\+\_\+24 = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(\mbox{\hyperlink{a01237_ace22a13fa54d3e757fb2f6afb9a7c6d9_ace22a13fa54d3e757fb2f6afb9a7c6d9}{TWO\+\_\+\+PWR\+\_\+24\+\_\+\+DBL}})}
+
+
+
+@type \{!\+Long\} @const @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00367}{367}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ace22a13fa54d3e757fb2f6afb9a7c6d9_ace22a13fa54d3e757fb2f6afb9a7c6d9}\index{index.js@{index.js}!TWO\_PWR\_24\_DBL@{TWO\_PWR\_24\_DBL}}
+\index{TWO\_PWR\_24\_DBL@{TWO\_PWR\_24\_DBL}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{TWO\_PWR\_24\_DBL}{TWO\_PWR\_24\_DBL}}
+{\footnotesize\ttfamily \label{a01237_ace22a13fa54d3e757fb2f6afb9a7c6d9_ace22a13fa54d3e757fb2f6afb9a7c6d9} 
+var TWO\+\_\+\+PWR\+\_\+24\+\_\+\+DBL = 1 $<$$<$ 24}
+
+
+
+@type \{number\} @const @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00339}{339}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}\index{index.js@{index.js}!TWO\_PWR\_32\_DBL@{TWO\_PWR\_32\_DBL}}
+\index{TWO\_PWR\_32\_DBL@{TWO\_PWR\_32\_DBL}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{TWO\_PWR\_32\_DBL}{TWO\_PWR\_32\_DBL}}
+{\footnotesize\ttfamily \label{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06} 
+var TWO\+\_\+\+PWR\+\_\+32\+\_\+\+DBL = \mbox{\hyperlink{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4}{TWO\+\_\+\+PWR\+\_\+16\+\_\+\+DBL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01237_a65d356b8a0577b943e500b0923dc80f4_a65d356b8a0577b943e500b0923dc80f4}{TWO\+\_\+\+PWR\+\_\+16\+\_\+\+DBL}}}
+
+
+
+@type \{number\} @const @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00346}{346}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_ab1ec9b5780c0a7448a5f5829be0b74d5_ab1ec9b5780c0a7448a5f5829be0b74d5}\index{index.js@{index.js}!TWO\_PWR\_63\_DBL@{TWO\_PWR\_63\_DBL}}
+\index{TWO\_PWR\_63\_DBL@{TWO\_PWR\_63\_DBL}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{TWO\_PWR\_63\_DBL}{TWO\_PWR\_63\_DBL}}
+{\footnotesize\ttfamily \label{a01237_ab1ec9b5780c0a7448a5f5829be0b74d5_ab1ec9b5780c0a7448a5f5829be0b74d5} 
+var TWO\+\_\+\+PWR\+\_\+63\+\_\+\+DBL = \mbox{\hyperlink{a01237_aa803787abfacd9e2ad50c8b23fd363a9_aa803787abfacd9e2ad50c8b23fd363a9}{TWO\+\_\+\+PWR\+\_\+64\+\_\+\+DBL}} / 2}
+
+
+
+@type \{number\} @const @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00360}{360}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_aa803787abfacd9e2ad50c8b23fd363a9_aa803787abfacd9e2ad50c8b23fd363a9}\index{index.js@{index.js}!TWO\_PWR\_64\_DBL@{TWO\_PWR\_64\_DBL}}
+\index{TWO\_PWR\_64\_DBL@{TWO\_PWR\_64\_DBL}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{TWO\_PWR\_64\_DBL}{TWO\_PWR\_64\_DBL}}
+{\footnotesize\ttfamily \label{a01237_aa803787abfacd9e2ad50c8b23fd363a9_aa803787abfacd9e2ad50c8b23fd363a9} 
+var TWO\+\_\+\+PWR\+\_\+64\+\_\+\+DBL = \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\+\_\+\+PWR\+\_\+32\+\_\+\+DBL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01237_ae98932fe3b7d5609f52004b048d66c06_ae98932fe3b7d5609f52004b048d66c06}{TWO\+\_\+\+PWR\+\_\+32\+\_\+\+DBL}}}
+
+
+
+@type \{number\} @const @inner 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00353}{353}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a71457c80c147c23fa062134a65c29bb7_a71457c80c147c23fa062134a65c29bb7}\index{index.js@{index.js}!UINT\_CACHE@{UINT\_CACHE}}
+\index{UINT\_CACHE@{UINT\_CACHE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{UINT\_CACHE}{UINT\_CACHE}}
+{\footnotesize\ttfamily \label{a01237_a71457c80c147c23fa062134a65c29bb7_a71457c80c147c23fa062134a65c29bb7} 
+var UINT\+\_\+\+CACHE = \{\}}
+
+
+
+\doxylink{a00844}{A} cache of the Long representations of small unsigned integer values. 
+
+@type \{!\+Object\} @inner 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00130}{130}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a337119821513cb26cfa2499ced775aa0_a337119821513cb26cfa2499ced775aa0}\index{index.js@{index.js}!UONE@{UONE}}
+\index{UONE@{UONE}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{UONE}{UONE}}
+{\footnotesize\ttfamily \label{a01237_a337119821513cb26cfa2499ced775aa0_a337119821513cb26cfa2499ced775aa0} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} UONE = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(1, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+@type \{!\+Long\} @inner 
+
+Unsigned one.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00409}{409}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_adfb75f3ed10ec9d71977d6d53fd750e6_adfb75f3ed10ec9d71977d6d53fd750e6}\index{index.js@{index.js}!UZERO@{UZERO}}
+\index{UZERO@{UZERO}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{UZERO}{UZERO}}
+{\footnotesize\ttfamily \label{a01237_adfb75f3ed10ec9d71977d6d53fd750e6_adfb75f3ed10ec9d71977d6d53fd750e6} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} UZERO = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(0, \mbox{\hyperlink{a01195_a74eb71239e9b500d5c7996bbd96bb4dc_a74eb71239e9b500d5c7996bbd96bb4dc}{true}})}
+
+
+
+@type \{!\+Long\} @inner 
+
+Unsigned zero.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00385}{385}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd}\index{index.js@{index.js}!wasm@{wasm}}
+\index{wasm@{wasm}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{wasm}{wasm}}
+{\footnotesize\ttfamily \label{a01237_a23a3372e7fdb6d70d0ea9e37720a75bd_a23a3372e7fdb6d70d0ea9e37720a75bd} 
+var wasm = \mbox{\hyperlink{a01195_a2d30a83186dbd0b9ecc3c1e9330136b6_a2d30a83186dbd0b9ecc3c1e9330136b6}{null}}}
+
+
+
+@license Copyright 2009 The Closure Library Authors Copyright 2020 Daniel Wirtz / The long.\+js Authors. 
+
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}http://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+SPDX-\/\+License-\/\+Identifier\+: Apache-\/2.\+0 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00022}{22}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a57a7f84d7a6445fc4bcc479225c29be3_a57a7f84d7a6445fc4bcc479225c29be3}\index{index.js@{index.js}!xor@{xor}}
+\index{xor@{xor}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{xor}{xor}}
+{\footnotesize\ttfamily \label{a01237_a57a7f84d7a6445fc4bcc479225c29be3_a57a7f84d7a6445fc4bcc479225c29be3} 
+\mbox{\hyperlink{a01237_abd9f5b89a9325bb842c11ead69eb0020_abd9f5b89a9325bb842c11ead69eb0020}{Long\+Prototype}} xor}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01237_a57a7f84d7a6445fc4bcc479225c29be3_a57a7f84d7a6445fc4bcc479225c29be3}{xor}}(other)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01237_a987be1914fa8b126ef6f42ee6ca22f6c_a987be1914fa8b126ef6f42ee6ca22f6c}{isLong}}(other))}
+\DoxyCodeLine{\ \ \ \ other\ =\ \mbox{\hyperlink{a01237_a44cb3d7b998b87b0e947a150084e56c4_a44cb3d7b998b87b0e947a150084e56c4}{fromValue}}(other);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01237_a4982e92a462ec92e04632054fbba81c7_a4982e92a462ec92e04632054fbba81c7}{fromBits}}(this.low\ \string^\ other.low,\ \textcolor{keyword}{this}.high\ \string^\ other.high,\ \textcolor{keyword}{this}.unsigned);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Returns the bitwise XOR of this Long and the given one. 
+
+@this \{!\+Long\} 
+\begin{DoxyParams}{Parámetros}
+{\em \{!\+Long\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}string\}} & other Other Long \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{!\+Long\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l01204}{1204}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+
+\Hypertarget{a01237_a2610f9b78232bda11b2fa63c930b3ef7_a2610f9b78232bda11b2fa63c930b3ef7}\index{index.js@{index.js}!ZERO@{ZERO}}
+\index{ZERO@{ZERO}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{ZERO}{ZERO}}
+{\footnotesize\ttfamily \label{a01237_a2610f9b78232bda11b2fa63c930b3ef7_a2610f9b78232bda11b2fa63c930b3ef7} 
+\mbox{\hyperlink{a01237_a1a0bab9fca95fe4a58fb392e24393fa7_a1a0bab9fca95fe4a58fb392e24393fa7}{Long}} ZERO = \mbox{\hyperlink{a01237_abe372bfcd00f2889d3a04d98ffe33ab1_abe372bfcd00f2889d3a04d98ffe33ab1}{from\+Int}}(0)}
+
+
+
+@type \{!\+Long\} @inner 
+
+Signed zero.
+
+@type \{!\+Long\} 
+
+Definición en la línea \mbox{\hyperlink{a01237_source_l00373}{373}} del archivo \mbox{\hyperlink{a01237_source}{node\+\_\+modules/long/index.\+js}}.
+

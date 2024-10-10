@@ -1,0 +1,49 @@
+\doxysubsection{node\+\_\+modules/methods/index.js}
+\hypertarget{a01255_source}{}\label{a01255_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01255}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01255_source_l00008}\mbox{\hyperlink{a01255_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00008}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01255_source_l00015}00015\ var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'});}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a01255_source_l00022}\mbox{\hyperlink{a01255_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00022}}\ module.exports\ =\ getCurrentNodeMethods()\ ||\ getBasicNodeMethods();}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01255_source_l00029}00029\ \textcolor{keyword}{function}\ getCurrentNodeMethods()\ \{}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00030}00030\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.METHODS\ \&\&\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.METHODS.map(\textcolor{keyword}{function}\ lowerCaseMethod(method)\ \{}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ method.toLowerCase();}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00032}00032\ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a01255_source_l00040}00040\ \textcolor{keyword}{function}\ getBasicNodeMethods()\ \{}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00041}00041\ \ \ \textcolor{keywordflow}{return}\ [}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00042}00042\ \ \ \ \ \textcolor{stringliteral}{'get'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00043}00043\ \ \ \ \ \textcolor{stringliteral}{'post'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00044}00044\ \ \ \ \ \textcolor{stringliteral}{'put'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00045}00045\ \ \ \ \ \textcolor{stringliteral}{'head'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00046}00046\ \ \ \ \ \textcolor{stringliteral}{'delete'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00047}00047\ \ \ \ \ \textcolor{stringliteral}{'options'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00048}00048\ \ \ \ \ \textcolor{stringliteral}{'trace'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00049}00049\ \ \ \ \ \textcolor{stringliteral}{'copy'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00050}00050\ \ \ \ \ \textcolor{stringliteral}{'lock'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00051}00051\ \ \ \ \ \textcolor{stringliteral}{'mkcol'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00052}00052\ \ \ \ \ \textcolor{stringliteral}{'move'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00053}00053\ \ \ \ \ \textcolor{stringliteral}{'purge'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00054}00054\ \ \ \ \ \textcolor{stringliteral}{'propfind'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00055}00055\ \ \ \ \ \textcolor{stringliteral}{'proppatch'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00056}00056\ \ \ \ \ \textcolor{stringliteral}{'unlock'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00057}00057\ \ \ \ \ \textcolor{stringliteral}{'report'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00058}00058\ \ \ \ \ \textcolor{stringliteral}{'mkactivity'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00059}00059\ \ \ \ \ \textcolor{stringliteral}{'checkout'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00060}00060\ \ \ \ \ \textcolor{stringliteral}{'merge'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00061}00061\ \ \ \ \ \textcolor{stringliteral}{'m-\/search'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00062}00062\ \ \ \ \ \textcolor{stringliteral}{'notify'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00063}00063\ \ \ \ \ \textcolor{stringliteral}{'subscribe'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00064}00064\ \ \ \ \ \textcolor{stringliteral}{'unsubscribe'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00065}00065\ \ \ \ \ \textcolor{stringliteral}{'patch'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00066}00066\ \ \ \ \ \textcolor{stringliteral}{'search'},}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00067}00067\ \ \ \ \ \textcolor{stringliteral}{'connect'}}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00068}00068\ \ \ ];}
+\DoxyCodeLine{\Hypertarget{a01255_source_l00069}00069\ \}}
+
+\end{DoxyCode}

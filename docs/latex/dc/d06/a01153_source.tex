@@ -1,0 +1,22 @@
+\doxysubsection{node\+\_\+modules/encodeurl/index.js}
+\hypertarget{a01153_source}{}\label{a01153_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01153}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01153_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01153_source_l00014}00014\ module.exports\ =\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01153_source_l00022}00022\ var\ ENCODE\_CHARS\_REGEXP\ =\ /(?:[\string^\(\backslash\)x21\(\backslash\)x23-\/\(\backslash\)x3B\(\backslash\)x3D\(\backslash\)x3F-\/\(\backslash\)x5F\(\backslash\)x61-\/\(\backslash\)x7A\(\backslash\)x7C\(\backslash\)x7E]|\%(?:[\string^0-\/9\mbox{\hyperlink{a00844}{A}}-\/Fa-\/\mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}]|[0-\/9\mbox{\hyperlink{a00844}{A}}-\/Fa-\/\mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}][\string^0-\/9\mbox{\hyperlink{a00844}{A}}-\/Fa-\/\mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}}]|\$))+/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}}}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01153_source_l00029}00029\ var\ UNMATCHED\_SURROGATE\_PAIR\_REGEXP\ =\ /(\string^|[\string^\(\backslash\)uD800-\/\(\backslash\)uDBFF])[\(\backslash\)uDC00-\/\(\backslash\)uDFFF]|[\(\backslash\)uD800-\/\(\backslash\)uDBFF]([\string^\(\backslash\)uDC00-\/\(\backslash\)uDFFF]|\$)/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}}}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a01153_source_l00036}00036\ var\ UNMATCHED\_SURROGATE\_PAIR\_REPLACE\ =\ \textcolor{stringliteral}{'\$1\(\backslash\)uFFFD\$2'}}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a01153_source_l00056}00056\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encodeUrl}}\ (url)\ \{}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00057}00057\ \ \ \textcolor{keywordflow}{return}\ String(url)}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00058}00058\ \ \ \ \ .replace(UNMATCHED\_SURROGATE\_PAIR\_REGEXP,\ UNMATCHED\_SURROGATE\_PAIR\_REPLACE)}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00059}00059\ \ \ \ \ .replace(ENCODE\_CHARS\_REGEXP,\ encodeURI)}
+\DoxyCodeLine{\Hypertarget{a01153_source_l00060}00060\ \}}
+
+\end{DoxyCode}

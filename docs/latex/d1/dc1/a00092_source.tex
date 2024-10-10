@@ -1,0 +1,700 @@
+\doxysubsection{search.\+js}
+\label{a00092_source}\index{search.js@{search.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ @licstart\ \ The\ following\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ The\ MIT\ License\ (MIT)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ Copyright\ (C)\ 1997-\/2020\ by\ Dimitri\ van\ Heesch}}
+\DoxyCodeLine{00007\ \textcolor{comment}{}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this\ software}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ @licend\ \ The\ above\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{const}\ SEARCH\_COOKIE\_NAME\ =\ \textcolor{stringliteral}{''}+\textcolor{stringliteral}{'search\_grp'};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{const}\ searchResults\ =\ \textcolor{keyword}{new}\ SearchResults();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/*\ A\ class\ handling\ everything\ associated\ with\ the\ search\ panel.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ Parameters:}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ name\ -\/\ The\ name\ of\ the\ global\ variable\ that\ will\ be}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ storing\ this\ instance.\ \ Is\ needed\ to\ be\ able\ to\ set\ timeouts.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ resultPath\ -\/\ path\ to\ use\ for\ external\ files}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{function}\ SearchBox(name,\ resultsPath,\ extension)\ \{}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordflow}{if}\ (!name\ ||\ !resultsPath)\ \{\ \ alert(\textcolor{stringliteral}{"{}Missing\ parameters\ to\ SearchBox."{}});\ \}}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{if}\ (!extension\ ||\ extension\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{\ extension\ =\ \textcolor{stringliteral}{"{}.html"{}};\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{function}\ getXPos(item)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ let\ x\ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (item.offsetWidth)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (item\ \&\&\ item!=document.body)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ x\ \ \ +=\ item.offsetLeft;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ item\ =\ item.offsetParent;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00049\ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{function}\ getYPos(item)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ let\ y\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (item.offsetWidth)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (item\ \&\&\ item!=document.body)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ y\ \ \ +=\ item.offsetTop;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ item\ =\ item.offsetParent;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00060\ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Instance\ variables}}
+\DoxyCodeLine{00063\ \ \ this.name\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ name;}
+\DoxyCodeLine{00064\ \ \ this.resultsPath\ \ \ \ \ \ \ \ \ \ \ =\ resultsPath;}
+\DoxyCodeLine{00065\ \ \ this.keyTimeout\ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00066\ \ \ this.keyTimeoutLength\ \ \ \ \ \ =\ 500;}
+\DoxyCodeLine{00067\ \ \ this.closeSelectionTimeout\ =\ 300;}
+\DoxyCodeLine{00068\ \ \ this.lastSearchValue\ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00069\ \ \ this.lastResultsPage\ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00070\ \ \ this.hideTimeout\ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00071\ \ \ this.searchIndex\ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00072\ \ \ this.searchActive\ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00073\ \ \ this.extension\ \ \ \ \ \ \ \ \ \ \ \ \ =\ extension;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DOM\ Elements}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ this.DOMSearchField\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchField"{}});}
+\DoxyCodeLine{00078\ \ \ this.DOMSearchSelect\ \ \ \ \ \ \ \ \ \ \ \ \ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchSelect"{}});}
+\DoxyCodeLine{00079\ \ \ this.DOMSearchSelectWindow\ \ \ \ \ \ \ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchSelectWindow"{}});}
+\DoxyCodeLine{00080\ \ \ this.DOMPopupSearchResults\ \ \ \ \ \ \ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchResults"{}});}
+\DoxyCodeLine{00081\ \ \ this.DOMPopupSearchResultsWindow\ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchResultsWindow"{}});}
+\DoxyCodeLine{00082\ \ \ this.DOMSearchClose\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchClose"{}});}
+\DoxyCodeLine{00083\ \ \ this.DOMSearchBox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ()\ =>\ document.getElementById(\textcolor{stringliteral}{"{}MSearchBox"{}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Event\ Handlers}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ Called\ when\ focus\ is\ added\ or\ removed\ from\ the\ search\ field.}}
+\DoxyCodeLine{00088\ \ \ this.OnSearchFieldFocus\ =\ \textcolor{keyword}{function}(isActive)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ this.Activate(isActive);}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ this.OnSearchSelectShow\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ searchSelectWindow\ =\ this.DOMSearchSelectWindow();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ searchField\ \ \ \ \ \ \ \ =\ this.DOMSearchSelect();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{const}\ left\ =\ getXPos(searchField);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ top\ \ =\ getYPos(searchField)\ +\ searchField.offsetHeight;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ show\ search\ selection\ popup}}
+\DoxyCodeLine{00100\ \ \ \ \ searchSelectWindow.style.display=\textcolor{stringliteral}{'block'};}
+\DoxyCodeLine{00101\ \ \ \ \ searchSelectWindow.style.left\ =\ \ left\ +\ \textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00102\ \ \ \ \ searchSelectWindow.style.top\ \ =\ \ top\ \ +\ \textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ stop\ selection\ hide\ timer}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.hideTimeout)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ clearTimeout(this.hideTimeout);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ this.hideTimeout=0;}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ to\ avoid\ "{}image\ drag"{}\ default\ event}}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ this.OnSearchSelectHide\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ this.hideTimeout\ =\ setTimeout(this.CloseSelectionWindow.bind(\textcolor{keyword}{this}),}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}.closeSelectionTimeout);}
+\DoxyCodeLine{00115\ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//\ Called\ when\ the\ content\ of\ the\ search\ field\ is\ changed.}}
+\DoxyCodeLine{00118\ \ \ this.OnSearchFieldChange\ =\ \textcolor{keyword}{function}(evt)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.keyTimeout)\ \{\ \textcolor{comment}{//\ kill\ running\ timer}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ clearTimeout(this.keyTimeout);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ this.keyTimeout\ =\ 0;}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{const}\ e\ =\ evt\ ?\ evt\ :\ window.event;\ \textcolor{comment}{//\ for\ IE}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (e.keyCode==40\ ||\ e.keyCode==13)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.shiftKey==1)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ this.OnSearchSelectShow();}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ win=this.DOMSearchSelectWindow();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ i=0;i<win.childNodes.length;i++)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ child\ =\ win.childNodes[i];\ \textcolor{comment}{//\ get\ span\ within\ a}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child.className==\textcolor{stringliteral}{'SelectItem'})\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ child.focus();}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ elem\ =\ searchResults.NavNext(0);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem)\ elem.focus();}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.keyCode==27)\ \{\ \textcolor{comment}{//\ Escape\ out\ of\ the\ search\ field}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ e.stopPropagation();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ this.DOMSearchField().blur();}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ this.DOMPopupSearchResultsWindow().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ this.DOMSearchClose().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ this.lastSearchValue\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ this.Activate(\textcolor{keyword}{false});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ strip\ whitespaces}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{const}\ searchValue\ =\ this.DOMSearchField().value.replace(/\ +/g,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (searchValue\ !=\ this.lastSearchValue)\ \{\ \textcolor{comment}{//\ search\ value\ has\ changed}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (searchValue\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{\ \textcolor{comment}{//\ non-\/empty\ search}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ timer\ for\ search\ update}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ this.keyTimeout\ =\ setTimeout(this.Search.bind(\textcolor{keyword}{this}),\ \textcolor{keyword}{this}.keyTimeoutLength);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ empty\ search\ field}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ this.DOMPopupSearchResultsWindow().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ this.DOMSearchClose().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ this.lastSearchValue\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ this.SelectItemCount\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ let\ count=0;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{const}\ win=this.DOMSearchSelectWindow();}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ i=0;i<win.childNodes.length;i++)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{keyword}{const}\ child\ =\ win.childNodes[i];\ \textcolor{comment}{//\ get\ span\ within\ a}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child.className==\textcolor{stringliteral}{'SelectItem'})\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ this.GetSelectionIdByName\ =\ \textcolor{keyword}{function}(name)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ let\ j=0;}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{const}\ win=this.DOMSearchSelectWindow();}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ i=0;i<win.childNodes.length;i++)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{keyword}{const}\ child\ =\ win.childNodes[i];}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child.className==\textcolor{stringliteral}{'SelectItem'})\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child.childNodes[1].nodeValue==name)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ j;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00191\ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ this.SelectItemSet\ =\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ let\ j=0;}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{const}\ win=this.DOMSearchSelectWindow();}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ i=0;i<win.childNodes.length;i++)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \textcolor{keyword}{const}\ child\ =\ win.childNodes[i];\ \textcolor{comment}{//\ get\ span\ within\ a}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child.className==\textcolor{stringliteral}{'SelectItem'})\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ node\ =\ child.firstChild;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j==\textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ node.innerHTML=\textcolor{stringliteral}{'\&\#8226;'};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ Cookie.writeSetting(SEARCH\_COOKIE\_NAME,\ child.childNodes[1].nodeValue,\ 0)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ node.innerHTML=\textcolor{stringliteral}{'\&\#160;'};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \textcolor{comment}{//\ Called\ when\ an\ search\ filter\ selection\ is\ made.}}
+\DoxyCodeLine{00212\ \ \ \textcolor{comment}{//\ set\ item\ with\ index\ id\ as\ the\ active\ item}}
+\DoxyCodeLine{00213\ \ \ this.OnSelectItem\ =\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ this.searchIndex\ =\ id;}
+\DoxyCodeLine{00215\ \ \ \ \ this.SelectItemSet(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{const}\ searchValue\ =\ this.DOMSearchField().value.replace(/\ +/g,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (searchValue!=\textcolor{stringliteral}{"{}"{}}\ \&\&\ this.searchActive)\ \{\ \textcolor{comment}{//\ something\ was\ found\ -\/>\ do\ a\ search}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ this.Search();}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ this.OnSearchSelectKey\ =\ \textcolor{keyword}{function}(evt)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{const}\ e\ =\ (evt)\ ?\ evt\ :\ window.event;\ \textcolor{comment}{//\ for\ IE}}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{if}\ (e.keyCode==40\ \&\&\ \textcolor{keyword}{this}.searchIndex<\textcolor{keyword}{this}.SelectItemCount())\ \{\ \textcolor{comment}{//\ Down}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ this.searchIndex++;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ this.OnSelectItem(this.searchIndex);}
+\DoxyCodeLine{00227\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.keyCode==38\ \&\&\ \textcolor{keyword}{this}.searchIndex>0)\ \{\ \textcolor{comment}{//\ Up}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ this.searchIndex-\/-\/;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ this.OnSelectItem(this.searchIndex);}
+\DoxyCodeLine{00230\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.keyCode==13\ ||\ e.keyCode==27)\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ e.stopPropagation();}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ this.OnSelectItem(this.searchIndex);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ this.CloseSelectionWindow();}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ this.DOMSearchField().focus();}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00237\ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/\ Actions}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \textcolor{comment}{//\ Closes\ the\ results\ window.}}
+\DoxyCodeLine{00242\ \ \ this.CloseResultsWindow\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ this.DOMPopupSearchResultsWindow().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00244\ \ \ \ \ this.DOMSearchClose().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00245\ \ \ \ \ this.Activate(\textcolor{keyword}{false});}
+\DoxyCodeLine{00246\ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ this.CloseSelectionWindow\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ this.DOMSearchSelectWindow().style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00250\ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \textcolor{comment}{//\ Performs\ a\ search.}}
+\DoxyCodeLine{00253\ \ \ this.Search\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ this.keyTimeout\ =\ 0;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{comment}{//\ strip\ leading\ whitespace}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{const}\ searchValue\ =\ this.DOMSearchField().value.replace(/\string^\ +/,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{const}\ code\ =\ searchValue.toLowerCase().charCodeAt(0);}
+\DoxyCodeLine{00260\ \ \ \ \ let\ idxChar\ =\ searchValue.substr(0,\ 1).toLowerCase();}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ 0xD800\ <=\ code\ \&\&\ code\ <=\ 0xDBFF\ \&\&\ searchValue\ >\ 1)\ \{\ \textcolor{comment}{//\ surrogate\ pair}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ idxChar\ =\ searchValue.substr(0,\ 2);}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ let\ jsFile;}
+\DoxyCodeLine{00266\ \ \ \ \ let\ idx\ =\ indexSectionsWithContent[this.searchIndex].indexOf(idxChar);}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (idx!=-\/1)\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \textcolor{keyword}{const}\ hexCode=idx.toString(16);}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ jsFile\ =\ this.resultsPath\ +\ indexSectionNames[this.searchIndex]\ +\ \textcolor{charliteral}{'\_'}\ +\ hexCode\ +\ \textcolor{stringliteral}{'.js'};}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{const}\ loadJS\ =\ \textcolor{keyword}{function}(url,\ impl,\ loc)\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \textcolor{keyword}{const}\ scriptTag\ =\ document.createElement(\textcolor{stringliteral}{'script'});}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ scriptTag.src\ =\ url;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ scriptTag.onload\ =\ impl;}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ scriptTag.onreadystatechange\ =\ impl;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ loc.appendChild(scriptTag);}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{const}\ domPopupSearchResultsWindow\ =\ this.DOMPopupSearchResultsWindow();}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{const}\ domSearchBox\ =\ this.DOMSearchBox();}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{const}\ domPopupSearchResults\ =\ this.DOMPopupSearchResults();}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keyword}{const}\ domSearchClose\ =\ this.DOMSearchClose();}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keyword}{const}\ resultsPath\ =\ this.resultsPath;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{const}\ handleResults\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}Loading"{}}).style.display=\textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ searchData\ !==\ \textcolor{stringliteral}{'undefined'})\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ createResults(resultsPath);}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}NoMatches"{}}).style.display=\textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idx!=-\/1)\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ searchResults.Search(searchValue);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ no\ file\ with\ search\ results\ =>\ force\ empty\ search\ results}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ searchResults.Search(\textcolor{stringliteral}{'===='});}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (domPopupSearchResultsWindow.style.display!=\textcolor{stringliteral}{'block'})\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ domSearchClose.style.display\ =\ \textcolor{stringliteral}{'inline-\/block'};}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ let\ left\ =\ getXPos(domSearchBox)\ +\ 150;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ let\ top\ \ =\ getYPos(domSearchBox)\ +\ 20;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ domPopupSearchResultsWindow.style.display\ =\ \textcolor{stringliteral}{'block'};}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ left\ -\/=\ domPopupSearchResults.offsetWidth;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ maxWidth\ \ =\ document.body.clientWidth;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ maxHeight\ =\ document.body.clientHeight;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ let\ width\ =\ 300;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (left<10)\ left=10;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (width+left+8>maxWidth)\ width=maxWidth-\/left-\/8;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ let\ height\ =\ 400;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (height+top+8>maxHeight)\ height=maxHeight-\/top-\/8;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ domPopupSearchResultsWindow.style.top\ \ \ \ \ =\ top\ \ +\ \textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ domPopupSearchResultsWindow.style.left\ \ \ \ =\ left\ +\ \textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ domPopupSearchResultsWindow.style.width\ \ \ =\ width\ +\ \textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ domPopupSearchResultsWindow.style.height\ \ =\ height\ +\ \textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{if}\ (jsFile)\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ loadJS(jsFile,\ handleResults,\ this.DOMPopupSearchResultsWindow());}
+\DoxyCodeLine{00321\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ handleResults();}
+\DoxyCodeLine{00323\ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ this.lastSearchValue\ =\ searchValue;}
+\DoxyCodeLine{00326\ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ Activation\ Functions}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \textcolor{comment}{//\ Activates\ or\ deactivates\ the\ search\ panel,\ resetting\ things\ to}}
+\DoxyCodeLine{00331\ \ \ \textcolor{comment}{//\ their\ default\ values\ if\ necessary.}}
+\DoxyCodeLine{00332\ \ \ this.Activate\ =\ \textcolor{keyword}{function}(isActive)\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{if}\ (isActive\ ||\ \textcolor{comment}{//\ open\ it}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ this.DOMPopupSearchResultsWindow().style.display\ ==\ \textcolor{stringliteral}{'block'}}
+\DoxyCodeLine{00335\ \ \ \ \ )\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ this.DOMSearchBox().className\ =\ \textcolor{stringliteral}{'MSearchBoxActive'};}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ this.searchActive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00338\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!isActive)\ \{\ \textcolor{comment}{//\ directly\ remove\ the\ panel}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ this.DOMSearchBox().className\ =\ \textcolor{stringliteral}{'MSearchBoxInactive'};}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ this.searchActive\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ this.lastSearchValue\ \ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{''}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ this.lastResultsPage\ \ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ this.DOMSearchField().value\ \ \ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \}}
+\DoxyCodeLine{00346\ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \textcolor{comment}{//\ The\ class\ that\ handles\ everything\ on\ the\ search\ results\ page.}}
+\DoxyCodeLine{00351\ \textcolor{keyword}{function}\ SearchResults()\ \{}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \textcolor{keyword}{function}\ convertToId(search)\ \{}
+\DoxyCodeLine{00354\ \ \ \ \ let\ result\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ i=0;i<search.length;i++)\ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \textcolor{keyword}{const}\ c\ =\ search.charAt(i);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \textcolor{keyword}{const}\ cn\ =\ c.charCodeAt(0);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c.match(/[a-\/z0-\/9\(\backslash\)u0080-\/\(\backslash\)uFFFF]/))\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ result+=c;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (cn<16)\ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ result+=\textcolor{stringliteral}{"{}\_0"{}}+cn.toString(16);}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ result+=\textcolor{stringliteral}{"{}\_"{}}+cn.toString(16);}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00365\ \ \ \ \ \}}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00367\ \ \ \}}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \textcolor{comment}{//\ The\ number\ of\ matches\ from\ the\ last\ run\ of\ <Search()>.}}
+\DoxyCodeLine{00370\ \ \ this.lastMatchCount\ =\ 0;}
+\DoxyCodeLine{00371\ \ \ this.lastKey\ =\ 0;}
+\DoxyCodeLine{00372\ \ \ this.repeatOn\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \textcolor{comment}{//\ Toggles\ the\ visibility\ of\ the\ passed\ element\ ID.}}
+\DoxyCodeLine{00375\ \ \ this.FindChildElement\ =\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keyword}{const}\ parentElement\ =\ document.getElementById(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00377\ \ \ \ \ let\ element\ =\ parentElement.firstChild;}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordflow}{while}\ (element\ \&\&\ element!=parentElement)\ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (element.nodeName.toLowerCase()\ ==\ \textcolor{stringliteral}{'div'}\ \&\&\ element.className\ ==\ \textcolor{stringliteral}{'SRChildren'})\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ element;}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (element.nodeName.toLowerCase()\ ==\ \textcolor{stringliteral}{'div'}\ \&\&\ element.hasChildNodes())\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ element\ =\ element.firstChild;}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (element.nextSibling)\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ element\ =\ element.nextSibling;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ element\ =\ element.parentNode;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (element\ \&\&\ element!=parentElement\ \&\&\ !element.nextSibling);}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (element\ \&\&\ element!=parentElement)\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ element\ =\ element.nextSibling;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ this.Toggle\ =\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keyword}{const}\ element\ =\ this.FindChildElement(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{if}\ (element)\ \{}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (element.style.display\ ==\ \textcolor{stringliteral}{'block'})\ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ element.style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ element.style.display\ =\ \textcolor{stringliteral}{'block'};}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00409\ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \textcolor{comment}{//\ Searches\ for\ the\ passed\ string.\ \ If\ there\ is\ no\ parameter,}}
+\DoxyCodeLine{00413\ \ \ \textcolor{comment}{//\ it\ takes\ it\ from\ the\ URL\ query.}}
+\DoxyCodeLine{00414\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00415\ \ \ \textcolor{comment}{//\ Always\ returns\ true,\ since\ other\ documents\ may\ try\ to\ call\ it}}
+\DoxyCodeLine{00416\ \ \ \textcolor{comment}{//\ and\ that\ may\ or\ may\ not\ be\ possible.}}
+\DoxyCodeLine{00417\ \ \ this.Search\ =\ \textcolor{keyword}{function}(search)\ \{}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{if}\ (!search)\ \{\ \textcolor{comment}{//\ get\ search\ word\ from\ URL}}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ search\ =\ window.location.search;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ search\ =\ search.substring(1);\ \ \textcolor{comment}{//\ Remove\ the\ leading\ '?'}}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ search\ =\ unescape(search);}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ search\ =\ search.replace(/\string^\ +/,\ \textcolor{stringliteral}{"{}"{}});\ \textcolor{comment}{//\ strip\ leading\ spaces}}
+\DoxyCodeLine{00425\ \ \ \ \ search\ =\ search.replace(/\ +\$/,\ \textcolor{stringliteral}{"{}"{}});\ \textcolor{comment}{//\ strip\ trailing\ spaces}}
+\DoxyCodeLine{00426\ \ \ \ \ search\ =\ search.toLowerCase();}
+\DoxyCodeLine{00427\ \ \ \ \ search\ =\ convertToId(search);}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keyword}{const}\ resultRows\ =\ document.getElementsByTagName(\textcolor{stringliteral}{"{}div"{}});}
+\DoxyCodeLine{00430\ \ \ \ \ let\ matches\ =\ 0;}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ let\ i\ =\ 0;}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ resultRows.length)\ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \textcolor{keyword}{const}\ row\ =\ resultRows.item(i);}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row.className\ ==\ \textcolor{stringliteral}{"{}SRResult"{}})\ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ let\ rowMatchName\ =\ row.id.toLowerCase();}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ rowMatchName\ =\ rowMatchName.replace(/\string^sr\(\backslash\)d*\_/,\ \textcolor{stringliteral}{''});\ \textcolor{comment}{//\ strip\ 'sr123\_'}}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (search.length<=rowMatchName.length\ \&\&}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ rowMatchName.substr(0,\ search.length)==search)\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ row.style.display\ =\ \textcolor{stringliteral}{'block'};}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ matches++;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ row.style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}Searching"{}}).style.display=\textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordflow}{if}\ (matches\ ==\ 0)\ \{\ \textcolor{comment}{//\ no\ results}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}NoMatches"{}}).style.display=\textcolor{stringliteral}{'block'};}
+\DoxyCodeLine{00452\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ at\ least\ one\ result}}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}NoMatches"{}}).style.display=\textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ this.lastMatchCount\ =\ matches;}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00457\ \ \ \}}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00459\ \ \ \textcolor{comment}{//\ return\ the\ first\ item\ with\ index\ index\ or\ higher\ that\ is\ visible}}
+\DoxyCodeLine{00460\ \ \ this.NavNext\ =\ \textcolor{keyword}{function}(index)\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ let\ focusItem;}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)\ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \textcolor{keyword}{const}\ focusName\ =\ \textcolor{stringliteral}{'Item'}+index;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ focusItem\ =\ document.getElementById(focusName);}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (focusItem\ \&\&\ focusItem.parentNode.parentNode.style.display==\textcolor{stringliteral}{'block'})\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!focusItem)\ \{\ \textcolor{comment}{//\ last\ element}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ focusItem=\textcolor{keyword}{null};}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{return}\ focusItem;}
+\DoxyCodeLine{00474\ \ \ \}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ this.NavPrev\ =\ \textcolor{keyword}{function}(index)\ \{}
+\DoxyCodeLine{00477\ \ \ \ \ let\ focusItem;}
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)\ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \textcolor{keyword}{const}\ focusName\ =\ \textcolor{stringliteral}{'Item'}+index;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ focusItem\ =\ document.getElementById(focusName);}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (focusItem\ \&\&\ focusItem.parentNode.parentNode.style.display==\textcolor{stringliteral}{'block'})\ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!focusItem)\ \{\ \textcolor{comment}{//\ last\ element}}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ focusItem=\textcolor{keyword}{null};}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ index-\/-\/;}
+\DoxyCodeLine{00488\ \ \ \ \ \}}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordflow}{return}\ focusItem;}
+\DoxyCodeLine{00490\ \ \ \}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ this.ProcessKeys\ =\ \textcolor{keyword}{function}(e)\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{if}\ (e.type\ ==\ \textcolor{stringliteral}{"{}keydown"{}})\ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ this.repeatOn\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ this.lastKey\ =\ e.keyCode;}
+\DoxyCodeLine{00496\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.type\ ==\ \textcolor{stringliteral}{"{}keypress"{}})\ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this.repeatOn)\ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.lastKey)\ this.repeatOn\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ ignore\ first\ keypress\ after\ keydown}}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00501\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.type\ ==\ \textcolor{stringliteral}{"{}keyup"{}})\ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ this.lastKey\ =\ 0;}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ this.repeatOn\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00504\ \ \ \ \ \}}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordflow}{return}\ this.lastKey!=0;}
+\DoxyCodeLine{00506\ \ \ \}}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ this.Nav\ =\ \textcolor{keyword}{function}(evt,itemIndex)\ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keyword}{const}\ e\ \ =\ (evt)\ ?\ evt\ :\ window.event;\ \textcolor{comment}{//\ for\ IE}}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordflow}{if}\ (e.keyCode==13)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this.ProcessKeys(e))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.lastKey==38)\ \{\ \textcolor{comment}{//\ Up}}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \textcolor{keyword}{const}\ newIndex\ =\ itemIndex-\/1;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ let\ focusItem\ =\ this.NavPrev(newIndex);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (focusItem)\ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ let\ child\ =\ this.FindChildElement(focusItem.parentNode.parentNode.id);}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child\ \&\&\ child.style.display\ ==\ \textcolor{stringliteral}{'block'})\ \{\ \textcolor{comment}{//\ children\ visible}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ let\ n=0;}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ let\ tmpElem;}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)\ \{\ \textcolor{comment}{//\ search\ for\ last\ child}}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ tmpElem\ =\ document.getElementById(\textcolor{stringliteral}{'Item'}+newIndex+\textcolor{stringliteral}{'\_c'}+n);}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpElem)\ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ focusItem\ =\ tmpElem;}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ found\ it!}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (focusItem)\ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ focusItem.focus();}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ return\ focus\ to\ search\ field}}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}MSearchField"{}}).focus();}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==40)\ \{\ \textcolor{comment}{//\ Down}}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \textcolor{keyword}{const}\ newIndex\ =\ itemIndex+1;}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ let\ focusItem;}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \textcolor{keyword}{const}\ item\ =\ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex);}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \textcolor{keyword}{const}\ elem\ =\ this.FindChildElement(item.parentNode.parentNode.id);}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem\ \&\&\ elem.style.display\ ==\ \textcolor{stringliteral}{'block'})\ \{\ \textcolor{comment}{//\ children\ visible}}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ focusItem\ =\ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex+\textcolor{stringliteral}{'\_c0'});}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!focusItem)\ focusItem\ =\ this.NavNext(newIndex);}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (focusItem)\ \ focusItem.focus();}
+\DoxyCodeLine{00547\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==39)\ \{\ \textcolor{comment}{//\ Right}}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \textcolor{keyword}{const}\ item\ =\ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex);}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \textcolor{keyword}{const}\ elem\ =\ this.FindChildElement(item.parentNode.parentNode.id);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem)\ elem.style.display\ =\ \textcolor{stringliteral}{'block'};}
+\DoxyCodeLine{00551\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==37)\ \{\ \textcolor{comment}{//\ Left}}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \textcolor{keyword}{const}\ item\ =\ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex);}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \textcolor{keyword}{const}\ elem\ =\ this.FindChildElement(item.parentNode.parentNode.id);}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem)\ elem.style.display\ =\ \textcolor{stringliteral}{'none'};}
+\DoxyCodeLine{00555\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==27)\ \{\ \textcolor{comment}{//\ Escape}}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ e.stopPropagation();}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ searchBox.CloseResultsWindow();}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}MSearchField"{}}).focus();}
+\DoxyCodeLine{00559\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==13)\ \{\ \textcolor{comment}{//\ Enter}}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00561\ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00563\ \ \ \}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ this.NavChild\ =\ \textcolor{keyword}{function}(evt,itemIndex,childIndex)\ \{}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keyword}{const}\ e\ \ =\ (evt)\ ?\ evt\ :\ window.event;\ \textcolor{comment}{//\ for\ IE}}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{if}\ (e.keyCode==13)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this.ProcessKeys(e))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.lastKey==38)\ \{\ \textcolor{comment}{//\ Up}}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childIndex>0)\ \{}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ newIndex\ =\ childIndex-\/1;}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex+\textcolor{stringliteral}{'\_c'}+newIndex).focus();}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ already\ at\ first\ child,\ jump\ to\ parent}}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex).focus();}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00577\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==40)\ \{\ \textcolor{comment}{//\ Down}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \textcolor{keyword}{const}\ newIndex\ =\ childIndex+1;}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ let\ elem\ =\ document.getElementById(\textcolor{stringliteral}{'Item'}+itemIndex+\textcolor{stringliteral}{'\_c'}+newIndex);}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!elem)\ \{\ \textcolor{comment}{//\ last\ child,\ jump\ to\ parent\ next\ parent}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ elem\ =\ this.NavNext(itemIndex+1);}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem)\ \{}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ elem.focus();}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00586\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==27)\ \{\ \textcolor{comment}{//\ Escape}}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ e.stopPropagation();}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ searchBox.CloseResultsWindow();}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ document.getElementById(\textcolor{stringliteral}{"{}MSearchField"{}}).focus();}
+\DoxyCodeLine{00590\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this.lastKey==13)\ \{\ \textcolor{comment}{//\ Enter}}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00592\ \ \ \ \ \}}
+\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00594\ \ \ \}}
+\DoxyCodeLine{00595\ \}}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \textcolor{keyword}{function}\ createResults(resultsPath)\ \{}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \ \ \textcolor{keyword}{function}\ setKeyActions(elem,action)\ \{}
+\DoxyCodeLine{00600\ \ \ \ \ elem.setAttribute(\textcolor{stringliteral}{'onkeydown'},action);}
+\DoxyCodeLine{00601\ \ \ \ \ elem.setAttribute(\textcolor{stringliteral}{'onkeypress'},action);}
+\DoxyCodeLine{00602\ \ \ \ \ elem.setAttribute(\textcolor{stringliteral}{'onkeyup'},action);}
+\DoxyCodeLine{00603\ \ \ \}}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \textcolor{keyword}{function}\ setClassAttr(elem,attr)\ \{}
+\DoxyCodeLine{00606\ \ \ \ \ elem.setAttribute(\textcolor{stringliteral}{'class'},attr);}
+\DoxyCodeLine{00607\ \ \ \ \ elem.setAttribute(\textcolor{stringliteral}{'className'},attr);}
+\DoxyCodeLine{00608\ \ \ \}}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \textcolor{keyword}{const}\ results\ =\ document.getElementById(\textcolor{stringliteral}{"{}SRResults"{}});}
+\DoxyCodeLine{00611\ \ \ results.innerHTML\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00612\ \ \ searchData.forEach((elem,index)\ =>\ \{}
+\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{id}\ =\ elem[0];}
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keyword}{const}\ srResult\ =\ document.createElement(\textcolor{stringliteral}{'div'});}
+\DoxyCodeLine{00615\ \ \ \ \ srResult.setAttribute(\textcolor{stringliteral}{'id'},\textcolor{stringliteral}{'SR\_'}+\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00616\ \ \ \ \ setClassAttr(srResult,\textcolor{stringliteral}{'SRResult'});}
+\DoxyCodeLine{00617\ \ \ \ \ \textcolor{keyword}{const}\ srEntry\ =\ document.createElement(\textcolor{stringliteral}{'div'});}
+\DoxyCodeLine{00618\ \ \ \ \ setClassAttr(srEntry,\textcolor{stringliteral}{'SREntry'});}
+\DoxyCodeLine{00619\ \ \ \ \ \textcolor{keyword}{const}\ srLink\ =\ document.createElement(\textcolor{charliteral}{'a'});}
+\DoxyCodeLine{00620\ \ \ \ \ srLink.setAttribute(\textcolor{stringliteral}{'id'},\textcolor{stringliteral}{'Item'}+index);}
+\DoxyCodeLine{00621\ \ \ \ \ setKeyActions(srLink,\textcolor{stringliteral}{'return\ searchResults.Nav(event,'}+index+\textcolor{charliteral}{')'});}
+\DoxyCodeLine{00622\ \ \ \ \ setClassAttr(srLink,\textcolor{stringliteral}{'SRSymbol'});}
+\DoxyCodeLine{00623\ \ \ \ \ srLink.innerHTML\ =\ elem[1][0];}
+\DoxyCodeLine{00624\ \ \ \ \ srEntry.appendChild(srLink);}
+\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keywordflow}{if}\ (elem[1].length==2)\ \{\ \textcolor{comment}{//\ single\ result}}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ srLink.setAttribute(\textcolor{stringliteral}{'href'},resultsPath+elem[1][1][0]);}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ srLink.setAttribute(\textcolor{stringliteral}{'onclick'},\textcolor{stringliteral}{'searchBox.CloseResultsWindow()'});}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem[1][1][1])\ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ srLink.setAttribute(\textcolor{stringliteral}{'target'},\textcolor{stringliteral}{'\_parent'});}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ srLink.setAttribute(\textcolor{stringliteral}{'target'},\textcolor{stringliteral}{'\_blank'});}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \textcolor{keyword}{const}\ srScope\ =\ document.createElement(\textcolor{stringliteral}{'span'});}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ setClassAttr(srScope,\textcolor{stringliteral}{'SRScope'});}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ srScope.innerHTML\ =\ elem[1][1][2];}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ srEntry.appendChild(srScope);}
+\DoxyCodeLine{00637\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ multiple\ results}}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ srLink.setAttribute(\textcolor{stringliteral}{'href'},\textcolor{stringliteral}{'javascript:searchResults.Toggle("{}SR\_'}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{'"{})'});}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \textcolor{keyword}{const}\ srChildren\ =\ document.createElement(\textcolor{stringliteral}{'div'});}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ setClassAttr(srChildren,\textcolor{stringliteral}{'SRChildren'});}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ c=0;\ c<elem[1].length-\/1;\ c++)\ \{}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ srChild\ =\ document.createElement(\textcolor{charliteral}{'a'});}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ srChild.setAttribute(\textcolor{stringliteral}{'id'},\textcolor{stringliteral}{'Item'}+index+\textcolor{stringliteral}{'\_c'}+c);}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ setKeyActions(srChild,\textcolor{stringliteral}{'return\ searchResults.NavChild(event,'}+index+\textcolor{charliteral}{','}+c+\textcolor{charliteral}{')'});}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ setClassAttr(srChild,\textcolor{stringliteral}{'SRScope'});}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ srChild.setAttribute(\textcolor{stringliteral}{'href'},resultsPath+elem[1][c+1][0]);}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ srChild.setAttribute(\textcolor{stringliteral}{'onclick'},\textcolor{stringliteral}{'searchBox.CloseResultsWindow()'});}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem[1][c+1][1])\ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ srChild.setAttribute(\textcolor{stringliteral}{'target'},\textcolor{stringliteral}{'\_parent'});}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ srChild.setAttribute(\textcolor{stringliteral}{'target'},\textcolor{stringliteral}{'\_blank'});}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ srChild.innerHTML\ =\ elem[1][c+1][2];}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ srChildren.appendChild(srChild);}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ srEntry.appendChild(srChildren);}
+\DoxyCodeLine{00657\ \ \ \ \ \}}
+\DoxyCodeLine{00658\ \ \ \ \ srResult.appendChild(srEntry);}
+\DoxyCodeLine{00659\ \ \ \ \ results.appendChild(srResult);}
+\DoxyCodeLine{00660\ \ \ \});}
+\DoxyCodeLine{00661\ \}}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00663\ \textcolor{keyword}{function}\ init\_search()\ \{}
+\DoxyCodeLine{00664\ \ \ \textcolor{keyword}{const}\ results\ =\ document.getElementById(\textcolor{stringliteral}{"{}MSearchSelectWindow"{}});}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ results.tabIndex=0;}
+\DoxyCodeLine{00667\ \ \ \textcolor{keywordflow}{for}\ (let\ key\ in\ indexSectionLabels)\ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \textcolor{keyword}{const}\ link\ =\ document.createElement(\textcolor{charliteral}{'a'});}
+\DoxyCodeLine{00669\ \ \ \ \ link.setAttribute(\textcolor{stringliteral}{'class'},\textcolor{stringliteral}{'SelectItem'});}
+\DoxyCodeLine{00670\ \ \ \ \ link.setAttribute(\textcolor{stringliteral}{'onclick'},\textcolor{stringliteral}{'searchBox.OnSelectItem('}+key+\textcolor{charliteral}{')'});}
+\DoxyCodeLine{00671\ \ \ \ \ link.href=\textcolor{stringliteral}{'javascript:void(0)'};}
+\DoxyCodeLine{00672\ \ \ \ \ link.innerHTML=\textcolor{stringliteral}{'<span\ class="{}SelectionMark"{}>\&\#160;</span>'}+indexSectionLabels[key];}
+\DoxyCodeLine{00673\ \ \ \ \ results.appendChild(link);}
+\DoxyCodeLine{00674\ \ \ \}}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ \ \ \textcolor{keyword}{const}\ input\ =\ document.getElementById(\textcolor{stringliteral}{"{}MSearchSelect"{}});}
+\DoxyCodeLine{00677\ \ \ \textcolor{keyword}{const}\ searchSelectWindow\ =\ document.getElementById(\textcolor{stringliteral}{"{}MSearchSelectWindow"{}});}
+\DoxyCodeLine{00678\ \ \ input.tabIndex=0;}
+\DoxyCodeLine{00679\ \ \ input.addEventListener(\textcolor{stringliteral}{"{}keydown"{}},\ \textcolor{keyword}{function}(event)\ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \textcolor{keywordflow}{if}\ (event.keyCode==13\ ||\ event.keyCode==40)\ \{}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \textcolor{keyword}{event}.preventDefault();}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (searchSelectWindow.style.display\ ==\ \textcolor{stringliteral}{'block'})\ \{}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ searchBox.CloseSelectionWindow();}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ searchBox.OnSearchSelectShow();}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ searchBox.DOMSearchSelectWindow().focus();}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00688\ \ \ \ \ \}}
+\DoxyCodeLine{00689\ \ \ \});}
+\DoxyCodeLine{00690\ \ \ \textcolor{keyword}{const}\ name\ =\ Cookie.readSetting(SEARCH\_COOKIE\_NAME,0);}
+\DoxyCodeLine{00691\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{id}\ =\ searchBox.GetSelectionIdByName(name);}
+\DoxyCodeLine{00692\ \ \ searchBox.OnSelectItem(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00693\ \}}
+\DoxyCodeLine{00694\ \textcolor{comment}{/*\ @license-\/end\ */}}
+
+\end{DoxyCode}

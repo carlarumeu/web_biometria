@@ -1,0 +1,38 @@
+\doxysubsection{mysql\+\_\+native\+\_\+password.\+js}
+\hypertarget{a00236_source}{}\label{a00236_source}\index{mysql\_native\_password.js@{mysql\_native\_password.js}}
+\mbox{\hyperlink{a00236}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00001}\mbox{\hyperlink{a00236_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00236_source_l00003}00003\ \textcolor{comment}{//const\ PLUGIN\_NAME\ =\ 'mysql\_native\_password';}}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00004}\mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}\ =\ require(\textcolor{stringliteral}{'../auth\_41.js'});}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00236_source_l00006}\mbox{\hyperlink{a00236_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00006}}\ module.exports\ =\ pluginOptions\ =>\ (\{\ connection,\ command\ \})\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00007}00007\ \ \ \textcolor{keyword}{const}\ password\ =}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00008}00008\ \ \ \ \ command.password\ ||\ pluginOptions.password\ ||\ connection.config.password;}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00009}00009\ \ \ \textcolor{keyword}{const}\ passwordSha1\ =}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00010}00010\ \ \ \ \ command.passwordSha1\ ||}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00011}00011\ \ \ \ \ pluginOptions.passwordSha1\ ||}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00012}00012\ \ \ \ \ connection.config.passwordSha1;}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00013}00013\ \ \ \textcolor{keywordflow}{return}\ data\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{const}\ authPluginData1\ =\ data.slice(0,\ 8);}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{const}\ authPluginData2\ =\ data.slice(8,\ 20);}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ authToken;}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (passwordSha1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00018}00018\ \ \ \ \ \ \ authToken\ =\ \mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}.calculateTokenFromPasswordSha(}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00019}00019\ \ \ \ \ \ \ \ \ passwordSha1,}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00020}00020\ \ \ \ \ \ \ \ \ authPluginData1,}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00021}00021\ \ \ \ \ \ \ \ \ authPluginData2}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00022}00022\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00023}00023\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00024}00024\ \ \ \ \ \ \ authToken\ =\ \mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}.calculateToken(}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00025}00025\ \ \ \ \ \ \ \ \ password,}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00026}00026\ \ \ \ \ \ \ \ \ authPluginData1,}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00027}00027\ \ \ \ \ \ \ \ \ authPluginData2}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00028}00028\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ authToken;}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00031}00031\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a00236_source_l00032}00032\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\doxysubsection{quit.\+js}
+\hypertarget{a00269_source}{}\label{a00269_source}\index{quit.js@{quit.js}}
+\mbox{\hyperlink{a00269}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00001}\mbox{\hyperlink{a00269_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00269_source_l00003}\mbox{\hyperlink{a00269_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00684}{Command}}\ =\ require(\textcolor{stringliteral}{'./command.js'});}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00004}\mbox{\hyperlink{a00269_a984bde8f55585ce81551e9a95052ba14_a984bde8f55585ce81551e9a95052ba14}{00004}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00269_a984bde8f55585ce81551e9a95052ba14_a984bde8f55585ce81551e9a95052ba14}{CommandCode}}\ =\ require(\textcolor{stringliteral}{'../constants/commands.js'});}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00005}\mbox{\hyperlink{a00269_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{00005}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00776}{Packet}}\ =\ require(\textcolor{stringliteral}{'../packets/packet.js'});}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a00269_source_l00007}\mbox{\hyperlink{a00708}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00708}{Quit}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{a00684}{Command}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00008}\mbox{\hyperlink{a00708_a963d87b8686038c4412777ffabd8319e_a963d87b8686038c4412777ffabd8319e}{00008}}\ \ \ \mbox{\hyperlink{a00708_a963d87b8686038c4412777ffabd8319e_a963d87b8686038c4412777ffabd8319e}{constructor}}(callback)\ \{}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00010}00010\ \ \ \ \ this.onResult\ =\ callback;}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00011}00011\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a00269_source_l00013}\mbox{\hyperlink{a00708_ad988288ee2291b5f7675b9ff48971903_ad988288ee2291b5f7675b9ff48971903}{00013}}\ \ \ \mbox{\hyperlink{a00708_ad988288ee2291b5f7675b9ff48971903_ad988288ee2291b5f7675b9ff48971903}{start}}(packet,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00014}00014\ \ \ \ \ connection.\_closing\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{const}\ quit\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00269_adbc81c45b48c6cdfffe9fc4752007493_adbc81c45b48c6cdfffe9fc4752007493}{Packet}}(}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00016}00016\ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00017}00017\ \ \ \ \ \ \ Buffer.from([1,\ 0,\ 0,\ 0,\ \mbox{\hyperlink{a00269_a984bde8f55585ce81551e9a95052ba14_a984bde8f55585ce81551e9a95052ba14}{CommandCode}}.QUIT]),}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00018}00018\ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00019}00019\ \ \ \ \ \ \ 5}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00020}00020\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.onResult)\ \{}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00022}00022\ \ \ \ \ \ \ this.onResult();}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00024}00024\ \ \ \ \ connection.writePacket(quit);}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00026}00026\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{a00269_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a00269_source_l00029}\mbox{\hyperlink{a00269_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00029}}\ module.exports\ =\ \mbox{\hyperlink{a01273_a8d20897cbc60668b8a7d8fbc10e5e1c6_a8d20897cbc60668b8a7d8fbc10e5e1c6}{Quit}};}
+
+\end{DoxyCode}

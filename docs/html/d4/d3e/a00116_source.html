@@ -1,0 +1,981 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente response.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d4/d3e/a00116_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">response.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d3e/a00116.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    8</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>var Buffer = require(<span class="stringliteral">&#39;safe-buffer&#39;</span>).Buffer</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>var <a class="code hl_variable" href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a> = require(<span class="stringliteral">&#39;content-disposition&#39;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a36d4507fc5974c25545c80a464e96cff.html#a36d4507fc5974c25545c80a464e96cff">   17</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a36d4507fc5974c25545c80a464e96cff.html#a36d4507fc5974c25545c80a464e96cff">createError</a> = require(<span class="stringliteral">&#39;http-errors&#39;</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>var <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a> = require(&#39;depd&#39;)(&#39;<a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a>&#39;);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a1a34672fc125191a36f71d740b9dcc67.html#a1a34672fc125191a36f71d740b9dcc67">   19</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a1a34672fc125191a36f71d740b9dcc67.html#a1a34672fc125191a36f71d740b9dcc67">encodeUrl</a> = require(&#39;encodeurl&#39;);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a283453fa28a8c3c50672113793233742.html#a283453fa28a8c3c50672113793233742">   20</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a283453fa28a8c3c50672113793233742.html#a283453fa28a8c3c50672113793233742">escapeHtml</a> = require(&#39;<a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a>-<a class="code hl_variable" href="../../d4/da6/a01168_a8f99bc655183db169e126fc155ceb631.html#a8f99bc655183db169e126fc155ceb631">html</a>&#39;);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">   21</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>&#39;);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aa95da46f3d867faa7562ae11962ad19a.html#aa95da46f3d867faa7562ae11962ad19a">   22</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_aa95da46f3d867faa7562ae11962ad19a.html#aa95da46f3d867faa7562ae11962ad19a">isAbsolute</a> = require(&#39;./<a class="code hl_variable" href="../../d4/d8e/a01840_a7b58b8887c6d26e09f79fbacfbda7f53.html#a7b58b8887c6d26e09f79fbacfbda7f53">utils</a>&#39;).<a class="code hl_variable" href="../../d4/d3e/a00116_aa95da46f3d867faa7562ae11962ad19a.html#aa95da46f3d867faa7562ae11962ad19a">isAbsolute</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_ac9425cf3d20b1276ed59571b25be3cba.html#ac9425cf3d20b1276ed59571b25be3cba">   23</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_ac9425cf3d20b1276ed59571b25be3cba.html#ac9425cf3d20b1276ed59571b25be3cba">onFinished</a> = require(&#39;on-finished&#39;);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">   24</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>&#39;);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">   25</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a>&#39;)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>var <a class="code hl_variable" href="../../d4/d3a/a00101_a3fda54bf53a2d62c0f154400825c4b57.html#a3fda54bf53a2d62c0f154400825c4b57">merge</a> = require(&#39;<a class="code hl_variable" href="../../d4/d8e/a01840_a7b58b8887c6d26e09f79fbacfbda7f53.html#a7b58b8887c6d26e09f79fbacfbda7f53">utils</a>-<a class="code hl_variable" href="../../d4/d3a/a00101_a3fda54bf53a2d62c0f154400825c4b57.html#a3fda54bf53a2d62c0f154400825c4b57">merge</a>&#39;);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a218b17ed7cfd469b9abe23e323ea0301.html#a218b17ed7cfd469b9abe23e323ea0301">   27</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a218b17ed7cfd469b9abe23e323ea0301.html#a218b17ed7cfd469b9abe23e323ea0301">sign</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">cookie</a>-signature&#39;).<a class="code hl_variable" href="../../d4/d3e/a00116_a218b17ed7cfd469b9abe23e323ea0301.html#a218b17ed7cfd469b9abe23e323ea0301">sign</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_acfe51d0f45d4dae517cae068425fc2a4.html#acfe51d0f45d4dae517cae068425fc2a4">   28</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_acfe51d0f45d4dae517cae068425fc2a4.html#acfe51d0f45d4dae517cae068425fc2a4">normalizeType</a> = require(&#39;./<a class="code hl_variable" href="../../d4/d8e/a01840_a7b58b8887c6d26e09f79fbacfbda7f53.html#a7b58b8887c6d26e09f79fbacfbda7f53">utils</a>&#39;).<a class="code hl_variable" href="../../d4/d3e/a00116_acfe51d0f45d4dae517cae068425fc2a4.html#acfe51d0f45d4dae517cae068425fc2a4">normalizeType</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a139f0615a5ceb39ebda3addcc89beeb3.html#a139f0615a5ceb39ebda3addcc89beeb3">   29</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a139f0615a5ceb39ebda3addcc89beeb3.html#a139f0615a5ceb39ebda3addcc89beeb3">normalizeTypes</a> = require(&#39;./<a class="code hl_variable" href="../../d4/d8e/a01840_a7b58b8887c6d26e09f79fbacfbda7f53.html#a7b58b8887c6d26e09f79fbacfbda7f53">utils</a>&#39;).<a class="code hl_variable" href="../../d4/d3e/a00116_a139f0615a5ceb39ebda3addcc89beeb3.html#a139f0615a5ceb39ebda3addcc89beeb3">normalizeTypes</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a980a5c7eba501bc11730d1b3525938ae.html#a980a5c7eba501bc11730d1b3525938ae">   30</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a980a5c7eba501bc11730d1b3525938ae.html#a980a5c7eba501bc11730d1b3525938ae">setCharset</a> = require(&#39;./<a class="code hl_variable" href="../../d4/d8e/a01840_a7b58b8887c6d26e09f79fbacfbda7f53.html#a7b58b8887c6d26e09f79fbacfbda7f53">utils</a>&#39;).<a class="code hl_variable" href="../../d4/d3e/a00116_a980a5c7eba501bc11730d1b3525938ae.html#a980a5c7eba501bc11730d1b3525938ae">setCharset</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">   31</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">cookie</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">cookie</a>&#39;);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">   32</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>&#39;);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a9fe677e64b8a08341d3168b8eb73a56d.html#a9fe677e64b8a08341d3168b8eb73a56d">   33</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a9fe677e64b8a08341d3168b8eb73a56d.html#a9fe677e64b8a08341d3168b8eb73a56d">extname</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>.<a class="code hl_variable" href="../../d4/d3e/a00116_a9fe677e64b8a08341d3168b8eb73a56d.html#a9fe677e64b8a08341d3168b8eb73a56d">extname</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">   34</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>.<a class="code hl_variable" href="../../d4/d3e/a00116_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aebedbf53ce9a15014605e527aec0a6ec.html#aebedbf53ce9a15014605e527aec0a6ec">   35</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_aebedbf53ce9a15014605e527aec0a6ec.html#aebedbf53ce9a15014605e527aec0a6ec">resolve</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>.<a class="code hl_variable" href="../../d4/d3e/a00116_aebedbf53ce9a15014605e527aec0a6ec.html#aebedbf53ce9a15014605e527aec0a6ec">resolve</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a2222d7dc84a3b14edb06515136c7d0a5.html#a2222d7dc84a3b14edb06515136c7d0a5">   36</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_a2222d7dc84a3b14edb06515136c7d0a5.html#a2222d7dc84a3b14edb06515136c7d0a5">vary</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3e/a00116_a2222d7dc84a3b14edb06515136c7d0a5.html#a2222d7dc84a3b14edb06515136c7d0a5">vary</a>&#39;);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">   43</a></span>var <a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> = Object.create(<a class="code hl_variable" href="../../d4/d3e/a00116_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>.ServerResponse.<a class="code hl_variable" href="../../d6/d2e/a01735_a22c3fb2b14bdd9d6de4c61f2778f4444.html#a22c3fb2b14bdd9d6de4c61f2778f4444">prototype</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>module.<a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>var charsetRegExp = /;\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>*<a class="code hl_variable" href="../../d7/d8d/a01288_a57f5b60955b20f18ba489a7aad60314b.html#a57f5b60955b20f18ba489a7aad60314b">charset</a>\<a class="code hl_variable" href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a>*=/;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">   67</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.<a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a> = function <a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a>(code) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">if</span> ((typeof code === <span class="stringliteral">&#39;string&#39;</span> || Math.floor(code) !== code) &amp;&amp; code &gt; 99 &amp;&amp; code &lt; 1000) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    deprecate(<span class="stringliteral">&#39;res.status(&#39;</span> + JSON.stringify(code) + <span class="stringliteral">&#39;): use res.status(&#39;</span> + Math.floor(code) + <span class="stringliteral">&#39;) instead&#39;</span>)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">this</span>.statusCode = code;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="};">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a56092f25c80f752717867681b2c0a950.html#a56092f25c80f752717867681b2c0a950">   90</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.links = <span class="keyword">function</span>(<a class="code hl_variable" href="../../d4/d3e/a00116_a56092f25c80f752717867681b2c0a950.html#a56092f25c80f752717867681b2c0a950">links</a>){</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  var link = this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Link&#39;</span>) || <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">if</span> (link) link += <span class="stringliteral">&#39;, &#39;</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">return</span> this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Link&#39;</span>, link + Object.keys(<a class="code hl_variable" href="../../d4/d3e/a00116_a56092f25c80f752717867681b2c0a950.html#a56092f25c80f752717867681b2c0a950">links</a>).<a class="code hl_variable" href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a>(<span class="keyword">function</span>(rel){</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> <span class="charliteral">&#39;&lt;&#39;</span> + <a class="code hl_variable" href="../../d4/d3e/a00116_a56092f25c80f752717867681b2c0a950.html#a56092f25c80f752717867681b2c0a950">links</a>[rel] + <span class="stringliteral">&#39;&gt;; rel=&quot;&#39;</span> + rel + <span class="charliteral">&#39;&quot;&#39;</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }).join(<span class="stringliteral">&#39;, &#39;</span>));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.send = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>(body) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  var chunk = body;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  var <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  var <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a> = this.<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  var <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="comment">// settings</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = this.<a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="comment">// allow status / body</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordflow">if</span> (arguments.length === 2) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// res.send(body, status) backwards compat</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> (typeof arguments[0] !== <span class="stringliteral">&#39;number&#39;</span> &amp;&amp; typeof arguments[1] === <span class="stringliteral">&#39;number&#39;</span>) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.send(body, status): Use res.status(status).send(body) instead&#39;</span>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      this.statusCode = arguments[1];</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.send(status, body): Use res.status(status).send(body) instead&#39;</span>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      this.statusCode = arguments[0];</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      chunk = arguments[1];</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="comment">// disambiguate res.send(status) and res.send(status, num)</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordflow">if</span> (typeof chunk === <span class="stringliteral">&#39;number&#39;</span> &amp;&amp; arguments.length === 1) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="comment">// res.send(status) will set status message as text string</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (!this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>)) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      this.<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>(<span class="stringliteral">&#39;txt&#39;</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.send(status): Use res.sendStatus(status) instead&#39;</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    this.statusCode = chunk;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    chunk = <a class="code hl_variable" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a>.message[chunk]</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordflow">switch</span> (typeof chunk) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">// string defaulting to html</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;string&#39;</span>:</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <span class="keywordflow">if</span> (!this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>)) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        this.<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>(<span class="stringliteral">&#39;html&#39;</span>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;boolean&#39;</span>:</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;number&#39;</span>:</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;object&#39;</span>:</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keywordflow">if</span> (chunk === <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        chunk = <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Buffer.isBuffer(chunk)) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (!this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>)) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>          this.<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>(<span class="stringliteral">&#39;bin&#39;</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a>(chunk);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">// write strings in utf-8</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordflow">if</span> (typeof chunk === <span class="stringliteral">&#39;string&#39;</span>) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a> = <span class="stringliteral">&#39;utf8&#39;</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a> = this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="comment">// reflect this in content-type</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (typeof <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a> === <span class="stringliteral">&#39;string&#39;</span>) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>, <a class="code hl_variable" href="../../d4/d3e/a00116_a980a5c7eba501bc11730d1b3525938ae.html#a980a5c7eba501bc11730d1b3525938ae">setCharset</a>(type, <span class="stringliteral">&#39;utf-8&#39;</span>));</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="comment">// determine if ETag should be generated</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  var etagFn = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;etag fn&#39;</span>)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  var generateETag = !this.<span class="keyword">get</span>(<span class="stringliteral">&#39;ETag&#39;</span>) &amp;&amp; typeof etagFn === <span class="stringliteral">&#39;function&#39;</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="comment">// populate Content-Length</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  var len</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keywordflow">if</span> (chunk !== <a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">if</span> (Buffer.isBuffer(chunk)) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      <span class="comment">// get length of Buffer</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      len = chunk.length</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!generateETag &amp;&amp; chunk.length &lt; 1000) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="comment">// just calculate length when no ETag + small chunk</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      len = Buffer.byteLength(chunk, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>)</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      <span class="comment">// convert chunk to Buffer and calculate</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      chunk = Buffer.from(chunk, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a> = <a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      len = chunk.length</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Length&#39;</span>, len);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="comment">// populate ETag</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  var <a class="code hl_variable" href="../../d9/df7/a01699_aa7b4b88130584154c4a863b71b8a3075.html#aa7b4b88130584154c4a863b71b8a3075">etag</a>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordflow">if</span> (generateETag &amp;&amp; len !== <a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">if</span> ((<a class="code hl_variable" href="../../d9/df7/a01699_aa7b4b88130584154c4a863b71b8a3075.html#aa7b4b88130584154c4a863b71b8a3075">etag</a> = etagFn(chunk, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>))) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      this.<span class="keyword">set</span>(<span class="stringliteral">&#39;ETag&#39;</span>, <a class="code hl_variable" href="../../d9/df7/a01699_aa7b4b88130584154c4a863b71b8a3075.html#aa7b4b88130584154c4a863b71b8a3075">etag</a>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="comment">// freshness</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keywordflow">if</span> (req.fresh) this.statusCode = 304;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="comment">// strip irrelevant headers</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordflow">if</span> (204 === this.statusCode || 304 === this.statusCode) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    this.removeHeader(<span class="stringliteral">&#39;Content-Type&#39;</span>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    this.removeHeader(<span class="stringliteral">&#39;Content-Length&#39;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    this.removeHeader(<span class="stringliteral">&#39;Transfer-Encoding&#39;</span>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    chunk = <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// alter headers for 205</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordflow">if</span> (this.statusCode === 205) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Length&#39;</span>, <span class="charliteral">&#39;0&#39;</span>)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    this.removeHeader(<span class="stringliteral">&#39;Transfer-Encoding&#39;</span>)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    chunk = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.method === <span class="stringliteral">&#39;HEAD&#39;</span>) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="comment">// skip body for HEAD</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    this.<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="comment">// respond</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    this.<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>(chunk, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>};</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="};">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">  250</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.json = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a>(<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  var val = <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="comment">// allow status / body</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="keywordflow">if</span> (arguments.length === 2) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="comment">// res.json(body, status) backwards compat</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">if</span> (typeof arguments[1] === <span class="stringliteral">&#39;number&#39;</span>) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.json(obj, status): Use res.status(status).json(obj) instead&#39;</span>);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      this.statusCode = arguments[1];</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.json(status, obj): Use res.status(status).json(obj) instead&#39;</span>);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      this.statusCode = arguments[0];</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      val = arguments[1];</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  <span class="comment">// settings</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = this.<a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  var <a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a> = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;json escape&#39;</span>)</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  var replacer = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;json replacer&#39;</span>);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  var spaces = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;json spaces&#39;</span>);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  var body = <a class="code hl_variable" href="../../d7/d8c/a01306_a933f8ff8d69be620d8091034ba62666c.html#a933f8ff8d69be620d8091034ba62666c">stringify</a>(val, replacer, spaces, <a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a>)</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="comment">// content-type</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keywordflow">if</span> (!this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>)) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>, <span class="stringliteral">&#39;application/json&#39;</span>);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>(body);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>};</div>
+</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="foldopen" id="foldopen00293" data-start="{" data-end="};">
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_ae3d1fd9e20d5b0a87c172afcda79d339.html#ae3d1fd9e20d5b0a87c172afcda79d339">  293</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.jsonp = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_ae3d1fd9e20d5b0a87c172afcda79d339.html#ae3d1fd9e20d5b0a87c172afcda79d339">jsonp</a>(<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  var val = <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="comment">// allow status / body</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="keywordflow">if</span> (arguments.length === 2) {</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="comment">// res.jsonp(body, status) backwards compat</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">if</span> (typeof arguments[1] === <span class="stringliteral">&#39;number&#39;</span>) {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.jsonp(obj, status): Use res.status(status).jsonp(obj) instead&#39;</span>);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>      this.statusCode = arguments[1];</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.jsonp(status, obj): Use res.status(status).jsonp(obj) instead&#39;</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      this.statusCode = arguments[0];</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      val = arguments[1];</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="comment">// settings</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = this.<a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  var <a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a> = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;json escape&#39;</span>)</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  var replacer = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;json replacer&#39;</span>);</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  var spaces = <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;json spaces&#39;</span>);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  var body = <a class="code hl_variable" href="../../d7/d8c/a01306_a933f8ff8d69be620d8091034ba62666c.html#a933f8ff8d69be620d8091034ba62666c">stringify</a>(val, replacer, spaces, <a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a>)</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  var callback = this.req.query[<a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.get(<span class="stringliteral">&#39;jsonp callback name&#39;</span>)];</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="comment">// content-type</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  <span class="keywordflow">if</span> (!this.<span class="keyword">get</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>)) {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;X-Content-Type-Options&#39;</span>, <span class="stringliteral">&#39;nosniff&#39;</span>);</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>, <span class="stringliteral">&#39;application/json&#39;</span>);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="comment">// fixup callback</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>  <span class="keywordflow">if</span> (Array.isArray(callback)) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    callback = callback[0];</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  }</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="comment">// jsonp</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keywordflow">if</span> (typeof callback === <span class="stringliteral">&#39;string&#39;</span> &amp;&amp; callback.length !== 0) {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;X-Content-Type-Options&#39;</span>, <span class="stringliteral">&#39;nosniff&#39;</span>);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>, <span class="stringliteral">&#39;text/javascript&#39;</span>);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="comment">// restrict callback charset</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    callback = callback.replace(/[^\[\]\w$.]/<a class="code hl_variable" href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a>, <span class="stringliteral">&#39;&#39;</span>);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">if</span> (body === <a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>      <span class="comment">// empty argument</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>      body = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (typeof body === <span class="stringliteral">&#39;string&#39;</span>) {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      <span class="comment">// replace chars not allowed in JavaScript that are in JSON</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      body = body</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        .replace(/\u2028/<a class="code hl_variable" href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a>, <span class="stringliteral">&#39;\\u2028&#39;</span>)</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        .replace(/\u2029/<a class="code hl_variable" href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a>, <span class="stringliteral">&#39;\\u2029&#39;</span>)</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    }</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    <span class="comment">// the /**/ is a specific security mitigation for &quot;Rosetta Flash JSONP abuse&quot;</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <span class="comment">// the typeof check is just to reduce client error noise</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    body = <span class="stringliteral">&#39;/**/ typeof &#39;</span> + callback + <span class="stringliteral">&#39; === \&#39;function\&#39; &amp;&amp; &#39;</span> + callback + <span class="charliteral">&#39;(&#39;</span> + body + <span class="stringliteral">&#39;);&#39;</span>;</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  }</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>(body);</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>};</div>
+</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
+<div class="foldopen" id="foldopen00369" data-start="{" data-end="};">
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a48eb47c20281112f798efcf6dd189e9e.html#a48eb47c20281112f798efcf6dd189e9e">  369</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.sendStatus = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a48eb47c20281112f798efcf6dd189e9e.html#a48eb47c20281112f798efcf6dd189e9e">sendStatus</a>(statusCode) {</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  var body = <a class="code hl_variable" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a>.message[statusCode] || String(statusCode)</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  this.statusCode = statusCode;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  this.<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>(<span class="stringliteral">&#39;txt&#39;</span>);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>(body);</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>};</div>
+</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
+<div class="foldopen" id="foldopen00419" data-start="{" data-end="};">
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a759876546da9985e9fa7f4560c157d46.html#a759876546da9985e9fa7f4560c157d46">  419</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.sendFile = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a759876546da9985e9fa7f4560c157d46.html#a759876546da9985e9fa7f4560c157d46">sendFile</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>, options, callback) {</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  var <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = callback;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  var <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a> = this.<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>;</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  var <a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  var next = <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.next;</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  var opts = options || {};</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>) {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    <span class="keywordflow">throw</span> <span class="keyword">new</span> TypeError(<span class="stringliteral">&#39;path argument is required to res.sendFile&#39;</span>);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>  }</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span> </div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  <span class="keywordflow">if</span> (typeof <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a> !== <span class="stringliteral">&#39;string&#39;</span>) {</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    <span class="keywordflow">throw</span> <span class="keyword">new</span> TypeError(<span class="stringliteral">&#39;path must be a string to res.sendFile&#39;</span>)</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>  }</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>  <span class="comment">// support function as second arg</span></div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>  <span class="keywordflow">if</span> (typeof options === <span class="stringliteral">&#39;function&#39;</span>) {</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = options;</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    opts = {};</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>  }</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>  <span class="keywordflow">if</span> (!opts.root &amp;&amp; !<a class="code hl_variable" href="../../d4/d3e/a00116_aa95da46f3d867faa7562ae11962ad19a.html#aa95da46f3d867faa7562ae11962ad19a">isAbsolute</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>)) {</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="keywordflow">throw</span> <span class="keyword">new</span> TypeError(<span class="stringliteral">&#39;path must be absolute or specify root to res.sendFile&#39;</span>);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>  }</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span> </div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  <span class="comment">// create file stream</span></div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  var pathname = encodeURI(<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>);</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  var <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, pathname, opts);</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>  <span class="comment">// transfer</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>  <a class="code hl_variable" href="../../d4/d3e/a00116_a0f00d831d541123b75de988eab4cea7f.html#a0f00d831d541123b75de988eab4cea7f">sendfile</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>, opts, <span class="keyword">function</span> (err) {</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span> <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>(err);</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    <span class="keywordflow">if</span> (err &amp;&amp; err.code === <span class="stringliteral">&#39;EISDIR&#39;</span>) <span class="keywordflow">return</span> next();</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    <span class="comment">// next() all but write errors</span></div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>    <span class="keywordflow">if</span> (err &amp;&amp; err.code !== <span class="stringliteral">&#39;ECONNABORTED&#39;</span> &amp;&amp; err.syscall !== <span class="stringliteral">&#39;write&#39;</span>) {</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>      next(err);</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    }</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>  });</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>};</div>
+</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span> </div>
+<div class="foldopen" id="foldopen00501" data-start="{" data-end="};">
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a0f00d831d541123b75de988eab4cea7f.html#a0f00d831d541123b75de988eab4cea7f">  501</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.sendfile = <span class="keyword">function</span> (<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>, options, callback) {</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>  var <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = callback;</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>  var <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a> = this.<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>;</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>  var <a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>  var next = <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.next;</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  var opts = options || {};</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span> </div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>  <span class="comment">// support function as second arg</span></div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>  <span class="keywordflow">if</span> (typeof options === <span class="stringliteral">&#39;function&#39;</span>) {</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = options;</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    opts = {};</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>  }</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span> </div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>  <span class="comment">// create file stream</span></div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>  var <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a>(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>, opts);</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span> </div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>  <span class="comment">// transfer</span></div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>  <a class="code hl_variable" href="../../d4/d3e/a00116_a0f00d831d541123b75de988eab4cea7f.html#a0f00d831d541123b75de988eab4cea7f">sendfile</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>, opts, <span class="keyword">function</span> (err) {</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span> <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>(err);</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <span class="keywordflow">if</span> (err &amp;&amp; err.code === <span class="stringliteral">&#39;EISDIR&#39;</span>) <span class="keywordflow">return</span> next();</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>    <span class="comment">// next() all but write errors</span></div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>    <span class="keywordflow">if</span> (err &amp;&amp; err.code !== <span class="stringliteral">&#39;ECONNABORTED&#39;</span> &amp;&amp; err.syscall !== <span class="stringliteral">&#39;write&#39;</span>) {</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>      next(err);</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    }</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>  });</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>};</div>
+</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span> </div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.sendfile = <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>.function(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.sendfile,</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>  <span class="stringliteral">&#39;res.sendfile: Use res.sendFile instead&#39;</span>);</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
+<div class="foldopen" id="foldopen00550" data-start="{" data-end="};">
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a9c1fe76adcf6e39eff71bdd5fb4870d8.html#a9c1fe76adcf6e39eff71bdd5fb4870d8">  550</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.download = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a9c1fe76adcf6e39eff71bdd5fb4870d8.html#a9c1fe76adcf6e39eff71bdd5fb4870d8">download</a> (<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>, filename, options, callback) {</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>  var <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = callback;</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>  var name = filename;</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  var opts = options || <span class="keyword">null</span></div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span> </div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>  <span class="comment">// support function as second or third arg</span></div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>  <span class="keywordflow">if</span> (typeof filename === <span class="stringliteral">&#39;function&#39;</span>) {</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = filename;</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    name = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    opts = <span class="keyword">null</span></div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (typeof options === <span class="stringliteral">&#39;function&#39;</span>) {</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = options</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    opts = <span class="keyword">null</span></div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>  }</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>  <span class="comment">// support optional filename, where options may be in it&#39;s place</span></div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>  <span class="keywordflow">if</span> (typeof filename === <span class="stringliteral">&#39;object&#39;</span> &amp;&amp;</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    (typeof options === <span class="stringliteral">&#39;function&#39;</span> || options === <a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>)) {</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    name = <span class="keyword">null</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    opts = filename</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  }</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>  <span class="comment">// set Content-Disposition when file is sent</span></div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>  var headers = {</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <span class="stringliteral">&#39;Content-Disposition&#39;</span>: <a class="code hl_variable" href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a>(name || <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>)</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  };</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span> </div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  <span class="comment">// merge user-provided headers</span></div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>  <span class="keywordflow">if</span> (opts &amp;&amp; opts.headers) {</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    var <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a> = Object.keys(opts.headers)</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <span class="keywordflow">for</span> (var <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> = 0; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> &lt; <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>.length; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>++) {</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>      var key = <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>]</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>      <span class="keywordflow">if</span> (key.toLowerCase() !== <span class="stringliteral">&#39;content-disposition&#39;</span>) {</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        headers[key] = opts.headers[key]</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>      }</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    }</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>  }</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>  <span class="comment">// merge user-provided options</span></div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>  opts = Object.create(opts)</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>  opts.headers = headers</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  <span class="comment">// Resolve the full path for sendFile</span></div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>  var fullPath = !opts.root</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    ? <a class="code hl_variable" href="../../d4/d3e/a00116_aebedbf53ce9a15014605e527aec0a6ec.html#aebedbf53ce9a15014605e527aec0a6ec">resolve</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>)</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    : <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a></div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span> </div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>  <span class="comment">// send file</span></div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>  <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d4/d3e/a00116_a759876546da9985e9fa7f4560c157d46.html#a759876546da9985e9fa7f4560c157d46">sendFile</a>(fullPath, opts, <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>)</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>};</div>
+</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span> </div>
+<div class="foldopen" id="foldopen00618" data-start="{" data-end="};">
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aaa70baea2218f3239c21c4a23f9569e3.html#aaa70baea2218f3239c21c4a23f9569e3">  618</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.contentType =</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.type = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_aaa70baea2218f3239c21c4a23f9569e3.html#aaa70baea2218f3239c21c4a23f9569e3">contentType</a>(<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>) {</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  var ct = <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>.indexOf(<span class="charliteral">&#39;/&#39;</span>) === -1</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    ? <a class="code hl_variable" href="../../d4/d3e/a00116_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.lookup(<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>)</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    : <a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>;</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  <span class="keywordflow">return</span> this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>, ct);</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>};</div>
+</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
+<div class="foldopen" id="foldopen00684" data-start="{" data-end="};">
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_acfa8138747b8794dbf1a8284157be51c.html#acfa8138747b8794dbf1a8284157be51c">  684</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.format = <span class="keyword">function</span>(<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>){</div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>  var <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a> = this.<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>;</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>  var next = <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.next;</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span> </div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>  var <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a> = Object.keys(<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>)</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    .filter(<span class="keyword">function</span> (<a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>) { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a> !== <span class="stringliteral">&#39;default&#39;</span> })</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>  var key = <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>.length &gt; 0</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>    ? <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.accepts(<a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>)</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>  this.<a class="code hl_variable" href="../../d4/d3e/a00116_a2222d7dc84a3b14edb06515136c7d0a5.html#a2222d7dc84a3b14edb06515136c7d0a5">vary</a>(<span class="stringliteral">&quot;Accept&quot;</span>);</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>  <span class="keywordflow">if</span> (key) {</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Type&#39;</span>, <a class="code hl_variable" href="../../d4/d3e/a00116_acfe51d0f45d4dae517cae068425fc2a4.html#acfe51d0f45d4dae517cae068425fc2a4">normalizeType</a>(key).value);</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>[key](<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <span class="keyword">this</span>, next);</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>.default) {</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>.default(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <span class="keyword">this</span>, next)</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    next(<a class="code hl_variable" href="../../d4/d3e/a00116_a36d4507fc5974c25545c80a464e96cff.html#a36d4507fc5974c25545c80a464e96cff">createError</a>(406, {</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>      <a class="code hl_variable" href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a>: <a class="code hl_variable" href="../../d4/d3e/a00116_a139f0615a5ceb39ebda3addcc89beeb3.html#a139f0615a5ceb39ebda3addcc89beeb3">normalizeTypes</a>(<a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>).map(<span class="keyword">function</span> (<a class="code hl_variable" href="../../d7/db8/a01687_a400dc8109620963da8314d4bdfa14f83.html#a400dc8109620963da8314d4bdfa14f83">o</a>) { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/db8/a01687_a400dc8109620963da8314d4bdfa14f83.html#a400dc8109620963da8314d4bdfa14f83">o</a>.value })</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    }))</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>  }</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>};</div>
+</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span> </div>
+<div class="foldopen" id="foldopen00719" data-start="{" data-end="};">
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb.html#aa2bb930cd31bd2c4960cb6bf9893c3fb">  719</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.attachment = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb.html#aa2bb930cd31bd2c4960cb6bf9893c3fb">attachment</a>(filename) {</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>  <span class="keywordflow">if</span> (filename) {</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    this.<a class="code hl_variable" href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_a9fe677e64b8a08341d3168b8eb73a56d.html#a9fe677e64b8a08341d3168b8eb73a56d">extname</a>(filename));</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>  }</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span> </div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Disposition&#39;</span>, <a class="code hl_variable" href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a>(filename));</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span> </div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>};</div>
+</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span> </div>
+<div class="foldopen" id="foldopen00744" data-start="{" data-end="};">
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aede1a69131b6dbb6ab0e780de1023f50.html#aede1a69131b6dbb6ab0e780de1023f50">  744</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.append = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_aede1a69131b6dbb6ab0e780de1023f50.html#aede1a69131b6dbb6ab0e780de1023f50">append</a>(field, val) {</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>  var prev = this.<span class="keyword">get</span>(field);</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>  var <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a> = val;</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span> </div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>  <span class="keywordflow">if</span> (prev) {</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <span class="comment">// concat the new and prev vals</span></div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a> = Array.isArray(prev) ? prev.concat(val)</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>      : Array.isArray(val) ? [prev].concat(val)</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        : [prev, val]</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>  }</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span> </div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>  <span class="keywordflow">return</span> this.<span class="keyword">set</span>(field, <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>);</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>};</div>
+</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span> </div>
+<div class="foldopen" id="foldopen00776" data-start="{" data-end="};">
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a1a929468b1774f3b63e4e8da54ab8cba.html#a1a929468b1774f3b63e4e8da54ab8cba">  776</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.set =</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.header = <span class="keyword">function</span> header(field, val) {</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>  <span class="keywordflow">if</span> (arguments.length === 2) {</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>    var <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a> = Array.isArray(val)</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>      ? val.map(String)</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>      : String(val);</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span> </div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>    <span class="comment">// add charset to content-type</span></div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>    <span class="keywordflow">if</span> (field.toLowerCase() === <span class="stringliteral">&#39;content-type&#39;</span>) {</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>      <span class="keywordflow">if</span> (Array.isArray(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>)) {</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>        <span class="keywordflow">throw</span> <span class="keyword">new</span> TypeError(<span class="stringliteral">&#39;Content-Type cannot be set to an Array&#39;</span>);</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>      }</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>      <span class="keywordflow">if</span> (!charsetRegExp.test(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>)) {</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>        var <a class="code hl_variable" href="../../d7/d8d/a01288_a57f5b60955b20f18ba489a7aad60314b.html#a57f5b60955b20f18ba489a7aad60314b">charset</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a>.charsets.lookup(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>.split(<span class="charliteral">&#39;;&#39;</span>)[0]);</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d7/d8d/a01288_a57f5b60955b20f18ba489a7aad60314b.html#a57f5b60955b20f18ba489a7aad60314b">charset</a>) <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a> += <span class="stringliteral">&#39;; charset=&#39;</span> + <a class="code hl_variable" href="../../d7/d8d/a01288_a57f5b60955b20f18ba489a7aad60314b.html#a57f5b60955b20f18ba489a7aad60314b">charset</a>.toLowerCase();</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>      }</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>    }</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span> </div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>    this.setHeader(field, <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>);</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>    <span class="keywordflow">for</span> (var key <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> field) {</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>      this.<span class="keyword">set</span>(key, field[key]);</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>    }</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>  }</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>};</div>
+</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span> </div>
+<div class="foldopen" id="foldopen00811" data-start="{" data-end="};">
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a10d7f5ef6343bd4575249458cf93dd3e.html#a10d7f5ef6343bd4575249458cf93dd3e">  811</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.get = <span class="keyword">function</span>(field){</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>  <span class="keywordflow">return</span> this.getHeader(field);</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>};</div>
+</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span> </div>
+<div class="foldopen" id="foldopen00824" data-start="{" data-end="};">
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a5f341e66d18724a7498e32807cec8466.html#a5f341e66d18724a7498e32807cec8466">  824</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.clearCookie = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a5f341e66d18724a7498e32807cec8466.html#a5f341e66d18724a7498e32807cec8466">clearCookie</a>(name, options) {</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>  <span class="keywordflow">if</span> (options) {</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>    <span class="keywordflow">if</span> (options.maxAge) {</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.clearCookie: Passing &quot;options.maxAge&quot; is deprecated. In v5.0.0 of Express, this option will be ignored, as res.clearCookie will automatically set cookies to expire immediately. Please update your code to omit this option.&#39;</span>);</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>    }</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>    <span class="keywordflow">if</span> (options.expires) {</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.clearCookie: Passing &quot;options.expires&quot; is deprecated. In v5.0.0 of Express, this option will be ignored, as res.clearCookie will automatically set cookies to expire immediately. Please update your code to omit this option.&#39;</span>);</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>    }</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>  }</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>  var opts = <a class="code hl_variable" href="../../d4/d3a/a00101_a3fda54bf53a2d62c0f154400825c4b57.html#a3fda54bf53a2d62c0f154400825c4b57">merge</a>({ expires: <span class="keyword">new</span> Date(1), <a class="code hl_variable" href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a>: <span class="charliteral">&#39;/&#39;</span> }, options);</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span> </div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>  <span class="keywordflow">return</span> this.<a class="code hl_variable" href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">cookie</a>(name, <span class="stringliteral">&#39;&#39;</span>, opts);</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>};</div>
+</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span> </div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.cookie = <span class="keyword">function</span> (name, <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>, options) {</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>  var opts = <a class="code hl_variable" href="../../d4/d3a/a00101_a3fda54bf53a2d62c0f154400825c4b57.html#a3fda54bf53a2d62c0f154400825c4b57">merge</a>({}, options);</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  var secret = this.req.secret;</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  var <span class="keywordtype">signed</span> = opts.signed;</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span> </div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  <span class="keywordflow">if</span> (<span class="keywordtype">signed</span> &amp;&amp; !secret) {</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(<span class="stringliteral">&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;</span>);</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>  }</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span> </div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  var val = typeof <a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a> === <span class="stringliteral">&#39;object&#39;</span></div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    ? <span class="stringliteral">&#39;j:&#39;</span> + <a class="code hl_variable" href="../../dd/de2/a00320_a5c2083d67680a698a2c2d545b649a6f5.html#a5c2083d67680a698a2c2d545b649a6f5">JSON</a>.stringify(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>)</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    : String(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>);</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span> </div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  <span class="keywordflow">if</span> (<span class="keywordtype">signed</span>) {</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    val = <span class="stringliteral">&#39;s:&#39;</span> + <a class="code hl_variable" href="../../d4/d3e/a00116_a218b17ed7cfd469b9abe23e323ea0301.html#a218b17ed7cfd469b9abe23e323ea0301">sign</a>(val, secret);</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>  }</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span> </div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  <span class="keywordflow">if</span> (opts.maxAge != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>    var maxAge = opts.maxAge - 0</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> </div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    <span class="keywordflow">if</span> (!isNaN(maxAge)) {</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>      opts.expires = <span class="keyword">new</span> Date(Date.now() + maxAge)</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>      opts.maxAge = Math.floor(maxAge / 1000)</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>    }</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  }</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span> </div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>  <span class="keywordflow">if</span> (opts.path == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>    opts.path = <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>  }</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span> </div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  this.<a class="code hl_variable" href="../../d4/d3e/a00116_aede1a69131b6dbb6ab0e780de1023f50.html#aede1a69131b6dbb6ab0e780de1023f50">append</a>(<span class="stringliteral">&#39;Set-Cookie&#39;</span>, <a class="code hl_variable" href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">cookie</a>.serialize(name, String(val), opts));</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span> </div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>};</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span> </div>
+<div class="foldopen" id="foldopen00914" data-start="{" data-end="};">
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a75ec03e18914bc8699236700707f598d.html#a75ec03e18914bc8699236700707f598d">  914</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.location = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a75ec03e18914bc8699236700707f598d.html#a75ec03e18914bc8699236700707f598d">location</a>(url) {</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>  var loc;</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span> </div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  <span class="comment">// &quot;back&quot; is an alias for the referrer</span></div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>  <span class="keywordflow">if</span> (url === <span class="stringliteral">&#39;back&#39;</span>) {</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.location(&quot;back&quot;): use res.location(req.get(&quot;Referrer&quot;) || &quot;/&quot;) and refer to https://dub.sh/security-redirect for best practices&#39;</span>);</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>    loc = this.req.get(<span class="stringliteral">&#39;Referrer&#39;</span>) || <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>    loc = String(url);</div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>  }</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span> </div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  <span class="keywordflow">return</span> this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Location&#39;</span>, <a class="code hl_variable" href="../../d4/d3e/a00116_a1a34672fc125191a36f71d740b9dcc67.html#a1a34672fc125191a36f71d740b9dcc67">encodeUrl</a>(loc));</div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>};</div>
+</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
+<div class="foldopen" id="foldopen00946" data-start="{" data-end="};">
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_a8de4982240756277f8ed598dae635f7b.html#a8de4982240756277f8ed598dae635f7b">  946</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.redirect = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a8de4982240756277f8ed598dae635f7b.html#a8de4982240756277f8ed598dae635f7b">redirect</a>(url) {</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>  var address = url;</div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>  var body;</div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>  var <a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a> = 302;</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span> </div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>  <span class="comment">// allow status / url</span></div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>  <span class="keywordflow">if</span> (arguments.length === 2) {</div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>    <span class="keywordflow">if</span> (typeof arguments[0] === <span class="stringliteral">&#39;number&#39;</span>) {</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>      <a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a> = arguments[0];</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>      address = arguments[1];</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>      <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.redirect(url, status): Use res.redirect(status, url) instead&#39;</span>);</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>      <a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a> = arguments[1];</div>
+<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>    }</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>  }</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span> </div>
+<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>  <span class="comment">// Set location header</span></div>
+<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>  address = this.<a class="code hl_variable" href="../../d4/d3e/a00116_a75ec03e18914bc8699236700707f598d.html#a75ec03e18914bc8699236700707f598d">location</a>(address).get(<span class="stringliteral">&#39;Location&#39;</span>);</div>
+<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span> </div>
+<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>  <span class="comment">// Support text/{plain,html} by default</span></div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>  this.<a class="code hl_variable" href="../../d4/d3e/a00116_acfa8138747b8794dbf1a8284157be51c.html#acfa8138747b8794dbf1a8284157be51c">format</a>({</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>    text: <span class="keyword">function</span>(){</div>
+<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>      body = <a class="code hl_variable" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a>.message[<a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a>] + <span class="stringliteral">&#39;. Redirecting to &#39;</span> + address</div>
+<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>    },</div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span> </div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>    <a class="code hl_variable" href="../../d4/da6/a01168_a8f99bc655183db169e126fc155ceb631.html#a8f99bc655183db169e126fc155ceb631">html</a>: <span class="keyword">function</span>(){</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>      var <a class="code hl_variable" href="../../d6/d06/a00572_accb4ce8dd4113ac0f510653e31809106.html#accb4ce8dd4113ac0f510653e31809106">u</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_a283453fa28a8c3c50672113793233742.html#a283453fa28a8c3c50672113793233742">escapeHtml</a>(address);</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>      body = <span class="stringliteral">&#39;&lt;p&gt;&#39;</span> + <a class="code hl_variable" href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a>.message[<a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a>] + <span class="stringliteral">&#39;. Redirecting to &#39;</span> + <a class="code hl_variable" href="../../d6/d06/a00572_accb4ce8dd4113ac0f510653e31809106.html#accb4ce8dd4113ac0f510653e31809106">u</a> + <span class="stringliteral">&#39;&lt;/p&gt;&#39;</span></div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>    },</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span> </div>
+<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>    <span class="keywordflow">default</span>: <span class="keyword">function</span>(){</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>      body = <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>    }</div>
+<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>  });</div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span> </div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>  <span class="comment">// Respond</span></div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>  this.statusCode = <a class="code hl_variable" href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a>;</div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>  this.<span class="keyword">set</span>(<span class="stringliteral">&#39;Content-Length&#39;</span>, Buffer.byteLength(body));</div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span> </div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>  <span class="keywordflow">if</span> (this.req.method === <span class="stringliteral">&#39;HEAD&#39;</span>) {</div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>    this.<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>();</div>
+<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>    this.<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>(body);</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>  }</div>
+<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>};</div>
+</div>
+<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span> </div>
+<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.vary = <span class="keyword">function</span>(field){</div>
+<div class="line"><a id="l01002" name="l01002"></a><span class="lineno"> 1002</span>  <span class="comment">// checks for back-compat</span></div>
+<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>  <span class="keywordflow">if</span> (!field || (Array.isArray(field) &amp;&amp; !field.length)) {</div>
+<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a>(<span class="stringliteral">&#39;res.vary(): Provide a field name&#39;</span>);</div>
+<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l01006" name="l01006"></a><span class="lineno"> 1006</span>  }</div>
+<div class="line"><a id="l01007" name="l01007"></a><span class="lineno"> 1007</span> </div>
+<div class="line"><a id="l01008" name="l01008"></a><span class="lineno"> 1008</span>  <a class="code hl_variable" href="../../d4/d3e/a00116_a2222d7dc84a3b14edb06515136c7d0a5.html#a2222d7dc84a3b14edb06515136c7d0a5">vary</a>(<span class="keyword">this</span>, field);</div>
+<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span> </div>
+<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>};</div>
+<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span> </div>
+<div class="foldopen" id="foldopen01026" data-start="{" data-end="};">
+<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_adb20ab6480898d0b4a1c1887ba9118de.html#adb20ab6480898d0b4a1c1887ba9118de"> 1026</a></span><a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.render = <span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_adb20ab6480898d0b4a1c1887ba9118de.html#adb20ab6480898d0b4a1c1887ba9118de">render</a>(view, options, callback) {</div>
+<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>  var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = this.req.app;</div>
+<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span>  var <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = callback;</div>
+<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span>  var opts = options || {};</div>
+<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>  var <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a> = this.<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>;</div>
+<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span>  var <span class="keyword">self</span> = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span> </div>
+<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>  <span class="comment">// support callback function as second arg</span></div>
+<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>  <span class="keywordflow">if</span> (typeof options === <span class="stringliteral">&#39;function&#39;</span>) {</div>
+<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = options;</div>
+<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>    opts = {};</div>
+<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>  }</div>
+<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span> </div>
+<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>  <span class="comment">// merge res.locals</span></div>
+<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>  opts._locals = <span class="keyword">self</span>.locals;</div>
+<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span> </div>
+<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>  <span class="comment">// default callback to respond</span></div>
+<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>  <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> || <span class="keyword">function</span> (err, str) {</div>
+<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>    <span class="keywordflow">if</span> (err) <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>.next(err);</div>
+<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>    <span class="keyword">self</span>.send(str);</div>
+<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>  };</div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span> </div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>  <span class="comment">// render</span></div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>  <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.render(view, opts, <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>);</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>};</div>
+</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span> </div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span><span class="comment">// pipe the send file stream</span></div>
+<div class="foldopen" id="foldopen01053" data-start="{" data-end="}">
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116_aa21dc3ce9630dbea7fa83bbdeee0176f.html#aa21dc3ce9630dbea7fa83bbdeee0176f"> 1053</a></span><span class="keyword">function</span> <a class="code hl_variable" href="../../d4/d3e/a00116_a0f00d831d541123b75de988eab4cea7f.html#a0f00d831d541123b75de988eab4cea7f">sendfile</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>, options, callback) {</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>  var <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>  var streaming;</div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span> </div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>  <span class="comment">// request aborted</span></div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>  <span class="keyword">function</span> onaborted() {</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span> </div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>    var err = <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(<span class="stringliteral">&#39;Request aborted&#39;</span>);</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>    err.code = <span class="stringliteral">&#39;ECONNABORTED&#39;</span>;</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>    callback(err);</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>  }</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span> </div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>  <span class="comment">// directory</span></div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>  <span class="keyword">function</span> ondirectory() {</div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span> </div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>    var err = <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(<span class="stringliteral">&#39;EISDIR, read&#39;</span>);</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>    err.code = <span class="stringliteral">&#39;EISDIR&#39;</span>;</div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>    callback(err);</div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>  }</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span> </div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>  <span class="comment">// errors</span></div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>  <span class="keyword">function</span> onerror(err) {</div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>    callback(err);</div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>  }</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span> </div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>  <span class="comment">// ended</span></div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>  <span class="keyword">function</span> onend() {</div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>    <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>    callback();</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>  }</div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span> </div>
+<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>  <span class="comment">// file</span></div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>  <span class="keyword">function</span> onfile() {</div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>    streaming = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>  }</div>
+<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span> </div>
+<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>  <span class="comment">// finished</span></div>
+<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>  <span class="keyword">function</span> onfinish(err) {</div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>    <span class="keywordflow">if</span> (err &amp;&amp; err.code === <span class="stringliteral">&#39;ECONNRESET&#39;</span>) <span class="keywordflow">return</span> onaborted();</div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>    <span class="keywordflow">if</span> (err) <span class="keywordflow">return</span> onerror(err);</div>
+<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span> </div>
+<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>    setImmediate(<span class="keyword">function</span> () {</div>
+<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>      <span class="keywordflow">if</span> (streaming !== <span class="keyword">false</span> &amp;&amp; !<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) {</div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>        onaborted();</div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>      }</div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span> </div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>      <a class="code hl_variable" href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>      callback();</div>
+<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>    });</div>
+<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>  }</div>
+<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span> </div>
+<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>  <span class="comment">// streaming</span></div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>  <span class="keyword">function</span> onstream() {</div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>    streaming = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>  }</div>
+<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span> </div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>  <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.on(<span class="stringliteral">&#39;directory&#39;</span>, ondirectory);</div>
+<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>  <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.on(<span class="stringliteral">&#39;end&#39;</span>, onend);</div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>  <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.on(<span class="stringliteral">&#39;error&#39;</span>, onerror);</div>
+<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>  <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.on(<span class="stringliteral">&#39;file&#39;</span>, onfile);</div>
+<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>  <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.on(<span class="stringliteral">&#39;stream&#39;</span>, onstream);</div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>  <a class="code hl_variable" href="../../d4/d3e/a00116_ac9425cf3d20b1276ed59571b25be3cba.html#ac9425cf3d20b1276ed59571b25be3cba">onFinished</a>(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, onfinish);</div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span> </div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>  <span class="keywordflow">if</span> (options.headers) {</div>
+<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span>    <span class="comment">// set headers on successful transfer</span></div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>    <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.on(<span class="stringliteral">&#39;headers&#39;</span>, <span class="keyword">function</span> headers(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>) {</div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>      var <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a> = options.headers;</div>
+<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>      var <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a> = Object.keys(<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>);</div>
+<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span> </div>
+<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>      <span class="keywordflow">for</span> (var <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> = 0; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> &lt; <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>.length; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>++) {</div>
+<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>        var k = <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>];</div>
+<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>        <a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.setHeader(k, <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>[k]);</div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>      }</div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>    });</div>
+<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>  }</div>
+<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span> </div>
+<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>  <span class="comment">// pipe</span></div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>  <a class="code hl_variable" href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a>.pipe(<a class="code hl_variable" href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>);</div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>}</div>
+</div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span> </div>
+<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/d8c/a01306_a933f8ff8d69be620d8091034ba62666c.html#a933f8ff8d69be620d8091034ba62666c">stringify</a> (<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>, replacer, spaces, <a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a>) {</div>
+<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>  <span class="comment">// v8 checks arguments.length for optimizing simple call</span></div>
+<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>  <span class="comment">// https://bugs.chromium.org/p/v8/issues/detail?id=4730</span></div>
+<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>  var <a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a> = replacer || spaces</div>
+<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>    ? <a class="code hl_variable" href="../../dd/de2/a00320_a5c2083d67680a698a2c2d545b649a6f5.html#a5c2083d67680a698a2c2d545b649a6f5">JSON</a>.stringify(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>, replacer, spaces)</div>
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>    : <a class="code hl_variable" href="../../dd/de2/a00320_a5c2083d67680a698a2c2d545b649a6f5.html#a5c2083d67680a698a2c2d545b649a6f5">JSON</a>.stringify(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>);</div>
+<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span> </div>
+<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a> &amp;&amp; typeof <a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a> === <span class="stringliteral">&#39;string&#39;</span>) {</div>
+<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>    <a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a> = <a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a>.replace(/[&lt;&gt;&amp;]/<a class="code hl_variable" href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a>, <span class="keyword">function</span> (<a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a>) {</div>
+<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>      <span class="keywordflow">switch</span> (<a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a>.charCodeAt(0)) {</div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>        <span class="keywordflow">case</span> 0x3c:</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>          <span class="keywordflow">return</span> <span class="stringliteral">&#39;\\u003c&#39;</span></div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>        <span class="keywordflow">case</span> 0x3e:</div>
+<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>          <span class="keywordflow">return</span> <span class="stringliteral">&#39;\\u003e&#39;</span></div>
+<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>        <span class="keywordflow">case</span> 0x26:</div>
+<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>          <span class="keywordflow">return</span> <span class="stringliteral">&#39;\\u0026&#39;</span></div>
+<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>        <span class="comment">/* istanbul ignore next: unreachable default */</span></div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>          <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a></div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>      }</div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>    })</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>  }</div>
+<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span> </div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a></div>
+<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>}</div>
+<div class="ttc" id="aa00101_a3fda54bf53a2d62c0f154400825c4b57_html_a3fda54bf53a2d62c0f154400825c4b57"><div class="ttname"><a href="../../d4/d3a/a00101_a3fda54bf53a2d62c0f154400825c4b57.html#a3fda54bf53a2d62c0f154400825c4b57">merge</a></div><div class="ttdeci">var merge</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00029">application.js:29</a></div></div>
+<div class="ttc" id="aa00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_html_a7b225fcb720e4d5ed2bbf60e28a25e6d"><div class="ttname"><a href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a></div><div class="ttdeci">var app</div><div class="ttdoc">Application prototype.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00045">application.js:45</a></div></div>
+<div class="ttc" id="aa00101_acfcd119b39526e732877a941ebeed620_html_acfcd119b39526e732877a941ebeed620"><div class="ttname"><a href="../../d4/d3a/a00101_acfcd119b39526e732877a941ebeed620.html#acfcd119b39526e732877a941ebeed620">deprecate</a></div><div class="ttdeci">var deprecate</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00027">application.js:27</a></div></div>
+<div class="ttc" id="aa00104_a42c43c76081a7df8ae2954f16ee9338b_html_a42c43c76081a7df8ae2954f16ee9338b"><div class="ttname"><a href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a></div><div class="ttdeci">var req</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00021">express.js:21</a></div></div>
+<div class="ttc" id="aa00116_a0f00d831d541123b75de988eab4cea7f_html_a0f00d831d541123b75de988eab4cea7f"><div class="ttname"><a href="../../d4/d3e/a00116_a0f00d831d541123b75de988eab4cea7f.html#a0f00d831d541123b75de988eab4cea7f">sendfile</a></div><div class="ttdeci">res sendfile</div><div class="ttdoc">Transfer the file at the given path.</div><div class="ttdef"><b>Definition</b> <a href="#l00501">response.js:501</a></div></div>
+<div class="ttc" id="aa00116_a139f0615a5ceb39ebda3addcc89beeb3_html_a139f0615a5ceb39ebda3addcc89beeb3"><div class="ttname"><a href="../../d4/d3e/a00116_a139f0615a5ceb39ebda3addcc89beeb3.html#a139f0615a5ceb39ebda3addcc89beeb3">normalizeTypes</a></div><div class="ttdeci">var normalizeTypes</div><div class="ttdef"><b>Definition</b> <a href="#l00029">response.js:29</a></div></div>
+<div class="ttc" id="aa00116_a1a34672fc125191a36f71d740b9dcc67_html_a1a34672fc125191a36f71d740b9dcc67"><div class="ttname"><a href="../../d4/d3e/a00116_a1a34672fc125191a36f71d740b9dcc67.html#a1a34672fc125191a36f71d740b9dcc67">encodeUrl</a></div><div class="ttdeci">var encodeUrl</div><div class="ttdef"><b>Definition</b> <a href="#l00019">response.js:19</a></div></div>
+<div class="ttc" id="aa00116_a218b17ed7cfd469b9abe23e323ea0301_html_a218b17ed7cfd469b9abe23e323ea0301"><div class="ttname"><a href="../../d4/d3e/a00116_a218b17ed7cfd469b9abe23e323ea0301.html#a218b17ed7cfd469b9abe23e323ea0301">sign</a></div><div class="ttdeci">var sign</div><div class="ttdef"><b>Definition</b> <a href="#l00027">response.js:27</a></div></div>
+<div class="ttc" id="aa00116_a2222d7dc84a3b14edb06515136c7d0a5_html_a2222d7dc84a3b14edb06515136c7d0a5"><div class="ttname"><a href="../../d4/d3e/a00116_a2222d7dc84a3b14edb06515136c7d0a5.html#a2222d7dc84a3b14edb06515136c7d0a5">vary</a></div><div class="ttdeci">var vary</div><div class="ttdoc">Add field to Vary.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">response.js:36</a></div></div>
+<div class="ttc" id="aa00116_a22c904eff955fbe7731d6d0e4fedcf54_html_a22c904eff955fbe7731d6d0e4fedcf54"><div class="ttname"><a href="../../d4/d3e/a00116_a22c904eff955fbe7731d6d0e4fedcf54.html#a22c904eff955fbe7731d6d0e4fedcf54">cookie</a></div><div class="ttdeci">var cookie</div><div class="ttdoc">Set cookie name to value, with the given options.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">response.js:31</a></div></div>
+<div class="ttc" id="aa00116_a283453fa28a8c3c50672113793233742_html_a283453fa28a8c3c50672113793233742"><div class="ttname"><a href="../../d4/d3e/a00116_a283453fa28a8c3c50672113793233742.html#a283453fa28a8c3c50672113793233742">escapeHtml</a></div><div class="ttdeci">var escapeHtml</div><div class="ttdef"><b>Definition</b> <a href="#l00020">response.js:20</a></div></div>
+<div class="ttc" id="aa00116_a36d4507fc5974c25545c80a464e96cff_html_a36d4507fc5974c25545c80a464e96cff"><div class="ttname"><a href="../../d4/d3e/a00116_a36d4507fc5974c25545c80a464e96cff.html#a36d4507fc5974c25545c80a464e96cff">createError</a></div><div class="ttdeci">var createError</div><div class="ttdef"><b>Definition</b> <a href="#l00017">response.js:17</a></div></div>
+<div class="ttc" id="aa00116_a48eb47c20281112f798efcf6dd189e9e_html_a48eb47c20281112f798efcf6dd189e9e"><div class="ttname"><a href="../../d4/d3e/a00116_a48eb47c20281112f798efcf6dd189e9e.html#a48eb47c20281112f798efcf6dd189e9e">sendStatus</a></div><div class="ttdeci">res sendStatus</div><div class="ttdoc">Send given HTTP status code.</div><div class="ttdef"><b>Definition</b> <a href="#l00369">response.js:369</a></div></div>
+<div class="ttc" id="aa00116_a55f22d498ca401fddca364855629d1d3_html_a55f22d498ca401fddca364855629d1d3"><div class="ttname"><a href="../../d4/d3e/a00116_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a></div><div class="ttdeci">var http</div><div class="ttdef"><b>Definition</b> <a href="#l00021">response.js:21</a></div></div>
+<div class="ttc" id="aa00116_a56092f25c80f752717867681b2c0a950_html_a56092f25c80f752717867681b2c0a950"><div class="ttname"><a href="../../d4/d3e/a00116_a56092f25c80f752717867681b2c0a950.html#a56092f25c80f752717867681b2c0a950">links</a></div><div class="ttdeci">res links</div><div class="ttdoc">Set Link header field with the given links.</div><div class="ttdef"><b>Definition</b> <a href="#l00090">response.js:90</a></div></div>
+<div class="ttc" id="aa00116_a5f341e66d18724a7498e32807cec8466_html_a5f341e66d18724a7498e32807cec8466"><div class="ttname"><a href="../../d4/d3e/a00116_a5f341e66d18724a7498e32807cec8466.html#a5f341e66d18724a7498e32807cec8466">clearCookie</a></div><div class="ttdeci">res clearCookie</div><div class="ttdoc">Clear cookie name.</div><div class="ttdef"><b>Definition</b> <a href="#l00824">response.js:824</a></div></div>
+<div class="ttc" id="aa00116_a759876546da9985e9fa7f4560c157d46_html_a759876546da9985e9fa7f4560c157d46"><div class="ttname"><a href="../../d4/d3e/a00116_a759876546da9985e9fa7f4560c157d46.html#a759876546da9985e9fa7f4560c157d46">sendFile</a></div><div class="ttdeci">res sendFile</div><div class="ttdoc">Transfer the file at the given path.</div><div class="ttdef"><b>Definition</b> <a href="#l00419">response.js:419</a></div></div>
+<div class="ttc" id="aa00116_a75ec03e18914bc8699236700707f598d_html_a75ec03e18914bc8699236700707f598d"><div class="ttname"><a href="../../d4/d3e/a00116_a75ec03e18914bc8699236700707f598d.html#a75ec03e18914bc8699236700707f598d">location</a></div><div class="ttdeci">res location</div><div class="ttdoc">Set the location header to url.</div><div class="ttdef"><b>Definition</b> <a href="#l00914">response.js:914</a></div></div>
+<div class="ttc" id="aa00116_a88d7310f8a18b3e16f4020168641b86a_html_a88d7310f8a18b3e16f4020168641b86a"><div class="ttname"><a href="../../d4/d3e/a00116_a88d7310f8a18b3e16f4020168641b86a.html#a88d7310f8a18b3e16f4020168641b86a">send</a></div><div class="ttdeci">var send</div><div class="ttdoc">Send a response.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">response.js:32</a></div></div>
+<div class="ttc" id="aa00116_a8de4982240756277f8ed598dae635f7b_html_a8de4982240756277f8ed598dae635f7b"><div class="ttname"><a href="../../d4/d3e/a00116_a8de4982240756277f8ed598dae635f7b.html#a8de4982240756277f8ed598dae635f7b">redirect</a></div><div class="ttdeci">res redirect</div><div class="ttdoc">Redirect to the given url with optional response status defaulting to 302.</div><div class="ttdef"><b>Definition</b> <a href="#l00946">response.js:946</a></div></div>
+<div class="ttc" id="aa00116_a980a5c7eba501bc11730d1b3525938ae_html_a980a5c7eba501bc11730d1b3525938ae"><div class="ttname"><a href="../../d4/d3e/a00116_a980a5c7eba501bc11730d1b3525938ae.html#a980a5c7eba501bc11730d1b3525938ae">setCharset</a></div><div class="ttdeci">var setCharset</div><div class="ttdef"><b>Definition</b> <a href="#l00030">response.js:30</a></div></div>
+<div class="ttc" id="aa00116_a99b3f6d87cd1b82b675154f0f17f99e7_html_a99b3f6d87cd1b82b675154f0f17f99e7"><div class="ttname"><a href="../../d4/d3e/a00116_a99b3f6d87cd1b82b675154f0f17f99e7.html#a99b3f6d87cd1b82b675154f0f17f99e7">statuses</a></div><div class="ttdeci">var statuses</div><div class="ttdef"><b>Definition</b> <a href="#l00025">response.js:25</a></div></div>
+<div class="ttc" id="aa00116_a9c1fe76adcf6e39eff71bdd5fb4870d8_html_a9c1fe76adcf6e39eff71bdd5fb4870d8"><div class="ttname"><a href="../../d4/d3e/a00116_a9c1fe76adcf6e39eff71bdd5fb4870d8.html#a9c1fe76adcf6e39eff71bdd5fb4870d8">download</a></div><div class="ttdeci">res download</div><div class="ttdoc">Transfer the file at the given path as an attachment.</div><div class="ttdef"><b>Definition</b> <a href="#l00550">response.js:550</a></div></div>
+<div class="ttc" id="aa00116_a9fe677e64b8a08341d3168b8eb73a56d_html_a9fe677e64b8a08341d3168b8eb73a56d"><div class="ttname"><a href="../../d4/d3e/a00116_a9fe677e64b8a08341d3168b8eb73a56d.html#a9fe677e64b8a08341d3168b8eb73a56d">extname</a></div><div class="ttdeci">var extname</div><div class="ttdef"><b>Definition</b> <a href="#l00033">response.js:33</a></div></div>
+<div class="ttc" id="aa00116_aa2bb930cd31bd2c4960cb6bf9893c3fb_html_aa2bb930cd31bd2c4960cb6bf9893c3fb"><div class="ttname"><a href="../../d4/d3e/a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb.html#aa2bb930cd31bd2c4960cb6bf9893c3fb">attachment</a></div><div class="ttdeci">res attachment</div><div class="ttdoc">Set Content-Disposition header to attachment with optional filename.</div><div class="ttdef"><b>Definition</b> <a href="#l00719">response.js:719</a></div></div>
+<div class="ttc" id="aa00116_aa72e0c8a20e6bcc571d3a1c51846e627_html_aa72e0c8a20e6bcc571d3a1c51846e627"><div class="ttname"><a href="../../d4/d3e/a00116_aa72e0c8a20e6bcc571d3a1c51846e627.html#aa72e0c8a20e6bcc571d3a1c51846e627">path</a></div><div class="ttdeci">var path</div><div class="ttdef"><b>Definition</b> <a href="#l00024">response.js:24</a></div></div>
+<div class="ttc" id="aa00116_aa95da46f3d867faa7562ae11962ad19a_html_aa95da46f3d867faa7562ae11962ad19a"><div class="ttname"><a href="../../d4/d3e/a00116_aa95da46f3d867faa7562ae11962ad19a.html#aa95da46f3d867faa7562ae11962ad19a">isAbsolute</a></div><div class="ttdeci">var isAbsolute</div><div class="ttdef"><b>Definition</b> <a href="#l00022">response.js:22</a></div></div>
+<div class="ttc" id="aa00116_aaa70baea2218f3239c21c4a23f9569e3_html_aaa70baea2218f3239c21c4a23f9569e3"><div class="ttname"><a href="../../d4/d3e/a00116_aaa70baea2218f3239c21c4a23f9569e3.html#aaa70baea2218f3239c21c4a23f9569e3">contentType</a></div><div class="ttdeci">res contentType</div><div class="ttdoc">Set Content-Type response header with type through mime.lookup() when it does not contain &quot;/&quot;,...</div><div class="ttdef"><b>Definition</b> <a href="#l00618">response.js:618</a></div></div>
+<div class="ttc" id="aa00116_ab4d288fe448bcc077971c41ae3797375_html_ab4d288fe448bcc077971c41ae3797375"><div class="ttname"><a href="../../d4/d3e/a00116_ab4d288fe448bcc077971c41ae3797375.html#ab4d288fe448bcc077971c41ae3797375">mime</a></div><div class="ttdeci">var mime</div><div class="ttdef"><b>Definition</b> <a href="#l00034">response.js:34</a></div></div>
+<div class="ttc" id="aa00116_abc665c92bb39754e739086295969de03_html_abc665c92bb39754e739086295969de03"><div class="ttname"><a href="../../d4/d3e/a00116_abc665c92bb39754e739086295969de03.html#abc665c92bb39754e739086295969de03">json</a></div><div class="ttdeci">res json</div><div class="ttdoc">Send JSON response.</div><div class="ttdef"><b>Definition</b> <a href="#l00250">response.js:250</a></div></div>
+<div class="ttc" id="aa00116_abde3c35e3bb7e5225dd7f234c685329c_html_abde3c35e3bb7e5225dd7f234c685329c"><div class="ttname"><a href="../../d4/d3e/a00116_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a></div><div class="ttdeci">var res</div><div class="ttdoc">Response prototype.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">response.js:43</a></div></div>
+<div class="ttc" id="aa00116_ac9425cf3d20b1276ed59571b25be3cba_html_ac9425cf3d20b1276ed59571b25be3cba"><div class="ttname"><a href="../../d4/d3e/a00116_ac9425cf3d20b1276ed59571b25be3cba.html#ac9425cf3d20b1276ed59571b25be3cba">onFinished</a></div><div class="ttdeci">var onFinished</div><div class="ttdef"><b>Definition</b> <a href="#l00023">response.js:23</a></div></div>
+<div class="ttc" id="aa00116_acfa8138747b8794dbf1a8284157be51c_html_acfa8138747b8794dbf1a8284157be51c"><div class="ttname"><a href="../../d4/d3e/a00116_acfa8138747b8794dbf1a8284157be51c.html#acfa8138747b8794dbf1a8284157be51c">format</a></div><div class="ttdeci">res format</div><div class="ttdoc">Respond to the Acceptable formats using an obj of mime-type callbacks.</div><div class="ttdef"><b>Definition</b> <a href="#l00684">response.js:684</a></div></div>
+<div class="ttc" id="aa00116_acfe51d0f45d4dae517cae068425fc2a4_html_acfe51d0f45d4dae517cae068425fc2a4"><div class="ttname"><a href="../../d4/d3e/a00116_acfe51d0f45d4dae517cae068425fc2a4.html#acfe51d0f45d4dae517cae068425fc2a4">normalizeType</a></div><div class="ttdeci">var normalizeType</div><div class="ttdef"><b>Definition</b> <a href="#l00028">response.js:28</a></div></div>
+<div class="ttc" id="aa00116_ad9c73d5a753bd398aeb580443d4c1957_html_ad9c73d5a753bd398aeb580443d4c1957"><div class="ttname"><a href="../../d4/d3e/a00116_ad9c73d5a753bd398aeb580443d4c1957.html#ad9c73d5a753bd398aeb580443d4c1957">status</a></div><div class="ttdeci">s *charset s *res status</div><div class="ttdoc">Set status code.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">response.js:67</a></div></div>
+<div class="ttc" id="aa00116_adb20ab6480898d0b4a1c1887ba9118de_html_adb20ab6480898d0b4a1c1887ba9118de"><div class="ttname"><a href="../../d4/d3e/a00116_adb20ab6480898d0b4a1c1887ba9118de.html#adb20ab6480898d0b4a1c1887ba9118de">render</a></div><div class="ttdeci">res render</div><div class="ttdoc">Render view with the given options and optional callback fn.</div><div class="ttdef"><b>Definition</b> <a href="#l01026">response.js:1026</a></div></div>
+<div class="ttc" id="aa00116_ae3d1fd9e20d5b0a87c172afcda79d339_html_ae3d1fd9e20d5b0a87c172afcda79d339"><div class="ttname"><a href="../../d4/d3e/a00116_ae3d1fd9e20d5b0a87c172afcda79d339.html#ae3d1fd9e20d5b0a87c172afcda79d339">jsonp</a></div><div class="ttdeci">res jsonp</div><div class="ttdoc">Send JSON response with JSONP callback support.</div><div class="ttdef"><b>Definition</b> <a href="#l00293">response.js:293</a></div></div>
+<div class="ttc" id="aa00116_aebedbf53ce9a15014605e527aec0a6ec_html_aebedbf53ce9a15014605e527aec0a6ec"><div class="ttname"><a href="../../d4/d3e/a00116_aebedbf53ce9a15014605e527aec0a6ec.html#aebedbf53ce9a15014605e527aec0a6ec">resolve</a></div><div class="ttdeci">var resolve</div><div class="ttdef"><b>Definition</b> <a href="#l00035">response.js:35</a></div></div>
+<div class="ttc" id="aa00116_aede1a69131b6dbb6ab0e780de1023f50_html_aede1a69131b6dbb6ab0e780de1023f50"><div class="ttname"><a href="../../d4/d3e/a00116_aede1a69131b6dbb6ab0e780de1023f50.html#aede1a69131b6dbb6ab0e780de1023f50">append</a></div><div class="ttdeci">res append</div><div class="ttdoc">Append additional header field with value val.</div><div class="ttdef"><b>Definition</b> <a href="#l00744">response.js:744</a></div></div>
+<div class="ttc" id="aa00197_a5e25b1d1bed9ab5f3174b76d6a722180_html_a5e25b1d1bed9ab5f3174b76d6a722180"><div class="ttname"><a href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a></div><div class="ttdeci">function t t t IPv4 t i</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_ad9a7d92cb87932d25187fdec3ba1b621_html_ad9a7d92cb87932d25187fdec3ba1b621"><div class="ttname"><a href="../../de/db1/a00197_ad9a7d92cb87932d25187fdec3ba1b621.html#ad9a7d92cb87932d25187fdec3ba1b621">s</a></div><div class="ttdeci">function s</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00209_a14523cb74edc3f6175c54e598a379c27_html_a14523cb74edc3f6175c54e598a379c27"><div class="ttname"><a href="../../d3/de5/a00209_a14523cb74edc3f6175c54e598a379c27.html#a14523cb74edc3f6175c54e598a379c27">file</a></div><div class="ttdeci">var file</div><div class="ttdef"><b>Definition</b> <a href="../../d3/de5/a00209_source.html#l00004">cli.js:4</a></div></div>
+<div class="ttc" id="aa00209_affea7e61106a6a9da029c8af702aaf20_html_affea7e61106a6a9da029c8af702aaf20"><div class="ttname"><a href="../../d3/de5/a00209_affea7e61106a6a9da029c8af702aaf20.html#affea7e61106a6a9da029c8af702aaf20">type</a></div><div class="ttdeci">var type</div><div class="ttdef"><b>Definition</b> <a href="../../d3/de5/a00209_source.html#l00005">cli.js:5</a></div></div>
+<div class="ttc" id="aa00215_a5802f014ed8e96d3a513f114faa91d12_html_a5802f014ed8e96d3a513f114faa91d12"><div class="ttname"><a href="../../d3/dd5/a00215_a5802f014ed8e96d3a513f114faa91d12.html#a5802f014ed8e96d3a513f114faa91d12">types</a></div><div class="ttdeci">const types</div><div class="ttdef"><b>Definition</b> <a href="../../d3/dd5/a00215_source.html#l00046">build.js:46</a></div></div>
+<div class="ttc" id="aa00320_a5c2083d67680a698a2c2d545b649a6f5_html_a5c2083d67680a698a2c2d545b649a6f5"><div class="ttname"><a href="../../dd/de2/a00320_a5c2083d67680a698a2c2d545b649a6f5.html#a5c2083d67680a698a2c2d545b649a6f5">JSON</a></div><div class="ttdeci">module exports JSON</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de2/a00320_source.html#l00055">types.js:55</a></div></div>
+<div class="ttc" id="aa00341_abbd690cbcb2a047762c767dcb058a876_html_abbd690cbcb2a047762c767dcb058a876"><div class="ttname"><a href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a></div><div class="ttdeci">const keys</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d93/a00341_source.html#l00005">binlog_query_statusvars.js:5</a></div></div>
+<div class="ttc" id="aa00404_ade59c25e4b06a463da08f869c2e7163e_html_ade59c25e4b06a463da08f869c2e7163e"><div class="ttname"><a href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a></div><div class="ttdeci">Utf32Encoder prototype end</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de6/a00404_source.html#l00081">utf32.js:81</a></div></div>
+<div class="ttc" id="aa00422_ab15a7ef94ea648e0a722a49372614731_html_ab15a7ef94ea648e0a722a49372614731"><div class="ttname"><a href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a></div><div class="ttdeci">var obj</div><div class="ttdef"><b>Definition</b> <a href="../../db/d43/a00422_source.html#l00010">all.js:10</a></div></div>
+<div class="ttc" id="aa00572_a103df269476e78897c9c4c6cb8f4eb06_html_a103df269476e78897c9c4c6cb8f4eb06"><div class="ttname"><a href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a></div><div class="ttdeci">var g</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00002">jquery.js:2</a></div></div>
+<div class="ttc" id="aa00572_accb4ce8dd4113ac0f510653e31809106_html_accb4ce8dd4113ac0f510653e31809106"><div class="ttname"><a href="../../d6/d06/a00572_accb4ce8dd4113ac0f510653e31809106.html#accb4ce8dd4113ac0f510653e31809106">u</a></div><div class="ttdeci">var u</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00002">jquery.js:2</a></div></div>
+<div class="ttc" id="aa01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_html_aa4072ba4b6b56b0fb6f4801f17ab2b34"><div class="ttname"><a href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a></div><div class="ttdeci">module exports</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da7/a01102_source.html#l00011">node_modules/aws-ssl-profiles/lib/index.js:11</a></div></div>
+<div class="ttc" id="aa01108_a48e18769649a3ca5bab0fafdec44cb15_html_a48e18769649a3ca5bab0fafdec44cb15"><div class="ttname"><a href="../../d2/dd7/a01108_a48e18769649a3ca5bab0fafdec44cb15.html#a48e18769649a3ca5bab0fafdec44cb15">map</a></div><div class="ttdeci">var map</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dd7/a01108_source.html#l00028">node_modules/bytes/index.js:28</a></div></div>
+<div class="ttc" id="aa01114_afc3dd12de12777f6e20b4c93b7e7cb96_html_afc3dd12de12777f6e20b4c93b7e7cb96"><div class="ttname"><a href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a></div><div class="ttdeci">var v</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d40/a01114_source.html#l00009">node_modules/call-bind/test/index.js:9</a></div></div>
+<div class="ttc" id="aa01168_a8f99bc655183db169e126fc155ceb631_html_a8f99bc655183db169e126fc155ceb631"><div class="ttname"><a href="../../d4/da6/a01168_a8f99bc655183db169e126fc155ceb631.html#a8f99bc655183db169e126fc155ceb631">html</a></div><div class="ttdeci">html</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da6/a01168_source.html#l00072">node_modules/escape-html/index.js:72</a></div></div>
+<div class="ttc" id="aa01195_aaf64ea1eb68af5440a0249f7788f1af5_html_aaf64ea1eb68af5440a0249f7788f1af5"><div class="ttname"><a href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a></div><div class="ttdeci">var in</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00011">node_modules/generate-function/index.js:11</a></div></div>
+<div class="ttc" id="aa01198_a0b30f2887f0891ea5fed53d76282d2dc_html_a0b30f2887f0891ea5fed53d76282d2dc"><div class="ttname"><a href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a></div><div class="ttdeci">var undefined</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d32/a01198_source.html#l00003">node_modules/get-intrinsic/index.js:3</a></div></div>
+<div class="ttc" id="aa01198_aacce635d68067370c70caa2381ea1040_html_aacce635d68067370c70caa2381ea1040"><div class="ttname"><a href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a></div><div class="ttdeci">return value</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d32/a01198_source.html#l00358">node_modules/get-intrinsic/index.js:358</a></div></div>
+<div class="ttc" id="aa01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_html_a5185c2e0b8e6a5224458b2e5e6ed26e8"><div class="ttname"><a href="../../d4/d41/a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8.html#a5185c2e0b8e6a5224458b2e5e6ed26e8">escape</a></div><div class="ttdeci">exports escape</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d41/a01267_source.html#l00047">node_modules/mysql2/index.js:47</a></div></div>
+<div class="ttc" id="aa01276_ab90d95850f9ba1903a6704f6fa8eccb6_html_ab90d95850f9ba1903a6704f6fa8eccb6"><div class="ttname"><a href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a></div><div class="ttdeci">exports Error</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d37/a01276_source.html#l00152">node_modules/mysql2/lib/packets/index.js:152</a></div></div>
+<div class="ttc" id="aa01288_a57f5b60955b20f18ba489a7aad60314b_html_a57f5b60955b20f18ba489a7aad60314b"><div class="ttname"><a href="../../d7/d8d/a01288_a57f5b60955b20f18ba489a7aad60314b.html#a57f5b60955b20f18ba489a7aad60314b">charset</a></div><div class="ttdeci">Negotiator prototype charset</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00038">node_modules/negotiator/index.js:38</a></div></div>
+<div class="ttc" id="aa01288_a9ad8213a7626ee07aef47950752cac18_html_a9ad8213a7626ee07aef47950752cac18"><div class="ttname"><a href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a></div><div class="ttdeci">Negotiator prototype encoding</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00047">node_modules/negotiator/index.js:47</a></div></div>
+<div class="ttc" id="aa01306_a933f8ff8d69be620d8091034ba62666c_html_a933f8ff8d69be620d8091034ba62666c"><div class="ttname"><a href="../../d7/d8c/a01306_a933f8ff8d69be620d8091034ba62666c.html#a933f8ff8d69be620d8091034ba62666c">stringify</a></div><div class="ttdeci">var stringify</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8c/a01306_source.html#l00003">node_modules/qs/lib/index.js:3</a></div></div>
+<div class="ttc" id="aa01369_af0deccff0ccdd703412620ba83155b82_html_af0deccff0ccdd703412620ba83155b82"><div class="ttname"><a href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a></div><div class="ttdeci">import express from express</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d17/a01369_source.html#l00001">src/index.js:1</a></div></div>
+<div class="ttc" id="aa01687_a400dc8109620963da8314d4bdfa14f83_html_a400dc8109620963da8314d4bdfa14f83"><div class="ttname"><a href="../../d7/db8/a01687_a400dc8109620963da8314d4bdfa14f83.html#a400dc8109620963da8314d4bdfa14f83">o</a></div><div class="ttdeci">exports formatters o</div><div class="ttdoc">Map o to util.inspect(), all on a single line.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/db8/a01687_source.html#l00085">src/node.js:85</a></div></div>
+<div class="ttc" id="aa01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_html_aa1ae8b5aa0df46fcc9f22aba2deb965a"><div class="ttname"><a href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a></div><div class="ttdeci">exports contentDisposition</div><div class="ttdoc">Generate Content-Disposition header appropriate for the filename.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/df7/a01699_source.html#l00114">express/lib/utils.js:114</a></div></div>
+<div class="ttc" id="aa01699_aa7b4b88130584154c4a863b71b8a3075_html_aa7b4b88130584154c4a863b71b8a3075"><div class="ttname"><a href="../../d9/df7/a01699_aa7b4b88130584154c4a863b71b8a3075.html#aa7b4b88130584154c4a863b71b8a3075">etag</a></div><div class="ttdeci">var etag</div><div class="ttdoc">Return strong ETag for body.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/df7/a01699_source.html#l00021">express/lib/utils.js:21</a></div></div>
+<div class="ttc" id="aa01735_a22c3fb2b14bdd9d6de4c61f2778f4444_html_a22c3fb2b14bdd9d6de4c61f2778f4444"><div class="ttname"><a href="../../d6/d2e/a01735_a22c3fb2b14bdd9d6de4c61f2778f4444.html#a22c3fb2b14bdd9d6de4c61f2778f4444">prototype</a></div><div class="ttdeci">InternalDecoder prototype</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d2e/a01735_source.html#l00059">iconv-lite/encodings/internal.js:59</a></div></div>
+<div class="ttc" id="aa01810_a006c822566f0ebf86500557e24565697_html_a006c822566f0ebf86500557e24565697"><div class="ttname"><a href="../../df/d3a/a01810_a006c822566f0ebf86500557e24565697.html#a006c822566f0ebf86500557e24565697">done</a></div><div class="ttdeci">Execute prototype done</div><div class="ttdef"><b>Definition</b> <a href="../../df/d3a/a01810_source.html#l00096">commands/execute.js:96</a></div></div>
+<div class="ttc" id="aa01822_abce695e0af988ece0826d9ad59b8160d_html_abce695e0af988ece0826d9ad59b8160d"><div class="ttname"><a href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a></div><div class="ttdeci">obj c</div><div class="ttdef"><b>Definition</b> <a href="../../d1/dba/a01822_source.html#l00005">example/circular.js:5</a></div></div>
+<div class="ttc" id="aa01840_a7b58b8887c6d26e09f79fbacfbda7f53_html_a7b58b8887c6d26e09f79fbacfbda7f53"><div class="ttname"><a href="../../d4/d8e/a01840_a7b58b8887c6d26e09f79fbacfbda7f53.html#a7b58b8887c6d26e09f79fbacfbda7f53">utils</a></div><div class="ttdeci">var utils</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d8e/a01840_source.html#l00003">lib/parse.js:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_49af7e7091e784d82e521bb65404877f.html">express</a></li><li class="navelem"><a class="el" href="../../dir_5215923152cb947e0d461f458d456b63.html">lib</a></li><li class="navelem"><a class="el" href="../../d4/d3e/a00116.html">response.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

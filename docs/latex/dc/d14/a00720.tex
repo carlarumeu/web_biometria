@@ -1,0 +1,693 @@
+\doxysubsection{Referencia de la clase Connection}
+\hypertarget{a00720}{}\label{a00720}\index{Connection@{Connection}}
+
+
+Diagrama de herencia de Connection
+% FIG 0
+
+
+Diagrama de colaboración de Connection\+:
+% FIG 1
+\doxysubsubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00720_abac7084361ea6ff57258cbce63beb442_abac7084361ea6ff57258cbce63beb442}{constructor}} (opts)
+\item 
+\mbox{\hyperlink{a00720_a68a7b63d3364b35a3520253802347891_a68a7b63d3364b35a3520253802347891}{promise}} (promise\+Impl)
+\item 
+\mbox{\hyperlink{a00720_aa2b13ffdea1be2a5455440c7f645a088_aa2b13ffdea1be2a5455440c7f645a088}{\+\_\+add\+Command\+Closed\+State}} (cmd)
+\item 
+\mbox{\hyperlink{a00720_adb624b15d757e1ebfb218a45260d5630_adb624b15d757e1ebfb218a45260d5630}{\+\_\+handle\+Fatal\+Error}} (err)
+\item 
+\mbox{\hyperlink{a00720_a8a58446fa260dba846b16013734f0d2a_a8a58446fa260dba846b16013734f0d2a}{\+\_\+handle\+Network\+Error}} (err)
+\item 
+\mbox{\hyperlink{a00720_a16c0829a4767a082fe29ce2e30ee4469_a16c0829a4767a082fe29ce2e30ee4469}{\+\_\+handle\+Timeout\+Error}} ()
+\item 
+\mbox{\hyperlink{a00720_a95c76c9890cb0c0d88273acbec7f43b8_a95c76c9890cb0c0d88273acbec7f43b8}{\+\_\+notify\+Error}} (err)
+\item 
+\mbox{\hyperlink{a00720_a73f45cd0ad693895ed45034fe6cca084_a73f45cd0ad693895ed45034fe6cca084}{write}} (buffer)
+\item 
+\mbox{\hyperlink{a00720_a236fa5d8d95484ddafcba60cd5fe52e3_a236fa5d8d95484ddafcba60cd5fe52e3}{\+\_\+reset\+Sequence\+Id}} ()
+\item 
+\mbox{\hyperlink{a00720_a197192e30aa6fa9a057dfe27863dd42d_a197192e30aa6fa9a057dfe27863dd42d}{\+\_\+bump\+Compressed\+Sequence\+Id}} (num\+Packets)
+\item 
+\mbox{\hyperlink{a00720_adba198bb46543151133ff2f22c138cdc_adba198bb46543151133ff2f22c138cdc}{\+\_\+bump\+Sequence\+Id}} (num\+Packets)
+\item 
+\mbox{\hyperlink{a00720_ab8fec931d551c05cf43c59ddf229a6b7_ab8fec931d551c05cf43c59ddf229a6b7}{write\+Packet}} (packet)
+\item 
+\mbox{\hyperlink{a00720_a5f185f8bb9f36ac1e02d3a5020937a7d_a5f185f8bb9f36ac1e02d3a5020937a7d}{start\+TLS}} (on\+Secure)
+\item 
+\mbox{\hyperlink{a00720_ac34dba03a7369de693f9b8faa5037541_ac34dba03a7369de693f9b8faa5037541}{protocol\+Error}} (message, code)
+\item 
+\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get}} \mbox{\hyperlink{a00720_a5fd6ad7ebbe24426083c352fb1019334_a5fd6ad7ebbe24426083c352fb1019334}{fatal\+Error}} ()
+\item 
+\mbox{\hyperlink{a00720_a000de33e8bc7ed6581c2788091b7128d_a000de33e8bc7ed6581c2788091b7128d}{handle\+Packet}} (packet)
+\item 
+\mbox{\hyperlink{a00720_a4964f8e380fd81566f183e2f4d5328c5_a4964f8e380fd81566f183e2f4d5328c5}{add\+Command}} (cmd)
+\item 
+\mbox{\hyperlink{a00720_a99e902941f49b387b94c83a42cb94275_a99e902941f49b387b94c83a42cb94275}{format}} (sql, values)
+\item 
+\mbox{\hyperlink{a00720_a0ef96b76a2bd48fc039e8f34da436e30_a0ef96b76a2bd48fc039e8f34da436e30}{escape}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})
+\item 
+\mbox{\hyperlink{a00720_aacce38e7a5cb425869c5364326e2056c_aacce38e7a5cb425869c5364326e2056c}{escape\+Id}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})
+\item 
+\mbox{\hyperlink{a00720_a17561d9ead2be6536219dd6378a70bbb_a17561d9ead2be6536219dd6378a70bbb}{raw}} (sql)
+\item 
+\mbox{\hyperlink{a00720_a72c890d7953e013847975dc989309302_a72c890d7953e013847975dc989309302}{\+\_\+resolve\+Named\+Placeholders}} (options)
+\item 
+\mbox{\hyperlink{a00720_a0097ff52309cc67ed210d2e14ab45862_a0097ff52309cc67ed210d2e14ab45862}{query}} (sql, values, cb)
+\item 
+\mbox{\hyperlink{a00720_a6a1e30c24160b16db343d0a593d74382_a6a1e30c24160b16db343d0a593d74382}{pause}} ()
+\item 
+\mbox{\hyperlink{a00720_a18f5747216b7b448ab847c3d5a385192_a18f5747216b7b448ab847c3d5a385192}{resume}} ()
+\item 
+\mbox{\hyperlink{a00720_a7dfae0ccf30bbaed9a91b3f0c1fc8c85_a7dfae0ccf30bbaed9a91b3f0c1fc8c85}{prepare}} (options, cb)
+\item 
+\mbox{\hyperlink{a00720_af8cc332a20d53e66b82522c7d098dbcd_af8cc332a20d53e66b82522c7d098dbcd}{unprepare}} (sql)
+\item 
+\mbox{\hyperlink{a00720_a3fafc7ddc10e940be0fa01ae42044a5e_a3fafc7ddc10e940be0fa01ae42044a5e}{execute}} (sql, values, cb)
+\item 
+\mbox{\hyperlink{a00720_ab61987e686f4287f13914acfe9ffd3aa_ab61987e686f4287f13914acfe9ffd3aa}{change\+User}} (options, callback)
+\item 
+\mbox{\hyperlink{a00720_a46f69c0791e1900c0e3db3a1f96aff04_a46f69c0791e1900c0e3db3a1f96aff04}{begin\+Transaction}} (cb)
+\item 
+\mbox{\hyperlink{a00720_abe513721009aada65bdedd1f99f200ef_abe513721009aada65bdedd1f99f200ef}{commit}} (cb)
+\item 
+\mbox{\hyperlink{a00720_a7d492111487fdd25387f38e748eaf66b_a7d492111487fdd25387f38e748eaf66b}{rollback}} (cb)
+\item 
+\mbox{\hyperlink{a00720_ae7499913fb988d64da20c661532c1841_ae7499913fb988d64da20c661532c1841}{ping}} (cb)
+\item 
+\mbox{\hyperlink{a00720_afbc92718d1d274495e72fa990b1c30ba_afbc92718d1d274495e72fa990b1c30ba}{\+\_\+register\+Slave}} (opts, cb)
+\item 
+\mbox{\hyperlink{a00720_ae5aa3de6bd52ba5b01ac0d017ab1d185_ae5aa3de6bd52ba5b01ac0d017ab1d185}{\+\_\+binlog\+Dump}} (opts, cb)
+\item 
+\mbox{\hyperlink{a00720_ada325f92c45ac8e22f9c2762d7c057e3_ada325f92c45ac8e22f9c2762d7c057e3}{destroy}} ()
+\item 
+\mbox{\hyperlink{a00720_ae6b64fd2a4364f4e72221c50139392ee_ae6b64fd2a4364f4e72221c50139392ee}{close}} ()
+\item 
+\mbox{\hyperlink{a00720_a6211a0e7ff785739ed3402653a5e0b38_a6211a0e7ff785739ed3402653a5e0b38}{create\+Binlog\+Stream}} (opts)
+\item 
+\mbox{\hyperlink{a00720_acbd4136ad2395e8345ba1b305714144d_acbd4136ad2395e8345ba1b305714144d}{connect}} (cb)
+\item 
+\mbox{\hyperlink{a00720_a181e784c173924b073a3ef567ec90116_a181e784c173924b073a3ef567ec90116}{write\+Columns}} (columns)
+\item 
+\mbox{\hyperlink{a00720_a09eb5a3ed10c98a32d1cd25a58cfe4a4_a09eb5a3ed10c98a32d1cd25a58cfe4a4}{write\+Text\+Row}} (column)
+\item 
+\mbox{\hyperlink{a00720_a70bfb334da0e57a914a23b74e1a4f3cf_a70bfb334da0e57a914a23b74e1a4f3cf}{write\+Binary\+Row}} (column)
+\item 
+\mbox{\hyperlink{a00720_a9a4009e05748a165b038878d64fed0cc_a9a4009e05748a165b038878d64fed0cc}{write\+Text\+Result}} (rows, columns, binary=\mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}})
+\item 
+\mbox{\hyperlink{a00720_a83f262b963617182cd26ac3f06418b47_a83f262b963617182cd26ac3f06418b47}{write\+Eof}} (warnings, status\+Flags)
+\item 
+\mbox{\hyperlink{a00720_a72e970e8e80b93fe43c858bca933f426_a72e970e8e80b93fe43c858bca933f426}{write\+Ok}} (args)
+\item 
+\mbox{\hyperlink{a00720_a837203cba31088687023547dc8c7296d_a837203cba31088687023547dc8c7296d}{write\+Error}} (args)
+\item 
+\mbox{\hyperlink{a00720_a02b6312d6682bdc38d27e623a08318e2_a02b6312d6682bdc38d27e623a08318e2}{server\+Handshake}} (args)
+\item 
+\mbox{\hyperlink{a00720_a82efaa682d88dea130491bb746e4835a_a82efaa682d88dea130491bb746e4835a}{end}} (callback)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00720_ae5ca6b8a0a5d8beacccff6e99ce41218_ae5ca6b8a0a5d8beacccff6e99ce41218}{create\+Query}} (sql, values, cb, config)
+\item 
+static \mbox{\hyperlink{a00720_a8ce14fd5be8c781f3ddbaa41a0a69b9a_a8ce14fd5be8c781f3ddbaa41a0a69b9a}{statement\+Key}} (options)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00037}{37}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de funciones miembro}
+\Hypertarget{a00720_aa2b13ffdea1be2a5455440c7f645a088_aa2b13ffdea1be2a5455440c7f645a088}\index{Connection@{Connection}!\_addCommandClosedState@{\_addCommandClosedState}}
+\index{\_addCommandClosedState@{\_addCommandClosedState}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_addCommandClosedState()}{\_addCommandClosedState()}}
+{\footnotesize\ttfamily \label{a00720_aa2b13ffdea1be2a5455440c7f645a088_aa2b13ffdea1be2a5455440c7f645a088} 
+Connection\+::\+\_\+add\+Command\+Closed\+State (\begin{DoxyParamCaption}\item[{}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00163}{163}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{a00720_ae5aa3de6bd52ba5b01ac0d017ab1d185_ae5aa3de6bd52ba5b01ac0d017ab1d185}\index{Connection@{Connection}!\_binlogDump@{\_binlogDump}}
+\index{\_binlogDump@{\_binlogDump}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_binlogDump()}{\_binlogDump()}}
+{\footnotesize\ttfamily \label{a00720_ae5aa3de6bd52ba5b01ac0d017ab1d185_ae5aa3de6bd52ba5b01ac0d017ab1d185} 
+Connection\+::\+\_\+binlog\+Dump (\begin{DoxyParamCaption}\item[{}]{opts}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00755}{755}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a197192e30aa6fa9a057dfe27863dd42d_a197192e30aa6fa9a057dfe27863dd42d}\index{Connection@{Connection}!\_bumpCompressedSequenceId@{\_bumpCompressedSequenceId}}
+\index{\_bumpCompressedSequenceId@{\_bumpCompressedSequenceId}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_bumpCompressedSequenceId()}{\_bumpCompressedSequenceId()}}
+{\footnotesize\ttfamily \label{a00720_a197192e30aa6fa9a057dfe27863dd42d_a197192e30aa6fa9a057dfe27863dd42d} 
+Connection\+::\+\_\+bump\+Compressed\+Sequence\+Id (\begin{DoxyParamCaption}\item[{}]{num\+Packets}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00283}{283}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_adba198bb46543151133ff2f22c138cdc_adba198bb46543151133ff2f22c138cdc}\index{Connection@{Connection}!\_bumpSequenceId@{\_bumpSequenceId}}
+\index{\_bumpSequenceId@{\_bumpSequenceId}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_bumpSequenceId()}{\_bumpSequenceId()}}
+{\footnotesize\ttfamily \label{a00720_adba198bb46543151133ff2f22c138cdc_adba198bb46543151133ff2f22c138cdc} 
+Connection\+::\+\_\+bump\+Sequence\+Id (\begin{DoxyParamCaption}\item[{}]{num\+Packets}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00288}{288}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{a00720_adb624b15d757e1ebfb218a45260d5630_adb624b15d757e1ebfb218a45260d5630}\index{Connection@{Connection}!\_handleFatalError@{\_handleFatalError}}
+\index{\_handleFatalError@{\_handleFatalError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_handleFatalError()}{\_handleFatalError()}}
+{\footnotesize\ttfamily \label{a00720_adb624b15d757e1ebfb218a45260d5630_adb624b15d757e1ebfb218a45260d5630} 
+Connection\+::\+\_\+handle\+Fatal\+Error (\begin{DoxyParamCaption}\item[{}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00175}{175}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\Hypertarget{a00720_a8a58446fa260dba846b16013734f0d2a_a8a58446fa260dba846b16013734f0d2a}\index{Connection@{Connection}!\_handleNetworkError@{\_handleNetworkError}}
+\index{\_handleNetworkError@{\_handleNetworkError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_handleNetworkError()}{\_handleNetworkError()}}
+{\footnotesize\ttfamily \label{a00720_a8a58446fa260dba846b16013734f0d2a_a8a58446fa260dba846b16013734f0d2a} 
+Connection\+::\+\_\+handle\+Network\+Error (\begin{DoxyParamCaption}\item[{}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00187}{187}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+Gráfico de llamadas a esta función\+:
+% FIG 7
+\Hypertarget{a00720_a16c0829a4767a082fe29ce2e30ee4469_a16c0829a4767a082fe29ce2e30ee4469}\index{Connection@{Connection}!\_handleTimeoutError@{\_handleTimeoutError}}
+\index{\_handleTimeoutError@{\_handleTimeoutError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_handleTimeoutError()}{\_handleTimeoutError()}}
+{\footnotesize\ttfamily \label{a00720_a16c0829a4767a082fe29ce2e30ee4469_a16c0829a4767a082fe29ce2e30ee4469} 
+Connection\+::\+\_\+handle\+Timeout\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00199}{199}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 8
+Gráfico de llamadas a esta función\+:
+% FIG 9
+\Hypertarget{a00720_a95c76c9890cb0c0d88273acbec7f43b8_a95c76c9890cb0c0d88273acbec7f43b8}\index{Connection@{Connection}!\_notifyError@{\_notifyError}}
+\index{\_notifyError@{\_notifyError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_notifyError()}{\_notifyError()}}
+{\footnotesize\ttfamily \label{a00720_a95c76c9890cb0c0d88273acbec7f43b8_a95c76c9890cb0c0d88273acbec7f43b8} 
+Connection\+::\+\_\+notify\+Error (\begin{DoxyParamCaption}\item[{}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00214}{214}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 10
+Gráfico de llamadas a esta función\+:
+% FIG 11
+\Hypertarget{a00720_afbc92718d1d274495e72fa990b1c30ba_afbc92718d1d274495e72fa990b1c30ba}\index{Connection@{Connection}!\_registerSlave@{\_registerSlave}}
+\index{\_registerSlave@{\_registerSlave}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_registerSlave()}{\_registerSlave()}}
+{\footnotesize\ttfamily \label{a00720_afbc92718d1d274495e72fa990b1c30ba_afbc92718d1d274495e72fa990b1c30ba} 
+Connection\+::\+\_\+register\+Slave (\begin{DoxyParamCaption}\item[{}]{opts}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00751}{751}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a236fa5d8d95484ddafcba60cd5fe52e3_a236fa5d8d95484ddafcba60cd5fe52e3}\index{Connection@{Connection}!\_resetSequenceId@{\_resetSequenceId}}
+\index{\_resetSequenceId@{\_resetSequenceId}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_resetSequenceId()}{\_resetSequenceId()}}
+{\footnotesize\ttfamily \label{a00720_a236fa5d8d95484ddafcba60cd5fe52e3_a236fa5d8d95484ddafcba60cd5fe52e3} 
+Connection\+::\+\_\+reset\+Sequence\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00278}{278}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a72c890d7953e013847975dc989309302_a72c890d7953e013847975dc989309302}\index{Connection@{Connection}!\_resolveNamedPlaceholders@{\_resolveNamedPlaceholders}}
+\index{\_resolveNamedPlaceholders@{\_resolveNamedPlaceholders}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{\_resolveNamedPlaceholders()}{\_resolveNamedPlaceholders()}}
+{\footnotesize\ttfamily \label{a00720_a72c890d7953e013847975dc989309302_a72c890d7953e013847975dc989309302} 
+Connection\+::\+\_\+resolve\+Named\+Placeholders (\begin{DoxyParamCaption}\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00548}{548}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 12
+\Hypertarget{a00720_a4964f8e380fd81566f183e2f4d5328c5_a4964f8e380fd81566f183e2f4d5328c5}\index{Connection@{Connection}!addCommand@{addCommand}}
+\index{addCommand@{addCommand}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{addCommand()}{addCommand()}}
+{\footnotesize\ttfamily \label{a00720_a4964f8e380fd81566f183e2f4d5328c5_a4964f8e380fd81566f183e2f4d5328c5} 
+Connection\+::add\+Command (\begin{DoxyParamCaption}\item[{}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00496}{496}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 13
+Gráfico de llamadas a esta función\+:
+% FIG 14
+\Hypertarget{a00720_a46f69c0791e1900c0e3db3a1f96aff04_a46f69c0791e1900c0e3db3a1f96aff04}\index{Connection@{Connection}!beginTransaction@{beginTransaction}}
+\index{beginTransaction@{beginTransaction}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{beginTransaction()}{beginTransaction()}}
+{\footnotesize\ttfamily \label{a00720_a46f69c0791e1900c0e3db3a1f96aff04_a46f69c0791e1900c0e3db3a1f96aff04} 
+Connection\+::begin\+Transaction (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00735}{735}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_ab61987e686f4287f13914acfe9ffd3aa_ab61987e686f4287f13914acfe9ffd3aa}\index{Connection@{Connection}!changeUser@{changeUser}}
+\index{changeUser@{changeUser}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{changeUser()}{changeUser()}}
+{\footnotesize\ttfamily \label{a00720_ab61987e686f4287f13914acfe9ffd3aa_ab61987e686f4287f13914acfe9ffd3aa} 
+Connection\+::change\+User (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00698}{698}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 15
+\Hypertarget{a00720_ae6b64fd2a4364f4e72221c50139392ee_ae6b64fd2a4364f4e72221c50139392ee}\index{Connection@{Connection}!close@{close}}
+\index{close@{close}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{a00720_ae6b64fd2a4364f4e72221c50139392ee_ae6b64fd2a4364f4e72221c50139392ee} 
+Connection\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00764}{764}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 16
+\Hypertarget{a00720_abe513721009aada65bdedd1f99f200ef_abe513721009aada65bdedd1f99f200ef}\index{Connection@{Connection}!commit@{commit}}
+\index{commit@{commit}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily \label{a00720_abe513721009aada65bdedd1f99f200ef_abe513721009aada65bdedd1f99f200ef} 
+Connection\+::commit (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00739}{739}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_acbd4136ad2395e8345ba1b305714144d_acbd4136ad2395e8345ba1b305714144d}\index{Connection@{Connection}!connect@{connect}}
+\index{connect@{connect}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{a00720_acbd4136ad2395e8345ba1b305714144d_acbd4136ad2395e8345ba1b305714144d} 
+Connection\+::connect (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00801}{801}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_abac7084361ea6ff57258cbce63beb442_abac7084361ea6ff57258cbce63beb442}\index{Connection@{Connection}!constructor@{constructor}}
+\index{constructor@{constructor}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{constructor()}{constructor()}}
+{\footnotesize\ttfamily \label{a00720_abac7084361ea6ff57258cbce63beb442_abac7084361ea6ff57258cbce63beb442} 
+Connection\+::constructor (\begin{DoxyParamCaption}\item[{}]{opts}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00038}{38}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 17
+Gráfico de llamadas a esta función\+:
+% FIG 18
+\Hypertarget{a00720_a6211a0e7ff785739ed3402653a5e0b38_a6211a0e7ff785739ed3402653a5e0b38}\index{Connection@{Connection}!createBinlogStream@{createBinlogStream}}
+\index{createBinlogStream@{createBinlogStream}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{createBinlogStream()}{createBinlogStream()}}
+{\footnotesize\ttfamily \label{a00720_a6211a0e7ff785739ed3402653a5e0b38_a6211a0e7ff785739ed3402653a5e0b38} 
+Connection\+::create\+Binlog\+Stream (\begin{DoxyParamCaption}\item[{}]{opts}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00774}{774}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_ae5ca6b8a0a5d8beacccff6e99ce41218_ae5ca6b8a0a5d8beacccff6e99ce41218}\index{Connection@{Connection}!createQuery@{createQuery}}
+\index{createQuery@{createQuery}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{createQuery()}{createQuery()}}
+{\footnotesize\ttfamily \label{a00720_ae5ca6b8a0a5d8beacccff6e99ce41218_ae5ca6b8a0a5d8beacccff6e99ce41218} 
+static Connection\+::create\+Query (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{, }\item[{}]{cb}{, }\item[{}]{config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00910}{910}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 19
+\Hypertarget{a00720_ada325f92c45ac8e22f9c2762d7c057e3_ada325f92c45ac8e22f9c2762d7c057e3}\index{Connection@{Connection}!destroy@{destroy}}
+\index{destroy@{destroy}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{a00720_ada325f92c45ac8e22f9c2762d7c057e3_ada325f92c45ac8e22f9c2762d7c057e3} 
+Connection\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00760}{760}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a82efaa682d88dea130491bb746e4835a_a82efaa682d88dea130491bb746e4835a}\index{Connection@{Connection}!end@{end}}
+\index{end@{end}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{a00720_a82efaa682d88dea130491bb746e4835a_a82efaa682d88dea130491bb746e4835a} 
+Connection\+::end (\begin{DoxyParamCaption}\item[{}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00894}{894}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a0ef96b76a2bd48fc039e8f34da436e30_a0ef96b76a2bd48fc039e8f34da436e30}\index{Connection@{Connection}!escape@{escape}}
+\index{escape@{escape}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{escape()}{escape()}}
+{\footnotesize\ttfamily \label{a00720_a0ef96b76a2bd48fc039e8f34da436e30_a0ef96b76a2bd48fc039e8f34da436e30} 
+Connection\+::escape (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00536}{536}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_aacce38e7a5cb425869c5364326e2056c_aacce38e7a5cb425869c5364326e2056c}\index{Connection@{Connection}!escapeId@{escapeId}}
+\index{escapeId@{escapeId}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{escapeId()}{escapeId()}}
+{\footnotesize\ttfamily \label{a00720_aacce38e7a5cb425869c5364326e2056c_aacce38e7a5cb425869c5364326e2056c} 
+Connection\+::escape\+Id (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00540}{540}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a3fafc7ddc10e940be0fa01ae42044a5e_a3fafc7ddc10e940be0fa01ae42044a5e}\index{Connection@{Connection}!execute@{execute}}
+\index{execute@{execute}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{a00720_a3fafc7ddc10e940be0fa01ae42044a5e_a3fafc7ddc10e940be0fa01ae42044a5e} 
+Connection\+::execute (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00620}{620}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 20
+\Hypertarget{a00720_a5fd6ad7ebbe24426083c352fb1019334_a5fd6ad7ebbe24426083c352fb1019334}\index{Connection@{Connection}!fatalError@{fatalError}}
+\index{fatalError@{fatalError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{fatalError()}{fatalError()}}
+{\footnotesize\ttfamily \label{a00720_a5fd6ad7ebbe24426083c352fb1019334_a5fd6ad7ebbe24426083c352fb1019334} 
+\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get}} Connection\+::fatal\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00415}{415}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a99e902941f49b387b94c83a42cb94275_a99e902941f49b387b94c83a42cb94275}\index{Connection@{Connection}!format@{format}}
+\index{format@{format}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily \label{a00720_a99e902941f49b387b94c83a42cb94275_a99e902941f49b387b94c83a42cb94275} 
+Connection\+::format (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00514}{514}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 21
+\Hypertarget{a00720_a000de33e8bc7ed6581c2788091b7128d_a000de33e8bc7ed6581c2788091b7128d}\index{Connection@{Connection}!handlePacket@{handlePacket}}
+\index{handlePacket@{handlePacket}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{handlePacket()}{handlePacket()}}
+{\footnotesize\ttfamily \label{a00720_a000de33e8bc7ed6581c2788091b7128d_a000de33e8bc7ed6581c2788091b7128d} 
+Connection\+::handle\+Packet (\begin{DoxyParamCaption}\item[{}]{packet}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00419}{419}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 22
+Gráfico de llamadas a esta función\+:
+% FIG 23
+\Hypertarget{a00720_a6a1e30c24160b16db343d0a593d74382_a6a1e30c24160b16db343d0a593d74382}\index{Connection@{Connection}!pause@{pause}}
+\index{pause@{pause}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily \label{a00720_a6a1e30c24160b16db343d0a593d74382_a6a1e30c24160b16db343d0a593d74382} 
+Connection\+::pause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00578}{578}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_ae7499913fb988d64da20c661532c1841_ae7499913fb988d64da20c661532c1841}\index{Connection@{Connection}!ping@{ping}}
+\index{ping@{ping}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{ping()}{ping()}}
+{\footnotesize\ttfamily \label{a00720_ae7499913fb988d64da20c661532c1841_ae7499913fb988d64da20c661532c1841} 
+Connection\+::ping (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00747}{747}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a7dfae0ccf30bbaed9a91b3f0c1fc8c85_a7dfae0ccf30bbaed9a91b3f0c1fc8c85}\index{Connection@{Connection}!prepare@{prepare}}
+\index{prepare@{prepare}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily \label{a00720_a7dfae0ccf30bbaed9a91b3f0c1fc8c85_a7dfae0ccf30bbaed9a91b3f0c1fc8c85} 
+Connection\+::prepare (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00597}{597}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 24
+\Hypertarget{a00720_a68a7b63d3364b35a3520253802347891_a68a7b63d3364b35a3520253802347891}\index{Connection@{Connection}!promise@{promise}}
+\index{promise@{promise}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{promise()}{promise()}}
+{\footnotesize\ttfamily \label{a00720_a68a7b63d3364b35a3520253802347891_a68a7b63d3364b35a3520253802347891} 
+Connection\+::promise (\begin{DoxyParamCaption}\item[{}]{promise\+Impl}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00158}{158}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_ac34dba03a7369de693f9b8faa5037541_ac34dba03a7369de693f9b8faa5037541}\index{Connection@{Connection}!protocolError@{protocolError}}
+\index{protocolError@{protocolError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{protocolError()}{protocolError()}}
+{\footnotesize\ttfamily \label{a00720_ac34dba03a7369de693f9b8faa5037541_ac34dba03a7369de693f9b8faa5037541} 
+Connection\+::protocol\+Error (\begin{DoxyParamCaption}\item[{}]{message}{, }\item[{}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00400}{400}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 25
+\Hypertarget{a00720_a0097ff52309cc67ed210d2e14ab45862_a0097ff52309cc67ed210d2e14ab45862}\index{Connection@{Connection}!query@{query}}
+\index{query@{query}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily \label{a00720_a0097ff52309cc67ed210d2e14ab45862_a0097ff52309cc67ed210d2e14ab45862} 
+Connection\+::query (\begin{DoxyParamCaption}\item[{}]{sql}{, }\item[{}]{values}{, }\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00565}{565}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 26
+\Hypertarget{a00720_a17561d9ead2be6536219dd6378a70bbb_a17561d9ead2be6536219dd6378a70bbb}\index{Connection@{Connection}!raw@{raw}}
+\index{raw@{raw}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{raw()}{raw()}}
+{\footnotesize\ttfamily \label{a00720_a17561d9ead2be6536219dd6378a70bbb_a17561d9ead2be6536219dd6378a70bbb} 
+Connection\+::raw (\begin{DoxyParamCaption}\item[{}]{sql}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00544}{544}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a18f5747216b7b448ab847c3d5a385192_a18f5747216b7b448ab847c3d5a385192}\index{Connection@{Connection}!resume@{resume}}
+\index{resume@{resume}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily \label{a00720_a18f5747216b7b448ab847c3d5a385192_a18f5747216b7b448ab847c3d5a385192} 
+Connection\+::resume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00583}{583}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 27
+\Hypertarget{a00720_a7d492111487fdd25387f38e748eaf66b_a7d492111487fdd25387f38e748eaf66b}\index{Connection@{Connection}!rollback@{rollback}}
+\index{rollback@{rollback}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{rollback()}{rollback()}}
+{\footnotesize\ttfamily \label{a00720_a7d492111487fdd25387f38e748eaf66b_a7d492111487fdd25387f38e748eaf66b} 
+Connection\+::rollback (\begin{DoxyParamCaption}\item[{}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00743}{743}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a02b6312d6682bdc38d27e623a08318e2_a02b6312d6682bdc38d27e623a08318e2}\index{Connection@{Connection}!serverHandshake@{serverHandshake}}
+\index{serverHandshake@{serverHandshake}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{serverHandshake()}{serverHandshake()}}
+{\footnotesize\ttfamily \label{a00720_a02b6312d6682bdc38d27e623a08318e2_a02b6312d6682bdc38d27e623a08318e2} 
+Connection\+::server\+Handshake (\begin{DoxyParamCaption}\item[{}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00886}{886}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a5f185f8bb9f36ac1e02d3a5020937a7d_a5f185f8bb9f36ac1e02d3a5020937a7d}\index{Connection@{Connection}!startTLS@{startTLS}}
+\index{startTLS@{startTLS}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{startTLS()}{startTLS()}}
+{\footnotesize\ttfamily \label{a00720_a5f185f8bb9f36ac1e02d3a5020937a7d_a5f185f8bb9f36ac1e02d3a5020937a7d} 
+Connection\+::start\+TLS (\begin{DoxyParamCaption}\item[{}]{on\+Secure}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00342}{342}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 28
+\Hypertarget{a00720_a8ce14fd5be8c781f3ddbaa41a0a69b9a_a8ce14fd5be8c781f3ddbaa41a0a69b9a}\index{Connection@{Connection}!statementKey@{statementKey}}
+\index{statementKey@{statementKey}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{statementKey()}{statementKey()}}
+{\footnotesize\ttfamily \label{a00720_a8ce14fd5be8c781f3ddbaa41a0a69b9a_a8ce14fd5be8c781f3ddbaa41a0a69b9a} 
+static Connection\+::statement\+Key (\begin{DoxyParamCaption}\item[{}]{options}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00941}{941}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 29
+\Hypertarget{a00720_af8cc332a20d53e66b82522c7d098dbcd_af8cc332a20d53e66b82522c7d098dbcd}\index{Connection@{Connection}!unprepare@{unprepare}}
+\index{unprepare@{unprepare}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{unprepare()}{unprepare()}}
+{\footnotesize\ttfamily \label{a00720_af8cc332a20d53e66b82522c7d098dbcd_af8cc332a20d53e66b82522c7d098dbcd} 
+Connection\+::unprepare (\begin{DoxyParamCaption}\item[{}]{sql}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00604}{604}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 30
+\Hypertarget{a00720_a73f45cd0ad693895ed45034fe6cca084_a73f45cd0ad693895ed45034fe6cca084}\index{Connection@{Connection}!write@{write}}
+\index{write@{write}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{a00720_a73f45cd0ad693895ed45034fe6cca084_a73f45cd0ad693895ed45034fe6cca084} 
+Connection\+::write (\begin{DoxyParamCaption}\item[{}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00260}{260}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 31
+\Hypertarget{a00720_a70bfb334da0e57a914a23b74e1a4f3cf_a70bfb334da0e57a914a23b74e1a4f3cf}\index{Connection@{Connection}!writeBinaryRow@{writeBinaryRow}}
+\index{writeBinaryRow@{writeBinaryRow}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeBinaryRow()}{writeBinaryRow()}}
+{\footnotesize\ttfamily \label{a00720_a70bfb334da0e57a914a23b74e1a4f3cf_a70bfb334da0e57a914a23b74e1a4f3cf} 
+Connection\+::write\+Binary\+Row (\begin{DoxyParamCaption}\item[{}]{column}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00848}{848}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a181e784c173924b073a3ef567ec90116_a181e784c173924b073a3ef567ec90116}\index{Connection@{Connection}!writeColumns@{writeColumns}}
+\index{writeColumns@{writeColumns}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeColumns()}{writeColumns()}}
+{\footnotesize\ttfamily \label{a00720_a181e784c173924b073a3ef567ec90116_a181e784c173924b073a3ef567ec90116} 
+Connection\+::write\+Columns (\begin{DoxyParamCaption}\item[{}]{columns}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00831}{831}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a83f262b963617182cd26ac3f06418b47_a83f262b963617182cd26ac3f06418b47}\index{Connection@{Connection}!writeEof@{writeEof}}
+\index{writeEof@{writeEof}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeEof()}{writeEof()}}
+{\footnotesize\ttfamily \label{a00720_a83f262b963617182cd26ac3f06418b47_a83f262b963617182cd26ac3f06418b47} 
+Connection\+::write\+Eof (\begin{DoxyParamCaption}\item[{}]{warnings}{, }\item[{}]{status\+Flags}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00869}{869}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a837203cba31088687023547dc8c7296d_a837203cba31088687023547dc8c7296d}\index{Connection@{Connection}!writeError@{writeError}}
+\index{writeError@{writeError}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeError()}{writeError()}}
+{\footnotesize\ttfamily \label{a00720_a837203cba31088687023547dc8c7296d_a837203cba31088687023547dc8c7296d} 
+Connection\+::write\+Error (\begin{DoxyParamCaption}\item[{}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00880}{880}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a72e970e8e80b93fe43c858bca933f426_a72e970e8e80b93fe43c858bca933f426}\index{Connection@{Connection}!writeOk@{writeOk}}
+\index{writeOk@{writeOk}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeOk()}{writeOk()}}
+{\footnotesize\ttfamily \label{a00720_a72e970e8e80b93fe43c858bca933f426_a72e970e8e80b93fe43c858bca933f426} 
+Connection\+::write\+Ok (\begin{DoxyParamCaption}\item[{}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00873}{873}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_ab8fec931d551c05cf43c59ddf229a6b7_ab8fec931d551c05cf43c59ddf229a6b7}\index{Connection@{Connection}!writePacket@{writePacket}}
+\index{writePacket@{writePacket}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writePacket()}{writePacket()}}
+{\footnotesize\ttfamily \label{a00720_ab8fec931d551c05cf43c59ddf229a6b7_ab8fec931d551c05cf43c59ddf229a6b7} 
+Connection\+::write\+Packet (\begin{DoxyParamCaption}\item[{}]{packet}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00293}{293}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 32
+\Hypertarget{a00720_a9a4009e05748a165b038878d64fed0cc_a9a4009e05748a165b038878d64fed0cc}\index{Connection@{Connection}!writeTextResult@{writeTextResult}}
+\index{writeTextResult@{writeTextResult}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeTextResult()}{writeTextResult()}}
+{\footnotesize\ttfamily \label{a00720_a9a4009e05748a165b038878d64fed0cc_a9a4009e05748a165b038878d64fed0cc} 
+Connection\+::write\+Text\+Result (\begin{DoxyParamCaption}\item[{}]{rows}{, }\item[{}]{columns}{, }\item[{}]{binary}{ = {\ttfamily \mbox{\hyperlink{a01195_aca347ffec9581fd2026c3093d4f70953_aca347ffec9581fd2026c3093d4f70953}{false}}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00854}{854}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+\Hypertarget{a00720_a09eb5a3ed10c98a32d1cd25a58cfe4a4_a09eb5a3ed10c98a32d1cd25a58cfe4a4}\index{Connection@{Connection}!writeTextRow@{writeTextRow}}
+\index{writeTextRow@{writeTextRow}!Connection@{Connection}}
+\doxyparagraph{\texorpdfstring{writeTextRow()}{writeTextRow()}}
+{\footnotesize\ttfamily \label{a00720_a09eb5a3ed10c98a32d1cd25a58cfe4a4_a09eb5a3ed10c98a32d1cd25a58cfe4a4} 
+Connection\+::write\+Text\+Row (\begin{DoxyParamCaption}\item[{}]{column}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00281_source_l00842}{842}} del archivo \mbox{\hyperlink{a00281_source}{connection.\+js}}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00281}{connection.\+js}}\end{DoxyCompactItemize}

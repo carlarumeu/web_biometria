@@ -1,0 +1,43 @@
+\doxysubsection{server.\+js}
+\hypertarget{a00401_source}{}\label{a00401_source}\index{server.js@{server.js}}
+\mbox{\hyperlink{a00401}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00001}\mbox{\hyperlink{a00401_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00003}\mbox{\hyperlink{a00401_ae13111a77351cc6bf302612aa5d97d08_ae13111a77351cc6bf302612aa5d97d08}{00003}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00401_ae13111a77351cc6bf302612aa5d97d08_ae13111a77351cc6bf302612aa5d97d08}{net}}\ =\ require(\textcolor{stringliteral}{'net'});}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00004}\mbox{\hyperlink{a00401_a837fd8c4f283c94192e740ed456a810e_a837fd8c4f283c94192e740ed456a810e}{00004}}\ \textcolor{keyword}{const}\ EventEmitter\ =\ require(\textcolor{stringliteral}{'events'}).EventEmitter;}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00006}\mbox{\hyperlink{a00401_a9bae58e633a0b24452c071af8a8a536b_a9bae58e633a0b24452c071af8a8a536b}{00006}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00720}{Connection}}\ =\ require(\textcolor{stringliteral}{'./connection'});}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00007}\mbox{\hyperlink{a00401_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863}{00007}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00724}{ConnectionConfig}}\ =\ require(\textcolor{stringliteral}{'./connection\_config'});}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00009}00009\ \textcolor{comment}{//\ TODO:\ inherit\ Server\ from\ net.Server}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00010}\mbox{\hyperlink{a00820}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00820}{Server}}\ \textcolor{keyword}{extends}\ EventEmitter\ \{}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00011}\mbox{\hyperlink{a00820_a0ac305fd28b9db7d58635629797256e8_a0ac305fd28b9db7d58635629797256e8}{00011}}\ \ \ \mbox{\hyperlink{a00820_a0ac305fd28b9db7d58635629797256e8_a0ac305fd28b9db7d58635629797256e8}{constructor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00013}00013\ \ \ \ \ this.connections\ =\ [];}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00014}00014\ \ \ \ \ this.\_server\ =\ \mbox{\hyperlink{a00401_ae13111a77351cc6bf302612aa5d97d08_ae13111a77351cc6bf302612aa5d97d08}{net}}.createServer(this.\mbox{\hyperlink{a00820_a4de22c0cee9e8b1cb1a269edddae5a0e_a4de22c0cee9e8b1cb1a269edddae5a0e}{\_handleConnection}}.bind(\textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00015}00015\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00017}\mbox{\hyperlink{a00820_a4de22c0cee9e8b1cb1a269edddae5a0e_a4de22c0cee9e8b1cb1a269edddae5a0e}{00017}}\ \ \ \mbox{\hyperlink{a00820_a4de22c0cee9e8b1cb1a269edddae5a0e_a4de22c0cee9e8b1cb1a269edddae5a0e}{\_handleConnection}}(socket)\ \{}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{const}\ connectionConfig\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00401_a6e2d021b8477f11e0a859a4dd5718863_a6e2d021b8477f11e0a859a4dd5718863}{ConnectionConfig}}(\{}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00019}00019\ \ \ \ \ \ \ \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}:\ socket,}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00020}00020\ \ \ \ \ \ \ isServer:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00021}00021\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{const}\ connection\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00401_a9bae58e633a0b24452c071af8a8a536b_a9bae58e633a0b24452c071af8a8a536b}{Connection}}(\{\ config:\ connectionConfig\ \});}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00023}00023\ \ \ \ \ this.emit(\textcolor{stringliteral}{'connection'},\ connection);}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00024}00024\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00026}\mbox{\hyperlink{a00820_ab28d99c74765548762eec4941172e759_ab28d99c74765548762eec4941172e759}{00026}}\ \ \ \mbox{\hyperlink{a00820_ab28d99c74765548762eec4941172e759_ab28d99c74765548762eec4941172e759}{listen}}(port)\ \{}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00027}00027\ \ \ \ \ this.\_port\ =\ port;}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00028}00028\ \ \ \ \ this.\_server.listen.apply(this.\_server,\ arguments);}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00030}00030\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00032}\mbox{\hyperlink{a00820_a8176ac9c52d4996db26451313738cd37_a8176ac9c52d4996db26451313738cd37}{00032}}\ \ \ \mbox{\hyperlink{a00820_a8176ac9c52d4996db26451313738cd37_a8176ac9c52d4996db26451313738cd37}{close}}(cb)\ \{}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00033}00033\ \ \ \ \ this.\_server.close(cb);}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00034}00034\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{a00401_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{a00401_source_l00037}\mbox{\hyperlink{a00401_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00037}}\ module.exports\ =\ \mbox{\hyperlink{a00820}{Server}};}
+
+\end{DoxyCode}

@@ -1,0 +1,489 @@
+\doxysubsection{navtree.\+js}
+\label{a00050_source}\index{navtree.js@{navtree.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ @licstart\ \ The\ following\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ The\ MIT\ License\ (MIT)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ Copyright\ (C)\ 1997-\/2020\ by\ Dimitri\ van\ Heesch}}
+\DoxyCodeLine{00007\ \textcolor{comment}{}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this\ software}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ @licend\ \ The\ above\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{function}\ initNavTree(toroot,relpath)\ \{}
+\DoxyCodeLine{00027\ \ \ let\ navTreeSubIndices\ =\ [];}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{const}\ ARROW\_DOWN\ =\ \textcolor{stringliteral}{'\&\#9660;'};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{const}\ ARROW\_RIGHT\ =\ \textcolor{stringliteral}{'\&\#9658;'};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{const}\ NAVPATH\_COOKIE\_NAME\ =\ \textcolor{stringliteral}{''}+\textcolor{stringliteral}{'navpath'};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{const}\ getData\ =\ \textcolor{keyword}{function}(varName)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ i\ =\ varName.lastIndexOf(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ n\ =\ i>=0\ ?\ varName.substring(i+1)\ :\ varName;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ eval(n.replace(/-\//g,\textcolor{charliteral}{'\_'}));}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{const}\ stripPath\ =\ \textcolor{keyword}{function}(uri)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{return}\ uri.substring(uri.lastIndexOf(\textcolor{charliteral}{'/'})+1);}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{const}\ stripPath2\ =\ \textcolor{keyword}{function}(uri)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ i\ =\ uri.lastIndexOf(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ s\ =\ uri.substring(i+1);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ m\ =\ uri.substring(0,i+1).match(/\(\backslash\)/d\(\backslash\)w\(\backslash\)/d\(\backslash\)w\(\backslash\)w\(\backslash\)/\$/);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ m\ ?\ uri.substring(i-\/6)\ :\ s;}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{const}\ hashValue\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \$(location).attr(\textcolor{stringliteral}{'hash'}).substring(1).replace(/[\string^\(\backslash\)w-\/]/g,\textcolor{stringliteral}{''});}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{const}\ hashUrl\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\#'}+hashValue();}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{const}\ pathName\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \$(location).attr(\textcolor{stringliteral}{'pathname'}).replace(/[\string^-\/A-\/Za-\/z0-\/9+\&@\#/\%?=\string~\_|!:,.;()]/g,\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{const}\ storeLink\ =\ \textcolor{keyword}{function}(link)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$(\textcolor{stringliteral}{"{}\#nav-\/sync"{}}).hasClass(\textcolor{stringliteral}{'sync'}))\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Cookie.writeSetting(NAVPATH\_COOKIE\_NAME,link,0);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{const}\ deleteLink\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ Cookie.eraseSetting(NAVPATH\_COOKIE\_NAME);}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{const}\ cachedLink\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ Cookie.readSetting(NAVPATH\_COOKIE\_NAME,\textcolor{stringliteral}{''});}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{const}\ getScript\ =\ \textcolor{keyword}{function}(scriptName,func)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ head\ =\ document.getElementsByTagName(\textcolor{stringliteral}{"{}head"{}})[0];}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ script\ =\ document.createElement(\textcolor{stringliteral}{'script'});}
+\DoxyCodeLine{00078\ \ \ \ \ script.id\ =\ scriptName;}
+\DoxyCodeLine{00079\ \ \ \ \ script.type\ =\ \textcolor{stringliteral}{'text/javascript'};}
+\DoxyCodeLine{00080\ \ \ \ \ script.onload\ =\ func;}
+\DoxyCodeLine{00081\ \ \ \ \ script.src\ =\ scriptName+\textcolor{stringliteral}{'.js'};}
+\DoxyCodeLine{00082\ \ \ \ \ head.appendChild(script);}
+\DoxyCodeLine{00083\ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{const}\ createIndent\ =\ \textcolor{keyword}{function}(o,domNode,node)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ let\ level=-\/1;}
+\DoxyCodeLine{00087\ \ \ \ \ let\ n\ =\ node;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{while}\ (n.parentNode)\ \{\ level++;\ n=n.parentNode;\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (node.childrenData)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keyword}{const}\ imgNode\ =\ document.createElement(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ imgNode.className\ =\ \textcolor{stringliteral}{'arrow'};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ imgNode.style.paddingLeft=(16*level).toString()+\textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ imgNode.innerHTML=ARROW\_RIGHT;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ node.plus\_img\ =\ imgNode;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ node.expandToggle\ =\ document.createElement(\textcolor{stringliteral}{"{}a"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ node.expandToggle.href\ =\ \textcolor{stringliteral}{"{}javascript:void(0)"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ node.expandToggle.onclick\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node.expanded)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \$(node.getChildrenUL()).slideUp(\textcolor{stringliteral}{"{}fast"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ node.plus\_img.innerHTML=ARROW\_RIGHT;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ node.expanded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ expandNode(o,\ node,\ \textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ node.expandToggle.appendChild(imgNode);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ domNode.appendChild(node.expandToggle);}
+\DoxyCodeLine{00108\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ let\ span\ =\ document.createElement(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ span.className\ =\ \textcolor{stringliteral}{'arrow'};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ span.style.width\ \ \ =\ 16*(level+1)+\textcolor{stringliteral}{'px'};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ span.innerHTML\ =\ \textcolor{stringliteral}{'\&\#160;'};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ domNode.appendChild(span);}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ let\ animationInProgress\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{const}\ gotoAnchor\ =\ \textcolor{keyword}{function}(anchor,aname)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ let\ pos,\ docContent\ =\ \$(\textcolor{stringliteral}{'\#doc-\/content'});}
+\DoxyCodeLine{00121\ \ \ \ \ let\ ancParent\ =\ \$(anchor.parent());}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (ancParent.hasClass(\textcolor{stringliteral}{'memItemLeft'})\ ||\ ancParent.hasClass(\textcolor{stringliteral}{'memtitle'})\ \ ||}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ ancParent.hasClass(\textcolor{stringliteral}{'fieldname'})\ \ \ ||\ ancParent.hasClass(\textcolor{stringliteral}{'fieldtype'})\ ||}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ ancParent.is(\textcolor{stringliteral}{':header'}))\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ pos\ =\ ancParent.position().top;}
+\DoxyCodeLine{00126\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (anchor.position())\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ pos\ =\ anchor.position().top;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{keyword}{const}\ dcOffset\ \ \ \ =\ docContent.offset().top;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{keyword}{const}\ dcHeight\ \ \ \ =\ docContent.height();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keyword}{const}\ dcScrHeight\ =\ docContent[0].scrollHeight}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{keyword}{const}\ dcScrTop\ \ \ \ =\ docContent.scrollTop();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ let\ dist\ =\ Math.abs(Math.min(pos-\/dcOffset,dcScrHeight-\/dcHeight-\/dcScrTop));}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ animationInProgress\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ docContent.animate(\{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ scrollTop:\ pos\ +\ dcScrTop\ -\/\ dcOffset}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \},Math.max(50,Math.min(500,dist)),\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ animationInProgress=false;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ if\ (anchor.parent().attr(\textcolor{stringliteral}{'class'})==\textcolor{stringliteral}{'memItemLeft'})\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ let\ rows\ =\ \$(\textcolor{stringliteral}{'.memberdecls\ tr[class\$="{}'}+hashValue()+\textcolor{stringliteral}{'"{}]'});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ glowEffect(rows.children(),300);\ \textcolor{comment}{//\ member\ without\ details}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ if\ (anchor.parent().attr(\textcolor{stringliteral}{'class'})==\textcolor{stringliteral}{'fieldname'})\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ glowEffect(anchor.parent().parent(),1000);\ \textcolor{comment}{//\ enum\ value}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ if\ (anchor.parent().attr(\textcolor{stringliteral}{'class'})==\textcolor{stringliteral}{'fieldtype'})\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ glowEffect(anchor.parent().parent(),1000);\ \textcolor{comment}{//\ struct\ field}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ if\ (anchor.parent().is(\textcolor{stringliteral}{"{}:header"{}}))\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ glowEffect(anchor.parent(),1000);\ \textcolor{comment}{//\ section\ header}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ glowEffect(anchor.next(),1000);\ \textcolor{comment}{//\ normal\ member}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{const}\ newNode\ =\ \textcolor{keyword}{function}(o,\ po,\ text,\ link,\ childrenData,\ lastNode)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ node\ =\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ children\ \ \ \ \ :\ [],}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ childrenData\ :\ childrenData,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ depth\ \ \ \ \ \ \ \ :\ po.depth\ +\ 1,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ relpath\ \ \ \ \ \ :\ po.relpath,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ isLast\ \ \ \ \ \ \ :\ lastNode,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ li\ \ \ \ \ \ \ \ \ \ \ :\ document.createElement(\textcolor{stringliteral}{"{}li"{}}),}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ parentNode\ \ \ :\ po,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ itemDiv\ \ \ \ \ \ :\ document.createElement(\textcolor{stringliteral}{"{}div"{}}),}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ labelSpan\ \ \ \ :\ document.createElement(\textcolor{stringliteral}{"{}span"{}}),}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ label\ \ \ \ \ \ \ \ :\ document.createTextNode(text),}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ expanded\ \ \ \ \ :\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ childrenUL\ \ \ :\ \textcolor{keyword}{null},}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ getChildrenUL\ :\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this.childrenUL)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ this.childrenUL\ =\ document.createElement(\textcolor{stringliteral}{"{}ul"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ this.childrenUL.className\ =\ \textcolor{stringliteral}{"{}children\_ul"{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ this.childrenUL.style.display\ =\ \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ this.li.appendChild(node.childrenUL);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node.childrenUL;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00179\ \ \ \ \ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ node.itemDiv.className\ =\ \textcolor{stringliteral}{"{}item"{}};}
+\DoxyCodeLine{00182\ \ \ \ \ node.labelSpan.className\ =\ \textcolor{stringliteral}{"{}label"{}};}
+\DoxyCodeLine{00183\ \ \ \ \ createIndent(o,node.itemDiv,node);}
+\DoxyCodeLine{00184\ \ \ \ \ node.itemDiv.appendChild(node.labelSpan);}
+\DoxyCodeLine{00185\ \ \ \ \ node.li.appendChild(node.itemDiv);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{const}\ a\ =\ document.createElement(\textcolor{stringliteral}{"{}a"{}});}
+\DoxyCodeLine{00188\ \ \ \ \ node.labelSpan.appendChild(a);}
+\DoxyCodeLine{00189\ \ \ \ \ po.getChildrenUL().appendChild(node.li);}
+\DoxyCodeLine{00190\ \ \ \ \ a.appendChild(node.label);}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{if}\ (link)\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ let\ url;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (link.substring(0,1)==\textcolor{charliteral}{'\string^'})\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ url\ =\ link.substring(1);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ link\ =\ url;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ url\ =\ node.relpath+link;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ a.className\ =\ stripPath(link.replace(\textcolor{charliteral}{'\#'},\textcolor{charliteral}{':'}));}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (link.indexOf(\textcolor{charliteral}{'\#'})!=-\/1)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ aname\ =\ \textcolor{charliteral}{'\#'}+link.split(\textcolor{charliteral}{'\#'})[1];}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ srcPage\ =\ stripPath(pathName());}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ targetPage\ =\ stripPath(link.split(\textcolor{charliteral}{'\#'})[0]);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ a.href\ =\ srcPage!=targetPage\ ?\ url\ :\ aname;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ a.onclick\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ storeLink(link);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ aPPar\ =\ \$(a).parent().parent();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!aPPar.hasClass(\textcolor{stringliteral}{'selected'}))\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeAttr(\textcolor{stringliteral}{'id'});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ aPPar.addClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ aPPar.attr(\textcolor{stringliteral}{'id'},\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ anchor\ =\ \$(aname);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ gotoAnchor(anchor,aname);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ a.href\ =\ url;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ a.onclick\ =\ ()\ =>\ storeLink(link);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (childrenData\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ a.className\ =\ \textcolor{stringliteral}{"{}nolink"{}};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ a.href\ =\ \textcolor{stringliteral}{"{}javascript:void(0)"{}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ a.onclick\ =\ node.expandToggle.onclick;}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00227\ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \textcolor{keyword}{const}\ showRoot\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{const}\ headerHeight\ =\ \$(\textcolor{stringliteral}{"{}\#top"{}}).height();}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{const}\ footerHeight\ =\ \$(\textcolor{stringliteral}{"{}\#nav-\/path"{}}).height();}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{const}\ windowHeight\ =\ \$(window).height()\ -\/\ headerHeight\ -\/\ footerHeight;}
+\DoxyCodeLine{00233\ \ \ \ \ (\textcolor{keyword}{function}()\ \{\ \textcolor{comment}{//\ retry\ until\ we\ can\ scroll\ to\ the\ selected\ item}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ navtree=\$(\textcolor{stringliteral}{'\#nav-\/tree'});}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ navtree.scrollTo(\textcolor{stringliteral}{'\#selected'},100,\{offset:-\/windowHeight/2\});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (err)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ setTimeout(arguments.callee,\ 0);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \})();}
+\DoxyCodeLine{00241\ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \textcolor{keyword}{const}\ expandNode\ =\ \textcolor{keyword}{function}(o,\ node,\ imm,\ setFocus)\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{if}\ (node.childrenData\ \&\&\ !node.expanded)\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof(node.childrenData)===\textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ varName\ =\ node.childrenData;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ getScript(node.relpath+varName,\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ node.childrenData\ =\ getData(varName);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ expandNode(o,\ node,\ imm,\ setFocus);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node.childrenVisited)\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ getNode(o,\ node);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \$(node.getChildrenUL()).slideDown(\textcolor{stringliteral}{"{}fast"{}});}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ node.plus\_img.innerHTML\ =\ ARROW\_DOWN;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ node.expanded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (setFocus)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \$(node.expandToggle).focus();}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{const}\ glowEffect\ =\ \textcolor{keyword}{function}(n,duration)\ \{}
+\DoxyCodeLine{00266\ \ \ \ \ n.addClass(\textcolor{stringliteral}{'glow'}).delay(duration).queue(\textcolor{keyword}{function}(next)\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).removeClass(\textcolor{stringliteral}{'glow'});next();}
+\DoxyCodeLine{00268\ \ \ \ \ \});}
+\DoxyCodeLine{00269\ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \textcolor{keyword}{const}\ highlightAnchor\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{const}\ aname\ =\ hashUrl();}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{const}\ anchor\ =\ \$(aname);}
+\DoxyCodeLine{00274\ \ \ \ \ gotoAnchor(anchor,aname);}
+\DoxyCodeLine{00275\ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \textcolor{keyword}{const}\ selectAndHighlight\ =\ \textcolor{keyword}{function}(hash,n)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ let\ a;}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{if}\ (hash)\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \textcolor{keyword}{const}\ link=stripPath(pathName())+\textcolor{charliteral}{':'}+hash.substring(1);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ a=\$(\textcolor{stringliteral}{'.item\ a[class\$="{}'}+link+\textcolor{stringliteral}{'"{}]'});}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ \&\&\ a.length)\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ a.parent().parent().addClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ a.parent().parent().attr(\textcolor{stringliteral}{'id'},\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ highlightAnchor();}
+\DoxyCodeLine{00287\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (n)\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \$(n.itemDiv).addClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \$(n.itemDiv).attr(\textcolor{stringliteral}{'id'},\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ let\ topOffset=5;}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$(\textcolor{stringliteral}{'\#nav-\/tree-\/contents\ .item:first'}).hasClass(\textcolor{stringliteral}{'selected'}))\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ topOffset+=25;}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \$(\textcolor{stringliteral}{'\#nav-\/sync'}).css(\textcolor{stringliteral}{'top'},topOffset+\textcolor{stringliteral}{'px'});}
+\DoxyCodeLine{00296\ \ \ \ \ showRoot();}
+\DoxyCodeLine{00297\ \ \ \}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \textcolor{keyword}{const}\ showNode\ =\ \textcolor{keyword}{function}(o,\ node,\ index,\ hash)\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ \&\&\ node.childrenData)\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof(node.childrenData)===\textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ varName\ =\ node.childrenData;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ getScript(node.relpath+varName,\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ node.childrenData\ =\ getData(varName);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ showNode(o,node,index,hash);}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node.childrenVisited)\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ getNode(o,\ node);}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \$(node.getChildrenUL()).css(\{\textcolor{stringliteral}{'display'}:\textcolor{stringliteral}{'block'}\});}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ node.plus\_img.innerHTML\ =\ ARROW\_DOWN;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ node.expanded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ n\ =\ node.children[o.breadcrumbs[index]];}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index+1<o.breadcrumbs.length)\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ showNode(o,n,index+1,hash);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (typeof(n.childrenData)===\textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ varName\ =\ n.childrenData;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ getScript(n.relpath+varName,\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ n.childrenData\ =\ getData(varName);}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ node.expanded=false;}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ showNode(o,node,index,hash);\ \textcolor{comment}{//\ retry\ with\ child\ node\ expanded}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ rootBase\ =\ stripPath(o.toroot.replace(/\(\backslash\)..+\$/,\ \textcolor{stringliteral}{''}));}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rootBase==\textcolor{stringliteral}{"{}index"{}}\ ||\ rootBase==\textcolor{stringliteral}{"{}pages"{}}\ ||\ rootBase==\textcolor{stringliteral}{"{}search"{}})\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ expandNode(o,\ n,\ \textcolor{keyword}{true},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ selectAndHighlight(hash,n);}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ selectAndHighlight(hash);}
+\DoxyCodeLine{00334\ \ \ \ \ \}}
+\DoxyCodeLine{00335\ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \textcolor{keyword}{const}\ removeToInsertLater\ =\ \textcolor{keyword}{function}(element)\ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{const}\ parentNode\ =\ element.parentNode;}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{const}\ nextSibling\ =\ element.nextSibling;}
+\DoxyCodeLine{00340\ \ \ \ \ parentNode.removeChild(element);}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextSibling)\ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ parentNode.insertBefore(element,\ nextSibling);}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ parentNode.appendChild(element);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \};}
+\DoxyCodeLine{00348\ \ \ \}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \textcolor{keyword}{const}\ getNode\ =\ \textcolor{keyword}{function}(o,\ po)\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keyword}{const}\ insertFunction\ =\ removeToInsertLater(po.li);}
+\DoxyCodeLine{00352\ \ \ \ \ po.childrenVisited\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keyword}{const}\ l\ =\ po.childrenData.length-\/1;}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordflow}{for}\ (let\ i\ in\ po.childrenData)\ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \textcolor{keyword}{const}\ nodeData\ =\ po.childrenData[i];}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ po.children[i]\ =\ newNode(o,\ po,\ nodeData[0],\ nodeData[1],\ nodeData[2],\ i==l);}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+\DoxyCodeLine{00358\ \ \ \ \ insertFunction();}
+\DoxyCodeLine{00359\ \ \ \}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \textcolor{keyword}{const}\ gotoNode\ =\ \textcolor{keyword}{function}(o,subIndex,root,hash,relpath)\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keyword}{const}\ nti\ =\ navTreeSubIndices[subIndex][root+hash];}
+\DoxyCodeLine{00363\ \ \ \ \ o.breadcrumbs\ =\ \$.extend(\textcolor{keyword}{true},\ [],\ nti\ ?\ nti\ :\ navTreeSubIndices[subIndex][root]);}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{if}\ (!o.breadcrumbs\ \&\&\ root!=NAVTREE[0][1])\ \{\ \textcolor{comment}{//\ fallback:\ show\ index}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ navTo(o,NAVTREE[0][1],\textcolor{stringliteral}{"{}"{}},relpath);}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeAttr(\textcolor{stringliteral}{'id'});}
+\DoxyCodeLine{00368\ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{if}\ (o.breadcrumbs)\ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ o.breadcrumbs.unshift(0);\ \textcolor{comment}{//\ add\ 0\ for\ root\ node}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ showNode(o,\ o.node,\ 0,\ hash);}
+\DoxyCodeLine{00372\ \ \ \ \ \}}
+\DoxyCodeLine{00373\ \ \ \}}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \textcolor{keyword}{const}\ navTo\ =\ \textcolor{keyword}{function}(o,root,hash,relpath)\ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keyword}{const}\ link\ =\ cachedLink();}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{if}\ (link)\ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \textcolor{keyword}{const}\ parts\ =\ link.split(\textcolor{charliteral}{'\#'});}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ root\ =\ parts[0];}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ hash\ =\ parts.length>1\ ?\ \textcolor{charliteral}{'\#'}+parts[1].replace(/[\string^\(\backslash\)w-\/]/g,\textcolor{stringliteral}{''})\ :\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{00381\ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{if}\ (hash.match(/\string^\#l\(\backslash\)d+\$/))\ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \textcolor{keyword}{const}\ anchor=\$(\textcolor{stringliteral}{'a[name='}+hash.substring(1)+\textcolor{charliteral}{']'});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ glowEffect(anchor.parent(),1000);\ \textcolor{comment}{//\ line\ number}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ hash=\textcolor{stringliteral}{''};\ \textcolor{comment}{//\ strip\ line\ number\ anchors}}
+\DoxyCodeLine{00386\ \ \ \ \ \}}
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keyword}{const}\ url=root+hash;}
+\DoxyCodeLine{00388\ \ \ \ \ let\ i=-\/1;}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{while}\ (NAVTREEINDEX[i+1]<=url)\ i++;}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordflow}{if}\ (i==-\/1)\ \{\ i=0;\ root=NAVTREE[0][1];\ \}\ \textcolor{comment}{//\ fallback:\ show\ index}}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordflow}{if}\ (navTreeSubIndices[i])\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ gotoNode(o,i,root,hash,relpath)}
+\DoxyCodeLine{00393\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ getScript(relpath+\textcolor{stringliteral}{'navtreeindex'}+i,\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ navTreeSubIndices[i]\ =\ eval(\textcolor{stringliteral}{'NAVTREEINDEX'}+i);}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (navTreeSubIndices[i])\ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ gotoNode(o,i,root,hash,relpath);}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00400\ \ \ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \textcolor{keyword}{const}\ showSyncOff\ =\ \textcolor{keyword}{function}(n,relpath)\ \{}
+\DoxyCodeLine{00404\ \ \ \ \ n.html(\textcolor{stringliteral}{'<img\ src="{}'}+relpath+\textcolor{stringliteral}{'sync\_off.png"{}\ title="{}'}+SYNCOFFMSG+\textcolor{stringliteral}{'"{}/>'});}
+\DoxyCodeLine{00405\ \ \ \}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \textcolor{keyword}{const}\ showSyncOn\ =\ \textcolor{keyword}{function}(n,relpath)\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ n.html(\textcolor{stringliteral}{'<img\ src="{}'}+relpath+\textcolor{stringliteral}{'sync\_on.png"{}\ title="{}'}+SYNCONMSG+\textcolor{stringliteral}{'"{}/>'});}
+\DoxyCodeLine{00409\ \ \ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \textcolor{keyword}{const}\ o\ =\ \{}
+\DoxyCodeLine{00412\ \ \ \ \ toroot\ :\ toroot,}
+\DoxyCodeLine{00413\ \ \ \ \ node\ \ \ :\ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ childrenData\ \ :\ NAVTREE,}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ children\ \ \ \ \ \ :\ [],}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ childrenUL\ \ \ \ :\ document.createElement(\textcolor{stringliteral}{"{}ul"{}}),}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ getChildrenUL\ :\ \textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ this.childrenUL\ \},}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ li\ \ \ \ \ \ \ \ \ \ \ \ :\ document.getElementById(\textcolor{stringliteral}{"{}nav-\/tree-\/contents"{}}),}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ depth\ \ \ \ \ \ \ \ \ :\ 0,}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ relpath\ \ \ \ \ \ \ :\ relpath,}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ expanded\ \ \ \ \ \ :\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ isLast\ \ \ \ \ \ \ \ :\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ plus\_img\ \ \ \ \ \ :\ document.createElement(\textcolor{stringliteral}{"{}span"{}}),}
+\DoxyCodeLine{00424\ \ \ \ \ \},}
+\DoxyCodeLine{00425\ \ \ \};}
+\DoxyCodeLine{00426\ \ \ o.node.li.appendChild(o.node.childrenUL);}
+\DoxyCodeLine{00427\ \ \ o.node.plus\_img.className\ =\ \textcolor{stringliteral}{'arrow'};}
+\DoxyCodeLine{00428\ \ \ o.node.plus\_img.innerHTML\ =\ ARROW\_RIGHT;}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \textcolor{keyword}{const}\ navSync\ =\ \$(\textcolor{stringliteral}{'\#nav-\/sync'});}
+\DoxyCodeLine{00431\ \ \ \textcolor{keywordflow}{if}\ (cachedLink())\ \{}
+\DoxyCodeLine{00432\ \ \ \ \ showSyncOff(navSync,relpath);}
+\DoxyCodeLine{00433\ \ \ \ \ navSync.removeClass(\textcolor{stringliteral}{'sync'});}
+\DoxyCodeLine{00434\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00435\ \ \ \ \ showSyncOn(navSync,relpath);}
+\DoxyCodeLine{00436\ \ \ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ navSync.click(()\ =>\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keyword}{const}\ navSync\ =\ \$(\textcolor{stringliteral}{'\#nav-\/sync'});}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordflow}{if}\ (navSync.hasClass(\textcolor{stringliteral}{'sync'}))\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ navSync.removeClass(\textcolor{stringliteral}{'sync'});}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ showSyncOff(navSync,relpath);}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ storeLink(stripPath2(pathName())+hashUrl());}
+\DoxyCodeLine{00444\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ navSync.addClass(\textcolor{stringliteral}{'sync'});}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ showSyncOn(navSync,relpath);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ deleteLink();}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \ \ \});}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ navTo(o,toroot,hashUrl(),relpath);}
+\DoxyCodeLine{00452\ \ \ showRoot();}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \$(window).bind(\textcolor{stringliteral}{'hashchange'},\ ()\ =>\ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordflow}{if}\ (!animationInProgress)\ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (window.location.hash\ \&\&\ window.location.hash.length>1)\ \{}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ let\ a;}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$(location).attr(\textcolor{stringliteral}{'hash'}))\ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ clslink=stripPath(pathName())+\textcolor{charliteral}{':'}+hashValue();}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ a=\$(\textcolor{stringliteral}{'.item\ a[class\$="{}'}+clslink.replace(/</g,\textcolor{stringliteral}{'\(\backslash\)\(\backslash\)3c\ '})+\textcolor{stringliteral}{'"{}]'});}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a==\textcolor{keyword}{null}\ ||\ !\$(a).parent().parent().hasClass(\textcolor{stringliteral}{'selected'}))\ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeAttr(\textcolor{stringliteral}{'id'});}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ link=stripPath2(pathName());}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ navTo(o,link,hashUrl(),relpath);}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'\#doc-\/content'}).scrollTop(0);}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeClass(\textcolor{stringliteral}{'selected'});}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.item'}).removeAttr(\textcolor{stringliteral}{'id'});}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ navTo(o,toroot,hashUrl(),relpath);}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \ \ \ \ \}}
+\DoxyCodeLine{00475\ \ \ \});}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \$(\textcolor{stringliteral}{"{}div.toc\ a[href]"{}}).click(\textcolor{keyword}{function}(e)\ \{}
+\DoxyCodeLine{00478\ \ \ \ \ e.preventDefault();}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keyword}{const}\ aname\ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{"{}href"{}});}
+\DoxyCodeLine{00480\ \ \ \ \ gotoAnchor(\$(aname),aname);}
+\DoxyCodeLine{00481\ \ \ \});}
+\DoxyCodeLine{00482\ \}}
+\DoxyCodeLine{00483\ \textcolor{comment}{/*\ @license-\/end\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,75 @@
+\doxysubsection{Referencia del archivo mysql\+\_\+native\+\_\+password.\+js}
+\hypertarget{a00236}{}\label{a00236}\index{mysql\_native\_password.js@{mysql\_native\_password.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00236_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}} = require(\textquotesingle{}../\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{auth\+\_\+41.\+js}}\textquotesingle{})
+\item 
+module \mbox{\hyperlink{a00236_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}\index{mysql\_native\_password.js@{mysql\_native\_password.js}!auth41@{auth41}}
+\index{auth41@{auth41}!mysql\_native\_password.js@{mysql\_native\_password.js}}
+\doxyparagraph{\texorpdfstring{auth41}{auth41}}
+{\footnotesize\ttfamily \label{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} auth41 = require(\textquotesingle{}../\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{auth\+\_\+41.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00236_source_l00004}{4}} del archivo \mbox{\hyperlink{a00236_source}{mysql\+\_\+native\+\_\+password.\+js}}.
+
+\Hypertarget{a00236_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{mysql\_native\_password.js@{mysql\_native\_password.js}!exports@{exports}}
+\index{exports@{exports}!mysql\_native\_password.js@{mysql\_native\_password.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00236_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ pluginOptions\ =>\ (\{\ connection,\ command\ \})\ =>\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ password\ =}
+\DoxyCodeLine{\ \ \ \ command.password\ ||\ pluginOptions.password\ ||\ connection.config.password;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ passwordSha1\ =}
+\DoxyCodeLine{\ \ \ \ command.passwordSha1\ ||}
+\DoxyCodeLine{\ \ \ \ pluginOptions.passwordSha1\ ||}
+\DoxyCodeLine{\ \ \ \ connection.config.passwordSha1;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ data\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ authPluginData1\ =\ data.slice(0,\ 8);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ authPluginData2\ =\ data.slice(8,\ 20);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ authToken;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (passwordSha1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ authToken\ =\ \mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}.calculateTokenFromPasswordSha(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ passwordSha1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ authPluginData1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ authPluginData2}
+\DoxyCodeLine{\ \ \ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ authToken\ =\ \mbox{\hyperlink{a00236_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}.calculateToken(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ password,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ authPluginData1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ authPluginData2}
+\DoxyCodeLine{\ \ \ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ authToken;}
+\DoxyCodeLine{\ \ \};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00236_source_l00006}{6}} del archivo \mbox{\hyperlink{a00236_source}{mysql\+\_\+native\+\_\+password.\+js}}.
+
+\Hypertarget{a00236_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{mysql\_native\_password.js@{mysql\_native\_password.js}!strict@{strict}}
+\index{strict@{strict}!mysql\_native\_password.js@{mysql\_native\_password.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00236_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00236_source_l00001}{1}} del archivo \mbox{\hyperlink{a00236_source}{mysql\+\_\+native\+\_\+password.\+js}}.
+

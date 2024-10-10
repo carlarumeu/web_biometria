@@ -1,0 +1,215 @@
+\doxysection{send}
+\hypertarget{a00972}{}\label{a00972}\index{send@{send}}
+\label{a00972_autotoc_md2233}%
+\Hypertarget{a00972_autotoc_md2233}%
+
+
+\href{https://npmjs.org/package/send}{\texttt{ }} \href{https://npmjs.org/package/send}{\texttt{ }} \href{https://github.com/pillarjs/send/actions/workflows/ci.yml}{\texttt{ }} \href{https://ci.appveyor.com/project/dougwilson/send}{\texttt{ }} \href{https://coveralls.io/r/pillarjs/send?branch=master}{\texttt{ }}
+
+Send is a library for streaming files from the file system as a http response supporting partial responses (Ranges), conditional-\/\+GET negotiation (If-\/\+Match, If-\/\+Unmodified-\/\+Since, If-\/\+None-\/\+Match, If-\/\+Modified-\/\+Since), high test coverage, and granular events which may be leveraged to take appropriate actions in your application or framework.
+
+Looking to serve up entire folders mapped to URLs? Try \href{https://www.npmjs.org/package/serve-static}{\texttt{ serve-\/static}}.\hypertarget{a00972_autotoc_md2234}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00972_autotoc_md2234}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ send}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2235}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00972_autotoc_md2235}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\ =\ require(\textcolor{stringliteral}{'send'})}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2236}{}\doxysubsubsection{\texorpdfstring{send(req, path, \mbox{[}options\mbox{]})}{send(req, path, \mbox{[}options\mbox{]})}}\label{a00972_autotoc_md2236}
+Create a new {\ttfamily Send\+Stream} for the given path to send to a {\ttfamily res}. The {\ttfamily req} is the Node.\+js HTTP request and the {\ttfamily path} is a urlencoded path to send (urlencoded, not the actual file-\/system path).\hypertarget{a00972_autotoc_md2237}{}\doxysubsubsubsection{\texorpdfstring{Options}{Options}}\label{a00972_autotoc_md2237}
+\hypertarget{a00972_autotoc_md2238}{}\doxysubsubsubsubsection{\texorpdfstring{accept\+Ranges}{accept\+Ranges}}\label{a00972_autotoc_md2238}
+Enable or disable accepting ranged requests, defaults to true. Disabling this will not send {\ttfamily Accept-\/\+Ranges} and ignore the contents of the {\ttfamily Range} request header.\hypertarget{a00972_autotoc_md2239}{}\doxysubsubsubsubsection{\texorpdfstring{cache\+Control}{cache\+Control}}\label{a00972_autotoc_md2239}
+Enable or disable setting {\ttfamily Cache-\/\+Control} response header, defaults to true. Disabling this will ignore the {\ttfamily immutable} and {\ttfamily max\+Age} options.\hypertarget{a00972_autotoc_md2240}{}\doxysubsubsubsubsection{\texorpdfstring{dotfiles}{dotfiles}}\label{a00972_autotoc_md2240}
+Set how "{}dotfiles"{} are treated when encountered. \doxylink{a00844}{A} dotfile is a file or directory that begins with a dot ("{}."{}). Note this check is done on the path itself without checking if the path actually exists on the disk. If {\ttfamily root} is specified, only the dotfiles above the root are checked (i.\+e. the root itself can be within a dotfile when when set to "{}deny"{}).
+
+
+\begin{DoxyItemize}
+\item `\textquotesingle{}allow'{\ttfamily No special treatment for dotfiles. -\/}\textquotesingle{}deny\textquotesingle{}{\ttfamily Send a 403 for any request for a dotfile. -\/}\textquotesingle{}ignore\textquotesingle{}\`{} Pretend like the dotfile does not exist and 404.
+\end{DoxyItemize}
+
+The default value is {\itshape similar} to `\textquotesingle{}ignore'\`{}, with the exception that this default will not ignore the files within a directory that begins with a dot, for backward-\/compatibility.\hypertarget{a00972_autotoc_md2241}{}\doxysubsubsubsubsection{\texorpdfstring{end}{end}}\label{a00972_autotoc_md2241}
+Byte offset at which the stream ends, defaults to the length of the file minus 1. The end is inclusive in the stream, meaning {\ttfamily end\+: 3} will include the 4th byte in the stream.\hypertarget{a00972_autotoc_md2242}{}\doxysubsubsubsubsection{\texorpdfstring{etag}{etag}}\label{a00972_autotoc_md2242}
+Enable or disable etag generation, defaults to true.\hypertarget{a00972_autotoc_md2243}{}\doxysubsubsubsubsection{\texorpdfstring{extensions}{extensions}}\label{a00972_autotoc_md2243}
+If a given file doesn\textquotesingle{}t exist, try appending one of the given extensions, in the given order. By default, this is disabled (set to {\ttfamily false}). An example value that will serve extension-\/less HTML files\+: `\mbox{[}\textquotesingle{}html', \textquotesingle{}htm\textquotesingle{}\mbox{]}\`{}. This is skipped if the requested file already has an extension.\hypertarget{a00972_autotoc_md2244}{}\doxysubsubsubsubsection{\texorpdfstring{immutable}{immutable}}\label{a00972_autotoc_md2244}
+Enable or disable the {\ttfamily immutable} directive in the {\ttfamily Cache-\/\+Control} response header, defaults to {\ttfamily false}. If set to {\ttfamily true}, the {\ttfamily max\+Age} option should also be specified to enable caching. The {\ttfamily immutable} directive will prevent supported clients from making conditional requests during the life of the {\ttfamily max\+Age} option to check if the file has changed.\hypertarget{a00972_autotoc_md2245}{}\doxysubsubsubsubsection{\texorpdfstring{index}{index}}\label{a00972_autotoc_md2245}
+By default send supports "{}index.\+html"{} files, to disable this set {\ttfamily false} or to supply a new index pass a string or an array in preferred order.\hypertarget{a00972_autotoc_md2246}{}\doxysubsubsubsubsection{\texorpdfstring{last\+Modified}{last\+Modified}}\label{a00972_autotoc_md2246}
+Enable or disable {\ttfamily Last-\/\+Modified} header, defaults to true. Uses the file system\textquotesingle{}s last modified value.\hypertarget{a00972_autotoc_md2247}{}\doxysubsubsubsubsection{\texorpdfstring{max\+Age}{max\+Age}}\label{a00972_autotoc_md2247}
+Provide a max-\/age in milliseconds for http caching, defaults to 0. This can also be a string accepted by the \href{https://www.npmjs.org/package/ms\#readme}{\texttt{ ms}} module.\hypertarget{a00972_autotoc_md2248}{}\doxysubsubsubsubsection{\texorpdfstring{root}{root}}\label{a00972_autotoc_md2248}
+Serve files relative to {\ttfamily path}.\hypertarget{a00972_autotoc_md2249}{}\doxysubsubsubsubsection{\texorpdfstring{start}{start}}\label{a00972_autotoc_md2249}
+Byte offset at which the stream starts, defaults to 0. The start is inclusive, meaning {\ttfamily start\+: 2} will include the 3rd byte in the stream.\hypertarget{a00972_autotoc_md2250}{}\doxysubsubsubsection{\texorpdfstring{Events}{Events}}\label{a00972_autotoc_md2250}
+The {\ttfamily Send\+Stream} is an event emitter and will emit the following events\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily error} an error occurred {\ttfamily (err)}
+\item {\ttfamily directory} a directory was requested {\ttfamily (res, path)}
+\item {\ttfamily file} a file was requested {\ttfamily (path, stat)}
+\item {\ttfamily headers} the headers are about to be set on a file {\ttfamily (res, path, stat)}
+\item {\ttfamily stream} file streaming has started {\ttfamily (stream)}
+\item {\ttfamily end} streaming has completed
+\end{DoxyItemize}\hypertarget{a00972_autotoc_md2251}{}\doxysubsubsubsection{\texorpdfstring{.pipe}{.pipe}}\label{a00972_autotoc_md2251}
+The {\ttfamily pipe} method is used to pipe the response into the Node.\+js HTTP response object, typically {\ttfamily \doxylink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send(req, path, options)}.pipe(res)}.\hypertarget{a00972_autotoc_md2252}{}\doxysubsubsection{\texorpdfstring{.mime}{.mime}}\label{a00972_autotoc_md2252}
+The {\ttfamily mime} export is the global instance of of the \href{https://www.npmjs.com/package/mime}{\texttt{ {\ttfamily mime} npm module}}.
+
+This is used to configure the MIME types that are associated with file extensions as well as other options for how to resolve the MIME type of a file (like the default type to use for an unknown file extension).\hypertarget{a00972_autotoc_md2253}{}\doxysubsection{\texorpdfstring{Error-\/handling}{Error-\/handling}}\label{a00972_autotoc_md2253}
+By default when no {\ttfamily error} listeners are present an automatic response will be made, otherwise you have full control over the response, aka you may show a 5xx page etc.\hypertarget{a00972_autotoc_md2254}{}\doxysubsection{\texorpdfstring{Caching}{Caching}}\label{a00972_autotoc_md2254}
+It does {\itshape not} perform internal caching, you should use a reverse proxy cache such as Varnish for this, or those fancy things called CDNs. If your application is small enough that it would benefit from single-\/node memory caching, it\textquotesingle{}s small enough that it does not need caching at all ;).\hypertarget{a00972_autotoc_md2255}{}\doxysubsection{\texorpdfstring{Debugging}{Debugging}}\label{a00972_autotoc_md2255}
+To enable {\ttfamily \doxylink{a00101_a651046067579e48d7f0d03ce38dc7cf8_a651046067579e48d7f0d03ce38dc7cf8}{debug()}} instrumentation output export {\bfseries{DEBUG}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ DEBUG=send\ node\ app}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2256}{}\doxysubsection{\texorpdfstring{Running tests}{Running tests}}\label{a00972_autotoc_md2256}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install}
+\DoxyCodeLine{\$\ npm\ test}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2257}{}\doxysubsection{\texorpdfstring{Examples}{Examples}}\label{a00972_autotoc_md2257}
+\hypertarget{a00972_autotoc_md2258}{}\doxysubsubsection{\texorpdfstring{Serve a specific file}{Serve a specific file}}\label{a00972_autotoc_md2258}
+This simple example will send a specific file to all requests.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\ =\ require('\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ server\ =\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \textcolor{stringliteral}{'/path/to/index.html'})}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000)}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2259}{}\doxysubsubsection{\texorpdfstring{Serve all files from a directory}{Serve all files from a directory}}\label{a00972_autotoc_md2259}
+This simple example will just serve up all the files in a given directory as the top-\/level. For example, a request {\ttfamily GET /foo.txt} will send back {\ttfamily /www/public/foo.txt}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}\ =\ require('parseurl')}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\ =\ require('\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ server\ =\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}).pathname,\ \{\ \mbox{\hyperlink{a00200_ab4b8daf4b8ea9d39568719e1e320076f_ab4b8daf4b8ea9d39568719e1e320076f}{root}}:\ \textcolor{stringliteral}{'/www/public'}\ \})}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000)}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2260}{}\doxysubsubsection{\texorpdfstring{Custom file types}{Custom file types}}\label{a00972_autotoc_md2260}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}\ =\ require('parseurl')}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\ =\ require('\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Default\ unknown\ types\ to\ text/plain}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}.\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.\mbox{\hyperlink{a00212_afca09a8404b2481ca11258e9284f8768_afca09a8404b2481ca11258e9284f8768}{default\_type}}\ =\ 'text/plain'}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Add\ a\ custom\ type}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}.\mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.\mbox{\hyperlink{a00212_a14947f326ebc4da17b5d55921c25e9fb_a14947f326ebc4da17b5d55921c25e9fb}{define}}(\{}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{'application/x-\/my-\/type'}:\ [\textcolor{stringliteral}{'x-\/mt'},\ \textcolor{stringliteral}{'x-\/mtt'}]}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ server\ =\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.createServer(\textcolor{keyword}{function}\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}).pathname,\ \{\ \mbox{\hyperlink{a00200_ab4b8daf4b8ea9d39568719e1e320076f_ab4b8daf4b8ea9d39568719e1e320076f}{root}}:\ \textcolor{stringliteral}{'/www/public'}\ \})}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000)}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2261}{}\doxysubsubsection{\texorpdfstring{Custom directory index view}{Custom directory index view}}\label{a00972_autotoc_md2261}
+This is a example of serving up a structure of directories with a custom function to render a listing of a directory.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}\ =\ require('\mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}')}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}\ =\ require('parseurl')}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\ =\ require('\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Transfer\ arbitrary\ files\ from\ within\ /www/example.com/public/*}}
+\DoxyCodeLine{\textcolor{comment}{//\ with\ a\ custom\ handler\ for\ directory\ listing}}
+\DoxyCodeLine{var\ server\ =\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}).pathname,\ \{\ index:\ \textcolor{keyword}{false},\ \mbox{\hyperlink{a00200_ab4b8daf4b8ea9d39568719e1e320076f_ab4b8daf4b8ea9d39568719e1e320076f}{root}}:\ \textcolor{stringliteral}{'/www/public'}\ \})}
+\DoxyCodeLine{\ \ \ \ .once(\textcolor{stringliteral}{'directory'},\ directory)}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Custom\ directory\ handler}}
+\DoxyCodeLine{\textcolor{keyword}{function}\ directory\ (\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ path)\ \{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}\ =\ \textcolor{keyword}{this}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ redirect\ to\ trailing\ slash\ for\ consistent\ url}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}.hasTrailingSlash())\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}.redirect(path)}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ get\ directory\ list}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}.readdir(path,\ \textcolor{keyword}{function}\ onReaddir\ (err,\ list)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}.error(err)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ render\ an\ index\ for\ the\ directory}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader(\textcolor{stringliteral}{'Content-\/Type'},\ \textcolor{stringliteral}{'text/plain;\ charset=UTF-\/8'})}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(list.join(\textcolor{charliteral}{'\(\backslash\)n'})\ +\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\ \ \})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2262}{}\doxysubsubsection{\texorpdfstring{Serving from a root directory with custom error-\/handling}{Serving from a root directory with custom error-\/handling}}\label{a00972_autotoc_md2262}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}\ =\ require('parseurl')}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}\ =\ require('\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ server\ =\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ your\ custom\ error-\/handling\ logic:}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{function}\ error\ (err)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.statusCode\ =\ err.status\ ||\ 500}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(err.message)}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ your\ custom\ headers}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{function}\ headers\ (\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ path,\ stat)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ serve\ all\ files\ for\ download}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader(\textcolor{stringliteral}{'Content-\/Disposition'},\ \textcolor{stringliteral}{'attachment'})}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ your\ custom\ directory\ handling\ logic:}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_a8de4982240756277f8ed598dae635f7b_a8de4982240756277f8ed598dae635f7b}{redirect}}\ ()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.statusCode\ =\ 301}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader(\textcolor{stringliteral}{'Location'},\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.url\ +\ \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.end(\textcolor{stringliteral}{'Redirecting\ to\ '}\ +\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.url\ +\ \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ transfer\ arbitrary\ files\ from\ within}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ /www/example.com/public/*}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a01177_a22abdd124753668e3939b76fbc8e3386_a22abdd124753668e3939b76fbc8e3386}{parseUrl}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}).pathname,\ \{\ \mbox{\hyperlink{a00200_ab4b8daf4b8ea9d39568719e1e320076f_ab4b8daf4b8ea9d39568719e1e320076f}{root}}:\ \textcolor{stringliteral}{'/www/public'}\ \})}
+\DoxyCodeLine{\ \ \ \ .on(\textcolor{stringliteral}{'error'},\ error)}
+\DoxyCodeLine{\ \ \ \ .on(\textcolor{stringliteral}{'directory'},\ \mbox{\hyperlink{a00116_a8de4982240756277f8ed598dae635f7b_a8de4982240756277f8ed598dae635f7b}{redirect}})}
+\DoxyCodeLine{\ \ \ \ .on(\textcolor{stringliteral}{'headers'},\ headers)}
+\DoxyCodeLine{\ \ \ \ .pipe(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{server.listen(3000)}
+
+\end{DoxyCode}
+\hypertarget{a00972_autotoc_md2263}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00972_autotoc_md2263}
+\mbox{[}MIT\mbox{]}(LICENSE) 

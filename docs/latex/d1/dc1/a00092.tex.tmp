@@ -1,0 +1,90 @@
+\doxysubsection{Referencia del archivo search.\+js}
+\label{a00092}\index{search.js@{search.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \textbf{ Search\+Box} (name, results\+Path, extension)
+\item 
+function \textbf{ Search\+Results} ()
+\item 
+function \textbf{ create\+Results} (results\+Path)
+\item 
+function \textbf{ init\+\_\+search} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \textbf{ SEARCH\+\_\+\+COOKIE\+\_\+\+NAME} = \textquotesingle{}\textquotesingle{}+\textquotesingle{}search\+\_\+grp\textquotesingle{}
+\item 
+const \textbf{ search\+Results} = new \textbf{ Search\+Results}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\index{search.js@{search.js}!createResults@{createResults}}
+\index{createResults@{createResults}!search.js@{search.js}}
+\doxyparagraph{createResults()}
+{\footnotesize\ttfamily \label{a00092_a8aa4c419374e021e5f28d18405d37735_a8aa4c419374e021e5f28d18405d37735} 
+function create\+Results (\begin{DoxyParamCaption}\item[{}]{results\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 597} del archivo \textbf{ search.\+js}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 0
+\index{search.js@{search.js}!init\_search@{init\_search}}
+\index{init\_search@{init\_search}!search.js@{search.js}}
+\doxyparagraph{init\_search()}
+{\footnotesize\ttfamily \label{a00092_ae95ec7d5d450d0a8d6928a594798aaf4_ae95ec7d5d450d0a8d6928a594798aaf4} 
+function init\+\_\+search (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 663} del archivo \textbf{ search.\+js}.
+
+\index{search.js@{search.js}!SearchBox@{SearchBox}}
+\index{SearchBox@{SearchBox}!search.js@{search.js}}
+\doxyparagraph{SearchBox()}
+{\footnotesize\ttfamily \label{a00092_afd29fffb457f905fb91d96a5f009e447_afd29fffb457f905fb91d96a5f009e447} 
+function Search\+Box (\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{results\+Path}{, }\item[{}]{extension}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 36} del archivo \textbf{ search.\+js}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+\index{search.js@{search.js}!SearchResults@{SearchResults}}
+\index{SearchResults@{SearchResults}!search.js@{search.js}}
+\doxyparagraph{SearchResults()}
+{\footnotesize\ttfamily \label{a00092_a597fe70284134aff1e591976413d5094_a597fe70284134aff1e591976413d5094} 
+function Search\+Results (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 351} del archivo \textbf{ search.\+js}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\index{search.js@{search.js}!SEARCH\_COOKIE\_NAME@{SEARCH\_COOKIE\_NAME}}
+\index{SEARCH\_COOKIE\_NAME@{SEARCH\_COOKIE\_NAME}!search.js@{search.js}}
+\doxyparagraph{SEARCH\_COOKIE\_NAME}
+{\footnotesize\ttfamily \label{a00092_ae1a29d700d2c8f72cece013e2ccdb823_ae1a29d700d2c8f72cece013e2ccdb823} 
+const SEARCH\+\_\+\+COOKIE\+\_\+\+NAME = \textquotesingle{}\textquotesingle{}+\textquotesingle{}search\+\_\+grp\textquotesingle{}}
+
+
+
+Definición en la línea \textbf{ 25} del archivo \textbf{ search.\+js}.
+
+\index{search.js@{search.js}!searchResults@{searchResults}}
+\index{searchResults@{searchResults}!search.js@{search.js}}
+\doxyparagraph{searchResults}
+{\footnotesize\ttfamily \label{a00092_a5cba59365ad44ebd6127a886a5f5d27f_a5cba59365ad44ebd6127a886a5f5d27f} 
+const search\+Results = new \textbf{ Search\+Results}()}
+
+
+
+Definición en la línea \textbf{ 27} del archivo \textbf{ search.\+js}.
+

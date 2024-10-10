@@ -1,0 +1,114 @@
+\doxysubsection{auth\+\_\+switch.\+js}
+\hypertarget{a00242_source}{}\label{a00242_source}\index{auth\_switch.js@{auth\_switch.js}}
+\mbox{\hyperlink{a00242}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00001}00001\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ July\ 5,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00002}00002\ \textcolor{comment}{//\ Errors\ generated\ by\ asynchronous\ authentication\ plugins\ are\ now\ being}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00003}00003\ \textcolor{comment}{//\ handled\ and\ subsequently\ emitted\ at\ the\ command\ level.}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00004}00004\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00006}\mbox{\hyperlink{a00242_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00006}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00008}\mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{00008}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}\ =\ require(\textcolor{stringliteral}{'../packets/index.js'});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00009}\mbox{\hyperlink{a00242_ac39ed6febdc60aead625b5b3c8ce931a_ac39ed6febdc60aead625b5b3c8ce931a}{00009}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00242_ac39ed6febdc60aead625b5b3c8ce931a_ac39ed6febdc60aead625b5b3c8ce931a}{sha256\_password}}\ =\ require(\textcolor{stringliteral}{'../auth\_plugins/sha256\_password'});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00010}\mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{00010}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{caching\_sha2\_password}}\ =\ require(\textcolor{stringliteral}{'../auth\_plugins/caching\_sha2\_password.js'});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00011}\mbox{\hyperlink{a00242_a6cbfd19863388d566b5a573dce2a115d_a6cbfd19863388d566b5a573dce2a115d}{00011}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00242_a6cbfd19863388d566b5a573dce2a115d_a6cbfd19863388d566b5a573dce2a115d}{mysql\_native\_password}}\ =\ require(\textcolor{stringliteral}{'../auth\_plugins/mysql\_native\_password.js'});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00012}\mbox{\hyperlink{a00242_afbe1129f182587198f7c686e9ac3b923_afbe1129f182587198f7c686e9ac3b923}{00012}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00242_afbe1129f182587198f7c686e9ac3b923_afbe1129f182587198f7c686e9ac3b923}{mysql\_clear\_password}}\ =\ require(\textcolor{stringliteral}{'../auth\_plugins/mysql\_clear\_password.js'});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00014}\mbox{\hyperlink{a00242_a7329242c554a5f0e51fa6332b1805e62_a7329242c554a5f0e51fa6332b1805e62}{00014}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00242_a7329242c554a5f0e51fa6332b1805e62_a7329242c554a5f0e51fa6332b1805e62}{standardAuthPlugins}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00015}00015\ \ \ \mbox{\hyperlink{a00242_ac39ed6febdc60aead625b5b3c8ce931a_ac39ed6febdc60aead625b5b3c8ce931a}{sha256\_password}}:\ \mbox{\hyperlink{a00242_ac39ed6febdc60aead625b5b3c8ce931a_ac39ed6febdc60aead625b5b3c8ce931a}{sha256\_password}}(\{\}),}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00016}00016\ \ \ \mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{caching\_sha2\_password}}:\ \mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{caching\_sha2\_password}}(\{\}),}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00017}00017\ \ \ \mbox{\hyperlink{a00242_a6cbfd19863388d566b5a573dce2a115d_a6cbfd19863388d566b5a573dce2a115d}{mysql\_native\_password}}:\ \mbox{\hyperlink{a00242_a6cbfd19863388d566b5a573dce2a115d_a6cbfd19863388d566b5a573dce2a115d}{mysql\_native\_password}}(\{\}),}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00018}00018\ \ \ \mbox{\hyperlink{a00242_afbe1129f182587198f7c686e9ac3b923_afbe1129f182587198f7c686e9ac3b923}{mysql\_clear\_password}}:\ \mbox{\hyperlink{a00242_afbe1129f182587198f7c686e9ac3b923_afbe1129f182587198f7c686e9ac3b923}{mysql\_clear\_password}}(\{\})}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00021}\mbox{\hyperlink{a00242_af2282c4650a0bf5fad9e909ddbb36890_af2282c4650a0bf5fad9e909ddbb36890}{00021}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00242_af2282c4650a0bf5fad9e909ddbb36890_af2282c4650a0bf5fad9e909ddbb36890}{warnLegacyAuthSwitch}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00022}00022\ \ \ console.warn(}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00023}00023\ \ \ \ \ \textcolor{stringliteral}{'WARNING!\ authSwitchHandler\ api\ is\ deprecated,\ please\ use\ new\ authPlugins\ api'}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00024}00024\ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00027}\mbox{\hyperlink{a00242_abbca6d53d54dab2b5df74b2ee2b51af7_abbca6d53d54dab2b5df74b2ee2b51af7}{00027}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00242_abbca6d53d54dab2b5df74b2ee2b51af7_abbca6d53d54dab2b5df74b2ee2b51af7}{authSwitchPluginError}}(error,\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00028}00028\ \ \ \textcolor{comment}{//\ Authentication\ errors\ are\ fatal}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00029}00029\ \ \ error.code\ =\ \textcolor{stringliteral}{'AUTH\_SWITCH\_PLUGIN\_ERROR'};}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00030}00030\ \ \ error.fatal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00032}00032\ \ \ command.emit(\textcolor{stringliteral}{'error'},\ error);}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00035}\mbox{\hyperlink{a00242_a7ad8e191a9973594fad59cd53df28ca2_a7ad8e191a9973594fad59cd53df28ca2}{00035}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00242_a7ad8e191a9973594fad59cd53df28ca2_a7ad8e191a9973594fad59cd53df28ca2}{authSwitchRequest}}(packet,\ connection,\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00036}00036\ \ \ \textcolor{keyword}{const}\ \{\ pluginName,\ pluginData\ \}\ =\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.AuthSwitchRequest.fromPacket(}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00037}00037\ \ \ \ \ packet}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00038}00038\ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00039}00039\ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ authPlugin\ =}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00040}00040\ \ \ \ \ connection.config.authPlugins\ \&\&\ connection.config.authPlugins[pluginName];}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00042}00042\ \ \ \textcolor{comment}{//\ legacy\ plugin\ api\ don't\ allow\ to\ override\ mysql\_native\_password}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00043}00043\ \ \ \textcolor{comment}{//\ if\ pluginName\ is\ mysql\_native\_password\ it's\ using\ standard\ auth4.1\ auth}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00044}00044\ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00045}00045\ \ \ \ \ connection.config.authSwitchHandler\ \&\&}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00046}00046\ \ \ \ \ pluginName\ !==\ \textcolor{stringliteral}{'mysql\_native\_password'}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00047}00047\ \ \ )\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{const}\ legacySwitchHandler\ =\ connection.config.authSwitchHandler;}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{a00242_af2282c4650a0bf5fad9e909ddbb36890_af2282c4650a0bf5fad9e909ddbb36890}{warnLegacyAuthSwitch}}();}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00050}00050\ \ \ \ \ legacySwitchHandler(\{\ pluginName,\ pluginData\ \},\ (err,\ data)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00242_abbca6d53d54dab2b5df74b2ee2b51af7_abbca6d53d54dab2b5df74b2ee2b51af7}{authSwitchPluginError}}(err,\ command);}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00053}00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00054}00054\ \ \ \ \ \ \ connection.writePacket(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.AuthSwitchResponse(data).toPacket());}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00055}00055\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00057}00057\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00058}00058\ \ \ \textcolor{keywordflow}{if}\ (!authPlugin)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00059}00059\ \ \ \ \ authPlugin\ =\ \mbox{\hyperlink{a00242_a7329242c554a5f0e51fa6332b1805e62_a7329242c554a5f0e51fa6332b1805e62}{standardAuthPlugins}}[pluginName];}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}\ (!authPlugin)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00063}00063\ \ \ \ \ \ \ \`{}\mbox{\hyperlink{a00820}{Server}}\ requests\ authentication\ \textcolor{keyword}{using}\ unknown\ \mbox{\hyperlink{a00572_a2e8a79061fcc588ba355a7772b9d8eb5_a2e8a79061fcc588ba355a7772b9d8eb5}{plugin}}\ \$\{pluginName\}.\ See\ \$\{\textcolor{stringliteral}{'TODO:\ add\ plugins\ doco\ here'}\}\ on\ how\ to\ configure\ \mbox{\hyperlink{a01237_a88083640992a53a144223e2bd602d47d_a88083640992a53a144223e2bd602d47d}{or}}\ author\ authentication\ plugins.\`{}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00064}00064\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00066}00066\ \ \ connection.\_authPlugin\ =\ authPlugin(\{\ connection,\ command\ \});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00067}00067\ \ \ Promise.resolve(connection.\_authPlugin(pluginData)).then(data\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (data)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00069}00069\ \ \ \ \ \ \ connection.writePacket(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.AuthSwitchResponse(data).toPacket());}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00071}00071\ \ \ \}).\textcolor{keywordflow}{catch}(err\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{a00242_abbca6d53d54dab2b5df74b2ee2b51af7_abbca6d53d54dab2b5df74b2ee2b51af7}{authSwitchPluginError}}(err,\ command);}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00073}00073\ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00076}\mbox{\hyperlink{a00242_acf8af0939e8bd603c9b771c9df73339b_acf8af0939e8bd603c9b771c9df73339b}{00076}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00242_acf8af0939e8bd603c9b771c9df73339b_acf8af0939e8bd603c9b771c9df73339b}{authSwitchRequestMoreData}}(packet,\ connection,\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00077}00077\ \ \ \textcolor{keyword}{const}\ \{\ data\ \}\ =\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.AuthSwitchRequestMoreData.fromPacket(packet);}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00079}00079\ \ \ \textcolor{keywordflow}{if}\ (connection.config.authSwitchHandler)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{const}\ legacySwitchHandler\ =\ connection.config.authSwitchHandler;}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{a00242_af2282c4650a0bf5fad9e909ddbb36890_af2282c4650a0bf5fad9e909ddbb36890}{warnLegacyAuthSwitch}}();}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00082}00082\ \ \ \ \ legacySwitchHandler(\{\ pluginData:\ data\ \},\ (err,\ data)\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00242_abbca6d53d54dab2b5df74b2ee2b51af7_abbca6d53d54dab2b5df74b2ee2b51af7}{authSwitchPluginError}}(err,\ command);}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00086}00086\ \ \ \ \ \ \ connection.writePacket(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.AuthSwitchResponse(data).toPacket());}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00087}00087\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00089}00089\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00091}00091\ \ \ \textcolor{keywordflow}{if}\ (!connection.\_authPlugin)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00093}00093\ \ \ \ \ \ \ \textcolor{stringliteral}{'AuthPluginMoreData\ received\ but\ no\ auth\ plugin\ instance\ found'}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00094}00094\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00095}00095\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00096}00096\ \ \ Promise.resolve(connection.\_authPlugin(data)).then(data\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (data)\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00098}00098\ \ \ \ \ \ \ connection.writePacket(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00242_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.AuthSwitchResponse(data).toPacket());}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00100}00100\ \ \ \}).\textcolor{keywordflow}{catch}(err\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{a00242_abbca6d53d54dab2b5df74b2ee2b51af7_abbca6d53d54dab2b5df74b2ee2b51af7}{authSwitchPluginError}}(err,\ command);}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00102}00102\ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{a00242_source_l00105}\mbox{\hyperlink{a00242_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00105}}\ module.exports\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00106}00106\ \ \ \mbox{\hyperlink{a00242_a7ad8e191a9973594fad59cd53df28ca2_a7ad8e191a9973594fad59cd53df28ca2}{authSwitchRequest}},}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00107}00107\ \ \ \mbox{\hyperlink{a00242_acf8af0939e8bd603c9b771c9df73339b_acf8af0939e8bd603c9b771c9df73339b}{authSwitchRequestMoreData}}}
+\DoxyCodeLine{\Hypertarget{a00242_source_l00108}00108\ \};}
+
+\end{DoxyCode}

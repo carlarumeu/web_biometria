@@ -1,0 +1,62 @@
+\doxysection{media-\/typer}
+\hypertarget{a00927}{}\label{a00927}\index{media-\/typer@{media-\/typer}}
+\label{a00927_autotoc_md1438}%
+\Hypertarget{a00927_autotoc_md1438}%
+
+
+\href{https://npmjs.org/package/media-typer}{\texttt{ }} \href{https://npmjs.org/package/media-typer}{\texttt{ }} \href{http://nodejs.org/download/}{\texttt{ }} \href{https://travis-ci.org/jshttp/media-typer}{\texttt{ }} \href{https://coveralls.io/r/jshttp/media-typer}{\texttt{ }}
+
+Simple RFC 6838 media type parser\hypertarget{a00927_autotoc_md1439}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00927_autotoc_md1439}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ media-\/typer}
+
+\end{DoxyCode}
+\hypertarget{a00927_autotoc_md1440}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00927_autotoc_md1440}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ typer\ =\ require(\textcolor{stringliteral}{'media-\/typer'})}
+
+\end{DoxyCode}
+\hypertarget{a00927_autotoc_md1441}{}\doxysubsubsection{\texorpdfstring{typer.\+parse(string)}{typer.\+parse(string)}}\label{a00927_autotoc_md1441}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ typer.parse(\textcolor{stringliteral}{'image/svg+xml;\ charset=utf-\/8'})}
+
+\end{DoxyCode}
+
+
+Parse a media type string. This will return an object with the following properties (examples are shown for the string `\textquotesingle{}image/svg+xml; charset=utf-\/8'\`{})\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily type}\+: The type of the media type (always lower case). Example\+: `\textquotesingle{}image'\`{}
+\item {\ttfamily subtype}\+: The subtype of the media type (always lower case). Example\+: `\textquotesingle{}svg'\`{}
+\item {\ttfamily suffix}\+: The suffix of the media type (always lower case). Example\+: `\textquotesingle{}xml'\`{}
+\item {\ttfamily parameters}\+: An object of the parameters in the media type (name of parameter always lower case). Example\+: `\{charset\+: \textquotesingle{}utf-\/8'\}\`{}
+\end{DoxyItemize}\hypertarget{a00927_autotoc_md1442}{}\doxysubsubsection{\texorpdfstring{typer.\+parse(req)}{typer.\+parse(req)}}\label{a00927_autotoc_md1442}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ typer.parse(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+
+\end{DoxyCode}
+
+
+Parse the {\ttfamily content-\/type} header from the given {\ttfamily req}. Short-\/cut for `typer.\+parse(req.\+headers\mbox{[}\textquotesingle{}content-\/type'\mbox{]})\`{}.\hypertarget{a00927_autotoc_md1443}{}\doxysubsubsection{\texorpdfstring{typer.\+parse(res)}{typer.\+parse(res)}}\label{a00927_autotoc_md1443}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ typer.parse(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})}
+
+\end{DoxyCode}
+
+
+Parse the {\ttfamily content-\/type} header set on the given {\ttfamily res}. Short-\/cut for `typer.\+parse(res.\+get\+Header(\textquotesingle{}content-\/type'))\`{}.\hypertarget{a00927_autotoc_md1444}{}\doxysubsubsection{\texorpdfstring{typer.\+format(obj)}{typer.\+format(obj)}}\label{a00927_autotoc_md1444}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ typer.format(\{\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}:\ \textcolor{stringliteral}{'image'},\ subtype:\ \textcolor{stringliteral}{'svg'},\ suffix:\ \textcolor{stringliteral}{'xml'}\})}
+
+\end{DoxyCode}
+
+
+Format an object into a media type string. This will return a string of the mime type for the given object. For the properties of the object, see the documentation for {\ttfamily typer.\+parse(string)}.\hypertarget{a00927_autotoc_md1445}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00927_autotoc_md1445}
+\mbox{[}MIT\mbox{]}(LICENSE) 

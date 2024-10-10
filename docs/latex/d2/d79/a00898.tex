@@ -1,0 +1,38 @@
+\doxysection{forwarded}
+\hypertarget{a00898}{}\label{a00898}\index{forwarded@{forwarded}}
+\label{a00898_autotoc_md1096}%
+\Hypertarget{a00898_autotoc_md1096}%
+
+
+\href{https://npmjs.org/package/forwarded}{\texttt{ }} \href{https://npmjs.org/package/forwarded}{\texttt{ }} \href{https://nodejs.org/en/download/}{\texttt{ }} \href{https://github.com/jshttp/forwarded/actions?query=workflow\%3Aci}{\texttt{ }} \href{https://coveralls.io/r/jshttp/forwarded?branch=master}{\texttt{ }}
+
+Parse HTTP X-\/\+Forwarded-\/\+For header\hypertarget{a00898_autotoc_md1097}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00898_autotoc_md1097}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ forwarded}
+
+\end{DoxyCode}
+\hypertarget{a00898_autotoc_md1098}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00898_autotoc_md1098}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ forwarded\ =\ require(\textcolor{stringliteral}{'forwarded'})}
+
+\end{DoxyCode}
+\hypertarget{a00898_autotoc_md1099}{}\doxysubsubsection{\texorpdfstring{forwarded(req)}{forwarded(req)}}\label{a00898_autotoc_md1099}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ addresses\ =\ forwarded(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+
+\end{DoxyCode}
+
+
+Parse the {\ttfamily X-\/\+Forwarded-\/\+For} header from the request. Returns an array of the addresses, including the socket address for the {\ttfamily req}, in reverse order (i.\+e. index {\ttfamily 0} is the socket address and the last index is the furthest address, typically the end-\/user).\hypertarget{a00898_autotoc_md1100}{}\doxysubsection{\texorpdfstring{Testing}{Testing}}\label{a00898_autotoc_md1100}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ test}
+
+\end{DoxyCode}
+\hypertarget{a00898_autotoc_md1101}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00898_autotoc_md1101}
+\mbox{[}MIT\mbox{]}(LICENSE) 

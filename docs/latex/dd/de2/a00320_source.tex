@@ -1,0 +1,71 @@
+\doxysubsection{types.\+js}
+\hypertarget{a00320_source}{}\label{a00320_source}\index{types.js@{types.js}}
+\mbox{\hyperlink{a00320}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00001}\mbox{\hyperlink{a00320_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00320_source_l00003}\mbox{\hyperlink{a00320_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00003}}\ module.exports\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00004}00004\ \ \ 0x00:\ \textcolor{stringliteral}{'DECIMAL'},\ \textcolor{comment}{//\ aka\ DECIMAL\ }}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00005}00005\ \ \ 0x01:\ \textcolor{stringliteral}{'TINY'},\ \textcolor{comment}{//\ aka\ TINYINT,\ 1\ byte}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00006}00006\ \ \ 0x02:\ \textcolor{stringliteral}{'SHORT'},\ \textcolor{comment}{//\ aka\ SMALLINT,\ 2\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00007}00007\ \ \ 0x03:\ \textcolor{stringliteral}{'LONG'},\ \textcolor{comment}{//\ aka\ INT,\ 4\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00008}00008\ \ \ 0x04:\ \textcolor{stringliteral}{'FLOAT'},\ \textcolor{comment}{//\ aka\ FLOAT,\ 4-\/8\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00009}00009\ \ \ 0x05:\ \textcolor{stringliteral}{'DOUBLE'},\ \textcolor{comment}{//\ aka\ DOUBLE,\ 8\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00010}00010\ \ \ 0x06:\ \textcolor{stringliteral}{'NULL'},\ \textcolor{comment}{//\ NULL\ (used\ for\ prepared\ statements,\ I\ think)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00011}00011\ \ \ 0x07:\ \textcolor{stringliteral}{'TIMESTAMP'},\ \textcolor{comment}{//\ aka\ TIMESTAMP}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00012}00012\ \ \ 0x08:\ \textcolor{stringliteral}{'LONGLONG'},\ \textcolor{comment}{//\ aka\ BIGINT,\ 8\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00013}00013\ \ \ 0x09:\ \textcolor{stringliteral}{'INT24'},\ \textcolor{comment}{//\ aka\ MEDIUMINT,\ 3\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00014}00014\ \ \ 0x0a:\ \textcolor{stringliteral}{'DATE'},\ \textcolor{comment}{//\ aka\ DATE}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00015}00015\ \ \ 0x0b:\ \textcolor{stringliteral}{'TIME'},\ \textcolor{comment}{//\ aka\ TIME}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00016}00016\ \ \ 0x0c:\ \textcolor{stringliteral}{'DATETIME'},\ \textcolor{comment}{//\ aka\ DATETIME}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00017}00017\ \ \ 0x0d:\ \textcolor{stringliteral}{'YEAR'},\ \textcolor{comment}{//\ aka\ YEAR,\ 1\ byte\ (don't\ ask)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00018}00018\ \ \ 0x0e:\ \textcolor{stringliteral}{'NEWDATE'},\ \textcolor{comment}{//\ aka\ ?}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00019}00019\ \ \ 0x0f:\ \textcolor{stringliteral}{'VARCHAR'},\ \textcolor{comment}{//\ aka\ VARCHAR\ (?)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00020}00020\ \ \ 0x10:\ \textcolor{stringliteral}{'BIT'},\ \textcolor{comment}{//\ aka\ BIT,\ 1-\/8\ byte}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00021}00021\ \ \ 0xf5:\ \textcolor{stringliteral}{'JSON'},}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00022}00022\ \ \ 0xf6:\ \textcolor{stringliteral}{'NEWDECIMAL'},\ \textcolor{comment}{//\ aka\ DECIMAL}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00023}00023\ \ \ 0xf7:\ \textcolor{stringliteral}{'ENUM'},\ \textcolor{comment}{//\ aka\ ENUM}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00024}00024\ \ \ 0xf8:\ \textcolor{stringliteral}{'SET'},\ \textcolor{comment}{//\ aka\ SET}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00025}00025\ \ \ 0xf9:\ \textcolor{stringliteral}{'TINY\_BLOB'},\ \textcolor{comment}{//\ aka\ TINYBLOB,\ TINYTEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00026}00026\ \ \ 0xfa:\ \textcolor{stringliteral}{'MEDIUM\_BLOB'},\ \textcolor{comment}{//\ aka\ MEDIUMBLOB,\ MEDIUMTEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00027}00027\ \ \ 0xfb:\ \textcolor{stringliteral}{'LONG\_BLOB'},\ \textcolor{comment}{//\ aka\ LONGBLOG,\ LONGTEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00028}00028\ \ \ 0xfc:\ \textcolor{stringliteral}{'BLOB'},\ \textcolor{comment}{//\ aka\ BLOB,\ TEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00029}00029\ \ \ 0xfd:\ \textcolor{stringliteral}{'VAR\_STRING'},\ \textcolor{comment}{//\ aka\ VARCHAR,\ VARBINARY}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00030}00030\ \ \ 0xfe:\ \textcolor{stringliteral}{'STRING'},\ \textcolor{comment}{//\ aka\ CHAR,\ BINARY}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00031}00031\ \ \ 0xff:\ \textcolor{stringliteral}{'GEOMETRY'}\ \textcolor{comment}{//\ aka\ GEOMETRY}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a00320_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a00320_source_l00035}00035\ \textcolor{comment}{//\ Manually\ extracted\ from\ mysql-\/5.5.23/include/mysql\_com.h}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00036}00036\ \textcolor{comment}{//\ some\ more\ info\ here:\ http://dev.mysql.com/doc/refman/5.5/en/c-\/api-\/prepared-\/statement-\/type-\/codes.html}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00037}\mbox{\hyperlink{a00320_a9f27e4aa8e3d74c80619c14ef09da890_a9f27e4aa8e3d74c80619c14ef09da890}{00037}}\ module.exports.DECIMAL\ =\ 0x00;\ \textcolor{comment}{//\ aka\ DECIMAL\ (http://dev.mysql.com/doc/refman/5.0/en/precision-\/math-\/decimal-\/changes.html)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00038}\mbox{\hyperlink{a00320_ae161a1078b5773c4e4924dc26a5d2f9d_ae161a1078b5773c4e4924dc26a5d2f9d}{00038}}\ module.exports.TINY\ =\ 0x01;\ \textcolor{comment}{//\ aka\ TINYINT,\ 1\ byte}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00039}\mbox{\hyperlink{a00320_a6fc0f75af5b4090de1dc5cb90f89dbc8_a6fc0f75af5b4090de1dc5cb90f89dbc8}{00039}}\ module.exports.SHORT\ =\ 0x02;\ \textcolor{comment}{//\ aka\ SMALLINT,\ 2\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00040}\mbox{\hyperlink{a00320_a7646b944d1fe4f9e93692aec4ebc8a69_a7646b944d1fe4f9e93692aec4ebc8a69}{00040}}\ module.exports.LONG\ =\ 0x03;\ \textcolor{comment}{//\ aka\ INT,\ 4\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00041}\mbox{\hyperlink{a00320_a7264a20bc6937ba950887a468b015a83_a7264a20bc6937ba950887a468b015a83}{00041}}\ module.exports.FLOAT\ =\ 0x04;\ \textcolor{comment}{//\ aka\ FLOAT,\ 4-\/8\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00042}\mbox{\hyperlink{a00320_a7c9a11ef7a73447342a832fb0e73dac2_a7c9a11ef7a73447342a832fb0e73dac2}{00042}}\ module.exports.DOUBLE\ =\ 0x05;\ \textcolor{comment}{//\ aka\ DOUBLE,\ 8\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00043}\mbox{\hyperlink{a00320_a5f32d0fdf98567fc4db97819516391e4_a5f32d0fdf98567fc4db97819516391e4}{00043}}\ module.exports.NULL\ =\ 0x06;\ \textcolor{comment}{//\ NULL\ (used\ for\ prepared\ statements,\ I\ think)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00044}\mbox{\hyperlink{a00320_a760861230b0e480d47c46bd8431f2475_a760861230b0e480d47c46bd8431f2475}{00044}}\ module.exports.TIMESTAMP\ =\ 0x07;\ \textcolor{comment}{//\ aka\ TIMESTAMP}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00045}\mbox{\hyperlink{a00320_ab9ac3456899f2167dba672250bb1c3c8_ab9ac3456899f2167dba672250bb1c3c8}{00045}}\ module.exports.LONGLONG\ =\ 0x08;\ \textcolor{comment}{//\ aka\ BIGINT,\ 8\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00046}\mbox{\hyperlink{a00320_a177c1d7a5bb2ad9056aa37d52d4e8046_a177c1d7a5bb2ad9056aa37d52d4e8046}{00046}}\ module.exports.INT24\ =\ 0x09;\ \textcolor{comment}{//\ aka\ MEDIUMINT,\ 3\ bytes}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00047}\mbox{\hyperlink{a00320_a9b69c4371857d961473a506ddc06ae27_a9b69c4371857d961473a506ddc06ae27}{00047}}\ module.exports.DATE\ =\ 0x0a;\ \textcolor{comment}{//\ aka\ DATE}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00048}\mbox{\hyperlink{a00320_a231a85a16634b4243ffc76f225cf8af6_a231a85a16634b4243ffc76f225cf8af6}{00048}}\ module.exports.TIME\ =\ 0x0b;\ \textcolor{comment}{//\ aka\ TIME}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00049}\mbox{\hyperlink{a00320_aeb2cd94fc036ab92ba8a89758d7ec41f_aeb2cd94fc036ab92ba8a89758d7ec41f}{00049}}\ module.exports.DATETIME\ =\ 0x0c;\ \textcolor{comment}{//\ aka\ DATETIME}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00050}\mbox{\hyperlink{a00320_a81f6178ad4ae5ad4db45eb97efbd38d3_a81f6178ad4ae5ad4db45eb97efbd38d3}{00050}}\ module.exports.YEAR\ =\ 0x0d;\ \textcolor{comment}{//\ aka\ YEAR,\ 1\ byte\ (don't\ ask)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00051}\mbox{\hyperlink{a00320_a9122ee9ae5ed34b54a29a089e43ff88f_a9122ee9ae5ed34b54a29a089e43ff88f}{00051}}\ module.exports.NEWDATE\ =\ 0x0e;\ \textcolor{comment}{//\ aka\ ?}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00052}\mbox{\hyperlink{a00320_a711acdcf4bf22d832b85fc48ed681f80_a711acdcf4bf22d832b85fc48ed681f80}{00052}}\ module.exports.VARCHAR\ =\ 0x0f;\ \textcolor{comment}{//\ aka\ VARCHAR\ (?)}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00053}\mbox{\hyperlink{a00320_a77e5461b86c0e7c82f99c0b727840a63_a77e5461b86c0e7c82f99c0b727840a63}{00053}}\ module.exports.BIT\ =\ 0x10;\ \textcolor{comment}{//\ aka\ BIT,\ 1-\/8\ byte}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00054}\mbox{\hyperlink{a00320_ab24a206944dd7ac4af0155a267536528_ab24a206944dd7ac4af0155a267536528}{00054}}\ module.exports.VECTOR\ =\ 0xf2;}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00055}\mbox{\hyperlink{a00320_a5c2083d67680a698a2c2d545b649a6f5_a5c2083d67680a698a2c2d545b649a6f5}{00055}}\ module.exports.JSON\ =\ 0xf5;}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00056}\mbox{\hyperlink{a00320_ac11a7224ceecf1778b138e0787286297_ac11a7224ceecf1778b138e0787286297}{00056}}\ module.exports.NEWDECIMAL\ =\ 0xf6;\ \textcolor{comment}{//\ aka\ DECIMAL}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00057}\mbox{\hyperlink{a00320_aec1d124b88d4c51681b528e97684c91b_aec1d124b88d4c51681b528e97684c91b}{00057}}\ module.exports.ENUM\ =\ 0xf7;\ \textcolor{comment}{//\ aka\ ENUM}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00058}\mbox{\hyperlink{a00320_aa86993c4a4601e0de75b37cef0c53262_aa86993c4a4601e0de75b37cef0c53262}{00058}}\ module.exports.SET\ =\ 0xf8;\ \textcolor{comment}{//\ aka\ SET}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00059}\mbox{\hyperlink{a00320_a56edb71daad9e97d9c1d2109a6bb5bc4_a56edb71daad9e97d9c1d2109a6bb5bc4}{00059}}\ module.exports.TINY\_BLOB\ =\ 0xf9;\ \textcolor{comment}{//\ aka\ TINYBLOB,\ TINYTEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00060}\mbox{\hyperlink{a00320_a7499ab0c3e5fbcf50f3e1ea7d3b2c0ba_a7499ab0c3e5fbcf50f3e1ea7d3b2c0ba}{00060}}\ module.exports.MEDIUM\_BLOB\ =\ 0xfa;\ \textcolor{comment}{//\ aka\ MEDIUMBLOB,\ MEDIUMTEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00061}\mbox{\hyperlink{a00320_aad7ae0f336771a62e1469f8c4b463bd4_aad7ae0f336771a62e1469f8c4b463bd4}{00061}}\ module.exports.LONG\_BLOB\ =\ 0xfb;\ \textcolor{comment}{//\ aka\ LONGBLOG,\ LONGTEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00062}\mbox{\hyperlink{a00320_ac88d4c6cc4660c85a10efd7bcb9541b0_ac88d4c6cc4660c85a10efd7bcb9541b0}{00062}}\ module.exports.BLOB\ =\ 0xfc;\ \textcolor{comment}{//\ aka\ BLOB,\ TEXT}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00063}\mbox{\hyperlink{a00320_acdeaff5b95d75b4a2cb27a10b20a3682_acdeaff5b95d75b4a2cb27a10b20a3682}{00063}}\ module.exports.VAR\_STRING\ =\ 0xfd;\ \textcolor{comment}{//\ aka\ VARCHAR,\ VARBINARY}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00064}\mbox{\hyperlink{a00320_a0d6cd6687613fa2bef38a72e70b15eab_a0d6cd6687613fa2bef38a72e70b15eab}{00064}}\ module.exports.STRING\ =\ 0xfe;\ \textcolor{comment}{//\ aka\ CHAR,\ BINARY}}
+\DoxyCodeLine{\Hypertarget{a00320_source_l00065}\mbox{\hyperlink{a00320_ae476c6f40683c03131730ac764f440da_ae476c6f40683c03131730ac764f440da}{00065}}\ module.exports.GEOMETRY\ =\ 0xff;\ \textcolor{comment}{//\ aka\ GEOMETRY}}
+
+\end{DoxyCode}

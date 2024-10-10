@@ -1,0 +1,46 @@
+\doxysubsection{to\+String\+Tag.\+js}
+\hypertarget{a00476_source}{}\label{a00476_source}\index{toStringTag.js@{toStringTag.js}}
+\mbox{\hyperlink{a00476}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00001}\mbox{\hyperlink{a00476_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00003}\mbox{\hyperlink{a00476_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{00003}}\ var\ \mbox{\hyperlink{a00476_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}\ =\ require(\textcolor{stringliteral}{'tape'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00004}\mbox{\hyperlink{a00476_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{00004}}\ var\ \mbox{\hyperlink{a00476_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{hasToStringTag}}\ =\ require(\textcolor{stringliteral}{'has-\/tostringtag/shams'})();}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00006}\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{00006}}\ var\ \mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}\ =\ require(\textcolor{stringliteral}{'../'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00008}00008\ \mbox{\hyperlink{a00476_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(\textcolor{stringliteral}{'Symbol.toStringTag'},\ \{\ skip:\ !\mbox{\hyperlink{a00476_a19435398d60d84af34f28b77a2cd2731_a19435398d60d84af34f28b77a2cd2731}{hasToStringTag}}\ \},\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.plan(4);}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00011}00011\ \ \ \ \ var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),\ \textcolor{stringliteral}{'\{\ a:\ 1\ \}'},\ \textcolor{stringliteral}{'object,\ no\ Symbol.toStringTag'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}[Symbol.toStringTag]\ =\ \textcolor{stringliteral}{'foo'};}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),\ \textcolor{stringliteral}{'\{\ a:\ 1,\ [Symbol(Symbol.toStringTag)]:\ \(\backslash\)'foo\(\backslash\)'\ \}'},\ \textcolor{stringliteral}{'object\ with\ Symbol.toStringTag'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'null\ objects'},\ \{\ skip:\ \textcolor{stringliteral}{'toString'}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \{\ \_\_proto\_\_:\ \textcolor{keyword}{null}\ \}\ \},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00018}00018\ \ \ \ \ \ \ \ \ st.plan(2);}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00020}00020\ \ \ \ \ \ \ \ \ var\ dict\ =\ \{\ \_\_proto\_\_:\ \textcolor{keyword}{null},\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00021}00021\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(dict),\ \textcolor{stringliteral}{'[Object:\ null\ prototype]\ \{\ a:\ 1\ \}'},\ \textcolor{stringliteral}{'null\ object\ with\ Symbol.toStringTag'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00023}00023\ \ \ \ \ \ \ \ \ dict[Symbol.toStringTag]\ =\ \textcolor{stringliteral}{'Dict'};}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00024}00024\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(dict),\ \textcolor{stringliteral}{'[Dict:\ null\ prototype]\ \{\ a:\ 1,\ [Symbol(Symbol.toStringTag)]:\ \(\backslash\)'Dict\(\backslash\)'\ \}'},\ \textcolor{stringliteral}{'null\ object\ with\ Symbol.toStringTag'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00025}00025\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.test(\textcolor{stringliteral}{'instances'},\ \textcolor{keyword}{function}\ (st)\ \{}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00028}00028\ \ \ \ \ \ \ \ \ st.plan(4);}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00033}00033\ \ \ \ \ \ \ \ \ st.equal(Object.prototype.toString.call(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}()),\ \textcolor{stringliteral}{'[object\ Object]'},\ \textcolor{stringliteral}{'instance,\ no\ toStringTag,\ Object.prototype.toString'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00034}00034\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}()),\ \textcolor{stringliteral}{'C\ \{\ a:\ 1\ \}'},\ \textcolor{stringliteral}{'instance,\ no\ toStringTag'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{a00476_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}.prototype[Symbol.toStringTag]\ =\ \textcolor{stringliteral}{'Class!'};}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00037}00037\ \ \ \ \ \ \ \ \ st.equal(Object.prototype.toString.call(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}()),\ \textcolor{stringliteral}{'[object\ Class!]'},\ \textcolor{stringliteral}{'instance,\ with\ toStringTag,\ Object.prototype.toString'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00038}00038\ \ \ \ \ \ \ \ \ st.equal(\mbox{\hyperlink{a00476_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{a00572_ab5213beaed71b2bb285c69e43ae32f57_ab5213beaed71b2bb285c69e43ae32f57}{C}}()),\ \textcolor{stringliteral}{'C\ [Class!]\ \{\ a:\ 1\ \}'},\ \textcolor{stringliteral}{'instance,\ with\ toStringTag'});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00039}00039\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00476_source_l00040}00040\ \});}
+
+\end{DoxyCode}

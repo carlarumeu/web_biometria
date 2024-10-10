@@ -1,0 +1,78 @@
+\doxysubsection{iconv-\/lite/encodings/sbcs-\/codec.js}
+\hypertarget{a01741_source}{}\label{a01741_source}\index{sbcs-\/codec.js@{sbcs-\/codec.js}}
+\mbox{\hyperlink{a01741}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00001}\mbox{\hyperlink{a01741_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{"{}use\ strict"{}};}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00002}\mbox{\hyperlink{a01741_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{00002}}\ var\ \mbox{\hyperlink{a01741_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}\ =\ require(\textcolor{stringliteral}{"{}safer-\/buffer"{}}).Buffer;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00004}00004\ \textcolor{comment}{//\ Single-\/byte\ codec.\ Needs\ a\ 'chars'\ string\ parameter\ that\ contains\ 256\ or\ 128\ chars\ that}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00005}00005\ \textcolor{comment}{//\ correspond\ to\ encoded\ bytes\ (if\ 128\ -\/\ then\ lower\ half\ is\ ASCII).\ }}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00007}\mbox{\hyperlink{a01741_a858eb0fd333384d365f41a13fc33c88c_a858eb0fd333384d365f41a13fc33c88c}{00007}}\ \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}.\_sbcs\ =\ \mbox{\hyperlink{a01741_a996ab49283c6821b32d3385c87f76480_a996ab49283c6821b32d3385c87f76480}{SBCSCodec}};}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00008}\mbox{\hyperlink{a01741_a996ab49283c6821b32d3385c87f76480_a996ab49283c6821b32d3385c87f76480}{00008}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01741_a996ab49283c6821b32d3385c87f76480_a996ab49283c6821b32d3385c87f76480}{SBCSCodec}}(codecOptions,\ \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (!codecOptions)}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{"{}SBCS\ codec\ is\ called\ without\ the\ data."{}})}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00011}00011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ Prepare\ char\ buffer\ for\ decoding.}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!codecOptions.chars\ ||\ (codecOptions.chars.length\ !==\ 128\ \&\&\ codecOptions.chars.length\ !==\ 256))}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{"{}Encoding\ '"{}}+codecOptions.type+\textcolor{stringliteral}{"{}'\ has\ incorrect\ 'chars'\ (must\ be\ of\ len\ 128\ or\ 256)"{}});}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00015}00015\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (codecOptions.chars.length\ ===\ 128)\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ asciiString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ 128;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ asciiString\ +=\ String.fromCharCode(\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}});}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00020}00020\ \ \ \ \ \ \ \ \ codecOptions.chars\ =\ asciiString\ +\ codecOptions.chars;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00023}00023\ \ \ \ \ this.decodeBuf\ =\ \mbox{\hyperlink{a01741_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.from(codecOptions.chars,\ \textcolor{stringliteral}{'ucs2'});}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Encoding\ buffer.}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00026}00026\ \ \ \ \ var\ encodeBuf\ =\ \mbox{\hyperlink{a01741_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.alloc(65536,\ \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.defaultCharSingleByte.charCodeAt(0));}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ codecOptions.chars.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00029}00029\ \ \ \ \ \ \ \ \ encodeBuf[codecOptions.chars.charCodeAt(\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})]\ =\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}};}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00031}00031\ \ \ \ \ this.encodeBuf\ =\ encodeBuf;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00034}\mbox{\hyperlink{a01741_a5cba3df30aa9f59cd53cb415dd8242a9_a5cba3df30aa9f59cd53cb415dd8242a9}{00034}}\ \mbox{\hyperlink{a01741_a996ab49283c6821b32d3385c87f76480_a996ab49283c6821b32d3385c87f76480}{SBCSCodec}}.prototype.encoder\ =\ \mbox{\hyperlink{a01741_afe89f0a9cc26a355822da5b555486146_afe89f0a9cc26a355822da5b555486146}{SBCSEncoder}};}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00035}\mbox{\hyperlink{a01741_a91ded3174b66a5054390c6cd705f7f86_a91ded3174b66a5054390c6cd705f7f86}{00035}}\ \mbox{\hyperlink{a01741_a996ab49283c6821b32d3385c87f76480_a996ab49283c6821b32d3385c87f76480}{SBCSCodec}}.prototype.decoder\ =\ SBCSDecoder;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00038}\mbox{\hyperlink{a01741_afe89f0a9cc26a355822da5b555486146_afe89f0a9cc26a355822da5b555486146}{00038}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01741_afe89f0a9cc26a355822da5b555486146_afe89f0a9cc26a355822da5b555486146}{SBCSEncoder}}(options,\ codec)\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00039}00039\ \ \ \ \ this.encodeBuf\ =\ codec.encodeBuf;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00042}00042\ \mbox{\hyperlink{a01741_afe89f0a9cc26a355822da5b555486146_afe89f0a9cc26a355822da5b555486146}{SBCSEncoder}}.prototype.write\ =\ \textcolor{keyword}{function}(str)\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00043}00043\ \ \ \ \ var\ buf\ =\ \mbox{\hyperlink{a01741_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.alloc(str.length);}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ str.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00045}00045\ \ \ \ \ \ \ \ \ buf[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]\ =\ this.encodeBuf[str.charCodeAt(\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}})];}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00046}00046\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00050}00050\ \mbox{\hyperlink{a01741_afe89f0a9cc26a355822da5b555486146_afe89f0a9cc26a355822da5b555486146}{SBCSEncoder}}.prototype.end\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00054}00054\ \textcolor{keyword}{function}\ SBCSDecoder(options,\ codec)\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00055}00055\ \ \ \ \ this.decodeBuf\ =\ codec.decodeBuf;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00058}00058\ SBCSDecoder.prototype.write\ =\ \textcolor{keyword}{function}(buf)\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ Strings\ are\ immutable\ in\ JS\ -\/>\ we\ use\ ucs2\ buffer\ to\ speed\ up\ computations.}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00060}00060\ \ \ \ \ var\ decodeBuf\ =\ this.decodeBuf;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00061}00061\ \ \ \ \ var\ newBuf\ =\ \mbox{\hyperlink{a01741_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.alloc(buf.length*2);}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00062}00062\ \ \ \ \ var\ idx1\ =\ 0,\ idx2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ buf.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00064}00064\ \ \ \ \ \ \ \ \ idx1\ =\ buf[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]*2;\ idx2\ =\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}*2;}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00065}00065\ \ \ \ \ \ \ \ \ newBuf[idx2]\ =\ decodeBuf[idx1];}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00066}00066\ \ \ \ \ \ \ \ \ newBuf[idx2+1]\ =\ decodeBuf[idx1+1];}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ newBuf.toString(\textcolor{stringliteral}{'ucs2'});}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{a01741_source_l00071}00071\ SBCSDecoder.prototype.end\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01741_source_l00072}00072\ \}}
+
+\end{DoxyCode}

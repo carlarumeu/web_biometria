@@ -1,0 +1,211 @@
+\doxysubsection{dynsections.\+js}
+\label{a00035_source}\index{dynsections.js@{dynsections.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ @licstart\ \ The\ following\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ The\ MIT\ License\ (MIT)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ Copyright\ (C)\ 1997-\/2020\ by\ Dimitri\ van\ Heesch}}
+\DoxyCodeLine{00007\ \textcolor{comment}{}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this\ software}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ @licend\ \ The\ above\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{function}\ toggleVisibility(linkObj)\ \{}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordflow}{return}\ dynsection.toggleVisibility(linkObj);}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ let\ dynsection\ =\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ helper\ function}}
+\DoxyCodeLine{00033\ \ \ updateStripes\ :\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \$(\textcolor{stringliteral}{'table.directory\ tr'}).}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ removeClass(\textcolor{stringliteral}{'even'}).filter(\textcolor{stringliteral}{':visible:even'}).addClass(\textcolor{stringliteral}{'even'});}
+\DoxyCodeLine{00036\ \ \ \ \ \$(\textcolor{stringliteral}{'table.directory\ tr'}).}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ removeClass(\textcolor{stringliteral}{'odd'}).filter(\textcolor{stringliteral}{':visible:odd'}).addClass(\textcolor{stringliteral}{'odd'});}
+\DoxyCodeLine{00038\ \ \ \},}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ toggleVisibility\ :\ \textcolor{keyword}{function}(linkObj)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ base\ =\ \$(linkObj).attr(\textcolor{stringliteral}{'id'});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ summary\ =\ \$(\textcolor{charliteral}{'\#'}+base+\textcolor{stringliteral}{'-\/summary'});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ content\ =\ \$(\textcolor{charliteral}{'\#'}+base+\textcolor{stringliteral}{'-\/content'});}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ trigger\ =\ \$(\textcolor{charliteral}{'\#'}+base+\textcolor{stringliteral}{'-\/trigger'});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ src=\$(trigger).attr(\textcolor{stringliteral}{'src'});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (content.is(\textcolor{stringliteral}{':visible'})===\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ content.hide();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ summary.show();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \$(linkObj).addClass(\textcolor{stringliteral}{'closed'}).removeClass(\textcolor{stringliteral}{'opened'});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \$(trigger).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/8)+\textcolor{stringliteral}{'closed.png'});}
+\DoxyCodeLine{00051\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ content.show();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ summary.hide();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \$(linkObj).removeClass(\textcolor{stringliteral}{'closed'}).addClass(\textcolor{stringliteral}{'opened'});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \$(trigger).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/10)+\textcolor{stringliteral}{'open.png'});}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \},}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ toggleLevel\ :\ \textcolor{keyword}{function}(level)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \$(\textcolor{stringliteral}{'table.directory\ tr'}).each(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{const}\ l\ =\ this.\textcolor{keywordtype}{id}.split(\textcolor{charliteral}{'\_'}).length-\/1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{const}\ i\ =\ \$(\textcolor{stringliteral}{'\#img'}+this.\textcolor{keywordtype}{id}.substring(3));}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{const}\ a\ =\ \$(\textcolor{stringliteral}{'\#arr'}+this.\textcolor{keywordtype}{id}.substring(3));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l<level+1)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ i.removeClass(\textcolor{stringliteral}{'iconfopen\ iconfclosed'}).addClass(\textcolor{stringliteral}{'iconfopen'});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ a.html(\textcolor{stringliteral}{'\&\#9660;'});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).show();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (l==level+1)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ i.removeClass(\textcolor{stringliteral}{'iconfclosed\ iconfopen'}).addClass(\textcolor{stringliteral}{'iconfclosed'});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ a.html(\textcolor{stringliteral}{'\&\#9658;'});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).show();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).hide();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \});}
+\DoxyCodeLine{00077\ \ \ \ \ this.updateStripes();}
+\DoxyCodeLine{00078\ \ \ \},}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ toggleFolder\ :\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ the\ clicked\ row}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ currentRow\ =\ \$(\textcolor{stringliteral}{'\#row\_'}+\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ all\ rows\ after\ the\ clicked\ row}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ rows\ =\ currentRow.nextAll(\textcolor{stringliteral}{"{}tr"{}});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ re\ =\ \textcolor{keyword}{new}\ RegExp(\textcolor{stringliteral}{'\string^row\_'}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{'\(\backslash\)\(\backslash\)d+\_\$'},\ \textcolor{stringliteral}{"{}i"{}});\ \textcolor{comment}{//only\ one\ sub}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ only\ match\ elements\ AFTER\ this\ one\ (can't\ hide\ elements\ before)}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ childRows\ =\ rows.filter(\textcolor{keyword}{function}()\ \{\ \textcolor{keywordflow}{return}\ this.\textcolor{keywordtype}{id}.match(re);\ \});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ first\ row\ is\ visible\ we\ are\ HIDING}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (childRows.filter(\textcolor{stringliteral}{':first'}).is(\textcolor{stringliteral}{':visible'})===\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ down\ arrow\ by\ right\ arrow\ for\ current\ row}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{const}\ currentRowSpans\ =\ currentRow.find(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.iconfopen"{}}).removeClass(\textcolor{stringliteral}{"{}iconfopen"{}}).addClass(\textcolor{stringliteral}{"{}iconfclosed"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.arrow"{}}).html(\textcolor{stringliteral}{'\&\#9658;'});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ rows.filter(\textcolor{stringliteral}{"{}[id\string^=row\_"{}}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{"{}]"{}}).hide();\ \textcolor{comment}{//\ hide\ all\ children}}
+\DoxyCodeLine{00099\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ we\ are\ SHOWING}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ right\ arrow\ by\ down\ arrow\ for\ current\ row}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keyword}{const}\ currentRowSpans\ =\ currentRow.find(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.iconfclosed"{}}).removeClass(\textcolor{stringliteral}{"{}iconfclosed"{}}).addClass(\textcolor{stringliteral}{"{}iconfopen"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ currentRowSpans.filter(\textcolor{stringliteral}{"{}.arrow"{}}).html(\textcolor{stringliteral}{'\&\#9660;'});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ down\ arrows\ by\ right\ arrows\ for\ child\ rows}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keyword}{const}\ childRowsSpans\ =\ childRows.find(\textcolor{stringliteral}{"{}span"{}});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ childRowsSpans.filter(\textcolor{stringliteral}{"{}.iconfopen"{}}).removeClass(\textcolor{stringliteral}{"{}iconfopen"{}}).addClass(\textcolor{stringliteral}{"{}iconfclosed"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ childRowsSpans.filter(\textcolor{stringliteral}{"{}.arrow"{}}).html(\textcolor{stringliteral}{'\&\#9658;'});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ childRows.show();\ \textcolor{comment}{//show\ all\ children}}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ this.updateStripes();}
+\DoxyCodeLine{00111\ \ \ \},}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ toggleInherit\ :\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ rows\ =\ \$(\textcolor{stringliteral}{'tr.inherit.'}+\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{const}\ img\ =\ \$(\textcolor{stringliteral}{'tr.inherit\_header.'}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{'\ img'});}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ src\ =\ \$(img).attr(\textcolor{stringliteral}{'src'});}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (rows.filter(\textcolor{stringliteral}{':first'}).is(\textcolor{stringliteral}{':visible'})===\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ rows.css(\textcolor{stringliteral}{'display'},\textcolor{stringliteral}{'none'});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \$(img).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/8)+\textcolor{stringliteral}{'closed.png'});}
+\DoxyCodeLine{00120\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ rows.css(\textcolor{stringliteral}{'display'},\textcolor{stringliteral}{'table-\/row'});\ \textcolor{comment}{//\ using\ show()\ causes\ jump\ in\ firefox}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \$(img).attr(\textcolor{stringliteral}{'src'},src.substring(0,src.length-\/10)+\textcolor{stringliteral}{'open.png'});}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \},}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ let\ codefold\ =\ \{}
+\DoxyCodeLine{00128\ \ \ opened\ :\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{comment}{//\ in\ case\ HTML\_COLORSTYLE\ is\ LIGHT\ or\ DARK\ the\ vars\ will\ be\ replaced,\ so\ we\ write\ them\ out\ explicitly\ and\ use\ double\ quotes}}
+\DoxyCodeLine{00131\ \ \ plusImg:\ \ [\ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/plus-\/image)"{}},\ \ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/plus-\/image-\/relpath)"{}}\ ],}
+\DoxyCodeLine{00132\ \ \ minusImg:\ [\ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/minus-\/image)"{}},\ \textcolor{stringliteral}{"{}var(-\/-\/fold-\/minus-\/image-\/relpath)"{}}\ ],}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ toggle\ all\ folding\ blocks}}
+\DoxyCodeLine{00135\ \ \ toggle\_all\ :\ \textcolor{keyword}{function}(relPath)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.opened)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'\#fold\_all'}).css(\textcolor{stringliteral}{'background-\/image'},this.plusImg[relPath]);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldopen]'}).hide();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldclosed]'}).show();}
+\DoxyCodeLine{00140\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'\#fold\_all'}).css(\textcolor{stringliteral}{'background-\/image'},this.minusImg[relPath]);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldopen]'}).show();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'div[id\string^=foldclosed]'}).hide();}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ this.opened=!this.opened;}
+\DoxyCodeLine{00146\ \ \ \},}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ toggle\ single\ folding\ block}}
+\DoxyCodeLine{00149\ \ \ toggle\ :\ \textcolor{keyword}{function}(id)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \$(\textcolor{stringliteral}{'\#foldopen'}+\textcolor{keywordtype}{id}).toggle();}
+\DoxyCodeLine{00151\ \ \ \ \ \$(\textcolor{stringliteral}{'\#foldclosed'}+\textcolor{keywordtype}{id}).toggle();}
+\DoxyCodeLine{00152\ \ \ \},}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ init\ :\ \textcolor{keyword}{function}(relPath)\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \$(\textcolor{stringliteral}{'span[class=lineno]'}).css(\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{stringliteral}{'padding-\/right'}:\textcolor{stringliteral}{'4px'},}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \textcolor{stringliteral}{'margin-\/right'}:\textcolor{stringliteral}{'2px'},}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{stringliteral}{'display'}:\textcolor{stringliteral}{'inline-\/block'},}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{stringliteral}{'width'}:\textcolor{stringliteral}{'54px'},}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \textcolor{stringliteral}{'background'}:\textcolor{stringliteral}{'linear-\/gradient(var(-\/-\/fold-\/line-\/color),var(-\/-\/fold-\/line-\/color))\ no-\/repeat\ 46px/2px\ 100\%'}}
+\DoxyCodeLine{00161\ \ \ \ \ \});}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{comment}{//\ add\ global\ toggle\ to\ first\ line}}
+\DoxyCodeLine{00163\ \ \ \ \ \$(\textcolor{stringliteral}{'span[class=lineno]:first'}).append(\textcolor{stringliteral}{'<span\ class="{}fold"{}\ id="{}fold\_all"{}\ '}+}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \textcolor{stringliteral}{'onclick="{}javascript:codefold.toggle\_all('}+relPath+\textcolor{stringliteral}{');"{}\ '}+}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \textcolor{stringliteral}{'style="{}background-\/image:'}+this.minusImg[relPath]+\textcolor{stringliteral}{';"{}></span>'});}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//\ add\ vertical\ lines\ to\ other\ rows}}
+\DoxyCodeLine{00167\ \ \ \ \ \$(\textcolor{stringliteral}{'span[class=lineno]'}).not(\textcolor{stringliteral}{':eq(0)'}).append(\textcolor{stringliteral}{'<span\ class="{}fold"{}></span>'});}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{comment}{//\ add\ toggle\ controls\ to\ lines\ with\ fold\ divs}}
+\DoxyCodeLine{00169\ \ \ \ \ \$(\textcolor{stringliteral}{'div[class=foldopen]'}).each(\textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ specific\ id\ to\ use}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{id}\ \ \ \ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{'id'}).replace(\textcolor{stringliteral}{'foldopen'},\textcolor{stringliteral}{''});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ start\ and\ end\ foldable\ fragment\ attributes}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{keyword}{const}\ start\ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{'data-\/start'});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{keyword}{const}\ end\ \ \ =\ \$(\textcolor{keyword}{this}).attr(\textcolor{stringliteral}{'data-\/end'});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \textcolor{comment}{//\ replace\ normal\ fold\ span\ with\ controls\ for\ the\ first\ line\ of\ a\ foldable\ fragment}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \$(\textcolor{keyword}{this}).find(\textcolor{stringliteral}{'span[class=fold]:first'}).replaceWith(\textcolor{stringliteral}{'<span\ class="{}fold"{}\ '}+}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'onclick="{}javascript:codefold.toggle(\(\backslash\)''}+\textcolor{keywordtype}{id}+\textcolor{charliteral}{'\(\backslash\)'});\textcolor{stringliteral}{"{}\ '+}}
+\DoxyCodeLine{00178\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'style="{}}background-\/image:\textcolor{stringliteral}{'+codefold.minusImg[relPath]+'};\textcolor{stringliteral}{"{}></span>');}}
+\DoxyCodeLine{00179\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ append\ div\ for\ folded\ (closed)\ representation}}
+\DoxyCodeLine{00180\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(this).after('<div\ id="{}}foldclosed\textcolor{stringliteral}{'+id+'}\textcolor{stringliteral}{"{}\ class="{}}foldclosed\textcolor{stringliteral}{"{}\ style="{}}display:none;\textcolor{stringliteral}{"{}></div>');}}
+\DoxyCodeLine{00181\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ extract\ the\ first\ line\ from\ the\ "{}}open\textcolor{stringliteral}{"{}\ section\ to\ represent\ closed\ content}}
+\DoxyCodeLine{00182\ \textcolor{stringliteral}{\ \ \ \ \ \ const\ line\ =\ \$(this).children().first().clone();}}
+\DoxyCodeLine{00183\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ remove\ any\ glow\ that\ might\ still\ be\ active\ on\ the\ original\ line}}
+\DoxyCodeLine{00184\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(line).removeClass('glow');}}
+\DoxyCodeLine{00185\ \textcolor{stringliteral}{\ \ \ \ \ \ if\ (start)\ \{}}
+\DoxyCodeLine{00186\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ //\ if\ line\ already\ ends\ with\ a\ start\ marker\ (e.g.\ trailing\ \{),\ remove\ it}}
+\DoxyCodeLine{00187\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \$(line).html(\$(line).html().replace(new\ RegExp('\(\backslash\)\(\backslash\)s*'+start+'\(\backslash\)\(\backslash\)s*\$','g'),''));}}
+\DoxyCodeLine{00188\ \textcolor{stringliteral}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00189\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ replace\ minus\ with\ plus\ symbol}}
+\DoxyCodeLine{00190\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(line).find('span[class=fold]').css('background-\/image',codefold.plusImg[relPath]);}}
+\DoxyCodeLine{00191\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ append\ ellipsis}}
+\DoxyCodeLine{00192\ \textcolor{stringliteral}{\ \ \ \ \ \ \$(line).append('\ '+start+'<a\ href="{}}javascript:codefold.toggle(\(\backslash\)\textcolor{stringliteral}{''}+\textcolor{keywordtype}{id}+\textcolor{charliteral}{'\(\backslash\)'})\textcolor{stringliteral}{"{}>\&\#8230;</a>'+end);}}
+\DoxyCodeLine{00193\ \textcolor{stringliteral}{\ \ \ \ \ \ //\ insert\ constructed\ line\ into\ closed\ div}}
+\DoxyCodeLine{00194\ \textcolor{stringliteral}{\ \ \ \ \ \ \$('\#foldclosed'+id).html(line);}}
+\DoxyCodeLine{00195\ \textcolor{stringliteral}{\ \ \ \ \});}}
+\DoxyCodeLine{00196\ \textcolor{stringliteral}{\ \ \},}}
+\DoxyCodeLine{00197\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{00198\ \textcolor{stringliteral}{/*\ @license-\/end\ */}}
+\DoxyCodeLine{00199\ \textcolor{stringliteral}{\$(function()\ \{}}
+\DoxyCodeLine{00200\ \textcolor{stringliteral}{\ \ \$('.code,.codeRef').each(function()\ \{}}
+\DoxyCodeLine{00201\ \textcolor{stringliteral}{\ \ \ \ \$(this).data('powertip',\$('\#a'+\$(this).attr('href').replace(/.*\(\backslash\)//,'').replace(/[\string^a-\/z\_A-\/Z0-\/9]/g,'\_')).html());}}
+\DoxyCodeLine{00202\ \textcolor{stringliteral}{\ \ \ \ \$.fn.powerTip.smartPlacementLists.s\ =\ [\ 's',\ 'n',\ 'ne',\ 'se'\ ];}}
+\DoxyCodeLine{00203\ \textcolor{stringliteral}{\ \ \ \ \$(this).powerTip(\{\ placement:\ 's',\ smartPlacement:\ true,\ mouseOnToPopup:\ true\ \});}}
+\DoxyCodeLine{00204\ \textcolor{stringliteral}{\ \ \});}}
+\DoxyCodeLine{00205\ \textcolor{stringliteral}{\});}}
+
+\end{DoxyCode}

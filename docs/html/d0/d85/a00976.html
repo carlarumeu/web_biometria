@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: serve-static</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d0/d85/a00976.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">serve-static</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md2340"></a></p>
+<p><a href="https://npmjs.org/package/serve-static"><img src="https://badgen.net/npm/v/serve-static" alt="NPM Version" class="inline"/></a> <a href="https://npmjs.org/package/serve-static"><img src="https://badgen.net/npm/dm/serve-static" alt="NPM Downloads" class="inline"/></a> <a href="https://github.com/expressjs/serve-static/actions/workflows/ci.yml"><img src="https://badgen.net/github/checks/expressjs/serve-static/master?label=linux" alt="Linux Build" class="inline"/></a> <a href="https://ci.appveyor.com/project/dougwilson/serve-static"><img src="https://badgen.net/appveyor/ci/dougwilson/serve-static/master?label=windows" alt="Windows Build" class="inline"/></a> <a href="https://coveralls.io/r/expressjs/serve-static?branch=master"><img src="https://badgen.net/coveralls/c/github/expressjs/serve-static/master" alt="Test Coverage" class="inline"/></a></p>
+<h1><a class="anchor" id="autotoc_md2341"></a>
+Install</h1>
+<p>This is a <a href="https://nodejs.org/en/">Node.js</a> module available through the <a href="https://www.npmjs.com/">npm registry</a>. Installation is done using the <a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally"><code>npm install</code> command</a>:</p>
+<div class="fragment"><div class="line">$ npm install serve-static</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2342"></a>
+API</h1>
+<div class="fragment"><div class="line">var serveStatic = require(<span class="stringliteral">&#39;serve-static&#39;</span>)</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2343"></a>
+serveStatic(root, options)</h2>
+<p>Create a new middleware function to serve files from within a given root directory. The file to serve will be determined by combining <code>req.url</code> with the provided root directory. When a file is not found, instead of sending a 404 response, this module will instead call <code>next()</code> to move on to the next middleware, allowing for stacking and fall-backs.</p>
+<h3><a class="anchor" id="autotoc_md2344"></a>
+Options</h3>
+<h4><a class="anchor" id="autotoc_md2345"></a>
+acceptRanges</h4>
+<p>Enable or disable accepting ranged requests, defaults to true. Disabling this will not send <code>Accept-Ranges</code> and ignore the contents of the <code>Range</code> request header.</p>
+<h4><a class="anchor" id="autotoc_md2346"></a>
+cacheControl</h4>
+<p>Enable or disable setting <code>Cache-Control</code> response header, defaults to true. Disabling this will ignore the <code>immutable</code> and <code>maxAge</code> options.</p>
+<h4><a class="anchor" id="autotoc_md2347"></a>
+dotfiles</h4>
+<p>Set how "dotfiles" are treated when encountered. <a class="el" href="../../d3/d69/a00844.html" title="Constructs a 64 bit two&#39;s-complement integer, given its low and high 32 bit values as signed integers...">A</a> dotfile is a file or directory that begins with a dot ("."). Note this check is done on the path itself without checking if the path actually exists on the disk. If <code>root</code> is specified, only the dotfiles above the root are checked (i.e. the root itself can be within a dotfile when set to "deny").</p>
+<ul>
+<li>&lsquo;'allow&rsquo;<code>No special treatment for dotfiles. -</code>'deny'<code>Deny a request for a dotfile and 403/</code>next()<code>. -</code>'ignore'<code>Pretend like the dotfile does not exist and 404/</code>next()`.</li>
+</ul>
+<p>The default value is similar to &lsquo;'ignore&rsquo;`, with the exception that this default will not ignore the files within a directory that begins with a dot.</p>
+<h4><a class="anchor" id="autotoc_md2348"></a>
+etag</h4>
+<p>Enable or disable etag generation, defaults to true.</p>
+<h4><a class="anchor" id="autotoc_md2349"></a>
+extensions</h4>
+<p>Set file extension fallbacks. When set, if a file is not found, the given extensions will be added to the file name and search for. The first that exists will be served. Example: &lsquo;['html&rsquo;, 'htm']`.</p>
+<p>The default value is <code>false</code>.</p>
+<h4><a class="anchor" id="autotoc_md2350"></a>
+fallthrough</h4>
+<p>Set the middleware to have client errors fall-through as just unhandled requests, otherwise forward a client error. The difference is that client errors like a bad request or a request to a non-existent file will cause this middleware to simply <code>next()</code> to your next middleware when this value is <code>true</code>. When this value is <code>false</code>, these errors (even 404s), will invoke <code>next(err)</code>.</p>
+<p>Typically <code>true</code> is desired such that multiple physical directories can be mapped to the same web address or for routes to fill in non-existent files.</p>
+<p>The value <code>false</code> can be used if this middleware is mounted at a path that is designed to be strictly a single file system directory, which allows for short-circuiting 404s for less overhead. This middleware will also reply to all methods.</p>
+<p>The default value is <code>true</code>.</p>
+<h4><a class="anchor" id="autotoc_md2351"></a>
+immutable</h4>
+<p>Enable or disable the <code>immutable</code> directive in the <code>Cache-Control</code> response header, defaults to <code>false</code>. If set to <code>true</code>, the <code>maxAge</code> option should also be specified to enable caching. The <code>immutable</code> directive will prevent supported clients from making conditional requests during the life of the <code>maxAge</code> option to check if the file has changed.</p>
+<h4><a class="anchor" id="autotoc_md2352"></a>
+index</h4>
+<p>By default this module will send "index.html" files in response to a request on a directory. To disable this set <code>false</code> or to supply a new index pass a string or an array in preferred order.</p>
+<h4><a class="anchor" id="autotoc_md2353"></a>
+lastModified</h4>
+<p>Enable or disable <code>Last-Modified</code> header, defaults to true. Uses the file system's last modified value.</p>
+<h4><a class="anchor" id="autotoc_md2354"></a>
+maxAge</h4>
+<p>Provide a max-age in milliseconds for http caching, defaults to 0. This can also be a string accepted by the <a href="https://www.npmjs.org/package/ms#readme">ms</a> module.</p>
+<h4><a class="anchor" id="autotoc_md2355"></a>
+redirect</h4>
+<p>Redirect to trailing "/" when the pathname is a dir. Defaults to <code>true</code>.</p>
+<h4><a class="anchor" id="autotoc_md2356"></a>
+setHeaders</h4>
+<p>Function to set custom headers on response. Alterations to the headers need to occur synchronously. The function is called as <code><a class="el" href="../../d6/d06/a00572_a2287243da4967181305b31f0ac827b66.html#a2287243da4967181305b31f0ac827b66">fn(res, path, stat)</a></code>, where the arguments are:</p>
+<ul>
+<li><code>res</code> the response object</li>
+<li><code>path</code> the file path that is being sent</li>
+<li><code>stat</code> the stat object of the file that is being sent</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2357"></a>
+Examples</h1>
+<h2><a class="anchor" id="autotoc_md2358"></a>
+Serve files with vanilla node.js http server</h2>
+<div class="fragment"><div class="line">var finalhandler = require(<span class="stringliteral">&#39;finalhandler&#39;</span>)</div>
+<div class="line">var <a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>&#39;)</div>
+<div class="line">var serveStatic = require(&#39;serve-static&#39;)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Serve up public/ftp folder</span></div>
+<div class="line">var serve = serveStatic(&#39;public/ftp&#39;, { index: [<span class="stringliteral">&#39;index.html&#39;</span>, <span class="stringliteral">&#39;index.htm&#39;</span>] })</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create server</span></div>
+<div class="line">var server = <a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>.createServer(<span class="keyword">function</span> onRequest (<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>) {</div>
+<div class="line">  serve(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, finalhandler(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>))</div>
+<div class="line">})</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Listen</span></div>
+<div class="line">server.listen(3000)</div>
+<div class="ttc" id="aa00101_a55f22d498ca401fddca364855629d1d3_html_a55f22d498ca401fddca364855629d1d3"><div class="ttname"><a href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a></div><div class="ttdeci">var http</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00023">application.js:23</a></div></div>
+<div class="ttc" id="aa00104_a42c43c76081a7df8ae2954f16ee9338b_html_a42c43c76081a7df8ae2954f16ee9338b"><div class="ttname"><a href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a></div><div class="ttdeci">var req</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00021">express.js:21</a></div></div>
+<div class="ttc" id="aa00104_abde3c35e3bb7e5225dd7f234c685329c_html_abde3c35e3bb7e5225dd7f234c685329c"><div class="ttname"><a href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a></div><div class="ttdeci">var res</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00022">express.js:22</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2359"></a>
+Serve all files as downloads</h2>
+<div class="fragment"><div class="line">var <a class="code hl_variable" href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a> = require(<span class="stringliteral">&#39;content-disposition&#39;</span>)</div>
+<div class="line">var finalhandler = require(&#39;finalhandler&#39;)</div>
+<div class="line">var <a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a> = require(&#39;<a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>&#39;)</div>
+<div class="line">var serveStatic = require(&#39;serve-static&#39;)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Serve up public/ftp folder</span></div>
+<div class="line">var serve = serveStatic(&#39;public/ftp&#39;, {</div>
+<div class="line">  index: <span class="keyword">false</span>,</div>
+<div class="line">  setHeaders: setHeaders</div>
+<div class="line">})</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Set header to force download</span></div>
+<div class="line"><span class="keyword">function</span> setHeaders (<a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, path) {</div>
+<div class="line">  <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.setHeader(<span class="stringliteral">&#39;Content-Disposition&#39;</span>, <a class="code hl_variable" href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a>(path))</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create server</span></div>
+<div class="line">var server = <a class="code hl_variable" href="../../d4/d3a/a00101_a55f22d498ca401fddca364855629d1d3.html#a55f22d498ca401fddca364855629d1d3">http</a>.createServer(<span class="keyword">function</span> onRequest (<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>) {</div>
+<div class="line">  serve(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, finalhandler(<a class="code hl_variable" href="../../d0/dc2/a00104_a42c43c76081a7df8ae2954f16ee9338b.html#a42c43c76081a7df8ae2954f16ee9338b">req</a>, <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>))</div>
+<div class="line">})</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Listen</span></div>
+<div class="line">server.listen(3000)</div>
+<div class="ttc" id="aa01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_html_aa1ae8b5aa0df46fcc9f22aba2deb965a"><div class="ttname"><a href="../../d9/df7/a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a.html#aa1ae8b5aa0df46fcc9f22aba2deb965a">contentDisposition</a></div><div class="ttdeci">exports contentDisposition</div><div class="ttdoc">Generate Content-Disposition header appropriate for the filename.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/df7/a01699_source.html#l00114">express/lib/utils.js:114</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2360"></a>
+Serving using express</h2>
+<h3><a class="anchor" id="autotoc_md2361"></a>
+Simple</h3>
+<p>This is a simple example of using Express.</p>
+<div class="fragment"><div class="line">var <a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a> = require(<span class="stringliteral">&#39;express&#39;</span>)</div>
+<div class="line">var serveStatic = require(&#39;serve-static&#39;)</div>
+<div class="line"> </div>
+<div class="line">var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = <a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a>()</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.<a class="code hl_variable" href="../../d4/d3a/a00101_a8192500ed5d08ae60d3778b54729bd51.html#a8192500ed5d08ae60d3778b54729bd51">use</a>(serveStatic(&#39;public/ftp&#39;, { index: [<span class="stringliteral">&#39;default.html&#39;</span>, <span class="stringliteral">&#39;default.htm&#39;</span>] }))</div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.listen(3000)</div>
+<div class="ttc" id="aa00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_html_a7b225fcb720e4d5ed2bbf60e28a25e6d"><div class="ttname"><a href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a></div><div class="ttdeci">var app</div><div class="ttdoc">Application prototype.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00045">application.js:45</a></div></div>
+<div class="ttc" id="aa00101_a8192500ed5d08ae60d3778b54729bd51_html_a8192500ed5d08ae60d3778b54729bd51"><div class="ttname"><a href="../../d4/d3a/a00101_a8192500ed5d08ae60d3778b54729bd51.html#a8192500ed5d08ae60d3778b54729bd51">use</a></div><div class="ttdeci">app use</div><div class="ttdoc">Proxy Router#use() to add middleware to the app router.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00194">application.js:194</a></div></div>
+<div class="ttc" id="aa01369_af0deccff0ccdd703412620ba83155b82_html_af0deccff0ccdd703412620ba83155b82"><div class="ttname"><a href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a></div><div class="ttdeci">import express from express</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d17/a01369_source.html#l00001">src/index.js:1</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2362"></a>
+Multiple roots</h3>
+<p>This example shows a simple way to search through multiple directories. Files are searched for in <code>public-optimized/</code> first, then <code>public/</code> second as a fallback.</p>
+<div class="fragment"><div class="line">var <a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a> = require(<span class="stringliteral">&#39;express&#39;</span>)</div>
+<div class="line">var path = require(&#39;path&#39;)</div>
+<div class="line">var serveStatic = require(&#39;serve-static&#39;)</div>
+<div class="line"> </div>
+<div class="line">var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = <a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a>()</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.<a class="code hl_variable" href="../../d4/d3a/a00101_a8192500ed5d08ae60d3778b54729bd51.html#a8192500ed5d08ae60d3778b54729bd51">use</a>(serveStatic(path.<a class="code hl_variable" href="../../d1/d88/a00128_a1b09aaf68c8a94c60f4b0cb28eec4132.html#a1b09aaf68c8a94c60f4b0cb28eec4132">join</a>(__dirname, &#39;public-optimized&#39;)))</div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.<a class="code hl_variable" href="../../d4/d3a/a00101_a8192500ed5d08ae60d3778b54729bd51.html#a8192500ed5d08ae60d3778b54729bd51">use</a>(serveStatic(path.<a class="code hl_variable" href="../../d1/d88/a00128_a1b09aaf68c8a94c60f4b0cb28eec4132.html#a1b09aaf68c8a94c60f4b0cb28eec4132">join</a>(__dirname, &#39;public&#39;)))</div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.<a class="code hl_variable" href="../../d4/d3a/a00101_a57e630eaf5f2d94b72288e1cef6edc49.html#a57e630eaf5f2d94b72288e1cef6edc49">listen</a>(3000)</div>
+<div class="ttc" id="aa00101_a57e630eaf5f2d94b72288e1cef6edc49_html_a57e630eaf5f2d94b72288e1cef6edc49"><div class="ttname"><a href="../../d4/d3a/a00101_a57e630eaf5f2d94b72288e1cef6edc49.html#a57e630eaf5f2d94b72288e1cef6edc49">listen</a></div><div class="ttdeci">app listen</div><div class="ttdoc">Listen for connections.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00633">application.js:633</a></div></div>
+<div class="ttc" id="aa00128_a1b09aaf68c8a94c60f4b0cb28eec4132_html_a1b09aaf68c8a94c60f4b0cb28eec4132"><div class="ttname"><a href="../../d1/d88/a00128_a1b09aaf68c8a94c60f4b0cb28eec4132.html#a1b09aaf68c8a94c60f4b0cb28eec4132">join</a></div><div class="ttdeci">var join</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d88/a00128_source.html#l00028">view.js:28</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2363"></a>
+Different settings for paths</h3>
+<p>This example shows how to set a different max age depending on the served file type. In this example, HTML files are not cached, while everything else is for 1 day.</p>
+<div class="fragment"><div class="line">var <a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a> = require(<span class="stringliteral">&#39;express&#39;</span>)</div>
+<div class="line">var path = require(&#39;path&#39;)</div>
+<div class="line">var serveStatic = require(&#39;serve-static&#39;)</div>
+<div class="line"> </div>
+<div class="line">var <a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a> = <a class="code hl_variable" href="../../d1/d17/a01369_af0deccff0ccdd703412620ba83155b82.html#af0deccff0ccdd703412620ba83155b82">express</a>()</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.<a class="code hl_variable" href="../../d4/d3a/a00101_a8192500ed5d08ae60d3778b54729bd51.html#a8192500ed5d08ae60d3778b54729bd51">use</a>(serveStatic(path.<a class="code hl_variable" href="../../d1/d88/a00128_a1b09aaf68c8a94c60f4b0cb28eec4132.html#a1b09aaf68c8a94c60f4b0cb28eec4132">join</a>(__dirname, &#39;public&#39;), {</div>
+<div class="line">  maxAge: <span class="stringliteral">&#39;1d&#39;</span>,</div>
+<div class="line">  setHeaders: setCustomCacheControl</div>
+<div class="line">}))</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_variable" href="../../d4/d3a/a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.listen(3000)</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">function</span> setCustomCacheControl (<a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, path) {</div>
+<div class="line">  <span class="keywordflow">if</span> (serveStatic.mime.lookup(path) === <span class="stringliteral">&#39;text/html&#39;</span>) {</div>
+<div class="line">    <span class="comment">// Custom Cache-Control for HTML files</span></div>
+<div class="line">    <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.setHeader(<span class="stringliteral">&#39;Cache-Control&#39;</span>, <span class="stringliteral">&#39;public, max-age=0&#39;</span>)</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2364"></a>
+License</h1>
+<p>[MIT](LICENSE) </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+\doxysubsection{medicion\+Routes.\+js}
+\label{a00107_source}\index{medicionRoutes.js@{medicionRoutes.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ \{\ Router\ \}\ from\ \textcolor{stringliteral}{'express'};}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ \{\ getMediciones,\ postMedicion,\ getUltimaMedicion\ \}\ from\ \textcolor{stringliteral}{'../controllers/medicionController.js'};}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{const}\ router\ =\ Router();}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00020\ router.get(\textcolor{charliteral}{'/'},\ getMediciones);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00031\ router.post(\textcolor{charliteral}{'/'},\ postMedicion);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00042\ router.get(\textcolor{stringliteral}{'/ultima'},\ getUltimaMedicion);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ export\ \textcolor{keywordflow}{default}\ router;}
+
+\end{DoxyCode}

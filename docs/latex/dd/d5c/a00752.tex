@@ -1,0 +1,395 @@
+\doxysubsection{Referencia de la clase Column\+Definition}
+\hypertarget{a00752}{}\label{a00752}\index{ColumnDefinition@{ColumnDefinition}}
+
+
+Diagrama de colaboración de Column\+Definition\+:
+% FIG 0
+\doxysubsubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00752_a5862cd0518b048ef5f9a070def52e616_a5862cd0518b048ef5f9a070def52e616}{constructor}} (packet, client\+Encoding)
+\item 
+\mbox{\hyperlink{a00752_afe3bc1f8a3f2974fa8710c110719b522_afe3bc1f8a3f2974fa8710c110719b522}{inspect}} ()
+\item 
+\mbox{\hyperlink{a00752_aa524686b8d847fb13c743cc7ef264b12_aa524686b8d847fb13c743cc7ef264b12}{for}} (\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}} \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}} \mbox{\hyperlink{a00338_acb7e0e89b59629f5d62ba2f3ecd63029_acb7e0e89b59629f5d62ba2f3ecd63029}{Types}})
+\item 
+\mbox{\hyperlink{a00752_afd917ec3542902412762314429e136d6_afd917ec3542902412762314429e136d6}{for}} (\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}} \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}} \mbox{\hyperlink{a00752_a9b44e7dd21124c353963f4d23cf82ffd_a9b44e7dd21124c353963f4d23cf82ffd}{fied\+Flags}})
+\item 
+\mbox{\hyperlink{a00752_aa864d8c3945eb5c3a62b880d01dc50f8_aa864d8c3945eb5c3a62b880d01dc50f8}{if}} (\mbox{\hyperlink{a00752_ae838ecc05978cc470c595461ab4f0dac_ae838ecc05978cc470c595461ab4f0dac}{depth}} $>$ 1)
+\item 
+\mbox{\hyperlink{a00752_a8e73458c3b7bf532261badea791a029a_a8e73458c3b7bf532261badea791a029a}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00308_aaf4b4acb6d563789c6eff32ec6ef0fe4_aaf4b4acb6d563789c6eff32ec6ef0fe4}{BLOB}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a2e94670a0a53bc8b0aae84f26c048d56_a2e94670a0a53bc8b0aae84f26c048d56}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_acdeaff5b95d75b4a2cb27a10b20a3682_acdeaff5b95d75b4a2cb27a10b20a3682}{VAR\+\_\+\+STRING}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a86b29212fee324842c9ff7ede69add4b_a86b29212fee324842c9ff7ede69add4b}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_ae161a1078b5773c4e4924dc26a5d2f9d_ae161a1078b5773c4e4924dc26a5d2f9d}{TINY}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a274bdf6a71098811975d14ed6c1a39ea_a274bdf6a71098811975d14ed6c1a39ea}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_ab9ac3456899f2167dba672250bb1c3c8_ab9ac3456899f2167dba672250bb1c3c8}{LONGLONG}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a9eceb09b69ee5fff7626f9f6f5f05888_a9eceb09b69ee5fff7626f9f6f5f05888}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_a6fc0f75af5b4090de1dc5cb90f89dbc8_a6fc0f75af5b4090de1dc5cb90f89dbc8}{SHORT}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a63347eec7614e10bb7e1d6a7c8fe1114_a63347eec7614e10bb7e1d6a7c8fe1114}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_a7646b944d1fe4f9e93692aec4ebc8a69_a7646b944d1fe4f9e93692aec4ebc8a69}{LONG}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a2fe308aca65794c0615aa07a83ff6271_a2fe308aca65794c0615aa07a83ff6271}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_a177c1d7a5bb2ad9056aa37d52d4e8046_a177c1d7a5bb2ad9056aa37d52d4e8046}{INT24}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_a2c0a6f43d8dae184eae6597e5c040af5_a2c0a6f43d8dae184eae6597e5c040af5}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_a7c9a11ef7a73447342a832fb0e73dac2_a7c9a11ef7a73447342a832fb0e73dac2}{DOUBLE}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_ab932e739f0eeb726466073bd7ed44805_ab932e739f0eeb726466073bd7ed44805}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_a7264a20bc6937ba950887a468b015a83_a7264a20bc6937ba950887a468b015a83}{FLOAT}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} \mbox{\hyperlink{a00752_ac7f63fb3df56bfbe19e8991880541aeb_ac7f63fb3df56bfbe19e8991880541aeb}{if}} (\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}===\textquotesingle{}\mbox{\hyperlink{a00320_ac11a7224ceecf1778b138e0787286297_ac11a7224ceecf1778b138e0787286297}{NEWDECIMAL}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00752_af9817a05a32c1b556f020f6f5205e314_af9817a05a32c1b556f020f6f5205e314}{if}} (\mbox{\hyperlink{a00752_aadad143420eba23bc717a2b3e80a6feb_aadad143420eba23bc717a2b3e80a6feb}{is\+Unsigned}})
+\item 
+\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get}} \mbox{\hyperlink{a00752_a3167b49fe72cfa1bf2322d467cc97448_a3167b49fe72cfa1bf2322d467cc97448}{db}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00752_ad8474bf544b70a159660efac1106359c_ad8474bf544b70a159660efac1106359c}{to\+Packet}} (column, sequence\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00752_ae838ecc05978cc470c595461ab4f0dac_ae838ecc05978cc470c595461ab4f0dac}{depth}}
+\item 
+\mbox{\hyperlink{a00752_a58749ea905226805736462190164d401_a58749ea905226805736462190164d401}{inspect\+Options}}
+\item 
+\mbox{\hyperlink{a00752_a97792dec801afb00a2c972252edc44ed_a97792dec801afb00a2c972252edc44ed}{inspect}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00752_ab8dc9e0377dc76d12491a8364bd52e83_ab8dc9e0377dc76d12491a8364bd52e83}{type\+Names}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00752_a9b44e7dd21124c353963f4d23cf82ffd_a9b44e7dd21124c353963f4d23cf82ffd}{fied\+Flags}} = require(\textquotesingle{}../constants/field\+\_\+flags.\+js\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00752_a69d799327a5c91d9b460137cec0dd92d_a69d799327a5c91d9b460137cec0dd92d}{flag\+Names}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00752_a4215536434e63447c797e3d65e1a470e_a4215536434e63447c797e3d65e1a470e}{inspect\+Flags}} = this.\+flags
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00752_aadad143420eba23bc717a2b3e80a6feb_aadad143420eba23bc717a2b3e80a6feb}{is\+Unsigned}} = this.\+flags \& fied\+Flags.\+UNSIGNED
+\item 
+\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}} \mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}} = \mbox{\hyperlink{a00752_ab8dc9e0377dc76d12491a8364bd52e83_ab8dc9e0377dc76d12491a8364bd52e83}{type\+Names}}\mbox{[}this.\+column\+Type\mbox{]}
+\item 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}}
+\item 
+\mbox{\hyperlink{a01195_a6a8cb5879785c584b473a97b4661bec4_a6a8cb5879785c584b473a97b4661bec4}{return}} \mbox{\hyperlink{a00752_a45cdc6f52b31252986b660599a2e4261_a45cdc6f52b31252986b660599a2e4261}{\$}} \{this.\+name\}\textbackslash{}\`{} \$\{\mbox{[}\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}, ...\mbox{\hyperlink{a00752_a69d799327a5c91d9b460137cec0dd92d_a69d799327a5c91d9b460137cec0dd92d}{flag\+Names}}\mbox{]}.\mbox{\hyperlink{a00128_a1b09aaf68c8a94c60f4b0cb28eec4132_a1b09aaf68c8a94c60f4b0cb28eec4132}{join}}(\textquotesingle{} \textquotesingle{})\}\`{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00021}{21}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de funciones miembro}
+\Hypertarget{a00752_a5862cd0518b048ef5f9a070def52e616_a5862cd0518b048ef5f9a070def52e616}\index{ColumnDefinition@{ColumnDefinition}!constructor@{constructor}}
+\index{constructor@{constructor}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{constructor()}{constructor()}}
+{\footnotesize\ttfamily \label{a00752_a5862cd0518b048ef5f9a070def52e616_a5862cd0518b048ef5f9a070def52e616} 
+Column\+Definition\+::constructor (\begin{DoxyParamCaption}\item[{}]{packet}{, }\item[{}]{client\+Encoding}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00022}{22}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a3167b49fe72cfa1bf2322d467cc97448_a3167b49fe72cfa1bf2322d467cc97448}\index{ColumnDefinition@{ColumnDefinition}!db@{db}}
+\index{db@{db}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{db()}{db()}}
+{\footnotesize\ttfamily \label{a00752_a3167b49fe72cfa1bf2322d467cc97448_a3167b49fe72cfa1bf2322d467cc97448} 
+\mbox{\hyperlink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get}} Column\+Definition\+::db (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00255}{255}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_afd917ec3542902412762314429e136d6_afd917ec3542902412762314429e136d6}\index{ColumnDefinition@{ColumnDefinition}!for@{for}}
+\index{for@{for}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{for()}{for()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{a00752_afd917ec3542902412762314429e136d6_afd917ec3542902412762314429e136d6} 
+Column\+Definition\+::for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00491_ad5a69a22a09c1158b06b6f2c53bf04f1_ad5a69a22a09c1158b06b6f2c53bf04f1}{f}} \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}}]{fied\+Flags}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00088}{88}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_aa524686b8d847fb13c743cc7ef264b12_aa524686b8d847fb13c743cc7ef264b12}\index{ColumnDefinition@{ColumnDefinition}!for@{for}}
+\index{for@{for}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{for()}{for()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{a00752_aa524686b8d847fb13c743cc7ef264b12_aa524686b8d847fb13c743cc7ef264b12} 
+Column\+Definition\+::for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}} \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}}]{Types}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00080}{80}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_aa864d8c3945eb5c3a62b880d01dc50f8_aa864d8c3945eb5c3a62b880d01dc50f8}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily \label{a00752_aa864d8c3945eb5c3a62b880d01dc50f8_aa864d8c3945eb5c3a62b880d01dc50f8} 
+Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{depth}{, }\item[{}]{1}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00119}{119}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_af9817a05a32c1b556f020f6f5205e314_af9817a05a32c1b556f020f6f5205e314}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily \label{a00752_af9817a05a32c1b556f020f6f5205e314_af9817a05a32c1b556f020f6f5205e314} 
+Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{is\+Unsigned}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00217}{217}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a8e73458c3b7bf532261badea791a029a_a8e73458c3b7bf532261badea791a029a}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily \label{a00752_a8e73458c3b7bf532261badea791a029a_a8e73458c3b7bf532261badea791a029a} 
+Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00308_aaf4b4acb6d563789c6eff32ec6ef0fe4_aaf4b4acb6d563789c6eff32ec6ef0fe4}{BLOB}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00130}{130}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a2c0a6f43d8dae184eae6597e5c040af5_a2c0a6f43d8dae184eae6597e5c040af5}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily \label{a00752_a2c0a6f43d8dae184eae6597e5c040af5_a2c0a6f43d8dae184eae6597e5c040af5} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_a7c9a11ef7a73447342a832fb0e73dac2_a7c9a11ef7a73447342a832fb0e73dac2}{DOUBLE}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00185}{185}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_ab932e739f0eeb726466073bd7ed44805_ab932e739f0eeb726466073bd7ed44805}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily \label{a00752_ab932e739f0eeb726466073bd7ed44805_ab932e739f0eeb726466073bd7ed44805} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_a7264a20bc6937ba950887a468b015a83_a7264a20bc6937ba950887a468b015a83}{FLOAT}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00192}{192}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a2fe308aca65794c0615aa07a83ff6271_a2fe308aca65794c0615aa07a83ff6271}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily \label{a00752_a2fe308aca65794c0615aa07a83ff6271_a2fe308aca65794c0615aa07a83ff6271} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_a177c1d7a5bb2ad9056aa37d52d4e8046_a177c1d7a5bb2ad9056aa37d52d4e8046}{INT24}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00177}{177}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a63347eec7614e10bb7e1d6a7c8fe1114_a63347eec7614e10bb7e1d6a7c8fe1114}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily \label{a00752_a63347eec7614e10bb7e1d6a7c8fe1114_a63347eec7614e10bb7e1d6a7c8fe1114} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_a7646b944d1fe4f9e93692aec4ebc8a69_a7646b944d1fe4f9e93692aec4ebc8a69}{LONG}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00169}{169}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a274bdf6a71098811975d14ed6c1a39ea_a274bdf6a71098811975d14ed6c1a39ea}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily \label{a00752_a274bdf6a71098811975d14ed6c1a39ea_a274bdf6a71098811975d14ed6c1a39ea} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_ab9ac3456899f2167dba672250bb1c3c8_ab9ac3456899f2167dba672250bb1c3c8}{LONGLONG}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00154}{154}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_ac7f63fb3df56bfbe19e8991880541aeb_ac7f63fb3df56bfbe19e8991880541aeb}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily \label{a00752_ac7f63fb3df56bfbe19e8991880541aeb_ac7f63fb3df56bfbe19e8991880541aeb} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_ac11a7224ceecf1778b138e0787286297_ac11a7224ceecf1778b138e0787286297}{NEWDECIMAL}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00199}{199}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a9eceb09b69ee5fff7626f9f6f5f05888_a9eceb09b69ee5fff7626f9f6f5f05888}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily \label{a00752_a9eceb09b69ee5fff7626f9f6f5f05888_a9eceb09b69ee5fff7626f9f6f5f05888} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_a6fc0f75af5b4090de1dc5cb90f89dbc8_a6fc0f75af5b4090de1dc5cb90f89dbc8}{SHORT}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00160}{160}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a86b29212fee324842c9ff7ede69add4b_a86b29212fee324842c9ff7ede69add4b}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily \label{a00752_a86b29212fee324842c9ff7ede69add4b_a86b29212fee324842c9ff7ede69add4b} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_ae161a1078b5773c4e4924dc26a5d2f9d_ae161a1078b5773c4e4924dc26a5d2f9d}{TINY}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00146}{146}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a2e94670a0a53bc8b0aae84f26c048d56_a2e94670a0a53bc8b0aae84f26c048d56}\index{ColumnDefinition@{ColumnDefinition}!if@{if}}
+\index{if@{if}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily \label{a00752_a2e94670a0a53bc8b0aae84f26c048d56_a2e94670a0a53bc8b0aae84f26c048d56} 
+\mbox{\hyperlink{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}{else}} Column\+Definition\+::if (\begin{DoxyParamCaption}\item[{}]{type\+Name}{ = {\ttfamily ==~\textquotesingle{}\mbox{\hyperlink{a00320_acdeaff5b95d75b4a2cb27a10b20a3682_acdeaff5b95d75b4a2cb27a10b20a3682}{VAR\+\_\+\+STRING}}\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00143}{143}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_afe3bc1f8a3f2974fa8710c110719b522_afe3bc1f8a3f2974fa8710c110719b522}\index{ColumnDefinition@{ColumnDefinition}!inspect@{inspect}}
+\index{inspect@{inspect}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{inspect()}{inspect()}}
+{\footnotesize\ttfamily \label{a00752_afe3bc1f8a3f2974fa8710c110719b522_afe3bc1f8a3f2974fa8710c110719b522} 
+Column\+Definition\+::inspect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00060}{60}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_ad8474bf544b70a159660efac1106359c_ad8474bf544b70a159660efac1106359c}\index{ColumnDefinition@{ColumnDefinition}!toPacket@{toPacket}}
+\index{toPacket@{toPacket}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{toPacket()}{toPacket()}}
+{\footnotesize\ttfamily \label{a00752_ad8474bf544b70a159660efac1106359c_ad8474bf544b70a159660efac1106359c} 
+static Column\+Definition\+::to\+Packet (\begin{DoxyParamCaption}\item[{}]{column}{, }\item[{}]{sequence\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00225}{225}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+
+
+\doxysubsubsection{Documentación de datos miembro}
+\Hypertarget{a00752_a45cdc6f52b31252986b660599a2e4261_a45cdc6f52b31252986b660599a2e4261}\index{ColumnDefinition@{ColumnDefinition}!\$@{\$}}
+\index{\$@{\$}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{\$}{\$}}
+{\footnotesize\ttfamily \label{a00752_a45cdc6f52b31252986b660599a2e4261_a45cdc6f52b31252986b660599a2e4261} 
+\mbox{\hyperlink{a01195_a6a8cb5879785c584b473a97b4661bec4_a6a8cb5879785c584b473a97b4661bec4}{return}} Column\+Definition\+::\$ \{this.\+name\}\textbackslash{}\`{} \$\{\mbox{[}\mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{type\+Name}}, ...\mbox{\hyperlink{a00752_a69d799327a5c91d9b460137cec0dd92d_a69d799327a5c91d9b460137cec0dd92d}{flag\+Names}}\mbox{]}.\mbox{\hyperlink{a00128_a1b09aaf68c8a94c60f4b0cb28eec4132_a1b09aaf68c8a94c60f4b0cb28eec4132}{join}}(\textquotesingle{} \textquotesingle{})\}\`{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00222}{222}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_ae838ecc05978cc470c595461ab4f0dac_ae838ecc05978cc470c595461ab4f0dac}\index{ColumnDefinition@{ColumnDefinition}!depth@{depth}}
+\index{depth@{depth}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \label{a00752_ae838ecc05978cc470c595461ab4f0dac_ae838ecc05978cc470c595461ab4f0dac} 
+Column\+Definition\+::depth}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00077}{77}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f}\index{ColumnDefinition@{ColumnDefinition}!else@{else}}
+\index{else@{else}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \label{a00752_aef72edc7385cf36105f1eed835cac44f_aef72edc7385cf36105f1eed835cac44f} 
+Column\+Definition\+::else}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}{typeName}}\ =\ \`{}\mbox{\hyperlink{a00752_a45cdc6f52b31252986b660599a2e4261_a45cdc6f52b31252986b660599a2e4261}{\$}}\{\mbox{\hyperlink{a00752_ab8dc9e0377dc76d12491a8364bd52e83_ab8dc9e0377dc76d12491a8364bd52e83}{typeNames}}[this.columnType]\}(\mbox{\hyperlink{a00752_a45cdc6f52b31252986b660599a2e4261_a45cdc6f52b31252986b660599a2e4261}{\$}}\{this.columnLength\})\`{}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00213}{213}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a9b44e7dd21124c353963f4d23cf82ffd_a9b44e7dd21124c353963f4d23cf82ffd}\index{ColumnDefinition@{ColumnDefinition}!fiedFlags@{fiedFlags}}
+\index{fiedFlags@{fiedFlags}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{fiedFlags}{fiedFlags}}
+{\footnotesize\ttfamily \label{a00752_a9b44e7dd21124c353963f4d23cf82ffd_a9b44e7dd21124c353963f4d23cf82ffd} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Column\+Definition\+::fied\+Flags = require(\textquotesingle{}../constants/field\+\_\+flags.\+js\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00083}{83}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a69d799327a5c91d9b460137cec0dd92d_a69d799327a5c91d9b460137cec0dd92d}\index{ColumnDefinition@{ColumnDefinition}!flagNames@{flagNames}}
+\index{flagNames@{flagNames}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{flagNames}{flagNames}}
+{\footnotesize\ttfamily \label{a00752_a69d799327a5c91d9b460137cec0dd92d_a69d799327a5c91d9b460137cec0dd92d} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Column\+Definition\+::flag\+Names = \mbox{[}$\,$\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00084}{84}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a97792dec801afb00a2c972252edc44ed_a97792dec801afb00a2c972252edc44ed}\index{ColumnDefinition@{ColumnDefinition}!inspect@{inspect}}
+\index{inspect@{inspect}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{inspect}{inspect}}
+{\footnotesize\ttfamily \label{a00752_a97792dec801afb00a2c972252edc44ed_a97792dec801afb00a2c972252edc44ed} 
+Column\+Definition\+::inspect}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00338_acb7e0e89b59629f5d62ba2f3ecd63029_acb7e0e89b59629f5d62ba2f3ecd63029}{Types}}\ =\ require(\textcolor{stringliteral}{'../constants/types.js'})}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00077}{77}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a4215536434e63447c797e3d65e1a470e_a4215536434e63447c797e3d65e1a470e}\index{ColumnDefinition@{ColumnDefinition}!inspectFlags@{inspectFlags}}
+\index{inspectFlags@{inspectFlags}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{inspectFlags}{inspectFlags}}
+{\footnotesize\ttfamily \label{a00752_a4215536434e63447c797e3d65e1a470e_a4215536434e63447c797e3d65e1a470e} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Column\+Definition\+::inspect\+Flags = this.\+flags}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00087}{87}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_a58749ea905226805736462190164d401_a58749ea905226805736462190164d401}\index{ColumnDefinition@{ColumnDefinition}!inspectOptions@{inspectOptions}}
+\index{inspectOptions@{inspectOptions}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{inspectOptions}{inspectOptions}}
+{\footnotesize\ttfamily \label{a00752_a58749ea905226805736462190164d401_a58749ea905226805736462190164d401} 
+Column\+Definition\+::inspect\+Options}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00077}{77}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_aadad143420eba23bc717a2b3e80a6feb_aadad143420eba23bc717a2b3e80a6feb}\index{ColumnDefinition@{ColumnDefinition}!isUnsigned@{isUnsigned}}
+\index{isUnsigned@{isUnsigned}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{isUnsigned}{isUnsigned}}
+{\footnotesize\ttfamily \label{a00752_aadad143420eba23bc717a2b3e80a6feb_aadad143420eba23bc717a2b3e80a6feb} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Column\+Definition\+::is\+Unsigned = this.\+flags \& fied\+Flags.\+UNSIGNED}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00127}{127}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9}\index{ColumnDefinition@{ColumnDefinition}!typeName@{typeName}}
+\index{typeName@{typeName}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{typeName}{typeName}}
+{\footnotesize\ttfamily \label{a00752_af90627b96683871575a3c3c33d0e19c9_af90627b96683871575a3c3c33d0e19c9} 
+\mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}} Column\+Definition\+::type\+Name = \mbox{\hyperlink{a00752_ab8dc9e0377dc76d12491a8364bd52e83_ab8dc9e0377dc76d12491a8364bd52e83}{type\+Names}}\mbox{[}this.\+column\+Type\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00129}{129}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+\Hypertarget{a00752_ab8dc9e0377dc76d12491a8364bd52e83_ab8dc9e0377dc76d12491a8364bd52e83}\index{ColumnDefinition@{ColumnDefinition}!typeNames@{typeNames}}
+\index{typeNames@{typeNames}!ColumnDefinition@{ColumnDefinition}}
+\doxyparagraph{\texorpdfstring{typeNames}{typeNames}}
+{\footnotesize\ttfamily \label{a00752_ab8dc9e0377dc76d12491a8364bd52e83_ab8dc9e0377dc76d12491a8364bd52e83} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Column\+Definition\+::type\+Names = \mbox{[}$\,$\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00344_source_l00079}{79}} del archivo \mbox{\hyperlink{a00344_source}{column\+\_\+definition.\+js}}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00344}{column\+\_\+definition.\+js}}\end{DoxyCompactItemize}

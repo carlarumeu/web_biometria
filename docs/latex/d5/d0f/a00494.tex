@@ -1,0 +1,93 @@
+\doxysubsection{Referencia del archivo formats.\+js}
+\hypertarget{a00494}{}\label{a00494}\index{formats.js@{formats.js}}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00494_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc}{replace}} = String.\+prototype.\+replace
+\item 
+var \mbox{\hyperlink{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c}{percent\+Twenties}} = /\%20/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}}
+\item 
+var \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}
+\item 
+module \mbox{\hyperlink{a00494_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00494_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{formats.js@{formats.js}!exports@{exports}}
+\index{exports@{exports}!formats.js@{formats.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00494_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'default'}:\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}.RFC3986,}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00062_a8b728f13fab33c62e04926e9947a6545_a8b728f13fab33c62e04926e9947a6545}{formatters}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ RFC1738:\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc}{replace}}.call(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}},\ \mbox{\hyperlink{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c}{percentTwenties}},\ \textcolor{charliteral}{'+'});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ RFC3986:\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ RFC1738:\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}.RFC1738,}
+\DoxyCodeLine{\ \ \ \ RFC3986:\ \mbox{\hyperlink{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}{Format}}.RFC3986}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00494_source_l00011}{11}} del archivo \mbox{\hyperlink{a00494_source}{formats.\+js}}.
+
+\Hypertarget{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194}\index{formats.js@{formats.js}!Format@{Format}}
+\index{Format@{Format}!formats.js@{formats.js}}
+\doxyparagraph{\texorpdfstring{Format}{Format}}
+{\footnotesize\ttfamily \label{a00494_aebd98ea8a5bb3693aa4e3b31dbc67194_aebd98ea8a5bb3693aa4e3b31dbc67194} 
+var Format}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ RFC1738:\ \textcolor{stringliteral}{'RFC1738'},}
+\DoxyCodeLine{\ \ \ \ RFC3986:\ \textcolor{stringliteral}{'RFC3986'}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00494_source_l00006}{6}} del archivo \mbox{\hyperlink{a00494_source}{formats.\+js}}.
+
+\Hypertarget{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c}\index{formats.js@{formats.js}!percentTwenties@{percentTwenties}}
+\index{percentTwenties@{percentTwenties}!formats.js@{formats.js}}
+\doxyparagraph{\texorpdfstring{percentTwenties}{percentTwenties}}
+{\footnotesize\ttfamily \label{a00494_a8bcfb6eeb71757a607878f38a803a28c_a8bcfb6eeb71757a607878f38a803a28c} 
+var percent\+Twenties = /\%20/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00494_source_l00004}{4}} del archivo \mbox{\hyperlink{a00494_source}{formats.\+js}}.
+
+\Hypertarget{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc}\index{formats.js@{formats.js}!replace@{replace}}
+\index{replace@{replace}!formats.js@{formats.js}}
+\doxyparagraph{\texorpdfstring{replace}{replace}}
+{\footnotesize\ttfamily \label{a00494_afd83a7a4c1a27011426e0e517bddbfbc_afd83a7a4c1a27011426e0e517bddbfbc} 
+var replace = String.\+prototype.\+replace}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00494_source_l00003}{3}} del archivo \mbox{\hyperlink{a00494_source}{formats.\+js}}.
+
+\Hypertarget{a00494_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{formats.js@{formats.js}!strict@{strict}}
+\index{strict@{strict}!formats.js@{formats.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00494_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00494_source_l00001}{1}} del archivo \mbox{\hyperlink{a00494_source}{formats.\+js}}.
+

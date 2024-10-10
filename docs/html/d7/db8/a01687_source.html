@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente node.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d7/db8/a01687_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">src/node.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/db8/a01687.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_adaeaa5f0233a333ae99f8bcc3239c681.html#adaeaa5f0233a333ae99f8bcc3239c681">    5</a></span>var <a class="code hl_variable" href="../../d7/db8/a01687_adaeaa5f0233a333ae99f8bcc3239c681.html#adaeaa5f0233a333ae99f8bcc3239c681">tty</a> = require(<span class="stringliteral">&#39;tty&#39;</span>);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">    6</a></span>var <a class="code hl_variable" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a> = require(<span class="stringliteral">&#39;util&#39;</span>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">   14</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a> = module.exports = require(<span class="stringliteral">&#39;./debug&#39;</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a1dc0aa163de2e7161fbb52b60824b4c6.html#a1dc0aa163de2e7161fbb52b60824b4c6">   15</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.init = <a class="code hl_variable" href="../../d7/db8/a01687_a1dc0aa163de2e7161fbb52b60824b4c6.html#a1dc0aa163de2e7161fbb52b60824b4c6">init</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a0730b0bbcf8c57682990089cef87aa55.html#a0730b0bbcf8c57682990089cef87aa55">   16</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.log = <a class="code hl_variable" href="../../d7/db8/a01687_a0730b0bbcf8c57682990089cef87aa55.html#a0730b0bbcf8c57682990089cef87aa55">log</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_adbd4614cf46651b02f4967a641d02077.html#adbd4614cf46651b02f4967a641d02077">   17</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.formatArgs = <a class="code hl_variable" href="../../d7/db8/a01687_adbd4614cf46651b02f4967a641d02077.html#adbd4614cf46651b02f4967a641d02077">formatArgs</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_aac776353556b1329f7a14bd4c07c1450.html#aac776353556b1329f7a14bd4c07c1450">   18</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.save = <a class="code hl_variable" href="../../d7/db8/a01687_aac776353556b1329f7a14bd4c07c1450.html#aac776353556b1329f7a14bd4c07c1450">save</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a6725beab56f633108dca12b60f1d037e.html#a6725beab56f633108dca12b60f1d037e">   19</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.load = <a class="code hl_variable" href="../../d7/db8/a01687_a6725beab56f633108dca12b60f1d037e.html#a6725beab56f633108dca12b60f1d037e">load</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">   20</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.useColors = <a class="code hl_variable" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a2909afd65038f2771e6b80aeb8ae6f8c.html#a2909afd65038f2771e6b80aeb8ae6f8c">   26</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.colors = [6, 2, 3, 4, 5, 1];</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a4d6657e7362bdea9b79e3b0a7980efd1.html#a4d6657e7362bdea9b79e3b0a7980efd1">   34</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.inspectOpts = Object.keys(<a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env).filter(<span class="keyword">function</span> (key) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">return</span> /^debug_/<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>.test(key);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}).reduce(<span class="keyword">function</span> (<a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>, key) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">// camel-case</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  var prop = key</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    .substring(6)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    .toLowerCase()</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    .replace(/_([<a class="code hl_variable" href="../../de/db1/a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb.html#a82ca4ee5dd63e58a2bb967077dc8b8fb">a</a>-z])/<a class="code hl_variable" href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a>, <span class="keyword">function</span> (_, k) { <span class="keywordflow">return</span> k.toUpperCase() });</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// coerce string value into JS value</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  var val = <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env[key];</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">if</span> (/^(yes|on|<span class="keyword">true</span>|<a class="code hl_variable" href="../../df/d03/a00062_af2904d770a67b3b7593a990075e6541a.html#af2904d770a67b3b7593a990075e6541a">enabled</a>)$/<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>.test(val)) val = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (/^(no|off|<span class="keyword">false</span>|<a class="code hl_variable" href="../../d4/d3a/a00101_a1c8c0f5dea0786f9f7750c076275f96c.html#a1c8c0f5dea0786f9f7750c076275f96c">disabled</a>)$/<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>.test(val)) val = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val === <span class="stringliteral">&#39;null&#39;</span>) val = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">else</span> val = Number(val);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>[prop] = val;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}, {});</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">   61</a></span>var <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a> = parseInt(<a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env.DEBUG_FD, 10) || 2;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_afb6125a2e245e567d6ee4b1b2fcde448.html#afb6125a2e245e567d6ee4b1b2fcde448">   63</a></span><span class="keywordflow">if</span> (1 !== <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a> &amp;&amp; 2 !== <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_variable" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a>.deprecate(<span class="keyword">function</span>(){}, <span class="stringliteral">&#39;except for stderr(2) and stdout(1), any other usage of DEBUG_FD is deprecated. Override debug.log if you want to use a different log function (https://git.io/debug_fd)&#39;</span>)()</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">   67</a></span>var <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a> = 1 === <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a> ? <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.stdout :</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>             2 === <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a> ? <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.stderr :</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>             <a class="code hl_function" href="../../d7/db8/a01687_a8e077e3f98409ad80f618d527096dba4.html#a8e077e3f98409ad80f618d527096dba4">createWritableStdioStream</a>(<a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a>() {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">return</span> <span class="stringliteral">&#39;colors&#39;</span> <a class="code hl_variable" href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a> <a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.inspectOpts</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    ? Boolean(<a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.inspectOpts.colors)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    : <a class="code hl_variable" href="../../d7/db8/a01687_adaeaa5f0233a333ae99f8bcc3239c681.html#adaeaa5f0233a333ae99f8bcc3239c681">tty</a>.isatty(<a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a400dc8109620963da8314d4bdfa14f83.html#a400dc8109620963da8314d4bdfa14f83">   85</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.formatters.o = <span class="keyword">function</span>(<a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  this.<a class="code hl_variable" href="../../d7/db8/a01687_a4d6657e7362bdea9b79e3b0a7980efd1.html#a4d6657e7362bdea9b79e3b0a7980efd1">inspectOpts</a>.colors = this.<a class="code hl_variable" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a>.inspect(<a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>, this.<a class="code hl_variable" href="../../d7/db8/a01687_a4d6657e7362bdea9b79e3b0a7980efd1.html#a4d6657e7362bdea9b79e3b0a7980efd1">inspectOpts</a>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    .split(<span class="charliteral">&#39;\n&#39;</span>).map(<span class="keyword">function</span>(str) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">return</span> str.trim()</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }).<a class="code hl_variable" href="../../d1/d88/a00128_a1b09aaf68c8a94c60f4b0cb28eec4132.html#a1b09aaf68c8a94c60f4b0cb28eec4132">join</a>(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="};">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_abec0e0b954c3011c083dbeb17c157fa1.html#abec0e0b954c3011c083dbeb17c157fa1">   97</a></span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.formatters.O = <span class="keyword">function</span>(<a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  this.<a class="code hl_variable" href="../../d7/db8/a01687_a4d6657e7362bdea9b79e3b0a7980efd1.html#a4d6657e7362bdea9b79e3b0a7980efd1">inspectOpts</a>.colors = this.<a class="code hl_variable" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a>.inspect(<a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>, this.<a class="code hl_variable" href="../../d7/db8/a01687_a4d6657e7362bdea9b79e3b0a7980efd1.html#a4d6657e7362bdea9b79e3b0a7980efd1">inspectOpts</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a6db74ad7fec3cc96c546ce04ae2303b1.html#a6db74ad7fec3cc96c546ce04ae2303b1">  108</a></span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/db8/a01687_adbd4614cf46651b02f4967a641d02077.html#adbd4614cf46651b02f4967a641d02077">formatArgs</a>(args) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  var name = this.<span class="keyword">namespace</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  var <a class="code hl_variable" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a> = this.<a class="code hl_variable" href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">if</span> (useColors) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    var <a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a> = this.color;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    var prefix = <span class="stringliteral">&#39;  \u001b[3&#39;</span> + <a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a> + <span class="stringliteral">&#39;;1m&#39;</span> + name + <span class="charliteral">&#39; &#39;</span> + <span class="stringliteral">&#39;\u001b[0m&#39;</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    args[0] = prefix + args[0].split(<span class="charliteral">&#39;\n&#39;</span>).join(<span class="charliteral">&#39;\n&#39;</span> + prefix);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    args.push(<span class="stringliteral">&#39;\u001b[3&#39;</span> + <a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a> + <span class="stringliteral">&#39;m+&#39;</span> + <a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.humanize(<span class="keyword">this</span>.diff) + <span class="stringliteral">&#39;\u001b[0m&#39;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    args[0] = <span class="keyword">new</span> Date().toUTCString()</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      + <span class="charliteral">&#39; &#39;</span> + name + <span class="charliteral">&#39; &#39;</span> + args[0];</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/db8/a01687_a0730b0bbcf8c57682990089cef87aa55.html#a0730b0bbcf8c57682990089cef87aa55">log</a>() {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>.write(<a class="code hl_variable" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a>.format.apply(<a class="code hl_variable" href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a>, arguments) + <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a613da65a390e3d3a0351b8db1714a96e.html#a613da65a390e3d3a0351b8db1714a96e">  139</a></span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/db8/a01687_aac776353556b1329f7a14bd4c07c1450.html#aac776353556b1329f7a14bd4c07c1450">save</a>(namespaces) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordflow">if</span> (<span class="keyword">null</span> == namespaces) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// If you set a process.env field to null or undefined, it gets cast to the</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="comment">// string &#39;null&#39; or &#39;undefined&#39;. Just delete instead.</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env.DEBUG;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env.DEBUG = namespaces;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>}</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/db8/a01687_a6725beab56f633108dca12b60f1d037e.html#a6725beab56f633108dca12b60f1d037e">load</a>() {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.env.DEBUG;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a8e077e3f98409ad80f618d527096dba4.html#a8e077e3f98409ad80f618d527096dba4">  167</a></span><span class="keyword">function</span> <a class="code hl_function" href="../../d7/db8/a01687_a8e077e3f98409ad80f618d527096dba4.html#a8e077e3f98409ad80f618d527096dba4">createWritableStdioStream</a> (<a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  var <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  var tty_wrap = <a class="code hl_variable" href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a>.binding(<span class="stringliteral">&#39;tty_wrap&#39;</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="comment">// Note stream._type is used for test-module-load-list.js</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordflow">switch</span> (tty_wrap.guessHandleType(<a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>)) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;TTY&#39;</span>:</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a> = <span class="keyword">new</span> <a class="code hl_variable" href="../../d7/db8/a01687_adaeaa5f0233a333ae99f8bcc3239c681.html#adaeaa5f0233a333ae99f8bcc3239c681">tty</a>.WriteStream(<a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._type = <span class="stringliteral">&#39;tty&#39;</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="comment">// Hack to have stream not keep the event loop alive.</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <span class="comment">// See https://github.com/joyent/node/issues/1726</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._handle &amp;&amp; <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._handle.unref) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._handle.unref();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;FILE&#39;</span>:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      var <a class="code hl_variable" href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a> = require(<span class="stringliteral">&#39;fs&#39;</span>);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a> = <span class="keyword">new</span> <a class="code hl_variable" href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a>.SyncWriteStream(<a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>, { autoClose: <span class="keyword">false</span> });</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._type = <span class="stringliteral">&#39;fs&#39;</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;PIPE&#39;</span>:</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">case</span> <span class="stringliteral">&#39;TCP&#39;</span>:</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      var <a class="code hl_variable" href="../../d7/d00/a00401_ae13111a77351cc6bf302612aa5d97d08.html#ae13111a77351cc6bf302612aa5d97d08">net</a> = require(<span class="stringliteral">&#39;net&#39;</span>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a> = <span class="keyword">new</span> <a class="code hl_variable" href="../../d7/d00/a00401_ae13111a77351cc6bf302612aa5d97d08.html#ae13111a77351cc6bf302612aa5d97d08">net</a>.Socket({</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>: <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>,</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        readable: <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        writable: <span class="keyword">true</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      });</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="comment">// FIXME Should probably have an option in net.Socket to create a</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      <span class="comment">// stream from an existing fd which is writable only. But for now</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <span class="comment">// we&#39;ll just add this hack and set the `readable` member to false.</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="comment">// Test: ./node test/fixtures/echo.js &lt; /etc/passwd</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>.readable = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>.read = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._type = <span class="stringliteral">&#39;pipe&#39;</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      <span class="comment">// FIXME Hack to have stream not keep the event loop alive.</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      <span class="comment">// See https://github.com/joyent/node/issues/1726</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._handle &amp;&amp; <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._handle.unref) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._handle.unref();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      <span class="comment">// Probably an error on in uv_guess_handle()</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a>(<span class="stringliteral">&#39;Implement me. Unknown stream file type!&#39;</span>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// For supporting legacy API we put the FD here.</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>.fd = <a class="code hl_variable" href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>._isStdio = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
+</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="../../d7/db8/a01687_a5ab64ad63a3b56ca48e94e51e644cb85.html#a5ab64ad63a3b56ca48e94e51e644cb85">  235</a></span><span class="keyword">function</span> <a class="code hl_variable" href="../../d7/db8/a01687_a1dc0aa163de2e7161fbb52b60824b4c6.html#a1dc0aa163de2e7161fbb52b60824b4c6">init</a> (<a class="code hl_variable" href="../../d4/d3a/a00101_a651046067579e48d7f0d03ce38dc7cf8.html#a651046067579e48d7f0d03ce38dc7cf8">debug</a>) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <a class="code hl_variable" href="../../d4/d3a/a00101_a651046067579e48d7f0d03ce38dc7cf8.html#a651046067579e48d7f0d03ce38dc7cf8">debug</a>.inspectOpts = {};</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  var <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a> = Object.keys(<a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.inspectOpts);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="keywordflow">for</span> (var <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> = 0; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> &lt; <a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>.length; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>++) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_a651046067579e48d7f0d03ce38dc7cf8.html#a651046067579e48d7f0d03ce38dc7cf8">debug</a>.inspectOpts[<a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>]] = <a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.inspectOpts[<a class="code hl_variable" href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a>[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>]];</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>}</div>
+</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><a class="code hl_variable" href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a>.enable(<a class="code hl_variable" href="../../d7/db8/a01687_a6725beab56f633108dca12b60f1d037e.html#a6725beab56f633108dca12b60f1d037e">load</a>());</div>
+<div class="ttc" id="aa00062_af2904d770a67b3b7593a990075e6541a_html_af2904d770a67b3b7593a990075e6541a"><div class="ttname"><a href="../../df/d03/a00062_af2904d770a67b3b7593a990075e6541a.html#af2904d770a67b3b7593a990075e6541a">enabled</a></div><div class="ttdeci">exports enabled</div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00013">debug.js:13</a></div></div>
+<div class="ttc" id="aa00101_a1c8c0f5dea0786f9f7750c076275f96c_html_a1c8c0f5dea0786f9f7750c076275f96c"><div class="ttname"><a href="../../d4/d3a/a00101_a1c8c0f5dea0786f9f7750c076275f96c.html#a1c8c0f5dea0786f9f7750c076275f96c">disabled</a></div><div class="ttdeci">app disabled</div><div class="ttdoc">Check if setting is disabled.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00457">application.js:457</a></div></div>
+<div class="ttc" id="aa00101_a651046067579e48d7f0d03ce38dc7cf8_html_a651046067579e48d7f0d03ce38dc7cf8"><div class="ttname"><a href="../../d4/d3a/a00101_a651046067579e48d7f0d03ce38dc7cf8.html#a651046067579e48d7f0d03ce38dc7cf8">debug</a></div><div class="ttdeci">var debug</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00021">application.js:21</a></div></div>
+<div class="ttc" id="aa00128_a1b09aaf68c8a94c60f4b0cb28eec4132_html_a1b09aaf68c8a94c60f4b0cb28eec4132"><div class="ttname"><a href="../../d1/d88/a00128_a1b09aaf68c8a94c60f4b0cb28eec4132.html#a1b09aaf68c8a94c60f4b0cb28eec4132">join</a></div><div class="ttdeci">var join</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d88/a00128_source.html#l00028">view.js:28</a></div></div>
+<div class="ttc" id="aa00128_aebcdd70130f7e0b00b39cc981ab0bab0_html_aebcdd70130f7e0b00b39cc981ab0bab0"><div class="ttname"><a href="../../d1/d88/a00128_aebcdd70130f7e0b00b39cc981ab0bab0.html#aebcdd70130f7e0b00b39cc981ab0bab0">fs</a></div><div class="ttdeci">var fs</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d88/a00128_source.html#l00018">view.js:18</a></div></div>
+<div class="ttc" id="aa00197_a5e25b1d1bed9ab5f3174b76d6a722180_html_a5e25b1d1bed9ab5f3174b76d6a722180"><div class="ttname"><a href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a></div><div class="ttdeci">function t t t IPv4 t i</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_html_a82ca4ee5dd63e58a2bb967077dc8b8fb"><div class="ttname"><a href="../../de/db1/a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb.html#a82ca4ee5dd63e58a2bb967077dc8b8fb">a</a></div><div class="ttdeci">function a</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00197_abcedab16429ea0641c6596f556f2e102_html_abcedab16429ea0641c6596f556f2e102"><div class="ttname"><a href="../../de/db1/a00197_abcedab16429ea0641c6596f556f2e102.html#abcedab16429ea0641c6596f556f2e102">process</a></div><div class="ttdeci">function t t t IPv4 t t IPv6 t IPv4 t IPv4 t IPv4 t IPv6 t IPv4 t IPv6 t IPv4 t IPv4 t IPv4 t IPv4 t IPv6 t t t t t process</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00341_abbd690cbcb2a047762c767dcb058a876_html_abbd690cbcb2a047762c767dcb058a876"><div class="ttname"><a href="../../d3/d93/a00341_abbd690cbcb2a047762c767dcb058a876.html#abbd690cbcb2a047762c767dcb058a876">keys</a></div><div class="ttdeci">const keys</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d93/a00341_source.html#l00005">binlog_query_statusvars.js:5</a></div></div>
+<div class="ttc" id="aa00401_ae13111a77351cc6bf302612aa5d97d08_html_ae13111a77351cc6bf302612aa5d97d08"><div class="ttname"><a href="../../d7/d00/a00401_ae13111a77351cc6bf302612aa5d97d08.html#ae13111a77351cc6bf302612aa5d97d08">net</a></div><div class="ttdeci">const net</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d00/a00401_source.html#l00003">server.js:3</a></div></div>
+<div class="ttc" id="aa00422_ab15a7ef94ea648e0a722a49372614731_html_ab15a7ef94ea648e0a722a49372614731"><div class="ttname"><a href="../../db/d43/a00422_ab15a7ef94ea648e0a722a49372614731.html#ab15a7ef94ea648e0a722a49372614731">obj</a></div><div class="ttdeci">var obj</div><div class="ttdef"><b>Definition</b> <a href="../../db/d43/a00422_source.html#l00010">all.js:10</a></div></div>
+<div class="ttc" id="aa00572_a103df269476e78897c9c4c6cb8f4eb06_html_a103df269476e78897c9c4c6cb8f4eb06"><div class="ttname"><a href="../../d6/d06/a00572_a103df269476e78897c9c4c6cb8f4eb06.html#a103df269476e78897c9c4c6cb8f4eb06">g</a></div><div class="ttdeci">var g</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00002">jquery.js:2</a></div></div>
+<div class="ttc" id="aa01114_afc3dd12de12777f6e20b4c93b7e7cb96_html_afc3dd12de12777f6e20b4c93b7e7cb96"><div class="ttname"><a href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a></div><div class="ttdeci">var v</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d40/a01114_source.html#l00009">node_modules/call-bind/test/index.js:9</a></div></div>
+<div class="ttc" id="aa01195_aaf64ea1eb68af5440a0249f7788f1af5_html_aaf64ea1eb68af5440a0249f7788f1af5"><div class="ttname"><a href="../../d8/df3/a01195_aaf64ea1eb68af5440a0249f7788f1af5.html#aaf64ea1eb68af5440a0249f7788f1af5">in</a></div><div class="ttdeci">var in</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00011">node_modules/generate-function/index.js:11</a></div></div>
+<div class="ttc" id="aa01276_ab90d95850f9ba1903a6704f6fa8eccb6_html_ab90d95850f9ba1903a6704f6fa8eccb6"><div class="ttname"><a href="../../d5/d37/a01276_ab90d95850f9ba1903a6704f6fa8eccb6.html#ab90d95850f9ba1903a6704f6fa8eccb6">Error</a></div><div class="ttdeci">exports Error</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d37/a01276_source.html#l00152">node_modules/mysql2/lib/packets/index.js:152</a></div></div>
+<div class="ttc" id="aa01687_a0730b0bbcf8c57682990089cef87aa55_html_a0730b0bbcf8c57682990089cef87aa55"><div class="ttname"><a href="../../d7/db8/a01687_a0730b0bbcf8c57682990089cef87aa55.html#a0730b0bbcf8c57682990089cef87aa55">log</a></div><div class="ttdeci">exports log</div><div class="ttdoc">Invokes util.format() with the specified arguments and writes to stream.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">src/node.js:16</a></div></div>
+<div class="ttc" id="aa01687_a1dc0aa163de2e7161fbb52b60824b4c6_html_a1dc0aa163de2e7161fbb52b60824b4c6"><div class="ttname"><a href="../../d7/db8/a01687_a1dc0aa163de2e7161fbb52b60824b4c6.html#a1dc0aa163de2e7161fbb52b60824b4c6">init</a></div><div class="ttdeci">exports init</div><div class="ttdef"><b>Definition</b> <a href="#l00015">src/node.js:15</a></div></div>
+<div class="ttc" id="aa01687_a4d6657e7362bdea9b79e3b0a7980efd1_html_a4d6657e7362bdea9b79e3b0a7980efd1"><div class="ttname"><a href="../../d7/db8/a01687_a4d6657e7362bdea9b79e3b0a7980efd1.html#a4d6657e7362bdea9b79e3b0a7980efd1">inspectOpts</a></div><div class="ttdeci">exports inspectOpts</div><div class="ttdoc">Build up the default inspectOpts object from the environment variables.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">src/node.js:34</a></div></div>
+<div class="ttc" id="aa01687_a5623711d28752ba628520a2c3f7aaa18_html_a5623711d28752ba628520a2c3f7aaa18"><div class="ttname"><a href="../../d7/db8/a01687_a5623711d28752ba628520a2c3f7aaa18.html#a5623711d28752ba628520a2c3f7aaa18">fd</a></div><div class="ttdeci">var fd</div><div class="ttdoc">The file descriptor to write the debug() calls to.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">src/node.js:61</a></div></div>
+<div class="ttc" id="aa01687_a6725beab56f633108dca12b60f1d037e_html_a6725beab56f633108dca12b60f1d037e"><div class="ttname"><a href="../../d7/db8/a01687_a6725beab56f633108dca12b60f1d037e.html#a6725beab56f633108dca12b60f1d037e">load</a></div><div class="ttdeci">exports load</div><div class="ttdoc">Load namespaces.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">src/node.js:19</a></div></div>
+<div class="ttc" id="aa01687_a822bf74d422c61e6caa292f739dc4786_html_a822bf74d422c61e6caa292f739dc4786"><div class="ttname"><a href="../../d7/db8/a01687_a822bf74d422c61e6caa292f739dc4786.html#a822bf74d422c61e6caa292f739dc4786">stream</a></div><div class="ttdeci">var stream</div><div class="ttdef"><b>Definition</b> <a href="#l00067">src/node.js:67</a></div></div>
+<div class="ttc" id="aa01687_a8e077e3f98409ad80f618d527096dba4_html_a8e077e3f98409ad80f618d527096dba4"><div class="ttname"><a href="../../d7/db8/a01687_a8e077e3f98409ad80f618d527096dba4.html#a8e077e3f98409ad80f618d527096dba4">createWritableStdioStream</a></div><div class="ttdeci">function createWritableStdioStream(fd)</div><div class="ttdoc">Copied from node/src/node.js.</div><div class="ttdef"><b>Definition</b> <a href="#l00167">src/node.js:167</a></div></div>
+<div class="ttc" id="aa01687_a8f5b2e09d5197e9d28f6032dff542d44_html_a8f5b2e09d5197e9d28f6032dff542d44"><div class="ttname"><a href="../../d7/db8/a01687_a8f5b2e09d5197e9d28f6032dff542d44.html#a8f5b2e09d5197e9d28f6032dff542d44">util</a></div><div class="ttdeci">var util</div><div class="ttdef"><b>Definition</b> <a href="#l00006">src/node.js:6</a></div></div>
+<div class="ttc" id="aa01687_a9c5933a15df67637738e9292fe0ccc75_html_a9c5933a15df67637738e9292fe0ccc75"><div class="ttname"><a href="../../d7/db8/a01687_a9c5933a15df67637738e9292fe0ccc75.html#a9c5933a15df67637738e9292fe0ccc75">useColors</a></div><div class="ttdeci">exports useColors</div><div class="ttdoc">Is stdout a TTY? Colored output is enabled when true.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">src/node.js:20</a></div></div>
+<div class="ttc" id="aa01687_aac776353556b1329f7a14bd4c07c1450_html_aac776353556b1329f7a14bd4c07c1450"><div class="ttname"><a href="../../d7/db8/a01687_aac776353556b1329f7a14bd4c07c1450.html#aac776353556b1329f7a14bd4c07c1450">save</a></div><div class="ttdeci">exports save</div><div class="ttdef"><b>Definition</b> <a href="#l00018">src/node.js:18</a></div></div>
+<div class="ttc" id="aa01687_adaeaa5f0233a333ae99f8bcc3239c681_html_adaeaa5f0233a333ae99f8bcc3239c681"><div class="ttname"><a href="../../d7/db8/a01687_adaeaa5f0233a333ae99f8bcc3239c681.html#adaeaa5f0233a333ae99f8bcc3239c681">tty</a></div><div class="ttdeci">var tty</div><div class="ttdoc">Module dependencies.</div><div class="ttdef"><b>Definition</b> <a href="#l00005">src/node.js:5</a></div></div>
+<div class="ttc" id="aa01687_adbd4614cf46651b02f4967a641d02077_html_adbd4614cf46651b02f4967a641d02077"><div class="ttname"><a href="../../d7/db8/a01687_adbd4614cf46651b02f4967a641d02077.html#adbd4614cf46651b02f4967a641d02077">formatArgs</a></div><div class="ttdeci">exports formatArgs</div><div class="ttdef"><b>Definition</b> <a href="#l00017">src/node.js:17</a></div></div>
+<div class="ttc" id="aa01687_af2836014938e5fb6078778620cb19081_html_af2836014938e5fb6078778620cb19081"><div class="ttname"><a href="../../d7/db8/a01687_af2836014938e5fb6078778620cb19081.html#af2836014938e5fb6078778620cb19081">exports</a></div><div class="ttdeci">exports</div><div class="ttdoc">This is the Node.js implementation of debug().</div><div class="ttdef"><b>Definition</b> <a href="#l00014">src/node.js:14</a></div></div>
+<div class="ttc" id="aa01822_abce695e0af988ece0826d9ad59b8160d_html_abce695e0af988ece0826d9ad59b8160d"><div class="ttname"><a href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a></div><div class="ttdeci">obj c</div><div class="ttdef"><b>Definition</b> <a href="../../d1/dba/a01822_source.html#l00005">example/circular.js:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_6b3820cc5e87aacf8b05b5f6ad06cd1d.html">debug</a></li><li class="navelem"><a class="el" href="../../dir_9febfb34bf47b71f9858a4f465710f05.html">src</a></li><li class="navelem"><a class="el" href="../../d7/db8/a01687.html">node.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

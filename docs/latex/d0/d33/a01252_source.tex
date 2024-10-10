@@ -1,0 +1,40 @@
+\doxysubsection{node\+\_\+modules/merge-\/descriptors/index.js}
+\hypertarget{a01252_source}{}\label{a01252_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01252}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00008}00008\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00015}00015\ module.exports\ =\ \mbox{\hyperlink{a00101_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00022}00022\ var\ hasOwnProperty\ =\ Object.prototype.hasOwnProperty}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00034}00034\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00101_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}\ (dest,\ src,\ redefine)\ \{}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00035}00035\ \ \ \textcolor{keywordflow}{if}\ (!dest)\ \{}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ dest\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00037}00037\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00039}00039\ \ \ \textcolor{keywordflow}{if}\ (!src)\ \{}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ src\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00041}00041\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00043}00043\ \ \ \textcolor{keywordflow}{if}\ (redefine\ ===\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Default\ to\ true}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00045}00045\ \ \ \ \ redefine\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00046}00046\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00048}00048\ \ \ Object.getOwnPropertyNames(src).forEach(\textcolor{keyword}{function}\ forEachOwnPropertyName\ (name)\ \{}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (!redefine\ \&\&\ hasOwnProperty.call(dest,\ name))\ \{}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00050}00050\ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ descriptor}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Copy\ descriptor}}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00055}00055\ \ \ \ \ var\ descriptor\ =\ Object.getOwnPropertyDescriptor(src,\ name)}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00056}00056\ \ \ \ \ Object.defineProperty(dest,\ name,\ descriptor)}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00057}00057\ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{a01252_source_l00059}00059\ \ \ \textcolor{keywordflow}{return}\ dest}
+\DoxyCodeLine{\Hypertarget{a01252_source_l00060}00060\ \}}
+
+\end{DoxyCode}

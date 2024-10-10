@@ -1,0 +1,44 @@
+\doxysubsection{medicion\+Controller.\+js}
+\hypertarget{a00536_source}{}\label{a00536_source}\index{medicionController.js@{medicionController.js}}
+\mbox{\hyperlink{a00536}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00001}\mbox{\hyperlink{a00536_a59be084da8908b7d77ff34b25cd84488_a59be084da8908b7d77ff34b25cd84488}{00001}}\ \textcolor{keyword}{import}\ \{\ \mbox{\hyperlink{a00638_a5584509a73694d908bebf97464c0c255_a5584509a73694d908bebf97464c0c255}{obtenerMediciones}},\ \mbox{\hyperlink{a00638_af1e046d467b6f02e2699fc8e3ba539aa_af1e046d467b6f02e2699fc8e3ba539aa}{enviarMedicion}},\ \mbox{\hyperlink{a00638_a9e697b665d6ba0ad8418337fe2a2d91a_a9e697b665d6ba0ad8418337fe2a2d91a}{obtenerUltimaMedicion}}\ \}\ from\ \textcolor{stringliteral}{'../services/medicionService.js'};}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00536_source_l00003}00003\ \textcolor{comment}{//\ Obtener\ todas\ las\ mediciones\ (con\ filtros\ opcionales)}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00018}\mbox{\hyperlink{a00536_a39f96dc7b51d953e4e65a08564e73d5a_a39f96dc7b51d953e4e65a08564e73d5a}{00018}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00536_a39f96dc7b51d953e4e65a08564e73d5a_a39f96dc7b51d953e4e65a08564e73d5a}{getMediciones}}\ =\ async\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00019}00019\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{const}\ \{\ lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora\ \}\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.query;}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{const}\ mediciones\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00638_a5584509a73694d908bebf97464c0c255_a5584509a73694d908bebf97464c0c255}{obtenerMediciones}}(lugar,\ tipo\_gas,\ desde\_hora,\ hasta\_hora);}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(200).json(mediciones);}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00023}00023\ \ \ \}\ \textcolor{keywordflow}{catch}\ (error)\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(400).json(\{\ message:\ error.message\ \});}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00025}00025\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{a00536_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a00536_source_l00039}00039\ \textcolor{comment}{//\ Crear\ nueva\ medición}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00040}\mbox{\hyperlink{a00536_ade4b47fa63ce1524d54b4855698c2aee_ade4b47fa63ce1524d54b4855698c2aee}{00040}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00536_ade4b47fa63ce1524d54b4855698c2aee_ade4b47fa63ce1524d54b4855698c2aee}{postMedicion}}\ =\ async\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00041}00041\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{const}\ nuevaMedicion\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.body;}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00638_af1e046d467b6f02e2699fc8e3ba539aa_af1e046d467b6f02e2699fc8e3ba539aa}{enviarMedicion}}(nuevaMedicion);}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(201).json(\{\ message:\ \textcolor{stringliteral}{'Medición\ creada\ correctamente'}\ \});}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00045}00045\ \ \ \}\ \textcolor{keywordflow}{catch}\ (error)\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(400).json(\{\ message:\ error.message\ \});}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00047}00047\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{a00536_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a00536_source_l00061}00061\ \textcolor{comment}{//\ Obtener\ la\ última\ medición}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00062}\mbox{\hyperlink{a00536_a506c19b39343a5688cf622b036cdddd7_a506c19b39343a5688cf622b036cdddd7}{00062}}\ \mbox{\hyperlink{a01195_a0c82af93735dc153158c065171f9ee0f_a0c82af93735dc153158c065171f9ee0f}{export}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00536_a506c19b39343a5688cf622b036cdddd7_a506c19b39343a5688cf622b036cdddd7}{getUltimaMedicion}}\ =\ async\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00063}00063\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ ultimaMedicion\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00638_a9e697b665d6ba0ad8418337fe2a2d91a_a9e697b665d6ba0ad8418337fe2a2d91a}{obtenerUltimaMedicion}}();}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ultimaMedicion)\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(404).json(\{\ message:\ \textcolor{stringliteral}{'No\ se\ encontró\ ninguna\ medición'}\ \});}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(200).json(ultimaMedicion);}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00069}00069\ \ \ \}\ \textcolor{keywordflow}{catch}\ (error)\ \{}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.status(400).json(\{\ message:\ error.message\ \});}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00071}00071\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00536_source_l00072}00072\ \};}
+
+\end{DoxyCode}

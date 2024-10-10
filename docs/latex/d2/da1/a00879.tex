@@ -1,0 +1,42 @@
+\doxysection{destroy}
+\hypertarget{a00879}{}\label{a00879}\index{destroy@{destroy}}
+\label{a00879_autotoc_md459}%
+\Hypertarget{a00879_autotoc_md459}%
+
+
+\href{https://npmjs.org/package/destroy}{\texttt{ }} \href{https://github.com/stream-utils/destroy/actions/workflows/ci.yml}{\texttt{ }} \href{https://coveralls.io/r/stream-utils/destroy?branch=master}{\texttt{ }} \doxylink{a01789}{} \href{https://npmjs.org/package/destroy}{\texttt{ }}
+
+Destroy a stream.
+
+This module is meant to ensure a stream gets destroyed, handling different APIs and Node.\+js bugs.\hypertarget{a00879_autotoc_md460}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00879_autotoc_md460}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ destroy\ =\ require(\textcolor{stringliteral}{'destroy'})}
+
+\end{DoxyCode}
+\hypertarget{a00879_autotoc_md461}{}\doxysubsubsection{\texorpdfstring{destroy(stream \mbox{[}, suppress\mbox{]})}{destroy(stream \mbox{[}, suppress\mbox{]})}}\label{a00879_autotoc_md461}
+Destroy the given stream, and optionally suppress any future {\ttfamily error} events.
+
+In most cases, this is identical to a simple {\ttfamily stream.\+destroy()} call. The rules are as follows for a given stream\+:
+
+
+\begin{DoxyEnumerate}
+\item If the {\ttfamily stream} is an instance of {\ttfamily Read\+Stream}, then call {\ttfamily stream.\+destroy()} and add a listener to the {\ttfamily open} event to call {\ttfamily stream.\+close()} if it is fired. This is for a Node.\+js bug that will leak a file descriptor if {\ttfamily .destroy()} is called before {\ttfamily open}.
+\item If the {\ttfamily stream} is an instance of a zlib stream, then call {\ttfamily stream.\+destroy()} and close the underlying zlib handle if open, otherwise call {\ttfamily stream.\+close()}. This is for consistency across Node.\+js versions and a Node.\+js bug that will leak a native zlib handle.
+\item If the {\ttfamily stream} is not an instance of {\ttfamily Stream}, then nothing happens.
+\item If the {\ttfamily stream} has a {\ttfamily .destroy()} method, then call it.
+\end{DoxyEnumerate}
+
+The function returns the {\ttfamily stream} passed in as the argument.\hypertarget{a00879_autotoc_md462}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{a00879_autotoc_md462}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ destroy\ =\ require(\textcolor{stringliteral}{'destroy'})}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}\ =\ require('\mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}')}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}}\ =\ \mbox{\hyperlink{a00128_aebcdd70130f7e0b00b39cc981ab0bab0_aebcdd70130f7e0b00b39cc981ab0bab0}{fs}}.createReadStream('package.\mbox{\hyperlink{a00104_ac6fdc7f7005e375dc7d7dce4bc785ab4_ac6fdc7f7005e375dc7d7dce4bc785ab4}{json}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ ...\ and\ later}}
+\DoxyCodeLine{destroy(\mbox{\hyperlink{a01687_a822bf74d422c61e6caa292f739dc4786_a822bf74d422c61e6caa292f739dc4786}{stream}})}
+
+\end{DoxyCode}
+ 

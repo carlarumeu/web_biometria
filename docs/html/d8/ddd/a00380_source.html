@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente string.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d8/ddd/a00380_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">string.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/ddd/a00380.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d8/ddd/a00380_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d8/ddd/a00380_a75c197d37dffa4fec650fb8c23412fbe.html#a75c197d37dffa4fec650fb8c23412fbe">    3</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d8/ddd/a00380_a75c197d37dffa4fec650fb8c23412fbe.html#a75c197d37dffa4fec650fb8c23412fbe">Iconv</a> = require(<span class="stringliteral">&#39;iconv-lite&#39;</span>);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d8/ddd/a00380_a92b303b76a3f942ea819498907d5e83c.html#a92b303b76a3f942ea819498907d5e83c">    4</a></span><span class="keyword">const</span> { <a class="code hl_variable" href="../../d5/df1/a00206_a066103f1e2a7b2f1563ff90ca14b24f5.html#a066103f1e2a7b2f1563ff90ca14b24f5">createLRU</a> } = require(<span class="stringliteral">&#39;lru.min&#39;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">    6</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">decoderCache</a> = <a class="code hl_variable" href="../../d5/df1/a00206_a066103f1e2a7b2f1563ff90ca14b24f5.html#a066103f1e2a7b2f1563ff90ca14b24f5">createLRU</a>({</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  <a class="code hl_variable" href="../../d7/d06/a00131_a04fa2ea575d5471ca09e1b344ec4a69e.html#a04fa2ea575d5471ca09e1b344ec4a69e">max</a>: 500,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>});</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d8/ddd/a00380_a9c63166a4293639c8d0ea4adf3ced281.html#a9c63166a4293639c8d0ea4adf3ced281">   10</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.decode = <span class="keyword">function</span> (buffer, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>, start, <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>, options) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keywordflow">if</span> (Buffer.isEncoding(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>)) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> buffer.toString(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>, start, <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="comment">// Optimize for common case: encoding=&quot;short_string&quot;, options=undefined.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">if</span> (!options) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a> = <a class="code hl_variable" href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">decoderCache</a>.get(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a> = <a class="code hl_variable" href="../../d8/ddd/a00380_a75c197d37dffa4fec650fb8c23412fbe.html#a75c197d37dffa4fec650fb8c23412fbe">Iconv</a>.getDecoder(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      <a class="code hl_variable" href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">decoderCache</a>.set(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>, <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> decoderArgs = { <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>, options };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> decoderKey = <a class="code hl_variable" href="../../dd/de2/a00320_a5c2083d67680a698a2c2d545b649a6f5.html#a5c2083d67680a698a2c2d545b649a6f5">JSON</a>.stringify(decoderArgs);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a> = <a class="code hl_variable" href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">decoderCache</a>.get(decoderKey);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a> = <a class="code hl_variable" href="../../d8/ddd/a00380_a75c197d37dffa4fec650fb8c23412fbe.html#a75c197d37dffa4fec650fb8c23412fbe">Iconv</a>.getDecoder(decoderArgs.encoding, decoderArgs.options);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <a class="code hl_variable" href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">decoderCache</a>.set(decoderKey, <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">const</span> <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> = <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>.write(buffer.slice(start, <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>));</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">const</span> trail = <a class="code hl_variable" href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a>.end();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">return</span> trail ? <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> + trail : <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d8/ddd/a00380_a2497caf2a4834364b38ffb279bd23a73.html#a2497caf2a4834364b38ffb279bd23a73">   39</a></span><a class="code hl_variable" href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a>.encode = <span class="keyword">function</span> (string, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>, options) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> (Buffer.isEncoding(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>)) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> Buffer.from(<span class="keywordtype">string</span>, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">const</span> <a class="code hl_variable" href="../../dc/de8/a01723_a2e3d2e577cc69881c4ec00c7b8005e35.html#a2e3d2e577cc69881c4ec00c7b8005e35">encoder</a> = <a class="code hl_variable" href="../../d8/ddd/a00380_a75c197d37dffa4fec650fb8c23412fbe.html#a75c197d37dffa4fec650fb8c23412fbe">Iconv</a>.getEncoder(<a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>, options || {});</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">const</span> <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> = <a class="code hl_variable" href="../../dc/de8/a01723_a2e3d2e577cc69881c4ec00c7b8005e35.html#a2e3d2e577cc69881c4ec00c7b8005e35">encoder</a>.write(<span class="keywordtype">string</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">const</span> trail = <a class="code hl_variable" href="../../dc/de8/a01723_a2e3d2e577cc69881c4ec00c7b8005e35.html#a2e3d2e577cc69881c4ec00c7b8005e35">encoder</a>.end();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">return</span> trail &amp;&amp; trail.length &gt; 0 ? Buffer.concat([<a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>, trail]) : <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="ttc" id="aa00104_abde3c35e3bb7e5225dd7f234c685329c_html_abde3c35e3bb7e5225dd7f234c685329c"><div class="ttname"><a href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a></div><div class="ttdeci">var res</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00022">express.js:22</a></div></div>
+<div class="ttc" id="aa00131_a04fa2ea575d5471ca09e1b344ec4a69e_html_a04fa2ea575d5471ca09e1b344ec4a69e"><div class="ttname"><a href="../../d7/d06/a00131_a04fa2ea575d5471ca09e1b344ec4a69e.html#a04fa2ea575d5471ca09e1b344ec4a69e">max</a></div><div class="ttdeci">var max</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d06/a00131_source.html#l00007">implementation.js:7</a></div></div>
+<div class="ttc" id="aa00206_a066103f1e2a7b2f1563ff90ca14b24f5_html_a066103f1e2a7b2f1563ff90ca14b24f5"><div class="ttname"><a href="../../d5/df1/a00206_a066103f1e2a7b2f1563ff90ca14b24f5.html#a066103f1e2a7b2f1563ff90ca14b24f5">createLRU</a></div><div class="ttdeci">window createLRU</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df1/a00206_source.html#l00001">lru.min.js:1</a></div></div>
+<div class="ttc" id="aa00320_a5c2083d67680a698a2c2d545b649a6f5_html_a5c2083d67680a698a2c2d545b649a6f5"><div class="ttname"><a href="../../dd/de2/a00320_a5c2083d67680a698a2c2d545b649a6f5.html#a5c2083d67680a698a2c2d545b649a6f5">JSON</a></div><div class="ttdeci">module exports JSON</div><div class="ttdef"><b>Definition</b> <a href="../../dd/de2/a00320_source.html#l00055">types.js:55</a></div></div>
+<div class="ttc" id="aa00380_a75c197d37dffa4fec650fb8c23412fbe_html_a75c197d37dffa4fec650fb8c23412fbe"><div class="ttname"><a href="../../d8/ddd/a00380_a75c197d37dffa4fec650fb8c23412fbe.html#a75c197d37dffa4fec650fb8c23412fbe">Iconv</a></div><div class="ttdeci">const Iconv</div><div class="ttdef"><b>Definition</b> <a href="#l00003">string.js:3</a></div></div>
+<div class="ttc" id="aa00380_aea54c4e3f337fc50fb97818bf9c5e55a_html_aea54c4e3f337fc50fb97818bf9c5e55a"><div class="ttname"><a href="../../d8/ddd/a00380_aea54c4e3f337fc50fb97818bf9c5e55a.html#aea54c4e3f337fc50fb97818bf9c5e55a">decoderCache</a></div><div class="ttdeci">const decoderCache</div><div class="ttdef"><b>Definition</b> <a href="#l00006">string.js:6</a></div></div>
+<div class="ttc" id="aa00404_ade59c25e4b06a463da08f869c2e7163e_html_ade59c25e4b06a463da08f869c2e7163e"><div class="ttname"><a href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a></div><div class="ttdeci">Utf32Encoder prototype end</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de6/a00404_source.html#l00081">utf32.js:81</a></div></div>
+<div class="ttc" id="aa01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_html_aa4072ba4b6b56b0fb6f4801f17ab2b34"><div class="ttname"><a href="../../d4/da7/a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">exports</a></div><div class="ttdeci">module exports</div><div class="ttdef"><b>Definition</b> <a href="../../d4/da7/a01102_source.html#l00011">node_modules/aws-ssl-profiles/lib/index.js:11</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+<div class="ttc" id="aa01288_a9ad8213a7626ee07aef47950752cac18_html_a9ad8213a7626ee07aef47950752cac18"><div class="ttname"><a href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a></div><div class="ttdeci">Negotiator prototype encoding</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00047">node_modules/negotiator/index.js:47</a></div></div>
+<div class="ttc" id="aa01723_a2e3d2e577cc69881c4ec00c7b8005e35_html_a2e3d2e577cc69881c4ec00c7b8005e35"><div class="ttname"><a href="../../dc/de8/a01723_a2e3d2e577cc69881c4ec00c7b8005e35.html#a2e3d2e577cc69881c4ec00c7b8005e35">encoder</a></div><div class="ttdeci">DBCSCodec prototype encoder</div><div class="ttdef"><b>Definition</b> <a href="../../dc/de8/a01723_source.html#l00121">iconv-lite/encodings/dbcs-codec.js:121</a></div></div>
+<div class="ttc" id="aa01723_ad3d625998d0232650afb4cf3c50dc9f1_html_ad3d625998d0232650afb4cf3c50dc9f1"><div class="ttname"><a href="../../dc/de8/a01723_ad3d625998d0232650afb4cf3c50dc9f1.html#ad3d625998d0232650afb4cf3c50dc9f1">decoder</a></div><div class="ttdeci">DBCSCodec prototype decoder</div><div class="ttdef"><b>Definition</b> <a href="../../dc/de8/a01723_source.html#l00122">iconv-lite/encodings/dbcs-codec.js:122</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_8b14931013722db138f88ea0ce77ad62.html">parsers</a></li><li class="navelem"><a class="el" href="../../d8/ddd/a00380.html">string.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

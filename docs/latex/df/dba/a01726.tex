@@ -1,0 +1,182 @@
+\doxysubsection{Referencia del archivo mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.js}
+\hypertarget{a01726}{}\label{a01726}\index{dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a01726_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} (codec\+Options, \mbox{\hyperlink{a01234_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}})
+\item 
+function \mbox{\hyperlink{a01726_aa111899b7d948e60b1d84783a493a3e3_aa111899b7d948e60b1d84783a493a3e3}{DBCSDecoder}} (options, codec)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01726_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+var \mbox{\hyperlink{a01726_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}} = require("{}safer-\/buffer"{}).Buffer
+\item 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01726_a2a54c9dab149aa16455f2038c1d5bacb_a2a54c9dab149aa16455f2038c1d5bacb}{\+\_\+dbcs}} = \mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}}
+\item 
+var \mbox{\hyperlink{a01726_a524a1c8a80b0c38ab9bf0c8d72cd6735_a524a1c8a80b0c38ab9bf0c8d72cd6735}{UNASSIGNED}} = -\/1
+\item 
+var \mbox{\hyperlink{a01726_a50c7ef8c234abc12a6c40213ba962253_a50c7ef8c234abc12a6c40213ba962253}{GB18030\+\_\+\+CODE}} = -\/2
+\item 
+var \mbox{\hyperlink{a01726_a13f5d00100c8407b8c5fbb28683260b8_a13f5d00100c8407b8c5fbb28683260b8}{SEQ\+\_\+\+START}} = -\/10
+\item 
+var \mbox{\hyperlink{a01726_a7097df03d19f08d03aef2a303d01c402_a7097df03d19f08d03aef2a303d01c402}{NODE\+\_\+\+START}} = -\/1000
+\item 
+var \mbox{\hyperlink{a01726_a8fa1a818b391ca576ea9c87f631edc5c_a8fa1a818b391ca576ea9c87f631edc5c}{UNASSIGNED\+\_\+\+NODE}} = \mbox{\hyperlink{a01195_a7af34e8e129dfe2752fd55ac3e2e467a_a7af34e8e129dfe2752fd55ac3e2e467a}{new}} Array(0x100)
+\item 
+var \mbox{\hyperlink{a01726_a4f0d901e18d48a31a9114ecdc60e11c8_a4f0d901e18d48a31a9114ecdc60e11c8}{DEF\+\_\+\+CHAR}} = -\/1
+\item 
+\mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a01726_a9397858b8fd30dbc87e673b9ed30953a_a9397858b8fd30dbc87e673b9ed30953a}{encoder}} = DBCSEncoder
+\item 
+\mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a01726_acc97c23fd7cfb5aa491f7a7c9c93348b_acc97c23fd7cfb5aa491f7a7c9c93348b}{decoder}} = \mbox{\hyperlink{a01723_aa111899b7d948e60b1d84783a493a3e3_aa111899b7d948e60b1d84783a493a3e3}{DBCSDecoder}}
+\item 
+\mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \mbox{\hyperlink{a01726_a3628692f27c06944c2abe51472c681fd_a3628692f27c06944c2abe51472c681fd}{\+\_\+get\+Decode\+Trie\+Node}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01726_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!DBCSCodec@{DBCSCodec}}
+\index{DBCSCodec@{DBCSCodec}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{DBCSCodec()}{DBCSCodec()}}
+{\footnotesize\ttfamily \label{a01726_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e} 
+function DBCSCodec (\begin{DoxyParamCaption}\item[{}]{codec\+Options}{, }\item[{}]{iconv}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00022}{22}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_aa111899b7d948e60b1d84783a493a3e3_aa111899b7d948e60b1d84783a493a3e3}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!DBCSDecoder@{DBCSDecoder}}
+\index{DBCSDecoder@{DBCSDecoder}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{DBCSDecoder()}{DBCSDecoder()}}
+{\footnotesize\ttfamily \label{a01726_aa111899b7d948e60b1d84783a493a3e3_aa111899b7d948e60b1d84783a493a3e3} 
+function DBCSDecoder (\begin{DoxyParamCaption}\item[{}]{options}{, }\item[{}]{codec}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00476}{476}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01726_a2a54c9dab149aa16455f2038c1d5bacb_a2a54c9dab149aa16455f2038c1d5bacb}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!\_dbcs@{\_dbcs}}
+\index{\_dbcs@{\_dbcs}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{\_dbcs}{\_dbcs}}
+{\footnotesize\ttfamily \label{a01726_a2a54c9dab149aa16455f2038c1d5bacb_a2a54c9dab149aa16455f2038c1d5bacb} 
+\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \+\_\+dbcs = \mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00008}{8}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a3628692f27c06944c2abe51472c681fd_a3628692f27c06944c2abe51472c681fd}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!\_getDecodeTrieNode@{\_getDecodeTrieNode}}
+\index{\_getDecodeTrieNode@{\_getDecodeTrieNode}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{\_getDecodeTrieNode}{\_getDecodeTrieNode}}
+{\footnotesize\ttfamily \label{a01726_a3628692f27c06944c2abe51472c681fd_a3628692f27c06944c2abe51472c681fd} 
+\mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} \+\_\+get\+Decode\+Trie\+Node}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00143}{143}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily \label{a01726_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4} 
+var Buffer = require("{}safer-\/buffer"{}).Buffer}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00002}{2}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_acc97c23fd7cfb5aa491f7a7c9c93348b_acc97c23fd7cfb5aa491f7a7c9c93348b}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!decoder@{decoder}}
+\index{decoder@{decoder}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{decoder}{decoder}}
+{\footnotesize\ttfamily \label{a01726_acc97c23fd7cfb5aa491f7a7c9c93348b_acc97c23fd7cfb5aa491f7a7c9c93348b} 
+\mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} decoder = \mbox{\hyperlink{a01723_aa111899b7d948e60b1d84783a493a3e3_aa111899b7d948e60b1d84783a493a3e3}{DBCSDecoder}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00140}{140}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a4f0d901e18d48a31a9114ecdc60e11c8_a4f0d901e18d48a31a9114ecdc60e11c8}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!DEF\_CHAR@{DEF\_CHAR}}
+\index{DEF\_CHAR@{DEF\_CHAR}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{DEF\_CHAR}{DEF\_CHAR}}
+{\footnotesize\ttfamily \label{a01726_a4f0d901e18d48a31a9114ecdc60e11c8_a4f0d901e18d48a31a9114ecdc60e11c8} 
+var DEF\+\_\+\+CHAR = -\/1}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00015}{15}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a9397858b8fd30dbc87e673b9ed30953a_a9397858b8fd30dbc87e673b9ed30953a}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!encoder@{encoder}}
+\index{encoder@{encoder}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{encoder}{encoder}}
+{\footnotesize\ttfamily \label{a01726_a9397858b8fd30dbc87e673b9ed30953a_a9397858b8fd30dbc87e673b9ed30953a} 
+\mbox{\hyperlink{a01723_ae1aa3dc81117248270f3744a0eac6e5e_ae1aa3dc81117248270f3744a0eac6e5e}{DBCSCodec}} \mbox{\hyperlink{a01735_a22c3fb2b14bdd9d6de4c61f2778f4444_a22c3fb2b14bdd9d6de4c61f2778f4444}{prototype}} encoder = DBCSEncoder}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00139}{139}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a50c7ef8c234abc12a6c40213ba962253_a50c7ef8c234abc12a6c40213ba962253}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!GB18030\_CODE@{GB18030\_CODE}}
+\index{GB18030\_CODE@{GB18030\_CODE}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{GB18030\_CODE}{GB18030\_CODE}}
+{\footnotesize\ttfamily \label{a01726_a50c7ef8c234abc12a6c40213ba962253_a50c7ef8c234abc12a6c40213ba962253} 
+var GB18030\+\_\+\+CODE = -\/2}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00011}{11}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a7097df03d19f08d03aef2a303d01c402_a7097df03d19f08d03aef2a303d01c402}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!NODE\_START@{NODE\_START}}
+\index{NODE\_START@{NODE\_START}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{NODE\_START}{NODE\_START}}
+{\footnotesize\ttfamily \label{a01726_a7097df03d19f08d03aef2a303d01c402_a7097df03d19f08d03aef2a303d01c402} 
+var NODE\+\_\+\+START = -\/1000}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00013}{13}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a13f5d00100c8407b8c5fbb28683260b8_a13f5d00100c8407b8c5fbb28683260b8}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!SEQ\_START@{SEQ\_START}}
+\index{SEQ\_START@{SEQ\_START}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{SEQ\_START}{SEQ\_START}}
+{\footnotesize\ttfamily \label{a01726_a13f5d00100c8407b8c5fbb28683260b8_a13f5d00100c8407b8c5fbb28683260b8} 
+var SEQ\+\_\+\+START = -\/10}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00012}{12}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!strict@{strict}}
+\index{strict@{strict}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01726_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00001}{1}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a524a1c8a80b0c38ab9bf0c8d72cd6735_a524a1c8a80b0c38ab9bf0c8d72cd6735}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!UNASSIGNED@{UNASSIGNED}}
+\index{UNASSIGNED@{UNASSIGNED}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{UNASSIGNED}{UNASSIGNED}}
+{\footnotesize\ttfamily \label{a01726_a524a1c8a80b0c38ab9bf0c8d72cd6735_a524a1c8a80b0c38ab9bf0c8d72cd6735} 
+var UNASSIGNED = -\/1}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00010}{10}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+
+\Hypertarget{a01726_a8fa1a818b391ca576ea9c87f631edc5c_a8fa1a818b391ca576ea9c87f631edc5c}\index{dbcs-\/codec.js@{dbcs-\/codec.js}!UNASSIGNED\_NODE@{UNASSIGNED\_NODE}}
+\index{UNASSIGNED\_NODE@{UNASSIGNED\_NODE}!dbcs-\/codec.js@{dbcs-\/codec.js}}
+\doxyparagraph{\texorpdfstring{UNASSIGNED\_NODE}{UNASSIGNED\_NODE}}
+{\footnotesize\ttfamily \label{a01726_a8fa1a818b391ca576ea9c87f631edc5c_a8fa1a818b391ca576ea9c87f631edc5c} 
+var UNASSIGNED\+\_\+\+NODE = \mbox{\hyperlink{a01195_a7af34e8e129dfe2752fd55ac3e2e467a_a7af34e8e129dfe2752fd55ac3e2e467a}{new}} Array(0x100)}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01726_source_l00014}{14}} del archivo \mbox{\hyperlink{a01726_source}{mysql2/node\+\_\+modules/iconv-\/lite/encodings/dbcs-\/codec.\+js}}.
+

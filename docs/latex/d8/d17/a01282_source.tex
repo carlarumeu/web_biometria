@@ -1,0 +1,186 @@
+\doxysubsection{node\+\_\+modules/mysql2/node\+\_\+modules/iconv-\/lite/lib/index.js}
+\hypertarget{a01282_source}{}\label{a01282_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01282}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00001}\mbox{\hyperlink{a01282_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{"{}use\ strict"{}};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00003}\mbox{\hyperlink{a01282_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{00003}}\ var\ \mbox{\hyperlink{a01282_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}\ =\ require(\textcolor{stringliteral}{"{}safer-\/buffer"{}}).Buffer;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00005}\mbox{\hyperlink{a01282_a90c930e3e6d588cc7ced10d3500da4f8_a90c930e3e6d588cc7ced10d3500da4f8}{00005}}\ var\ \mbox{\hyperlink{a01282_a90c930e3e6d588cc7ced10d3500da4f8_a90c930e3e6d588cc7ced10d3500da4f8}{bomHandling}}\ =\ require(\textcolor{stringliteral}{"{}./bom-\/handling"{}}),}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00006}\mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{00006}}\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}\ =\ module.exports;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00008}00008\ \textcolor{comment}{//\ All\ codecs\ and\ aliases\ are\ kept\ here,\ keyed\ by\ encoding\ name/alias.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00009}00009\ \textcolor{comment}{//\ They\ are\ lazy\ loaded\ in\ \`{}iconv.getCodec`\ from\ \`{}encodings/index.js`.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00010}\mbox{\hyperlink{a01282_a031734e7c79247e480f81e571586932d_a031734e7c79247e480f81e571586932d}{00010}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodings\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00012}00012\ \textcolor{comment}{//\ Characters\ emitted\ in\ case\ of\ error.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00013}\mbox{\hyperlink{a01282_a03ca51949015b7c9734fd87bf26de60a_a03ca51949015b7c9734fd87bf26de60a}{00013}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.defaultCharUnicode\ =\ \textcolor{stringliteral}{'{\ucr}'};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00014}\mbox{\hyperlink{a01282_aeffa94a3dfe04104b28251048d914570_aeffa94a3dfe04104b28251048d914570}{00014}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.defaultCharSingleByte\ =\ \textcolor{charliteral}{'?'};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00016}00016\ \textcolor{comment}{//\ Public\ API.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00017}\mbox{\hyperlink{a01282_ae23b090bc621f1115f8fa339550977e4_ae23b090bc621f1115f8fa339550977e4}{00017}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encode\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01282_ae23b090bc621f1115f8fa339550977e4_ae23b090bc621f1115f8fa339550977e4}{encode}}(str,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00018}00018\ \ \ \ \ str\ =\ \textcolor{stringliteral}{"{}"{}}\ +\ (str\ ||\ \textcolor{stringliteral}{"{}"{}});\ \textcolor{comment}{//\ Ensure\ string.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00020}00020\ \ \ \ \ var\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getEncoder(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00022}00022\ \ \ \ \ var\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ =\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}.write(str);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00023}00023\ \ \ \ \ var\ trail\ =\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}.end();}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (trail\ \&\&\ trail.length\ >\ 0)\ ?\ \mbox{\hyperlink{a01282_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.concat([\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ trail])\ :\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00028}00028\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decode\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00380_a9c63166a4293639c8d0ea4adf3ced281_a9c63166a4293639c8d0ea4adf3ced281}{decode}}(buf,\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ buf\ ===\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.skipDecodeWarning)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ console.error(\textcolor{stringliteral}{'Iconv-\/lite\ warning:\ decode()-\/ing\ strings\ is\ deprecated.\ Refer\ to\ https://github.com/ashtuchkin/iconv-\/lite/wiki/Use-\/Buffers-\/when-\/decoding'});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.skipDecodeWarning\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00035}00035\ \ \ \ \ \ \ \ \ buf\ =\ \mbox{\hyperlink{a01282_a6e9de2d16b02dc274208bfcc1914d7f4_a6e9de2d16b02dc274208bfcc1914d7f4}{Buffer}}.from(\textcolor{stringliteral}{"{}"{}}\ +\ (buf\ ||\ \textcolor{stringliteral}{"{}"{}}),\ \textcolor{stringliteral}{"{}binary"{}});\ \textcolor{comment}{//\ Ensure\ buffer.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00038}00038\ \ \ \ \ var\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getDecoder(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00040}00040\ \ \ \ \ var\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ =\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}.write(buf);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00041}00041\ \ \ \ \ var\ trail\ =\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}.end();}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ trail\ ?\ (\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ +\ trail)\ :\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00046}00046\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodingExists\ =\ \textcolor{keyword}{function}\ encodingExists(enc)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getCodec(enc);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00050}00050\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00055}00055\ \textcolor{comment}{//\ Legacy\ aliases\ to\ convert\ functions}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00056}00056\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.toEncoding\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encode;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00057}\mbox{\hyperlink{a01282_a1baedd8a80986846daa9014730d4eda4_a1baedd8a80986846daa9014730d4eda4}{00057}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.fromEncoding\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decode;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00059}00059\ \textcolor{comment}{//\ Search\ for\ a\ codec\ in\ iconv.encodings.\ Cache\ codec\ data\ in\ iconv.\_codecDataCache.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00060}\mbox{\hyperlink{a01282_a5a635f62734a7e7620fa6ca967ebbfc1_a5a635f62734a7e7620fa6ca967ebbfc1}{00060}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.\_codecDataCache\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00061}\mbox{\hyperlink{a01282_aac625ea2bd25c1fdc3fb1067b273e61e_aac625ea2bd25c1fdc3fb1067b273e61e}{00061}}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getCodec\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a01282_aac625ea2bd25c1fdc3fb1067b273e61e_aac625ea2bd25c1fdc3fb1067b273e61e}{getCodec}}(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodings)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodings\ =\ require(\textcolor{stringliteral}{"{}../encodings"{}});\ \textcolor{comment}{//\ Lazy\ load\ all\ encoding\ definitions.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00064}00064\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ Canonicalize\ encoding\ name:\ strip\ all\ non-\/alphanumeric\ chars\ and\ appended\ year.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00066}00066\ \ \ \ \ var\ enc\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.\_canonicalizeEncoding(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ Traverse\ iconv.encodings\ to\ find\ actual\ codec.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00069}00069\ \ \ \ \ var\ codecOptions\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00071}00071\ \ \ \ \ \ \ \ \ var\ codec\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.\_codecDataCache[enc];}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (codec)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ codec;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00075}00075\ \ \ \ \ \ \ \ \ var\ codecDef\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodings[enc];}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (typeof\ codecDef)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}string"{}}:\ \textcolor{comment}{//\ Direct\ alias\ to\ other\ encoding.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enc\ =\ codecDef;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}object"{}}:\ \textcolor{comment}{//\ Alias\ with\ options.\ Can\ be\ layered.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ key\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ codecDef)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codecOptions[key]\ =\ codecDef[key];}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!codecOptions.encodingName)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codecOptions.encodingName\ =\ enc;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enc\ =\ codecDef.type;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}function"{}}:\ \textcolor{comment}{//\ Codec\ itself.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!codecOptions.encodingName)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codecOptions.encodingName\ =\ enc;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ codec\ function\ must\ load\ all\ tables\ and\ return\ object\ with\ .encoder\ and\ .decoder\ methods.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ It'll\ be\ called\ only\ once\ (for\ each\ different\ options\ object).}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codec\ =\ \textcolor{keyword}{new}\ codecDef(codecOptions,\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.\_codecDataCache[codecOptions.encodingName]\ =\ codec;\ \textcolor{comment}{//\ Save\ it\ to\ be\ reused\ later.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ codec;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{"{}Encoding\ not\ recognized:\ '"{}}\ +\ \mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}\ +\ \textcolor{stringliteral}{"{}'\ (searched\ as:\ '"{}}+enc+\textcolor{stringliteral}{"{}')"{}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00109}00109\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.\_canonicalizeEncoding\ =\ \textcolor{keyword}{function}(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ Canonicalize\ encoding\ name:\ strip\ all\ non-\/alphanumeric\ chars\ and\ appended\ year.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{stringliteral}{''}+\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}).toLowerCase().replace(/:\(\backslash\)\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}\{4\}\$|[\string^0-\/9\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}-\/z]/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00114}00114\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getEncoder\ =\ \textcolor{keyword}{function}\ getEncoder(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00115}00115\ \ \ \ \ var\ codec\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getCodec(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}),}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}\ =\ \textcolor{keyword}{new}\ codec.encoder(options,\ codec);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{if}\ (codec.bomAware\ \&\&\ options\ \&\&\ options.addBOM)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01282_a90c930e3e6d588cc7ced10d3500da4f8_a90c930e3e6d588cc7ced10d3500da4f8}{bomHandling}}.PrependBOM(\mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}},\ options);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01723_a2e3d2e577cc69881c4ec00c7b8005e35_a2e3d2e577cc69881c4ec00c7b8005e35}{encoder}};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00124}00124\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getDecoder\ =\ \textcolor{keyword}{function}\ getDecoder(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00125}00125\ \ \ \ \ var\ codec\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getCodec(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}}),}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}\ =\ \textcolor{keyword}{new}\ codec.decoder(options,\ codec);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{if}\ (codec.bomAware\ \&\&\ !(options\ \&\&\ options.stripBOM\ ===\ \textcolor{keyword}{false}))}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01282_a90c930e3e6d588cc7ced10d3500da4f8_a90c930e3e6d588cc7ced10d3500da4f8}{bomHandling}}.StripBOM(\mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}},\ options);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01723_ad3d625998d0232650afb4cf3c50dc9f1_ad3d625998d0232650afb4cf3c50dc9f1}{decoder}};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00134}00134\ \textcolor{comment}{//\ Streaming\ API}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00135}00135\ \textcolor{comment}{//\ NOTE:\ Streaming\ API\ naturally\ depends\ on\ 'stream'\ module\ from\ Node.js.\ Unfortunately\ in\ browser\ environments\ this\ module\ can\ add}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00136}00136\ \textcolor{comment}{//\ up\ to\ 100Kb\ to\ the\ output\ bundle.\ To\ avoid\ unnecessary\ code\ bloat,\ we\ don't\ enable\ Streaming\ API\ in\ browser\ by\ default.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00137}00137\ \textcolor{comment}{//\ If\ you\ would\ like\ to\ enable\ it\ explicitly,\ please\ add\ the\ following\ code\ to\ your\ app:}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00138}00138\ \textcolor{comment}{//\ >\ iconv.enableStreamingAPI(require('stream'));}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00139}00139\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.enableStreamingAPI\ =\ \textcolor{keyword}{function}\ enableStreamingAPI(stream\_module)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.supportsStreams)}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Dependency-\/inject\ stream\ module\ to\ create\ IconvLite\ stream\ classes.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00144}00144\ \ \ \ \ var\ streams\ =\ require(\textcolor{stringliteral}{"{}./streams"{}})(stream\_module);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//\ Not\ public\ API\ yet,\ but\ expose\ the\ stream\ classes.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.IconvLiteEncoderStream\ =\ streams.IconvLiteEncoderStream;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.IconvLiteDecoderStream\ =\ streams.IconvLiteDecoderStream;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ Streaming\ API.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodeStream\ =\ \textcolor{keyword}{function}\ encodeStream(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.IconvLiteEncoderStream(\mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getEncoder(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options),\ options);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decodeStream\ =\ \textcolor{keyword}{function}\ decodeStream(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.IconvLiteDecoderStream(\mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.getDecoder(\mbox{\hyperlink{a01288_a9ad8213a7626ee07aef47950752cac18_a9ad8213a7626ee07aef47950752cac18}{encoding}},\ options),\ options);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.supportsStreams\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00162}00162\ \textcolor{comment}{//\ Enable\ Streaming\ API\ automatically\ if\ 'stream'\ module\ is\ available\ and\ non-\/empty\ (the\ majority\ of\ environments).}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00163}00163\ var\ stream\_module;}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00164}\mbox{\hyperlink{a01282_abe4cc9788f52e49485473dc699537388_abe4cc9788f52e49485473dc699537388}{00164}}\ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00165}00165\ \ \ \ \ stream\_module\ =\ require(\textcolor{stringliteral}{"{}stream"{}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00166}\mbox{\hyperlink{a01282_a5bf45fc51bc0426586792b5f9cb95431_a5bf45fc51bc0426586792b5f9cb95431}{00166}}\ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}})\ \{\}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00168}\mbox{\hyperlink{a01282_a254a948e9bc8c55d30a5dc58ece15c37_a254a948e9bc8c55d30a5dc58ece15c37}{00168}}\ \textcolor{keywordflow}{if}\ (stream\_module\ \&\&\ stream\_module.Transform)\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00169}00169\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.enableStreamingAPI(stream\_module);}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00171}\mbox{\hyperlink{a01282_a0544c3fe466e421738dae463968b70ba_a0544c3fe466e421738dae463968b70ba}{00171}}\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00172}00172\ \ \ \ \ \textcolor{comment}{//\ In\ rare\ cases\ where\ 'stream'\ module\ is\ not\ available\ by\ default,\ throw\ a\ helpful\ exception.}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00173}00173\ \ \ \ \ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.encodeStream\ =\ \mbox{\hyperlink{a01282_a5c062989a80f49a2caf367fe212f6b52_a5c062989a80f49a2caf367fe212f6b52}{iconv}}.decodeStream\ =\ \textcolor{keyword}{function}()\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{"{}iconv-\/lite\ Streaming\ API\ is\ not\ enabled.\ Use\ iconv.enableStreamingAPI(require('stream'));\ to\ enable\ it."{}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00175}00175\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00176}00176\ \}}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{a01282_source_l00178}\mbox{\hyperlink{a01282_a631e64623575e874a48d31eb1b084e8f_a631e64623575e874a48d31eb1b084e8f}{00178}}\ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{"{}Ā"{}}\ !=\ \textcolor{stringliteral}{"{}\(\backslash\)u0100"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00179}00179\ \ \ \ \ console.error(\textcolor{stringliteral}{"{}iconv-\/lite\ warning:\ js\ files\ use\ non-\/utf8\ encoding.\ See\ https://github.com/ashtuchkin/iconv-\/lite/wiki/Javascript-\/source-\/file-\/encodings\ for\ more\ info."{}});}
+\DoxyCodeLine{\Hypertarget{a01282_source_l00180}00180\ \}}
+
+\end{DoxyCode}

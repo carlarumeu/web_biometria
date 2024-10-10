@@ -1,0 +1,152 @@
+\doxysubsection{Referencia del archivo binary\+\_\+parser.\+js}
+\hypertarget{a00374}{}\label{a00374}\index{binary\_parser.js@{binary\_parser.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00374_a3f8092171f09af2a1f1a9da7315acaa8_a3f8092171f09af2a1f1a9da7315acaa8}{for}} (\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}} \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}} \mbox{\hyperlink{a00338_acb7e0e89b59629f5d62ba2f3ecd63029_acb7e0e89b59629f5d62ba2f3ecd63029}{Types}})
+\item 
+function \mbox{\hyperlink{a00374_a9815e8378307f50db19258a7e227a9b1_a9815e8378307f50db19258a7e227a9b1}{read\+Code\+For}} (field, config, options, field\+Num)
+\item 
+function \mbox{\hyperlink{a00374_aa5ba8fc82448cfd208a589ee41c61a9b_aa5ba8fc82448cfd208a589ee41c61a9b}{compile}} (\mbox{\hyperlink{a00344_a7dfceba4d8646e1fc3116bc603b378bd_a7dfceba4d8646e1fc3116bc603b378bd}{fields}}, options, config)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00374_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_a58c78333f980a002f412fa9d80bd03a7_a58c78333f980a002f412fa9d80bd03a7}{Field\+Flags}} = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{field\+\_\+flags.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_a9e874c65dfd6a2bd1d88ed059fdf48a1_a9e874c65dfd6a2bd1d88ed059fdf48a1}{Charsets}} = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{charsets.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_acb7e0e89b59629f5d62ba2f3ecd63029_acb7e0e89b59629f5d62ba2f3ecd63029}{Types}} = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{types.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_ae5552fade59a5d2c4b1db5986f2dbd9e_ae5552fade59a5d2c4b1db5986f2dbd9e}{helpers}} = require(\textquotesingle{}../helpers\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_a45963b0c94982452e71fb6a93dd7757e_a45963b0c94982452e71fb6a93dd7757e}{gen\+Func}} = require(\textquotesingle{}generate-\/function\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2}{parser\+Cache}} = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{parser\+\_\+cache.\+js}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00374_a08bdaba7bd44b17989465550bb06d934_a08bdaba7bd44b17989465550bb06d934}{type\+Names}} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00374_aa5ba8fc82448cfd208a589ee41c61a9b_aa5ba8fc82448cfd208a589ee41c61a9b}\index{binary\_parser.js@{binary\_parser.js}!compile@{compile}}
+\index{compile@{compile}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{compile()}{compile()}}
+{\footnotesize\ttfamily \label{a00374_aa5ba8fc82448cfd208a589ee41c61a9b_aa5ba8fc82448cfd208a589ee41c61a9b} 
+function compile (\begin{DoxyParamCaption}\item[{}]{fields}{, }\item[{}]{options}{, }\item[{}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00086}{86}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 0
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{a00374_a3f8092171f09af2a1f1a9da7315acaa8_a3f8092171f09af2a1f1a9da7315acaa8}\index{binary\_parser.js@{binary\_parser.js}!for@{for}}
+\index{for@{for}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily \label{a00374_a3f8092171f09af2a1f1a9da7315acaa8_a3f8092171f09af2a1f1a9da7315acaa8} 
+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}} \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}}]{Types}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00010}{10}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_a9815e8378307f50db19258a7e227a9b1_a9815e8378307f50db19258a7e227a9b1}\index{binary\_parser.js@{binary\_parser.js}!readCodeFor@{readCodeFor}}
+\index{readCodeFor@{readCodeFor}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{readCodeFor()}{readCodeFor()}}
+{\footnotesize\ttfamily \label{a00374_a9815e8378307f50db19258a7e227a9b1_a9815e8378307f50db19258a7e227a9b1} 
+function read\+Code\+For (\begin{DoxyParamCaption}\item[{}]{field}{, }\item[{}]{config}{, }\item[{}]{options}{, }\item[{}]{field\+Num}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00014}{14}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00374_a9e874c65dfd6a2bd1d88ed059fdf48a1_a9e874c65dfd6a2bd1d88ed059fdf48a1}\index{binary\_parser.js@{binary\_parser.js}!Charsets@{Charsets}}
+\index{Charsets@{Charsets}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{Charsets}{Charsets}}
+{\footnotesize\ttfamily \label{a00374_a9e874c65dfd6a2bd1d88ed059fdf48a1_a9e874c65dfd6a2bd1d88ed059fdf48a1} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Charsets = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{charsets.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00004}{4}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_a58c78333f980a002f412fa9d80bd03a7_a58c78333f980a002f412fa9d80bd03a7}\index{binary\_parser.js@{binary\_parser.js}!FieldFlags@{FieldFlags}}
+\index{FieldFlags@{FieldFlags}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{FieldFlags}{FieldFlags}}
+{\footnotesize\ttfamily \label{a00374_a58c78333f980a002f412fa9d80bd03a7_a58c78333f980a002f412fa9d80bd03a7} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Field\+Flags = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{field\+\_\+flags.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00003}{3}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_a45963b0c94982452e71fb6a93dd7757e_a45963b0c94982452e71fb6a93dd7757e}\index{binary\_parser.js@{binary\_parser.js}!genFunc@{genFunc}}
+\index{genFunc@{genFunc}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{genFunc}{genFunc}}
+{\footnotesize\ttfamily \label{a00374_a45963b0c94982452e71fb6a93dd7757e_a45963b0c94982452e71fb6a93dd7757e} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} gen\+Func = require(\textquotesingle{}generate-\/function\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00007}{7}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_ae5552fade59a5d2c4b1db5986f2dbd9e_ae5552fade59a5d2c4b1db5986f2dbd9e}\index{binary\_parser.js@{binary\_parser.js}!helpers@{helpers}}
+\index{helpers@{helpers}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{helpers}{helpers}}
+{\footnotesize\ttfamily \label{a00374_ae5552fade59a5d2c4b1db5986f2dbd9e_ae5552fade59a5d2c4b1db5986f2dbd9e} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} helpers = require(\textquotesingle{}../helpers\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00006}{6}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2}\index{binary\_parser.js@{binary\_parser.js}!parserCache@{parserCache}}
+\index{parserCache@{parserCache}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{parserCache}{parserCache}}
+{\footnotesize\ttfamily \label{a00374_a24f645545f69d3a5ca8d2b0dc62e0ce2_a24f645545f69d3a5ca8d2b0dc62e0ce2} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} parser\+Cache = require(\textquotesingle{}./\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{parser\+\_\+cache.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00008}{8}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{binary\_parser.js@{binary\_parser.js}!strict@{strict}}
+\index{strict@{strict}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00374_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00001}{1}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_a08bdaba7bd44b17989465550bb06d934_a08bdaba7bd44b17989465550bb06d934}\index{binary\_parser.js@{binary\_parser.js}!typeNames@{typeNames}}
+\index{typeNames@{typeNames}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{typeNames}{typeNames}}
+{\footnotesize\ttfamily \label{a00374_a08bdaba7bd44b17989465550bb06d934_a08bdaba7bd44b17989465550bb06d934} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} type\+Names = \mbox{[}$\,$\mbox{]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00009}{9}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+
+\Hypertarget{a00374_acb7e0e89b59629f5d62ba2f3ecd63029_acb7e0e89b59629f5d62ba2f3ecd63029}\index{binary\_parser.js@{binary\_parser.js}!Types@{Types}}
+\index{Types@{Types}!binary\_parser.js@{binary\_parser.js}}
+\doxyparagraph{\texorpdfstring{Types}{Types}}
+{\footnotesize\ttfamily \label{a00374_acb7e0e89b59629f5d62ba2f3ecd63029_acb7e0e89b59629f5d62ba2f3ecd63029} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} Types = require(\textquotesingle{}../constants/\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{types.\+js}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00374_source_l00005}{5}} del archivo \mbox{\hyperlink{a00374_source}{binary\+\_\+parser.\+js}}.
+

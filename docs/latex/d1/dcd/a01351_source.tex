@@ -1,0 +1,103 @@
+\doxysubsection{node\+\_\+modules/statuses/index.js}
+\hypertarget{a01351_source}{}\label{a01351_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01351}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00008}00008\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00015}00015\ var\ codes\ =\ require(\textcolor{stringliteral}{'./codes.json'})}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00022}00022\ module.\mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}\ =\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00024}00024\ \textcolor{comment}{//\ status\ code\ to\ message\ map}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00025}00025\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.message\ =\ codes}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00027}00027\ \textcolor{comment}{//\ status\ message\ (lower-\/case)\ to\ code\ map}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00028}00028\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.code\ =\ createMessageToStatusCodeMap(codes)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00030}00030\ \textcolor{comment}{//\ array\ of\ status\ codes}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00031}00031\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.codes\ =\ createStatusCodeList(codes)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00033}00033\ \textcolor{comment}{//\ status\ codes\ for\ redirects}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00034}00034\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.\mbox{\hyperlink{a00116_a8de4982240756277f8ed598dae635f7b_a8de4982240756277f8ed598dae635f7b}{redirect}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00035}00035\ \ \ 300:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00036}00036\ \ \ 301:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00037}00037\ \ \ 302:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00038}00038\ \ \ 303:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00039}00039\ \ \ 305:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00040}00040\ \ \ 307:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00041}00041\ \ \ 308:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00044}00044\ \textcolor{comment}{//\ status\ codes\ for\ empty\ bodies}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00045}00045\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.empty\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00046}00046\ \ \ 204:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00047}00047\ \ \ 205:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00048}00048\ \ \ 304:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00051}00051\ \textcolor{comment}{//\ status\ codes\ for\ when\ you\ should\ retry\ the\ request}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00052}00052\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.retry\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00053}00053\ \ \ 502:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00054}00054\ \ \ 503:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00055}00055\ \ \ 504:\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00063}00063\ \textcolor{keyword}{function}\ createMessageToStatusCodeMap\ (codes)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00064}00064\ \ \ var\ \mbox{\hyperlink{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15}{map}}\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00066}00066\ \ \ Object.keys(codes).forEach(\textcolor{keyword}{function}\ forEachCode\ (code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00067}00067\ \ \ \ \ var\ message\ =\ codes[code]}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00068}00068\ \ \ \ \ var\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ =\ Number(code)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ populate\ map}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15}{map}}[message.toLowerCase()]\ =\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00072}00072\ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00074}00074\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15}{map}}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00082}00082\ \textcolor{keyword}{function}\ createStatusCodeList\ (codes)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00083}00083\ \ \ \textcolor{keywordflow}{return}\ Object.keys(codes).map(\textcolor{keyword}{function}\ mapCode\ (code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{return}\ Number(code)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00085}00085\ \ \ \})}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00093}00093\ \textcolor{keyword}{function}\ getStatusCode\ (message)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00094}00094\ \ \ var\ msg\ =\ message.toLowerCase()}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00096}00096\ \ \ \textcolor{keywordflow}{if}\ (!Object.prototype.hasOwnProperty.call(\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.code,\ msg))\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'invalid\ status\ message:\ "{}'}\ +\ message\ +\ \textcolor{charliteral}{'"{}'})}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00098}00098\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00100}00100\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.code[msg]}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00108}00108\ \textcolor{keyword}{function}\ getStatusMessage\ (code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00109}00109\ \ \ \textcolor{keywordflow}{if}\ (!Object.prototype.hasOwnProperty.call(\mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.message,\ code))\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'invalid\ status\ code:\ '}\ +\ code)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00111}00111\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00113}00113\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}.message[code]}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00130}00130\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}\ (code)\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00131}00131\ \ \ \textcolor{keywordflow}{if}\ (typeof\ code\ ===\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ getStatusMessage(code)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00133}00133\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00135}00135\ \ \ \textcolor{keywordflow}{if}\ (typeof\ code\ !==\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'code\ must\ be\ a\ number\ or\ string'})}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00137}00137\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00139}00139\ \ \ \textcolor{comment}{//\ '403'}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00140}00140\ \ \ var\ \mbox{\hyperlink{a00197_a3c7365c007156a2a63223e3c9909fbf8_a3c7365c007156a2a63223e3c9909fbf8}{n}}\ =\ parseInt(code,\ 10)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00141}00141\ \ \ \mbox{\hyperlink{a01195_a36b902f5bfe184879eb3e29b44502eb3_a36b902f5bfe184879eb3e29b44502eb3}{if}}\ (!isNaN(\mbox{\hyperlink{a00197_a3c7365c007156a2a63223e3c9909fbf8_a3c7365c007156a2a63223e3c9909fbf8}{n}}))\ \{}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{return}\ getStatusMessage(\mbox{\hyperlink{a00197_a3c7365c007156a2a63223e3c9909fbf8_a3c7365c007156a2a63223e3c9909fbf8}{n}})}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00143}00143\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{a01351_source_l00145}00145\ \ \ \textcolor{keywordflow}{return}\ getStatusCode(code)}
+\DoxyCodeLine{\Hypertarget{a01351_source_l00146}00146\ \}}
+
+\end{DoxyCode}

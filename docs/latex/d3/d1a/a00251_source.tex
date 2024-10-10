@@ -1,0 +1,245 @@
+\doxysubsection{client\+\_\+handshake.\+js}
+\hypertarget{a00251_source}{}\label{a00251_source}\index{client\_handshake.js@{client\_handshake.js}}
+\mbox{\hyperlink{a00251}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00001}00001\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ June\ 17,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00002}00002\ \textcolor{comment}{//\ Handshake\ errors\ are\ now\ maked\ as\ fatal\ and\ the\ corresponding\ events\ are}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00003}00003\ \textcolor{comment}{//\ emitted\ in\ the\ command\ instance\ itself.}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00004}00004\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00006}00006\ \textcolor{comment}{//\ This\ file\ was\ modified\ by\ Oracle\ on\ September\ 21,\ 2021.}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00007}00007\ \textcolor{comment}{//\ Handshake\ workflow\ now\ supports\ additional\ authentication\ factors\ requested}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00008}00008\ \textcolor{comment}{//\ by\ the\ server.}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00009}00009\ \textcolor{comment}{//\ Modifications\ copyright\ (c)\ 2021,\ Oracle\ and/or\ its\ affiliates.}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00011}\mbox{\hyperlink{a00251_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00011}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00013}\mbox{\hyperlink{a00251_a66861095fa9af8c5ced7a5f76ea2d12e_a66861095fa9af8c5ced7a5f76ea2d12e}{00013}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00684}{Command}}\ =\ require(\textcolor{stringliteral}{'./command.js'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00014}\mbox{\hyperlink{a00251_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{00014}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00251_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}\ =\ require(\textcolor{stringliteral}{'../packets/index.js'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00015}\mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{00015}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}\ =\ require(\textcolor{stringliteral}{'../constants/client.js'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00016}\mbox{\hyperlink{a00251_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{00016}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00251_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{CharsetToEncoding}}\ =\ require(\textcolor{stringliteral}{'../constants/charset\_encodings.js'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00017}\mbox{\hyperlink{a00251_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{00017}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00251_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}\ =\ require(\textcolor{stringliteral}{'../auth\_41.js'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00019}\mbox{\hyperlink{a00251_a3de3341f715a235be1d832456345fb82_a3de3341f715a235be1d832456345fb82}{00019}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00251_a3de3341f715a235be1d832456345fb82_a3de3341f715a235be1d832456345fb82}{flagNames}}(flags)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00020}00020\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ =\ [];}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00021}00021\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (flags\ \&\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}[\mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}])\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00023}00023\ \ \ \ \ \ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.push(\mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}.replace(/\_/\mbox{\hyperlink{a00572_a103df269476e78897c9c4c6cb8f4eb06_a103df269476e78897c9c4c6cb8f4eb06}{g}},\ \textcolor{charliteral}{'\ '}).toLowerCase());}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00025}00025\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00026}00026\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00029}\mbox{\hyperlink{a00676}{00029}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00676}{ClientHandshake}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{a00684}{Command}}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00030}\mbox{\hyperlink{a00676_ae137d5597d7eb5855255e527fe35b6df_ae137d5597d7eb5855255e527fe35b6df}{00030}}\ \ \ \mbox{\hyperlink{a00676_ae137d5597d7eb5855255e527fe35b6df_ae137d5597d7eb5855255e527fe35b6df}{constructor}}(clientFlags)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{a01195_a6bb85d4878dcc4e75bf4de82052df6fd_a6bb85d4878dcc4e75bf4de82052df6fd}{super}}();}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00032}00032\ \ \ \ \ this.handshake\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00033}00033\ \ \ \ \ this.clientFlags\ =\ clientFlags;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00034}00034\ \ \ \ \ this.authenticationFactor\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00035}00035\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00037}\mbox{\hyperlink{a00676_a718dc99be28497d155a2f1f751368d38_a718dc99be28497d155a2f1f751368d38}{00037}}\ \ \ \mbox{\hyperlink{a00676_a718dc99be28497d155a2f1f751368d38_a718dc99be28497d155a2f1f751368d38}{start}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00676}{ClientHandshake}}.prototype.\mbox{\hyperlink{a00676_ae556000c9c1c0f19a20943ffa2b5561b_ae556000c9c1c0f19a20943ffa2b5561b}{handshakeInit}};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00039}00039\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00041}\mbox{\hyperlink{a00676_a535efcccced3a5c98372b46fba65af71_a535efcccced3a5c98372b46fba65af71}{00041}}\ \ \ \mbox{\hyperlink{a00676_a535efcccced3a5c98372b46fba65af71_a535efcccced3a5c98372b46fba65af71}{sendSSLRequest}}(connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{const}\ sslRequest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00251_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.SSLRequest(}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00043}00043\ \ \ \ \ \ \ this.clientFlags,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00044}00044\ \ \ \ \ \ \ connection.config.charsetNumber}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00045}00045\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00046}00046\ \ \ \ \ connection.writePacket(sslRequest.toPacket());}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00047}00047\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00049}\mbox{\hyperlink{a00676_ad234f42c6d0967a1de63e291112dedbf_ad234f42c6d0967a1de63e291112dedbf}{00049}}\ \ \ \mbox{\hyperlink{a00676_ad234f42c6d0967a1de63e291112dedbf_ad234f42c6d0967a1de63e291112dedbf}{sendCredentials}}(connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (connection.config.debug)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00051}00051\ \ \ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00052}00052\ \ \ \ \ \ \ console.log(}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Sending\ handshake\ packet:\ flags:\%d=(\%s)'},}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00054}00054\ \ \ \ \ \ \ \ \ this.clientFlags,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00251_a3de3341f715a235be1d832456345fb82_a3de3341f715a235be1d832456345fb82}{flagNames}}(this.clientFlags).\mbox{\hyperlink{a00128_a1b09aaf68c8a94c60f4b0cb28eec4132_a1b09aaf68c8a94c60f4b0cb28eec4132}{join}}(\textcolor{stringliteral}{',\ '})}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00056}00056\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00058}00058\ \ \ \ \ this.user\ =\ connection.config.user;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00059}00059\ \ \ \ \ this.password\ =\ connection.config.password;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ "{}password1"{}\ is\ an\ alias\ to\ the\ original\ "{}password"{}\ value}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ to\ make\ it\ easier\ to\ integrate\ multi-\/factor\ authentication}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00062}00062\ \ \ \ \ this.password1\ =\ connection.config.password;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ "{}password2"{}\ and\ "{}password3"{}\ are\ the\ 2nd\ and\ 3rd\ factor\ authentication}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ passwords,\ which\ can\ be\ undefined\ depending\ on\ the\ authentication}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ plugin\ being\ used}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00066}00066\ \ \ \ \ this.password2\ =\ connection.config.password2;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00067}00067\ \ \ \ \ this.password3\ =\ connection.config.password3;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00068}00068\ \ \ \ \ this.passwordSha1\ =\ connection.config.passwordSha1;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00069}00069\ \ \ \ \ this.database\ =\ connection.config.database;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00070}00070\ \ \ \ \ this.autPluginName\ =\ this.handshake.autPluginName;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{const}\ handshakeResponse\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a00251_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.HandshakeResponse(\{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00072}00072\ \ \ \ \ \ \ flags:\ this.clientFlags,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00073}00073\ \ \ \ \ \ \ user:\ this.user,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00074}00074\ \ \ \ \ \ \ database:\ this.database,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00075}00075\ \ \ \ \ \ \ password:\ this.password,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00076}00076\ \ \ \ \ \ \ passwordSha1:\ this.passwordSha1,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00077}00077\ \ \ \ \ \ \ charsetNumber:\ connection.config.charsetNumber,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00078}00078\ \ \ \ \ \ \ authPluginData1:\ this.handshake.authPluginData1,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00079}00079\ \ \ \ \ \ \ authPluginData2:\ this.handshake.authPluginData2,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00080}00080\ \ \ \ \ \ \ compress:\ connection.config.compress,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00081}00081\ \ \ \ \ \ \ connectAttributes:\ connection.config.connectAttributes}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00082}00082\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00083}00083\ \ \ \ \ connection.writePacket(handshakeResponse.toPacket());}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00086}\mbox{\hyperlink{a00676_a1763c2d361fbe39dc6dff14d17280a49_a1763c2d361fbe39dc6dff14d17280a49}{00086}}\ \ \ \mbox{\hyperlink{a00676_a1763c2d361fbe39dc6dff14d17280a49_a1763c2d361fbe39dc6dff14d17280a49}{calculateNativePasswordAuthToken}}(authPluginData)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ TODO:\ dont\ split\ into\ authPluginData1\ and\ authPluginData2,\ instead\ join\ when\ 1\ \&\ 2\ received}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{const}\ authPluginData1\ =\ authPluginData.slice(0,\ 8);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{const}\ authPluginData2\ =\ authPluginData.slice(8,\ 20);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_a7bd288ed1cf6b1bfeff2c339b7b90df4}{let}}\ authToken;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.passwordSha1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00092}00092\ \ \ \ \ \ \ authToken\ =\ \mbox{\hyperlink{a00251_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}.calculateTokenFromPasswordSha(}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00093}00093\ \ \ \ \ \ \ \ \ this.passwordSha1,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00094}00094\ \ \ \ \ \ \ \ \ authPluginData1,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00095}00095\ \ \ \ \ \ \ \ \ authPluginData2}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00096}00096\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00097}00097\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00098}00098\ \ \ \ \ \ \ authToken\ =\ \mbox{\hyperlink{a00251_a8a7f509cfa71b53b392a0c0e5cc8b16f_a8a7f509cfa71b53b392a0c0e5cc8b16f}{auth41}}.calculateToken(}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00099}00099\ \ \ \ \ \ \ \ \ this.password,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00100}00100\ \ \ \ \ \ \ \ \ authPluginData1,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00101}00101\ \ \ \ \ \ \ \ \ authPluginData2}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00102}00102\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ authToken;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00107}\mbox{\hyperlink{a00676_ae556000c9c1c0f19a20943ffa2b5561b_ae556000c9c1c0f19a20943ffa2b5561b}{00107}}\ \ \ \mbox{\hyperlink{a00676_ae556000c9c1c0f19a20943ffa2b5561b_ae556000c9c1c0f19a20943ffa2b5561b}{handshakeInit}}(helloPacket,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00108}00108\ \ \ \ \ this.on(\textcolor{stringliteral}{'error'},\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}}\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00109}00109\ \ \ \ \ \ \ connection.\_fatalError\ =\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00110}00110\ \ \ \ \ \ \ connection.\_protocolError\ =\ \mbox{\hyperlink{a00197_ab5902775854a8b8440bcd25e0fe1c120_ab5902775854a8b8440bcd25e0fe1c120}{e}};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00111}00111\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00112}00112\ \ \ \ \ this.handshake\ =\ \mbox{\hyperlink{a00251_a887343288e6f7e38e88d542c46e3dc66_a887343288e6f7e38e88d542c46e3dc66}{Packets}}.Handshake.fromPacket(helloPacket);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{if}\ (connection.config.debug)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00114}00114\ \ \ \ \ \ \ \textcolor{comment}{//\ eslint-\/disable-\/next-\/line}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00115}00115\ \ \ \ \ \ \ console.log(}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Server\ hello\ packet:\ capability\ flags:\%d=(\%s)'},}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00117}00117\ \ \ \ \ \ \ \ \ this.handshake.capabilityFlags,}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00251_a3de3341f715a235be1d832456345fb82_a3de3341f715a235be1d832456345fb82}{flagNames}}(this.handshake.capabilityFlags).join(\textcolor{stringliteral}{',\ '})}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00119}00119\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00121}00121\ \ \ \ \ connection.serverCapabilityFlags\ =\ this.handshake.capabilityFlags;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00122}00122\ \ \ \ \ connection.serverEncoding\ =\ \mbox{\hyperlink{a00251_a1408b5a0d26ac3180269cd6bb8bc00e8_a1408b5a0d26ac3180269cd6bb8bc00e8}{CharsetToEncoding}}[this.handshake.characterSet];}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00123}00123\ \ \ \ \ connection.connectionId\ =\ this.handshake.connectionId;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{const}\ serverSSLSupport\ =}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00125}00125\ \ \ \ \ \ \ this.handshake.capabilityFlags\ \&\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}.SSL;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//\ multi\ factor\ authentication\ is\ enabled\ with\ the}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00127}00127\ \ \ \ \ \textcolor{comment}{//\ "{}MULTI\_FACTOR\_AUTHENTICATION"{}\ capability\ and\ should\ only\ be\ used\ if\ it}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00128}00128\ \ \ \ \ \textcolor{comment}{//\ is\ supported\ by\ the\ server}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{const}\ multiFactorAuthentication\ =}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00130}00130\ \ \ \ \ \ \ this.handshake.capabilityFlags\ \&\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}.MULTI\_FACTOR\_AUTHENTICATION;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00131}00131\ \ \ \ \ this.clientFlags\ =\ this.clientFlags\ |\ multiFactorAuthentication;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00132}00132\ \ \ \ \ \textcolor{comment}{//\ use\ compression\ only\ if\ requested\ by\ client\ and\ supported\ by\ server}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00133}00133\ \ \ \ \ connection.config.compress\ =}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00134}00134\ \ \ \ \ \ \ connection.config.compress\ \&\&}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00135}00135\ \ \ \ \ \ \ this.handshake.capabilityFlags\ \&\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}.COMPRESS;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00136}00136\ \ \ \ \ this.clientFlags\ =\ this.clientFlags\ |\ connection.config.compress;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (connection.config.ssl)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00138}00138\ \ \ \ \ \ \ \textcolor{comment}{//\ client\ requires\ SSL\ but\ server\ does\ not\ support\ it}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00139}00139\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!serverSSLSupport)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ err\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'Server\ does\ not\ support\ secure\ connection'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00141}00141\ \ \ \ \ \ \ \ \ err.code\ =\ \textcolor{stringliteral}{'HANDSHAKE\_NO\_SSL\_SUPPORT'};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00142}00142\ \ \ \ \ \ \ \ \ err.fatal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00143}00143\ \ \ \ \ \ \ \ \ this.emit(\textcolor{stringliteral}{'error'},\ err);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00145}00145\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00146}00146\ \ \ \ \ \ \ \textcolor{comment}{//\ send\ ssl\ upgrade\ request\ and\ immediately\ upgrade\ connection\ to\ secure}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00147}00147\ \ \ \ \ \ \ this.clientFlags\ |=\ \mbox{\hyperlink{a00251_ab348ea2cefbd2143ecca79d296743944_ab348ea2cefbd2143ecca79d296743944}{ClientConstants}}.SSL;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00148}00148\ \ \ \ \ \ \ this.\mbox{\hyperlink{a00676_a535efcccced3a5c98372b46fba65af71_a535efcccced3a5c98372b46fba65af71}{sendSSLRequest}}(connection);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00149}00149\ \ \ \ \ \ \ connection.startTLS(err\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ after\ connection\ is\ secure}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SSL\ negotiation\ error\ are\ fatal}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ err.code\ =\ \textcolor{stringliteral}{'HANDSHAKE\_SSL\_ERROR'};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ err.fatal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ this.emit(\textcolor{stringliteral}{'error'},\ err);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ rest\ of\ communication\ is\ encrypted}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00159}00159\ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{a00676_ad234f42c6d0967a1de63e291112dedbf_ad234f42c6d0967a1de63e291112dedbf}{sendCredentials}}(connection);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00160}00160\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00161}00161\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00162}00162\ \ \ \ \ \ \ this.\mbox{\hyperlink{a00676_ad234f42c6d0967a1de63e291112dedbf_ad234f42c6d0967a1de63e291112dedbf}{sendCredentials}}(connection);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (multiFactorAuthentication)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00165}00165\ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ server\ supports\ multi-\/factor\ authentication,\ we\ enable\ it\ in}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00166}00166\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ client}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00167}00167\ \ \ \ \ \ \ this.authenticationFactor\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00676}{ClientHandshake}}.prototype.\mbox{\hyperlink{a00676_aeb1492a5598740ab8f214a016d7ce65d_aeb1492a5598740ab8f214a016d7ce65d}{handshakeResult}};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00170}00170\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00172}\mbox{\hyperlink{a00676_aeb1492a5598740ab8f214a016d7ce65d_aeb1492a5598740ab8f214a016d7ce65d}{00172}}\ \ \ \mbox{\hyperlink{a00676_aeb1492a5598740ab8f214a016d7ce65d_aeb1492a5598740ab8f214a016d7ce65d}{handshakeResult}}(packet,\ connection)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00173}00173\ \ \ \ \ \textcolor{keyword}{const}\ marker\ =\ packet.peekByte();}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00174}00174\ \ \ \ \ \textcolor{comment}{//\ packet\ can\ be\ OK\_Packet,\ ERR\_Packet,\ AuthSwitchRequest,\ AuthNextFactor}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00175}00175\ \ \ \ \ \textcolor{comment}{//\ or\ AuthMoreData}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{if}\ (marker\ ===\ 0xfe\ ||\ marker\ ===\ 1\ ||\ marker\ ===\ 0x02)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00177}00177\ \ \ \ \ \ \ \textcolor{keyword}{const}\ authSwitch\ =\ require(\textcolor{stringliteral}{'./auth\_switch'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00178}00178\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (marker\ ===\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ authSwitch.authSwitchRequestMoreData(packet,\ connection,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00181}00181\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ authenticationFactor\ ===\ 0,\ it\ means\ the\ server\ does\ not\ support}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ multi-\/factor\ authentication\ capability}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.authenticationFactor\ !==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ past\ the\ first\ authentication\ factor,\ we\ should\ use\ the}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ corresponding\ password\ (if\ there\ is\ one)}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ connection.config.password\ =\ \textcolor{keyword}{this}[\`{}password\$\{this.authenticationFactor\}\`{}];}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ the\ current\ authentication\ factor}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ this.authenticationFactor\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ marker\ ===\ 0x02,\ it\ means\ it\ is\ an\ AuthNextFactor\ packet,}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ which\ is\ similar\ in\ structure\ to\ an\ AuthSwitchRequest\ packet,}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ so,\ we\ can\ use\ it\ directly}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ authSwitch.authSwitchRequest(packet,\ connection,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00676}{ClientHandshake}}.prototype.\mbox{\hyperlink{a00676_aeb1492a5598740ab8f214a016d7ce65d_aeb1492a5598740ab8f214a016d7ce65d}{handshakeResult}};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00197}00197\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (err)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Authentication\ errors\ are\ fatal}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00199}00199\ \ \ \ \ \ \ \ \ err.code\ =\ \textcolor{stringliteral}{'AUTH\_SWITCH\_PLUGIN\_ERROR'};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00200}00200\ \ \ \ \ \ \ \ \ err.fatal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.onResult)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ this.onResult(err);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00204}00204\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ this.emit(\textcolor{stringliteral}{'error'},\ err);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00206}00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00208}00208\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00209}00209\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{if}\ (marker\ !==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00211}00211\ \ \ \ \ \ \ \textcolor{keyword}{const}\ err\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01276_ab90d95850f9ba1903a6704f6fa8eccb6_ab90d95850f9ba1903a6704f6fa8eccb6}{Error}}(\textcolor{stringliteral}{'Unexpected\ packet\ during\ handshake\ phase'});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00212}00212\ \ \ \ \ \ \ \textcolor{comment}{//\ Unknown\ handshake\ errors\ are\ fatal}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00213}00213\ \ \ \ \ \ \ err.code\ =\ \textcolor{stringliteral}{'HANDSHAKE\_UNKNOWN\_ERROR'};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00214}00214\ \ \ \ \ \ \ err.fatal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{a00251_source_l00216}00216\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.onResult)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00217}00217\ \ \ \ \ \ \ \ \ this.onResult(err);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00218}00218\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00219}00219\ \ \ \ \ \ \ \ \ this.emit(\textcolor{stringliteral}{'error'},\ err);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00220}00220\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00221}00221\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00223}00223\ \ \ \ \ \textcolor{comment}{//\ this\ should\ be\ called\ from\ ClientHandshake\ command\ only}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00224}00224\ \ \ \ \ \textcolor{comment}{//\ and\ skipped\ when\ called\ from\ ChangeUser\ command}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00225}00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (!connection.authorized)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00226}00226\ \ \ \ \ \ \ connection.authorized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00227}00227\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (connection.config.compress)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00278_a01518d510b0c24505398c8ada71beb57_a01518d510b0c24505398c8ada71beb57}{enableCompression}}\ =\ require(\textcolor{stringliteral}{'../compressed\_protocol.js'})}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ .enableCompression;}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00230}00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00278_a01518d510b0c24505398c8ada71beb57_a01518d510b0c24505398c8ada71beb57}{enableCompression}}(connection);}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00231}00231\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00233}00233\ \ \ \ \ \textcolor{keywordflow}{if}\ (this.onResult)\ \{}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00234}00234\ \ \ \ \ \ \ this.onResult(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00236}00236\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00237}00237\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{a00251_source_l00239}\mbox{\hyperlink{a00251_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{00239}}\ module.exports\ =\ \mbox{\hyperlink{a01798_a5c06ae224c5df5d8b0e114df4d4bc3c4_a5c06ae224c5df5d8b0e114df4d4bc3c4}{ClientHandshake}};}
+
+\end{DoxyCode}

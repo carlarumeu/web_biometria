@@ -1,0 +1,32 @@
+\doxysection{Methods}
+\hypertarget{a00931}{}\label{a00931}\index{Methods@{Methods}}
+\label{a00931_autotoc_md1459}%
+\Hypertarget{a00931_autotoc_md1459}%
+
+
+\href{https://npmjs.org/package/methods}{\texttt{ }} \href{https://npmjs.org/package/methods}{\texttt{ }} \href{https://nodejs.org/en/download/}{\texttt{ }} \href{https://travis-ci.org/jshttp/methods}{\texttt{ }} \href{https://coveralls.io/r/jshttp/methods?branch=master}{\texttt{ }}
+
+HTTP verbs that Node.\+js core\textquotesingle{}s HTTP parser supports.
+
+This module provides an export that is just like {\ttfamily http.\+METHODS} from Node.\+js core, with the following differences\+:
+
+
+\begin{DoxyItemize}
+\item All method names are lower-\/cased.
+\item Contains a fallback list of methods for Node.\+js versions that do not have a {\ttfamily http.\+METHODS} export (0.\+10 and lower).
+\item Provides the fallback list when using tools like {\ttfamily browserify} without pulling in the {\ttfamily http} shim module.
+\end{DoxyItemize}\hypertarget{a00931_autotoc_md1460}{}\doxysubsection{\texorpdfstring{Install}{Install}}\label{a00931_autotoc_md1460}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ methods}
+
+\end{DoxyCode}
+\hypertarget{a00931_autotoc_md1461}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00931_autotoc_md1461}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a04d30fa6e159a438c5fe8d248cb41845_a04d30fa6e159a438c5fe8d248cb41845}{methods}}\ =\ require(\textcolor{stringliteral}{'methods'})}
+
+\end{DoxyCode}
+\hypertarget{a00931_autotoc_md1462}{}\doxysubsubsection{\texorpdfstring{methods}{methods}}\label{a00931_autotoc_md1462}
+This is an array of lower-\/cased method names that Node.\+js supports. If Node.\+js provides the {\ttfamily http.\+METHODS} export, then this is the same array lower-\/cased, otherwise it is a snapshot of the verbs from Node.\+js 0.\+10.\hypertarget{a00931_autotoc_md1463}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00931_autotoc_md1463}
+\mbox{[}MIT\mbox{]}(LICENSE) 

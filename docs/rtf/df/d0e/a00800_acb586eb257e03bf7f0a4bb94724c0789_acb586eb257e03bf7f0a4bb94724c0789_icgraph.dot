@@ -1,0 +1,18 @@
+digraph "Pool::getConnection"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Pool::getConnection",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge5_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Pool::execute",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d0e/a00800_a5c63622b4c3cb616ac5fb68f7394a8f7.html#a5c63622b4c3cb616ac5fb68f7394a8f7",tooltip=" "];
+  Node1 -> Node3 [id="edge6_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Pool::query",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d0e/a00800_a7b80fda4124a2c48b4c144ec125b98d8.html#a7b80fda4124a2c48b4c144ec125b98d8",tooltip=" "];
+  Node1 -> Node4 [id="edge7_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Pool::releaseConnection",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d0e/a00800_aec266bc42cd073847995fd266fffdc84.html#aec266bc42cd073847995fd266fffdc84",tooltip=" "];
+  Node4 -> Node5 [id="edge8_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Pool::_removeConnection",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d0e/a00800_a53bb021b8dbb7ded025af5ead68c4e2c.html#a53bb021b8dbb7ded025af5ead68c4e2c",tooltip=" "];
+}

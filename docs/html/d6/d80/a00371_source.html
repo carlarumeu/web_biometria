@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente packet_parser.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d6/d80/a00371_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">packet_parser.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d80/a00371.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d6/d80/a00371_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d6/d80/a00371_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">    3</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a> = require(<span class="stringliteral">&#39;./packets/packet.js&#39;</span>);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">    5</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">MAX_PACKET_LENGTH</a> = 16777215;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d6/d80/a00371_a70cce0e5a88f8e1bd1a9365c19569ae8.html#a70cce0e5a88f8e1bd1a9365c19569ae8">    7</a></span><span class="keyword">function</span> <a class="code hl_function" href="../../d6/d80/a00371_a70cce0e5a88f8e1bd1a9365c19569ae8.html#a70cce0e5a88f8e1bd1a9365c19569ae8">readPacketLength</a>(<a class="code hl_function" href="../../d6/d06/a00572_af36af181c026f5a7ad0911bf2f9a9bda.html#af36af181c026f5a7ad0911bf2f9a9bda">b</a>, off) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keyword">const</span> b0 = <a class="code hl_function" href="../../d6/d06/a00572_af36af181c026f5a7ad0911bf2f9a9bda.html#af36af181c026f5a7ad0911bf2f9a9bda">b</a>[off];</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">const</span> b1 = <a class="code hl_function" href="../../d6/d06/a00572_af36af181c026f5a7ad0911bf2f9a9bda.html#af36af181c026f5a7ad0911bf2f9a9bda">b</a>[off + 1];</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">const</span> b2 = <a class="code hl_function" href="../../d6/d06/a00572_af36af181c026f5a7ad0911bf2f9a9bda.html#af36af181c026f5a7ad0911bf2f9a9bda">b</a>[off + 2];</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keywordflow">if</span> (b1 + b2 === 0) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> b0;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordflow">return</span> b0 + (b1 &lt;&lt; 8) + (b2 &lt;&lt; 16);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a> {</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_a5ff1951156df64a682dd711f82b83f35.html#a5ff1951156df64a682dd711f82b83f35">   18</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_a5ff1951156df64a682dd711f82b83f35.html#a5ff1951156df64a682dd711f82b83f35">constructor</a>(onPacket, packetHeaderLength) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// 4 for normal packets, 7 for comprssed protocol packets</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (typeof packetHeaderLength === <span class="stringliteral">&#39;undefined&#39;</span>) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      packetHeaderLength = 4;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// array of last payload chunks</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// only used when current payload is not complete</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    this.buffer = [];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// total length of chunks on buffer</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    this.bufferLength = 0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    this.packetHeaderLength = packetHeaderLength;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// incomplete header state: number of header bytes received</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    this.headerLen = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// expected payload length</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    this.length = 0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    this.largePacketParts = [];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    this.firstPacketSequenceId = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    this.onPacket = onPacket;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_a935591f498caac31b5dc300a38ce4cb4.html#a935591f498caac31b5dc300a38ce4cb4">executeStart</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    this._flushLargePacket =</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      packetHeaderLength === 7</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        ? this.<a class="code hl_function" href="../../df/d3b/a00728_aae88c2537da28c69aa99fff3662897a9.html#aae88c2537da28c69aa99fff3662897a9">_flushLargePacket7</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        : this.<a class="code hl_function" href="../../df/d3b/a00728_ad4f2380c2bf9f25e768a274263ff644f.html#ad4f2380c2bf9f25e768a274263ff644f">_flushLargePacket4</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_ad4f2380c2bf9f25e768a274263ff644f.html#ad4f2380c2bf9f25e768a274263ff644f">   43</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_ad4f2380c2bf9f25e768a274263ff644f.html#ad4f2380c2bf9f25e768a274263ff644f">_flushLargePacket4</a>() {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> numPackets = this.largePacketParts.length;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    this.largePacketParts.unshift(Buffer.from([0, 0, 0, 0])); <span class="comment">// insert header</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> body = Buffer.concat(this.largePacketParts);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">const</span> packet = <span class="keyword">new</span> <a class="code hl_variable" href="../../d6/d80/a00371_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(this.firstPacketSequenceId, body, 0, body.length);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    this.largePacketParts.length = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    packet.numPackets = numPackets;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    this.onPacket(packet);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_aae88c2537da28c69aa99fff3662897a9.html#aae88c2537da28c69aa99fff3662897a9">   53</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_aae88c2537da28c69aa99fff3662897a9.html#aae88c2537da28c69aa99fff3662897a9">_flushLargePacket7</a>() {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> numPackets = this.largePacketParts.length;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    this.largePacketParts.unshift(Buffer.from([0, 0, 0, 0, 0, 0, 0])); <span class="comment">// insert header</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> body = Buffer.concat(this.largePacketParts);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    this.largePacketParts.length = 0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> packet = <span class="keyword">new</span> <a class="code hl_variable" href="../../d6/d80/a00371_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(this.firstPacketSequenceId, body, 0, body.length);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    packet.numPackets = numPackets;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    this.onPacket(packet);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_a935591f498caac31b5dc300a38ce4cb4.html#a935591f498caac31b5dc300a38ce4cb4">   63</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_a935591f498caac31b5dc300a38ce4cb4.html#a935591f498caac31b5dc300a38ce4cb4">executeStart</a>(chunk) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> start = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> = chunk.length;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start &gt;= 3) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      this.length = <a class="code hl_function" href="../../d6/d80/a00371_a70cce0e5a88f8e1bd1a9365c19569ae8.html#a70cce0e5a88f8e1bd1a9365c19569ae8">readPacketLength</a>(chunk, start);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start &gt;= this.length + this.packetHeaderLength) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// at least one full packet</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">const</span> sequenceId = chunk[start + 3];</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>          this.length &lt; <a class="code hl_variable" href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">MAX_PACKET_LENGTH</a> &amp;&amp;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>          this.largePacketParts.length === 0</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        ) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>          this.onPacket(</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keyword">new</span> <a class="code hl_variable" href="../../d6/d80/a00371_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>              sequenceId,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>              chunk,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>              start,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>              start + this.packetHeaderLength + this.length</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            )</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          );</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          <span class="comment">// first large packet - remember it&#39;s id</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>          <span class="keywordflow">if</span> (this.largePacketParts.length === 0) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            this.firstPacketSequenceId = sequenceId;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>          }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          this.largePacketParts.push(</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            chunk.slice(</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>              start + <span class="keyword">this</span>.packetHeaderLength,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>              start + <span class="keyword">this</span>.packetHeaderLength + <span class="keyword">this</span>.length</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            )</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          );</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          <span class="keywordflow">if</span> (this.length &lt; <a class="code hl_variable" href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">MAX_PACKET_LENGTH</a>) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            this._flushLargePacket();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        start += this.packetHeaderLength + this.length;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">// payload is incomplete</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        this.buffer = [chunk.slice(start + 3, <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>)];</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        this.bufferLength = <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start - 3;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">executePayload</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start &gt; 0) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="comment">// there is start of length header, but it&#39;s not full 3 bytes</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      this.headerLen = <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start; <span class="comment">// 1 or 2 bytes</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      this.length = chunk[start];</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">if</span> (this.headerLen === 2) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        this.length = chunk[start] + (chunk[start + 1] &lt;&lt; 8);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_a99a897b745fadf9ebda256c63f8e3eaa.html#a99a897b745fadf9ebda256c63f8e3eaa">executeHeader3</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_a2242fd60b3ee1aa3896c3ba0c063bd1b.html#a2242fd60b3ee1aa3896c3ba0c063bd1b">executeHeader2</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">  120</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">executePayload</a>(chunk) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> start = 0;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">const</span> <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> = chunk.length;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keyword">const</span> remainingPayload =</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      this.length - this.bufferLength + this.packetHeaderLength - 3;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start &gt;= remainingPayload) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <span class="comment">// last chunk for payload</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="keyword">const</span> payload = Buffer.allocUnsafe(this.length + this.packetHeaderLength);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> <a class="code hl_variable" href="../../d6/d06/a00572_aff241db241bb474dade51b204204fcfd.html#aff241db241bb474dade51b204204fcfd">offset</a> = 3;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      <span class="keywordflow">for</span> (<a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> = 0; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> &lt; this.buffer.length; ++<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        this.buffer[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>].copy(payload, <a class="code hl_variable" href="../../d6/d06/a00572_aff241db241bb474dade51b204204fcfd.html#aff241db241bb474dade51b204204fcfd">offset</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <a class="code hl_variable" href="../../d6/d06/a00572_aff241db241bb474dade51b204204fcfd.html#aff241db241bb474dade51b204204fcfd">offset</a> += this.buffer[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>].length;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      chunk.copy(payload, <a class="code hl_variable" href="../../d6/d06/a00572_aff241db241bb474dade51b204204fcfd.html#aff241db241bb474dade51b204204fcfd">offset</a>, start, start + remainingPayload);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keyword">const</span> sequenceId = payload[3];</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keywordflow">if</span> (</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        this.length &lt; <a class="code hl_variable" href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">MAX_PACKET_LENGTH</a> &amp;&amp;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        this.largePacketParts.length === 0</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      ) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        this.onPacket(</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>          <span class="keyword">new</span> <a class="code hl_variable" href="../../d6/d80/a00371_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            sequenceId,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            payload,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            0,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            this.length + this.packetHeaderLength</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>          )</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        );</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="comment">// first large packet - remember it&#39;s id</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">if</span> (this.largePacketParts.length === 0) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>          this.firstPacketSequenceId = sequenceId;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        this.largePacketParts.push(</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>          payload.slice(</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keyword">this</span>.packetHeaderLength,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keyword">this</span>.packetHeaderLength + <span class="keyword">this</span>.length</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>          )</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        );</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (this.length &lt; <a class="code hl_variable" href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">MAX_PACKET_LENGTH</a>) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>          this._flushLargePacket();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      this.buffer = [];</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      this.bufferLength = 0;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_a935591f498caac31b5dc300a38ce4cb4.html#a935591f498caac31b5dc300a38ce4cb4">executeStart</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      start += remainingPayload;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a> - start &gt; 0) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">return</span> this.execute(chunk.slice(start, <a class="code hl_variable" href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a>));</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      this.buffer.push(chunk);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      this.bufferLength += chunk.length;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
+</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_a2242fd60b3ee1aa3896c3ba0c063bd1b.html#a2242fd60b3ee1aa3896c3ba0c063bd1b">  176</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_a2242fd60b3ee1aa3896c3ba0c063bd1b.html#a2242fd60b3ee1aa3896c3ba0c063bd1b">executeHeader2</a>(chunk) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    this.length += chunk[0] &lt;&lt; 8;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (chunk.length &gt; 1) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      this.length += chunk[1] &lt;&lt; 16;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">executePayload</a>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">executePayload</a>(chunk.slice(2));</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    } </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_a99a897b745fadf9ebda256c63f8e3eaa.html#a99a897b745fadf9ebda256c63f8e3eaa">executeHeader3</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="../../df/d3b/a00728_a99a897b745fadf9ebda256c63f8e3eaa.html#a99a897b745fadf9ebda256c63f8e3eaa">  188</a></span>  <a class="code hl_function" href="../../df/d3b/a00728_a99a897b745fadf9ebda256c63f8e3eaa.html#a99a897b745fadf9ebda256c63f8e3eaa">executeHeader3</a>(chunk) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    this.length += chunk[0] &lt;&lt; 16;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    this.execute = <a class="code hl_class" href="../../df/d3b/a00728.html">PacketParser</a>.prototype.<a class="code hl_function" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">executePayload</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">return</span> this.<a class="code hl_function" href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">executePayload</a>(chunk.slice(1));</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  }</div>
+</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="../../d6/d80/a00371_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">  195</a></span>module.exports = <a class="code hl_variable" href="../../dc/d5d/a00278_aa7aceac8e06d335ae844bd256e37cf51.html#aa7aceac8e06d335ae844bd256e37cf51">PacketParser</a>;</div>
+<div class="ttc" id="aa00197_a5e25b1d1bed9ab5f3174b76d6a722180_html_a5e25b1d1bed9ab5f3174b76d6a722180"><div class="ttname"><a href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a></div><div class="ttdeci">function t t t IPv4 t i</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00278_aa7aceac8e06d335ae844bd256e37cf51_html_aa7aceac8e06d335ae844bd256e37cf51"><div class="ttname"><a href="../../dc/d5d/a00278_aa7aceac8e06d335ae844bd256e37cf51.html#aa7aceac8e06d335ae844bd256e37cf51">PacketParser</a></div><div class="ttdeci">const PacketParser</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d5d/a00278_source.html#l00007">compressed_protocol.js:7</a></div></div>
+<div class="ttc" id="aa00371_a06a1f66ce7cd46c32f0ba94111d7276b_html_a06a1f66ce7cd46c32f0ba94111d7276b"><div class="ttname"><a href="../../d6/d80/a00371_a06a1f66ce7cd46c32f0ba94111d7276b.html#a06a1f66ce7cd46c32f0ba94111d7276b">MAX_PACKET_LENGTH</a></div><div class="ttdeci">const MAX_PACKET_LENGTH</div><div class="ttdef"><b>Definition</b> <a href="#l00005">packet_parser.js:5</a></div></div>
+<div class="ttc" id="aa00371_a70cce0e5a88f8e1bd1a9365c19569ae8_html_a70cce0e5a88f8e1bd1a9365c19569ae8"><div class="ttname"><a href="../../d6/d80/a00371_a70cce0e5a88f8e1bd1a9365c19569ae8.html#a70cce0e5a88f8e1bd1a9365c19569ae8">readPacketLength</a></div><div class="ttdeci">function readPacketLength(b, off)</div><div class="ttdef"><b>Definition</b> <a href="#l00007">packet_parser.js:7</a></div></div>
+<div class="ttc" id="aa00371_adbc81c45b48c6cdfffe9fc4752007493_html_adbc81c45b48c6cdfffe9fc4752007493"><div class="ttname"><a href="../../d6/d80/a00371_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a></div><div class="ttdeci">const Packet</div><div class="ttdef"><b>Definition</b> <a href="#l00003">packet_parser.js:3</a></div></div>
+<div class="ttc" id="aa00404_ade59c25e4b06a463da08f869c2e7163e_html_ade59c25e4b06a463da08f869c2e7163e"><div class="ttname"><a href="../../d9/de6/a00404_ade59c25e4b06a463da08f869c2e7163e.html#ade59c25e4b06a463da08f869c2e7163e">end</a></div><div class="ttdeci">Utf32Encoder prototype end</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de6/a00404_source.html#l00081">utf32.js:81</a></div></div>
+<div class="ttc" id="aa00572_af36af181c026f5a7ad0911bf2f9a9bda_html_af36af181c026f5a7ad0911bf2f9a9bda"><div class="ttname"><a href="../../d6/d06/a00572_af36af181c026f5a7ad0911bf2f9a9bda.html#af36af181c026f5a7ad0911bf2f9a9bda">b</a></div><div class="ttdeci">function b(e, t, n)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00002">jquery.js:2</a></div></div>
+<div class="ttc" id="aa00572_aff241db241bb474dade51b204204fcfd_html_aff241db241bb474dade51b204204fcfd"><div class="ttname"><a href="../../d6/d06/a00572_aff241db241bb474dade51b204204fcfd.html#aff241db241bb474dade51b204204fcfd">offset</a></div><div class="ttdeci">S S y S S fn S expr pseudos S offset</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d06/a00572_source.html#l00086">jquery.js:86</a></div></div>
+<div class="ttc" id="aa00728_a2242fd60b3ee1aa3896c3ba0c063bd1b_html_a2242fd60b3ee1aa3896c3ba0c063bd1b"><div class="ttname"><a href="../../df/d3b/a00728_a2242fd60b3ee1aa3896c3ba0c063bd1b.html#a2242fd60b3ee1aa3896c3ba0c063bd1b">PacketParser::executeHeader2</a></div><div class="ttdeci">executeHeader2(chunk)</div><div class="ttdef"><b>Definition</b> <a href="#l00176">packet_parser.js:176</a></div></div>
+<div class="ttc" id="aa00728_a5ff1951156df64a682dd711f82b83f35_html_a5ff1951156df64a682dd711f82b83f35"><div class="ttname"><a href="../../df/d3b/a00728_a5ff1951156df64a682dd711f82b83f35.html#a5ff1951156df64a682dd711f82b83f35">PacketParser::constructor</a></div><div class="ttdeci">constructor(onPacket, packetHeaderLength)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">packet_parser.js:18</a></div></div>
+<div class="ttc" id="aa00728_a935591f498caac31b5dc300a38ce4cb4_html_a935591f498caac31b5dc300a38ce4cb4"><div class="ttname"><a href="../../df/d3b/a00728_a935591f498caac31b5dc300a38ce4cb4.html#a935591f498caac31b5dc300a38ce4cb4">PacketParser::executeStart</a></div><div class="ttdeci">executeStart(chunk)</div><div class="ttdef"><b>Definition</b> <a href="#l00063">packet_parser.js:63</a></div></div>
+<div class="ttc" id="aa00728_a99a897b745fadf9ebda256c63f8e3eaa_html_a99a897b745fadf9ebda256c63f8e3eaa"><div class="ttname"><a href="../../df/d3b/a00728_a99a897b745fadf9ebda256c63f8e3eaa.html#a99a897b745fadf9ebda256c63f8e3eaa">PacketParser::executeHeader3</a></div><div class="ttdeci">executeHeader3(chunk)</div><div class="ttdef"><b>Definition</b> <a href="#l00188">packet_parser.js:188</a></div></div>
+<div class="ttc" id="aa00728_aae88c2537da28c69aa99fff3662897a9_html_aae88c2537da28c69aa99fff3662897a9"><div class="ttname"><a href="../../df/d3b/a00728_aae88c2537da28c69aa99fff3662897a9.html#aae88c2537da28c69aa99fff3662897a9">PacketParser::_flushLargePacket7</a></div><div class="ttdeci">_flushLargePacket7()</div><div class="ttdef"><b>Definition</b> <a href="#l00053">packet_parser.js:53</a></div></div>
+<div class="ttc" id="aa00728_ad11a3bda04c4037fdffd177901cbde0d_html_ad11a3bda04c4037fdffd177901cbde0d"><div class="ttname"><a href="../../df/d3b/a00728_ad11a3bda04c4037fdffd177901cbde0d.html#ad11a3bda04c4037fdffd177901cbde0d">PacketParser::executePayload</a></div><div class="ttdeci">executePayload(chunk)</div><div class="ttdef"><b>Definition</b> <a href="#l00120">packet_parser.js:120</a></div></div>
+<div class="ttc" id="aa00728_ad4f2380c2bf9f25e768a274263ff644f_html_ad4f2380c2bf9f25e768a274263ff644f"><div class="ttname"><a href="../../df/d3b/a00728_ad4f2380c2bf9f25e768a274263ff644f.html#ad4f2380c2bf9f25e768a274263ff644f">PacketParser::_flushLargePacket4</a></div><div class="ttdeci">_flushLargePacket4()</div><div class="ttdef"><b>Definition</b> <a href="#l00043">packet_parser.js:43</a></div></div>
+<div class="ttc" id="aa00728_html"><div class="ttname"><a href="../../df/d3b/a00728.html">PacketParser</a></div><div class="ttdef"><b>Definition</b> <a href="#l00017">packet_parser.js:17</a></div></div>
+<div class="ttc" id="aa00776_html"><div class="ttname"><a href="../../d9/dd4/a00776.html">Packet</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00047">packet.js:47</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../d6/d80/a00371.html">packet_parser.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

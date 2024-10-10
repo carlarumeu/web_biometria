@@ -1,0 +1,153 @@
+\doxysubsection{resize.\+js}
+\label{a00059_source}\index{resize.js@{resize.js}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ @licstart\ \ The\ following\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ The\ MIT\ License\ (MIT)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ Copyright\ (C)\ 1997-\/2020\ by\ Dimitri\ van\ Heesch}}
+\DoxyCodeLine{00007\ \textcolor{comment}{}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this\ software}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ @licend\ \ The\ above\ is\ the\ entire\ license\ notice\ for\ the\ JavaScript\ code\ in\ this\ file}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{function}\ initResizable(treeview)\ \{}
+\DoxyCodeLine{00027\ \ \ let\ sidenav,navtree,content,header,footer,barWidth=6;}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{const}\ RESIZE\_COOKIE\_NAME\ =\ \textcolor{stringliteral}{''}+\textcolor{stringliteral}{'width'};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{function}\ resizeWidth()\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ sidenavWidth\ =\ \$(sidenav).outerWidth();}
+\DoxyCodeLine{00032\ \ \ \ \ content.css(\{marginLeft:parseInt(sidenavWidth)+\textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ page\_layout!==\textcolor{stringliteral}{'undefined'}\ \&\&\ page\_layout==1)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ footer.css(\{marginLeft:parseInt(sidenavWidth)+\textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ Cookie.writeSetting(RESIZE\_COOKIE\_NAME,sidenavWidth-\/barWidth);}
+\DoxyCodeLine{00037\ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{function}\ restoreWidth(navWidth)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ content.css(\{marginLeft:parseInt(navWidth)+barWidth+\textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ page\_layout!==\textcolor{stringliteral}{'undefined'}\ \&\&\ page\_layout==1)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ footer.css(\{marginLeft:parseInt(navWidth)+barWidth+\textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ sidenav.css(\{width:navWidth\ +\ \textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{function}\ resizeHeight(treeview)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ headerHeight\ =\ header.outerHeight();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ windowHeight\ =\ \$(window).height();}
+\DoxyCodeLine{00050\ \ \ \ \ let\ contentHeight;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (treeview)}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{const}\ footerHeight\ =\ footer.outerHeight();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ let\ navtreeHeight,sideNavHeight;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ page\_layout===\textcolor{stringliteral}{'undefined'}\ ||\ page\_layout==0)\ \{\ \textcolor{comment}{/*\ DISABLE\_INDEX=NO\ */}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ contentHeight\ =\ windowHeight\ -\/\ headerHeight\ -\/\ footerHeight;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ navtreeHeight\ =\ contentHeight;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ sideNavHeight\ =\ contentHeight;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (page\_layout==1)\ \{\ \textcolor{comment}{/*\ DISABLE\_INDEX=YES\ */}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ contentHeight\ =\ windowHeight\ -\/\ footerHeight;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ navtreeHeight\ =\ windowHeight\ -\/\ headerHeight;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ sideNavHeight\ =\ windowHeight;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ navtree.css(\{height:navtreeHeight\ +\ \textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ sidenav.css(\{height:sideNavHeight\ +\ \textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ contentHeight\ =\ windowHeight\ -\/\ headerHeight;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ content.css(\{height:contentHeight\ +\ \textcolor{stringliteral}{"{}px"{}}\});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (location.hash.slice(1))\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ (document.getElementById(location.hash.slice(1))||document.body).scrollIntoView();}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{function}\ collapseExpand()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ let\ newWidth;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (sidenav.width()>0)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ newWidth=0;}
+\DoxyCodeLine{00081\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keyword}{const}\ width\ =\ Cookie.readSetting(RESIZE\_COOKIE\_NAME,250);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ newWidth\ =\ (width>250\ \&\&\ width<\$(window).width())\ ?\ width\ :\ 250;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ restoreWidth(newWidth);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{const}\ sidenavWidth\ =\ \$(sidenav).outerWidth();}
+\DoxyCodeLine{00087\ \ \ \ \ Cookie.writeSetting(RESIZE\_COOKIE\_NAME,sidenavWidth-\/barWidth);}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ header\ \ =\ \$(\textcolor{stringliteral}{"{}\#top"{}});}
+\DoxyCodeLine{00091\ \ \ content\ =\ \$(\textcolor{stringliteral}{"{}\#doc-\/content"{}});}
+\DoxyCodeLine{00092\ \ \ footer\ \ =\ \$(\textcolor{stringliteral}{"{}\#nav-\/path"{}});}
+\DoxyCodeLine{00093\ \ \ sidenav\ =\ \$(\textcolor{stringliteral}{"{}\#side-\/nav"{}});}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordflow}{if}\ (!treeview)\ \{}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ \ \ \ title\ \ \ =\ \$("{}\#titlearea"{});}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ \ \ \ titleH\ \ =\ \$(title).height();}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ let\ animating\ =\ false;}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ \ \ \ content.on("{}scroll"{},\ function()\ \{}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ \ \ \ \ \ slideOpts\ =\ \{\ duration:\ 200,}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ step:\ function()\ \{}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contentHeight\ =\ \$(window).height()\ -\/\ header.outerHeight();}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ content.css(\{\ height\ :\ contentHeight\ +\ "{}px"{}\ \});}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ done:\ function()\ \{\ animating=false;\ \}}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ \ \ \ \ \ if\ (content.scrollTop()>titleH\ \&\&\ title.css('display')!='none'\ \&\&\ !animating)\ \{}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ \ \ \ \ \ \ \ title.slideUp(slideOpts);}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ \ \ \ \ animating=true;}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ \ \ \ \ \ \}\ else\ if\ (content.scrollTop()<=titleH\ \&\&\ title.css('display')=='none'\ \&\&\ !animating)\ \{}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ \ \ \ \ \ \ \ title.slideDown(slideOpts);}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ \ \ \ \ \ \ \ animating=true;}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ \ \ \ \});}}
+\DoxyCodeLine{00114\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ navtree\ =\ \$(\textcolor{stringliteral}{"{}\#nav-\/tree"{}});}
+\DoxyCodeLine{00116\ \ \ \ \ \$(\textcolor{stringliteral}{"{}.side-\/nav-\/resizable"{}}).resizable(\{resize:\ \textcolor{keyword}{function}(e,\ ui)\ \{\ resizeWidth();\ \}\ \});}
+\DoxyCodeLine{00117\ \ \ \ \ \$(sidenav).resizable(\{\ minWidth:\ 0\ \});}
+\DoxyCodeLine{00118\ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \$(window).resize(\textcolor{keyword}{function}()\ \{\ resizeHeight(treeview);\ \});}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordflow}{if}\ (treeview)}
+\DoxyCodeLine{00121\ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{const}\ device\ =\ navigator.userAgent.toLowerCase();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{const}\ touch\_device\ =\ device.match(/(iphone|ipod|ipad|android)/);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (touch\_device)\ \{\ \textcolor{comment}{/*\ wider\ split\ bar\ for\ touch\ only\ devices\ */}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \$(sidenav).css(\{\ paddingRight:\textcolor{stringliteral}{'20px'}\ \});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'.ui-\/resizable-\/e'}).css(\{\ width:\textcolor{stringliteral}{'20px'}\ \});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \$(\textcolor{stringliteral}{'\#nav-\/sync'}).css(\{\ right:\textcolor{stringliteral}{'34px'}\ \});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ barWidth=20;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{const}\ width\ =\ Cookie.readSetting(RESIZE\_COOKIE\_NAME,250);}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (width)\ \{\ restoreWidth(width);\ \}\ \textcolor{keywordflow}{else}\ \{\ resizeWidth();\ \}}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ \ \ resizeHeight(treeview);}
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{const}\ url\ =\ location.href;}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{const}\ i=url.indexOf(\textcolor{stringliteral}{"{}\#"{}});}
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordflow}{if}\ (i>=0)\ window.location.hash=url.substr(i);}
+\DoxyCodeLine{00137\ \ \ \textcolor{keyword}{const}\ \_preventDefault\ =\ \textcolor{keyword}{function}(evt)\ \{\ evt.preventDefault();\ \};}
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordflow}{if}\ (treeview)}
+\DoxyCodeLine{00139\ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \$(\textcolor{stringliteral}{"{}\#splitbar"{}}).bind(\textcolor{stringliteral}{"{}dragstart"{}},\ \_preventDefault).bind(\textcolor{stringliteral}{"{}selectstart"{}},\ \_preventDefault);}
+\DoxyCodeLine{00141\ \ \ \ \ \$(\textcolor{stringliteral}{"{}.ui-\/resizable-\/handle"{}}).dblclick(collapseExpand);}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ workaround\ for\ firefox}}
+\DoxyCodeLine{00143\ \ \ \ \ \$(\textcolor{stringliteral}{"{}body"{}}).css(\{overflow:\ \textcolor{stringliteral}{"{}hidden"{}}\});}
+\DoxyCodeLine{00144\ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \$(window).on(\textcolor{stringliteral}{'load'},\textcolor{keyword}{function}()\ \{\ resizeHeight(treeview);\ \});}
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ \textcolor{comment}{/*\ @license-\/end\ */}}
+
+\end{DoxyCode}

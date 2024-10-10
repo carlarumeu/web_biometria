@@ -1,0 +1,1147 @@
+\doxysubsection{Referencia del archivo response.\+js}
+\hypertarget{a00116}{}\label{a00116}\index{response.js@{response.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00116_aa21dc3ce9630dbea7fa83bbdeee0176f_aa21dc3ce9630dbea7fa83bbdeee0176f}{sendfile}} (\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}, \mbox{\hyperlink{a00209_a14523cb74edc3f6175c54e598a379c27_a14523cb74edc3f6175c54e598a379c27}{file}}, options, callback)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00116_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\begin{DoxyCompactList}\small\item\em express Copyright(c) 2009-\/2013 TJ Holowaychuk Copyright(c) 2014-\/2015 Douglas Christopher Wilson MIT Licensed \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{create\+Error}}
+\item 
+var \mbox{\hyperlink{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}{encode\+Url}} = require(\textquotesingle{}encodeurl\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742}{escape\+Html}} = require(\textquotesingle{}\mbox{\hyperlink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}}-\/\mbox{\hyperlink{a01168_a8f99bc655183db169e126fc155ceb631_a8f99bc655183db169e126fc155ceb631}{html}}\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a00116_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}} = require(\textquotesingle{}http\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a00116_aa95da46f3d867faa7562ae11962ad19a_aa95da46f3d867faa7562ae11962ad19a}{is\+Absolute}} = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).is\+Absolute
+\item 
+var \mbox{\hyperlink{a00116_ac9425cf3d20b1276ed59571b25be3cba_ac9425cf3d20b1276ed59571b25be3cba}{on\+Finished}} = require(\textquotesingle{}on-\/finished\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a00116_aa72e0c8a20e6bcc571d3a1c51846e627_aa72e0c8a20e6bcc571d3a1c51846e627}{path}} = require(\textquotesingle{}path\textquotesingle{})
+\item 
+var \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}
+\item 
+var \mbox{\hyperlink{a00116_a218b17ed7cfd469b9abe23e323ea0301_a218b17ed7cfd469b9abe23e323ea0301}{sign}} = require(\textquotesingle{}\mbox{\hyperlink{a00116_a22c904eff955fbe7731d6d0e4fedcf54_a22c904eff955fbe7731d6d0e4fedcf54}{cookie}}-\/signature\textquotesingle{}).sign
+\item 
+var \mbox{\hyperlink{a00116_acfe51d0f45d4dae517cae068425fc2a4_acfe51d0f45d4dae517cae068425fc2a4}{normalize\+Type}} = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).normalize\+Type
+\item 
+var \mbox{\hyperlink{a00116_a139f0615a5ceb39ebda3addcc89beeb3_a139f0615a5ceb39ebda3addcc89beeb3}{normalize\+Types}} = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).normalize\+Types
+\item 
+var \mbox{\hyperlink{a00116_a980a5c7eba501bc11730d1b3525938ae_a980a5c7eba501bc11730d1b3525938ae}{set\+Charset}} = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).set\+Charset
+\item 
+var \mbox{\hyperlink{a00116_a22c904eff955fbe7731d6d0e4fedcf54_a22c904eff955fbe7731d6d0e4fedcf54}{cookie}} = require(\textquotesingle{}cookie\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Set cookie {\ttfamily name} to {\ttfamily value}, with the given {\ttfamily options}. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}} = require(\textquotesingle{}send\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Send a response. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a00116_a9fe677e64b8a08341d3168b8eb73a56d_a9fe677e64b8a08341d3168b8eb73a56d}{extname}} = path.\+extname
+\item 
+var \mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}} = send.\+mime
+\item 
+var \mbox{\hyperlink{a00116_aebedbf53ce9a15014605e527aec0a6ec_aebedbf53ce9a15014605e527aec0a6ec}{resolve}} = path.\+resolve
+\item 
+var \mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}} = require(\textquotesingle{}vary\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Add {\ttfamily field} to Vary. \end{DoxyCompactList}\item 
+var \mbox{\hyperlink{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}
+\begin{DoxyCompactList}\small\item\em Response prototype. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}} \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}
+\begin{DoxyCompactList}\small\item\em Set status {\ttfamily code}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a56092f25c80f752717867681b2c0a950_a56092f25c80f752717867681b2c0a950}{links}}
+\begin{DoxyCompactList}\small\item\em Set Link header field with the given {\ttfamily links}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_abc665c92bb39754e739086295969de03_abc665c92bb39754e739086295969de03}{json}}
+\begin{DoxyCompactList}\small\item\em Send JSON response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_ae3d1fd9e20d5b0a87c172afcda79d339_ae3d1fd9e20d5b0a87c172afcda79d339}{jsonp}}
+\begin{DoxyCompactList}\small\item\em Send JSON response with JSONP callback support. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a48eb47c20281112f798efcf6dd189e9e_a48eb47c20281112f798efcf6dd189e9e}{send\+Status}}
+\begin{DoxyCompactList}\small\item\em Send given HTTP status code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a759876546da9985e9fa7f4560c157d46_a759876546da9985e9fa7f4560c157d46}{send\+File}}
+\begin{DoxyCompactList}\small\item\em Transfer the file at the given {\ttfamily path}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a0f00d831d541123b75de988eab4cea7f_a0f00d831d541123b75de988eab4cea7f}{sendfile}}
+\begin{DoxyCompactList}\small\item\em Transfer the file at the given {\ttfamily path}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a9c1fe76adcf6e39eff71bdd5fb4870d8_a9c1fe76adcf6e39eff71bdd5fb4870d8}{download}}
+\begin{DoxyCompactList}\small\item\em Transfer the file at the given {\ttfamily path} as an attachment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{content\+Type}}
+\begin{DoxyCompactList}\small\item\em Set {\itshape Content-\/\+Type} response header with {\ttfamily type} through {\ttfamily mime.\+lookup()} when it does not contain "{}/"{}, or set the Content-\/\+Type to {\ttfamily type} otherwise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_acfa8138747b8794dbf1a8284157be51c_acfa8138747b8794dbf1a8284157be51c}{format}}
+\begin{DoxyCompactList}\small\item\em Respond to the Acceptable formats using an {\ttfamily obj} of mime-\/type callbacks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb_aa2bb930cd31bd2c4960cb6bf9893c3fb}{attachment}}
+\begin{DoxyCompactList}\small\item\em Set {\itshape Content-\/\+Disposition} header to {\itshape attachment} with optional {\ttfamily filename}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_aede1a69131b6dbb6ab0e780de1023f50_aede1a69131b6dbb6ab0e780de1023f50}{append}}
+\begin{DoxyCompactList}\small\item\em Append additional header {\ttfamily field} with value {\ttfamily val}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a1a929468b1774f3b63e4e8da54ab8cba_a1a929468b1774f3b63e4e8da54ab8cba}{set}}
+\begin{DoxyCompactList}\small\item\em Set header {\ttfamily field} to {\ttfamily val}, or pass an object of header fields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a10d7f5ef6343bd4575249458cf93dd3e_a10d7f5ef6343bd4575249458cf93dd3e}{get}}
+\begin{DoxyCompactList}\small\item\em Get value for header {\ttfamily field}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a5f341e66d18724a7498e32807cec8466_a5f341e66d18724a7498e32807cec8466}{clear\+Cookie}}
+\begin{DoxyCompactList}\small\item\em Clear cookie {\ttfamily name}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d}{location}}
+\begin{DoxyCompactList}\small\item\em Set the location header to {\ttfamily url}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_a8de4982240756277f8ed598dae635f7b_a8de4982240756277f8ed598dae635f7b}{redirect}}
+\begin{DoxyCompactList}\small\item\em Redirect to the given {\ttfamily url} with optional response {\ttfamily status} defaulting to 302. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} \mbox{\hyperlink{a00116_adb20ab6480898d0b4a1c1887ba9118de_adb20ab6480898d0b4a1c1887ba9118de}{render}}
+\begin{DoxyCompactList}\small\item\em Render {\ttfamily view} with the given {\ttfamily options} and optional callback {\ttfamily fn}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00116_aa21dc3ce9630dbea7fa83bbdeee0176f_aa21dc3ce9630dbea7fa83bbdeee0176f}\index{response.js@{response.js}!sendfile@{sendfile}}
+\index{sendfile@{sendfile}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{sendfile()}{sendfile()}}
+{\footnotesize\ttfamily \label{a00116_aa21dc3ce9630dbea7fa83bbdeee0176f_aa21dc3ce9630dbea7fa83bbdeee0176f} 
+function sendfile (\begin{DoxyParamCaption}\item[{}]{res}{, }\item[{}]{file}{, }\item[{}]{options}{, }\item[{}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l01053}{1053}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00116_aede1a69131b6dbb6ab0e780de1023f50_aede1a69131b6dbb6ab0e780de1023f50}\index{response.js@{response.js}!append@{append}}
+\index{append@{append}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{append}{append}}
+{\footnotesize\ttfamily \label{a00116_aede1a69131b6dbb6ab0e780de1023f50_aede1a69131b6dbb6ab0e780de1023f50} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} append}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_aede1a69131b6dbb6ab0e780de1023f50_aede1a69131b6dbb6ab0e780de1023f50}{append}}(field,\ val)\ \{}
+\DoxyCodeLine{\ \ var\ prev\ =\ this.\textcolor{keyword}{get}(field);}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ val;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (prev)\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ Array.isArray(prev)\ ?\ prev.concat(val)}
+\DoxyCodeLine{\ \ \ \ \ \ :\ Array.isArray(val)\ ?\ [prev].concat(val)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ :\ [prev,\ val]}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\textcolor{keyword}{set}(field,\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Append additional header {\ttfamily field} with value {\ttfamily val}. 
+
+Example\+:
+
+res.\+append(\textquotesingle{}Link\textquotesingle{}, \mbox{[}\textquotesingle{}\href{http://localhost/}{\texttt{ http\+://localhost/}}\textquotesingle{}, \textquotesingle{}\href{http://localhost:3000/}{\texttt{ http\+://localhost\+:3000/}}\textquotesingle{}\mbox{]}); res.\+append(\textquotesingle{}Set-\/\+Cookie\textquotesingle{}, \textquotesingle{}foo=bar; Path=/; Http\+Only\textquotesingle{}); res.\+append(\textquotesingle{}Warning\textquotesingle{}, \textquotesingle{}199 Miscellaneous warning\textquotesingle{});
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & field \\
+\hline
+{\em \{\+String\texorpdfstring{$\vert$}{|}\+Array\}} & val \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00744}{744}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb_aa2bb930cd31bd2c4960cb6bf9893c3fb}\index{response.js@{response.js}!attachment@{attachment}}
+\index{attachment@{attachment}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{attachment}{attachment}}
+{\footnotesize\ttfamily \label{a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb_aa2bb930cd31bd2c4960cb6bf9893c3fb} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} attachment}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_aa2bb930cd31bd2c4960cb6bf9893c3fb_aa2bb930cd31bd2c4960cb6bf9893c3fb}{attachment}}(filename)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (filename)\ \{}
+\DoxyCodeLine{\ \ \ \ this.\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}(\mbox{\hyperlink{a00116_a9fe677e64b8a08341d3168b8eb73a56d_a9fe677e64b8a08341d3168b8eb73a56d}{extname}}(filename));}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ this.\textcolor{keyword}{set}(\textcolor{stringliteral}{'Content-\/Disposition'},\ \mbox{\hyperlink{a01699_aa1ae8b5aa0df46fcc9f22aba2deb965a_aa1ae8b5aa0df46fcc9f22aba2deb965a}{contentDisposition}}(filename));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Set {\itshape Content-\/\+Disposition} header to {\itshape attachment} with optional {\ttfamily filename}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00719}{719}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a5f341e66d18724a7498e32807cec8466_a5f341e66d18724a7498e32807cec8466}\index{response.js@{response.js}!clearCookie@{clearCookie}}
+\index{clearCookie@{clearCookie}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{clearCookie}{clearCookie}}
+{\footnotesize\ttfamily \label{a00116_a5f341e66d18724a7498e32807cec8466_a5f341e66d18724a7498e32807cec8466} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} clear\+Cookie}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_a5f341e66d18724a7498e32807cec8466_a5f341e66d18724a7498e32807cec8466}{clearCookie}}(name,\ options)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (options)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (options.maxAge)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'res.clearCookie:\ Passing\ "{}options.maxAge"{}\ is\ deprecated.\ In\ v5.0.0\ of\ Express,\ this\ option\ will\ be\ ignored,\ as\ res.clearCookie\ will\ automatically\ set\ cookies\ to\ expire\ immediately.\ Please\ update\ your\ code\ to\ omit\ this\ option.'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (options.expires)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'res.clearCookie:\ Passing\ "{}options.expires"{}\ is\ deprecated.\ In\ v5.0.0\ of\ Express,\ this\ option\ will\ be\ ignored,\ as\ res.clearCookie\ will\ automatically\ set\ cookies\ to\ expire\ immediately.\ Please\ update\ your\ code\ to\ omit\ this\ option.'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ var\ opts\ =\ \mbox{\hyperlink{a00101_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}(\{\ expires:\ \textcolor{keyword}{new}\ Date(1),\ \mbox{\hyperlink{a00116_aa72e0c8a20e6bcc571d3a1c51846e627_aa72e0c8a20e6bcc571d3a1c51846e627}{path}}:\ \textcolor{charliteral}{'/'}\ \},\ options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a00116_a22c904eff955fbe7731d6d0e4fedcf54_a22c904eff955fbe7731d6d0e4fedcf54}{cookie}}(name,\ \textcolor{stringliteral}{''},\ opts);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Clear cookie {\ttfamily name}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & name \\
+\hline
+{\em \{\+Object\}} & \mbox{[}options\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00824}{824}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}\index{response.js@{response.js}!contentType@{contentType}}
+\index{contentType@{contentType}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{contentType}{contentType}}
+{\footnotesize\ttfamily \label{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} content\+Type}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.type\ =\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_aaa70baea2218f3239c21c4a23f9569e3_aaa70baea2218f3239c21c4a23f9569e3}{contentType}}(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})\ \{}
+\DoxyCodeLine{\ \ var\ ct\ =\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}.indexOf(\textcolor{charliteral}{'/'})\ ===\ -\/1}
+\DoxyCodeLine{\ \ \ \ ?\ \mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.lookup(\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}})}
+\DoxyCodeLine{\ \ \ \ :\ \mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\textcolor{keyword}{set}(\textcolor{stringliteral}{'Content-\/Type'},\ ct);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Set {\itshape Content-\/\+Type} response header with {\ttfamily type} through {\ttfamily mime.\+lookup()} when it does not contain "{}/"{}, or set the Content-\/\+Type to {\ttfamily type} otherwise. 
+
+Examples\+: \begin{DoxyVerb}res.type('.html');
+res.type('html');
+res.type('json');
+res.type('application/json');
+res.type('png');
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00618}{618}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a22c904eff955fbe7731d6d0e4fedcf54_a22c904eff955fbe7731d6d0e4fedcf54}\index{response.js@{response.js}!cookie@{cookie}}
+\index{cookie@{cookie}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{cookie}{cookie}}
+{\footnotesize\ttfamily \label{a00116_a22c904eff955fbe7731d6d0e4fedcf54_a22c904eff955fbe7731d6d0e4fedcf54} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} cookie = require(\textquotesingle{}cookie\textquotesingle{})}
+
+
+
+Set cookie {\ttfamily name} to {\ttfamily value}, with the given {\ttfamily options}. 
+
+Options\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily max\+Age} max-\/age in milliseconds, converted to {\ttfamily expires}
+\item {\ttfamily signed} sign the cookie
+\item {\ttfamily path} defaults to "{}/"{}
+\end{DoxyItemize}
+
+Examples\+:
+
+// "{}\+Remember Me"{} for 15 minutes res.\+cookie(\textquotesingle{}rememberme\textquotesingle{}, \textquotesingle{}1\textquotesingle{}, \{ expires\+: new Date(Date.\+now() + 900000), http\+Only\+: true \});
+
+// same as above res.\+cookie(\textquotesingle{}rememberme\textquotesingle{}, \textquotesingle{}1\textquotesingle{}, \{ max\+Age\+: 900000, http\+Only\+: true \})
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & name \\
+\hline
+{\em \{\+String\texorpdfstring{$\vert$}{|}\+Object\}} & value \\
+\hline
+{\em \{\+Object\}} & \mbox{[}options\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00031}{31}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}\index{response.js@{response.js}!createError@{createError}}
+\index{createError@{createError}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{createError}{createError}}
+{\footnotesize\ttfamily \label{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff} 
+var create\+Error}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ require(\textcolor{stringliteral}{'http-\/errors'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}\ =\ require('depd')('\mbox{\hyperlink{a01369_af0deccff0ccdd703412620ba83155b82_af0deccff0ccdd703412620ba83155b82}{express}}')}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00017}{17}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a9c1fe76adcf6e39eff71bdd5fb4870d8_a9c1fe76adcf6e39eff71bdd5fb4870d8}\index{response.js@{response.js}!download@{download}}
+\index{download@{download}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{download}{download}}
+{\footnotesize\ttfamily \label{a00116_a9c1fe76adcf6e39eff71bdd5fb4870d8_a9c1fe76adcf6e39eff71bdd5fb4870d8} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} download}
+
+
+
+Transfer the file at the given {\ttfamily path} as an attachment. 
+
+Optionally providing an alternate attachment {\ttfamily filename}, and optional callback {\ttfamily callback(err)}. The callback is invoked when the data transfer is complete, or when an error has occurred. Be sure to check {\ttfamily res.\+headers\+Sent} if you plan to respond.
+
+Optionally providing an {\ttfamily options} object to use with {\ttfamily res.\+send\+File()}. This function will set the {\ttfamily Content-\/\+Disposition} header, overriding any {\ttfamily Content-\/\+Disposition} header passed as header options in order to set the attachment and filename.
+
+This method uses {\ttfamily res.\+send\+File()}. 
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00550}{550}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67}\index{response.js@{response.js}!encodeUrl@{encodeUrl}}
+\index{encodeUrl@{encodeUrl}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{encodeUrl}{encodeUrl}}
+{\footnotesize\ttfamily \label{a00116_a1a34672fc125191a36f71d740b9dcc67_a1a34672fc125191a36f71d740b9dcc67} 
+var encode\+Url = require(\textquotesingle{}encodeurl\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00019}{19}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742}\index{response.js@{response.js}!escapeHtml@{escapeHtml}}
+\index{escapeHtml@{escapeHtml}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{escapeHtml}{escapeHtml}}
+{\footnotesize\ttfamily \label{a00116_a283453fa28a8c3c50672113793233742_a283453fa28a8c3c50672113793233742} 
+var escape\+Html = require(\textquotesingle{}\mbox{\hyperlink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}}-\/\mbox{\hyperlink{a01168_a8f99bc655183db169e126fc155ceb631_a8f99bc655183db169e126fc155ceb631}{html}}\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00020}{20}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a9fe677e64b8a08341d3168b8eb73a56d_a9fe677e64b8a08341d3168b8eb73a56d}\index{response.js@{response.js}!extname@{extname}}
+\index{extname@{extname}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{extname}{extname}}
+{\footnotesize\ttfamily \label{a00116_a9fe677e64b8a08341d3168b8eb73a56d_a9fe677e64b8a08341d3168b8eb73a56d} 
+var extname = path.\+extname}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00033}{33}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_acfa8138747b8794dbf1a8284157be51c_acfa8138747b8794dbf1a8284157be51c}\index{response.js@{response.js}!format@{format}}
+\index{format@{format}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \label{a00116_acfa8138747b8794dbf1a8284157be51c_acfa8138747b8794dbf1a8284157be51c} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} format}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})\{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}\ =\ this.\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}};}
+\DoxyCodeLine{\ \ var\ next\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.next;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}}\ =\ Object.keys(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})}
+\DoxyCodeLine{\ \ \ \ .filter(\textcolor{keyword}{function}\ (\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ !==\ \textcolor{stringliteral}{'default'}\ \})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ var\ key\ =\ \mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}}.length\ >\ 0}
+\DoxyCodeLine{\ \ \ \ ?\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.accepts(\mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}})}
+\DoxyCodeLine{\ \ \ \ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ this.\mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}(\textcolor{stringliteral}{"{}Accept"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (key)\ \{}
+\DoxyCodeLine{\ \ \ \ this.\textcolor{keyword}{set}(\textcolor{stringliteral}{'Content-\/Type'},\ \mbox{\hyperlink{a00116_acfe51d0f45d4dae517cae068425fc2a4_acfe51d0f45d4dae517cae068425fc2a4}{normalizeType}}(key).value);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}[key](\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \textcolor{keyword}{this},\ next);}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.default)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}.default(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \textcolor{keyword}{this},\ next)}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ next(\mbox{\hyperlink{a00116_a36d4507fc5974c25545c80a464e96cff_a36d4507fc5974c25545c80a464e96cff}{createError}}(406,\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00215_a5802f014ed8e96d3a513f114faa91d12_a5802f014ed8e96d3a513f114faa91d12}{types}}:\ \mbox{\hyperlink{a00116_a139f0615a5ceb39ebda3addcc89beeb3_a139f0615a5ceb39ebda3addcc89beeb3}{normalizeTypes}}(\mbox{\hyperlink{a00341_abbd690cbcb2a047762c767dcb058a876_abbd690cbcb2a047762c767dcb058a876}{keys}}).map(\textcolor{keyword}{function}\ (\mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01687_a400dc8109620963da8314d4bdfa14f83_a400dc8109620963da8314d4bdfa14f83}{o}}.value\ \})}
+\DoxyCodeLine{\ \ \ \ \}))}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Respond to the Acceptable formats using an {\ttfamily obj} of mime-\/type callbacks. 
+
+This method uses {\ttfamily req.\+accepted}, an array of acceptable types ordered by their quality values. When "{}\+Accept"{} is not present the {\itshape first} callback is invoked, otherwise the first match is used. When no match is performed the server responds with 406 "{}\+Not Acceptable"{}.
+
+Content-\/\+Type is set for you, however if you choose you may alter this within the callback using {\ttfamily res.\+type()} or `res.\+set(\textquotesingle{}Content-\/\+Type', ...)\`{}.
+
+res.\+format(\{ \textquotesingle{}text/plain\textquotesingle{}\+: function()\{ res.\+send(\textquotesingle{}hey\textquotesingle{}); \},
+
+\textquotesingle{}text/html\textquotesingle{}\+: function()\{ res.\+send(\textquotesingle{}
+
+hey
+
+\textquotesingle{}); \},
+
+\textquotesingle{}application/json\textquotesingle{}\+: function () \{ res.\+send(\{ message\+: \textquotesingle{}hey\textquotesingle{} \}); \} \});
+
+In addition to canonicalized MIME types you may also use extnames mapped to these types\+:
+
+res.\+format(\{ text\+: function()\{ res.\+send(\textquotesingle{}hey\textquotesingle{}); \},
+
+html\+: function()\{ res.\+send(\textquotesingle{}
+
+hey
+
+\textquotesingle{}); \},
+
+json\+: function()\{ res.\+send(\{ message\+: \textquotesingle{}hey\textquotesingle{} \}); \} \});
+
+By default Express passes an {\ttfamily \doxylink{a00772}{Error}} with a {\ttfamily .status} of 406 to {\ttfamily next(err)} if a match is not made. If you provide a {\ttfamily .default} callback it will be invoked instead.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Object\}} & obj \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00684}{684}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a10d7f5ef6343bd4575249458cf93dd3e_a10d7f5ef6343bd4575249458cf93dd3e}\index{response.js@{response.js}!get@{get}}
+\index{get@{get}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{get}{get}}
+{\footnotesize\ttfamily \label{a00116_a10d7f5ef6343bd4575249458cf93dd3e_a10d7f5ef6343bd4575249458cf93dd3e} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} get}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(field)\{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.getHeader(field);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Get value for header {\ttfamily field}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{String\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00811}{811}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}\index{response.js@{response.js}!http@{http}}
+\index{http@{http}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{http}{http}}
+{\footnotesize\ttfamily \label{a00116_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3} 
+var http = require(\textquotesingle{}http\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00021}{21}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_aa95da46f3d867faa7562ae11962ad19a_aa95da46f3d867faa7562ae11962ad19a}\index{response.js@{response.js}!isAbsolute@{isAbsolute}}
+\index{isAbsolute@{isAbsolute}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{isAbsolute}{isAbsolute}}
+{\footnotesize\ttfamily \label{a00116_aa95da46f3d867faa7562ae11962ad19a_aa95da46f3d867faa7562ae11962ad19a} 
+var is\+Absolute = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).is\+Absolute}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00022}{22}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_abc665c92bb39754e739086295969de03_abc665c92bb39754e739086295969de03}\index{response.js@{response.js}!json@{json}}
+\index{json@{json}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily \label{a00116_abc665c92bb39754e739086295969de03_abc665c92bb39754e739086295969de03} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} json}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_abc665c92bb39754e739086295969de03_abc665c92bb39754e739086295969de03}{json}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}})\ \{}
+\DoxyCodeLine{\ \ var\ val\ =\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (arguments.length\ ===\ 2)\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (typeof\ arguments[1]\ ===\ \textcolor{stringliteral}{'number'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'res.json(obj,\ status):\ Use\ res.status(status).json(obj)\ instead'});}
+\DoxyCodeLine{\ \ \ \ \ \ this.statusCode\ =\ arguments[1];}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'res.json(status,\ obj):\ Use\ res.status(status).json(obj)\ instead'});}
+\DoxyCodeLine{\ \ \ \ \ \ this.statusCode\ =\ arguments[0];}
+\DoxyCodeLine{\ \ \ \ \ \ val\ =\ arguments[1];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}\ =\ this.\mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}};}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}}\ =\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.get(\textcolor{stringliteral}{'json\ escape'})}
+\DoxyCodeLine{\ \ var\ replacer\ =\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.get(\textcolor{stringliteral}{'json\ replacer'});}
+\DoxyCodeLine{\ \ var\ spaces\ =\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.get(\textcolor{stringliteral}{'json\ spaces'});}
+\DoxyCodeLine{\ \ var\ body\ =\ \mbox{\hyperlink{a01306_a933f8ff8d69be620d8091034ba62666c_a933f8ff8d69be620d8091034ba62666c}{stringify}}(val,\ replacer,\ spaces,\ \mbox{\hyperlink{a01267_a5185c2e0b8e6a5224458b2e5e6ed26e8_a5185c2e0b8e6a5224458b2e5e6ed26e8}{escape}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!this.\textcolor{keyword}{get}(\textcolor{stringliteral}{'Content-\/Type'}))\ \{}
+\DoxyCodeLine{\ \ \ \ this.\textcolor{keyword}{set}(\textcolor{stringliteral}{'Content-\/Type'},\ \textcolor{stringliteral}{'application/json'});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(body);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Send JSON response. 
+
+Examples\+: \begin{DoxyVerb}res.json(null);
+res.json({ user: 'tj' });
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}boolean\texorpdfstring{$\vert$}{|}object\}} & obj \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00250}{250}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_ae3d1fd9e20d5b0a87c172afcda79d339_ae3d1fd9e20d5b0a87c172afcda79d339}\index{response.js@{response.js}!jsonp@{jsonp}}
+\index{jsonp@{jsonp}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{jsonp}{jsonp}}
+{\footnotesize\ttfamily \label{a00116_ae3d1fd9e20d5b0a87c172afcda79d339_ae3d1fd9e20d5b0a87c172afcda79d339} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} jsonp}
+
+
+
+Send JSON response with JSONP callback support. 
+
+Examples\+: \begin{DoxyVerb}res.jsonp(null);
+res.jsonp({ user: 'tj' });
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}boolean\texorpdfstring{$\vert$}{|}object\}} & obj \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00293}{293}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a56092f25c80f752717867681b2c0a950_a56092f25c80f752717867681b2c0a950}\index{response.js@{response.js}!links@{links}}
+\index{links@{links}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{links}{links}}
+{\footnotesize\ttfamily \label{a00116_a56092f25c80f752717867681b2c0a950_a56092f25c80f752717867681b2c0a950} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} links}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}(\mbox{\hyperlink{a00116_a56092f25c80f752717867681b2c0a950_a56092f25c80f752717867681b2c0a950}{links}})\{}
+\DoxyCodeLine{\ \ var\ link\ =\ this.\textcolor{keyword}{get}(\textcolor{stringliteral}{'Link'})\ ||\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (link)\ link\ +=\ \textcolor{stringliteral}{',\ '};}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\textcolor{keyword}{set}(\textcolor{stringliteral}{'Link'},\ link\ +\ Object.keys(\mbox{\hyperlink{a00116_a56092f25c80f752717867681b2c0a950_a56092f25c80f752717867681b2c0a950}{links}}).\mbox{\hyperlink{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15}{map}}(\textcolor{keyword}{function}(rel)\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'<'}\ +\ \mbox{\hyperlink{a00116_a56092f25c80f752717867681b2c0a950_a56092f25c80f752717867681b2c0a950}{links}}[rel]\ +\ \textcolor{stringliteral}{'>;\ rel="{}'}\ +\ rel\ +\ \textcolor{charliteral}{'"{}'};}
+\DoxyCodeLine{\ \ \}).join(\textcolor{stringliteral}{',\ '}));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Set Link header field with the given {\ttfamily links}. 
+
+Examples\+:
+
+res.\+links(\{ next\+: \textquotesingle{}\href{http://api.example.com/users?page=2'}{\texttt{ http\+://api.\+example.\+com/users?page=2\textquotesingle{}}}, last\+: \textquotesingle{}\href{http://api.example.com/users?page=5'}{\texttt{ http\+://api.\+example.\+com/users?page=5\textquotesingle{}}} \});
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Object\}} & links \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00090}{90}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d}\index{response.js@{response.js}!location@{location}}
+\index{location@{location}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \label{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} location}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_a75ec03e18914bc8699236700707f598d_a75ec03e18914bc8699236700707f598d}{location}}(url)\ \{}
+\DoxyCodeLine{\ \ var\ loc;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (url\ ===\ \textcolor{stringliteral}{'back'})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'res.location("{}back"{}):\ use\ res.location(req.get("{}Referrer"{})\ ||\ "{}/"{})\ and\ refer\ to\ https:}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ loc\ =\ this.req.get('}Referrer\textcolor{stringliteral}{')\ ||\ '}/\textcolor{stringliteral}{';}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \}\ else\ \{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ loc\ =\ String(url);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ return\ this.set('}Location\textcolor{stringliteral}{',\ encodeUrl(loc));}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}}}
+
+\end{DoxyCode}
+
+
+Set the location header to {\ttfamily url}. 
+
+The given {\ttfamily url} can also be "{}back"{}, which redirects to the {\itshape Referrer} or {\itshape Referer} headers or "{}/"{}.
+
+Examples\+:
+
+res.\+location(\textquotesingle{}/foo/bar\textquotesingle{}).; res.\+location(\textquotesingle{}\href{http://example.com'}{\texttt{ http\+://example.\+com\textquotesingle{}}}); res.\+location(\textquotesingle{}../login\textquotesingle{});
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\}} & url \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00914}{914}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}\index{response.js@{response.js}!mime@{mime}}
+\index{mime@{mime}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{mime}{mime}}
+{\footnotesize\ttfamily \label{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375} 
+var mime = send.\+mime}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00034}{34}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_acfe51d0f45d4dae517cae068425fc2a4_acfe51d0f45d4dae517cae068425fc2a4}\index{response.js@{response.js}!normalizeType@{normalizeType}}
+\index{normalizeType@{normalizeType}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{normalizeType}{normalizeType}}
+{\footnotesize\ttfamily \label{a00116_acfe51d0f45d4dae517cae068425fc2a4_acfe51d0f45d4dae517cae068425fc2a4} 
+var normalize\+Type = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).normalize\+Type}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00028}{28}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a139f0615a5ceb39ebda3addcc89beeb3_a139f0615a5ceb39ebda3addcc89beeb3}\index{response.js@{response.js}!normalizeTypes@{normalizeTypes}}
+\index{normalizeTypes@{normalizeTypes}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{normalizeTypes}{normalizeTypes}}
+{\footnotesize\ttfamily \label{a00116_a139f0615a5ceb39ebda3addcc89beeb3_a139f0615a5ceb39ebda3addcc89beeb3} 
+var normalize\+Types = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).normalize\+Types}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00029}{29}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_ac9425cf3d20b1276ed59571b25be3cba_ac9425cf3d20b1276ed59571b25be3cba}\index{response.js@{response.js}!onFinished@{onFinished}}
+\index{onFinished@{onFinished}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{onFinished}{onFinished}}
+{\footnotesize\ttfamily \label{a00116_ac9425cf3d20b1276ed59571b25be3cba_ac9425cf3d20b1276ed59571b25be3cba} 
+var on\+Finished = require(\textquotesingle{}on-\/finished\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00023}{23}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_aa72e0c8a20e6bcc571d3a1c51846e627_aa72e0c8a20e6bcc571d3a1c51846e627}\index{response.js@{response.js}!path@{path}}
+\index{path@{path}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{a00116_aa72e0c8a20e6bcc571d3a1c51846e627_aa72e0c8a20e6bcc571d3a1c51846e627} 
+var path = require(\textquotesingle{}path\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00024}{24}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a8de4982240756277f8ed598dae635f7b_a8de4982240756277f8ed598dae635f7b}\index{response.js@{response.js}!redirect@{redirect}}
+\index{redirect@{redirect}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{redirect}{redirect}}
+{\footnotesize\ttfamily \label{a00116_a8de4982240756277f8ed598dae635f7b_a8de4982240756277f8ed598dae635f7b} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} redirect}
+
+
+
+Redirect to the given {\ttfamily url} with optional response {\ttfamily status} defaulting to 302. 
+
+The resulting {\ttfamily url} is determined by {\ttfamily res.\+location()}, so it will play nicely with mounted apps, relative paths, {\ttfamily "{}back"{}} etc.
+
+Examples\+:
+
+res.\+redirect(\textquotesingle{}/foo/bar\textquotesingle{}); res.\+redirect(\textquotesingle{}\href{http://example.com'}{\texttt{ http\+://example.\+com\textquotesingle{}}}); res.\+redirect(301, \textquotesingle{}\href{http://example.com'}{\texttt{ http\+://example.\+com\textquotesingle{}}}); res.\+redirect(\textquotesingle{}../login\textquotesingle{}); // /blog/post/1 -\/\texorpdfstring{$>$}{>} /blog/login 
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00946}{946}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_adb20ab6480898d0b4a1c1887ba9118de_adb20ab6480898d0b4a1c1887ba9118de}\index{response.js@{response.js}!render@{render}}
+\index{render@{render}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{render}{render}}
+{\footnotesize\ttfamily \label{a00116_adb20ab6480898d0b4a1c1887ba9118de_adb20ab6480898d0b4a1c1887ba9118de} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} render}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_adb20ab6480898d0b4a1c1887ba9118de_adb20ab6480898d0b4a1c1887ba9118de}{render}}(view,\ options,\ callback)\ \{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}\ =\ this.\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.app;}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}\ =\ callback;}
+\DoxyCodeLine{\ \ var\ opts\ =\ options\ ||\ \{\};}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}\ =\ this.\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}};}
+\DoxyCodeLine{\ \ var\ \textcolor{keyword}{self}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (typeof\ options\ ===\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}\ =\ options;}
+\DoxyCodeLine{\ \ \ \ opts\ =\ \{\};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ opts.\_locals\ =\ \textcolor{keyword}{self}.locals;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}\ =\ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}\ ||\ \textcolor{keyword}{function}\ (err,\ str)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (err)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.next(err);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{self}.send(str);}
+\DoxyCodeLine{\ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00101_a7b225fcb720e4d5ed2bbf60e28a25e6d_a7b225fcb720e4d5ed2bbf60e28a25e6d}{app}}.render(view,\ opts,\ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Render {\ttfamily view} with the given {\ttfamily options} and optional callback {\ttfamily fn}. 
+
+When a callback function is given a response will {\itshape not} be made automatically, otherwise a response of {\itshape 200} and {\itshape text/html} is given.
+
+Options\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily cache} boolean hinting to the engine it should cache
+\item {\ttfamily filename} filename of the view being rendered 
+\end{DoxyItemize}
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l01026}{1026}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}\index{response.js@{response.js}!res@{res}}
+\index{res@{res}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{res}{res}}
+{\footnotesize\ttfamily \label{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c} 
+var res}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ Object.create(\mbox{\hyperlink{a00116_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.ServerResponse.prototype)}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{module.exports\ =\ \mbox{\hyperlink{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ charsetRegExp\ =\ /}
+
+\end{DoxyCode}
+
+
+Response prototype. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00043}{43}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_aebedbf53ce9a15014605e527aec0a6ec_aebedbf53ce9a15014605e527aec0a6ec}\index{response.js@{response.js}!resolve@{resolve}}
+\index{resolve@{resolve}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{resolve}{resolve}}
+{\footnotesize\ttfamily \label{a00116_aebedbf53ce9a15014605e527aec0a6ec_aebedbf53ce9a15014605e527aec0a6ec} 
+var resolve = path.\+resolve}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00035}{35}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}\index{response.js@{response.js}!send@{send}}
+\index{send@{send}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{send}{send}}
+{\footnotesize\ttfamily \label{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} send = require(\textquotesingle{}send\textquotesingle{})}
+
+
+
+Send a response. 
+
+Examples\+: \begin{DoxyVerb}res.send(Buffer.from('wahoo'));
+res.send({ some: 'json' });
+res.send('<p>some html</p>');
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}boolean\texorpdfstring{$\vert$}{|}object\texorpdfstring{$\vert$}{|}\+Buffer\}} & body \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00032}{32}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a759876546da9985e9fa7f4560c157d46_a759876546da9985e9fa7f4560c157d46}\index{response.js@{response.js}!sendFile@{sendFile}}
+\index{sendFile@{sendFile}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{sendFile}{sendFile}}
+{\footnotesize\ttfamily \label{a00116_a759876546da9985e9fa7f4560c157d46_a759876546da9985e9fa7f4560c157d46} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} send\+File}
+
+
+
+Transfer the file at the given {\ttfamily path}. 
+
+Automatically sets the {\itshape Content-\/\+Type} response header field. The callback {\ttfamily callback(err)} is invoked when the transfer is complete or when an error occurs. Be sure to check {\ttfamily res.\+headers\+Sent} if you wish to attempt responding, as the header and some data may have already been transferred.
+
+Options\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily max\+Age} defaulting to 0 (can be string converted by {\ttfamily ms})
+\item {\ttfamily root} root directory for relative filenames
+\item {\ttfamily headers} object of headers to serve with file
+\item {\ttfamily dotfiles} serve dotfiles, defaulting to false; can be {\ttfamily "{}allow"{}} to send them
+\end{DoxyItemize}
+
+Other options are passed along to {\ttfamily send}.
+
+Examples\+:
+
+The following example illustrates how {\ttfamily res.\+send\+File()} may be used as an alternative for the {\ttfamily static()} middleware for dynamic situations. The code backing {\ttfamily res.\+send\+File()} is actually the same code, so HTTP cache support etc is identical.
+
+app.\+get(\textquotesingle{}/user/\+:uid/photos/\+:file\textquotesingle{}, function(req, res)\{ var uid = req.\+params.\+uid , file = req.\+params.\+file;
+
+req.\+user.\+may\+View\+Files\+From(uid, function(yes)\{ if (yes) \{ res.\+send\+File(\textquotesingle{}/uploads/\textquotesingle{} + uid + \textquotesingle{}/\textquotesingle{} + file); \} else \{ res.\+send(403, \textquotesingle{}Sorry! you cant see that.\textquotesingle{}); \} \}); \}); 
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00419}{419}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a0f00d831d541123b75de988eab4cea7f_a0f00d831d541123b75de988eab4cea7f}\index{response.js@{response.js}!sendfile@{sendfile}}
+\index{sendfile@{sendfile}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{sendfile}{sendfile}}
+{\footnotesize\ttfamily \label{a00116_a0f00d831d541123b75de988eab4cea7f_a0f00d831d541123b75de988eab4cea7f} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} sendfile}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00116_aa72e0c8a20e6bcc571d3a1c51846e627_aa72e0c8a20e6bcc571d3a1c51846e627}{path}},\ options,\ callback)\ \{}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}\ =\ callback;}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}\ =\ this.\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}};}
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ var\ next\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.next;}
+\DoxyCodeLine{\ \ var\ opts\ =\ options\ ||\ \{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (typeof\ options\ ===\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}\ =\ options;}
+\DoxyCodeLine{\ \ \ \ opts\ =\ \{\};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ var\ \mbox{\hyperlink{a00209_a14523cb74edc3f6175c54e598a379c27_a14523cb74edc3f6175c54e598a379c27}{file}}\ =\ \mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00116_aa72e0c8a20e6bcc571d3a1c51846e627_aa72e0c8a20e6bcc571d3a1c51846e627}{path}},\ opts);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a0f00d831d541123b75de988eab4cea7f_a0f00d831d541123b75de988eab4cea7f}{sendfile}}(\mbox{\hyperlink{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ \mbox{\hyperlink{a00209_a14523cb74edc3f6175c54e598a379c27_a14523cb74edc3f6175c54e598a379c27}{file}},\ opts,\ \textcolor{keyword}{function}\ (err)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01810_a006c822566f0ebf86500557e24565697_a006c822566f0ebf86500557e24565697}{done}}(err);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (err\ \&\&\ err.code\ ===\ \textcolor{stringliteral}{'EISDIR'})\ \textcolor{keywordflow}{return}\ next();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (err\ \&\&\ err.code\ !==\ \textcolor{stringliteral}{'ECONNABORTED'}\ \&\&\ err.syscall\ !==\ \textcolor{stringliteral}{'write'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ next(err);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Transfer the file at the given {\ttfamily path}. 
+
+Automatically sets the {\itshape Content-\/\+Type} response header field. The callback {\ttfamily callback(err)} is invoked when the transfer is complete or when an error occurs. Be sure to check {\ttfamily res.\+headers\+Sent} if you wish to attempt responding, as the header and some data may have already been transferred.
+
+Options\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily max\+Age} defaulting to 0 (can be string converted by {\ttfamily ms})
+\item {\ttfamily root} root directory for relative filenames
+\item {\ttfamily headers} object of headers to serve with file
+\item {\ttfamily dotfiles} serve dotfiles, defaulting to false; can be {\ttfamily "{}allow"{}} to send them
+\end{DoxyItemize}
+
+Other options are passed along to {\ttfamily send}.
+
+Examples\+:
+
+The following example illustrates how {\ttfamily res.\+sendfile()} may be used as an alternative for the {\ttfamily static()} middleware for dynamic situations. The code backing {\ttfamily res.\+sendfile()} is actually the same code, so HTTP cache support etc is identical.
+
+app.\+get(\textquotesingle{}/user/\+:uid/photos/\+:file\textquotesingle{}, function(req, res)\{ var uid = req.\+params.\+uid , file = req.\+params.\+file;
+
+req.\+user.\+may\+View\+Files\+From(uid, function(yes)\{ if (yes) \{ res.\+sendfile(\textquotesingle{}/uploads/\textquotesingle{} + uid + \textquotesingle{}/\textquotesingle{} + file); \} else \{ res.\+send(403, \textquotesingle{}Sorry! you cant see that.\textquotesingle{}); \} \}); \}); 
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00501}{501}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a48eb47c20281112f798efcf6dd189e9e_a48eb47c20281112f798efcf6dd189e9e}\index{response.js@{response.js}!sendStatus@{sendStatus}}
+\index{sendStatus@{sendStatus}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{sendStatus}{sendStatus}}
+{\footnotesize\ttfamily \label{a00116_a48eb47c20281112f798efcf6dd189e9e_a48eb47c20281112f798efcf6dd189e9e} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} send\+Status}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_a48eb47c20281112f798efcf6dd189e9e_a48eb47c20281112f798efcf6dd189e9e}{sendStatus}}(statusCode)\ \{}
+\DoxyCodeLine{\ \ var\ body\ =\ \mbox{\hyperlink{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}{statuses}}.message[statusCode]\ ||\ String(statusCode)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ this.statusCode\ =\ statusCode;}
+\DoxyCodeLine{\ \ this.\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}(\textcolor{stringliteral}{'txt'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ this.\mbox{\hyperlink{a00116_a88d7310f8a18b3e16f4020168641b86a_a88d7310f8a18b3e16f4020168641b86a}{send}}(body);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Send given HTTP status code. 
+
+Sets the response status to {\ttfamily status\+Code} and the body of the response to the standard description from node\textquotesingle{}s http.\+STATUS\+\_\+\+CODES or the status\+Code number if no description.
+
+Examples\+: \begin{DoxyVerb}res.sendStatus(200);
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & status\+Code \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00369}{369}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a1a929468b1774f3b63e4e8da54ab8cba_a1a929468b1774f3b63e4e8da54ab8cba}\index{response.js@{response.js}!set@{set}}
+\index{set@{set}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{set}{set}}
+{\footnotesize\ttfamily \label{a00116_a1a929468b1774f3b63e4e8da54ab8cba_a1a929468b1774f3b63e4e8da54ab8cba} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} set}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.header\ =\ \textcolor{keyword}{function}\ header(field,\ val)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (arguments.length\ ===\ 2)\ \{}
+\DoxyCodeLine{\ \ \ \ var\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ =\ Array.isArray(val)}
+\DoxyCodeLine{\ \ \ \ \ \ ?\ val.map(String)}
+\DoxyCodeLine{\ \ \ \ \ \ :\ String(val);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (field.toLowerCase()\ ===\ \textcolor{stringliteral}{'content-\/type'})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Array.isArray(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'Content-\/Type\ cannot\ be\ set\ to\ an\ Array'});}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!charsetRegExp.test(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}\ =\ \mbox{\hyperlink{a00116_ab4d288fe448bcc077971c41ae3797375_ab4d288fe448bcc077971c41ae3797375}{mime}}.charsets.lookup(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}.split(\textcolor{charliteral}{';'})[0]);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}})\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}\ +=\ \textcolor{stringliteral}{';\ charset='}\ +\ \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}}.toLowerCase();}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ this.setHeader(field,\ \mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}});}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (var\ key\ \mbox{\hyperlink{a01195_aaf64ea1eb68af5440a0249f7788f1af5_aaf64ea1eb68af5440a0249f7788f1af5}{in}}\ field)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ this.\textcolor{keyword}{set}(key,\ field[key]);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Set header {\ttfamily field} to {\ttfamily val}, or pass an object of header fields. 
+
+Examples\+:
+
+res.\+set(\textquotesingle{}Foo\textquotesingle{}, \mbox{[}\textquotesingle{}bar\textquotesingle{}, \textquotesingle{}baz\textquotesingle{}\mbox{]}); res.\+set(\textquotesingle{}Accept\textquotesingle{}, \textquotesingle{}application/json\textquotesingle{}); res.\+set(\{ Accept\+: \textquotesingle{}text/plain\textquotesingle{}, \textquotesingle{}X-\/\+API-\/\+Key\textquotesingle{}\+: \textquotesingle{}tobi\textquotesingle{} \});
+
+Aliased as {\ttfamily res.\+header()}.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+String\texorpdfstring{$\vert$}{|}\+Object\}} & field \\
+\hline
+{\em \{\+String\texorpdfstring{$\vert$}{|}\+Array\}} & val \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00776}{776}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a980a5c7eba501bc11730d1b3525938ae_a980a5c7eba501bc11730d1b3525938ae}\index{response.js@{response.js}!setCharset@{setCharset}}
+\index{setCharset@{setCharset}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{setCharset}{setCharset}}
+{\footnotesize\ttfamily \label{a00116_a980a5c7eba501bc11730d1b3525938ae_a980a5c7eba501bc11730d1b3525938ae} 
+var set\+Charset = require(\textquotesingle{}./\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}\textquotesingle{}).set\+Charset}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00030}{30}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a218b17ed7cfd469b9abe23e323ea0301_a218b17ed7cfd469b9abe23e323ea0301}\index{response.js@{response.js}!sign@{sign}}
+\index{sign@{sign}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{sign}{sign}}
+{\footnotesize\ttfamily \label{a00116_a218b17ed7cfd469b9abe23e323ea0301_a218b17ed7cfd469b9abe23e323ea0301} 
+var sign = require(\textquotesingle{}\mbox{\hyperlink{a00116_a22c904eff955fbe7731d6d0e4fedcf54_a22c904eff955fbe7731d6d0e4fedcf54}{cookie}}-\/signature\textquotesingle{}).sign}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00027}{27}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}\index{response.js@{response.js}!status@{status}}
+\index{status@{status}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily \label{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957} 
+\mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01288_a57f5b60955b20f18ba489a7aad60314b_a57f5b60955b20f18ba489a7aad60314b}{charset}} \mbox{\hyperlink{a00197_ad9a7d92cb87932d25187fdec3ba1b621_ad9a7d92cb87932d25187fdec3ba1b621}{s}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} status}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00116_ad9c73d5a753bd398aeb580443d4c1957_ad9c73d5a753bd398aeb580443d4c1957}{status}}(code)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((typeof\ code\ ===\ \textcolor{stringliteral}{'string'}\ ||\ Math.floor(code)\ !==\ code)\ \&\&\ code\ >\ 99\ \&\&\ code\ <\ 1000)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}(\textcolor{stringliteral}{'res.status('}\ +\ \mbox{\hyperlink{a00320_a5c2083d67680a698a2c2d545b649a6f5_a5c2083d67680a698a2c2d545b649a6f5}{JSON}}.stringify(code)\ +\ \textcolor{stringliteral}{'):\ use\ res.status('}\ +\ Math.floor(code)\ +\ \textcolor{stringliteral}{')\ instead'})}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ this.statusCode\ =\ code;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Set status {\ttfamily code}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Number\}} & code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00067}{67}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7}\index{response.js@{response.js}!statuses@{statuses}}
+\index{statuses@{statuses}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{statuses}{statuses}}
+{\footnotesize\ttfamily \label{a00116_a99b3f6d87cd1b82b675154f0f17f99e7_a99b3f6d87cd1b82b675154f0f17f99e7} 
+var statuses}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ require(\textcolor{stringliteral}{'statuses'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}\ =\ require('\mbox{\hyperlink{a01840_a7b58b8887c6d26e09f79fbacfbda7f53_a7b58b8887c6d26e09f79fbacfbda7f53}{utils}}-\/\mbox{\hyperlink{a00101_a3fda54bf53a2d62c0f154400825c4b57_a3fda54bf53a2d62c0f154400825c4b57}{merge}}')}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00025}{25}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{response.js@{response.js}!strict@{strict}}
+\index{strict@{strict}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00116_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+express Copyright(c) 2009-\/2013 TJ Holowaychuk Copyright(c) 2014-\/2015 Douglas Christopher Wilson MIT Licensed 
+
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00008}{8}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+
+\Hypertarget{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}\index{response.js@{response.js}!vary@{vary}}
+\index{vary@{vary}!response.js@{response.js}}
+\doxyparagraph{\texorpdfstring{vary}{vary}}
+{\footnotesize\ttfamily \label{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5} 
+\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}} vary = require(\textquotesingle{}vary\textquotesingle{})}
+
+
+
+Add {\ttfamily field} to Vary. 
+
+If already present in the Vary set, then this call is simply ignored.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{\+Array\texorpdfstring{$\vert$}{|}\+String\}} & field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{Server\+Response\} for chaining 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a00116_source_l00036}{36}} del archivo \mbox{\hyperlink{a00116_source}{response.\+js}}.
+

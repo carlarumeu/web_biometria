@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: lru-cache</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('de/d62/a00924.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">lru-cache</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md1336"></a></p>
+<p><a class="el" href="../../d3/d69/a00844.html" title="Constructs a 64 bit two&#39;s-complement integer, given its low and high 32 bit values as signed integers...">A</a> cache object that deletes the least-recently-used items.</p>
+<p>Specify a max number of the most recently used items that you want to keep, and this cache will keep that many of the most recently accessed items.</p>
+<p>This is not primarily a TTL cache, and does not make strong TTL guarantees. There is no preemptive pruning of expired items by default, but you <em>may</em> set a TTL on the cache or on a single <code>set</code>. If you do so, it will treat expired items as missing, and delete them when fetched. If you are more interested in TTL caching than LRU caching, check out <a href="http://npm.im/@isaacs/ttlcache">@isaacs/ttlcache</a>.</p>
+<p>As of version 7, this is one of the most performant LRU implementations available in JavaScript, and supports a wide diversity of use cases. However, note that using some of the features will necessarily impact performance, by causing the cache to have to do more work. See the "Performance" section below.</p>
+<h1><a class="anchor" id="autotoc_md1337"></a>
+Installation</h1>
+<div class="fragment"><div class="line">npm install lru-cache --save</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1338"></a>
+Usage</h1>
+<div class="fragment"><div class="line"><span class="comment">// hybrid module, either works</span></div>
+<div class="line"><span class="keyword">import</span> LRUCache from <span class="stringliteral">&#39;lru-cache&#39;</span></div>
+<div class="line"><span class="comment">// or:</span></div>
+<div class="line"><span class="keyword">const</span> LRUCache = require(<span class="stringliteral">&#39;lru-cache&#39;</span>)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// At least one of &#39;max&#39;, &#39;ttl&#39;, or &#39;maxSize&#39; is required, to prevent</span></div>
+<div class="line"><span class="comment">// unsafe unbounded storage.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// In most cases, it&#39;s best to specify a max for performance, so all</span></div>
+<div class="line"><span class="comment">// the required memory allocation is done up-front.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// All the other options are optional, see the sections below for</span></div>
+<div class="line"><span class="comment">// documentation on what each one does.  Most of them can be</span></div>
+<div class="line"><span class="comment">// overridden for specific items in get()/set()</span></div>
+<div class="line"><a class="code hl_variable" href="../../d8/df3/a01195_a170ccbec74a0565bcf6e232ec10ad9e5.html#a170ccbec74a0565bcf6e232ec10ad9e5">const</a> options = {</div>
+<div class="line">  <a class="code hl_variable" href="../../d7/d06/a00131_a04fa2ea575d5471ca09e1b344ec4a69e.html#a04fa2ea575d5471ca09e1b344ec4a69e">max</a>: 500,</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// for use with tracking overall storage size</span></div>
+<div class="line">  maxSize: 5000,</div>
+<div class="line">  sizeCalculation: (<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>, key) =&gt; {</div>
+<div class="line">    <span class="keywordflow">return</span> 1</div>
+<div class="line">  },</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// for use when you need to clean up something when objects</span></div>
+<div class="line">  <span class="comment">// are evicted from the cache</span></div>
+<div class="line">  dispose: (<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>, key) =&gt; {</div>
+<div class="line">    freeFromMemoryOrWhatever(<a class="code hl_variable" href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a>)</div>
+<div class="line">  },</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// how long to live in ms</span></div>
+<div class="line">  ttl: 1000 * 60 * 5,</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// return stale items before removing from cache?</span></div>
+<div class="line">  allowStale: <span class="keyword">false</span>,</div>
+<div class="line"> </div>
+<div class="line">  updateAgeOnGet: <span class="keyword">false</span>,</div>
+<div class="line">  updateAgeOnHas: <span class="keyword">false</span>,</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// async method to use for cache.fetch(), for</span></div>
+<div class="line">  <span class="comment">// stale-while-revalidate type of behavior</span></div>
+<div class="line">  fetchMethod: async (key, staleValue, { options, signal }) =&gt; {},</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> cache = <span class="keyword">new</span> LRUCache(options)</div>
+<div class="line"> </div>
+<div class="line">cache.set(<span class="stringliteral">&#39;key&#39;</span>, <span class="stringliteral">&#39;value&#39;</span>)</div>
+<div class="line">cache.get(<span class="stringliteral">&#39;key&#39;</span>) <span class="comment">// &quot;value&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// non-string keys ARE fully supported</span></div>
+<div class="line"><span class="comment">// but note that it must be THE SAME object, not</span></div>
+<div class="line"><span class="comment">// just a JSON-equivalent object.</span></div>
+<div class="line">var someObject = { <a class="code hl_variable" href="../../de/db1/a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb.html#a82ca4ee5dd63e58a2bb967077dc8b8fb">a</a>: 1 }</div>
+<div class="line">cache.set(someObject, <span class="stringliteral">&#39;a value&#39;</span>)</div>
+<div class="line"><span class="comment">// Object keys are not toString()-ed</span></div>
+<div class="line">cache.set(<span class="stringliteral">&#39;[object Object]&#39;</span>, <span class="stringliteral">&#39;a different value&#39;</span>)</div>
+<div class="line"><a class="code hl_variable" href="../../d8/df7/a01711_a5e95655c9188700b16a5488897cecb90.html#a5e95655c9188700b16a5488897cecb90">assert</a>.equal(cache.get(someObject), <span class="stringliteral">&#39;a value&#39;</span>)</div>
+<div class="line"><span class="comment">// A similar object with same keys/values won&#39;t work,</span></div>
+<div class="line"><span class="comment">// because it&#39;s a different object identity</span></div>
+<div class="line"><a class="code hl_variable" href="../../d8/df7/a01711_a5e95655c9188700b16a5488897cecb90.html#a5e95655c9188700b16a5488897cecb90">assert</a>.equal(cache.get({ a: 1 }), <a class="code hl_variable" href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a>)</div>
+<div class="line"> </div>
+<div class="line">cache.clear() <span class="comment">// empty the cache</span></div>
+<div class="ttc" id="aa00131_a04fa2ea575d5471ca09e1b344ec4a69e_html_a04fa2ea575d5471ca09e1b344ec4a69e"><div class="ttname"><a href="../../d7/d06/a00131_a04fa2ea575d5471ca09e1b344ec4a69e.html#a04fa2ea575d5471ca09e1b344ec4a69e">max</a></div><div class="ttdeci">var max</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d06/a00131_source.html#l00007">implementation.js:7</a></div></div>
+<div class="ttc" id="aa00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_html_a82ca4ee5dd63e58a2bb967077dc8b8fb"><div class="ttname"><a href="../../de/db1/a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb.html#a82ca4ee5dd63e58a2bb967077dc8b8fb">a</a></div><div class="ttdeci">function a</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa01195_a170ccbec74a0565bcf6e232ec10ad9e5_html_a170ccbec74a0565bcf6e232ec10ad9e5"><div class="ttname"><a href="../../d8/df3/a01195_a170ccbec74a0565bcf6e232ec10ad9e5.html#a170ccbec74a0565bcf6e232ec10ad9e5">const</a></div><div class="ttdeci">var const</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00030">node_modules/generate-function/index.js:30</a></div></div>
+<div class="ttc" id="aa01198_a0b30f2887f0891ea5fed53d76282d2dc_html_a0b30f2887f0891ea5fed53d76282d2dc"><div class="ttname"><a href="../../d0/d32/a01198_a0b30f2887f0891ea5fed53d76282d2dc.html#a0b30f2887f0891ea5fed53d76282d2dc">undefined</a></div><div class="ttdeci">var undefined</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d32/a01198_source.html#l00003">node_modules/get-intrinsic/index.js:3</a></div></div>
+<div class="ttc" id="aa01198_aacce635d68067370c70caa2381ea1040_html_aacce635d68067370c70caa2381ea1040"><div class="ttname"><a href="../../d0/d32/a01198_aacce635d68067370c70caa2381ea1040.html#aacce635d68067370c70caa2381ea1040">value</a></div><div class="ttdeci">return value</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d32/a01198_source.html#l00358">node_modules/get-intrinsic/index.js:358</a></div></div>
+<div class="ttc" id="aa01711_a5e95655c9188700b16a5488897cecb90_html_a5e95655c9188700b16a5488897cecb90"><div class="ttname"><a href="../../d8/df7/a01711_a5e95655c9188700b16a5488897cecb90.html#a5e95655c9188700b16a5488897cecb90">assert</a></div><div class="ttdeci">var assert</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df7/a01711_source.html#l00006">mime/src/test.js:6</a></div></div>
+</div><!-- fragment --><p>If you put more stuff in it, then items will fall out.</p>
+<h1><a class="anchor" id="autotoc_md1339"></a>
+Options</h1>
+<h2><a class="anchor" id="autotoc_md1340"></a>
+<code>max</code></h2>
+<p>The maximum number of items that remain in the cache (assuming no TTL pruning or explicit deletions). Note that fewer items may be stored if size calculation is used, and <code>maxSize</code> is exceeded. This must be a positive finite intger.</p>
+<p>At least one of <code>max</code>, <code>maxSize</code>, or <code>TTL</code> is required. This must be a positive integer if set.</p>
+<p><b>It is strongly recommended to set a <code>max</code> to prevent unbounded growth of the cache.</b> See "Storage Bounds Safety" below.</p>
+<h2><a class="anchor" id="autotoc_md1341"></a>
+<code>maxSize</code></h2>
+<p>Set to a positive integer to track the sizes of items added to the cache, and automatically evict items in order to stay below this size. Note that this may result in fewer than <code>max</code> items being stored.</p>
+<p>Attempting to add an item to the cache whose calculated size is greater that this amount will be a no-op. The item will not be cached, and no other items will be evicted.</p>
+<p>Optional, must be a positive integer if provided.</p>
+<p>Sets <code>maxEntrySize</code> to the same value, unless a different value is provided for <code>maxEntrySize</code>.</p>
+<p>At least one of <code>max</code>, <code>maxSize</code>, or <code>TTL</code> is required. This must be a positive integer if set.</p>
+<p>Even if size tracking is enabled, <b>it is strongly recommended to set a <code>max</code> to prevent unbounded growth of the cache.</b> See "Storage Bounds Safety" below.</p>
+<h2><a class="anchor" id="autotoc_md1342"></a>
+<code>maxEntrySize</code></h2>
+<p>Set to a positive integer to track the sizes of items added to the cache, and prevent caching any item over a given size. Attempting to add an item whose calculated size is greater than this amount will be a no-op. The item will not be cached, and no other items will be evicted.</p>
+<p>Optional, must be a positive integer if provided. Defaults to the value of <code>maxSize</code> if provided.</p>
+<h2><a class="anchor" id="autotoc_md1343"></a>
+<code>sizeCalculation</code></h2>
+<p>Function used to calculate the size of stored items. If you're storing strings or buffers, then you probably want to do something like <code>n =&gt; n.length</code>. The item is passed as the first argument, and the key is passed as the second argument.</p>
+<p>This may be overridden by passing an options object to <code>cache.set()</code>.</p>
+<p>Requires <code>maxSize</code> to be set.</p>
+<p>If the <code>size</code> (or return value of <code>sizeCalculation</code>) for a given entry is greater than <code>maxEntrySize</code>, then the item will not be added to the cache.</p>
+<p>Deprecated alias: <code>length</code></p>
+<h2><a class="anchor" id="autotoc_md1344"></a>
+<code>fetchMethod</code></h2>
+<p>Function that is used to make background asynchronous fetches. Called with <code>fetchMethod(key, staleValue, { signal, options, context })</code>. May return a Promise.</p>
+<p>If <code>fetchMethod</code> is not provided, then <code>cache.fetch(key)</code> is equivalent to <code>Promise.resolve(cache.get(key))</code>.</p>
+<p>The <code>signal</code> object is an <code>AbortSignal</code> if that's available in the global object, otherwise it's a pretty close polyfill.</p>
+<p>If at any time, <code>signal.aborted</code> is set to <code>true</code>, or if the <code>signal.onabort</code> method is called, or if it emits an &lsquo;'abort&rsquo;<code> event which you can listen to with</code>addEventListener`, then that means that the fetch should be abandoned. This may be passed along to async functions aware of AbortController/AbortSignal behavior.</p>
+<p>The <code>fetchMethod</code> should <b>only</b> return <code>undefined</code> or a Promise resolving to <code>undefined</code> if the AbortController signaled an <code>abort</code> event. In all other cases, it should return or resolve to a value suitable for adding to the cache.</p>
+<p>The <code>options</code> object is a union of the options that may be provided to <code><a class="el" href="../../d4/d3a/a00101_aea3662ebceec6f02ef3aec57683086a6.html#aea3662ebceec6f02ef3aec57683086a6" title="Assign setting to val, or return setting&#39;s value.">set()</a></code> and <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get()</a></code>. If they are modified, then that will result in modifying the settings to <code>cache.set()</code> when the value is resolved, and in the case of <code>noDeleteOnFetchRejection</code> and <code>allowStaleOnFetchRejection</code>, the handling of <code>fetchMethod</code> failures.</p>
+<p>For example, a DNS cache may update the TTL based on the value returned from a remote DNS server by changing <code>options.ttl</code> in the <code>fetchMethod</code>.</p>
+<h2><a class="anchor" id="autotoc_md1345"></a>
+<code>fetchContext</code></h2>
+<p>Arbitrary data that can be passed to the <code>fetchMethod</code> as the <code>context</code> option.</p>
+<p>Note that this will only be relevant when the <code>cache.fetch()</code> call needs to call <code>fetchMethod()</code>. Thus, any data which will meaningfully vary the fetch response needs to be present in the key. This is primarily intended for including <code>x-request-id</code> headers and the like for debugging purposes, which do not affect the <code>fetchMethod()</code> response.</p>
+<h2><a class="anchor" id="autotoc_md1346"></a>
+<code>noDeleteOnFetchRejection</code></h2>
+<p>If a <code>fetchMethod</code> throws an error or returns a rejected promise, then by default, any existing stale value will be removed from the cache.</p>
+<p>If <code>noDeleteOnFetchRejection</code> is set to <code>true</code>, then this behavior is suppressed, and the stale value remains in the cache in the case of a rejected <code>fetchMethod</code>.</p>
+<p>This is important in cases where a <code>fetchMethod</code> is <em>only</em> called as a background update while the stale value is returned, when <code>allowStale</code> is used.</p>
+<p>This is implicitly in effect when <code>allowStaleOnFetchRejection</code> is set.</p>
+<p>This may be set in calls to <code>fetch()</code>, or defaulted on the constructor, or overridden by modifying the options object in the <code>fetchMethod</code>.</p>
+<h2><a class="anchor" id="autotoc_md1347"></a>
+<code>allowStaleOnFetchRejection</code></h2>
+<p>Set to true to return a stale value from the cache when a <code>fetchMethod</code> throws an error or returns a rejected Promise.</p>
+<p>If a <code>fetchMethod</code> fails, and there is no stale value available, the <code>fetch()</code> will resolve to <code>undefined</code>. Ie, all <code>fetchMethod</code> errors are suppressed.</p>
+<p>Implies <code>noDeleteOnFetchRejection</code>.</p>
+<p>This may be set in calls to <code>fetch()</code>, or defaulted on the constructor, or overridden by modifying the options object in the <code>fetchMethod</code>.</p>
+<h2><a class="anchor" id="autotoc_md1348"></a>
+<code>allowStaleOnFetchAbort</code></h2>
+<p>Set to true to return a stale value from the cache when the <code>AbortSignal</code> passed to the <code>fetchMethod</code> dispatches an &lsquo;'abort&rsquo;` event, whether user-triggered, or due to internal cache behavior.</p>
+<p>Unless <code>ignoreFetchAbort</code> is also set, the underlying <code>fetchMethod</code> will still be considered canceled, and its return value will be ignored and not cached.</p>
+<h2><a class="anchor" id="autotoc_md1349"></a>
+<code>ignoreFetchAbort</code></h2>
+<p>Set to true to ignore the <code>abort</code> event emitted by the <code>AbortSignal</code> object passed to <code>fetchMethod</code>, and still cache the resulting resolution value, as long as it is not <code>undefined</code>.</p>
+<p>When used on its own, this means aborted <code>fetch()</code> calls are not immediately resolved or rejected when they are aborted, and instead take the full time to await.</p>
+<p>When used with <code>allowStaleOnFetchAbort</code>, aborted <code>fetch()</code> calls will resolve immediately to their stale cached value or <code>undefined</code>, and will continue to process and eventually update the cache when they resolve, as long as the resulting value is not <code>undefined</code>, thus supporting a "return stale on timeout while
+refreshing" mechanism by passing <code>AbortSignal.timeout(n)</code> as the signal.</p>
+<p>For example:</p>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a> = <span class="keyword">new</span> LRUCache({</div>
+<div class="line">  ttl: 100,</div>
+<div class="line">  ignoreFetchAbort: <span class="keyword">true</span>,</div>
+<div class="line">  allowStaleOnFetchAbort: <span class="keyword">true</span>,</div>
+<div class="line">  fetchMethod: async (key, oldValue, { signal }) =&gt; {</div>
+<div class="line">    <span class="comment">// note: do NOT pass the signal to fetch()!</span></div>
+<div class="line">    <span class="comment">// let&#39;s say this fetch can take a long time.</span></div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a> = <a class="code hl_variable" href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a> fetch(`https:<span class="comment">//slow-backend-server/${key}`)</span></div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a> <a class="code hl_variable" href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a>.json()</div>
+<div class="line">  },</div>
+<div class="line">})</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// this will return the stale value after 100ms, while still</span></div>
+<div class="line"><span class="comment">// updating in the background for next time.</span></div>
+<div class="line"><span class="keyword">const</span> val = <a class="code hl_variable" href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a> <a class="code hl_variable" href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a>.fetch(<span class="stringliteral">&#39;key&#39;</span>, { signal: AbortSignal.timeout(100) })</div>
+<div class="ttc" id="aa00104_abde3c35e3bb7e5225dd7f234c685329c_html_abde3c35e3bb7e5225dd7f234c685329c"><div class="ttname"><a href="../../d0/dc2/a00104_abde3c35e3bb7e5225dd7f234c685329c.html#abde3c35e3bb7e5225dd7f234c685329c">res</a></div><div class="ttdeci">var res</div><div class="ttdef"><b>Definition</b> <a href="../../d0/dc2/a00104_source.html#l00022">express.js:22</a></div></div>
+<div class="ttc" id="aa01195_a222943fe334ed72f2374717e19f6eba9_html_a222943fe334ed72f2374717e19f6eba9"><div class="ttname"><a href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a></div><div class="ttdeci">var await</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00026">node_modules/generate-function/index.js:26</a></div></div>
+<div class="ttc" id="aa01822_abce695e0af988ece0826d9ad59b8160d_html_abce695e0af988ece0826d9ad59b8160d"><div class="ttname"><a href="../../d1/dba/a01822_abce695e0af988ece0826d9ad59b8160d.html#abce695e0af988ece0826d9ad59b8160d">c</a></div><div class="ttdeci">obj c</div><div class="ttdef"><b>Definition</b> <a href="../../d1/dba/a01822_source.html#l00005">example/circular.js:5</a></div></div>
+</div><!-- fragment --><p><b>Note</b>: regardless of this setting, an <code>abort</code> event <em>is still emitted on the <code>AbortSignal</code> object</em>, so may result in invalid results when passed to other underlying APIs that use AbortSignals.</p>
+<p>This may be overridden on the <code>fetch()</code> call or in the <code>fetchMethod</code> itself.</p>
+<h2><a class="anchor" id="autotoc_md1350"></a>
+<code>dispose</code></h2>
+<p>Function that is called on items when they are dropped from the cache, as <code>this.dispose(value, key, reason)</code>.</p>
+<p>This can be handy if you want to close file descriptors or do other cleanup tasks when items are no longer stored in the cache.</p>
+<p><b>NOTE</b>: It is called <em>before</em> the item has been fully removed from the cache, so if you want to put it right back in, you need to wait until the next tick. If you try to add it back in during the <code>dispose()</code> function call, it will break things in subtle and weird ways.</p>
+<p>Unlike several other options, this may <em>not</em> be overridden by passing an option to <code><a class="el" href="../../d4/d3a/a00101_aea3662ebceec6f02ef3aec57683086a6.html#aea3662ebceec6f02ef3aec57683086a6" title="Assign setting to val, or return setting&#39;s value.">set()</a></code>, for performance reasons. If disposal functions may vary between cache entries, then the entire list must be scanned on every cache swap, even if no disposal function is in use.</p>
+<p>The <code>reason</code> will be one of the following strings, corresponding to the reason for the item's deletion:</p>
+<ul>
+<li><code>evict</code> Item was evicted to make space for a new addition</li>
+<li><code>set</code> Item was overwritten by a new value</li>
+<li><code>delete</code> Item was removed by explicit <code>cache.delete(key)</code> or by calling <code>cache.clear()</code>, which deletes everything.</li>
+</ul>
+<p>The <code>dispose()</code> method is <em>not</em> called for canceled calls to <code>fetchMethod()</code>. If you wish to handle evictions, overwrites, and deletes of in-flight asynchronous fetches, you must use the <code>AbortSignal</code> provided.</p>
+<p>Optional, must be a function.</p>
+<h2><a class="anchor" id="autotoc_md1351"></a>
+<code>disposeAfter</code></h2>
+<p>The same as <code>dispose</code>, but called <em>after</em> the entry is completely removed and the cache is once again in a clean state.</p>
+<p>It is safe to add an item right back into the cache at this point. However, note that it is <em>very</em> easy to inadvertently create infinite recursion in this way.</p>
+<p>The <code>disposeAfter()</code> method is <em>not</em> called for canceled calls to <code>fetchMethod()</code>. If you wish to handle evictions, overwrites, and deletes of in-flight asynchronous fetches, you must use the <code>AbortSignal</code> provided.</p>
+<h2><a class="anchor" id="autotoc_md1352"></a>
+<code>noDisposeOnSet</code></h2>
+<p>Set to <code>true</code> to suppress calling the <code>dispose()</code> function if the entry key is still accessible within the cache.</p>
+<p>This may be overridden by passing an options object to <code>cache.set()</code>.</p>
+<p>Boolean, default <code>false</code>. Only relevant if <code>dispose</code> or <code>disposeAfter</code> options are set.</p>
+<h2><a class="anchor" id="autotoc_md1353"></a>
+<code>ttl</code></h2>
+<p>Max time to live for items before they are considered stale. Note that stale items are NOT preemptively removed by default, and MAY live in the cache, contributing to its LRU max, long after they have expired.</p>
+<p>Also, as this cache is optimized for LRU/MRU operations, some of the staleness/TTL checks will reduce performance.</p>
+<p>This is not primarily a TTL cache, and does not make strong TTL guarantees. There is no pre-emptive pruning of expired items, but you <em>may</em> set a TTL on the cache, and it will treat expired items as missing when they are fetched, and delete them.</p>
+<p>Optional, but must be a positive integer in ms if specified.</p>
+<p>This may be overridden by passing an options object to <code>cache.set()</code>.</p>
+<p>At least one of <code>max</code>, <code>maxSize</code>, or <code>TTL</code> is required. This must be a positive integer if set.</p>
+<p>Even if ttl tracking is enabled, <b>it is strongly recommended to set a <code>max</code> to prevent unbounded growth of the cache.</b> See "Storage Bounds Safety" below.</p>
+<p>If ttl tracking is enabled, and <code>max</code> and <code>maxSize</code> are not set, and <code>ttlAutopurge</code> is not set, then a warning will be emitted cautioning about the potential for unbounded memory consumption.</p>
+<p>Deprecated alias: <code>maxAge</code></p>
+<h2><a class="anchor" id="autotoc_md1354"></a>
+<code>noUpdateTTL</code></h2>
+<p>Boolean flag to tell the cache to not update the TTL when setting a new value for an existing key (ie, when updating a value rather than inserting a new value). Note that the TTL value is <em>always</em> set (if provided) when adding a new entry into the cache.</p>
+<p>This may be passed as an option to <code>cache.set()</code>.</p>
+<p>Boolean, default false.</p>
+<h2><a class="anchor" id="autotoc_md1355"></a>
+<code>ttlResolution</code></h2>
+<p>Minimum amount of time in ms in which to check for staleness. Defaults to <code>1</code>, which means that the current time is checked at most once per millisecond.</p>
+<p>Set to <code>0</code> to check the current time every time staleness is tested.</p>
+<p>Note that setting this to a higher value <em>will</em> improve performance somewhat while using ttl tracking, albeit at the expense of keeping stale items around a bit longer than intended.</p>
+<h2><a class="anchor" id="autotoc_md1356"></a>
+<code>ttlAutopurge</code></h2>
+<p>Preemptively remove stale items from the cache.</p>
+<p>Note that this may <em>significantly</em> degrade performance, especially if the cache is storing a large number of items. It is almost always best to just leave the stale items in the cache, and let them fall out as new items are added.</p>
+<p>Note that this means that <code>allowStale</code> is a bit pointless, as stale items will be deleted almost as soon as they expire.</p>
+<p>Use with caution!</p>
+<p>Boolean, default <code>false</code></p>
+<h2><a class="anchor" id="autotoc_md1357"></a>
+<code>allowStale</code></h2>
+<p>By default, if you set <code>ttl</code>, it'll only delete stale items from the cache when you <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get(key)</a></code>. That is, it's not preemptively pruning items.</p>
+<p>If you set <code>allowStale:true</code>, it'll return the stale value as well as deleting it. If you don't set this, then it'll return <code>undefined</code> when you try to get a stale entry.</p>
+<p>Note that when a stale entry is fetched, <em>even if it is returned due to <code>allowStale</code> being set</em>, it is removed from the cache immediately. You can immediately put it back in the cache if you wish, thus resetting the TTL.</p>
+<p>This may be overridden by passing an options object to <code>cache.get()</code>. The <code>cache.has()</code> method will always return <code>false</code> for stale items.</p>
+<p>Boolean, default false, only relevant if <code>ttl</code> is set.</p>
+<p>Deprecated alias: <code>stale</code></p>
+<h2><a class="anchor" id="autotoc_md1358"></a>
+<code>noDeleteOnStaleGet</code></h2>
+<p>When using time-expiring entries with <code>ttl</code>, by default stale items will be removed from the cache when the key is accessed with <code>cache.get()</code>.</p>
+<p>Setting <code>noDeleteOnStaleGet</code> to <code>true</code> will cause stale items to remain in the cache, until they are explicitly deleted with <code>cache.delete(key)</code>, or retrieved with <code>noDeleteOnStaleGet</code> set to <code>false</code>.</p>
+<p>This may be overridden by passing an options object to <code>cache.get()</code>.</p>
+<p>Boolean, default false, only relevant if <code>ttl</code> is set.</p>
+<h2><a class="anchor" id="autotoc_md1359"></a>
+<code>updateAgeOnGet</code></h2>
+<p>When using time-expiring entries with <code>ttl</code>, setting this to <code>true</code> will make each item's age reset to 0 whenever it is retrieved from cache with <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get()</a></code>, causing it to not expire. (It can still fall out of cache based on recency of use, of course.)</p>
+<p>This may be overridden by passing an options object to <code>cache.get()</code>.</p>
+<p>Boolean, default false, only relevant if <code>ttl</code> is set.</p>
+<h2><a class="anchor" id="autotoc_md1360"></a>
+<code>updateAgeOnHas</code></h2>
+<p>When using time-expiring entries with <code>ttl</code>, setting this to <code>true</code> will make each item's age reset to 0 whenever its presence in the cache is checked with <code><a class="el" href="../../d4/d8e/a01840_a1fd59be22bbab6bc2baae116e333d914.html#a1fd59be22bbab6bc2baae116e333d914">has()</a></code>, causing it to not expire. (It can still fall out of cache based on recency of use, of course.)</p>
+<p>This may be overridden by passing an options object to <code>cache.has()</code>.</p>
+<p>Boolean, default false, only relevant if <code>ttl</code> is set.</p>
+<h1><a class="anchor" id="autotoc_md1361"></a>
+API</h1>
+<h2><a class="anchor" id="autotoc_md1362"></a>
+<code>new LRUCache(options)</code></h2>
+<p>Create a new LRUCache. All options are documented above, and are on the cache as public members.</p>
+<h2><a class="anchor" id="autotoc_md1363"></a>
+<code>cache.max</code>, <code>cache.maxSize</code>, <code>cache.allowStale</code>,</h2>
+<p><code>cache.noDisposeOnSet</code>, <code>cache.sizeCalculation</code>, <code>cache.dispose</code>, <code>cache.maxSize</code>, <code>cache.ttl</code>, <code>cache.updateAgeOnGet</code>, <code>cache.updateAgeOnHas</code></p>
+<p>All option names are exposed as public members on the cache object.</p>
+<p>These are intended for read access only. Changing them during program operation can cause undefined behavior.</p>
+<h2><a class="anchor" id="autotoc_md1364"></a>
+<code>cache.size</code></h2>
+<p>The total number of items held in the cache at the current moment.</p>
+<h2><a class="anchor" id="autotoc_md1365"></a>
+<code>cache.calculatedSize</code></h2>
+<p>The total size of items in cache when using size tracking.</p>
+<h2><a class="anchor" id="autotoc_md1366"></a>
+<code>set(key, value, [{ size, sizeCalculation, ttl, noDisposeOnSet, start, status }])</code></h2>
+<p>Add a value to the cache.</p>
+<p>Optional options object may contain <code>ttl</code> and <code>sizeCalculation</code> as described above, which default to the settings on the cache object.</p>
+<p>If <code>start</code> is provided, then that will set the effective start time for the TTL calculation. Note that this must be a previous value of <code>performance.now()</code> if supported, or a previous value of <code>Date.now()</code> if not.</p>
+<p>Options object may also include <code>size</code>, which will prevent calling the <code>sizeCalculation</code> function and just use the specified number if it is a positive integer, and <code>noDisposeOnSet</code> which will prevent calling a <code>dispose</code> function in the case of overwrites.</p>
+<p>If the <code>size</code> (or return value of <code>sizeCalculation</code>) for a given entry is greater than <code>maxEntrySize</code>, then the item will not be added to the cache.</p>
+<p>Will update the recency of the entry.</p>
+<p>Returns the cache object.</p>
+<p>For the usage of the <code>status</code> option, see <b>Status Tracking</b> below.</p>
+<h2><a class="anchor" id="autotoc_md1367"></a>
+<code>get(key, { updateAgeOnGet, allowStale, status } = {}) =&gt; value</code></h2>
+<p>Return a value from the cache.</p>
+<p>Will update the recency of the cache entry found.</p>
+<p>If the key is not found, <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get()</a></code> will return <code>undefined</code>. This can be confusing when setting values specifically to <code>undefined</code>, as in <code>cache.set(key, undefined)</code>. Use <code>cache.has()</code> to determine whether a key is present in the cache at all.</p>
+<p>For the usage of the <code>status</code> option, see <b>Status Tracking</b> below.</p>
+<h2><a class="anchor" id="autotoc_md1368"></a>
+<code>async fetch(key, options = {}) =&gt; Promise</code></h2>
+<p>The following options are supported:</p>
+<ul>
+<li><code>updateAgeOnGet</code></li>
+<li><code>allowStale</code></li>
+<li><code>size</code></li>
+<li><code>sizeCalculation</code></li>
+<li><code>ttl</code></li>
+<li><code>noDisposeOnSet</code></li>
+<li><code>forceRefresh</code></li>
+<li><code>status</code> - See <b>Status Tracking</b> below.</li>
+<li><code>signal</code> - AbortSignal can be used to cancel the <code>fetch()</code>. Note that the <code>signal</code> option provided to the <code>fetchMethod</code> is a different object, because it must also respond to internal cache state changes, but aborting this signal will abort the one passed to <code>fetchMethod</code> as well.</li>
+<li><code>fetchContext</code> - sets the <code>context</code> option passed to the underlying <code>fetchMethod</code>.</li>
+</ul>
+<p>If the value is in the cache and not stale, then the returned Promise resolves to the value.</p>
+<p>If not in the cache, or beyond its TTL staleness, then <code>fetchMethod(key, staleValue, { options, signal, context })</code> is called, and the value returned will be added to the cache once resolved.</p>
+<p>If called with <code>allowStale</code>, and an asynchronous fetch is currently in progress to reload a stale value, then the former stale value will be returned.</p>
+<p>If called with <code>forceRefresh</code>, then the cached item will be re-fetched, even if it is not stale. However, if <code>allowStale</code> is set, then the old value will still be returned. This is useful in cases where you want to force a reload of a cached value. If a background fetch is already in progress, then <code>forceRefresh</code> has no effect.</p>
+<p>Multiple fetches for the same <code>key</code> will only call <code>fetchMethod</code> a single time, and all will be resolved when the value is resolved, even if different options are used.</p>
+<p>If <code>fetchMethod</code> is not specified, then this is effectively an alias for <code>Promise.resolve(cache.get(key))</code>.</p>
+<p>When the fetch method resolves to a value, if the fetch has not been aborted due to deletion, eviction, or being overwritten, then it is added to the cache using the options provided.</p>
+<p>If the key is evicted or deleted before the <code>fetchMethod</code> resolves, then the AbortSignal passed to the <code>fetchMethod</code> will receive an <code>abort</code> event, and the promise returned by <code>fetch()</code> will reject with the reason for the abort.</p>
+<p>If a <code>signal</code> is passed to the <code>fetch()</code> call, then aborting the signal will abort the fetch and cause the <code>fetch()</code> promise to reject with the reason provided.</p>
+<h2><a class="anchor" id="autotoc_md1369"></a>
+<code>peek(key, { allowStale } = {}) =&gt; value</code></h2>
+<p>Like <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get()</a></code> but doesn't update recency or delete stale items.</p>
+<p>Returns <code>undefined</code> if the item is stale, unless <code>allowStale</code> is set either on the cache or in the options object.</p>
+<h2><a class="anchor" id="autotoc_md1370"></a>
+<code>has(key, { updateAgeOnHas, status } = {}) =&gt; Boolean</code></h2>
+<p>Check if a key is in the cache, without updating the recency of use. Age is updated if <code>updateAgeOnHas</code> is set to <code>true</code> in either the options or the constructor.</p>
+<p>Will return <code>false</code> if the item is stale, even though it is technically in the cache. The difference can be determined (if it matters) by using a <code>status</code> argument, and inspecting the <code>has</code> field.</p>
+<p>For the usage of the <code>status</code> option, see <b>Status Tracking</b> below.</p>
+<h2><a class="anchor" id="autotoc_md1371"></a>
+<code>delete(key)</code></h2>
+<p>Deletes a key out of the cache.</p>
+<p>Returns <code>true</code> if the key was deleted, <code>false</code> otherwise.</p>
+<h2><a class="anchor" id="autotoc_md1372"></a>
+<code>clear()</code></h2>
+<p>Clear the cache entirely, throwing away all values.</p>
+<p>Deprecated alias: <code><a class="el" href="../../d8/dce/a01714_aa01b7cbc60d07525859f73a229026697.html#aa01b7cbc60d07525859f73a229026697">reset()</a></code></p>
+<h2><a class="anchor" id="autotoc_md1373"></a>
+<code>keys()</code></h2>
+<p>Return a generator yielding the keys in the cache, in order from most recently used to least recently used.</p>
+<h2><a class="anchor" id="autotoc_md1374"></a>
+<code>rkeys()</code></h2>
+<p>Return a generator yielding the keys in the cache, in order from least recently used to most recently used.</p>
+<h2><a class="anchor" id="autotoc_md1375"></a>
+<code>values()</code></h2>
+<p>Return a generator yielding the values in the cache, in order from most recently used to least recently used.</p>
+<h2><a class="anchor" id="autotoc_md1376"></a>
+<code>rvalues()</code></h2>
+<p>Return a generator yielding the values in the cache, in order from least recently used to most recently used.</p>
+<h2><a class="anchor" id="autotoc_md1377"></a>
+<code>entries()</code></h2>
+<p>Return a generator yielding <code>[key, value]</code> pairs, in order from most recently used to least recently used.</p>
+<h2><a class="anchor" id="autotoc_md1378"></a>
+<code>rentries()</code></h2>
+<p>Return a generator yielding <code>[key, value]</code> pairs, in order from least recently used to most recently used.</p>
+<h2><a class="anchor" id="autotoc_md1379"></a>
+<code>find(fn, [getOptions])</code></h2>
+<p>Find a value for which the supplied <code>fn</code> method returns a truthy value, similar to <code>Array.find()</code>.</p>
+<p><code>fn</code> is called as <code><a class="el" href="../../d6/d06/a00572_a2287243da4967181305b31f0ac827b66.html#a2287243da4967181305b31f0ac827b66">fn(value, key, cache)</a></code>.</p>
+<p>The optional <code>getOptions</code> are applied to the resulting <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get()</a></code> of the item found.</p>
+<h2><a class="anchor" id="autotoc_md1380"></a>
+<code>dump()</code></h2>
+<p>Return an array of <code>[key, entry]</code> objects which can be passed to <code>cache.load()</code></p>
+<p>The <code>start</code> fields are calculated relative to a portable <code>Date.now()</code> timestamp, even if <code>performance.now()</code> is available.</p>
+<p>Stale entries are always included in the <code>dump</code>, even if <code>allowStale</code> is false.</p>
+<p>Note: this returns an actual array, not a generator, so it can be more easily passed around.</p>
+<h2><a class="anchor" id="autotoc_md1381"></a>
+<code>load(entries)</code></h2>
+<p>Reset the cache and load in the items in <code>entries</code> in the order listed. Note that the shape of the resulting cache may be different if the same options are not used in both caches.</p>
+<p>The <code>start</code> fields are assumed to be calculated relative to a portable <code>Date.now()</code> timestamp, even if <code>performance.now()</code> is available.</p>
+<h2><a class="anchor" id="autotoc_md1382"></a>
+<code>purgeStale()</code></h2>
+<p>Delete any stale entries. Returns <code>true</code> if anything was removed, <code>false</code> otherwise.</p>
+<p>Deprecated alias: <code>prune</code></p>
+<h2><a class="anchor" id="autotoc_md1383"></a>
+<code>getRemainingTTL(key)</code></h2>
+<p>Return the number of ms left in the item's TTL. If item is not in cache, returns <code>0</code>. Returns <code>Infinity</code> if item is in cache without a defined TTL.</p>
+<h2><a class="anchor" id="autotoc_md1384"></a>
+<code>forEach(fn, [thisp])</code></h2>
+<p>Call the <code>fn</code> function with each set of <code><a class="el" href="../../d6/d06/a00572_a2287243da4967181305b31f0ac827b66.html#a2287243da4967181305b31f0ac827b66">fn(value, key, cache)</a></code> in the LRU cache, from most recent to least recently used.</p>
+<p>Does not affect recency of use.</p>
+<p>If <code>thisp</code> is provided, function will be called in the <code>this</code>-context of the provided object.</p>
+<h2><a class="anchor" id="autotoc_md1385"></a>
+<code>rforEach(fn, [thisp])</code></h2>
+<p>Same as <code>cache.forEach(fn, thisp)</code>, but in order from least recently used to most recently used.</p>
+<h2><a class="anchor" id="autotoc_md1386"></a>
+<code>pop()</code></h2>
+<p>Evict the least recently used item, returning its value.</p>
+<p>Returns <code>undefined</code> if cache is empty.</p>
+<h2><a class="anchor" id="autotoc_md1387"></a>
+Internal Methods and Properties</h2>
+<p>In order to optimize performance as much as possible, "private" members and methods are exposed on the object as normal properties, rather than being accessed via Symbols, private members, or closure variables.</p>
+<p><b>Do not use or rely on these.</b> They will change or be removed without notice. They will cause undefined behavior if used inappropriately. There is no need or reason to ever call them directly.</p>
+<p>This documentation is here so that it is especially clear that this not "undocumented" because someone forgot; it <em>is</em> documented, and the documentation is telling you not to do it.</p>
+<p><b>Do not report bugs that stem from using these properties.</b> They will be ignored.</p>
+<ul>
+<li><code>initializeTTLTracking()</code> Set up the cache for tracking TTLs</li>
+<li><code>updateItemAge(index)</code> Called when an item age is updated, by internal ID</li>
+<li><code>setItemTTL(index)</code> Called when an item ttl is updated, by internal ID</li>
+<li><code>isStale(index)</code> Called to check an item's staleness, by internal ID</li>
+<li><code>initializeSizeTracking()</code> Set up the cache for tracking item size. Called automatically when a size is specified.</li>
+<li><code>removeItemSize(index)</code> Updates the internal size calculation when an item is removed or modified, by internal ID</li>
+<li><code>addItemSize(index)</code> Updates the internal size calculation when an item is added or modified, by internal ID</li>
+<li><code>indexes()</code> An iterator over the non-stale internal IDs, from most recently to least recently used.</li>
+<li><code>rindexes()</code> An iterator over the non-stale internal IDs, from least recently to most recently used.</li>
+<li><code>newIndex()</code> Create a new internal ID, either reusing a deleted ID, evicting the least recently used ID, or walking to the end of the allotted space.</li>
+<li><code>evict()</code> Evict the least recently used internal ID, returning its ID. Does not do any bounds checking.</li>
+<li><code><a class="el" href="../../d4/d41/a01267_ac090844dde4bb03e7cb30b907e52ce18.html#ac090844dde4bb03e7cb30b907e52ce18">connect(p, n)</a></code> Connect the <code>p</code> and <code>n</code> internal IDs in the linked list.</li>
+<li><code>moveToTail(index)</code> Move the specified internal ID to the most recently used position.</li>
+<li><code>keyMap</code> Map of keys to internal IDs</li>
+<li><code>keyList</code> List of keys by internal ID</li>
+<li><code>valList</code> List of values by internal ID</li>
+<li><code>sizes</code> List of calculated sizes by internal ID</li>
+<li><code>ttls</code> List of TTL values by internal ID</li>
+<li><code>starts</code> List of start time values by internal ID</li>
+<li><code>next</code> Array of "next" pointers by internal ID</li>
+<li><code>prev</code> Array of "previous" pointers by internal ID</li>
+<li><code>head</code> Internal ID of least recently used item</li>
+<li><code>tail</code> Internal ID of most recently used item</li>
+<li><code>free</code> Stack of deleted internal IDs</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1388"></a>
+Status Tracking</h1>
+<p>Occasionally, it may be useful to track the internal behavior of the cache, particularly for logging, debugging, or for behavior within the <code>fetchMethod</code>. To do this, you can pass a <code>status</code> object to the <code><a class="el" href="../../d0/d39/a01138_a2f15642eb66f1058438a0c3373ba9fe4.html#a2f15642eb66f1058438a0c3373ba9fe4" title="Alias for peekAt()">get()</a></code>, <code><a class="el" href="../../d4/d3a/a00101_aea3662ebceec6f02ef3aec57683086a6.html#aea3662ebceec6f02ef3aec57683086a6" title="Assign setting to val, or return setting&#39;s value.">set()</a></code>, <code><a class="el" href="../../d4/d8e/a01840_a1fd59be22bbab6bc2baae116e333d914.html#a1fd59be22bbab6bc2baae116e333d914">has()</a></code>, and <code>fetch()</code> methods.</p>
+<p>The <code>status</code> option should be a plain JavaScript object.</p>
+<p>The following fields will be set appropriately:</p>
+<div class="fragment"><div class="line">interface Status&lt;V&gt; {</div>
+<div class="line">  /**</div>
+<div class="line">   * The status of a set() operation.</div>
+<div class="line">   *</div>
+<div class="line">   * - add: the item was not found in the cache, and was added</div>
+<div class="line">   * - update: the item was in the cache, with the same value provided</div>
+<div class="line">   * - replace: the item was in the cache, and replaced</div>
+<div class="line">   * - miss: the item was not added to the cache for some reason</div>
+<div class="line">   */</div>
+<div class="line">  set?: &#39;add&#39; | &#39;update&#39; | &#39;replace&#39; | &#39;miss&#39;</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * the ttl stored for the item, or undefined if ttls are not used.</div>
+<div class="line">   */</div>
+<div class="line">  ttl?: LRUMilliseconds</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * the start time for the item, or undefined if ttls are not used.</div>
+<div class="line">   */</div>
+<div class="line">  start?: LRUMilliseconds</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The timestamp used for TTL calculation</div>
+<div class="line">   */</div>
+<div class="line">  now?: LRUMilliseconds</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * the remaining ttl for the item, or undefined if ttls are not used.</div>
+<div class="line">   */</div>
+<div class="line">  remainingTTL?: LRUMilliseconds</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The calculated size for the item, if sizes are used.</div>
+<div class="line">   */</div>
+<div class="line">  size?: LRUSize</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * A flag indicating that the item was not stored, due to exceeding the</div>
+<div class="line">   * {@link maxEntrySize}</div>
+<div class="line">   */</div>
+<div class="line">  maxEntrySizeExceeded?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The old value, specified in the case of `set:&#39;update&#39;` or</div>
+<div class="line">   * `set:&#39;replace&#39;`</div>
+<div class="line">   */</div>
+<div class="line">  oldValue?: V</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The results of a {@link has} operation</div>
+<div class="line">   *</div>
+<div class="line">   * - hit: the item was found in the cache</div>
+<div class="line">   * - stale: the item was found in the cache, but is stale</div>
+<div class="line">   * - miss: the item was not found in the cache</div>
+<div class="line">   */</div>
+<div class="line">  has?: &#39;hit&#39; | &#39;stale&#39; | &#39;miss&#39;</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The status of a {@link fetch} operation.</div>
+<div class="line">   * Note that this can change as the underlying fetch() moves through</div>
+<div class="line">   * various states.</div>
+<div class="line">   *</div>
+<div class="line">   * - inflight: there is another fetch() for this key which is in process</div>
+<div class="line">   * - get: there is no fetchMethod, so {@link get} was called.</div>
+<div class="line">   * - miss: the item is not in cache, and will be fetched.</div>
+<div class="line">   * - hit: the item is in the cache, and was resolved immediately.</div>
+<div class="line">   * - stale: the item is in the cache, but stale.</div>
+<div class="line">   * - refresh: the item is in the cache, and not stale, but</div>
+<div class="line">   *   {@link forceRefresh} was specified.</div>
+<div class="line">   */</div>
+<div class="line">  fetch?: &#39;get&#39; | &#39;inflight&#39; | &#39;miss&#39; | &#39;hit&#39; | &#39;stale&#39; | &#39;refresh&#39;</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The {@link fetchMethod} was called</div>
+<div class="line">   */</div>
+<div class="line">  fetchDispatched?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The cached value was updated after a successful call to fetchMethod</div>
+<div class="line">   */</div>
+<div class="line">  fetchUpdated?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The reason for a fetch() rejection.  Either the error raised by the</div>
+<div class="line">   * {@link fetchMethod}, or the reason for an AbortSignal.</div>
+<div class="line">   */</div>
+<div class="line">  fetchError?: Error</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The fetch received an abort signal</div>
+<div class="line">   */</div>
+<div class="line">  fetchAborted?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The abort signal received was ignored, and the fetch was allowed to</div>
+<div class="line">   * continue.</div>
+<div class="line">   */</div>
+<div class="line">  fetchAbortIgnored?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The fetchMethod promise resolved successfully</div>
+<div class="line">   */</div>
+<div class="line">  fetchResolved?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The results of the fetchMethod promise were stored in the cache</div>
+<div class="line">   */</div>
+<div class="line">  fetchUpdated?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The fetchMethod promise was rejected</div>
+<div class="line">   */</div>
+<div class="line">  fetchRejected?: true</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * The status of a {@link get} operation.</div>
+<div class="line">   *</div>
+<div class="line">   * - fetching: The item is currently being fetched.  If a previous value is</div>
+<div class="line">   *   present and allowed, that will be returned.</div>
+<div class="line">   * - stale: The item is in the cache, and is stale.</div>
+<div class="line">   * - hit: the item is in the cache</div>
+<div class="line">   * - miss: the item is not in the cache</div>
+<div class="line">   */</div>
+<div class="line">  get?: &#39;stale&#39; | &#39;hit&#39; | &#39;miss&#39;</div>
+<div class="line"> </div>
+<div class="line">  /**</div>
+<div class="line">   * A fetch or get operation returned a stale value.</div>
+<div class="line">   */</div>
+<div class="line">  returnedStale?: true</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1389"></a>
+Storage Bounds Safety</h1>
+<p>This implementation aims to be as flexible as possible, within the limits of safe memory consumption and optimal performance.</p>
+<p>At initial object creation, storage is allocated for <code>max</code> items. If <code>max</code> is set to zero, then some performance is lost, and item count is unbounded. Either <code>maxSize</code> or <code>ttl</code> <em>must</em> be set if <code>max</code> is not specified.</p>
+<p>If <code>maxSize</code> is set, then this creates a safe limit on the maximum storage consumed, but without the performance benefits of pre-allocation. When <code>maxSize</code> is set, every item <em>must</em> provide a size, either via the <code>sizeCalculation</code> method provided to the constructor, or via a <code>size</code> or <code>sizeCalculation</code> option provided to <code>cache.set()</code>. The size of every item <em>must</em> be a positive integer.</p>
+<p>If neither <code>max</code> nor <code>maxSize</code> are set, then <code>ttl</code> tracking must be enabled. Note that, even when tracking item <code>ttl</code>, items are <em>not</em> preemptively deleted when they become stale, unless <code>ttlAutopurge</code> is enabled. Instead, they are only purged the next time the key is requested. Thus, if <code>ttlAutopurge</code>, <code>max</code>, and <code>maxSize</code> are all not set, then the cache will potentially grow unbounded.</p>
+<p>In this case, a warning is printed to standard error. Future versions may require the use of <code>ttlAutopurge</code> if <code>max</code> and <code>maxSize</code> are not specified.</p>
+<p>If you truly wish to use a cache that is bound <em>only</em> by TTL expiration, consider using a <code>Map</code> object, and calling <code>setTimeout</code> to delete entries when they expire. It will perform much better than an LRU cache.</p>
+<p>Here is an implementation you may use, under the same <a href="../.././LICENSE">license</a> as this package:</p>
+<div class="fragment"><div class="line"><span class="comment">// a storage-unbounded ttl cache that is not an lru-cache</span></div>
+<div class="line"><span class="keyword">const</span> cache = {</div>
+<div class="line">  data: <span class="keyword">new</span> Map(),</div>
+<div class="line">  timers: <span class="keyword">new</span> Map(),</div>
+<div class="line">  <span class="keyword">set</span>: (k, <a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>, ttl) =&gt; {</div>
+<div class="line">    <span class="keywordflow">if</span> (cache.timers.has(k)) {</div>
+<div class="line">      clearTimeout(cache.timers.get(k))</div>
+<div class="line">    }</div>
+<div class="line">    cache.timers.set(</div>
+<div class="line">      k,</div>
+<div class="line">      setTimeout(() =&gt; cache.delete(k), ttl)</div>
+<div class="line">    )</div>
+<div class="line">    cache.data.set(k, <a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>)</div>
+<div class="line">  },</div>
+<div class="line">  <span class="keyword">get</span>: k =&gt; cache.data.get(k),</div>
+<div class="line">  <a class="code hl_variable" href="../../d4/d8e/a01840_a1fd59be22bbab6bc2baae116e333d914.html#a1fd59be22bbab6bc2baae116e333d914">has</a>: k =&gt; cache.data.has(k),</div>
+<div class="line">  <span class="keyword">delete</span>: k =&gt; {</div>
+<div class="line">    <span class="keywordflow">if</span> (cache.timers.has(k)) {</div>
+<div class="line">      clearTimeout(cache.timers.get(k))</div>
+<div class="line">    }</div>
+<div class="line">    cache.timers.delete(k)</div>
+<div class="line">    <span class="keywordflow">return</span> cache.data.delete(k)</div>
+<div class="line">  },</div>
+<div class="line">  <a class="code hl_variable" href="../../d0/d39/a01138_ada0813535504f234c6343c1e7d07bf65.html#ada0813535504f234c6343c1e7d07bf65">clear</a>: () =&gt; {</div>
+<div class="line">    cache.data.clear()</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a> of cache.timers.values()) {</div>
+<div class="line">      clearTimeout(<a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>)</div>
+<div class="line">    }</div>
+<div class="line">    cache.timers.clear()</div>
+<div class="line">  },</div>
+<div class="line">}</div>
+<div class="ttc" id="aa01114_afc3dd12de12777f6e20b4c93b7e7cb96_html_afc3dd12de12777f6e20b4c93b7e7cb96"><div class="ttname"><a href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a></div><div class="ttdeci">var v</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d40/a01114_source.html#l00009">node_modules/call-bind/test/index.js:9</a></div></div>
+<div class="ttc" id="aa01138_ada0813535504f234c6343c1e7d07bf65_html_ada0813535504f234c6343c1e7d07bf65"><div class="ttname"><a href="../../d0/d39/a01138_ada0813535504f234c6343c1e7d07bf65.html#ada0813535504f234c6343c1e7d07bf65">clear</a></div><div class="ttdeci">Denque prototype clear</div><div class="ttdoc">Soft clear - does not reset capacity.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d39/a01138_source.html#l00360">node_modules/denque/index.js:360</a></div></div>
+<div class="ttc" id="aa01840_a1fd59be22bbab6bc2baae116e333d914_html_a1fd59be22bbab6bc2baae116e333d914"><div class="ttname"><a href="../../d4/d8e/a01840_a1fd59be22bbab6bc2baae116e333d914.html#a1fd59be22bbab6bc2baae116e333d914">has</a></div><div class="ttdeci">var has</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d8e/a01840_source.html#l00005">lib/parse.js:5</a></div></div>
+</div><!-- fragment --><p>If that isn't to your liking, check out <a href="http://npm.im/@isaacs/ttlcache">@isaacs/ttlcache</a>.</p>
+<h1><a class="anchor" id="autotoc_md1390"></a>
+Performance</h1>
+<p>As of January 2022, version 7 of this library is one of the most performant LRU cache implementations in JavaScript.</p>
+<p>Benchmarks can be extremely difficult to get right. In particular, the performance of set/get/delete operations on objects will vary <em>wildly</em> depending on the type of key used. V8 is highly optimized for objects with keys that are short strings, especially integer numeric strings. Thus any benchmark which tests <em>solely</em> using numbers as keys will tend to find that an object-based approach performs the best.</p>
+<p>Note that coercing <em>anything</em> to strings to use as object keys is unsafe, unless you can be 100% certain that no other type of value will be used. For example:</p>
+<div class="fragment"><div class="line"><span class="keyword">const</span> myCache = {}</div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">set</span> = (k, <a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>) =&gt; (myCache[k] = <a class="code hl_variable" href="../../d6/d40/a01114_afc3dd12de12777f6e20b4c93b7e7cb96.html#afc3dd12de12777f6e20b4c93b7e7cb96">v</a>)</div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">get</span> = k =&gt; myCache[k]</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">set</span>({}, <span class="stringliteral">&#39;please hang onto this for me&#39;</span>)</div>
+<div class="line"><span class="keyword">set</span>(<span class="stringliteral">&#39;[object Object]&#39;</span>, <span class="stringliteral">&#39;oopsie&#39;</span>)</div>
+</div><!-- fragment --><p>Also beware of "Just So" stories regarding performance. Garbage collection of large (especially: deep) object graphs can be incredibly costly, with several "tipping points" where it increases exponentially. As a result, putting that off until later can make it much worse, and less predictable. If a library performs well, but only in a scenario where the object graph is kept shallow, then that won't help you if you are using large objects as keys.</p>
+<p>In general, when attempting to use a library to improve performance (such as a cache like this one), it's best to choose an option that will perform well in the sorts of scenarios where you'll actually use it.</p>
+<p>This library is optimized for repeated gets and minimizing eviction time, since that is the expected need of a LRU. Set operations are somewhat slower on average than a few other options, in part because of that optimization. It is assumed that you'll be caching some costly operation, ideally as rarely as possible, so optimizing set over get would be unwise.</p>
+<p>If performance matters to you:</p>
+<ol type="1">
+<li>If it's at all possible to use small integer values as keys, and you can guarantee that no other types of values will be used as keys, then do that, and use a cache such as <a href="https://npmjs.com/package/lru-fast">lru-fast</a>, or <a href="https://yomguithereal.github.io/mnemonist/lru-cache">mnemonist's LRUCache</a> which uses an Object as its data store.</li>
+<li>Failing that, if at all possible, use short non-numeric strings (ie, less than 256 characters) as your keys, and use <a href="https://yomguithereal.github.io/mnemonist/lru-cache">mnemonist's LRUCache</a>.</li>
+<li>If the types of your keys will be long strings, strings that look like floats, <code>null</code>, objects, or some mix of types, or if you aren't sure, then this library will work well for you.</li>
+<li>Do not use a <code>dispose</code> function, size tracking, or especially ttl behavior, unless absolutely needed. These features are convenient, and necessary in some use cases, and every attempt has been made to make the performance impact minimal, but it isn't nothing.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1391"></a>
+Breaking Changes in Version 7</h1>
+<p>This library changed to a different algorithm and internal data structure in version 7, yielding significantly better performance, albeit with some subtle changes as a result.</p>
+<p>If you were relying on the internals of LRUCache in version 6 or before, it probably will not work in version 7 and above.</p>
+<p>For more info, see the <a class="el" href="../../d2/d71/a01684.html">change log</a>. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

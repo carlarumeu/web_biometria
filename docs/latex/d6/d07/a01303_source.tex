@@ -1,0 +1,236 @@
+\doxysubsection{node\+\_\+modules/proxy-\/addr/index.js}
+\hypertarget{a01303_source}{}\label{a01303_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01303}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00014}00014\ module.exports\ =\ \mbox{\hyperlink{a00113_adccce5d9fde7ce401d03984f2d2a4715_adccce5d9fde7ce401d03984f2d2a4715}{proxyaddr}}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00015}00015\ module.exports.all\ =\ alladdrs}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00016}00016\ module.exports.compile\ =\ \mbox{\hyperlink{a00374_aa5ba8fc82448cfd208a589ee41c61a9b_aa5ba8fc82448cfd208a589ee41c61a9b}{compile}}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00023}00023\ var\ forwarded\ =\ require(\textcolor{stringliteral}{'forwarded'})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00024}00024\ var\ \mbox{\hyperlink{a00200_a618282406c85e36a36534f36895c8059_a618282406c85e36a36534f36895c8059}{ipaddr}}\ =\ require('\mbox{\hyperlink{a00200_a618282406c85e36a36534f36895c8059_a618282406c85e36a36534f36895c8059}{ipaddr}}.\mbox{\hyperlink{a01369_a16fbc49c0950a358e869f0b198a74e72_a16fbc49c0950a358e869f0b198a74e72}{js}}')}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00031}00031\ var\ DIGIT\_REGEXP\ =\ /\string^[0-\/9]+\$/}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00032}00032\ var\ isip\ =\ \mbox{\hyperlink{a00200_a618282406c85e36a36534f36895c8059_a618282406c85e36a36534f36895c8059}{ipaddr}}.\mbox{\hyperlink{a00197_a4ad57df698d2e4efcd4f4a0522aac4ec_a4ad57df698d2e4efcd4f4a0522aac4ec}{isValid}}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00033}00033\ var\ parseip\ =\ \mbox{\hyperlink{a00200_a618282406c85e36a36534f36895c8059_a618282406c85e36a36534f36895c8059}{ipaddr}}.\mbox{\hyperlink{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}{parse}}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00040}00040\ var\ IP\_RANGES\ =\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00041}00041\ \ \ linklocal:\ [\textcolor{stringliteral}{'169.254.0.0/16'},\ \textcolor{stringliteral}{'fe80::/10'}],}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00042}00042\ \ \ loopback:\ [\textcolor{stringliteral}{'127.0.0.1/8'},\ \textcolor{stringliteral}{'::1/128'}],}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00043}00043\ \ \ uniquelocal:\ [\textcolor{stringliteral}{'10.0.0.0/8'},\ \textcolor{stringliteral}{'172.16.0.0/12'},\ \textcolor{stringliteral}{'192.168.0.0/16'},\ \textcolor{stringliteral}{'fc00::/7'}]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00055}00055\ \textcolor{keyword}{function}\ alladdrs\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ trust)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00056}00056\ \ \ \textcolor{comment}{//\ get\ addresses}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00057}00057\ \ \ var\ addrs\ =\ forwarded(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00059}00059\ \ \ \textcolor{keywordflow}{if}\ (!trust)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Return\ all\ addresses}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{return}\ addrs}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00062}00062\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (typeof\ trust\ !==\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00065}00065\ \ \ \ \ trust\ =\ \mbox{\hyperlink{a00374_aa5ba8fc82448cfd208a589ee41c61a9b_aa5ba8fc82448cfd208a589ee41c61a9b}{compile}}(trust)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00066}00066\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00068}00068\ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ addrs.length\ -\/\ 1;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (trust(addrs[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}],\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}))\ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00071}00071\ \ \ \ \ addrs.length\ =\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ +\ 1}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00072}00072\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00074}00074\ \ \ \textcolor{keywordflow}{return}\ addrs}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00084}00084\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00374_aa5ba8fc82448cfd208a589ee41c61a9b_aa5ba8fc82448cfd208a589ee41c61a9b}{compile}}\ (val)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00085}00085\ \ \ \textcolor{keywordflow}{if}\ (!val)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00087}00087\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00089}00089\ \ \ var\ trust}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00091}00091\ \ \ \textcolor{keywordflow}{if}\ (typeof\ val\ ===\ \textcolor{stringliteral}{'string'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00092}00092\ \ \ \ \ trust\ =\ [val]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00093}00093\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Array.isArray(val))\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00094}00094\ \ \ \ \ trust\ =\ val.slice()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00095}00095\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'unsupported\ trust\ argument'})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00097}00097\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00099}00099\ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ trust.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00100}00100\ \ \ \ \ val\ =\ trust[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (!Object.prototype.hasOwnProperty.call(IP\_RANGES,\ val))\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00103}00103\ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00106}00106\ \ \ \ \ \textcolor{comment}{//\ Splice\ in\ pre-\/defined\ range}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00107}00107\ \ \ \ \ val\ =\ IP\_RANGES[val]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00108}00108\ \ \ \ \ trust.splice.apply(trust,\ [\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}},\ 1].\mbox{\hyperlink{a01177_a6313f74f769f42d0d5057d4bd32842e9_a6313f74f769f42d0d5057d4bd32842e9}{concat}}(val))}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ +=\ val.length\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00110}00110\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00112}00112\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00101_a34da2018555e2c0d480cc5d7bf9e6e44_a34da2018555e2c0d480cc5d7bf9e6e44}{compileTrust}}(compileRangeSubnets(trust))}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00122}00122\ \textcolor{keyword}{function}\ compileRangeSubnets\ (arr)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00123}00123\ \ \ var\ rangeSubnets\ =\ \textcolor{keyword}{new}\ Array(arr.length)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00125}00125\ \ \ \mbox{\hyperlink{a01195_ab49f32ccc8487e2dbba85ddccb46b0de_ab49f32ccc8487e2dbba85ddccb46b0de}{for}}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ arr.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00126}00126\ \ \ \ \ rangeSubnets[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]\ =\ parseipNotation(arr[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}])}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00127}00127\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00129}00129\ \ \ \textcolor{keywordflow}{return}\ rangeSubnets}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00130}00130\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00139}00139\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00101_a34da2018555e2c0d480cc5d7bf9e6e44_a34da2018555e2c0d480cc5d7bf9e6e44}{compileTrust}}\ (rangeSubnets)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00140}00140\ \ \ \textcolor{comment}{//\ Return\ optimized\ function\ based\ on\ length}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00141}00141\ \ \ var\ len\ =\ rangeSubnets.length}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00142}00142\ \ \ \textcolor{keywordflow}{return}\ len\ ===\ 0}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00143}00143\ \ \ \ \ ?\ trustNone}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00144}00144\ \ \ \ \ :\ len\ ===\ 1}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00145}00145\ \ \ \ \ \ \ ?\ trustSingle(rangeSubnets[0])}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00146}00146\ \ \ \ \ \ \ :\ trustMulti(rangeSubnets)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00147}00147\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00156}00156\ function\ parseipNotation\ (note)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00157}00157\ \ \ var\ pos\ =\ note.lastIndexOf(\textcolor{charliteral}{'/'})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00158}00158\ \ \ var\ str\ =\ pos\ !==\ -\/1}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00159}00159\ \ \ \ \ ?\ note.substring(0,\ pos)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00160}00160\ \ \ \ \ :\ note}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00162}00162\ \ \ \mbox{\hyperlink{a01195_a36b902f5bfe184879eb3e29b44502eb3_a36b902f5bfe184879eb3e29b44502eb3}{if}}\ (!isip(str))\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'invalid\ IP\ address:\ '}\ +\ str)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00164}00164\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00166}00166\ \ \ var\ ip\ =\ parseip(str)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00168}00168\ \ \ \textcolor{keywordflow}{if}\ (pos\ ===\ -\/1\ \&\&\ ip.kind()\ ===\ \textcolor{stringliteral}{'ipv6'}\ \&\&\ ip.isIPv4MappedAddress())\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00169}00169\ \ \ \ \ \textcolor{comment}{//\ Store\ as\ IPv4}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00170}00170\ \ \ \ \ ip\ =\ ip.toIPv4Address()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00171}00171\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00173}00173\ \ \ var\ \mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}}\ =\ ip.kind()\ ===\ \textcolor{stringliteral}{'ipv6'}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00174}00174\ \ \ \ \ ?\ 128}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00175}00175\ \ \ \ \ :\ 32}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00177}00177\ \ \ var\ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ =\ pos\ !==\ -\/1}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00178}00178\ \ \ \ \ ?\ note.substring(pos\ +\ 1,\ note.length)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00179}00179\ \ \ \ \ :\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00181}00181\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ ===\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00182}00182\ \ \ \ \ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ =\ \mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00183}00183\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (DIGIT\_REGEXP.test(\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}))\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00184}00184\ \ \ \ \ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ =\ parseInt(\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}},\ 10)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00185}00185\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ip.kind()\ ===\ \textcolor{stringliteral}{'ipv4'}\ \&\&\ isip(\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}))\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00186}00186\ \ \ \ \ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ =\ parseNetmask(\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00187}00187\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00188}00188\ \ \ \ \ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00189}00189\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00191}00191\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range\ <=\ 0\ ||\ range\ >}}\ \mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'invalid\ range\ on\ address:\ '}\ +\ note)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00193}00193\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00195}00195\ \ \ \textcolor{keywordflow}{return}\ [ip,\ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00196}00196\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00205}00205\ \textcolor{keyword}{function}\ parseNetmask\ (netmask)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00206}00206\ \ \ var\ ip\ =\ parseip(netmask)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00207}00207\ \ \ var\ kind\ =\ ip.kind()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00209}00209\ \ \ \textcolor{keywordflow}{return}\ kind\ ===\ \textcolor{stringliteral}{'ipv4'}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00210}00210\ \ \ \ \ ?\ ip.prefixLengthFromSubnetMask()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00211}00211\ \ \ \ \ :\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00212}00212\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00222}00222\ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00113_adccce5d9fde7ce401d03984f2d2a4715_adccce5d9fde7ce401d03984f2d2a4715}{proxyaddr}}\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ trust)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00223}00223\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}})\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00224}00224\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'req\ argument\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00225}00225\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00227}00227\ \ \ \textcolor{keywordflow}{if}\ (!trust)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'trust\ argument\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00229}00229\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00231}00231\ \ \ var\ addrs\ =\ alladdrs(\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ trust)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00232}00232\ \ \ var\ addr\ =\ addrs[addrs.length\ -\/\ 1]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00234}00234\ \ \ \textcolor{keywordflow}{return}\ addr}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00235}00235\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00243}00243\ \textcolor{keyword}{function}\ trustNone\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00244}00244\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00245}00245\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00254}00254\ \textcolor{keyword}{function}\ trustMulti\ (subnets)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00255}00255\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{function}\ trust\ (addr)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00256}00256\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isip(addr))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00258}00258\ \ \ \ \ var\ ip\ =\ parseip(addr)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00259}00259\ \ \ \ \ var\ ipconv}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00260}00260\ \ \ \ \ var\ kind\ =\ ip.kind()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ =\ 0;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}\ <\ subnets.length;\ \mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00263}00263\ \ \ \ \ \ \ var\ subnet\ =\ subnets[\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00264}00264\ \ \ \ \ \ \ var\ subnetip\ =\ subnet[0]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00265}00265\ \ \ \ \ \ \ var\ subnetkind\ =\ subnetip.kind()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00266}00266\ \ \ \ \ \ \ var\ subnetrange\ =\ subnet[1]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00267}00267\ \ \ \ \ \ \ var\ trusted\ =\ ip}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00269}00269\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kind\ !==\ subnetkind)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (subnetkind\ ===\ \textcolor{stringliteral}{'ipv4'}\ \&\&\ !ip.isIPv4MappedAddress())\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incompatible\ IP\ addresses}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00273}00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ipconv)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ IP\ to\ match\ subnet\ IP\ kind}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ ipconv\ =\ subnetkind\ ===\ \textcolor{stringliteral}{'ipv4'}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ ip.toIPv4Address()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ :\ ip.toIPv4MappedAddress()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00280}00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00282}00282\ \ \ \ \ \ \ \ \ trusted\ =\ ipconv}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00283}00283\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00285}00285\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (trusted.match(subnetip,\ subnetrange))\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00287}00287\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00288}00288\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00290}00290\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00291}00291\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00292}00292\ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00301}00301\ \textcolor{keyword}{function}\ trustSingle\ (subnet)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00302}00302\ \ \ var\ subnetip\ =\ subnet[0]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00303}00303\ \ \ var\ subnetkind\ =\ subnetip.kind()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00304}00304\ \ \ var\ subnetisipv4\ =\ subnetkind\ ===\ \textcolor{stringliteral}{'ipv4'}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00305}00305\ \ \ var\ subnetrange\ =\ subnet[1]}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00307}00307\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{function}\ trust\ (addr)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isip(addr))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00310}00310\ \ \ \ \ var\ ip\ =\ parseip(addr)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00311}00311\ \ \ \ \ var\ kind\ =\ ip.kind()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00313}00313\ \ \ \ \ \textcolor{keywordflow}{if}\ (kind\ !==\ subnetkind)\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00314}00314\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (subnetisipv4\ \&\&\ !ip.isIPv4MappedAddress())\ \{}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00315}00315\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incompatible\ IP\ addresses}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00316}00316\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00317}00317\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00319}00319\ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ IP\ to\ match\ subnet\ IP\ kind}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00320}00320\ \ \ \ \ \ \ ip\ =\ subnetisipv4}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00321}00321\ \ \ \ \ \ \ \ \ ?\ ip.toIPv4Address()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00322}00322\ \ \ \ \ \ \ \ \ :\ ip.toIPv4MappedAddress()}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00323}00323\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{a01303_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{return}\ ip.match(subnetip,\ subnetrange)}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00326}00326\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01303_source_l00327}00327\ \}}
+
+\end{DoxyCode}

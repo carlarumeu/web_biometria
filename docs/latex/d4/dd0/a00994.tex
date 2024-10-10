@@ -1,0 +1,72 @@
+\doxysection{vary}
+\hypertarget{a00994}{}\label{a00994}\index{vary@{vary}}
+\label{a00994_autotoc_md2509}%
+\Hypertarget{a00994_autotoc_md2509}%
+
+
+\href{https://npmjs.org/package/vary}{\texttt{ }} \href{https://npmjs.org/package/vary}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://travis-ci.org/jshttp/vary}{\texttt{ }} \href{https://coveralls.io/r/jshttp/vary}{\texttt{ }}
+
+Manipulate the HTTP Vary header\hypertarget{a00994_autotoc_md2510}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00994_autotoc_md2510}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ vary}
+
+\end{DoxyCode}
+\hypertarget{a00994_autotoc_md2511}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00994_autotoc_md2511}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}\ =\ require(\textcolor{stringliteral}{'vary'})}
+
+\end{DoxyCode}
+\hypertarget{a00994_autotoc_md2512}{}\doxysubsubsection{\texorpdfstring{vary(res, field)}{vary(res, field)}}\label{a00994_autotoc_md2512}
+Adds the given header {\ttfamily field} to the {\ttfamily Vary} response header of {\ttfamily res}. This can be a string of a single field, a string of a valid {\ttfamily Vary} header, or an array of multiple fields.
+
+This will append the header if not already listed, otherwise leaves it listed in the current location.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Append\ "{}Origin"{}\ to\ the\ Vary\ header\ of\ the\ response}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ \textcolor{stringliteral}{'Origin'})}
+
+\end{DoxyCode}
+\hypertarget{a00994_autotoc_md2513}{}\doxysubsubsection{\texorpdfstring{vary.\+append(header, field)}{vary.\+append(header, field)}}\label{a00994_autotoc_md2513}
+Adds the given header {\ttfamily field} to the {\ttfamily Vary} response header string {\ttfamily header}. This can be a string of a single field, a string of a valid {\ttfamily Vary} header, or an array of multiple fields.
+
+This will append the header if not already listed, otherwise leaves it listed in the current location. The new header string is returned.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Get\ header\ string\ appending\ "{}Origin"{}\ to\ "{}Accept,\ User-\/Agent"{}}}
+\DoxyCodeLine{\mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}.append(\textcolor{stringliteral}{'Accept,\ User-\/Agent'},\ \textcolor{stringliteral}{'Origin'})}
+
+\end{DoxyCode}
+\hypertarget{a00994_autotoc_md2514}{}\doxysubsection{\texorpdfstring{Examples}{Examples}}\label{a00994_autotoc_md2514}
+\hypertarget{a00994_autotoc_md2515}{}\doxysubsubsection{\texorpdfstring{Updating the Vary header when content is based on it}{Updating the Vary header when content is based on it}}\label{a00994_autotoc_md2515}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}\ =\ require(\textcolor{stringliteral}{'http'})}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}\ =\ require('\mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}')}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a00101_a55f22d498ca401fddca364855629d1d3_a55f22d498ca401fddca364855629d1d3}{http}}.\mbox{\hyperlink{a01267_a1691cdb731c5313b41e7ecdd05081e96_a1691cdb731c5313b41e7ecdd05081e96}{createServer}}(function\ onRequest\ (\mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}},\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ about\ to\ user-\/agent\ sniff}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}(\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}},\ \textcolor{stringliteral}{'User-\/Agent'})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ var\ ua\ =\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.headers['user-\/agent']\ ||\ ''}
+\DoxyCodeLine{\ \ var\ isMobile\ =\ /mobi|android|touch|mini/\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}.\mbox{\hyperlink{a01621_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(ua)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ serve\ site,\ depending\ on\ isMobile}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.setHeader('Content-\/Type',\ 'text/\mbox{\hyperlink{a01168_a8f99bc655183db169e126fc155ceb631_a8f99bc655183db169e126fc155ceb631}{html}}')}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.\mbox{\hyperlink{a00404_ade59c25e4b06a463da08f869c2e7163e_ade59c25e4b06a463da08f869c2e7163e}{end}}('You\ are\ (probably)\ '\ +\ (isMobile\ ?\ ''\ :\ '\mbox{\hyperlink{a01237_ad811c01f6b8fbc282350b85802c39d62_ad811c01f6b8fbc282350b85802c39d62}{not}}\ ')\ +\ '\mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}\ mobile\ user')}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\hypertarget{a00994_autotoc_md2516}{}\doxysubsection{\texorpdfstring{Testing}{Testing}}\label{a00994_autotoc_md2516}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ test}
+
+\end{DoxyCode}
+\hypertarget{a00994_autotoc_md2517}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00994_autotoc_md2517}
+\mbox{[}MIT\mbox{]}(LICENSE) 

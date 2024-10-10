@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente binary_row.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dc/d84/a00338_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">binary_row.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d84/a00338.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../dc/d84/a00338_ae2475e10618961c050dcba04e8c42331.html#ae2475e10618961c050dcba04e8c42331">    1</a></span><span class="stringliteral">&#39;use strict&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">    3</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a> = require(<span class="stringliteral">&#39;../constants/types&#39;</span>);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../dc/d84/a00338_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">    4</a></span><span class="keyword">const</span> <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a> = require(<span class="stringliteral">&#39;../packets/packet&#39;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">    6</a></span><span class="keyword">const</span> <a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a> = <span class="keyword">new</span> Array(256);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../de/d3d/a00748.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="../../de/d3d/a00748.html">BinaryRow</a> {</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../de/d3d/a00748_aa782e1f403cc5ef34cdd158a7ffa6bc6.html#aa782e1f403cc5ef34cdd158a7ffa6bc6">    9</a></span>  <a class="code hl_function" href="../../de/d3d/a00748_aa782e1f403cc5ef34cdd158a7ffa6bc6.html#aa782e1f403cc5ef34cdd158a7ffa6bc6">constructor</a>(columns) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    this.columns = columns || [];</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  }</div>
+</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../de/d3d/a00748_a0e6dc3c91308ee1be57777b390b67861.html#a0e6dc3c91308ee1be57777b390b67861">   13</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="../../de/d3d/a00748_a0e6dc3c91308ee1be57777b390b67861.html#a0e6dc3c91308ee1be57777b390b67861">toPacket</a>(columns, <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// throw new Error(&#39;Not implemented&#39;);</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">const</span> sequenceId = 0; <span class="comment">// TODO remove, this is calculated now in connecton</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> length = 0;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    columns.forEach(val =&gt; {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      <span class="keywordflow">if</span> (val === <span class="keyword">null</span> || typeof val === <span class="stringliteral">&#39;undefined&#39;</span>) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        ++length;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      length += <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.<a class="code hl_function" href="../../d9/dd4/a00776_aae109ac647b65b215bb1afb86aef1cbd.html#aae109ac647b65b215bb1afb86aef1cbd">lengthCodedStringLength</a>(val.toString(10), <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    });</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    length = length + 2;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> buffer = Buffer.allocUnsafe(length + 4);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> packet = <span class="keyword">new</span> <a class="code hl_variable" href="../../dc/d84/a00338_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a>(sequenceId, buffer, 0, length + 4);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    packet.offset = 4;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    packet.writeInt8(0);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> bitmap = 0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> bitValue = 1;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    columns.forEach(parameter =&gt; {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keywordflow">if</span> (parameter.type === <a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a>.NULL) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        bitmap += bitValue;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      bitValue *= 2;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keywordflow">if</span> (bitValue === 256) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        packet.writeInt8(bitmap);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        bitmap = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        bitValue = 1;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    });</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (bitValue !== 1) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      packet.writeInt8(bitmap);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    columns.forEach(val =&gt; {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      <span class="keywordflow">if</span> (val === <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        packet.writeNull();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">if</span> (typeof val === <span class="stringliteral">&#39;undefined&#39;</span>) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        packet.writeInt8(0);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      packet.writeLengthCodedString(val.toString(10), <a class="code hl_variable" href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    });</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> packet;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">// TODO: complete list of types...</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../de/d3d/a00748_a276df928cbfd98476c23cfeca9cbc916.html#a276df928cbfd98476c23cfeca9cbc916">   65</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="../../de/d3d/a00748_a276df928cbfd98476c23cfeca9cbc916.html#a276df928cbfd98476c23cfeca9cbc916">fromPacket</a>(<a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>, packet) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> columns = <span class="keyword">new</span> Array(<a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>.length);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    packet.readInt8(); <span class="comment">// TODO check it&#39;s 0</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">const</span> nullBitmapLength = Math.floor((<a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>.length + 7 + 2) / 8);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// TODO: read and interpret null bitmap</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    packet.skip(nullBitmapLength);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> = 0; <a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a> &lt; columns.length; ++<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      columns[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>] = <a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[<a class="code hl_variable" href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a>[<a class="code hl_variable" href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a>].columnType].apply(packet);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_variable" href="../../d5/d37/a01276_a5665299f1eb72b759bd4ec9cd1708c63.html#a5665299f1eb72b759bd4ec9cd1708c63">BinaryRow</a>(columns);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">// TODO: replace with constants.MYSQL_TYPE_*</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[<a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a>.DECIMAL] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_af12b93337d78bcc9754add750fd74380.html#af12b93337d78bcc9754add750fd74380">readLengthCodedString</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[1] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_a9613f631c0d856e9e49f1ca340fe1a35.html#a9613f631c0d856e9e49f1ca340fe1a35">readInt8</a>; <span class="comment">// tiny</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[2] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_a5102cb3f008878820f8bc27c389fdb2d.html#a5102cb3f008878820f8bc27c389fdb2d">readInt16</a>; <span class="comment">// short</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[3] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_ac20e8bc51022a0972e8070c7c90c021e.html#ac20e8bc51022a0972e8070c7c90c021e">readInt32</a>; <span class="comment">// long</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[4] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_ae0de17e813fb3095ed0aa2524a7bbb35.html#ae0de17e813fb3095ed0aa2524a7bbb35">readFloat</a>; <span class="comment">// float</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[5] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_aa8110237d2087f6801b2a8bf3a23b0bc.html#aa8110237d2087f6801b2a8bf3a23b0bc">readDouble</a>; <span class="comment">// double</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[6] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.assertInvalid; <span class="comment">// null, should be skipped vie null bitmap</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[7] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.readTimestamp; <span class="comment">// timestamp, http://dev.mysql.com/doc/internals/en/prepared-statements.html#packet-ProtocolBinary::MYSQL_TYPE_TIMESTAMP</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[8] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_a52314829226dd8d6a4544ef59d222089.html#a52314829226dd8d6a4544ef59d222089">readInt64</a>; <span class="comment">// long long</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[9] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_ac20e8bc51022a0972e8070c7c90c021e.html#ac20e8bc51022a0972e8070c7c90c021e">readInt32</a>; <span class="comment">// int24</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[10] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.readTimestamp; <span class="comment">// date</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[11] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.readTime; <span class="comment">// time, http://dev.mysql.com/doc/internals/en/prepared-statements.html#packet-ProtocolBinary::MYSQL_TYPE_TIME</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[12] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_ad60aaa40cf18ef15cb2c2c71890b8c42.html#ad60aaa40cf18ef15cb2c2c71890b8c42">readDateTime</a>; <span class="comment">// datetime, http://dev.mysql.com/doc/internals/en/prepared-statements.html#packet-ProtocolBinary::MYSQL_TYPE_DATETIME</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[13] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_a5102cb3f008878820f8bc27c389fdb2d.html#a5102cb3f008878820f8bc27c389fdb2d">readInt16</a>; <span class="comment">// year</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><a class="code hl_variable" href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a>[<a class="code hl_variable" href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a>.VAR_STRING] = <a class="code hl_class" href="../../d9/dd4/a00776.html">Packet</a>.prototype.<a class="code hl_function" href="../../d9/dd4/a00776_af12b93337d78bcc9754add750fd74380.html#af12b93337d78bcc9754add750fd74380">readLengthCodedString</a>; <span class="comment">// var string</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../dc/d84/a00338_aa4072ba4b6b56b0fb6f4801f17ab2b34.html#aa4072ba4b6b56b0fb6f4801f17ab2b34">   95</a></span>module.exports = <a class="code hl_variable" href="../../d5/d37/a01276_a5665299f1eb72b759bd4ec9cd1708c63.html#a5665299f1eb72b759bd4ec9cd1708c63">BinaryRow</a>;</div>
+<div class="ttc" id="aa00197_a5e25b1d1bed9ab5f3174b76d6a722180_html_a5e25b1d1bed9ab5f3174b76d6a722180"><div class="ttname"><a href="../../de/db1/a00197_a5e25b1d1bed9ab5f3174b76d6a722180.html#a5e25b1d1bed9ab5f3174b76d6a722180">i</a></div><div class="ttdeci">function t t t IPv4 t i</div><div class="ttdef"><b>Definition</b> <a href="../../de/db1/a00197_source.html#l00001">ipaddr.min.js:1</a></div></div>
+<div class="ttc" id="aa00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef_html_a77f3b2c0ad4b29fd07639e7c86e8f4ef"><div class="ttname"><a href="../../dc/d84/a00338_a77f3b2c0ad4b29fd07639e7c86e8f4ef.html#a77f3b2c0ad4b29fd07639e7c86e8f4ef">binaryReader</a></div><div class="ttdeci">const binaryReader</div><div class="ttdef"><b>Definition</b> <a href="#l00006">binary_row.js:6</a></div></div>
+<div class="ttc" id="aa00338_acb7e0e89b59629f5d62ba2f3ecd63029_html_acb7e0e89b59629f5d62ba2f3ecd63029"><div class="ttname"><a href="../../dc/d84/a00338_acb7e0e89b59629f5d62ba2f3ecd63029.html#acb7e0e89b59629f5d62ba2f3ecd63029">Types</a></div><div class="ttdeci">const Types</div><div class="ttdef"><b>Definition</b> <a href="#l00003">binary_row.js:3</a></div></div>
+<div class="ttc" id="aa00338_adbc81c45b48c6cdfffe9fc4752007493_html_adbc81c45b48c6cdfffe9fc4752007493"><div class="ttname"><a href="../../dc/d84/a00338_adbc81c45b48c6cdfffe9fc4752007493.html#adbc81c45b48c6cdfffe9fc4752007493">Packet</a></div><div class="ttdeci">const Packet</div><div class="ttdef"><b>Definition</b> <a href="#l00004">binary_row.js:4</a></div></div>
+<div class="ttc" id="aa00344_a7dfceba4d8646e1fc3116bc603b378bd_html_a7dfceba4d8646e1fc3116bc603b378bd"><div class="ttname"><a href="../../d8/d8e/a00344_a7dfceba4d8646e1fc3116bc603b378bd.html#a7dfceba4d8646e1fc3116bc603b378bd">fields</a></div><div class="ttdeci">const fields</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d8e/a00344_source.html#l00007">column_definition.js:7</a></div></div>
+<div class="ttc" id="aa00748_a0e6dc3c91308ee1be57777b390b67861_html_a0e6dc3c91308ee1be57777b390b67861"><div class="ttname"><a href="../../de/d3d/a00748_a0e6dc3c91308ee1be57777b390b67861.html#a0e6dc3c91308ee1be57777b390b67861">BinaryRow::toPacket</a></div><div class="ttdeci">static toPacket(columns, encoding)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">binary_row.js:13</a></div></div>
+<div class="ttc" id="aa00748_a276df928cbfd98476c23cfeca9cbc916_html_a276df928cbfd98476c23cfeca9cbc916"><div class="ttname"><a href="../../de/d3d/a00748_a276df928cbfd98476c23cfeca9cbc916.html#a276df928cbfd98476c23cfeca9cbc916">BinaryRow::fromPacket</a></div><div class="ttdeci">static fromPacket(fields, packet)</div><div class="ttdef"><b>Definition</b> <a href="#l00065">binary_row.js:65</a></div></div>
+<div class="ttc" id="aa00748_aa782e1f403cc5ef34cdd158a7ffa6bc6_html_aa782e1f403cc5ef34cdd158a7ffa6bc6"><div class="ttname"><a href="../../de/d3d/a00748_aa782e1f403cc5ef34cdd158a7ffa6bc6.html#aa782e1f403cc5ef34cdd158a7ffa6bc6">BinaryRow::constructor</a></div><div class="ttdeci">constructor(columns)</div><div class="ttdef"><b>Definition</b> <a href="#l00009">binary_row.js:9</a></div></div>
+<div class="ttc" id="aa00748_html"><div class="ttname"><a href="../../de/d3d/a00748.html">BinaryRow</a></div><div class="ttdef"><b>Definition</b> <a href="#l00008">binary_row.js:8</a></div></div>
+<div class="ttc" id="aa00776_a5102cb3f008878820f8bc27c389fdb2d_html_a5102cb3f008878820f8bc27c389fdb2d"><div class="ttname"><a href="../../d9/dd4/a00776_a5102cb3f008878820f8bc27c389fdb2d.html#a5102cb3f008878820f8bc27c389fdb2d">Packet::readInt16</a></div><div class="ttdeci">readInt16()</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00097">packet.js:97</a></div></div>
+<div class="ttc" id="aa00776_a52314829226dd8d6a4544ef59d222089_html_a52314829226dd8d6a4544ef59d222089"><div class="ttname"><a href="../../d9/dd4/a00776_a52314829226dd8d6a4544ef59d222089.html#a52314829226dd8d6a4544ef59d222089">Packet::readInt64</a></div><div class="ttdeci">readInt64()</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00156">packet.js:156</a></div></div>
+<div class="ttc" id="aa00776_a9613f631c0d856e9e49f1ca340fe1a35_html_a9613f631c0d856e9e49f1ca340fe1a35"><div class="ttname"><a href="../../d9/dd4/a00776_a9613f631c0d856e9e49f1ca340fe1a35.html#a9613f631c0d856e9e49f1ca340fe1a35">Packet::readInt8</a></div><div class="ttdeci">readInt8()</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00093">packet.js:93</a></div></div>
+<div class="ttc" id="aa00776_aa8110237d2087f6801b2a8bf3a23b0bc_html_aa8110237d2087f6801b2a8bf3a23b0bc"><div class="ttname"><a href="../../d9/dd4/a00776_aa8110237d2087f6801b2a8bf3a23b0bc.html#aa8110237d2087f6801b2a8bf3a23b0bc">Packet::readDouble</a></div><div class="ttdeci">readDouble()</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00241">packet.js:241</a></div></div>
+<div class="ttc" id="aa00776_aae109ac647b65b215bb1afb86aef1cbd_html_aae109ac647b65b215bb1afb86aef1cbd"><div class="ttname"><a href="../../d9/dd4/a00776_aae109ac647b65b215bb1afb86aef1cbd.html#aae109ac647b65b215bb1afb86aef1cbd">Packet::lengthCodedStringLength</a></div><div class="ttdeci">static lengthCodedStringLength(str, encoding)</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00911">packet.js:911</a></div></div>
+<div class="ttc" id="aa00776_ac20e8bc51022a0972e8070c7c90c021e_html_ac20e8bc51022a0972e8070c7c90c021e"><div class="ttname"><a href="../../d9/dd4/a00776_ac20e8bc51022a0972e8070c7c90c021e.html#ac20e8bc51022a0972e8070c7c90c021e">Packet::readInt32</a></div><div class="ttdeci">readInt32()</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00106">packet.js:106</a></div></div>
+<div class="ttc" id="aa00776_ad60aaa40cf18ef15cb2c2c71890b8c42_html_ad60aaa40cf18ef15cb2c2c71890b8c42"><div class="ttname"><a href="../../d9/dd4/a00776_ad60aaa40cf18ef15cb2c2c71890b8c42.html#ad60aaa40cf18ef15cb2c2c71890b8c42">Packet::readDateTime</a></div><div class="ttdeci">readDateTime(timezone)</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00256">packet.js:256</a></div></div>
+<div class="ttc" id="aa00776_ae0de17e813fb3095ed0aa2524a7bbb35_html_ae0de17e813fb3095ed0aa2524a7bbb35"><div class="ttname"><a href="../../d9/dd4/a00776_ae0de17e813fb3095ed0aa2524a7bbb35.html#ae0de17e813fb3095ed0aa2524a7bbb35">Packet::readFloat</a></div><div class="ttdeci">readFloat()</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00235">packet.js:235</a></div></div>
+<div class="ttc" id="aa00776_af12b93337d78bcc9754add750fd74380_html_af12b93337d78bcc9754add750fd74380"><div class="ttname"><a href="../../d9/dd4/a00776_af12b93337d78bcc9754add750fd74380.html#af12b93337d78bcc9754add750fd74380">Packet::readLengthCodedString</a></div><div class="ttdeci">readLengthCodedString(encoding)</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00380">packet.js:380</a></div></div>
+<div class="ttc" id="aa00776_html"><div class="ttname"><a href="../../d9/dd4/a00776.html">Packet</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/ddc/a00353_source.html#l00047">packet.js:47</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+<div class="ttc" id="aa01276_a5665299f1eb72b759bd4ec9cd1708c63_html_a5665299f1eb72b759bd4ec9cd1708c63"><div class="ttname"><a href="../../d5/d37/a01276_a5665299f1eb72b759bd4ec9cd1708c63.html#a5665299f1eb72b759bd4ec9cd1708c63">BinaryRow</a></div><div class="ttdeci">const BinaryRow</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d37/a01276_source.html#l00018">node_modules/mysql2/lib/packets/index.js:18</a></div></div>
+<div class="ttc" id="aa01288_a9ad8213a7626ee07aef47950752cac18_html_a9ad8213a7626ee07aef47950752cac18"><div class="ttname"><a href="../../d7/d8d/a01288_a9ad8213a7626ee07aef47950752cac18.html#a9ad8213a7626ee07aef47950752cac18">encoding</a></div><div class="ttdeci">Negotiator prototype encoding</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d8d/a01288_source.html#l00047">node_modules/negotiator/index.js:47</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_a7123d6b295578c61fe01482133a4996.html">node_modules</a></li><li class="navelem"><a class="el" href="../../dir_dc5fdf5f0bca0784ed56f6a0203de4a7.html">mysql2</a></li><li class="navelem"><a class="el" href="../../dir_fec0a83461125d74874b88ab4deadbb3.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_2c8deb8286166270ba576b9e0cb83490.html">packets</a></li><li class="navelem"><a class="el" href="../../dc/d84/a00338.html">binary_row.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+\doxysection{range-\/parser}
+\hypertarget{a00960}{}\label{a00960}\index{range-\/parser@{range-\/parser}}
+\label{a00960_autotoc_md2028}%
+\Hypertarget{a00960_autotoc_md2028}%
+
+
+\href{https://npmjs.org/package/range-parser}{\texttt{ }} \href{https://npmjs.org/package/range-parser}{\texttt{ }} \href{https://nodejs.org/en/download}{\texttt{ }} \href{https://travis-ci.org/jshttp/range-parser}{\texttt{ }} \href{https://coveralls.io/r/jshttp/range-parser?branch=master}{\texttt{ }}
+
+Range header field parser.\hypertarget{a00960_autotoc_md2029}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00960_autotoc_md2029}
+This is a \href{https://nodejs.org/en/}{\texttt{ Node.\+js}} module available through the \href{https://www.npmjs.com/}{\texttt{ npm registry}}. Installation is done using the \href{https://docs.npmjs.com/getting-started/installing-npm-packages-locally}{\texttt{ {\ttfamily npm install} command}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ npm\ install\ range-\/parser}
+
+\end{DoxyCode}
+\hypertarget{a00960_autotoc_md2030}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00960_autotoc_md2030}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00113_aaaaf98f51168d5ff2608b0f4752a312f_aaaaf98f51168d5ff2608b0f4752a312f}{parseRange}}\ =\ require(\textcolor{stringliteral}{'range-\/parser'})}
+
+\end{DoxyCode}
+\hypertarget{a00960_autotoc_md2031}{}\doxysubsubsection{\texorpdfstring{parse\+Range(size, header, options)}{parse\+Range(size, header, options)}}\label{a00960_autotoc_md2031}
+Parse the given {\ttfamily header} string where {\ttfamily size} is the maximum size of the resource. An array of ranges will be returned or negative numbers indicating an error parsing.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/2} signals a malformed header string
+\item {\ttfamily -\/1} signals an unsatisfiable range
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ parse\ header\ from\ request}}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}\ =\ \mbox{\hyperlink{a00113_aaaaf98f51168d5ff2608b0f4752a312f_aaaaf98f51168d5ff2608b0f4752a312f}{parseRange}}(\mbox{\hyperlink{a01138_a818716ec64220fef450b4789113ef6e7_a818716ec64220fef450b4789113ef6e7}{size}},\ \mbox{\hyperlink{a00104_a42c43c76081a7df8ae2954f16ee9338b_a42c43c76081a7df8ae2954f16ee9338b}{req}}.headers.range)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ type\ of\ the\ range}}
+\DoxyCodeLine{\mbox{\hyperlink{a01195_a36b902f5bfe184879eb3e29b44502eb3_a36b902f5bfe184879eb3e29b44502eb3}{if}}\ (\mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}.\mbox{\hyperlink{a00209_affea7e61106a6a9da029c8af702aaf20_affea7e61106a6a9da029c8af702aaf20}{type}}\ ===\ '\mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}')\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ the\ ranges}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00113_ac94e8517738efc3d03aa3ce811e2dee3_ac94e8517738efc3d03aa3ce811e2dee3}{range}}.forEach(\textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a07c0e0a63b5b484807c0331c78558c9e_a07c0e0a63b5b484807c0331c78558c9e}{r}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ do\ something\ with\ r.start\ and\ r.end}}
+\DoxyCodeLine{\ \ \})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{a00960_autotoc_md2032}{}\doxysubsubsubsection{\texorpdfstring{Options}{Options}}\label{a00960_autotoc_md2032}
+These properties are accepted in the options object.\hypertarget{a00960_autotoc_md2033}{}\doxysubsubsubsubsection{\texorpdfstring{combine}{combine}}\label{a00960_autotoc_md2033}
+Specifies if overlapping \& adjacent ranges should be combined, defaults to {\ttfamily false}. When {\ttfamily true}, ranges will be combined and returned as if they were specified that way in the header.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00113_aaaaf98f51168d5ff2608b0f4752a312f_aaaaf98f51168d5ff2608b0f4752a312f}{parseRange}}(100,\ \textcolor{stringliteral}{'bytes=50-\/55,0-\/10,5-\/10,56-\/60'},\ \{\ \mbox{\hyperlink{a01702_a842ccc9f567b37443c4bce53f1cdec48_a842ccc9f567b37443c4bce53f1cdec48}{combine}}:\ \textcolor{keyword}{true}\ \})}
+\DoxyCodeLine{\textcolor{comment}{//\ =>\ [}}
+\DoxyCodeLine{\textcolor{comment}{//\ \ \ \ \ \ \{\ start:\ 0,\ \ end:\ 10\ \},}}
+\DoxyCodeLine{\textcolor{comment}{//\ \ \ \ \ \ \{\ start:\ 50,\ end:\ 60\ \}}}
+\DoxyCodeLine{\textcolor{comment}{//\ \ \ \ ]}}
+
+\end{DoxyCode}
+\hypertarget{a00960_autotoc_md2034}{}\doxysubsection{\texorpdfstring{License}{License}}\label{a00960_autotoc_md2034}
+\mbox{[}MIT\mbox{]}(LICENSE) 

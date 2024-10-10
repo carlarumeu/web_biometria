@@ -1,0 +1,52 @@
+\doxysection{define-\/data-\/property \texorpdfstring{$<$}{<}sup\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}a href="{}https\+://npmjs.\+org/package/define-\/data-\/property"{} \texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}img src="{}https\+://versionbadg.\+es/ljharb/define-\/data-\/property.\+svg"{} alt="{}\+Version Badge"{}/\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/sup\texorpdfstring{$>$}{>}}
+\hypertarget{a00874}{}\label{a00874}\index{define-\/data-\/property $<$sup$>$$<$a href="{}https://npmjs.org/package/define-\/data-\/property"{} $>$$<$img src="{}https://versionbadg.es/ljharb/define-\/data-\/property.svg"{} alt="{}Version Badge"{}/$>$$<$/a$>$$<$/sup$>$@{define-\/data-\/property $<$sup$>$$<$a href=""https://npmjs.org/package/define-\/data-\/property"" $>$$<$img src=""https://versionbadg.es/ljharb/define-\/data-\/property.svg"" alt=""Version Badge""/$>$$<$/a$>$$<$/sup$>$}}
+\label{a00874_autotoc_md410}%
+\Hypertarget{a00874_autotoc_md410}%
+
+
+\href{https://github.com/ljharb/define-data-property/actions}{\texttt{ }} \href{https://app.codecov.io/gh/ljharb/define-data-property/}{\texttt{ }} \mbox{[}\mbox{]}\mbox{[}license-\/url\mbox{]} \href{https://npm-stat.com/charts.html?package=define-data-property}{\texttt{ }}
+
+\href{https://npmjs.org/package/define-data-property}{\texttt{ }}
+
+Define a data property on an object. Will fall back to assignment in an engine without descriptors.
+
+The three {\ttfamily non\texorpdfstring{$\ast$}{*}} argument can also be passed {\ttfamily null}, which will use the existing state if available.
+
+The {\ttfamily loose} argument will mean that if you attempt to set a non-\/normal data property, in an environment without descriptor support, it will fall back to normal assignment.\hypertarget{a00874_autotoc_md411}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00874_autotoc_md411}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01135_adcc2a4ec8fdd940b61885f20c0e26f9f_adcc2a4ec8fdd940b61885f20c0e26f9f}{defineDataProperty}}\ =\ require(\textcolor{stringliteral}{'define-\/data-\/property'});}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}\ =\ require(\textcolor{stringliteral}{'assert'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ =\ \{\};}
+\DoxyCodeLine{\mbox{\hyperlink{a01135_adcc2a4ec8fdd940b61885f20c0e26f9f_adcc2a4ec8fdd940b61885f20c0e26f9f}{defineDataProperty}}(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ \textcolor{stringliteral}{'key'},\ \textcolor{stringliteral}{'value'});}
+\DoxyCodeLine{\mbox{\hyperlink{a01135_adcc2a4ec8fdd940b61885f20c0e26f9f_adcc2a4ec8fdd940b61885f20c0e26f9f}{defineDataProperty}}(}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'key2'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'value'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{true},\ \textcolor{comment}{//\ nonEnumerable,\ optional}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{false},\ \textcolor{comment}{//\ nonWritable,\ optional}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{true},\ \textcolor{comment}{//\ nonConfigurable,\ optional}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{false}\ \textcolor{comment}{//\ loose,\ optional}}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.deepEqual(}
+\DoxyCodeLine{\ \ \ \ Object.getOwnPropertyDescriptors(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}),}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ key:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ configurable:\ true,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ enumerable:\ true,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{stringliteral}{'value'},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ writable:\ true,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ key2:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ configurable:\ false,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ enumerable:\ false,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{stringliteral}{'value'},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ writable:\ true,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+ 

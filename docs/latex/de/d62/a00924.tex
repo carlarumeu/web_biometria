@@ -1,0 +1,655 @@
+\doxysection{lru-\/cache}
+\hypertarget{a00924}{}\label{a00924}\index{lru-\/cache@{lru-\/cache}}
+\label{a00924_autotoc_md1336}%
+\Hypertarget{a00924_autotoc_md1336}%
+
+
+\doxylink{a00844}{A} cache object that deletes the least-\/recently-\/used items.
+
+Specify a max number of the most recently used items that you want to keep, and this cache will keep that many of the most recently accessed items.
+
+This is not primarily a TTL cache, and does not make strong TTL guarantees. There is no preemptive pruning of expired items by default, but you {\itshape may} set a TTL on the cache or on a single {\ttfamily set}. If you do so, it will treat expired items as missing, and delete them when fetched. If you are more interested in TTL caching than LRU caching, check out \href{http://npm.im/@isaacs/ttlcache}{\texttt{ @isaacs/ttlcache}}.
+
+As of version 7, this is one of the most performant LRU implementations available in Java\+Script, and supports a wide diversity of use cases. However, note that using some of the features will necessarily impact performance, by causing the cache to have to do more work. See the "{}\+Performance"{} section below.\hypertarget{a00924_autotoc_md1337}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{a00924_autotoc_md1337}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ lru-\/cache\ -\/-\/save}
+
+\end{DoxyCode}
+\hypertarget{a00924_autotoc_md1338}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{a00924_autotoc_md1338}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ hybrid\ module,\ either\ works}}
+\DoxyCodeLine{\textcolor{keyword}{import}\ LRUCache\ from\ \textcolor{stringliteral}{'lru-\/cache'}}
+\DoxyCodeLine{\textcolor{comment}{//\ or:}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ LRUCache\ =\ require(\textcolor{stringliteral}{'lru-\/cache'})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ At\ least\ one\ of\ 'max',\ 'ttl',\ or\ 'maxSize'\ is\ required,\ to\ prevent}}
+\DoxyCodeLine{\textcolor{comment}{//\ unsafe\ unbounded\ storage.}}
+\DoxyCodeLine{\textcolor{comment}{//}}
+\DoxyCodeLine{\textcolor{comment}{//\ In\ most\ cases,\ it's\ best\ to\ specify\ a\ max\ for\ performance,\ so\ all}}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ required\ memory\ allocation\ is\ done\ up-\/front.}}
+\DoxyCodeLine{\textcolor{comment}{//}}
+\DoxyCodeLine{\textcolor{comment}{//\ All\ the\ other\ options\ are\ optional,\ see\ the\ sections\ below\ for}}
+\DoxyCodeLine{\textcolor{comment}{//\ documentation\ on\ what\ each\ one\ does.\ \ Most\ of\ them\ can\ be}}
+\DoxyCodeLine{\textcolor{comment}{//\ overridden\ for\ specific\ items\ in\ get()/set()}}
+\DoxyCodeLine{\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}}\ options\ =\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00131_a04fa2ea575d5471ca09e1b344ec4a69e_a04fa2ea575d5471ca09e1b344ec4a69e}{max}}:\ 500,}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ for\ use\ with\ tracking\ overall\ storage\ size}}
+\DoxyCodeLine{\ \ maxSize:\ 5000,}
+\DoxyCodeLine{\ \ sizeCalculation:\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}},\ key)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 1}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ for\ use\ when\ you\ need\ to\ clean\ up\ something\ when\ objects}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ are\ evicted\ from\ the\ cache}}
+\DoxyCodeLine{\ \ dispose:\ (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}},\ key)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ freeFromMemoryOrWhatever(\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}})}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ how\ long\ to\ live\ in\ ms}}
+\DoxyCodeLine{\ \ ttl:\ 1000\ *\ 60\ *\ 5,}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ return\ stale\ items\ before\ removing\ from\ cache?}}
+\DoxyCodeLine{\ \ allowStale:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ updateAgeOnGet:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ updateAgeOnHas:\ \textcolor{keyword}{false},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ async\ method\ to\ use\ for\ cache.fetch(),\ for}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ stale-\/while-\/revalidate\ type\ of\ behavior}}
+\DoxyCodeLine{\ \ fetchMethod:\ async\ (key,\ staleValue,\ \{\ options,\ signal\ \})\ =>\ \{\},}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{const}\ cache\ =\ \textcolor{keyword}{new}\ LRUCache(options)}
+\DoxyCodeLine{}
+\DoxyCodeLine{cache.set(\textcolor{stringliteral}{'key'},\ \textcolor{stringliteral}{'value'})}
+\DoxyCodeLine{cache.get(\textcolor{stringliteral}{'key'})\ \textcolor{comment}{//\ "{}value"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ non-\/string\ keys\ ARE\ fully\ supported}}
+\DoxyCodeLine{\textcolor{comment}{//\ but\ note\ that\ it\ must\ be\ THE\ SAME\ object,\ not}}
+\DoxyCodeLine{\textcolor{comment}{//\ just\ a\ JSON-\/equivalent\ object.}}
+\DoxyCodeLine{var\ someObject\ =\ \{\ \mbox{\hyperlink{a00197_a82ca4ee5dd63e58a2bb967077dc8b8fb_a82ca4ee5dd63e58a2bb967077dc8b8fb}{a}}:\ 1\ \}}
+\DoxyCodeLine{cache.set(someObject,\ \textcolor{stringliteral}{'a\ value'})}
+\DoxyCodeLine{\textcolor{comment}{//\ Object\ keys\ are\ not\ toString()-\/ed}}
+\DoxyCodeLine{cache.set(\textcolor{stringliteral}{'[object\ Object]'},\ \textcolor{stringliteral}{'a\ different\ value'})}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(cache.get(someObject),\ \textcolor{stringliteral}{'a\ value'})}
+\DoxyCodeLine{\textcolor{comment}{//\ A\ similar\ object\ with\ same\ keys/values\ won't\ work,}}
+\DoxyCodeLine{\textcolor{comment}{//\ because\ it's\ a\ different\ object\ identity}}
+\DoxyCodeLine{\mbox{\hyperlink{a01711_a5e95655c9188700b16a5488897cecb90_a5e95655c9188700b16a5488897cecb90}{assert}}.equal(cache.get(\{\ a:\ 1\ \}),\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{cache.clear()\ \textcolor{comment}{//\ empty\ the\ cache}}
+
+\end{DoxyCode}
+
+
+If you put more stuff in it, then items will fall out.\hypertarget{a00924_autotoc_md1339}{}\doxysubsection{\texorpdfstring{Options}{Options}}\label{a00924_autotoc_md1339}
+\hypertarget{a00924_autotoc_md1340}{}\doxysubsubsection{\texorpdfstring{{\ttfamily max}}{{\ttfamily max}}}\label{a00924_autotoc_md1340}
+The maximum number of items that remain in the cache (assuming no TTL pruning or explicit deletions). Note that fewer items may be stored if size calculation is used, and {\ttfamily max\+Size} is exceeded. This must be a positive finite intger.
+
+At least one of {\ttfamily max}, {\ttfamily max\+Size}, or {\ttfamily TTL} is required. This must be a positive integer if set.
+
+{\bfseries{It is strongly recommended to set a {\ttfamily max} to prevent unbounded growth of the cache.}} See "{}\+Storage Bounds Safety"{} below.\hypertarget{a00924_autotoc_md1341}{}\doxysubsubsection{\texorpdfstring{{\ttfamily max\+Size}}{{\ttfamily max\+Size}}}\label{a00924_autotoc_md1341}
+Set to a positive integer to track the sizes of items added to the cache, and automatically evict items in order to stay below this size. Note that this may result in fewer than {\ttfamily max} items being stored.
+
+Attempting to add an item to the cache whose calculated size is greater that this amount will be a no-\/op. The item will not be cached, and no other items will be evicted.
+
+Optional, must be a positive integer if provided.
+
+Sets {\ttfamily max\+Entry\+Size} to the same value, unless a different value is provided for {\ttfamily max\+Entry\+Size}.
+
+At least one of {\ttfamily max}, {\ttfamily max\+Size}, or {\ttfamily TTL} is required. This must be a positive integer if set.
+
+Even if size tracking is enabled, {\bfseries{it is strongly recommended to set a {\ttfamily max} to prevent unbounded growth of the cache.}} See "{}\+Storage Bounds Safety"{} below.\hypertarget{a00924_autotoc_md1342}{}\doxysubsubsection{\texorpdfstring{{\ttfamily max\+Entry\+Size}}{{\ttfamily max\+Entry\+Size}}}\label{a00924_autotoc_md1342}
+Set to a positive integer to track the sizes of items added to the cache, and prevent caching any item over a given size. Attempting to add an item whose calculated size is greater than this amount will be a no-\/op. The item will not be cached, and no other items will be evicted.
+
+Optional, must be a positive integer if provided. Defaults to the value of {\ttfamily max\+Size} if provided.\hypertarget{a00924_autotoc_md1343}{}\doxysubsubsection{\texorpdfstring{{\ttfamily size\+Calculation}}{{\ttfamily size\+Calculation}}}\label{a00924_autotoc_md1343}
+Function used to calculate the size of stored items. If you\textquotesingle{}re storing strings or buffers, then you probably want to do something like {\ttfamily n =\texorpdfstring{$>$}{>} n.\+length}. The item is passed as the first argument, and the key is passed as the second argument.
+
+This may be overridden by passing an options object to {\ttfamily cache.\+set()}.
+
+Requires {\ttfamily max\+Size} to be set.
+
+If the {\ttfamily size} (or return value of {\ttfamily size\+Calculation}) for a given entry is greater than {\ttfamily max\+Entry\+Size}, then the item will not be added to the cache.
+
+Deprecated alias\+: {\ttfamily length}\hypertarget{a00924_autotoc_md1344}{}\doxysubsubsection{\texorpdfstring{{\ttfamily fetch\+Method}}{{\ttfamily fetch\+Method}}}\label{a00924_autotoc_md1344}
+Function that is used to make background asynchronous fetches. Called with {\ttfamily fetch\+Method(key, stale\+Value, \{ signal, options, context \})}. May return a Promise.
+
+If {\ttfamily fetch\+Method} is not provided, then {\ttfamily cache.\+fetch(key)} is equivalent to {\ttfamily Promise.\+resolve(cache.\+get(key))}.
+
+The {\ttfamily signal} object is an {\ttfamily Abort\+Signal} if that\textquotesingle{}s available in the global object, otherwise it\textquotesingle{}s a pretty close polyfill.
+
+If at any time, {\ttfamily signal.\+aborted} is set to {\ttfamily true}, or if the {\ttfamily signal.\+onabort} method is called, or if it emits an `\textquotesingle{}abort'{\ttfamily  event which you can listen to with}add\+Event\+Listener\`{}, then that means that the fetch should be abandoned. This may be passed along to async functions aware of Abort\+Controller/\+Abort\+Signal behavior.
+
+The {\ttfamily fetch\+Method} should {\bfseries{only}} return {\ttfamily undefined} or a Promise resolving to {\ttfamily undefined} if the Abort\+Controller signaled an {\ttfamily abort} event. In all other cases, it should return or resolve to a value suitable for adding to the cache.
+
+The {\ttfamily options} object is a union of the options that may be provided to {\ttfamily \doxylink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{set()}} and {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get()}}. If they are modified, then that will result in modifying the settings to {\ttfamily cache.\+set()} when the value is resolved, and in the case of {\ttfamily no\+Delete\+On\+Fetch\+Rejection} and {\ttfamily allow\+Stale\+On\+Fetch\+Rejection}, the handling of {\ttfamily fetch\+Method} failures.
+
+For example, a DNS cache may update the TTL based on the value returned from a remote DNS server by changing {\ttfamily options.\+ttl} in the {\ttfamily fetch\+Method}.\hypertarget{a00924_autotoc_md1345}{}\doxysubsubsection{\texorpdfstring{{\ttfamily fetch\+Context}}{{\ttfamily fetch\+Context}}}\label{a00924_autotoc_md1345}
+Arbitrary data that can be passed to the {\ttfamily fetch\+Method} as the {\ttfamily context} option.
+
+Note that this will only be relevant when the {\ttfamily cache.\+fetch()} call needs to call {\ttfamily fetch\+Method()}. Thus, any data which will meaningfully vary the fetch response needs to be present in the key. This is primarily intended for including {\ttfamily x-\/request-\/id} headers and the like for debugging purposes, which do not affect the {\ttfamily fetch\+Method()} response.\hypertarget{a00924_autotoc_md1346}{}\doxysubsubsection{\texorpdfstring{{\ttfamily no\+Delete\+On\+Fetch\+Rejection}}{{\ttfamily no\+Delete\+On\+Fetch\+Rejection}}}\label{a00924_autotoc_md1346}
+If a {\ttfamily fetch\+Method} throws an error or returns a rejected promise, then by default, any existing stale value will be removed from the cache.
+
+If {\ttfamily no\+Delete\+On\+Fetch\+Rejection} is set to {\ttfamily true}, then this behavior is suppressed, and the stale value remains in the cache in the case of a rejected {\ttfamily fetch\+Method}.
+
+This is important in cases where a {\ttfamily fetch\+Method} is {\itshape only} called as a background update while the stale value is returned, when {\ttfamily allow\+Stale} is used.
+
+This is implicitly in effect when {\ttfamily allow\+Stale\+On\+Fetch\+Rejection} is set.
+
+This may be set in calls to {\ttfamily fetch()}, or defaulted on the constructor, or overridden by modifying the options object in the {\ttfamily fetch\+Method}.\hypertarget{a00924_autotoc_md1347}{}\doxysubsubsection{\texorpdfstring{{\ttfamily allow\+Stale\+On\+Fetch\+Rejection}}{{\ttfamily allow\+Stale\+On\+Fetch\+Rejection}}}\label{a00924_autotoc_md1347}
+Set to true to return a stale value from the cache when a {\ttfamily fetch\+Method} throws an error or returns a rejected Promise.
+
+If a {\ttfamily fetch\+Method} fails, and there is no stale value available, the {\ttfamily fetch()} will resolve to {\ttfamily undefined}. Ie, all {\ttfamily fetch\+Method} errors are suppressed.
+
+Implies {\ttfamily no\+Delete\+On\+Fetch\+Rejection}.
+
+This may be set in calls to {\ttfamily fetch()}, or defaulted on the constructor, or overridden by modifying the options object in the {\ttfamily fetch\+Method}.\hypertarget{a00924_autotoc_md1348}{}\doxysubsubsection{\texorpdfstring{{\ttfamily allow\+Stale\+On\+Fetch\+Abort}}{{\ttfamily allow\+Stale\+On\+Fetch\+Abort}}}\label{a00924_autotoc_md1348}
+Set to true to return a stale value from the cache when the {\ttfamily Abort\+Signal} passed to the {\ttfamily fetch\+Method} dispatches an `\textquotesingle{}abort'\`{} event, whether user-\/triggered, or due to internal cache behavior.
+
+Unless {\ttfamily ignore\+Fetch\+Abort} is also set, the underlying {\ttfamily fetch\+Method} will still be considered canceled, and its return value will be ignored and not cached.\hypertarget{a00924_autotoc_md1349}{}\doxysubsubsection{\texorpdfstring{{\ttfamily ignore\+Fetch\+Abort}}{{\ttfamily ignore\+Fetch\+Abort}}}\label{a00924_autotoc_md1349}
+Set to true to ignore the {\ttfamily abort} event emitted by the {\ttfamily Abort\+Signal} object passed to {\ttfamily fetch\+Method}, and still cache the resulting resolution value, as long as it is not {\ttfamily undefined}.
+
+When used on its own, this means aborted {\ttfamily fetch()} calls are not immediately resolved or rejected when they are aborted, and instead take the full time to await.
+
+When used with {\ttfamily allow\+Stale\+On\+Fetch\+Abort}, aborted {\ttfamily fetch()} calls will resolve immediately to their stale cached value or {\ttfamily undefined}, and will continue to process and eventually update the cache when they resolve, as long as the resulting value is not {\ttfamily undefined}, thus supporting a "{}return stale on timeout while refreshing"{} mechanism by passing {\ttfamily Abort\+Signal.\+timeout(n)} as the signal.
+
+For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}\ =\ \textcolor{keyword}{new}\ LRUCache(\{}
+\DoxyCodeLine{\ \ ttl:\ 100,}
+\DoxyCodeLine{\ \ ignoreFetchAbort:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\ \ allowStaleOnFetchAbort:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\ \ fetchMethod:\ async\ (key,\ oldValue,\ \{\ signal\ \})\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ note:\ do\ NOT\ pass\ the\ signal\ to\ fetch()!}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ let's\ say\ this\ fetch\ can\ take\ a\ long\ time.}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ fetch(\`{}https:\textcolor{comment}{//slow-\/backend-\/server/\$\{key\}`)}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}.json()}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{\})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ will\ return\ the\ stale\ value\ after\ 100ms,\ while\ still}}
+\DoxyCodeLine{\textcolor{comment}{//\ updating\ in\ the\ background\ for\ next\ time.}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ val\ =\ \mbox{\hyperlink{a01195_a222943fe334ed72f2374717e19f6eba9_a222943fe334ed72f2374717e19f6eba9}{await}}\ \mbox{\hyperlink{a01822_abce695e0af988ece0826d9ad59b8160d_abce695e0af988ece0826d9ad59b8160d}{c}}.fetch(\textcolor{stringliteral}{'key'},\ \{\ signal:\ AbortSignal.timeout(100)\ \})}
+
+\end{DoxyCode}
+
+
+{\bfseries{Note}}\+: regardless of this setting, an {\ttfamily abort} event {\itshape is still emitted on the {\ttfamily Abort\+Signal} object}, so may result in invalid results when passed to other underlying APIs that use Abort\+Signals.
+
+This may be overridden on the {\ttfamily fetch()} call or in the {\ttfamily fetch\+Method} itself.\hypertarget{a00924_autotoc_md1350}{}\doxysubsubsection{\texorpdfstring{{\ttfamily dispose}}{{\ttfamily dispose}}}\label{a00924_autotoc_md1350}
+Function that is called on items when they are dropped from the cache, as {\ttfamily this.\+dispose(value, key, reason)}.
+
+This can be handy if you want to close file descriptors or do other cleanup tasks when items are no longer stored in the cache.
+
+{\bfseries{NOTE}}\+: It is called {\itshape before} the item has been fully removed from the cache, so if you want to put it right back in, you need to wait until the next tick. If you try to add it back in during the {\ttfamily dispose()} function call, it will break things in subtle and weird ways.
+
+Unlike several other options, this may {\itshape not} be overridden by passing an option to {\ttfamily \doxylink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{set()}}, for performance reasons. If disposal functions may vary between cache entries, then the entire list must be scanned on every cache swap, even if no disposal function is in use.
+
+The {\ttfamily reason} will be one of the following strings, corresponding to the reason for the item\textquotesingle{}s deletion\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily evict} Item was evicted to make space for a new addition
+\item {\ttfamily set} Item was overwritten by a new value
+\item {\ttfamily delete} Item was removed by explicit {\ttfamily cache.\+delete(key)} or by calling {\ttfamily cache.\+clear()}, which deletes everything.
+\end{DoxyItemize}
+
+The {\ttfamily dispose()} method is {\itshape not} called for canceled calls to {\ttfamily fetch\+Method()}. If you wish to handle evictions, overwrites, and deletes of in-\/flight asynchronous fetches, you must use the {\ttfamily Abort\+Signal} provided.
+
+Optional, must be a function.\hypertarget{a00924_autotoc_md1351}{}\doxysubsubsection{\texorpdfstring{{\ttfamily dispose\+After}}{{\ttfamily dispose\+After}}}\label{a00924_autotoc_md1351}
+The same as {\ttfamily dispose}, but called {\itshape after} the entry is completely removed and the cache is once again in a clean state.
+
+It is safe to add an item right back into the cache at this point. However, note that it is {\itshape very} easy to inadvertently create infinite recursion in this way.
+
+The {\ttfamily dispose\+After()} method is {\itshape not} called for canceled calls to {\ttfamily fetch\+Method()}. If you wish to handle evictions, overwrites, and deletes of in-\/flight asynchronous fetches, you must use the {\ttfamily Abort\+Signal} provided.\hypertarget{a00924_autotoc_md1352}{}\doxysubsubsection{\texorpdfstring{{\ttfamily no\+Dispose\+On\+Set}}{{\ttfamily no\+Dispose\+On\+Set}}}\label{a00924_autotoc_md1352}
+Set to {\ttfamily true} to suppress calling the {\ttfamily dispose()} function if the entry key is still accessible within the cache.
+
+This may be overridden by passing an options object to {\ttfamily cache.\+set()}.
+
+Boolean, default {\ttfamily false}. Only relevant if {\ttfamily dispose} or {\ttfamily dispose\+After} options are set.\hypertarget{a00924_autotoc_md1353}{}\doxysubsubsection{\texorpdfstring{{\ttfamily ttl}}{{\ttfamily ttl}}}\label{a00924_autotoc_md1353}
+Max time to live for items before they are considered stale. Note that stale items are NOT preemptively removed by default, and MAY live in the cache, contributing to its LRU max, long after they have expired.
+
+Also, as this cache is optimized for LRU/\+MRU operations, some of the staleness/\+TTL checks will reduce performance.
+
+This is not primarily a TTL cache, and does not make strong TTL guarantees. There is no pre-\/emptive pruning of expired items, but you {\itshape may} set a TTL on the cache, and it will treat expired items as missing when they are fetched, and delete them.
+
+Optional, but must be a positive integer in ms if specified.
+
+This may be overridden by passing an options object to {\ttfamily cache.\+set()}.
+
+At least one of {\ttfamily max}, {\ttfamily max\+Size}, or {\ttfamily TTL} is required. This must be a positive integer if set.
+
+Even if ttl tracking is enabled, {\bfseries{it is strongly recommended to set a {\ttfamily max} to prevent unbounded growth of the cache.}} See "{}\+Storage Bounds Safety"{} below.
+
+If ttl tracking is enabled, and {\ttfamily max} and {\ttfamily max\+Size} are not set, and {\ttfamily ttl\+Autopurge} is not set, then a warning will be emitted cautioning about the potential for unbounded memory consumption.
+
+Deprecated alias\+: {\ttfamily max\+Age}\hypertarget{a00924_autotoc_md1354}{}\doxysubsubsection{\texorpdfstring{{\ttfamily no\+Update\+TTL}}{{\ttfamily no\+Update\+TTL}}}\label{a00924_autotoc_md1354}
+Boolean flag to tell the cache to not update the TTL when setting a new value for an existing key (ie, when updating a value rather than inserting a new value). Note that the TTL value is {\itshape always} set (if provided) when adding a new entry into the cache.
+
+This may be passed as an option to {\ttfamily cache.\+set()}.
+
+Boolean, default false.\hypertarget{a00924_autotoc_md1355}{}\doxysubsubsection{\texorpdfstring{{\ttfamily ttl\+Resolution}}{{\ttfamily ttl\+Resolution}}}\label{a00924_autotoc_md1355}
+Minimum amount of time in ms in which to check for staleness. Defaults to {\ttfamily 1}, which means that the current time is checked at most once per millisecond.
+
+Set to {\ttfamily 0} to check the current time every time staleness is tested.
+
+Note that setting this to a higher value {\itshape will} improve performance somewhat while using ttl tracking, albeit at the expense of keeping stale items around a bit longer than intended.\hypertarget{a00924_autotoc_md1356}{}\doxysubsubsection{\texorpdfstring{{\ttfamily ttl\+Autopurge}}{{\ttfamily ttl\+Autopurge}}}\label{a00924_autotoc_md1356}
+Preemptively remove stale items from the cache.
+
+Note that this may {\itshape significantly} degrade performance, especially if the cache is storing a large number of items. It is almost always best to just leave the stale items in the cache, and let them fall out as new items are added.
+
+Note that this means that {\ttfamily allow\+Stale} is a bit pointless, as stale items will be deleted almost as soon as they expire.
+
+Use with caution!
+
+Boolean, default {\ttfamily false}\hypertarget{a00924_autotoc_md1357}{}\doxysubsubsection{\texorpdfstring{{\ttfamily allow\+Stale}}{{\ttfamily allow\+Stale}}}\label{a00924_autotoc_md1357}
+By default, if you set {\ttfamily ttl}, it\textquotesingle{}ll only delete stale items from the cache when you {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get(key)}}. That is, it\textquotesingle{}s not preemptively pruning items.
+
+If you set {\ttfamily allow\+Stale\+:true}, it\textquotesingle{}ll return the stale value as well as deleting it. If you don\textquotesingle{}t set this, then it\textquotesingle{}ll return {\ttfamily undefined} when you try to get a stale entry.
+
+Note that when a stale entry is fetched, {\itshape even if it is returned due to {\ttfamily allow\+Stale} being set}, it is removed from the cache immediately. You can immediately put it back in the cache if you wish, thus resetting the TTL.
+
+This may be overridden by passing an options object to {\ttfamily cache.\+get()}. The {\ttfamily cache.\+has()} method will always return {\ttfamily false} for stale items.
+
+Boolean, default false, only relevant if {\ttfamily ttl} is set.
+
+Deprecated alias\+: {\ttfamily stale}\hypertarget{a00924_autotoc_md1358}{}\doxysubsubsection{\texorpdfstring{{\ttfamily no\+Delete\+On\+Stale\+Get}}{{\ttfamily no\+Delete\+On\+Stale\+Get}}}\label{a00924_autotoc_md1358}
+When using time-\/expiring entries with {\ttfamily ttl}, by default stale items will be removed from the cache when the key is accessed with {\ttfamily cache.\+get()}.
+
+Setting {\ttfamily no\+Delete\+On\+Stale\+Get} to {\ttfamily true} will cause stale items to remain in the cache, until they are explicitly deleted with {\ttfamily cache.\+delete(key)}, or retrieved with {\ttfamily no\+Delete\+On\+Stale\+Get} set to {\ttfamily false}.
+
+This may be overridden by passing an options object to {\ttfamily cache.\+get()}.
+
+Boolean, default false, only relevant if {\ttfamily ttl} is set.\hypertarget{a00924_autotoc_md1359}{}\doxysubsubsection{\texorpdfstring{{\ttfamily update\+Age\+On\+Get}}{{\ttfamily update\+Age\+On\+Get}}}\label{a00924_autotoc_md1359}
+When using time-\/expiring entries with {\ttfamily ttl}, setting this to {\ttfamily true} will make each item\textquotesingle{}s age reset to 0 whenever it is retrieved from cache with {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get()}}, causing it to not expire. (It can still fall out of cache based on recency of use, of course.)
+
+This may be overridden by passing an options object to {\ttfamily cache.\+get()}.
+
+Boolean, default false, only relevant if {\ttfamily ttl} is set.\hypertarget{a00924_autotoc_md1360}{}\doxysubsubsection{\texorpdfstring{{\ttfamily update\+Age\+On\+Has}}{{\ttfamily update\+Age\+On\+Has}}}\label{a00924_autotoc_md1360}
+When using time-\/expiring entries with {\ttfamily ttl}, setting this to {\ttfamily true} will make each item\textquotesingle{}s age reset to 0 whenever its presence in the cache is checked with {\ttfamily \doxylink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{has()}}, causing it to not expire. (It can still fall out of cache based on recency of use, of course.)
+
+This may be overridden by passing an options object to {\ttfamily cache.\+has()}.
+
+Boolean, default false, only relevant if {\ttfamily ttl} is set.\hypertarget{a00924_autotoc_md1361}{}\doxysubsection{\texorpdfstring{API}{API}}\label{a00924_autotoc_md1361}
+\hypertarget{a00924_autotoc_md1362}{}\doxysubsubsection{\texorpdfstring{{\ttfamily new LRUCache(options)}}{{\ttfamily new LRUCache(options)}}}\label{a00924_autotoc_md1362}
+Create a new LRUCache. All options are documented above, and are on the cache as public members.\hypertarget{a00924_autotoc_md1363}{}\doxysubsubsection{\texorpdfstring{{\ttfamily cache.\+max}, {\ttfamily cache.\+max\+Size}, {\ttfamily cache.\+allow\+Stale},}{{\ttfamily cache.\+max}, {\ttfamily cache.\+max\+Size}, {\ttfamily cache.\+allow\+Stale},}}\label{a00924_autotoc_md1363}
+{\ttfamily cache.\+no\+Dispose\+On\+Set}, {\ttfamily cache.\+size\+Calculation}, {\ttfamily cache.\+dispose}, {\ttfamily cache.\+max\+Size}, {\ttfamily cache.\+ttl}, {\ttfamily cache.\+update\+Age\+On\+Get}, {\ttfamily cache.\+update\+Age\+On\+Has}
+
+All option names are exposed as public members on the cache object.
+
+These are intended for read access only. Changing them during program operation can cause undefined behavior.\hypertarget{a00924_autotoc_md1364}{}\doxysubsubsection{\texorpdfstring{{\ttfamily cache.\+size}}{{\ttfamily cache.\+size}}}\label{a00924_autotoc_md1364}
+The total number of items held in the cache at the current moment.\hypertarget{a00924_autotoc_md1365}{}\doxysubsubsection{\texorpdfstring{{\ttfamily cache.\+calculated\+Size}}{{\ttfamily cache.\+calculated\+Size}}}\label{a00924_autotoc_md1365}
+The total size of items in cache when using size tracking.\hypertarget{a00924_autotoc_md1366}{}\doxysubsubsection{\texorpdfstring{{\ttfamily set(key, value, \mbox{[}\{ size, size\+Calculation, ttl, no\+Dispose\+On\+Set, start, status \}\mbox{]})}}{{\ttfamily set(key, value, \mbox{[}\{ size, size\+Calculation, ttl, no\+Dispose\+On\+Set, start, status \}\mbox{]})}}}\label{a00924_autotoc_md1366}
+Add a value to the cache.
+
+Optional options object may contain {\ttfamily ttl} and {\ttfamily size\+Calculation} as described above, which default to the settings on the cache object.
+
+If {\ttfamily start} is provided, then that will set the effective start time for the TTL calculation. Note that this must be a previous value of {\ttfamily performance.\+now()} if supported, or a previous value of {\ttfamily Date.\+now()} if not.
+
+Options object may also include {\ttfamily size}, which will prevent calling the {\ttfamily size\+Calculation} function and just use the specified number if it is a positive integer, and {\ttfamily no\+Dispose\+On\+Set} which will prevent calling a {\ttfamily dispose} function in the case of overwrites.
+
+If the {\ttfamily size} (or return value of {\ttfamily size\+Calculation}) for a given entry is greater than {\ttfamily max\+Entry\+Size}, then the item will not be added to the cache.
+
+Will update the recency of the entry.
+
+Returns the cache object.
+
+For the usage of the {\ttfamily status} option, see {\bfseries{Status Tracking}} below.\hypertarget{a00924_autotoc_md1367}{}\doxysubsubsection{\texorpdfstring{{\ttfamily get(key, \{ update\+Age\+On\+Get, allow\+Stale, status \} = \{\}) =\texorpdfstring{$>$}{>} value}}{{\ttfamily get(key, \{ update\+Age\+On\+Get, allow\+Stale, status \} = \{\}) =\texorpdfstring{$>$}{>} value}}}\label{a00924_autotoc_md1367}
+Return a value from the cache.
+
+Will update the recency of the cache entry found.
+
+If the key is not found, {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get()}} will return {\ttfamily undefined}. This can be confusing when setting values specifically to {\ttfamily undefined}, as in {\ttfamily cache.\+set(key, undefined)}. Use {\ttfamily cache.\+has()} to determine whether a key is present in the cache at all.
+
+For the usage of the {\ttfamily status} option, see {\bfseries{Status Tracking}} below.\hypertarget{a00924_autotoc_md1368}{}\doxysubsubsection{\texorpdfstring{{\ttfamily async fetch(key, options = \{\}) =\texorpdfstring{$>$}{>} Promise}}{{\ttfamily async fetch(key, options = \{\}) =\texorpdfstring{$>$}{>} Promise}}}\label{a00924_autotoc_md1368}
+The following options are supported\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily update\+Age\+On\+Get}
+\item {\ttfamily allow\+Stale}
+\item {\ttfamily size}
+\item {\ttfamily size\+Calculation}
+\item {\ttfamily ttl}
+\item {\ttfamily no\+Dispose\+On\+Set}
+\item {\ttfamily force\+Refresh}
+\item {\ttfamily status} -\/ See {\bfseries{Status Tracking}} below.
+\item {\ttfamily signal} -\/ Abort\+Signal can be used to cancel the {\ttfamily fetch()}. Note that the {\ttfamily signal} option provided to the {\ttfamily fetch\+Method} is a different object, because it must also respond to internal cache state changes, but aborting this signal will abort the one passed to {\ttfamily fetch\+Method} as well.
+\item {\ttfamily fetch\+Context} -\/ sets the {\ttfamily context} option passed to the underlying {\ttfamily fetch\+Method}.
+\end{DoxyItemize}
+
+If the value is in the cache and not stale, then the returned Promise resolves to the value.
+
+If not in the cache, or beyond its TTL staleness, then {\ttfamily fetch\+Method(key, stale\+Value, \{ options, signal, context \})} is called, and the value returned will be added to the cache once resolved.
+
+If called with {\ttfamily allow\+Stale}, and an asynchronous fetch is currently in progress to reload a stale value, then the former stale value will be returned.
+
+If called with {\ttfamily force\+Refresh}, then the cached item will be re-\/fetched, even if it is not stale. However, if {\ttfamily allow\+Stale} is set, then the old value will still be returned. This is useful in cases where you want to force a reload of a cached value. If a background fetch is already in progress, then {\ttfamily force\+Refresh} has no effect.
+
+Multiple fetches for the same {\ttfamily key} will only call {\ttfamily fetch\+Method} a single time, and all will be resolved when the value is resolved, even if different options are used.
+
+If {\ttfamily fetch\+Method} is not specified, then this is effectively an alias for {\ttfamily Promise.\+resolve(cache.\+get(key))}.
+
+When the fetch method resolves to a value, if the fetch has not been aborted due to deletion, eviction, or being overwritten, then it is added to the cache using the options provided.
+
+If the key is evicted or deleted before the {\ttfamily fetch\+Method} resolves, then the Abort\+Signal passed to the {\ttfamily fetch\+Method} will receive an {\ttfamily abort} event, and the promise returned by {\ttfamily fetch()} will reject with the reason for the abort.
+
+If a {\ttfamily signal} is passed to the {\ttfamily fetch()} call, then aborting the signal will abort the fetch and cause the {\ttfamily fetch()} promise to reject with the reason provided.\hypertarget{a00924_autotoc_md1369}{}\doxysubsubsection{\texorpdfstring{{\ttfamily peek(key, \{ allow\+Stale \} = \{\}) =\texorpdfstring{$>$}{>} value}}{{\ttfamily peek(key, \{ allow\+Stale \} = \{\}) =\texorpdfstring{$>$}{>} value}}}\label{a00924_autotoc_md1369}
+Like {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get()}} but doesn\textquotesingle{}t update recency or delete stale items.
+
+Returns {\ttfamily undefined} if the item is stale, unless {\ttfamily allow\+Stale} is set either on the cache or in the options object.\hypertarget{a00924_autotoc_md1370}{}\doxysubsubsection{\texorpdfstring{{\ttfamily has(key, \{ update\+Age\+On\+Has, status \} = \{\}) =\texorpdfstring{$>$}{>} Boolean}}{{\ttfamily has(key, \{ update\+Age\+On\+Has, status \} = \{\}) =\texorpdfstring{$>$}{>} Boolean}}}\label{a00924_autotoc_md1370}
+Check if a key is in the cache, without updating the recency of use. Age is updated if {\ttfamily update\+Age\+On\+Has} is set to {\ttfamily true} in either the options or the constructor.
+
+Will return {\ttfamily false} if the item is stale, even though it is technically in the cache. The difference can be determined (if it matters) by using a {\ttfamily status} argument, and inspecting the {\ttfamily has} field.
+
+For the usage of the {\ttfamily status} option, see {\bfseries{Status Tracking}} below.\hypertarget{a00924_autotoc_md1371}{}\doxysubsubsection{\texorpdfstring{{\ttfamily delete(key)}}{{\ttfamily delete(key)}}}\label{a00924_autotoc_md1371}
+Deletes a key out of the cache.
+
+Returns {\ttfamily true} if the key was deleted, {\ttfamily false} otherwise.\hypertarget{a00924_autotoc_md1372}{}\doxysubsubsection{\texorpdfstring{{\ttfamily clear()}}{{\ttfamily clear()}}}\label{a00924_autotoc_md1372}
+Clear the cache entirely, throwing away all values.
+
+Deprecated alias\+: {\ttfamily \doxylink{a01714_aa01b7cbc60d07525859f73a229026697_aa01b7cbc60d07525859f73a229026697}{reset()}}\hypertarget{a00924_autotoc_md1373}{}\doxysubsubsection{\texorpdfstring{{\ttfamily keys()}}{{\ttfamily keys()}}}\label{a00924_autotoc_md1373}
+Return a generator yielding the keys in the cache, in order from most recently used to least recently used.\hypertarget{a00924_autotoc_md1374}{}\doxysubsubsection{\texorpdfstring{{\ttfamily rkeys()}}{{\ttfamily rkeys()}}}\label{a00924_autotoc_md1374}
+Return a generator yielding the keys in the cache, in order from least recently used to most recently used.\hypertarget{a00924_autotoc_md1375}{}\doxysubsubsection{\texorpdfstring{{\ttfamily values()}}{{\ttfamily values()}}}\label{a00924_autotoc_md1375}
+Return a generator yielding the values in the cache, in order from most recently used to least recently used.\hypertarget{a00924_autotoc_md1376}{}\doxysubsubsection{\texorpdfstring{{\ttfamily rvalues()}}{{\ttfamily rvalues()}}}\label{a00924_autotoc_md1376}
+Return a generator yielding the values in the cache, in order from least recently used to most recently used.\hypertarget{a00924_autotoc_md1377}{}\doxysubsubsection{\texorpdfstring{{\ttfamily entries()}}{{\ttfamily entries()}}}\label{a00924_autotoc_md1377}
+Return a generator yielding {\ttfamily \mbox{[}key, value\mbox{]}} pairs, in order from most recently used to least recently used.\hypertarget{a00924_autotoc_md1378}{}\doxysubsubsection{\texorpdfstring{{\ttfamily rentries()}}{{\ttfamily rentries()}}}\label{a00924_autotoc_md1378}
+Return a generator yielding {\ttfamily \mbox{[}key, value\mbox{]}} pairs, in order from least recently used to most recently used.\hypertarget{a00924_autotoc_md1379}{}\doxysubsubsection{\texorpdfstring{{\ttfamily find(fn, \mbox{[}get\+Options\mbox{]})}}{{\ttfamily find(fn, \mbox{[}get\+Options\mbox{]})}}}\label{a00924_autotoc_md1379}
+Find a value for which the supplied {\ttfamily fn} method returns a truthy value, similar to {\ttfamily Array.\+find()}.
+
+{\ttfamily fn} is called as {\ttfamily \doxylink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn(value, key, cache)}}.
+
+The optional {\ttfamily get\+Options} are applied to the resulting {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get()}} of the item found.\hypertarget{a00924_autotoc_md1380}{}\doxysubsubsection{\texorpdfstring{{\ttfamily dump()}}{{\ttfamily dump()}}}\label{a00924_autotoc_md1380}
+Return an array of {\ttfamily \mbox{[}key, entry\mbox{]}} objects which can be passed to {\ttfamily cache.\+load()}
+
+The {\ttfamily start} fields are calculated relative to a portable {\ttfamily Date.\+now()} timestamp, even if {\ttfamily performance.\+now()} is available.
+
+Stale entries are always included in the {\ttfamily dump}, even if {\ttfamily allow\+Stale} is false.
+
+Note\+: this returns an actual array, not a generator, so it can be more easily passed around.\hypertarget{a00924_autotoc_md1381}{}\doxysubsubsection{\texorpdfstring{{\ttfamily load(entries)}}{{\ttfamily load(entries)}}}\label{a00924_autotoc_md1381}
+Reset the cache and load in the items in {\ttfamily entries} in the order listed. Note that the shape of the resulting cache may be different if the same options are not used in both caches.
+
+The {\ttfamily start} fields are assumed to be calculated relative to a portable {\ttfamily Date.\+now()} timestamp, even if {\ttfamily performance.\+now()} is available.\hypertarget{a00924_autotoc_md1382}{}\doxysubsubsection{\texorpdfstring{{\ttfamily purge\+Stale()}}{{\ttfamily purge\+Stale()}}}\label{a00924_autotoc_md1382}
+Delete any stale entries. Returns {\ttfamily true} if anything was removed, {\ttfamily false} otherwise.
+
+Deprecated alias\+: {\ttfamily prune}\hypertarget{a00924_autotoc_md1383}{}\doxysubsubsection{\texorpdfstring{{\ttfamily get\+Remaining\+TTL(key)}}{{\ttfamily get\+Remaining\+TTL(key)}}}\label{a00924_autotoc_md1383}
+Return the number of ms left in the item\textquotesingle{}s TTL. If item is not in cache, returns {\ttfamily 0}. Returns {\ttfamily Infinity} if item is in cache without a defined TTL.\hypertarget{a00924_autotoc_md1384}{}\doxysubsubsection{\texorpdfstring{{\ttfamily for\+Each(fn, \mbox{[}thisp\mbox{]})}}{{\ttfamily for\+Each(fn, \mbox{[}thisp\mbox{]})}}}\label{a00924_autotoc_md1384}
+Call the {\ttfamily fn} function with each set of {\ttfamily \doxylink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn(value, key, cache)}} in the LRU cache, from most recent to least recently used.
+
+Does not affect recency of use.
+
+If {\ttfamily thisp} is provided, function will be called in the {\ttfamily this}-\/context of the provided object.\hypertarget{a00924_autotoc_md1385}{}\doxysubsubsection{\texorpdfstring{{\ttfamily rfor\+Each(fn, \mbox{[}thisp\mbox{]})}}{{\ttfamily rfor\+Each(fn, \mbox{[}thisp\mbox{]})}}}\label{a00924_autotoc_md1385}
+Same as {\ttfamily cache.\+for\+Each(fn, thisp)}, but in order from least recently used to most recently used.\hypertarget{a00924_autotoc_md1386}{}\doxysubsubsection{\texorpdfstring{{\ttfamily pop()}}{{\ttfamily pop()}}}\label{a00924_autotoc_md1386}
+Evict the least recently used item, returning its value.
+
+Returns {\ttfamily undefined} if cache is empty.\hypertarget{a00924_autotoc_md1387}{}\doxysubsubsection{\texorpdfstring{Internal Methods and Properties}{Internal Methods and Properties}}\label{a00924_autotoc_md1387}
+In order to optimize performance as much as possible, "{}private"{} members and methods are exposed on the object as normal properties, rather than being accessed via Symbols, private members, or closure variables.
+
+{\bfseries{Do not use or rely on these.}} They will change or be removed without notice. They will cause undefined behavior if used inappropriately. There is no need or reason to ever call them directly.
+
+This documentation is here so that it is especially clear that this not "{}undocumented"{} because someone forgot; it {\itshape is} documented, and the documentation is telling you not to do it.
+
+{\bfseries{Do not report bugs that stem from using these properties.}} They will be ignored.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily initialize\+TTLTracking()} Set up the cache for tracking TTLs
+\item {\ttfamily update\+Item\+Age(index)} Called when an item age is updated, by internal ID
+\item {\ttfamily set\+Item\+TTL(index)} Called when an item ttl is updated, by internal ID
+\item {\ttfamily is\+Stale(index)} Called to check an item\textquotesingle{}s staleness, by internal ID
+\item {\ttfamily initialize\+Size\+Tracking()} Set up the cache for tracking item size. Called automatically when a size is specified.
+\item {\ttfamily remove\+Item\+Size(index)} Updates the internal size calculation when an item is removed or modified, by internal ID
+\item {\ttfamily add\+Item\+Size(index)} Updates the internal size calculation when an item is added or modified, by internal ID
+\item {\ttfamily indexes()} An iterator over the non-\/stale internal IDs, from most recently to least recently used.
+\item {\ttfamily rindexes()} An iterator over the non-\/stale internal IDs, from least recently to most recently used.
+\item {\ttfamily new\+Index()} Create a new internal ID, either reusing a deleted ID, evicting the least recently used ID, or walking to the end of the allotted space.
+\item {\ttfamily evict()} Evict the least recently used internal ID, returning its ID. Does not do any bounds checking.
+\item {\ttfamily \doxylink{a01267_ac090844dde4bb03e7cb30b907e52ce18_ac090844dde4bb03e7cb30b907e52ce18}{connect(p, n)}} Connect the {\ttfamily p} and {\ttfamily n} internal IDs in the linked list.
+\item {\ttfamily move\+To\+Tail(index)} Move the specified internal ID to the most recently used position.
+\item {\ttfamily key\+Map} Map of keys to internal IDs
+\item {\ttfamily key\+List} List of keys by internal ID
+\item {\ttfamily val\+List} List of values by internal ID
+\item {\ttfamily sizes} List of calculated sizes by internal ID
+\item {\ttfamily ttls} List of TTL values by internal ID
+\item {\ttfamily starts} List of start time values by internal ID
+\item {\ttfamily next} Array of "{}next"{} pointers by internal ID
+\item {\ttfamily prev} Array of "{}previous"{} pointers by internal ID
+\item {\ttfamily head} Internal ID of least recently used item
+\item {\ttfamily tail} Internal ID of most recently used item
+\item {\ttfamily free} Stack of deleted internal IDs
+\end{DoxyItemize}\hypertarget{a00924_autotoc_md1388}{}\doxysubsection{\texorpdfstring{Status Tracking}{Status Tracking}}\label{a00924_autotoc_md1388}
+Occasionally, it may be useful to track the internal behavior of the cache, particularly for logging, debugging, or for behavior within the {\ttfamily fetch\+Method}. To do this, you can pass a {\ttfamily status} object to the {\ttfamily \doxylink{a01138_a2f15642eb66f1058438a0c3373ba9fe4_a2f15642eb66f1058438a0c3373ba9fe4}{get()}}, {\ttfamily \doxylink{a00101_aea3662ebceec6f02ef3aec57683086a6_aea3662ebceec6f02ef3aec57683086a6}{set()}}, {\ttfamily \doxylink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{has()}}, and {\ttfamily fetch()} methods.
+
+The {\ttfamily status} option should be a plain Java\+Script object.
+
+The following fields will be set appropriately\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{interface\ Status<V>\ \{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ status\ of\ a\ set()\ operation.}
+\DoxyCodeLine{\ \ \ *}
+\DoxyCodeLine{\ \ \ *\ -\/\ add:\ the\ item\ was\ not\ found\ in\ the\ cache,\ and\ was\ added}
+\DoxyCodeLine{\ \ \ *\ -\/\ update:\ the\ item\ was\ in\ the\ cache,\ with\ the\ same\ value\ provided}
+\DoxyCodeLine{\ \ \ *\ -\/\ replace:\ the\ item\ was\ in\ the\ cache,\ and\ replaced}
+\DoxyCodeLine{\ \ \ *\ -\/\ miss:\ the\ item\ was\ not\ added\ to\ the\ cache\ for\ some\ reason}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ set?:\ 'add'\ |\ 'update'\ |\ 'replace'\ |\ 'miss'}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ the\ ttl\ stored\ for\ the\ item,\ or\ undefined\ if\ ttls\ are\ not\ used.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ ttl?:\ LRUMilliseconds}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ the\ start\ time\ for\ the\ item,\ or\ undefined\ if\ ttls\ are\ not\ used.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ start?:\ LRUMilliseconds}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ timestamp\ used\ for\ TTL\ calculation}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ now?:\ LRUMilliseconds}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ the\ remaining\ ttl\ for\ the\ item,\ or\ undefined\ if\ ttls\ are\ not\ used.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ remainingTTL?:\ LRUMilliseconds}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ calculated\ size\ for\ the\ item,\ if\ sizes\ are\ used.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ size?:\ LRUSize}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ A\ flag\ indicating\ that\ the\ item\ was\ not\ stored,\ due\ to\ exceeding\ the}
+\DoxyCodeLine{\ \ \ *\ \{@link\ maxEntrySize\}}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ maxEntrySizeExceeded?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ old\ value,\ specified\ in\ the\ case\ of\ \`{}set:'update'`\ or}
+\DoxyCodeLine{\ \ \ *\ \`{}set:'replace'`}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ oldValue?:\ V}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ results\ of\ a\ \{@link\ has\}\ operation}
+\DoxyCodeLine{\ \ \ *}
+\DoxyCodeLine{\ \ \ *\ -\/\ hit:\ the\ item\ was\ found\ in\ the\ cache}
+\DoxyCodeLine{\ \ \ *\ -\/\ stale:\ the\ item\ was\ found\ in\ the\ cache,\ but\ is\ stale}
+\DoxyCodeLine{\ \ \ *\ -\/\ miss:\ the\ item\ was\ not\ found\ in\ the\ cache}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ has?:\ 'hit'\ |\ 'stale'\ |\ 'miss'}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ status\ of\ a\ \{@link\ fetch\}\ operation.}
+\DoxyCodeLine{\ \ \ *\ Note\ that\ this\ can\ change\ as\ the\ underlying\ fetch()\ moves\ through}
+\DoxyCodeLine{\ \ \ *\ various\ states.}
+\DoxyCodeLine{\ \ \ *}
+\DoxyCodeLine{\ \ \ *\ -\/\ inflight:\ there\ is\ another\ fetch()\ for\ this\ key\ which\ is\ in\ process}
+\DoxyCodeLine{\ \ \ *\ -\/\ get:\ there\ is\ no\ fetchMethod,\ so\ \{@link\ get\}\ was\ called.}
+\DoxyCodeLine{\ \ \ *\ -\/\ miss:\ the\ item\ is\ not\ in\ cache,\ and\ will\ be\ fetched.}
+\DoxyCodeLine{\ \ \ *\ -\/\ hit:\ the\ item\ is\ in\ the\ cache,\ and\ was\ resolved\ immediately.}
+\DoxyCodeLine{\ \ \ *\ -\/\ stale:\ the\ item\ is\ in\ the\ cache,\ but\ stale.}
+\DoxyCodeLine{\ \ \ *\ -\/\ refresh:\ the\ item\ is\ in\ the\ cache,\ and\ not\ stale,\ but}
+\DoxyCodeLine{\ \ \ *\ \ \ \{@link\ forceRefresh\}\ was\ specified.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetch?:\ 'get'\ |\ 'inflight'\ |\ 'miss'\ |\ 'hit'\ |\ 'stale'\ |\ 'refresh'}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ \{@link\ fetchMethod\}\ was\ called}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchDispatched?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ cached\ value\ was\ updated\ after\ a\ successful\ call\ to\ fetchMethod}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchUpdated?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ reason\ for\ a\ fetch()\ rejection.\ \ Either\ the\ error\ raised\ by\ the}
+\DoxyCodeLine{\ \ \ *\ \{@link\ fetchMethod\},\ or\ the\ reason\ for\ an\ AbortSignal.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchError?:\ Error}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ fetch\ received\ an\ abort\ signal}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchAborted?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ abort\ signal\ received\ was\ ignored,\ and\ the\ fetch\ was\ allowed\ to}
+\DoxyCodeLine{\ \ \ *\ continue.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchAbortIgnored?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ fetchMethod\ promise\ resolved\ successfully}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchResolved?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ results\ of\ the\ fetchMethod\ promise\ were\ stored\ in\ the\ cache}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchUpdated?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ fetchMethod\ promise\ was\ rejected}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ fetchRejected?:\ true}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ The\ status\ of\ a\ \{@link\ get\}\ operation.}
+\DoxyCodeLine{\ \ \ *}
+\DoxyCodeLine{\ \ \ *\ -\/\ fetching:\ The\ item\ is\ currently\ being\ fetched.\ \ If\ a\ previous\ value\ is}
+\DoxyCodeLine{\ \ \ *\ \ \ present\ and\ allowed,\ that\ will\ be\ returned.}
+\DoxyCodeLine{\ \ \ *\ -\/\ stale:\ The\ item\ is\ in\ the\ cache,\ and\ is\ stale.}
+\DoxyCodeLine{\ \ \ *\ -\/\ hit:\ the\ item\ is\ in\ the\ cache}
+\DoxyCodeLine{\ \ \ *\ -\/\ miss:\ the\ item\ is\ not\ in\ the\ cache}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ get?:\ 'stale'\ |\ 'hit'\ |\ 'miss'}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ A\ fetch\ or\ get\ operation\ returned\ a\ stale\ value.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ returnedStale?:\ true}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{a00924_autotoc_md1389}{}\doxysubsection{\texorpdfstring{Storage Bounds Safety}{Storage Bounds Safety}}\label{a00924_autotoc_md1389}
+This implementation aims to be as flexible as possible, within the limits of safe memory consumption and optimal performance.
+
+At initial object creation, storage is allocated for {\ttfamily max} items. If {\ttfamily max} is set to zero, then some performance is lost, and item count is unbounded. Either {\ttfamily max\+Size} or {\ttfamily ttl} {\itshape must} be set if {\ttfamily max} is not specified.
+
+If {\ttfamily max\+Size} is set, then this creates a safe limit on the maximum storage consumed, but without the performance benefits of pre-\/allocation. When {\ttfamily max\+Size} is set, every item {\itshape must} provide a size, either via the {\ttfamily size\+Calculation} method provided to the constructor, or via a {\ttfamily size} or {\ttfamily size\+Calculation} option provided to {\ttfamily cache.\+set()}. The size of every item {\itshape must} be a positive integer.
+
+If neither {\ttfamily max} nor {\ttfamily max\+Size} are set, then {\ttfamily ttl} tracking must be enabled. Note that, even when tracking item {\ttfamily ttl}, items are {\itshape not} preemptively deleted when they become stale, unless {\ttfamily ttl\+Autopurge} is enabled. Instead, they are only purged the next time the key is requested. Thus, if {\ttfamily ttl\+Autopurge}, {\ttfamily max}, and {\ttfamily max\+Size} are all not set, then the cache will potentially grow unbounded.
+
+In this case, a warning is printed to standard error. Future versions may require the use of {\ttfamily ttl\+Autopurge} if {\ttfamily max} and {\ttfamily max\+Size} are not specified.
+
+If you truly wish to use a cache that is bound {\itshape only} by TTL expiration, consider using a {\ttfamily Map} object, and calling {\ttfamily set\+Timeout} to delete entries when they expire. It will perform much better than an LRU cache.
+
+Here is an implementation you may use, under the same \href{./LICENSE}{\texttt{ license}} as this package\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ a\ storage-\/unbounded\ ttl\ cache\ that\ is\ not\ an\ lru-\/cache}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ cache\ =\ \{}
+\DoxyCodeLine{\ \ data:\ \textcolor{keyword}{new}\ Map(),}
+\DoxyCodeLine{\ \ timers:\ \textcolor{keyword}{new}\ Map(),}
+\DoxyCodeLine{\ \ \textcolor{keyword}{set}:\ (k,\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}},\ ttl)\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (cache.timers.has(k))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ clearTimeout(cache.timers.get(k))}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cache.timers.set(}
+\DoxyCodeLine{\ \ \ \ \ \ k,}
+\DoxyCodeLine{\ \ \ \ \ \ setTimeout(()\ =>\ cache.delete(k),\ ttl)}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ cache.data.set(k,\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{\ \ \textcolor{keyword}{get}:\ k\ =>\ cache.data.get(k),}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a01840_a1fd59be22bbab6bc2baae116e333d914_a1fd59be22bbab6bc2baae116e333d914}{has}}:\ k\ =>\ cache.data.has(k),}
+\DoxyCodeLine{\ \ \textcolor{keyword}{delete}:\ k\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (cache.timers.has(k))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ clearTimeout(cache.timers.get(k))}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cache.timers.delete(k)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ cache.data.delete(k)}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a01138_ada0813535504f234c6343c1e7d07bf65_ada0813535504f234c6343c1e7d07bf65}{clear}}:\ ()\ =>\ \{}
+\DoxyCodeLine{\ \ \ \ cache.data.clear()}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}}\ of\ cache.timers.values())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ clearTimeout(\mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cache.timers.clear()}
+\DoxyCodeLine{\ \ \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+If that isn\textquotesingle{}t to your liking, check out \href{http://npm.im/@isaacs/ttlcache}{\texttt{ @isaacs/ttlcache}}.\hypertarget{a00924_autotoc_md1390}{}\doxysubsection{\texorpdfstring{Performance}{Performance}}\label{a00924_autotoc_md1390}
+As of January 2022, version 7 of this library is one of the most performant LRU cache implementations in Java\+Script.
+
+Benchmarks can be extremely difficult to get right. In particular, the performance of set/get/delete operations on objects will vary {\itshape wildly} depending on the type of key used. V8 is highly optimized for objects with keys that are short strings, especially integer numeric strings. Thus any benchmark which tests {\itshape solely} using numbers as keys will tend to find that an object-\/based approach performs the best.
+
+Note that coercing {\itshape anything} to strings to use as object keys is unsafe, unless you can be 100\% certain that no other type of value will be used. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ myCache\ =\ \{\}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{set}\ =\ (k,\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})\ =>\ (myCache[k]\ =\ \mbox{\hyperlink{a01114_afc3dd12de12777f6e20b4c93b7e7cb96_afc3dd12de12777f6e20b4c93b7e7cb96}{v}})}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{get}\ =\ k\ =>\ myCache[k]}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{set}(\{\},\ \textcolor{stringliteral}{'please\ hang\ onto\ this\ for\ me'})}
+\DoxyCodeLine{\textcolor{keyword}{set}(\textcolor{stringliteral}{'[object\ Object]'},\ \textcolor{stringliteral}{'oopsie'})}
+
+\end{DoxyCode}
+
+
+Also beware of "{}\+Just So"{} stories regarding performance. Garbage collection of large (especially\+: deep) object graphs can be incredibly costly, with several "{}tipping points"{} where it increases exponentially. As a result, putting that off until later can make it much worse, and less predictable. If a library performs well, but only in a scenario where the object graph is kept shallow, then that won\textquotesingle{}t help you if you are using large objects as keys.
+
+In general, when attempting to use a library to improve performance (such as a cache like this one), it\textquotesingle{}s best to choose an option that will perform well in the sorts of scenarios where you\textquotesingle{}ll actually use it.
+
+This library is optimized for repeated gets and minimizing eviction time, since that is the expected need of a LRU. Set operations are somewhat slower on average than a few other options, in part because of that optimization. It is assumed that you\textquotesingle{}ll be caching some costly operation, ideally as rarely as possible, so optimizing set over get would be unwise.
+
+If performance matters to you\+:
+
+
+\begin{DoxyEnumerate}
+\item If it\textquotesingle{}s at all possible to use small integer values as keys, and you can guarantee that no other types of values will be used as keys, then do that, and use a cache such as \href{https://npmjs.com/package/lru-fast}{\texttt{ lru-\/fast}}, or \href{https://yomguithereal.github.io/mnemonist/lru-cache}{\texttt{ mnemonist\textquotesingle{}s LRUCache}} which uses an Object as its data store.
+\item Failing that, if at all possible, use short non-\/numeric strings (ie, less than 256 characters) as your keys, and use \href{https://yomguithereal.github.io/mnemonist/lru-cache}{\texttt{ mnemonist\textquotesingle{}s LRUCache}}.
+\item If the types of your keys will be long strings, strings that look like floats, {\ttfamily null}, objects, or some mix of types, or if you aren\textquotesingle{}t sure, then this library will work well for you.
+\item Do not use a {\ttfamily dispose} function, size tracking, or especially ttl behavior, unless absolutely needed. These features are convenient, and necessary in some use cases, and every attempt has been made to make the performance impact minimal, but it isn\textquotesingle{}t nothing.
+\end{DoxyEnumerate}\hypertarget{a00924_autotoc_md1391}{}\doxysubsection{\texorpdfstring{Breaking Changes in Version 7}{Breaking Changes in Version 7}}\label{a00924_autotoc_md1391}
+This library changed to a different algorithm and internal data structure in version 7, yielding significantly better performance, albeit with some subtle changes as a result.
+
+If you were relying on the internals of LRUCache in version 6 or before, it probably will not work in version 7 and above.
+
+For more info, see the \doxylink{a01684}{change log}. 

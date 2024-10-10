@@ -1,0 +1,55 @@
+\doxysubsection{node\+\_\+modules/depd/lib/browser/index.js}
+\hypertarget{a01144_source}{}\label{a01144_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01144}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00014}00014\ module.exports\ =\ depd}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00020}00020\ \textcolor{keyword}{function}\ depd\ (\textcolor{keyword}{namespace})\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00021}00021\ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keyword}{namespace})\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ namespace\ is\ required'})}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00023}00023\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00025}00025\ \ \ \textcolor{keyword}{function}\ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}\ (message)\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ no-\/op\ in\ browser}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00027}00027\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00029}00029\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.\_file\ =\ \mbox{\hyperlink{a01198_a0b30f2887f0891ea5fed53d76282d2dc_a0b30f2887f0891ea5fed53d76282d2dc}{undefined}}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00030}00030\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.\_ignored\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00031}00031\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.\_namespace\ =\ \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00032}00032\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.\_traced\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00033}00033\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.\_warned\ =\ Object.create(\textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00035}00035\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.function\ =\ wrapfunction}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00036}00036\ \ \ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}.property\ =\ wrapproperty}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00038}00038\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00101_acfcd119b39526e732877a941ebeed620_acfcd119b39526e732877a941ebeed620}{deprecate}}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00048}00048\ \textcolor{keyword}{function}\ wrapfunction\ (\mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}},\ message)\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00049}00049\ \ \ \textcolor{keywordflow}{if}\ (typeof\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}\ !==\ \textcolor{stringliteral}{'function'})\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ fn\ must\ be\ a\ function'})}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00051}00051\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00053}00053\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00572_a2287243da4967181305b31f0ac827b66_a2287243da4967181305b31f0ac827b66}{fn}}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00063}00063\ \textcolor{keyword}{function}\ wrapproperty\ (\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ prop,\ message)\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ ||\ (typeof\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ !==\ \textcolor{stringliteral}{'object'}\ \&\&\ typeof\ \mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}}\ !==\ \textcolor{stringliteral}{'function'}))\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'argument\ obj\ must\ be\ object'})}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00066}00066\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00068}00068\ \ \ var\ descriptor\ =\ Object.getOwnPropertyDescriptor(\mbox{\hyperlink{a00422_ab15a7ef94ea648e0a722a49372614731_ab15a7ef94ea648e0a722a49372614731}{obj}},\ prop)}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00070}00070\ \ \ \textcolor{keywordflow}{if}\ (!descriptor)\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'must\ call\ property\ on\ owner\ object'})}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00072}00072\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a01144_source_l00074}00074\ \ \ \textcolor{keywordflow}{if}\ (!descriptor.configurable)\ \{}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ TypeError(\textcolor{stringliteral}{'property\ must\ be\ configurable'})}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00076}00076\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01144_source_l00077}00077\ \}}
+
+\end{DoxyCode}

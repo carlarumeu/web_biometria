@@ -1,0 +1,198 @@
+\doxysubsection{Referencia del archivo caching\+\_\+sha2\+\_\+password.\+js}
+\hypertarget{a00227}{}\label{a00227}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a00227_aaa767b226161720146172237fa7f8d58_aaa767b226161720146172237fa7f8d58}{sha256}} (msg)
+\item 
+function \mbox{\hyperlink{a00227_ac035765c896dc14b3056b2fa93f1a85d_ac035765c896dc14b3056b2fa93f1a85d}{calculate\+Token}} (password, scramble)
+\item 
+function \mbox{\hyperlink{a00227_ad1f75d2d9eb08fff8577daddb0786d0c_ad1f75d2d9eb08fff8577daddb0786d0c}{encrypt}} (password, scramble, key)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a00227_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_acbb4c5f02ab36e356c3b3f65f566161b_acbb4c5f02ab36e356c3b3f65f566161b}{PLUGIN\+\_\+\+NAME}} = \textquotesingle{}\mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{caching\+\_\+sha2\+\_\+password}}\textquotesingle{}
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}{crypto}} = require(\textquotesingle{}crypto\textquotesingle{})
+\item 
+\mbox{\hyperlink{a00227_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}{const}} \{ \mbox{\hyperlink{a01237_a57a7f84d7a6445fc4bcc479225c29be3_a57a7f84d7a6445fc4bcc479225c29be3}{xor}}, \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xor\+Rotating}} \} = require(\textquotesingle{}../auth\+\_\+41\textquotesingle{})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_a319d128b24a5994b40f78c67db00c188_a319d128b24a5994b40f78c67db00c188}{REQUEST\+\_\+\+SERVER\+\_\+\+KEY\+\_\+\+PACKET}} = Buffer.\+from(\mbox{[}2\mbox{]})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_af7723805342833b8c1108ad170253619_af7723805342833b8c1108ad170253619}{FAST\+\_\+\+AUTH\+\_\+\+SUCCESS\+\_\+\+PACKET}} = Buffer.\+from(\mbox{[}3\mbox{]})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_a5f3a572f109ee857ce6daa9da0e2eb32_a5f3a572f109ee857ce6daa9da0e2eb32}{PERFORM\+\_\+\+FULL\+\_\+\+AUTHENTICATION\+\_\+\+PACKET}} = Buffer.\+from(\mbox{[}4\mbox{]})
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_a1f518cafe6895a42e3bbe2640cb3e559_a1f518cafe6895a42e3bbe2640cb3e559}{STATE\+\_\+\+INITIAL}} = 0
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_ac9ebcc8d8938964c42a1961cc7d472c5_ac9ebcc8d8938964c42a1961cc7d472c5}{STATE\+\_\+\+TOKEN\+\_\+\+SENT}} = 1
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_a11cede967da32d9bed2ac84cbd1cc028_a11cede967da32d9bed2ac84cbd1cc028}{STATE\+\_\+\+WAIT\+\_\+\+SERVER\+\_\+\+KEY}} = 2
+\item 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} \mbox{\hyperlink{a00227_acab7a117dcfa84c44d74d30ebe3444ea_acab7a117dcfa84c44d74d30ebe3444ea}{STATE\+\_\+\+FINAL}} = -\/1
+\item 
+module \mbox{\hyperlink{a00227_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a00227_ac035765c896dc14b3056b2fa93f1a85d_ac035765c896dc14b3056b2fa93f1a85d}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!calculateToken@{calculateToken}}
+\index{calculateToken@{calculateToken}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{calculateToken()}{calculateToken()}}
+{\footnotesize\ttfamily \label{a00227_ac035765c896dc14b3056b2fa93f1a85d_ac035765c896dc14b3056b2fa93f1a85d} 
+function calculate\+Token (\begin{DoxyParamCaption}\item[{}]{password}{, }\item[{}]{scramble}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00024}{24}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 0
+\Hypertarget{a00227_ad1f75d2d9eb08fff8577daddb0786d0c_ad1f75d2d9eb08fff8577daddb0786d0c}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \label{a00227_ad1f75d2d9eb08fff8577daddb0786d0c_ad1f75d2d9eb08fff8577daddb0786d0c} 
+function encrypt (\begin{DoxyParamCaption}\item[{}]{password}{, }\item[{}]{scramble}{, }\item[{}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00034}{34}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_aaa767b226161720146172237fa7f8d58_aaa767b226161720146172237fa7f8d58}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!sha256@{sha256}}
+\index{sha256@{sha256}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{sha256()}{sha256()}}
+{\footnotesize\ttfamily \label{a00227_aaa767b226161720146172237fa7f8d58_aaa767b226161720146172237fa7f8d58} 
+function sha256 (\begin{DoxyParamCaption}\item[{}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00018}{18}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a00227_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!const@{const}}
+\index{const@{const}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{const}{const}}
+{\footnotesize\ttfamily \label{a00227_a92b303b76a3f942ea819498907d5e83c_a92b303b76a3f942ea819498907d5e83c} 
+const \{ \mbox{\hyperlink{a01237_a57a7f84d7a6445fc4bcc479225c29be3_a57a7f84d7a6445fc4bcc479225c29be3}{xor}}, \mbox{\hyperlink{a00224_ab8e1d34fb39e74004156ceda02ba7b55_ab8e1d34fb39e74004156ceda02ba7b55}{xor\+Rotating}} \} = require(\textquotesingle{}../auth\+\_\+41\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00007}{7}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!crypto@{crypto}}
+\index{crypto@{crypto}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{crypto}{crypto}}
+{\footnotesize\ttfamily \label{a00227_a44d29f599486b46f8b3f74e5ff5e8b94_a44d29f599486b46f8b3f74e5ff5e8b94} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} crypto = require(\textquotesingle{}crypto\textquotesingle{})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00006}{6}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!exports@{exports}}
+\index{exports@{exports}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a00227_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00045}{45}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_af7723805342833b8c1108ad170253619_af7723805342833b8c1108ad170253619}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!FAST\_AUTH\_SUCCESS\_PACKET@{FAST\_AUTH\_SUCCESS\_PACKET}}
+\index{FAST\_AUTH\_SUCCESS\_PACKET@{FAST\_AUTH\_SUCCESS\_PACKET}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{FAST\_AUTH\_SUCCESS\_PACKET}{FAST\_AUTH\_SUCCESS\_PACKET}}
+{\footnotesize\ttfamily \label{a00227_af7723805342833b8c1108ad170253619_af7723805342833b8c1108ad170253619} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} FAST\+\_\+\+AUTH\+\_\+\+SUCCESS\+\_\+\+PACKET = Buffer.\+from(\mbox{[}3\mbox{]})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00010}{10}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_a5f3a572f109ee857ce6daa9da0e2eb32_a5f3a572f109ee857ce6daa9da0e2eb32}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!PERFORM\_FULL\_AUTHENTICATION\_PACKET@{PERFORM\_FULL\_AUTHENTICATION\_PACKET}}
+\index{PERFORM\_FULL\_AUTHENTICATION\_PACKET@{PERFORM\_FULL\_AUTHENTICATION\_PACKET}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{PERFORM\_FULL\_AUTHENTICATION\_PACKET}{PERFORM\_FULL\_AUTHENTICATION\_PACKET}}
+{\footnotesize\ttfamily \label{a00227_a5f3a572f109ee857ce6daa9da0e2eb32_a5f3a572f109ee857ce6daa9da0e2eb32} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} PERFORM\+\_\+\+FULL\+\_\+\+AUTHENTICATION\+\_\+\+PACKET = Buffer.\+from(\mbox{[}4\mbox{]})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00011}{11}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_acbb4c5f02ab36e356c3b3f65f566161b_acbb4c5f02ab36e356c3b3f65f566161b}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!PLUGIN\_NAME@{PLUGIN\_NAME}}
+\index{PLUGIN\_NAME@{PLUGIN\_NAME}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{PLUGIN\_NAME}{PLUGIN\_NAME}}
+{\footnotesize\ttfamily \label{a00227_acbb4c5f02ab36e356c3b3f65f566161b_acbb4c5f02ab36e356c3b3f65f566161b} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} PLUGIN\+\_\+\+NAME = \textquotesingle{}\mbox{\hyperlink{a00242_a8185faa00a3b0bbc119feb053aaf5484_a8185faa00a3b0bbc119feb053aaf5484}{caching\+\_\+sha2\+\_\+password}}\textquotesingle{}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00005}{5}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_a319d128b24a5994b40f78c67db00c188_a319d128b24a5994b40f78c67db00c188}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!REQUEST\_SERVER\_KEY\_PACKET@{REQUEST\_SERVER\_KEY\_PACKET}}
+\index{REQUEST\_SERVER\_KEY\_PACKET@{REQUEST\_SERVER\_KEY\_PACKET}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{REQUEST\_SERVER\_KEY\_PACKET}{REQUEST\_SERVER\_KEY\_PACKET}}
+{\footnotesize\ttfamily \label{a00227_a319d128b24a5994b40f78c67db00c188_a319d128b24a5994b40f78c67db00c188} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} REQUEST\+\_\+\+SERVER\+\_\+\+KEY\+\_\+\+PACKET = Buffer.\+from(\mbox{[}2\mbox{]})}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00009}{9}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_acab7a117dcfa84c44d74d30ebe3444ea_acab7a117dcfa84c44d74d30ebe3444ea}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!STATE\_FINAL@{STATE\_FINAL}}
+\index{STATE\_FINAL@{STATE\_FINAL}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_FINAL}{STATE\_FINAL}}
+{\footnotesize\ttfamily \label{a00227_acab7a117dcfa84c44d74d30ebe3444ea_acab7a117dcfa84c44d74d30ebe3444ea} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+FINAL = -\/1}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00016}{16}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_a1f518cafe6895a42e3bbe2640cb3e559_a1f518cafe6895a42e3bbe2640cb3e559}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!STATE\_INITIAL@{STATE\_INITIAL}}
+\index{STATE\_INITIAL@{STATE\_INITIAL}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_INITIAL}{STATE\_INITIAL}}
+{\footnotesize\ttfamily \label{a00227_a1f518cafe6895a42e3bbe2640cb3e559_a1f518cafe6895a42e3bbe2640cb3e559} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+INITIAL = 0}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00013}{13}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_ac9ebcc8d8938964c42a1961cc7d472c5_ac9ebcc8d8938964c42a1961cc7d472c5}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!STATE\_TOKEN\_SENT@{STATE\_TOKEN\_SENT}}
+\index{STATE\_TOKEN\_SENT@{STATE\_TOKEN\_SENT}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_TOKEN\_SENT}{STATE\_TOKEN\_SENT}}
+{\footnotesize\ttfamily \label{a00227_ac9ebcc8d8938964c42a1961cc7d472c5_ac9ebcc8d8938964c42a1961cc7d472c5} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+TOKEN\+\_\+\+SENT = 1}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00014}{14}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_a11cede967da32d9bed2ac84cbd1cc028_a11cede967da32d9bed2ac84cbd1cc028}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!STATE\_WAIT\_SERVER\_KEY@{STATE\_WAIT\_SERVER\_KEY}}
+\index{STATE\_WAIT\_SERVER\_KEY@{STATE\_WAIT\_SERVER\_KEY}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{STATE\_WAIT\_SERVER\_KEY}{STATE\_WAIT\_SERVER\_KEY}}
+{\footnotesize\ttfamily \label{a00227_a11cede967da32d9bed2ac84cbd1cc028_a11cede967da32d9bed2ac84cbd1cc028} 
+\mbox{\hyperlink{a01195_a170ccbec74a0565bcf6e232ec10ad9e5_a170ccbec74a0565bcf6e232ec10ad9e5}{const}} STATE\+\_\+\+WAIT\+\_\+\+SERVER\+\_\+\+KEY = 2}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00015}{15}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+
+\Hypertarget{a00227_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{caching\_sha2\_password.js@{caching\_sha2\_password.js}!strict@{strict}}
+\index{strict@{strict}!caching\_sha2\_password.js@{caching\_sha2\_password.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a00227_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+Definición en la línea \mbox{\hyperlink{a00227_source_l00001}{1}} del archivo \mbox{\hyperlink{a00227_source}{caching\+\_\+sha2\+\_\+password.\+js}}.
+

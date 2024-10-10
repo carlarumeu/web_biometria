@@ -1,0 +1,110 @@
+\doxysubsection{node\+\_\+modules/vary/index.js}
+\hypertarget{a01366_source}{}\label{a01366_source}\index{index.js@{index.js}}
+\mbox{\hyperlink{a01366}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00007}00007\ \textcolor{stringliteral}{'use\ strict'}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00013}00013\ module.exports\ =\ \mbox{\hyperlink{a00116_a2222d7dc84a3b14edb06515136c7d0a5_a2222d7dc84a3b14edb06515136c7d0a5}{vary}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00014}00014\ module.exports.append\ =\ \mbox{\hyperlink{a00116_aede1a69131b6dbb6ab0e780de1023f50_aede1a69131b6dbb6ab0e780de1023f50}{append}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00027}00027\ var\ FIELD\_NAME\_REGEXP\ =\ /\string^[!\#\$\%\&\textcolor{stringliteral}{'*+\(\backslash\)-\/.\string^\_`|\string~0-\/9A-\/Za-\/z]+\$/}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00028}00028\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00038}00038\ function\ append\ (header,\ field)\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00039}00039\ \ \ if\ (typeof\ header\ !==\ '\textcolor{keywordtype}{string}\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00040}00040\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}header\ argument\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ required\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00041}00041\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00042}00042\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00043}00043\ \textcolor{stringliteral}{\ \ if\ (!field)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00044}00044\ \textcolor{stringliteral}{\ \ \ \ throw\ new\ TypeError('}field\ argument\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ required\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00045}00045\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00046}00046\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00047}00047\ \textcolor{stringliteral}{\ \ //\ get\ fields\ array}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00048}00048\ \textcolor{stringliteral}{\ \ var\ fields\ =\ !Array.isArray(field)}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00049}00049\ \textcolor{stringliteral}{\ \ \ \ ?\ parse(String(field))}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00050}00050\ \textcolor{stringliteral}{\ \ \ \ :\ field}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00051}00051\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00052}00052\ \textcolor{stringliteral}{\ \ //\ assert\ on\ invalid\ field\ names}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00053}00053\ \textcolor{stringliteral}{\ \ for\ (var\ j\ =\ 0;\ j\ <\ fields.length;\ j++)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00054}00054\ \textcolor{stringliteral}{\ \ \ \ if\ (!FIELD\_NAME\_REGEXP.test(fields[j]))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00055}00055\ \textcolor{stringliteral}{\ \ \ \ \ \ throw\ new\ TypeError('}field\ argument\ contains\ an\ invalid\ header\ name\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00056}00056\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00057}00057\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00058}00058\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00059}00059\ \textcolor{stringliteral}{\ \ //\ existing,\ unspecified\ vary}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00060}00060\ \textcolor{stringliteral}{\ \ if\ (header\ ===\ '}*\textcolor{stringliteral}{')\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00061}00061\ \textcolor{stringliteral}{\ \ \ \ return\ header}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00062}00062\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00063}00063\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00064}00064\ \textcolor{stringliteral}{\ \ //\ enumerate\ current\ values}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00065}00065\ \textcolor{stringliteral}{\ \ var\ val\ =\ header}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00066}00066\ \textcolor{stringliteral}{\ \ var\ vals\ =\ parse(header.toLowerCase())}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00067}00067\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00068}00068\ \textcolor{stringliteral}{\ \ //\ unspecified\ vary}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00069}00069\ \textcolor{stringliteral}{\ \ if\ (fields.indexOf('}*\textcolor{stringliteral}{')\ !==\ -\/1\ ||\ vals.indexOf('}*\textcolor{stringliteral}{')\ !==\ -\/1)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00070}00070\ \textcolor{stringliteral}{\ \ \ \ return\ '}*\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00071}00071\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00072}00072\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00073}00073\ \textcolor{stringliteral}{\ \ for\ (var\ i\ =\ 0;\ i\ <\ fields.length;\ i++)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00074}00074\ \textcolor{stringliteral}{\ \ \ \ var\ fld\ =\ fields[i].toLowerCase()}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00075}00075\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00076}00076\ \textcolor{stringliteral}{\ \ \ \ //\ append\ value\ (case-\/preserving)}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00077}00077\ \textcolor{stringliteral}{\ \ \ \ if\ (vals.indexOf(fld)\ ===\ -\/1)\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00078}00078\ \textcolor{stringliteral}{\ \ \ \ \ \ vals.push(fld)}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00079}00079\ \textcolor{stringliteral}{\ \ \ \ \ \ val\ =\ val}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00080}00080\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ ?\ val\ +\ '},\ \textcolor{stringliteral}{'\ +\ fields[i]}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00081}00081\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ :\ fields[i]}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00082}00082\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00083}00083\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00084}00084\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00085}00085\ \textcolor{stringliteral}{\ \ return\ val}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00086}00086\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00087}00087\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00096}00096\ function\ parse\ (header)\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00097}00097\ \ \ var\ end\ =\ 0}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00098}00098\ \ \ var\ list\ =\ []}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00099}00099\ \ \ var\ start\ =\ 0}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00101}00101\ \ \ //\ gather\ tokens}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00102}00102\ \ \ for\ (var\ i\ =\ 0,\ len\ =\ header.length;\ i\ <\ len;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00103}00103\ \ \ \ \ switch\ (header.charCodeAt(i))\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00104}00104\ \ \ \ \ \ \ case\ 0x20:\ /*\ \ \ */}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00105}00105\ \ \ \ \ \ \ \ \ if\ (start\ ===\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ start\ =\ end\ =\ i\ +\ 1}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00108}00108\ \ \ \ \ \ \ \ \ break}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00109}00109\ \ \ \ \ \ \ case\ 0x2c:\ /*\ ,\ */}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00110}00110\ \ \ \ \ \ \ \ \ list.push(header.substring(start,\ end))}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00111}00111\ \ \ \ \ \ \ \ \ start\ =\ end\ =\ i\ +\ 1}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00112}00112\ \ \ \ \ \ \ \ \ break}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00113}00113\ \ \ \ \ \ \ default:}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00114}00114\ \ \ \ \ \ \ \ \ end\ =\ i\ +\ 1}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00115}00115\ \ \ \ \ \ \ \ \ break}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00117}00117\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00119}00119\ \ \ //\ final\ token}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00120}00120\ \ \ list.push(header.substring(start,\ end))}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00122}00122\ \ \ return\ list}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{a01366_source_l00133}00133\ function\ vary\ (res,\ field)\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00134}00134\ \ \ if\ (!res\ ||\ !res.getHeader\ ||\ !res.setHeader)\ \{}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00135}00135\ \ \ \ \ //\ quack\ quack}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00136}00136\ \ \ \ \ throw\ new\ TypeError('\mbox{\hyperlink{a00104_abde3c35e3bb7e5225dd7f234c685329c_abde3c35e3bb7e5225dd7f234c685329c}{res}}\ argument\ \mbox{\hyperlink{a00113_a5e3afd97276cc403924d1a449a83ea84_a5e3afd97276cc403924d1a449a83ea84}{is}}\ required\textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00137}00137\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00138}00138\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00139}00139\ \textcolor{stringliteral}{\ \ //\ get\ existing\ header}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00140}00140\ \textcolor{stringliteral}{\ \ var\ val\ =\ res.getHeader('}Vary\textcolor{stringliteral}{')\ ||\ '}\textcolor{stringliteral}{'}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00141}00141\ \textcolor{stringliteral}{\ \ var\ header\ =\ Array.isArray(val)}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00142}00142\ \textcolor{stringliteral}{\ \ \ \ ?\ val.join('},\ \textcolor{stringliteral}{')}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00143}00143\ \textcolor{stringliteral}{\ \ \ \ :\ String(val)}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00144}00144\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00145}00145\ \textcolor{stringliteral}{\ \ //\ set\ new\ header}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00146}00146\ \textcolor{stringliteral}{\ \ if\ ((val\ =\ append(header,\ field)))\ \{}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00147}00147\ \textcolor{stringliteral}{\ \ \ \ res.setHeader('}Vary\textcolor{stringliteral}{',\ val)}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00148}00148\ \textcolor{stringliteral}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{a01366_source_l00149}00149\ \textcolor{stringliteral}{\}}}
+
+\end{DoxyCode}

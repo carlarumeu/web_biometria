@@ -1,0 +1,21 @@
+\doxysubsection{has.\+js}
+\hypertarget{a00458_source}{}\label{a00458_source}\index{has.js@{has.js}}
+\mbox{\hyperlink{a00458}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00001}\mbox{\hyperlink{a00458_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{00001}}\ \textcolor{stringliteral}{'use\ strict'};}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a00458_source_l00003}\mbox{\hyperlink{a00458_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{00003}}\ var\ \mbox{\hyperlink{a00458_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}\ =\ require(\textcolor{stringliteral}{'../'});}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00004}\mbox{\hyperlink{a00458_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{00004}}\ var\ \mbox{\hyperlink{a00458_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}\ =\ require(\textcolor{stringliteral}{'tape'});}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00005}\mbox{\hyperlink{a00458_a664e99f1d4de30c703cc1829247ba3c4_a664e99f1d4de30c703cc1829247ba3c4}{00005}}\ var\ \mbox{\hyperlink{a00458_a664e99f1d4de30c703cc1829247ba3c4_a664e99f1d4de30c703cc1829247ba3c4}{mockProperty}}\ =\ require(\textcolor{stringliteral}{'mock-\/property'});}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{a00458_source_l00007}00007\ \mbox{\hyperlink{a00458_a3a897d91c374db023efd4ed28e633ade_a3a897d91c374db023efd4ed28e633ade}{test}}(\textcolor{stringliteral}{'when\ Object\#hasOwnProperty\ is\ deleted'},\ \textcolor{keyword}{function}\ (\mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}})\ \{}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.plan(1);}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00009}00009\ \ \ \ \ var\ arr\ =\ [1,\ ,\ 3];\ \textcolor{comment}{//\ eslint-\/disable-\/line\ no-\/sparse-\/arrays}}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a00458_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.teardown(\mbox{\hyperlink{a00458_a664e99f1d4de30c703cc1829247ba3c4_a664e99f1d4de30c703cc1829247ba3c4}{mockProperty}}(Array.prototype,\ 1,\ \{\ value:\ 2\ \}));\ \textcolor{comment}{//\ this\ is\ needed\ to\ account\ for\ "{}in"{}\ vs\ "{}hasOwnProperty"{}}}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.teardown(\mbox{\hyperlink{a00458_a664e99f1d4de30c703cc1829247ba3c4_a664e99f1d4de30c703cc1829247ba3c4}{mockProperty}}(Object.prototype,\ \textcolor{stringliteral}{'hasOwnProperty'},\ \{\ \textcolor{stringliteral}{'delete'}:\ true\ \}));}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{a00458_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{a00197_a23c5666e83bbbceee94adcd0851f50c4_a23c5666e83bbbceee94adcd0851f50c4}{t}}.equal(\mbox{\hyperlink{a00458_ada233bc1a09b3d9309abcd7d4a0baebe_ada233bc1a09b3d9309abcd7d4a0baebe}{inspect}}(arr),\ \textcolor{stringliteral}{'[\ 1,\ ,\ 3\ ]'});}
+\DoxyCodeLine{\Hypertarget{a00458_source_l00015}00015\ \});}
+
+\end{DoxyCode}

@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacion WEB: Archivo de código fuente medicionService.js</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentacion WEB<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/daa/a00638_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">medicionService.js</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/daa/a00638.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="../../d1/daa/a00638_aa10fb6863dca783341cf3ea63763a6fa.html#aa10fb6863dca783341cf3ea63763a6fa">    1</a></span><span class="keyword">import</span> <a class="code hl_variable" href="../../db/d44/a00533_a6292ea809b7ad5ee57995c471d3aaa0d.html#a6292ea809b7ad5ee57995c471d3aaa0d">pool</a> from <span class="stringliteral">&#39;../config/db.js&#39;</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Obtener mediciones con filtros opcionales</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d1/daa/a00638_a5584509a73694d908bebf97464c0c255.html#a5584509a73694d908bebf97464c0c255">   19</a></span><a class="code hl_variable" href="../../d8/df3/a01195_a0c82af93735dc153158c065171f9ee0f.html#a0c82af93735dc153158c065171f9ee0f">export</a> <span class="keyword">const</span> <a class="code hl_variable" href="../../d1/daa/a00638_a5584509a73694d908bebf97464c0c255.html#a5584509a73694d908bebf97464c0c255">obtenerMediciones</a> = async (lugar, tipo_gas, desde_hora, hasta_hora) =&gt; {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_variable" href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a> <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> = <span class="stringliteral">&#39;SELECT * FROM mediciones WHERE 1=1&#39;</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">const</span> params = [];</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">if</span> (lugar) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> += <span class="stringliteral">&#39; AND lugar = ?&#39;</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    params.push(lugar);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">if</span> (tipo_gas) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> += <span class="stringliteral">&#39; AND tipo_gas = ?&#39;</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    params.push(tipo_gas);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordflow">if</span> (desde_hora) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> += <span class="stringliteral">&#39; AND hora &gt;= ?&#39;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    params.push(desde_hora);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">if</span> (hasta_hora) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> += <span class="stringliteral">&#39; AND hora &lt;= ?&#39;</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    params.push(hasta_hora);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">const</span> [rows] = <a class="code hl_variable" href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a> <a class="code hl_variable" href="../../db/d44/a00533_a6292ea809b7ad5ee57995c471d3aaa0d.html#a6292ea809b7ad5ee57995c471d3aaa0d">pool</a>.query(<a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>, params);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">return</span> rows;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// Crear nueva medición</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d1/daa/a00638_af1e046d467b6f02e2699fc8e3ba539aa.html#af1e046d467b6f02e2699fc8e3ba539aa">   61</a></span><a class="code hl_variable" href="../../d8/df3/a01195_a0c82af93735dc153158c065171f9ee0f.html#a0c82af93735dc153158c065171f9ee0f">export</a> <span class="keyword">const</span> <a class="code hl_variable" href="../../d1/daa/a00638_af1e046d467b6f02e2699fc8e3ba539aa.html#af1e046d467b6f02e2699fc8e3ba539aa">enviarMedicion</a> = async (medicion) =&gt; {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">const</span> { medida, lugar, tipo_gas, hora } = medicion;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">const</span> <a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a> = <span class="stringliteral">&#39;INSERT INTO mediciones (medida, lugar, tipo_gas, hora) VALUES (?, ?, ?, ?)&#39;</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_variable" href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a> <a class="code hl_variable" href="../../db/d44/a00533_a6292ea809b7ad5ee57995c471d3aaa0d.html#a6292ea809b7ad5ee57995c471d3aaa0d">pool</a>.query(<a class="code hl_variable" href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a>, [medida, lugar, tipo_gas, hora]);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">// Obtener la última medición</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d1/daa/a00638_a9e697b665d6ba0ad8418337fe2a2d91a.html#a9e697b665d6ba0ad8418337fe2a2d91a">   75</a></span><a class="code hl_variable" href="../../d8/df3/a01195_a0c82af93735dc153158c065171f9ee0f.html#a0c82af93735dc153158c065171f9ee0f">export</a> <span class="keyword">const</span> <a class="code hl_variable" href="../../d1/daa/a00638_a9e697b665d6ba0ad8418337fe2a2d91a.html#a9e697b665d6ba0ad8418337fe2a2d91a">obtenerUltimaMedicion</a> = async () =&gt; {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">const</span> [rows] = <a class="code hl_variable" href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a> <a class="code hl_variable" href="../../db/d44/a00533_a6292ea809b7ad5ee57995c471d3aaa0d.html#a6292ea809b7ad5ee57995c471d3aaa0d">pool</a>.query(<span class="stringliteral">&#39;SELECT * FROM mediciones ORDER BY hora DESC LIMIT 1&#39;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordflow">return</span> rows[0];</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+</div>
+<div class="ttc" id="aa00101_a3934419f0f9a2068c705a0013b77fab3_html_a3934419f0f9a2068c705a0013b77fab3"><div class="ttname"><a href="../../d4/d3a/a00101_a3934419f0f9a2068c705a0013b77fab3.html#a3934419f0f9a2068c705a0013b77fab3">query</a></div><div class="ttdeci">var query</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d3a/a00101_source.html#l00020">application.js:20</a></div></div>
+<div class="ttc" id="aa00533_a6292ea809b7ad5ee57995c471d3aaa0d_html_a6292ea809b7ad5ee57995c471d3aaa0d"><div class="ttname"><a href="../../db/d44/a00533_a6292ea809b7ad5ee57995c471d3aaa0d.html#a6292ea809b7ad5ee57995c471d3aaa0d">pool</a></div><div class="ttdeci">const pool</div><div class="ttdoc">@const {Pool} pool @description Pool de conexiones para la base de datos MySQL.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d44/a00533_source.html#l00019">db.js:19</a></div></div>
+<div class="ttc" id="aa00638_a5584509a73694d908bebf97464c0c255_html_a5584509a73694d908bebf97464c0c255"><div class="ttname"><a href="../../d1/daa/a00638_a5584509a73694d908bebf97464c0c255.html#a5584509a73694d908bebf97464c0c255">obtenerMediciones</a></div><div class="ttdeci">export const obtenerMediciones</div><div class="ttdoc">@function obtenerMediciones @async</div><div class="ttdef"><b>Definition</b> <a href="#l00019">medicionService.js:19</a></div></div>
+<div class="ttc" id="aa00638_a9e697b665d6ba0ad8418337fe2a2d91a_html_a9e697b665d6ba0ad8418337fe2a2d91a"><div class="ttname"><a href="../../d1/daa/a00638_a9e697b665d6ba0ad8418337fe2a2d91a.html#a9e697b665d6ba0ad8418337fe2a2d91a">obtenerUltimaMedicion</a></div><div class="ttdeci">export const obtenerUltimaMedicion</div><div class="ttdoc">@function obtenerUltimaMedicion @async</div><div class="ttdef"><b>Definition</b> <a href="#l00075">medicionService.js:75</a></div></div>
+<div class="ttc" id="aa00638_af1e046d467b6f02e2699fc8e3ba539aa_html_af1e046d467b6f02e2699fc8e3ba539aa"><div class="ttname"><a href="../../d1/daa/a00638_af1e046d467b6f02e2699fc8e3ba539aa.html#af1e046d467b6f02e2699fc8e3ba539aa">enviarMedicion</a></div><div class="ttdeci">export const enviarMedicion</div><div class="ttdoc">@function enviarMedicion @async</div><div class="ttdef"><b>Definition</b> <a href="#l00061">medicionService.js:61</a></div></div>
+<div class="ttc" id="aa01195_a0c82af93735dc153158c065171f9ee0f_html_a0c82af93735dc153158c065171f9ee0f"><div class="ttname"><a href="../../d8/df3/a01195_a0c82af93735dc153158c065171f9ee0f.html#a0c82af93735dc153158c065171f9ee0f">export</a></div><div class="ttdeci">var export</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00037">node_modules/generate-function/index.js:37</a></div></div>
+<div class="ttc" id="aa01195_a222943fe334ed72f2374717e19f6eba9_html_a222943fe334ed72f2374717e19f6eba9"><div class="ttname"><a href="../../d8/df3/a01195_a222943fe334ed72f2374717e19f6eba9.html#a222943fe334ed72f2374717e19f6eba9">await</a></div><div class="ttdeci">var await</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00026">node_modules/generate-function/index.js:26</a></div></div>
+<div class="ttc" id="aa01195_a7bd288ed1cf6b1bfeff2c339b7b90df4_html_a7bd288ed1cf6b1bfeff2c339b7b90df4"><div class="ttname"><a href="../../d8/df3/a01195_a7bd288ed1cf6b1bfeff2c339b7b90df4.html#a7bd288ed1cf6b1bfeff2c339b7b90df4">let</a></div><div class="ttdeci">var let</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/a01195_source.html#l00013">node_modules/generate-function/index.js:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_40c0e1ecd8e4b194bb8c696ccb7ed8b9.html">biometria</a></li><li class="navelem"><a class="el" href="../../dir_155199a24025cbc1cd0f0aa3da1e6731.html">NODEJS-MYSQL-DOCKER</a></li><li class="navelem"><a class="el" href="../../dir_4461b9bc08d28c5b8611b93481ad6b82.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2027a38ed8a743f66be9c8f09216b1d0.html">services</a></li><li class="navelem"><a class="el" href="../../d1/daa/a00638.html">medicionService.js</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

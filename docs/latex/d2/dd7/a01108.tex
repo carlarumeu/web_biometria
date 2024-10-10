@@ -1,0 +1,208 @@
+\doxysubsection{Referencia del archivo node\+\_\+modules/bytes/index.js}
+\hypertarget{a01108}{}\label{a01108}\index{index.js@{index.js}}
+\doxysubsubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}, options)
+\begin{DoxyCompactList}\small\item\em Convert the given value in bytes into a string or parse to string to an integer in bytes. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01108_abe609f6530a12306839787778f9f0a09_abe609f6530a12306839787778f9f0a09}{format}} (\mbox{\hyperlink{a01198_aacce635d68067370c70caa2381ea1040_aacce635d68067370c70caa2381ea1040}{value}}, options)
+\begin{DoxyCompactList}\small\item\em Format the given value in bytes into a string. \end{DoxyCompactList}\item 
+function \mbox{\hyperlink{a01108_a4b0c2185d35bf0049a385542da99334a_a4b0c2185d35bf0049a385542da99334a}{parse}} (val)
+\begin{DoxyCompactList}\small\item\em Parse the string value into an integer in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} \mbox{\hyperlink{a01108_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}{strict}}
+\begin{DoxyCompactList}\small\item\em bytes Copyright(c) 2012-\/2014 TJ Holowaychuk Copyright(c) 2015 Jed Watson MIT Licensed \end{DoxyCompactList}\item 
+module \mbox{\hyperlink{a01108_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} = \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}
+\begin{DoxyCompactList}\small\item\em Module exports. \end{DoxyCompactList}\item 
+module \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27}{format}} = format
+\item 
+module \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} \mbox{\hyperlink{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}{parse}} = parse
+\item 
+var \mbox{\hyperlink{a01108_a3787d1b6ea0a8a3830ef5b20dde86faf_a3787d1b6ea0a8a3830ef5b20dde86faf}{format\+Decimals\+Reg\+Exp}} = /(?\+:\textbackslash{}.\+0\texorpdfstring{$\ast$}{*}\texorpdfstring{$\vert$}{|}(\textbackslash{}.\mbox{[}\texorpdfstring{$^\wedge$}{\string^}0\mbox{]}+)0+)\$/
+\item 
+var \mbox{\hyperlink{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15}{map}}
+\item 
+var \mbox{\hyperlink{a01108_a91a2aee55639e45d0e4a4484025b538a_a91a2aee55639e45d0e4a4484025b538a}{parse\+Reg\+Exp}} = /\texorpdfstring{$^\wedge$}{\string^}((-\/\texorpdfstring{$\vert$}{|}\textbackslash{}+)?(\textbackslash{}\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+(?\+:\textbackslash{}.\textbackslash{}\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+)?)) \texorpdfstring{$\ast$}{*}(kb\texorpdfstring{$\vert$}{|}mb\texorpdfstring{$\vert$}{|}gb\texorpdfstring{$\vert$}{|}tb\texorpdfstring{$\vert$}{|}pb)\$/\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Documentación de funciones}
+\Hypertarget{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}\index{index.js@{index.js}!bytes@{bytes}}
+\index{bytes@{bytes}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{bytes()}{bytes()}}
+{\footnotesize\ttfamily \label{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838} 
+function bytes (\begin{DoxyParamCaption}\item[{}]{value}{, }\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Convert the given value in bytes into a string or parse to string to an integer in bytes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{string\texorpdfstring{$\vert$}{|}number\}} & value \\
+\hline
+{\em \{\{} & case\+: \mbox{[}string\mbox{]}, decimal\+Places\+: \mbox{[}number\mbox{]} fixed\+Decimals\+: \mbox{[}boolean\mbox{]} thousands\+Separator\+: \mbox{[}string\mbox{]} unit\+Separator\+: \mbox{[}string\mbox{]} \}\} \mbox{[}options\mbox{]} bytes options.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{string\texorpdfstring{$\vert$}{|}number\texorpdfstring{$\vert$}{|}null\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00054}{54}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_abe609f6530a12306839787778f9f0a09_abe609f6530a12306839787778f9f0a09}\index{index.js@{index.js}!format@{format}}
+\index{format@{format}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily \label{a01108_abe609f6530a12306839787778f9f0a09_abe609f6530a12306839787778f9f0a09} 
+function format (\begin{DoxyParamCaption}\item[{}]{value}{, }\item[{}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Format the given value in bytes into a string. 
+
+If the value is negative, it is kept as such. If it is a float, it is rounded.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\}} & value \\
+\hline
+{\em \{object\}} & \mbox{[}options\mbox{]} \\
+\hline
+{\em \{number\}} & \mbox{[}options.\+decimal\+Places=2\mbox{]} \\
+\hline
+{\em \{number\}} & \mbox{[}options.\+fixed\+Decimals=false\mbox{]} \\
+\hline
+{\em \{string\}} & \mbox{[}options.\+thousands\+Separator=\mbox{]} \\
+\hline
+{\em \{string\}} & \mbox{[}options.\+unit=\mbox{]} \\
+\hline
+{\em \{string\}} & \mbox{[}options.\+unit\+Separator=\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{string\texorpdfstring{$\vert$}{|}null\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00084}{84}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_a4b0c2185d35bf0049a385542da99334a_a4b0c2185d35bf0049a385542da99334a}\index{index.js@{index.js}!parse@{parse}}
+\index{parse@{parse}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{a01108_a4b0c2185d35bf0049a385542da99334a_a4b0c2185d35bf0049a385542da99334a} 
+function parse (\begin{DoxyParamCaption}\item[{}]{val}{}\end{DoxyParamCaption})}
+
+
+
+Parse the string value into an integer in bytes. 
+
+If no unit is given, it is assumed the value is in bytes.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \{number\texorpdfstring{$\vert$}{|}string\}} & val\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\{number\texorpdfstring{$\vert$}{|}null\} 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00141}{141}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+
+
+\doxysubsubsection{Documentación de variables}
+\Hypertarget{a01108_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}\index{index.js@{index.js}!exports@{exports}}
+\index{exports@{exports}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{exports}{exports}}
+{\footnotesize\ttfamily \label{a01108_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34} 
+module exports = \mbox{\hyperlink{a01108_adeb1431b84efe09355bbd01e42326838_adeb1431b84efe09355bbd01e42326838}{bytes}}}
+
+
+
+Module exports. 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00015}{15}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27}\index{index.js@{index.js}!format@{format}}
+\index{format@{format}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \label{a01108_a9027c5af360d5ef99cc9906449e85a27_a9027c5af360d5ef99cc9906449e85a27} 
+module \mbox{\hyperlink{a01102_aa4072ba4b6b56b0fb6f4801f17ab2b34_aa4072ba4b6b56b0fb6f4801f17ab2b34}{exports}} format = format}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00016}{16}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_a3787d1b6ea0a8a3830ef5b20dde86faf_a3787d1b6ea0a8a3830ef5b20dde86faf}\index{index.js@{index.js}!formatDecimalsRegExp@{formatDecimalsRegExp}}
+\index{formatDecimalsRegExp@{formatDecimalsRegExp}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{formatDecimalsRegExp}{formatDecimalsRegExp}}
+{\footnotesize\ttfamily \label{a01108_a3787d1b6ea0a8a3830ef5b20dde86faf_a3787d1b6ea0a8a3830ef5b20dde86faf} 
+var format\+Decimals\+Reg\+Exp = /(?\+:\textbackslash{}.\+0\texorpdfstring{$\ast$}{*}\texorpdfstring{$\vert$}{|}(\textbackslash{}.\mbox{[}\texorpdfstring{$^\wedge$}{\string^}0\mbox{]}+)0+)\$/}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00026}{26}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15}\index{index.js@{index.js}!map@{map}}
+\index{map@{map}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \label{a01108_a48e18769649a3ca5bab0fafdec44cb15_a48e18769649a3ca5bab0fafdec44cb15} 
+var map}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{a00572_af36af181c026f5a7ad0911bf2f9a9bda_af36af181c026f5a7ad0911bf2f9a9bda}{b}}:\ \ 1,}
+\DoxyCodeLine{\ \ kb:\ 1\ <<\ 10,}
+\DoxyCodeLine{\ \ mb:\ 1\ <<\ 20,}
+\DoxyCodeLine{\ \ gb:\ 1\ <<\ 30,}
+\DoxyCodeLine{\ \ tb:\ Math.pow(1024,\ 4),}
+\DoxyCodeLine{\ \ pb:\ Math.pow(1024,\ 5),}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00028}{28}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f}\index{index.js@{index.js}!parse@{parse}}
+\index{parse@{parse}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{parse}{parse}}
+{\footnotesize\ttfamily \label{a01108_afb0e8a04ae9d4c5238a695364cf8cf5f_afb0e8a04ae9d4c5238a695364cf8cf5f} 
+\mbox{\hyperlink{a00200_a618282406c85e36a36534f36895c8059_a618282406c85e36a36534f36895c8059}{ipaddr}} parse = parse}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00017}{17}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_a91a2aee55639e45d0e4a4484025b538a_a91a2aee55639e45d0e4a4484025b538a}\index{index.js@{index.js}!parseRegExp@{parseRegExp}}
+\index{parseRegExp@{parseRegExp}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{parseRegExp}{parseRegExp}}
+{\footnotesize\ttfamily \label{a01108_a91a2aee55639e45d0e4a4484025b538a_a91a2aee55639e45d0e4a4484025b538a} 
+var parse\+Reg\+Exp = /\texorpdfstring{$^\wedge$}{\string^}((-\/\texorpdfstring{$\vert$}{|}\textbackslash{}+)?(\textbackslash{}\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+(?\+:\textbackslash{}.\textbackslash{}\mbox{\hyperlink{a01264_aeb337d295abaddb5ec3cb34cc2e2bbc9_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}}+)?)) \texorpdfstring{$\ast$}{*}(kb\texorpdfstring{$\vert$}{|}mb\texorpdfstring{$\vert$}{|}gb\texorpdfstring{$\vert$}{|}tb\texorpdfstring{$\vert$}{|}pb)\$/\mbox{\hyperlink{a00197_a5e25b1d1bed9ab5f3174b76d6a722180_a5e25b1d1bed9ab5f3174b76d6a722180}{i}}}
+
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00037}{37}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
+\Hypertarget{a01108_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331}\index{index.js@{index.js}!strict@{strict}}
+\index{strict@{strict}!index.js@{index.js}}
+\doxyparagraph{\texorpdfstring{strict}{strict}}
+{\footnotesize\ttfamily \label{a01108_ae2475e10618961c050dcba04e8c42331_ae2475e10618961c050dcba04e8c42331} 
+\mbox{\hyperlink{a00101_a8192500ed5d08ae60d3778b54729bd51_a8192500ed5d08ae60d3778b54729bd51}{use}} strict}
+
+
+
+bytes Copyright(c) 2012-\/2014 TJ Holowaychuk Copyright(c) 2015 Jed Watson MIT Licensed 
+
+
+
+Definición en la línea \mbox{\hyperlink{a01108_source_l00008}{8}} del archivo \mbox{\hyperlink{a01108_source}{node\+\_\+modules/bytes/index.\+js}}.
+
