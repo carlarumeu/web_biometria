@@ -1,3 +1,15 @@
+/*
+ * Nombre del fichero: medicionService.js
+ * Descripción: Servicios para manejar las operaciones de base de datos relacionadas con las mediciones de gases.
+ * Autores: Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos
+ * Fecha: 8 de octubre de 2024
+ *
+ * Este archivo ha sido realizado por Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos el 8 de octubre de 2024.
+ * Contiene las funciones para obtener mediciones con filtros opcionales, crear una nueva medición y obtener la última medición registrada.
+ * 
+ * Todos los derechos reservados.
+ */
+
 import pool from '../config/db.js';
 
 // Obtener mediciones con filtros opcionales

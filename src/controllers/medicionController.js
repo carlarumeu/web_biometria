@@ -1,3 +1,15 @@
+/*
+ * Nombre del fichero: medicionController.js
+ * Descripción: Controlador para manejar las operaciones relacionadas con las mediciones de gases.
+ * Autores: Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos
+ * Fecha: 8 de octubre de 2024
+ *
+ * Este archivo ha sido realizado por Álex Escrivá Caravaca, Elena Ruiz de la Blanca y Carla Rumeu Montesinos el 8 de octubre de 2024.
+ * Contiene las funciones para obtener todas las mediciones, crear una nueva medición y obtener la última medición registrada.
+ * 
+ * Todos los derechos reservados.
+ */
+
 import { obtenerMediciones, enviarMedicion, obtenerUltimaMedicion } from '../services/medicionService.js';
 
 // Obtener todas las mediciones (con filtros opcionales)
